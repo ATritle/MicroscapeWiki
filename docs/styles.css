@@ -55,6 +55,16 @@ kbd { position: absolute; right: 11px; top: 9px; width: 23px; text-align: center
 .nav-link:hover { background: var(--panel); color: var(--text); }
 .nav-link[aria-current="page"] { color: var(--mint); background: #19332f; }
 .nav-link .glyph { width: 19px; text-align: center; color: var(--mint); }
+.live-drop-badge { display: inline-flex; align-items: center; gap: 5px; border: 1px solid #91353e; border-radius: 999px; padding: 2px 7px; background: #451b23; color: #ffb6bc; font-size: 10px; font-weight: 700; line-height: 1.3; letter-spacing: .06em; }
+.nav-link .live-drop-badge { margin-left: auto; }
+.live-drop-badge::before { content: ""; flex: none; width: 6px; height: 6px; border-radius: 50%; background: #ff6574; animation: live-drop-pulse 2s ease-out infinite; }
+@keyframes live-drop-pulse {
+  0% { box-shadow: 0 0 0 0 #ff657480; }
+  75%, 100% { box-shadow: 0 0 0 4px #ff657400; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .live-drop-badge::before { animation: none; }
+}
 main { padding: 30px 34px 40px; min-height: calc(100vh - 74px); border-left: 1px solid var(--line); min-width: 0; }
 main:focus { outline: none; }
 h1, h2, h3, p { margin-top: 0; }
@@ -125,6 +135,8 @@ h3 { margin-bottom: 6px; font-size: 17px; }
 .drop-group ul { display: grid; gap: 8px; list-style: none; padding: 0; margin: 0; }
 .drop-group li + li { margin: 0; }
 .drop-group p { margin: 0; }
+.drop-avatar { position: relative; display: grid; place-items: center; flex: none; width: 36px; height: 36px; border: 1px solid var(--line); border-radius: 50%; overflow: hidden; background: #233b37; color: var(--mint); font-weight: 700; }
+.drop-avatar img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .entry-icon { flex: none; display: block; padding: 8px; border: 1px solid var(--line); border-radius: 12px; background: radial-gradient(circle at 50% 40%, #233b37, var(--panel) 72%); object-fit: contain; image-rendering: pixelated; }
 .entry-thumbnail { padding: 4px; border-radius: 8px; }
 .pet-profile-header { display: flex; align-items: center; gap: clamp(12px, 3vw, 25px); margin: 0 0 20px; }

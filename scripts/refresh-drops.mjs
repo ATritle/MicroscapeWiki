@@ -23,11 +23,15 @@ export function makeSnapshot(rows, checkedAt = Date.now()) {
       if (!channel || typeof row.displayName !== "string" || !row.displayName.trim()) {
         throw new Error("Microscape returned an active event without a Twitch channel.");
       }
+      const avatarUrl = typeof row.imgUrl === "string"
+        && /^https:\/\/static-cdn\.jtvnw\.net\/jtv_user_pictures\/[a-zA-Z0-9._-]+$/.test(row.imgUrl)
+        ? row.imgUrl : null;
       events.push({
         type,
         channel: channel.toLowerCase(),
         name: row.displayName,
         endsAt: Number.isFinite(minutes) && minutes > 0 ? checkedAt + minutes * 60_000 : null,
+        ...(avatarUrl ? {avatarUrl} : {}),
         ...(type === "key" && row.isMemberChannel === true ? {doubleKeys: true} : {})
       });
     }

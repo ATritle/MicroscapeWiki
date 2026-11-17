@@ -23,11 +23,17 @@ const searchInput = document.querySelector("#wiki-search");
 const number = new Intl.NumberFormat("en");
 const gameAssets = "https://microscape.cc/play/assets/";
 const liveDropsUrl = "#/live-drops";
+const liveDropsSnapshotUrl = "https://raw.githubusercontent.com/ATritle/MicroscapeWiki/live-data/drops.json";
+const liveDropsMaxAge = 40 * 60_000;
 const topicOrder = ["skills", "items", "foes", "locations", "abilities", "pets", "reference"];
 const featured = ["energy", "dungeons", "bazaar", "activity-queue"];
 const displayCount = 36;
 let referenceLoadFailed = false;
-let stopLiveDrops;
+let liveDropsSnapshot;
+let liveDropsRequest;
+let liveDropsFailed = false;
+let liveDropsExpiry;
+let renderDropResults;
 
 const entries = [...guides, ...tutorials];
 const byId = new Map(entries.map(entry => [entry.id, entry]));
@@ -102,6 +108,13 @@ function addToSearch(entry) {
   });
 }
 
+function liveDropBadge() {
+  return element("span", {class:"live-drop-badge", hidden:""},
+    element("span", {"aria-hidden":"true"}, "LIVE"),
+    element("span", {class:"visually-hidden"}, " Drops active")
+  );
+}
+
 function renderNav(category, currentId, home, liveDrops) {
   const sections = [
     ["Explore", [
@@ -122,7 +135,7 @@ function renderNav(category, currentId, home, liveDrops) {
     element("p", {class:"nav-heading"}, heading),
     ...links.map(([label, href, icon, active]) => element("a", {
       class:"nav-link", href, ...(active ? {"aria-current":"page"} : {})
-    }, glyph(icon), label))
+    }, glyph(icon), label, ...(href === liveDropsUrl ? [liveDropBadge()] : [])))
   )));
 }
 
@@ -150,7 +163,7 @@ function renderHome() {
       element("p", {}, "Player guides and reference tables for the Twitch-powered browser idle RPG."),
       element("div", {class:"actions"},
         element("a", {class:"button primary", href:entryUrl("getting-started")}, "Getting started", glyph("→", "")),
-        link("Live Twitch drops", liveDropsUrl, "button")
+        element("a", {class:"button", href:liveDropsUrl}, "Live Twitch drops", liveDropBadge())
       )
     )
   );
@@ -204,16 +217,66 @@ function crumbs(category, current) {
   );
 }
 
+function updateLiveDrops() {
+  clearTimeout(liveDropsExpiry);
+  const now = Date.now();
+  const snapshot = liveDropsSnapshot && now - liveDropsSnapshot.checkedAt < liveDropsMaxAge
+    ? liveDropsSnapshot : null;
+  const events = snapshot?.events.filter(event => event.endsAt === null || event.endsAt > now) || [];
+
+  for (const badge of document.querySelectorAll(".live-drop-badge")) badge.hidden = !events.length;
+  renderDropResults?.(snapshot, events, now);
+
+  if (snapshot) {
+    const nextChange = Math.min(snapshot.checkedAt + liveDropsMaxAge, ...events.map(event => event.endsAt ?? Infinity));
+    liveDropsExpiry = setTimeout(updateLiveDrops, nextChange - now);
+  }
+}
+
+async function refreshLiveDrops() {
+  if (liveDropsRequest) return liveDropsRequest;
+  liveDropsRequest = (async () => {
+    try {
+      const response = await fetch(liveDropsSnapshotUrl, {
+        cache:"no-store", credentials:"omit", signal:AbortSignal.timeout(10_000)
+      });
+      if (!response.ok) throw new Error("Live drops HTTP " + response.status);
+      const data = await response.json();
+      if (!Number.isFinite(data?.checkedAt) || !Array.isArray(data.events) || data.events.some(event =>
+        !event || !["favor", "key"].includes(event.type) || typeof event.name !== "string"
+        || typeof event.channel !== "string" || !/^[a-z0-9_]{1,25}$/.test(event.channel)
+        || !(event.endsAt === null || Number.isFinite(event.endsAt)))) {
+        throw new Error("Invalid live drops snapshot.");
+      }
+      liveDropsSnapshot = data;
+      liveDropsFailed = false;
+    } catch {
+      liveDropsFailed = true;
+    } finally {
+      liveDropsRequest = null;
+      updateLiveDrops();
+    }
+  })();
+  return liveDropsRequest;
+}
+
+function dropAvatar(event) {
+  const avatar = element("span", {class:"drop-avatar", "aria-hidden":"true"}, event.name.trim().slice(0, 1).toUpperCase());
+  if (typeof event.avatarUrl === "string" && event.avatarUrl.startsWith("https://static-cdn.jtvnw.net/jtv_user_pictures/")) {
+    const image = element("img", {
+      src:event.avatarUrl, alt:"", width:36, height:36, referrerpolicy:"no-referrer"
+    });
+    image.addEventListener("error", () => image.remove(), {once:true});
+    avatar.append(image);
+  }
+  return avatar;
+}
+
 function renderLiveDrops() {
-  const snapshotUrl = "https://raw.githubusercontent.com/ATritle/MicroscapeWiki/live-data/drops.json";
   const updateTime = new Intl.DateTimeFormat(undefined, {dateStyle:"medium", timeStyle:"short"});
-  const maxAge = 40 * 60_000;
   const status = element("p", {class:"drop-status", role:"status"}, "Checking for live drops…");
   const results = element("div", {class:"drop-groups"});
   const refreshButton = element("button", {class:"button", type:"button"}, "Refresh");
-  let snapshot;
-  let request;
-  let stopped = false;
 
   function eventList(type, title, empty, events, now) {
     const matches = events.filter(event => event.type === type);
@@ -225,8 +288,9 @@ function renderLiveDrops() {
           : `About ${Math.floor(minutes / 60)}h ${minutes % 60}m left`;
         return element("li", {},
           element("a", {class:"entry-card", href:"https://www.twitch.tv/" + event.channel, target:"_blank", rel:"noopener noreferrer"},
-            element("span", {}, element("strong", {}, event.name),
-              element("small", {}, event.doubleKeys ? "2× Dungeon Keys · " + remaining : remaining)),
+            element("span", {class:"entry-card-body"}, dropAvatar(event),
+              element("span", {}, element("strong", {}, event.name),
+                element("small", {}, event.doubleKeys ? "2× Dungeon Keys · " + remaining : remaining))),
             glyph("↗", "arrow")
           )
         );
@@ -234,46 +298,20 @@ function renderLiveDrops() {
     );
   }
 
-  function showSnapshot(failed) {
-    const now = Date.now();
-    if (!snapshot || now - snapshot.checkedAt > maxAge) {
-      status.textContent = "Live data is temporarily unavailable. Open Streams in Microscape for current events.";
+  renderDropResults = (snapshot, events, now) => {
+    if (!snapshot) {
+      status.textContent = !liveDropsSnapshot && !liveDropsFailed ? "Checking for live drops…"
+        : "Live data is temporarily unavailable. Open Streams in Microscape for current events.";
       results.replaceChildren();
       return;
     }
-    const events = snapshot.events
-      .filter(event => event.endsAt === null || event.endsAt > now)
-      .sort((a, b) => (a.endsAt ?? Infinity) - (b.endsAt ?? Infinity) || a.name.localeCompare(b.name));
-    status.textContent = (failed ? "Refresh failed. " : "") + "Last checked " + updateTime.format(snapshot.checkedAt) + ".";
+    events.sort((a, b) => (a.endsAt ?? Infinity) - (b.endsAt ?? Infinity) || a.name.localeCompare(b.name));
+    status.textContent = (liveDropsFailed ? "Refresh failed. " : "") + "Last checked " + updateTime.format(snapshot.checkedAt) + ".";
     results.replaceChildren(
       eventList("favor", "Drop Festivals", "No active festivals were listed.", events, now),
       eventList("key", "Dungeon Key events", "No active Dungeon Key events were listed.", events, now)
     );
-  }
-
-  async function refresh() {
-    if (request || stopped) return;
-    request = new AbortController();
-    refreshButton.disabled = true;
-    try {
-      const signal = AbortSignal.any([request.signal, AbortSignal.timeout(10_000)]);
-      const response = await fetch(snapshotUrl, {cache:"no-store", credentials:"omit", signal});
-      if (!response.ok) throw new Error("Live drops HTTP " + response.status);
-      const data = await response.json();
-      if (!Number.isFinite(data?.checkedAt) || !Array.isArray(data.events) || data.events.some(event =>
-        !event || !["favor", "key"].includes(event.type) || typeof event.name !== "string"
-        || !/^[a-z0-9_]{1,25}$/.test(event.channel) || !(event.endsAt === null || Number.isFinite(event.endsAt)))) {
-        throw new Error("Invalid live drops snapshot.");
-      }
-      snapshot = data;
-      if (!stopped) showSnapshot(false);
-    } catch {
-      if (!stopped) showSnapshot(true);
-    } finally {
-      request = null;
-      refreshButton.disabled = false;
-    }
-  }
+  };
 
   main.append(element("article", {class:"article"}, crumbs(null, "Live Twitch drops"),
     element("h1", {}, "Live Twitch drops"),
@@ -283,14 +321,11 @@ function renderLiveDrops() {
     element("p", {class:"drop-help"}, entryLink("audience-favor", "How to claim Audience Favor on Twitch"), " · ",
       entryLink("dungeons", "Dungeon Keys guide"))
   ), footer());
-  refreshButton.addEventListener("click", refresh);
-  const timer = setInterval(() => { if (!document.hidden) refresh(); }, 5 * 60_000);
-  refresh();
-  stopLiveDrops = () => {
-    stopped = true;
-    clearInterval(timer);
-    request?.abort();
-  };
+  refreshButton.addEventListener("click", async () => {
+    refreshButton.disabled = true;
+    await refreshLiveDrops();
+    refreshButton.disabled = false;
+  });
 }
 
 function renderList(category, query) {
@@ -594,8 +629,7 @@ function render({focus = false} = {}) {
   const query = new URLSearchParams(params).get("q") || "";
   const home = !view;
   const liveDrops = view === "live-drops";
-  stopLiveDrops?.();
-  stopLiveDrops = null;
+  renderDropResults = null;
   main.replaceChildren();
   menu.setAttribute("aria-expanded","false");
   const currentCategory = entry?.id === "pets" ? "pets" : entry?.category || category;
@@ -610,6 +644,7 @@ function render({focus = false} = {}) {
   else main.append(crumbs(null, "Page unavailable"), element("h1", {}, "Page unavailable"),
     element("p", {class:"intro"}, referenceLoadFailed ? "The reference catalog could not load." : "This entry could not be found."),
     link("Return to the wiki", "#/", "button"), footer());
+  updateLiveDrops();
   if (focus) main.focus({preventScroll:true});
 }
 
@@ -650,6 +685,8 @@ try {
 }
 entries.forEach(addToSearch);
 render();
+refreshLiveDrops();
+setInterval(() => { if (!document.hidden) refreshLiveDrops(); }, 5 * 60_000);
 window.addEventListener("hashchange", () => {
   if (window.location.hash === "#content") return;
   render({focus:true});
