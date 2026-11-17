@@ -57,26 +57,29 @@ function entryImage(src, alt, thumbnail = false) {
   });
 }
 
-function itemArtwork(entry) {
+function entryArtwork(entry) {
+  if (entry.artwork) {
+    return element("div", {class:"profile-art"}, entryImage(entry.artwork, entry.title + " in-game icon"));
+  }
   if (entry.category !== "items") return null;
   const gameAssets = "https://microscape.cc/play/assets/";
   const group = itemIconGroups[entry.id];
   if (group) {
-    return element("div", {class:"item-art item-art-group", role:"group", "aria-label":entry.title + " icons"},
+    return element("div", {class:"profile-art item-art-group", role:"group", "aria-label":entry.title + " icons"},
       ...group.map(id => entryImage(new URL(itemIcons[id], gameAssets).href, byId.get(id).title + " in-game icon", true))
     );
   }
   const icon = itemIcons[entry.id];
   if (!icon) return null;
   const label = entry.id === "steel-pickaxe" ? " archived icon" : " in-game icon";
-  return element("div", {class:"item-art"}, entryImage(new URL(icon, gameAssets).href, entry.title + label));
+  return element("div", {class:"profile-art"}, entryImage(new URL(icon, gameAssets).href, entry.title + label));
 }
 
 function addToSearch(entry) {
   index.set(entry.id, {
     title: normalize(entry.title),
     full: normalize([
-      entry.title, entry.group, entry.summary, groups[entry.category].title,
+      entry.title, entry.aliases?.join(" "), entry.group, entry.summary, groups[entry.category].title,
       entry.sections?.flat().join(" "), entry.facts?.flat().join(" "),
       entry.tables?.flatMap(table => [table.title, ...table.columns, ...table.rows.flat()]).join(" ")
     ].filter(Boolean).join(" "))
@@ -242,7 +245,11 @@ function renderList(category, query) {
 
 function renderTable(table, relatedIds = [], namedLinks = new Map()) {
   const candidates = relatedIds.map(id => byId.get(id)).filter(Boolean);
-  const names = new Map(candidates.map(entry => [normalize(entry.title), entry.id]));
+  const itemLinks = table.links || [];
+  const names = new Map([
+    ...candidates.map(entry => [normalize(entry.title), entry.id]),
+    ...itemLinks.filter(([, id]) => byId.has(id)).map(([label,id]) => [normalize(label),id])
+  ]);
   const wrapper = element("div", {class:"table-wrap", role:"region", tabindex:"0", "aria-label":table.title || "Reference table"});
   const head = element("thead", {}, element("tr", {}, ...table.columns.map(col => {
     const target = namedLinks.get(normalize(col));
@@ -320,9 +327,9 @@ function renderEntry(entry, category) {
   const facts = entry.facts?.length ? [
     element("dl", {class:"facts"}, ...entry.facts.map(([label, value]) => element("div", {}, element("dt", {}, label), element("dd", {}, value))))
   ] : [];
-  const art = itemArtwork(entry);
+  const art = entryArtwork(entry);
   if (art) {
-    article.append(element("header", {class:"item-profile-header"}, art, element("div", {class:"item-title"}, ...title), ...facts));
+    article.append(element("header", {class:"artwork-header"}, art, element("div", {class:"artwork-title"}, ...title), ...facts));
   } else if (entry.portrait) {
     article.append(element("header", {class:"pet-profile-header"},
       entryImage(entry.portrait.src, entry.title + " in-game icon"), element("div", {}, ...title)
@@ -344,8 +351,8 @@ function renderEntry(entry, category) {
     article.append(element("section", {}, element("h2", {}, heading), element("p", {}, text)));
   }
   for (const table of entry.tables || []) {
-    const showPetLinks = entry.id === "pets" || (entry.category === "foes" && table.title === "Loot");
-    const content = renderTable(table, entry.related, showPetLinks ? petLinks : undefined);
+    const showPetLinks = entry.id === "pets";
+    const content = renderTable(table, table.related || entry.related, showPetLinks ? petLinks : undefined);
     if (table.collapsed) {
       article.append(element("details", {class:"table-disclosure"}, element("summary", {}, table.title), content));
       continue;
@@ -421,7 +428,9 @@ document.addEventListener("keydown", event => {
 });
 
 try {
-  const response = await fetch(new URL("./reference.json", import.meta.url));
+  const referenceUrl = new URL("./reference.json", import.meta.url);
+  referenceUrl.search = new URL(import.meta.url).search;
+  const response = await fetch(referenceUrl);
   if (!response.ok) throw new Error("Reference HTTP " + response.status);
   const reference = await response.json();
   const pets = buildPetEntries(reference);
