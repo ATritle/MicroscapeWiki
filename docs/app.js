@@ -345,6 +345,40 @@ function renderLocationMap(entry) {
   );
 }
 
+function renderFoeSprites(entry) {
+  const figures = entry.foeSprites.map(sprite => {
+    const [x, y, width, height] = sprite.crop;
+    const [imageWidth, imageHeight] = sprite.size;
+    const longestSide = Math.max(width, height);
+    const displayWidth = Math.round(width * Math.min(208, Math.max(128, longestSide)) / longestSide);
+    const percent = (value, whole) => 100 * value / whole + "%";
+    const layerStyle = `left:${percent(-x, width)};top:${percent(-y, height)};width:${percent(imageWidth, width)};height:${percent(imageHeight, height)}`;
+    const layers = sprite.layers.map(src => element("img", {
+      class:"foe-sprite-layer", src, alt:"", width:imageWidth, height:imageHeight,
+      decoding:"async", referrerpolicy:"no-referrer", style:layerStyle
+    }));
+    if (sprite.heldHand) {
+      const hand = sprite.heldHand;
+      const position = `left:${percent(hand.x - x, width)};top:${percent(hand.y - y, height)};width:${percent(hand.size, width)};height:${percent(hand.size, height)}`;
+      layers.splice(-1, 0, element("span", {class:"foe-sprite-layer", style:`${position};background:${hand.color}`}));
+    }
+    const label = entry.title + " full in-game sprite" + (sprite.label ? " · " + sprite.label : "");
+    return element("figure", {class:"foe-sprite"},
+      element("div", {class:"foe-sprite-stage"},
+        element("div", {
+          class:sprite.flipped ? "foe-sprite-frame flipped" : "foe-sprite-frame",
+          role:"img", "aria-label":label, style:`--sprite-width:${displayWidth}px;aspect-ratio:${width}/${height}`
+        }, ...layers)
+      ),
+      ...(sprite.label ? [element("figcaption", {}, sprite.label)] : [])
+    );
+  });
+  return element("section", {"aria-labelledby":"foe-sprites-heading"},
+    element("h2", {id:"foe-sprites-heading"}, "In-game appearance"),
+    element("div", {class:"foe-sprites"}, ...figures)
+  );
+}
+
 function linkMentions(text, references) {
   let parts = [text];
   for (const {id, title} of references) {
@@ -393,6 +427,7 @@ function renderEntry(entry, category) {
   if (entry.indexOnly) article.append(element("p", {class:"intro"}, "Listed in the community catalog. Detailed values are still needed."));
   if (entry.calculator) article.append(calculator());
   if (!art && !entry.mapImage) article.append(...facts);
+  if (entry.foeSprites?.length) article.append(renderFoeSprites(entry));
   for (const [heading, text] of entry.sections || []) {
     article.append(element("section", {},
       element("h2", {}, ...linkMentions(heading, inlineReferences)),
@@ -429,7 +464,7 @@ function renderEntry(entry, category) {
     ["Contributor history", entry.sourceUrl + "?action=history"],
     ["CC BY-SA 4.0", "https://creativecommons.org/licenses/by-sa/4.0/"]
   ])];
-  if (art || entry.mapImage) {
+  if (art || entry.mapImage || entry.foeSprites?.length) {
     sources.push(entry.id === "steel-pickaxe"
       ? ["Archived Steel Pickaxe icon on Miraheze", "https://microscape.miraheze.org/wiki/File:Steel_Pickaxe.png"]
       : ["Microscape game artwork credits", "https://microscape.cc/credits/"]

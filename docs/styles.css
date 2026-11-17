@@ -145,6 +145,13 @@ h3 { margin-bottom: 6px; font-size: 17px; }
 .location-map-image { display: grid; grid-template-columns: minmax(0, 1fr); place-items: center; padding: clamp(4px, 1.5vw, 14px); background: var(--panel); border: 1px solid var(--line); border-radius: 12px; }
 .location-map-image img { display: block; max-width: 100%; max-height: 550px; width: auto; height: auto; image-rendering: pixelated; }
 .location-map figcaption { padding: 7px 0 0; color: var(--muted); font-size: 13px; }
+.foe-sprites { display: flex; flex-wrap: wrap; gap: 12px; }
+.foe-sprite { flex: 0 1 260px; min-width: 0; margin: 0; }
+.foe-sprite-stage { display: grid; grid-template-columns: minmax(0, 1fr); place-items: center; min-height: 226px; padding: 12px; background: radial-gradient(ellipse, #52636b, #263943 82%); border: 1px solid var(--line); border-radius: 12px; }
+.foe-sprite-frame { position: relative; width: min(100%, var(--sprite-width)); overflow: hidden; }
+.foe-sprite-frame.flipped { transform: scaleX(-1); }
+.foe-sprite-layer { position: absolute; image-rendering: pixelated; }
+.foe-sprite figcaption { padding-top: 6px; color: var(--muted); font-size: 13px; }
 .facts { display: grid; grid-template-columns: repeat(auto-fit,minmax(min(135px,100%),1fr)); gap: 9px; }
 .facts div { border: 1px solid var(--line); border-radius: 8px; background: var(--panel); padding: 11px 14px; }
 .facts dt { color: var(--muted); font-size: 13px; }

@@ -5453,6 +5453,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "foeSprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/bear-CszOecsz.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          32,
+          28,
+          72,
+          44
+        ]
+      }
     ]
   },
   {
@@ -6236,6 +6253,35 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "foeSprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/skin4World-B3L0v_zU.png",
+          "https://microscape.cc/play/assets/leatherGlovesWorld-BqbEg7YX.png",
+          "https://microscape.cc/play/assets/leatherBootsWorld-OfLt4-ZX.png",
+          "https://microscape.cc/play/assets/blackArmorWorld-zvgacBab.png",
+          "https://microscape.cc/play/assets/blackFullHelmWorld-DA9DLitY.png",
+          "https://microscape.cc/play/assets/steelSqShieldWorld-Dxd6rRqs.png",
+          "https://microscape.cc/play/assets/steelScimitarWorld-BsmdMVo6.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          40,
+          40,
+          36
+        ],
+        "heldHand": {
+          "x": 68,
+          "y": 68,
+          "size": 4,
+          "color": "#ad7757"
+        }
+      }
     ]
   },
   {
@@ -7769,6 +7815,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "foeSprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/blueDragon-DfHkdB2k.png"
+        ],
+        "size": [
+          256,
+          256
+        ],
+        "crop": [
+          32,
+          8,
+          180,
+          136
+        ]
+      }
     ]
   },
   {
@@ -11260,6 +11323,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "foeSprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/caveSlime-vt5VJzXX.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          44,
+          48,
+          36,
+          24
+        ]
+      }
     ]
   },
   {
@@ -12062,6 +12142,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "foeSprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/chicken-DfM9GleR.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          44,
+          32,
+          28
+        ]
+      }
     ]
   },
   {
@@ -13287,6 +13384,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "foeSprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/cockatrice-By2SdNaf.png"
+        ],
+        "size": [
+          256,
+          256
+        ],
+        "crop": [
+          72,
+          36,
+          104,
+          136
+        ]
+      }
     ]
   },
   {
@@ -14915,6 +15029,40 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "foeSprites": [
+      {
+        "label": "Default form",
+        "layers": [
+          "https://microscape.cc/play/assets/corruptedDruid-BIBomrdi.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          36,
+          32,
+          56,
+          40
+        ]
+      },
+      {
+        "label": "Transformed",
+        "layers": [
+          "https://microscape.cc/play/assets/corruptedDruidTransformed-ChuqiXsc.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          36,
+          12,
+          56,
+          44
+        ]
+      }
     ]
   },
   {
@@ -15206,6 +15354,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "foeSprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/cow-kCL0quWY.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          36,
+          40,
+          56,
+          32
+        ]
+      }
     ]
   },
   {
@@ -16477,6 +16642,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "foeSprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/crocodile-FBqR-nS_.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          16,
+          56,
+          68,
+          24
+        ]
+      }
     ]
   },
   {
@@ -19690,7 +19872,24 @@
       ]
     ],
     "artwork": "https://microscape.cc/play/assets/dragonWhelp-C-IlUWWv.png",
-    "statsDate": "2026-11-17"
+    "statsDate": "2026-11-17",
+    "foeSprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/whelp-B1Fm2Egf.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          40,
+          28,
+          48,
+          40
+        ]
+      }
+    ]
   },
   {
     "id": "dragons-breath",
@@ -21331,7 +21530,41 @@
       ]
     ],
     "artwork": "https://microscape.cc/play/assets/corruptedDruid-D8AmmHDl.png",
-    "statsDate": "2026-11-17"
+    "statsDate": "2026-11-17",
+    "foeSprites": [
+      {
+        "label": "Default form",
+        "layers": [
+          "https://microscape.cc/play/assets/druidWarrior-B6LqIWrK.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          36,
+          32,
+          56,
+          40
+        ]
+      },
+      {
+        "label": "Transformed",
+        "layers": [
+          "https://microscape.cc/play/assets/druidWarriorTransformed-BNxLOJ01.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          12,
+          28,
+          84,
+          44
+        ]
+      }
+    ]
   },
   {
     "id": "drymor-mansion",
@@ -27509,6 +27742,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "foeSprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/fireDwarf-BRKbOtf6.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          32,
+          40,
+          60,
+          36
+        ]
+      }
     ]
   },
   {
@@ -27923,6 +28173,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "foeSprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/fireElemental-DRBUIR_b.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          24,
+          4,
+          76,
+          68
+        ]
+      }
     ]
   },
   {
@@ -32017,6 +32284,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "foeSprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/ghost-DntAFxjU.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          40,
+          28,
+          40,
+          48
+        ]
+      }
     ]
   },
   {
@@ -32265,6 +32549,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "foeSprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/giantRat-3HykPjJB.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          36,
+          56,
+          44,
+          16
+        ]
+      }
     ]
   },
   {
@@ -32476,6 +32777,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "foeSprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/giantSnake-B7qlKfHs.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          8,
+          24,
+          84,
+          52
+        ]
+      }
     ]
   },
   {
@@ -33013,6 +33331,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "foeSprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/goblin-BnMUYfbt.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          28,
+          36,
+          44
+        ]
+      }
     ]
   },
   {
@@ -34683,6 +35018,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "foeSprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/greaterDemon-CU4rVv-2.png"
+        ],
+        "size": [
+          256,
+          256
+        ],
+        "crop": [
+          60,
+          24,
+          132,
+          116
+        ]
+      }
     ]
   },
   {
@@ -35175,6 +35527,40 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "foeSprites": [
+      {
+        "label": "Default form",
+        "layers": [
+          "https://microscape.cc/play/assets/gurgle-BHqZtJjU.png"
+        ],
+        "size": [
+          256,
+          256
+        ],
+        "crop": [
+          88,
+          80,
+          80,
+          56
+        ]
+      },
+      {
+        "label": "Collapsed",
+        "layers": [
+          "https://microscape.cc/play/assets/gurgleCollapsed-Bx6ppEfM.png"
+        ],
+        "size": [
+          256,
+          256
+        ],
+        "crop": [
+          80,
+          92,
+          88,
+          48
+        ]
+      }
     ]
   },
   {
@@ -37414,7 +37800,24 @@
       ]
     ],
     "artwork": "https://microscape.cc/play/assets/iceGiant-C0Ff-jll.png",
-    "statsDate": "2026-11-17"
+    "statsDate": "2026-11-17",
+    "foeSprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/iceGiant-C0lBTmz2.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          24,
+          4,
+          64,
+          68
+        ]
+      }
+    ]
   },
   {
     "id": "ice-warrior",
@@ -37670,6 +38073,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "foeSprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/iceWarrior-Lk_bvHfp.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          40,
+          28,
+          60,
+          48
+        ]
+      }
     ]
   },
   {
@@ -38209,6 +38629,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "foeSprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/imp-cdP8co3G.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          40,
+          32,
+          40,
+          36
+        ]
+      }
     ]
   },
   {
@@ -38592,6 +39029,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "foeSprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/insectSwarm-YUW6UTLe.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          52,
+          40,
+          32,
+          28
+        ]
+      }
     ]
   },
   {
@@ -39750,6 +40204,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "foeSprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/iskarn-8cKZ_0UF.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          32,
+          12,
+          56,
+          60
+        ]
+      }
     ]
   },
   {
@@ -40598,6 +41069,42 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "foeSprites": [
+      {
+        "label": "Default form",
+        "layers": [
+          "https://microscape.cc/play/assets/kingOnyxDragon-C1y-Zi_y.png"
+        ],
+        "size": [
+          384,
+          384
+        ],
+        "crop": [
+          96,
+          72,
+          196,
+          136
+        ],
+        "flipped": true
+      },
+      {
+        "label": "In flight",
+        "layers": [
+          "https://microscape.cc/play/assets/kingOnyxDragonFlying-E0Ch1u23.png"
+        ],
+        "size": [
+          384,
+          384
+        ],
+        "crop": [
+          96,
+          20,
+          196,
+          156
+        ],
+        "flipped": true
+      }
     ]
   },
   {
@@ -42227,6 +42734,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "foeSprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/lesserDemon-eKkCC5-a.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          28,
+          12,
+          72,
+          64
+        ]
+      }
     ]
   },
   {
@@ -43494,6 +44018,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "foeSprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/magmaHound-JZ6UNB9P.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          28,
+          40,
+          64,
+          32
+        ]
+      }
     ]
   },
   {
@@ -47129,6 +47670,33 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "foeSprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/skin2World-fBopXN4J.png",
+          "https://microscape.cc/play/assets/leatherGlovesWorld-BqbEg7YX.png",
+          "https://microscape.cc/play/assets/monkRobeWorld-D485cvEp.png",
+          "https://microscape.cc/play/assets/boldBrownWorld-DJuVaImt.png",
+          "https://microscape.cc/play/assets/staffWorld-BTw7t9Bi.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          48,
+          40,
+          28
+        ],
+        "heldHand": {
+          "x": 68,
+          "y": 68,
+          "size": 4,
+          "color": "#ad7757"
+        }
+      }
     ]
   },
   {
@@ -47462,6 +48030,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "foeSprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/morvane-BKiE9ZNv.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          24,
+          0,
+          80,
+          72
+        ]
+      }
     ]
   },
   {
@@ -47651,6 +48236,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "foeSprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/mossGiant-B0ynyaGo.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          24,
+          4,
+          64,
+          68
+        ]
+      }
     ]
   },
   {
@@ -47884,6 +48486,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "foeSprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/mothman-Cpb3iRNV.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          36,
+          0,
+          52,
+          76
+        ]
+      }
     ]
   },
   {
@@ -48028,6 +48647,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "foeSprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/mouse-qD4Awg25.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          60,
+          32,
+          12
+        ]
+      }
     ]
   },
   {
@@ -48383,6 +49019,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "foeSprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/mummy-DkBPqIJG.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          52,
+          44,
+          28,
+          28
+        ]
+      }
     ]
   },
   {
@@ -54363,6 +55016,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "foeSprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/pitGuardian-OmWqrLWm.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          36,
+          0,
+          56,
+          72
+        ]
+      }
     ]
   },
   {
@@ -56243,6 +56913,24 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "foeSprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/fireElemental-DRBUIR_b.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          24,
+          4,
+          76,
+          68
+        ],
+        "flipped": true
+      }
     ]
   },
   {
@@ -60506,6 +61194,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "foeSprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/sandworm-BJiYaU2H.png"
+        ],
+        "size": [
+          256,
+          256
+        ],
+        "crop": [
+          88,
+          44,
+          104,
+          100
+        ]
+      }
     ]
   },
   {
@@ -62316,6 +63021,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "foeSprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/crocodile-FBqR-nS_.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          16,
+          56,
+          68,
+          24
+        ]
+      }
     ]
   },
   {
@@ -63439,6 +64161,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "foeSprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/skeleton-BKsaDFND.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          44,
+          32,
+          28
+        ]
+      }
     ]
   },
   {
@@ -63667,6 +64406,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "foeSprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/slimelet-DT6gHVWX.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          52,
+          44,
+          28,
+          28
+        ]
+      }
     ]
   },
   {
@@ -64953,6 +65709,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "foeSprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/snake-CFQKFltt.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          44,
+          52,
+          36,
+          20
+        ]
+      }
     ]
   },
   {
@@ -72245,6 +73018,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "foeSprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/giantScorpion-DoRKy_qR.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          20,
+          8,
+          76,
+          76
+        ]
+      }
     ]
   },
   {
@@ -72890,6 +73680,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "foeSprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/tombSorcerer-DGdOygS5.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          44,
+          24,
+          44,
+          48
+        ]
+      }
     ]
   },
   {
@@ -73401,6 +74208,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "foeSprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/turkey-iLGySxK4.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          16,
+          0,
+          88,
+          72
+        ]
+      }
     ]
   },
   {
