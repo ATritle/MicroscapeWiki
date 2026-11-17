@@ -1,9 +1,11 @@
 import { guides } from "./guides.js";
+import { tutorials } from "./tutorials.js";
 import { buildPetEntries } from "./pets.js";
 import { itemIcons, itemIconGroups } from "./item-icons.js";
 
 const groups = {
   guides: { title: "Guides", icon: "▤", blurb: "Start here, earn Energy, trade and plan dungeon runs." },
+  tutorials: { title: "Tutorials", icon: "◎", blurb: "Find equipment and abilities for specific enemies and boss mechanics." },
   skills: { title: "Skills", icon: "✧", blurb: "Training activities, unlocks and supplies." },
   items: { title: "Items", icon: "◇", blurb: "Browse gear, materials, food and tools." },
   foes: { title: "Foes", icon: "⚔", blurb: "Find enemies, dungeon bosses and their loot." },
@@ -24,7 +26,7 @@ const featured = ["energy", "dungeons", "bazaar", "activity-queue"];
 const displayCount = 36;
 let referenceLoadFailed = false;
 
-const entries = [...guides];
+const entries = [...guides, ...tutorials];
 const byId = new Map(entries.map(entry => [entry.id, entry]));
 const index = new Map();
 const petLinks = new Map();
@@ -91,7 +93,8 @@ function renderNav(category, currentId, home) {
     ["Explore", [
       ["Overview", "#/", "⌂", home],
       ["Getting started", entryUrl("getting-started"), "↳", currentId === "getting-started"],
-      ["All guides", categoryUrl("guides"), "▤", category === "guides" && !currentId]
+      ["All guides", categoryUrl("guides"), "▤", category === "guides" && !currentId],
+      ["Tutorials", categoryUrl("tutorials"), groups.tutorials.icon, category === "tutorials"]
     ]],
     ["Compendium", topicOrder.map(id => [groups[id].title, categoryUrl(id), groups[id].icon, category === id])],
     ["Resources", [
@@ -158,7 +161,11 @@ function renderHome() {
           element("span", {}, element("strong", {}, entry.title), element("small", {}, entry.summary)),
           glyph("→", "arrow")
         );
-      })
+      }),
+      element("a", {class:"list-card", href:categoryUrl("tutorials")},
+        element("span", {}, element("strong", {}, "Combat tutorials"), element("small", {}, groups.tutorials.blurb)),
+        glyph("→", "arrow")
+      )
     ),
     element("section", {"aria-labelledby":"patch-heading"},
       element("h2", {id:"patch-heading"}, "From the patch notes"),
@@ -244,7 +251,7 @@ function renderList(category, query) {
   main.append(crumbs(null, name), element("h1", {}, name));
   if (category) main.append(element("p", {class:"intro"}, groups[category].blurb));
   if (category === "pets" && byId.has("pets")) main.append(entryLink("pets", null, "button"));
-  if (referenceLoadFailed && category !== "guides") main.append(element("p", {class:"notice"}, "The reference catalog could not load. Refresh the page to retry."));
+  if (referenceLoadFailed && category !== "guides" && category !== "tutorials") main.append(element("p", {class:"notice"}, "The reference catalog could not load. Refresh the page to retry."));
   if (filterBar.children.length) main.append(filterBar);
   main.append(count, grid, empty, more, footer());
 }
@@ -390,7 +397,8 @@ function renderEntry(entry, category) {
       content
     ));
   }
-  const related = (entry.related || []).filter(id => byId.has(id));
+  const relatedTutorials = tutorials.filter(tutorial => tutorial.related?.includes(entry.id));
+  const related = [...new Set([...(entry.related || []), ...relatedTutorials.map(tutorial => tutorial.id)])].filter(id => byId.has(id));
   if (related.length) {
     article.append(element("section", {}, element("h2", {}, "Related entries"),
       element("div", {class:"related"}, ...related.map(id => entryLink(id, null, "button")))
