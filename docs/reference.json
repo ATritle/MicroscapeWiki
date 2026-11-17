@@ -1676,8 +1676,11 @@
     "sourceUrl": "https://microscape.miraheze.org/wiki/Items/Blue_Lobster",
     "related": [
       "fishing",
-      "raw-lobster"
-    ]
+      "raw-lobster",
+      "pets",
+      "solace-shoals"
+    ],
+    "summary": "A rare beta catch listed at 1 in 2,000,000 per lobster fishing action at Solace Shoals. This catch requires no pet map."
   },
   {
     "id": "bluegold-axe",
@@ -4974,9 +4977,9 @@
             "1 in 12"
           ],
           [
-            "Pet scales",
+            "Scales",
             "—",
-            "1 in 20"
+            "1 in 1,048,576"
           ]
         ]
       }
@@ -4985,7 +4988,30 @@
       "bones",
       "ashes",
       "fire-rune",
-      "drakestem"
+      "drakestem",
+      "pets"
+    ],
+    "sources": [
+      [
+        "Foe/Dragon Whelp on Miraheze",
+        "https://microscape.miraheze.org/wiki/Foe/Dragon_Whelp"
+      ],
+      [
+        "Miraheze source revision 1459",
+        "https://microscape.miraheze.org/wiki/Special:PermanentLink/1459"
+      ],
+      [
+        "Miraheze contributor history",
+        "https://microscape.miraheze.org/wiki/Foe/Dragon_Whelp?action=history"
+      ],
+      [
+        "Pet encounter odds",
+        "https://microwiki.mhmm.pl/pets"
+      ],
+      [
+        "CC BY-SA 4.0",
+        "https://creativecommons.org/licenses/by-sa/4.0/"
+      ]
     ]
   },
   {
@@ -5226,7 +5252,7 @@
           [
             "Beatrix",
             "—",
-            "1 in 15"
+            "1 in 32,768"
           ]
         ]
       }
@@ -5239,7 +5265,30 @@
       "law-rune",
       "serpentleaf",
       "adamant-dagger",
-      "drakestem"
+      "drakestem",
+      "pets"
+    ],
+    "sources": [
+      [
+        "Foe/Druid Warrior on Miraheze",
+        "https://microscape.miraheze.org/wiki/Foe/Druid_Warrior"
+      ],
+      [
+        "Miraheze source revision 1460",
+        "https://microscape.miraheze.org/wiki/Special:PermanentLink/1460"
+      ],
+      [
+        "Miraheze contributor history",
+        "https://microscape.miraheze.org/wiki/Foe/Druid_Warrior?action=history"
+      ],
+      [
+        "Pet encounter odds",
+        "https://microwiki.mhmm.pl/pets"
+      ],
+      [
+        "CC BY-SA 4.0",
+        "https://creativecommons.org/licenses/by-sa/4.0/"
+      ]
     ]
   },
   {
@@ -13341,19 +13390,617 @@
     "title": "Pets",
     "category": "reference",
     "group": "Mechanics",
-    "summary": "Look up pet map vendors, activity requirements, and collectible companions.",
+    "summary": "Find each pet’s map, look up eligible tasks, and compare reported beta drop odds.",
     "revision": 2294,
     "sourceDate": "2026-11-07",
     "sourceTitle": "Pets",
     "sourceUrl": "https://microscape.miraheze.org/wiki/Pets",
     "tables": [
       {
-        "title": "Mork's hand-drawn maps available for 10 Audience Favors",
+        "title": "Fishing · Bog and Otter",
+        "collapsed": true,
         "columns": [
-          "Pet Figure",
-          "Pet Name",
-          "Pet Map Name",
-          "Skill Needed"
+          "Eligible task",
+          "Bog",
+          "Otter"
+        ],
+        "rows": [
+          [
+            "Catch Frogs",
+            "≈ 1 in 155,811",
+            "≈ 1 in 233,717"
+          ],
+          [
+            "Shrimp, Sardine, Trout, Salmon, Lobster, Swordfish, Pyreshell, Shark, Manta Ray",
+            "≈ 1 in 70,823",
+            "≈ 1 in 106,235"
+          ]
+        ]
+      },
+      {
+        "title": "Mining · Golem Core and Pebble",
+        "collapsed": true,
+        "columns": [
+          "Eligible task",
+          "Golem Core",
+          "Pebble"
+        ],
+        "rows": [
+          [
+            "Copper, Tin",
+            "≈ 1 in 86,562",
+            "≈ 1 in 129,843"
+          ],
+          [
+            "Iron",
+            "≈ 1 in 70,823",
+            "≈ 1 in 106,235"
+          ],
+          [
+            "Silver",
+            "≈ 1 in 59,927",
+            "≈ 1 in 89,891"
+          ],
+          [
+            "Coal",
+            "≈ 1 in 51,937",
+            "≈ 1 in 77,906"
+          ],
+          [
+            "Gold",
+            "≈ 1 in 48,691",
+            "≈ 1 in 73,037"
+          ],
+          [
+            "Mithril",
+            "≈ 1 in 41,003",
+            "≈ 1 in 61,505"
+          ],
+          [
+            "Adamantite",
+            "≈ 1 in 29,964",
+            "≈ 1 in 44,946"
+          ],
+          [
+            "Progrite",
+            "≈ 1 in 19,001",
+            "≈ 1 in 28,502"
+          ]
+        ]
+      },
+      {
+        "title": "Woodcutting · Winkle and Stump",
+        "collapsed": true,
+        "columns": [
+          "Eligible task",
+          "Winkle",
+          "Stump"
+        ],
+        "rows": [
+          [
+            "Trees, Oaks, Willows",
+            "≈ 1 in 111,294",
+            "≈ 1 in 166,941"
+          ],
+          [
+            "Maples",
+            "≈ 1 in 86,562",
+            "≈ 1 in 129,843"
+          ],
+          [
+            "Yews",
+            "≈ 1 in 77,906",
+            "≈ 1 in 116,859"
+          ],
+          [
+            "Magic Trees",
+            "≈ 1 in 70,823",
+            "≈ 1 in 106,235"
+          ]
+        ]
+      },
+      {
+        "title": "Cooking · Pickles and Biscuit",
+        "collapsed": true,
+        "columns": [
+          "Eligible task",
+          "Pickles",
+          "Biscuit"
+        ],
+        "rows": [
+          [
+            "Pick Wheat, Pick Redberries",
+            "≈ 1 in 259,686",
+            "≈ 1 in 389,529"
+          ],
+          [
+            "Grind Flour, Knead Dough, Assemble Redberry Pie, Assemble Meat Pie, Assemble Apple Pie",
+            "≈ 1 in 389,529",
+            "≈ 1 in 584,293"
+          ],
+          [
+            "Cook Shrimp, Cook Meat, Cook Frog on a Stick, Cook Chicken, Bake Bread, Cook Sardine, Bake Redberry Pie, Cook Trout, Bake Meat Pie, Cook Salmon, Bake Apple Pie, Cook Lobster, Cook Swordfish, Braise Pyreshell, Cook Shark, Cook Manta Ray",
+            "≈ 1 in 86,562",
+            "≈ 1 in 129,843"
+          ]
+        ]
+      },
+      {
+        "title": "Crafting · Scoop and Stitch",
+        "collapsed": true,
+        "columns": [
+          "Eligible task",
+          "Scoop",
+          "Stitch"
+        ],
+        "rows": [
+          [
+            "Mine Clay, Collect Sand, Shear Sheep, Pick Flax",
+            "≈ 1 in 259,686",
+            "≈ 1 in 389,529"
+          ],
+          [
+            "Spin Wool, Bow String, Cut Sapphire, Cut Emerald, Vial, Cut Ruby, Cut Diamond",
+            "≈ 1 in 194,764",
+            "≈ 1 in 292,146"
+          ],
+          [
+            "Unfired Pot, Pot, Molten Glass, Unfired Pie Dish, Pie Dish",
+            "≈ 1 in 155,811",
+            "≈ 1 in 233,717"
+          ],
+          [
+            "Leather Gloves, Staff, Leather Boots, Gold Amulet, Shovel, Dim Holy Amulet, Dim Evil Amulet, Unpowered Orb, Air Battlestaff, Fire Battlestaff",
+            "≈ 1 in 129,843",
+            "≈ 1 in 194,764"
+          ],
+          [
+            "Burn Seaweed",
+            "≈ 1 in 389,529",
+            "≈ 1 in 584,293"
+          ],
+          [
+            "Leather Armor",
+            "≈ 1 in 111,294",
+            "≈ 1 in 166,941"
+          ],
+          [
+            "Magic Staff, Feathered Cap",
+            "≈ 1 in 97,382",
+            "≈ 1 in 146,073"
+          ],
+          [
+            "Sapphire Amulet, Air Staff, Emerald Amulet, Fire Staff, Ruby Amulet, Battlestaff, Diamond Amulet, Dragonstone Amulet",
+            "≈ 1 in 77,906",
+            "≈ 1 in 116,859"
+          ],
+          [
+            "Emberstone",
+            "≈ 1 in 144",
+            "≈ 1 in 216"
+          ],
+          [
+            "Heartwood Haft",
+            "≈ 1 in 72",
+            "≈ 1 in 108"
+          ],
+          [
+            "Torch of Pyrax, Iskarn's Grip",
+            "≈ 1 in 216",
+            "≈ 1 in 325"
+          ]
+        ]
+      },
+      {
+        "title": "Firemaking · Tinderling and Cinder",
+        "collapsed": true,
+        "columns": [
+          "Eligible task",
+          "Tinderling",
+          "Cinder"
+        ],
+        "rows": [
+          [
+            "Logs, Distilled Ash",
+            "≈ 1 in 155,811",
+            "≈ 1 in 233,717"
+          ],
+          [
+            "Oak Logs, Willow Logs",
+            "≈ 1 in 86,562",
+            "≈ 1 in 129,843"
+          ],
+          [
+            "Maple Logs",
+            "≈ 1 in 70,823",
+            "≈ 1 in 106,235"
+          ],
+          [
+            "Yew Logs",
+            "≈ 1 in 48,691",
+            "≈ 1 in 73,037"
+          ],
+          [
+            "Magic Logs",
+            "≈ 1 in 37,098",
+            "≈ 1 in 55,647"
+          ],
+          [
+            "Everflame Core",
+            "≈ 1 in 72",
+            "≈ 1 in 108"
+          ]
+        ]
+      },
+      {
+        "title": "Fletching · Fibs and Quill",
+        "collapsed": true,
+        "columns": [
+          "Eligible task",
+          "Fibs",
+          "Quill"
+        ],
+        "rows": [
+          [
+            "Arrow Shafts (all listed log variants)",
+            "≈ 1 in 59,927",
+            "≈ 1 in 89,891"
+          ],
+          [
+            "Bronze Arrows, Steel Arrows, Willow Bow (u), Mithril Arrows, Adamant Arrows, Progrite Arrows",
+            "≈ 1 in 55,647",
+            "≈ 1 in 83,470"
+          ],
+          [
+            "Bow (u), Bow, Oak Bow",
+            "≈ 1 in 155,811",
+            "≈ 1 in 233,717"
+          ],
+          [
+            "Fishing Rod, Golden Rod",
+            "≈ 1 in 77,906",
+            "≈ 1 in 116,859"
+          ],
+          [
+            "Oak Bow (u)",
+            "≈ 1 in 70,823",
+            "≈ 1 in 106,235"
+          ],
+          [
+            "Willow Bow",
+            "≈ 1 in 129,843",
+            "≈ 1 in 194,764"
+          ],
+          [
+            "Maple Bow (u)",
+            "≈ 1 in 48,691",
+            "≈ 1 in 73,037"
+          ],
+          [
+            "Maple Bow, Yew Bow",
+            "≈ 1 in 111,294",
+            "≈ 1 in 166,941"
+          ],
+          [
+            "Yew Bow (u)",
+            "≈ 1 in 43,281",
+            "≈ 1 in 64,921"
+          ],
+          [
+            "Magic Bow (u)",
+            "≈ 1 in 37,098",
+            "≈ 1 in 55,647"
+          ],
+          [
+            "Magic Bow",
+            "≈ 1 in 97,382",
+            "≈ 1 in 146,073"
+          ]
+        ]
+      },
+      {
+        "title": "Smithing · Hilda and Smudge",
+        "collapsed": true,
+        "columns": [
+          "Eligible task",
+          "Hilda",
+          "Smudge"
+        ],
+        "rows": [
+          [
+            "Bronze Bar",
+            "≈ 1 in 155,811",
+            "≈ 1 in 233,717"
+          ],
+          [
+            "Bronze Dagger, Bronze Med Helm, Bronze Arrowtips",
+            "≈ 1 in 194,764",
+            "≈ 1 in 292,146"
+          ],
+          [
+            "Bronze Scimitar, Bronze Sq Shield, Iron Shears, Shovel Head",
+            "≈ 1 in 111,294",
+            "≈ 1 in 166,941"
+          ],
+          [
+            "Bronze Armor",
+            "≈ 1 in 48,691",
+            "≈ 1 in 73,037"
+          ],
+          [
+            "Iron Bar, Silver Bar, Steel Dagger, Steel Med Helm, Steel Arrowtips",
+            "≈ 1 in 86,562",
+            "≈ 1 in 129,843"
+          ],
+          [
+            "Logging Axe, Steel Bar",
+            "≈ 1 in 59,927",
+            "≈ 1 in 89,891"
+          ],
+          [
+            "Pickaxe, Mithril Bar",
+            "≈ 1 in 41,003",
+            "≈ 1 in 61,505"
+          ],
+          [
+            "Steel Scimitar, Steel Sq Shield",
+            "≈ 1 in 45,827",
+            "≈ 1 in 68,740"
+          ],
+          [
+            "Steel Armor, Mithril Dagger, Mithril Med Helm",
+            "≈ 1 in 19,001",
+            "≈ 1 in 28,502"
+          ],
+          [
+            "Gold Bar, Mithril Arrowtips",
+            "≈ 1 in 70,823",
+            "≈ 1 in 106,235"
+          ],
+          [
+            "Mithril Scimitar, Mithril Sq Shield",
+            "≈ 1 in 10,973",
+            "≈ 1 in 16,459"
+          ],
+          [
+            "Mithril Armor",
+            "≈ 1 in 4,839",
+            "≈ 1 in 7,258"
+          ],
+          [
+            "Adamantite Bar",
+            "≈ 1 in 15,581",
+            "≈ 1 in 23,372"
+          ],
+          [
+            "Adamant Dagger, Adamant Med Helm",
+            "≈ 1 in 7,950",
+            "≈ 1 in 11,924"
+          ],
+          [
+            "Adamant Scimitar, Adamant Sq Shield",
+            "≈ 1 in 4,583",
+            "≈ 1 in 6,874"
+          ],
+          [
+            "Adamant Arrowtips",
+            "≈ 1 in 25,969",
+            "≈ 1 in 38,953"
+          ],
+          [
+            "Adamant Armor",
+            "≈ 1 in 2,018",
+            "≈ 1 in 3,027"
+          ],
+          [
+            "Progrite Bar",
+            "≈ 1 in 8,201",
+            "≈ 1 in 12,301"
+          ],
+          [
+            "Progrite Dagger, Progrite Med Helm",
+            "≈ 1 in 4,665",
+            "≈ 1 in 6,998"
+          ],
+          [
+            "Brimstone Axe Head",
+            "≈ 1 in 72",
+            "≈ 1 in 108"
+          ],
+          [
+            "Progrite Scimitar, Progrite Sq Shield",
+            "≈ 1 in 2,659",
+            "≈ 1 in 3,988"
+          ],
+          [
+            "Progrite Arrowtips",
+            "≈ 1 in 14,699",
+            "≈ 1 in 22,049"
+          ],
+          [
+            "Progrite Armor",
+            "≈ 1 in 1,161",
+            "≈ 1 in 1,742"
+          ]
+        ]
+      },
+      {
+        "title": "Good Magic · Riddle and Merlin",
+        "collapsed": true,
+        "columns": [
+          "Eligible task",
+          "Riddle",
+          "Merlin"
+        ],
+        "rows": [
+          [
+            "Low Alchemy, Enchant Amulet 2, Practice Teleport",
+            "≈ 1 in 70,823",
+            "≈ 1 in 106,235"
+          ],
+          [
+            "Bones to Bread, Enchant Amulet 4, Enchant Amulet 5",
+            "≈ 1 in 48,691",
+            "≈ 1 in 73,037"
+          ],
+          [
+            "Enchant Amulet 1",
+            "≈ 1 in 86,562",
+            "≈ 1 in 129,843"
+          ],
+          [
+            "Telegrab Natures",
+            "≈ 1 in 25,131",
+            "≈ 1 in 37,696"
+          ],
+          [
+            "Telegrab Gold",
+            "≈ 1 in 37,098",
+            "≈ 1 in 55,647"
+          ],
+          [
+            "Superheat Steel, Air Orb, Fire Orb",
+            "≈ 1 in 129,843",
+            "≈ 1 in 194,764"
+          ],
+          [
+            "Superheat Mithril",
+            "≈ 1 in 97,382",
+            "≈ 1 in 146,073"
+          ],
+          [
+            "Superheat Adamant",
+            "≈ 1 in 29,964",
+            "≈ 1 in 44,946"
+          ],
+          [
+            "Enchant Amulet 3, High Alchemy",
+            "≈ 1 in 59,927",
+            "≈ 1 in 89,891"
+          ]
+        ]
+      },
+      {
+        "title": "Herblaw · Hubble and Sage",
+        "collapsed": true,
+        "columns": [
+          "Eligible task",
+          "Hubble",
+          "Sage"
+        ],
+        "rows": [
+          [
+            "Brew any listed standard or super skill potion",
+            "≈ 1 in 4,037",
+            "≈ 1 in 6,055"
+          ]
+        ]
+      },
+      {
+        "title": "Piety · Peace Moth and Clement",
+        "collapsed": true,
+        "columns": [
+          "Eligible task",
+          "Peace Moth",
+          "Clement"
+        ],
+        "rows": [
+          [
+            "Bones, Big Bones, Dragon Bones",
+            "≈ 1 in 259,686",
+            "≈ 1 in 389,529"
+          ]
+        ]
+      },
+      {
+        "title": "Combat pet drops",
+        "columns": [
+          "Encounter",
+          "Pet",
+          "Map",
+          "Odds per eligible kill"
+        ],
+        "rows": [
+          [
+            "Morvane",
+            "Beatrix",
+            "Danger Meadows map",
+            "1 in 64"
+          ],
+          [
+            "Moss Giant",
+            "Beatrix",
+            "Danger Meadows map",
+            "1 in 32,768"
+          ],
+          [
+            "Druid Warrior",
+            "Beatrix",
+            "Danger Meadows map",
+            "1 in 32,768"
+          ],
+          [
+            "Bear",
+            "Beatrix",
+            "Danger Meadows map",
+            "1 in 65,536"
+          ],
+          [
+            "Cow",
+            "Beatrix",
+            "Danger Meadows map",
+            "1 in 262,144"
+          ],
+          [
+            "Insect Swarm",
+            "Beatrix",
+            "Danger Meadows map",
+            "1 in 262,144"
+          ],
+          [
+            "King Onyx Dragon",
+            "Scales",
+            "Danger Dragon map",
+            "1 in 64"
+          ],
+          [
+            "Blue Dragon",
+            "Scales",
+            "Danger Dragon map",
+            "1 in 262,144"
+          ],
+          [
+            "Dragon Whelp",
+            "Scales",
+            "Danger Dragon map",
+            "1 in 1,048,576"
+          ]
+        ]
+      },
+      {
+        "title": "Blue Lobster",
+        "columns": [
+          "Catch",
+          "Task",
+          "Location",
+          "Odds per action"
+        ],
+        "rows": [
+          [
+            "Blue Lobster",
+            "Catch lobster (Fishing 40)",
+            "Crab Cage Spot, Solace Shoals",
+            "1 in 2,000,000"
+          ]
+        ]
+      },
+      {
+        "title": "Mork’s maps · 10 Audience Favor each",
+        "columns": [
+          "Companion",
+          "Pet",
+          "Map",
+          "Skill"
         ],
         "rows": [
           [
@@ -13437,12 +14084,12 @@
         ]
       },
       {
-        "title": "Otis's mud-stamped maps available for 15 Audience Favors (Members Only)",
+        "title": "Otis’s maps · 15 Audience Favor each, membership required",
         "columns": [
-          "Pet Figure",
-          "Pet Name",
-          "Pet Map Name",
-          "Skill Needed"
+          "Companion",
+          "Pet",
+          "Map",
+          "Skill"
         ],
         "rows": [
           [
@@ -13509,10 +14156,76 @@
             "Moss-brown Capybara",
             "Sage",
             "Herb Garden map",
-            "Herb Law"
+            "Herblaw"
           ]
         ]
       }
+    ],
+    "sections": [
+      [
+        "Skilling odds by task",
+        "Open a skill below for approximate base odds per eligible action with the matching map. The May 15 developer update gives a 2× chance at skill level 70 and 3× at level 85. Divide the listed denominator by two or three to estimate the boosted chance. These bonuses apply to mapped skilling pets."
+      ],
+      [
+        "Where the estimates come from",
+        "The Microscape Scribe lists odds that vary by task. A second fan database reports lower flat skilling rates. The exact base rates still need in-game confirmation."
+      ],
+      [
+        "Where to get a map",
+        "Visit Mork or Otis at Fellroot Swamp Hut and buy the map for the pet you want. Carry that map while training or fighting. The map is consumed when you find its pet."
+      ]
+    ],
+    "related": [
+      "blue-lobster",
+      "fellroot-swamp-hut",
+      "solace-shoals",
+      "morvane",
+      "moss-giant",
+      "druid-warrior",
+      "bear",
+      "cow",
+      "insect-swarm",
+      "king-onyx-dragon",
+      "blue-dragon",
+      "dragon-whelp"
+    ],
+    "sources": [
+      [
+        "The Microscape Scribe · skill activity database",
+        "https://thescribe.tips/database"
+      ],
+      [
+        "The Microscape Scribe · Finding pets field note",
+        "https://thescribe.tips/guides"
+      ],
+      [
+        "Microscape patch notes · May 15, 2026 pet chance bonuses",
+        "https://microscape.cc/patch-notes/"
+      ],
+      [
+        "Miraheze pet map reference and Blue Lobster",
+        "https://microscape.miraheze.org/wiki/Pets"
+      ],
+      [
+        "Miraheze source revision 2294",
+        "https://microscape.miraheze.org/wiki/Special:PermanentLink/2294"
+      ],
+      [
+        "Miraheze contributor history",
+        "https://microscape.miraheze.org/wiki/Pets?action=history"
+      ],
+      [
+        "Community encounter drop tables",
+        "https://microwiki.mhmm.pl/pets"
+      ],
+      [
+        "Community guide reporting flat skilling odds",
+        "https://microwiki.mhmm.pl/guides/how-to-get-pets"
+      ],
+      [
+        "Miraheze content license · CC BY-SA 4.0",
+        "https://creativecommons.org/licenses/by-sa/4.0/"
+      ]
     ]
   },
   {

@@ -291,9 +291,14 @@ function renderEntry(entry) {
     article.append(element("dl", {class:"facts"}, ...entry.facts.map(([label, value]) => element("div", {}, element("dt", {}, label), element("dd", {}, value)))));
   }
   for (const table of entry.tables || []) {
+    const content = renderTable(table, entry.related);
+    if (table.collapsed) {
+      article.append(element("details", {class:"table-disclosure"}, element("summary", {}, table.title), content));
+      continue;
+    }
     article.append(element("section", {},
       element("h2", {}, table.title || "Reference"),
-      renderTable(table, entry.related)
+      content
     ));
   }
   const related = (entry.related || []).filter(id => byId.has(id));

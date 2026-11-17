@@ -124,6 +124,10 @@ h3 { margin-bottom: 6px; font-size: 17px; }
 .facts dt { color: var(--muted); font-size: 13px; }
 .facts dd { margin: 0; font-weight: 700; }
 .table-wrap { overflow: auto; border: 1px solid var(--line); border-radius: 8px; }
+.table-disclosure { margin: 9px 0; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); }
+.table-disclosure summary { padding: 10px 14px; color: var(--mint); font-weight: 700; cursor: pointer; }
+.table-disclosure .table-wrap { margin: 0 10px 10px; }
+.table-disclosure td:first-child { width: 65%; }
 table { border-collapse: collapse; width: 100%; text-align: left; font-size: 14px; }
 th, td { padding: 9px 12px; border-bottom: 1px solid var(--line); vertical-align: top; min-width: 65px; }
 th { background: #1b2b3f; color: var(--text); }
