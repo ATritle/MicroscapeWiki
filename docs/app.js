@@ -345,13 +345,29 @@ function renderLocationMap(entry) {
   );
 }
 
+function linkMentions(text, references) {
+  let parts = [text];
+  for (const {id, title} of references) {
+    parts = parts.flatMap(part => {
+      if (typeof part !== "string") return [part];
+      return part.split(title).flatMap((piece, index) =>
+        index === 0 ? [piece] : [entryLink(id, title), piece]
+      );
+    });
+  }
+  return parts;
+}
+
 function renderEntry(entry, category) {
   const article = element("article", {class:"article"},
     crumbs(category, entry.title)
   );
+  const inlineReferences = category === "tutorials"
+    ? (entry.related || []).map(id => byId.get(id)).filter(ref => ref?.category === "items" || ref?.category === "abilities")
+    : [];
   const title = [
     element("h1", {}, entry.title),
-    ...(entry.summary ? [element("p", {class:"intro"}, entry.summary)] : [])
+    ...(entry.summary ? [element("p", {class:"intro"}, ...linkMentions(entry.summary, inlineReferences))] : [])
   ];
   const facts = entry.facts?.length ? [
     element("dl", {class:"facts"}, ...entry.facts.map(([label, value]) => element("div", {}, element("dt", {}, label), element("dd", {}, value))))
@@ -378,7 +394,10 @@ function renderEntry(entry, category) {
   if (entry.calculator) article.append(calculator());
   if (!art && !entry.mapImage) article.append(...facts);
   for (const [heading, text] of entry.sections || []) {
-    article.append(element("section", {}, element("h2", {}, heading), element("p", {}, text)));
+    article.append(element("section", {},
+      element("h2", {}, ...linkMentions(heading, inlineReferences)),
+      element("p", {}, ...linkMentions(text, inlineReferences))
+    ));
   }
   for (const table of entry.tables || []) {
     if (!table.rows.length && table.empty) {
