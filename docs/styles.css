@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Young+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Explora&family=Young+Serif&display=swap');
 
 :root {
   color-scheme: dark;
@@ -67,8 +67,9 @@ h3 { margin-bottom: 6px; font-size: 17px; }
 .hero { min-height: 308px; display: flex; align-items: center; isolation: isolate; padding: clamp(24px, 4vw, 58px); border: 1px solid #344558; border-radius: 14px; overflow: hidden; background: linear-gradient(90deg, #080f1bea 0%, #080f1ba0 43%, #080f1b15 82%), #142231 url('./assets/twilight-village.jpg') center / cover; }
 .hero-copy { max-width: 565px; min-width: 0; }
 .hero-brand { display: flex; flex-wrap: wrap; align-items: center; gap: 2px 13px; margin-bottom: 10px; }
-.hero-wordmark { width: clamp(162px, 21vw, 245px); aspect-ratio: 3; flex: none; }
-.hero-wordmark span { display: block; width: 100%; height: 100%; background: #32c1b0; mask: url('./assets/mzdunk-wordmark.png') center 49% / 103.9% auto no-repeat; }
+.hero-wordmark { display: inline-flex; align-items: center; flex: none; color: #32c1b0; }
+.hero-wordmark-signature { width: clamp(162px, 21vw, 245px); aspect-ratio: 3; background: currentColor; mask: url('./assets/mzdunk-wordmark.png') center 49% / 103.9% auto no-repeat; }
+.hero-wordmark-suffix { margin-left: -2px; font: clamp(40px, 5.4vw, 62px)/1 "Explora", "Segoe Script", cursive; -webkit-text-stroke: .7px currentColor; transform: translateY(.14em); }
 .hero-brand-label { color: #e6f9f5; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .15em; }
 .hero h1 { font-size: clamp(2.6rem, 5vw, 4.2rem); }
 .hero-title-wiki { font-size: .55em; white-space: nowrap; }

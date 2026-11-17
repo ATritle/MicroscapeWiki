@@ -121,7 +121,10 @@ function renderHome() {
   const hero = element("section", {class:"hero", "aria-labelledby":"page-title"},
     element("div", {class:"hero-copy"},
       element("p", {class:"hero-brand"},
-        element("span", {class:"hero-wordmark", "aria-hidden":"true"}, element("span")),
+        element("span", {class:"hero-wordmark", "aria-hidden":"true"},
+          element("span", {class:"hero-wordmark-signature"}),
+          element("span", {class:"hero-wordmark-suffix"}, "’s")
+        ),
         element("span", {class:"visually-hidden"}, "MzDunk’s "),
         element("span", {class:"hero-brand-label"}, "Community Wiki")
       ),
