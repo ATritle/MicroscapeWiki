@@ -1,6 +1,10 @@
 const official = "https://microscape.cc/";
 const patches = "https://microscape.cc/patch-notes/";
 const wiki = "https://microscape.miraheze.org/wiki/";
+const twitchPoints = "https://help.twitch.tv/s/article/viewer-channel-point-guide?language=en_US";
+
+const findStreams = "Open Streams in Microscape to see live Twitch communities. Choose a channel with Microscape enabled and open it on Twitch. Sending a chat message or redeeming a Microscape Channel Points reward counts as participation for Energy. Check Journal → History → Energy for the award after the next check.";
+const streamEnergyRates = "The badge shows how much in-game playtime you earn per hour of eligible viewing. 1.2× is 72 minutes of Energy per hour; 1.3× is 78 minutes per hour. Regular Microscape streams show 1.2×, and Member streams normally show 1.3×. Long-running streams have lower rates and skip the daily Energy bonus. Select the badge for details. These rates apply to in-game Energy; Twitch Channel Points and Audience Favor are separate.";
 
 export const guides = [
   {
@@ -19,14 +23,15 @@ export const guides = [
   {
     id: "energy",
     title: "Energy and idle play",
-    summary: "Find an enabled Twitch channel, check Energy in the Journal, and diagnose an activity that stopped.",
+    summary: "Find a live Twitch community, understand the Energy rate beside its name, and check your earnings.",
     sections: [
-      ["Where playtime comes from", "Participation in Twitch communities that have enabled Microscape earns Energy. Look for the channel’s Microscape-specific rewards and use the game’s Journal under Energy to see when an award arrived. The current community reference describes periodic Twitch activity checks, so allow time for the next check after interacting."],
+      ["Find a Twitch community in Streams", findStreams],
+      ["What 1.2× and 1.3× Energy mean", streamEnergyRates],
       ["If an activity stops", "Check for an Energy runout event in the Journal. Then review the activity for exhausted materials, ammunition, runes or food. For a dungeon run, also examine its entry or chamber requirements."],
-      ["Channel rewards", "Participating channels may offer Energy through Twitch Channel Points. The channel controls its rewards and point costs. Read the reward on Twitch for its current amount and who receives it."]
+      ["Redeem Channel Points for Energy", "Open the Channel Points menu below Twitch chat. Look for Microscape rewards such as I’m lurkin’ n scapin’, +6hr for Me, or +1hr for All. The first counts as participation; the other two grant bonus Energy to you or the community, respectively. A streamer can rename or disable rewards, so read the description and point cost before redeeming."]
     ],
     related: ["getting-started", "activity-queue", "audience-favor"],
-    sources: [["Official Microscape website", official], ["September 30 patch notes", patches], ["Energy reference on Miraheze", wiki + "Energy"]]
+    sources: [["Microscape game: Streams and Journal", official + "play/"], ["Twitch Channel Points viewer guide", twitchPoints], ["Energy reference on Miraheze", wiki + "Energy"]]
   },
   {
     id: "combat",
@@ -79,14 +84,18 @@ export const guides = [
   {
     id: "audience-favor",
     title: "Audience Favor and festivals",
-    summary: "Find Favor sources and see how the currency connects to pet maps.",
+    summary: "Find live Drop Festivals in Streams, redeem Claim Drop on Twitch, and earn Favor without Channel Points through achievements.",
     sections: [
-      ["Earn Favor", "The October 6 patch switched achievement rewards to Audience Favor. Participating Twitch channels can also run Drop Festivals with channel rewards. Read the reward in the channel you are watching to see its rules."],
-      ["Spend Favor on maps", "Mork and Otis in Fellroot Swamp Hut sell pet maps. The community catalog associates each map with an activity or a skill. Check the current map price and any membership requirement at the vendor before buying."],
-      ["If a redemption is missing", "Check the Twitch redemption and the game’s Journal or inventory. The September 21 update added processing for redemptions fulfilled manually by the streamer or a moderator."]
+      ["Find an active Drop Festival in Streams", "Open Streams in Microscape and look for a live channel marked at Drop Festival or with a combined Drop & Dungeon badge. Depending on your Streams view, festivals may appear under Events. A Drop Festival runs for five hours. Select the channel to open Twitch or select the event timer for more details."],
+      ["How many Channel Points does Claim Drop cost?", "In the festival channel, open the Channel Points menu below Twitch chat and look for the temporary Claim Drop reward. Read the point cost on its tile before you redeem; the in-game manual does not list a numeric price. If the reward was renamed, look for Audience Favor in the description. You need enough points in that specific channel, because Twitch Channel Points don’t transfer between channels. Redeem before the festival ends."],
+      ["Check that your Favor arrived", "In Microscape, open Journal → History and select Audience Favors. Look for a Drop festival entry with the channel name and the amount awarded. If you don’t see it, check whether Twitch accepted the redemption and whether you used the Twitch account connected to your character."],
+      ["Earn Favor without Twitch Channel Points", "Open the Tome of Knowledge → Achievements to see which goals award Favor. The Journey Begins gives 3 Favor for reaching level 10 in any skill; Awakening Power gives 6 for your first ability limit break. You can also visit Brother Pela at Falcrest Reach Temple. His Time for a Favor exchange requires Piety 1 and trades 1 Time Crystal for 1 Favor."],
+      ["Find Energy rewards in Streams", findStreams + " Rewards like +6hr for Me and +1hr for All add Energy. Claim Drop grants Favor, and Claim Dungeon Key grants a key."],
+      ["What 1.2× and 1.3× Energy mean", streamEnergyRates],
+      ["Spend Favor", "Mork sells pet maps for 10 Favor in Fellroot Swamp Hut. Otis’s maps cost 15 Favor and require Adventurer’s Guild membership. At Falcrest Reach Temple, Brother Alep exchanges 3 Favor for a Time Crystal or 15 for a Bazaar Permit."]
     ],
-    related: ["pets", "fellroot-swamp-hut", "energy"],
-    sources: [["Official Microscape website", official], ["September 21 and October 6 patch notes", patches], ["Pet map reference on Miraheze", wiki + "Pets"]]
+    related: ["item-audience-favor", "energy", "pets", "fellroot-swamp-hut", "falcrest-reach-temple"],
+    sources: [["Microscape game: Streams, Channel Points manual and Achievements", official + "play/"], ["October 6 patch notes", patches], ["Twitch Channel Points viewer guide", twitchPoints]]
   },
   {
     id: "limit-breaks",

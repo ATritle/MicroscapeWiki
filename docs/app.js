@@ -1,4 +1,4 @@
-import { guides } from "./guides.js";
+import { guides } from "./guides.js?v=audience-favor";
 import { tutorials } from "./tutorials.js";
 import { buildPetEntries } from "./pets.js?v=world-sprites";
 import { itemIcons, itemIconGroups } from "./item-icons.js";
