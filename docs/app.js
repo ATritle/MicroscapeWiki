@@ -120,7 +120,11 @@ function footer() {
 function renderHome() {
   const hero = element("section", {class:"hero", "aria-labelledby":"page-title"},
     element("div", {class:"hero-copy"},
-      element("p", {class:"eyebrow"}, "MzDunk’s community wiki"),
+      element("p", {class:"hero-brand"},
+        element("span", {class:"hero-wordmark", "aria-hidden":"true"}, element("span")),
+        element("span", {class:"visually-hidden"}, "MzDunk’s "),
+        element("span", {class:"hero-brand-label"}, "Community Wiki")
+      ),
       element("h1", {id:"page-title"}, "Microscape Wiki"),
       element("p", {}, "Player guides and reference tables for the Twitch-powered browser idle RPG."),
       element("div", {class:"actions"},
@@ -257,6 +261,12 @@ function renderTable(table, relatedIds = [], namedLinks = new Map()) {
   })));
   const body = element("tbody", {}, ...table.rows.map(row => element("tr", {},
     ...row.map((value, col) => {
+      if (table.listColumns?.includes(col)) {
+        return element("td", {}, ...value.split(" · ").flatMap((label, index) => {
+          const target = names.get(normalize(label));
+          return [...(index ? [" · "] : []), target ? entryLink(target, label) : label];
+        }));
+      }
       const key = normalize(value);
       const target = namedLinks.get(key) || (col === 0 ? names.get(key) : null);
       return element("td", {}, target ? entryLink(target, value) : value);
@@ -359,6 +369,7 @@ function renderEntry(entry, category) {
     }
     article.append(element("section", {},
       element("h2", {}, table.title || "Reference"),
+      ...(table.description ? [element("p", {}, table.description)] : []),
       content
     ));
   }
