@@ -306,9 +306,11 @@ function renderEntry(entry, category) {
   } else {
     article.append(...title);
   }
-  if (entry.sourceDate) {
+  const referenceDate = entry.statsDate || entry.sourceDate;
+  if (referenceDate) {
+    const label = entry.statsDate ? "Game client checked " : "Beta reference · Source revised ";
     article.append(element("div", {class:"notice"}, glyph("◷"),
-      element("p", {}, "Beta reference · Source revised ", element("time", {datetime:entry.sourceDate}, entry.sourceDate), ". Check current in-game values.")
+      element("p", {}, label, element("time", {datetime:referenceDate}, referenceDate), ". Check current in-game values.")
     ));
   }
   if (entry.indexOnly) article.append(element("p", {class:"intro"}, "Listed in the community catalog. Detailed values are still needed."));
