@@ -7,7 +7,7 @@ const groups = {
   skills: { title: "Skills", icon: "✧", blurb: "Training activities, unlocks and supplies." },
   items: { title: "Items", icon: "◇", blurb: "Browse gear, materials, food and tools." },
   foes: { title: "Foes", icon: "⚔", blurb: "Find enemies, dungeon bosses and their loot." },
-  locations: { title: "Locations", icon: "⌖", blurb: "Find towns, resource spots and dungeons." },
+  locations: { title: "Locations", icon: "⌖", blurb: "Explore in-game maps, travel routes, enemies, shops and skilling spots." },
   abilities: { title: "Abilities", icon: "ϟ", blurb: "Equipment requirements and limit break costs." },
   pets: { title: "Pets", icon: "✿", blurb: "Companions, pet maps, eligible tasks and drop odds." },
   reference: { title: "Game mechanics", icon: "◈", blurb: "Pet maps, titles, healing and equipment bonuses." }
@@ -125,11 +125,10 @@ function renderHome() {
         element("span", {class:"visually-hidden"}, "MzDunk’s "),
         element("span", {class:"hero-brand-label"}, "Community Wiki")
       ),
-      element("h1", {id:"page-title"}, "Microscape Wiki"),
+      element("h1", {id:"page-title"}, "Microscape ", element("span", {class:"hero-title-wiki"}, "Wiki")),
       element("p", {}, "Player guides and reference tables for the Twitch-powered browser idle RPG."),
       element("div", {class:"actions"},
-        element("a", {class:"button primary", href:entryUrl("getting-started")}, "Getting started", glyph("→", "")),
-        entryLink("experience", "XP calculator", "button outline")
+        element("a", {class:"button primary", href:entryUrl("getting-started")}, "Getting started", glyph("→", ""))
       )
     )
   );
@@ -326,6 +325,16 @@ function calculator() {
   );
 }
 
+function renderLocationMap(entry) {
+  const {src, width, height} = entry.mapImage;
+  return element("figure", {class:"location-map"},
+    element("a", {class:"location-map-image", href:src, "aria-label":`Open ${entry.title} map at full size (new tab)`, target:"_blank", rel:"noopener"},
+      element("img", {src, alt:`In-game map of ${entry.title}`, width, height, decoding:"async", referrerpolicy:"no-referrer"})
+    ),
+    element("figcaption", {}, "Original in-game map · Select the image for full size.")
+  );
+}
+
 function renderEntry(entry, category) {
   const article = element("article", {class:"article"},
     crumbs(category, entry.title)
@@ -347,6 +356,7 @@ function renderEntry(entry, category) {
   } else {
     article.append(...title);
   }
+  if (entry.mapImage) article.append(...facts, renderLocationMap(entry));
   const referenceDate = entry.statsDate || entry.sourceDate;
   if (referenceDate) {
     const label = entry.statsDate ? "Game client checked " : "Beta reference · Source revised ";
@@ -356,11 +366,15 @@ function renderEntry(entry, category) {
   }
   if (entry.indexOnly) article.append(element("p", {class:"intro"}, "Listed in the community catalog. Detailed values are still needed."));
   if (entry.calculator) article.append(calculator());
-  if (!art) article.append(...facts);
+  if (!art && !entry.mapImage) article.append(...facts);
   for (const [heading, text] of entry.sections || []) {
     article.append(element("section", {}, element("h2", {}, heading), element("p", {}, text)));
   }
   for (const table of entry.tables || []) {
+    if (!table.rows.length && table.empty) {
+      article.append(element("section", {}, element("h2", {}, table.title), element("p", {}, table.empty)));
+      continue;
+    }
     const showPetLinks = entry.id === "pets";
     const content = renderTable(table, table.related || entry.related, showPetLinks ? petLinks : undefined);
     if (table.collapsed) {
@@ -385,7 +399,7 @@ function renderEntry(entry, category) {
     ["Contributor history", entry.sourceUrl + "?action=history"],
     ["CC BY-SA 4.0", "https://creativecommons.org/licenses/by-sa/4.0/"]
   ])];
-  if (art) {
+  if (art || entry.mapImage) {
     sources.push(entry.id === "steel-pickaxe"
       ? ["Archived Steel Pickaxe icon on Miraheze", "https://microscape.miraheze.org/wiki/File:Steel_Pickaxe.png"]
       : ["Microscape game artwork credits", "https://microscape.cc/credits/"]
