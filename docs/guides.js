@@ -87,15 +87,17 @@ export const guides = [
     summary: "Find live Drop Festivals in Streams, redeem Claim Drop on Twitch, and earn Favor without Channel Points through achievements.",
     sections: [
       ["Find an active Drop Festival in Streams", "Open Streams in Microscape and look for a live channel marked at Drop Festival or with a combined Drop & Dungeon badge. Depending on your Streams view, festivals may appear under Events. A Drop Festival runs for five hours. Select the channel to open Twitch or select the event timer for more details."],
-      ["How many Channel Points does Claim Drop cost?", "In the festival channel, open the Channel Points menu below Twitch chat and look for the temporary Claim Drop reward. Read the point cost on its tile before you redeem; the in-game manual does not list a numeric price. If the reward was renamed, look for Audience Favor in the description. You need enough points in that specific channel, because Twitch Channel Points don’t transfer between channels. Redeem before the festival ends."],
-      ["Check that your Favor arrived", "In Microscape, open Journal → History and select Audience Favors. Look for a Drop festival entry with the channel name and the amount awarded. If you don’t see it, check whether Twitch accepted the redemption and whether you used the Twitch account connected to your character."],
+      ["Claim Drop: 400 points for 1 Audience Favor", "The player-reported price is 400 Twitch Channel Points during an active Drop Festival. A successful claim awards 1 Audience Favor. Open the Channel Points menu below Twitch chat and check the Claim Drop tile for the price before redeeming. If the reward was renamed, look for Audience Favor in its description."],
+      ["Get 300 Channel Points for following", "The first time you follow a Twitch channel with Channel Points enabled, Twitch credits 300 points to that channel’s balance. If you started at zero, that leaves 100 more points to earn toward a 400-point Claim Drop. Watch the stream and collect any bonus points Twitch offers. Points stay with the channel where you earned them."],
+      ["Check that your Favor arrived", "In Microscape, open Journal → History and select Audience Favors. Look for a Drop festival entry with the channel name and +1. If you don’t see it, check whether Twitch accepted the redemption and whether you used the Twitch account connected to your character."],
       ["Earn Favor without Twitch Channel Points", "Open the Tome of Knowledge → Achievements to see which goals award Favor. The Journey Begins gives 3 Favor for reaching level 10 in any skill; Awakening Power gives 6 for your first ability limit break. You can also visit Brother Pela at Falcrest Reach Temple. His Time for a Favor exchange requires Piety 1 and trades 1 Time Crystal for 1 Favor."],
-      ["Find Energy rewards in Streams", findStreams + " Rewards like +6hr for Me and +1hr for All add Energy. Claim Drop grants Favor, and Claim Dungeon Key grants a key."],
+      ["Dungeon Key and lurk rewards", "Claim Dungeon Key has a player-reported price of 2,000 Channel Points during a Dungeon Key event. I’m Lurkin’ n scapin’ counts as participation for Energy and has a player-reported price of 10 Channel Points. Streamers can set a different lurk price, so check the reward tile."],
+      ["Find Energy rewards in Streams", findStreams + " Rewards like +6hr for Me and +1hr for All add Energy."],
       ["What 1.2× and 1.3× Energy mean", streamEnergyRates],
       ["Spend Favor", "Mork sells pet maps for 10 Favor in Fellroot Swamp Hut. Otis’s maps cost 15 Favor and require Adventurer’s Guild membership. At Falcrest Reach Temple, Brother Alep exchanges 3 Favor for a Time Crystal or 15 for a Bazaar Permit."]
     ],
     related: ["item-audience-favor", "energy", "pets", "fellroot-swamp-hut", "falcrest-reach-temple"],
-    sources: [["Microscape game: Streams, Channel Points manual and Achievements", official + "play/"], ["October 6 patch notes", patches], ["Twitch Channel Points viewer guide", twitchPoints]]
+    sources: [["Microscape game: Streams, Journal, Channel Points manual and Achievements", official + "play/"], ["October 6 patch notes", patches], ["Twitch Channel Points viewer guide", twitchPoints]]
   },
   {
     id: "limit-breaks",

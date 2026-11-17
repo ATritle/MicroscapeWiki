@@ -4683,7 +4683,11 @@
     "sections": [
       [
         "Redeem a Drop Festival reward",
-        "Open Streams in Microscape and choose a live Twitch channel marked at Drop Festival or Drop & Dungeon. On Twitch, open the Channel Points menu below chat, find Claim Drop, and check the price shown on the reward tile before redeeming. The in-game manual doesn’t give an exact point cost. Check Journal → History → Audience Favors for the channel and the amount awarded."
+        "Claim Drop awards 1 Audience Favor. The player-reported price is 400 Twitch Channel Points. Open Streams in Microscape and choose a live Twitch channel marked at Drop Festival or Drop & Dungeon. Check the Claim Drop tile in the Channel Points menu below Twitch chat before redeeming. In Microscape, check Journal → History → Audience Favors for the channel name and +1."
+      ],
+      [
+        "Get a head start on Channel Points",
+        "Twitch awards 300 points the first time you follow a channel with Channel Points enabled. If your balance was zero, you’ll need 100 more points for a 400-point Claim Drop. Earn them in the channel hosting the festival."
       ],
       [
         "Earn Favor without Channel Points",
