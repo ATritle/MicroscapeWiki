@@ -69,6 +69,7 @@ export function buildPetEntries(reference) {
     const isCombat = skill === "Combat";
     const skillEntry = byId.get(slug(skill));
     const art = portrait(name);
+    const sprite = overview.companionSprites?.[name];
     const profile = {
       id: "pet-" + slug(name),
       category: "pets",
@@ -76,6 +77,7 @@ export function buildPetEntries(reference) {
       title: name,
       summary: companion + " · " + skill,
       portrait: art,
+      ...(sprite ? {sprites:[sprite]} : {}),
       facts: [["Skill", skill], ["Pet Map", map], ["Vendor", vendor.name], ["Cost", vendor.cost + " Audience Favor"]],
       sections: [
         ["How to get " + name, "Trade with " + vendor.name + " at Fellroot Swamp Hut for the " + map + ". " +
@@ -147,7 +149,7 @@ export function buildPetEntries(reference) {
     portrait: catchPortrait,
     facts: [["Fishing level", "40"], ["Map", "None required"]],
     sections: [
-      ["How to find Blue Lobster", "Fish for lobster at the Crab Cage Spot in Solace Shoals. The November beta reference records the Blue Lobster as a rare catch and describes a planned pet conversion after the reset."]
+      ["How to find Blue Lobster", "Fish for lobster at the Crab Cage Spot in Solace Shoals. The November beta reference records the Blue Lobster as a rare catch and describes a planned pet conversion after the reset. The game client for this update has no companion sprite for Blue Lobster."]
     ],
     tables: [{title: "Catch odds", columns: ["Task", "Location", "Odds per action"], rows: [[task, location, odds]]}],
     related: ["solace-shoals", "fishing", "blue-lobster", "pets"],

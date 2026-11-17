@@ -761,6 +761,23 @@
         "Microscape public game data (November 17, 2026)",
         "https://microscape.cc/play/assets/index-Bjzb2vNm.js"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/theJohnnyWorld-BgTMfpll.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          32,
+          32,
+          28
+        ]
+      }
     ]
   },
   {
@@ -831,6 +848,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/clothesJulianWorld-Nl7t2KHF.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          64,
+          28,
+          12
+        ]
+      }
     ]
   },
   {
@@ -944,6 +978,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/adamantArmorWorld-Bl8AXvRB.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          64,
+          28,
+          12
+        ]
+      }
     ]
   },
   {
@@ -1235,6 +1286,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/adamantDaggerWorld-Du3zEIjG.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          68,
+          60,
+          16,
+          16
+        ]
+      }
     ]
   },
   {
@@ -1340,6 +1408,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/adamantMedHelmWorld-DOCHaKpI.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          52,
+          48,
+          24,
+          16
+        ]
+      }
     ]
   },
   {
@@ -1429,6 +1514,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/adamantScimitarWorld-Cie8hscL.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          68,
+          52,
+          20,
+          24
+        ]
+      }
     ]
   },
   {
@@ -1514,6 +1616,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/adamantSqShieldWorld-BhYOCsOS.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          60,
+          12,
+          16
+        ]
+      }
     ]
   },
   {
@@ -1809,6 +1928,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/clothesAdventurerWorld-DwoehAjo.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          64,
+          28,
+          12
+        ]
+      }
     ]
   },
   {
@@ -1907,6 +2043,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/airBattlestaffWorld-Bh9HlofT.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          72,
+          40,
+          20,
+          36
+        ]
+      }
     ]
   },
   {
@@ -2238,6 +2391,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/airStaffWorld-DH58v3xp.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          72,
+          44,
+          20,
+          32
+        ]
+      }
     ]
   },
   {
@@ -2437,7 +2607,71 @@
         "Open the World Map, select Al-Sahra and choose Travel Here. The pin is northeast of Al-Sahra Mine."
       ]
     ],
-    "summary": "Visit for Smithing, Crafting, Cooking, Herblaw."
+    "summary": "Visit for Smithing, Crafting, Cooking, Herblaw.",
+    "npcSprites": [
+      {
+        "label": "Tanner",
+        "layers": [
+          "https://microscape.cc/play/assets/skin3World-uZ9SWQAz.png",
+          "https://microscape.cc/play/assets/clothesApronWorld-CxOchvWx.png",
+          "https://microscape.cc/play/assets/shortBlackWorld-CW21TBoF.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          44,
+          28,
+          32
+        ]
+      },
+      {
+        "label": "Shopkeeper",
+        "layers": [
+          "https://microscape.cc/play/assets/skin4World-B3L0v_zU.png",
+          "https://microscape.cc/play/assets/clothesDesertWorld-fdzai9oJ.png",
+          "https://microscape.cc/play/assets/shortBlackWorld-CW21TBoF.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          44,
+          28,
+          32
+        ]
+      },
+      {
+        "label": "Azar's Glovecraft",
+        "layers": [
+          "https://microscape.cc/play/assets/skin3World-uZ9SWQAz.png",
+          "https://microscape.cc/play/assets/ashGlovesWorld-CRkRCHAc.png",
+          "https://microscape.cc/play/assets/clothesScoutWorld-CysputqP.png",
+          "https://microscape.cc/play/assets/shortBlackWorld-CW21TBoF.png",
+          "https://microscape.cc/play/assets/staffWorld-BTw7t9Bi.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          44,
+          40,
+          32
+        ],
+        "heldHand": {
+          "x": 68,
+          "y": 68,
+          "size": 4,
+          "color": "#577277"
+        }
+      }
+    ]
   },
   {
     "id": "al-sahra-mine",
@@ -3386,6 +3620,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/clothesApronWorld-CxOchvWx.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          64,
+          28,
+          12
+        ]
+      }
     ]
   },
   {
@@ -3634,6 +3885,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/ashGlovesWorld-CRkRCHAc.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          52,
+          68,
+          20,
+          4
+        ]
+      }
     ]
   },
   {
@@ -5182,6 +5450,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/battlestaffWorld-DFvRJFa3.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          72,
+          48,
+          16,
+          28
+        ]
+      }
     ]
   },
   {
@@ -5454,7 +5739,7 @@
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
     ],
-    "foeSprites": [
+    "sprites": [
       {
         "layers": [
           "https://microscape.cc/play/assets/bear-CszOecsz.png"
@@ -5828,6 +6113,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/black2hSwordWorld-3LYEp-e6.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          68,
+          40,
+          20,
+          36
+        ]
+      }
     ]
   },
   {
@@ -5911,6 +6213,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/blackArmorWorld-zvgacBab.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          64,
+          28,
+          12
+        ]
+      }
     ]
   },
   {
@@ -5945,6 +6264,23 @@
         "Microscape public game data (November 17, 2026)",
         "https://microscape.cc/play/assets/index-Bjzb2vNm.js"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/bubbleBlackWorld-CwFIWI36.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          40,
+          32,
+          24
+        ]
+      }
     ]
   },
   {
@@ -6033,6 +6369,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/blackFullHelmWorld-DA9DLitY.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          52,
+          40,
+          24,
+          24
+        ]
+      }
     ]
   },
   {
@@ -6254,7 +6607,7 @@
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
     ],
-    "foeSprites": [
+    "sprites": [
       {
         "layers": [
           "https://microscape.cc/play/assets/skin4World-B3L0v_zU.png",
@@ -6485,6 +6838,23 @@
         "Microscape public game data (November 17, 2026)",
         "https://microscape.cc/play/assets/index-Bjzb2vNm.js"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/longBlackWorld-DkJe3Mqr.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          44,
+          28,
+          28
+        ]
+      }
     ]
   },
   {
@@ -6519,6 +6889,23 @@
         "Microscape public game data (November 17, 2026)",
         "https://microscape.cc/play/assets/index-Bjzb2vNm.js"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/lushBlackWorld-OkiyV7a4.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          40,
+          28,
+          28
+        ]
+      }
     ]
   },
   {
@@ -6553,6 +6940,23 @@
         "Microscape public game data (November 17, 2026)",
         "https://microscape.cc/play/assets/index-Bjzb2vNm.js"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/mediumBlackWorld-Ds7e_ud1.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          44,
+          32,
+          16
+        ]
+      }
     ]
   },
   {
@@ -6587,6 +6991,23 @@
         "Microscape public game data (November 17, 2026)",
         "https://microscape.cc/play/assets/index-Bjzb2vNm.js"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/pompBlackWorld-DNR-xuXb.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          40,
+          32,
+          20
+        ]
+      }
     ]
   },
   {
@@ -6621,6 +7042,23 @@
         "Microscape public game data (November 17, 2026)",
         "https://microscape.cc/play/assets/index-Bjzb2vNm.js"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/ponytailBlackWorld-D3kJG96I.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          44,
+          40,
+          36,
+          24
+        ]
+      }
     ]
   },
   {
@@ -6655,6 +7093,23 @@
         "Microscape public game data (November 17, 2026)",
         "https://microscape.cc/play/assets/index-Bjzb2vNm.js"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/shortBlackWorld-CW21TBoF.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          52,
+          44,
+          24,
+          12
+        ]
+      }
     ]
   },
   {
@@ -6893,6 +7348,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/blessedGreavesWorld-CHwoOaId.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          56,
+          72,
+          12,
+          4
+        ]
+      }
     ]
   },
   {
@@ -6981,6 +7453,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/blinkBoneWorld-Wc3em5Pk.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          68,
+          44,
+          28,
+          32
+        ]
+      }
     ]
   },
   {
@@ -7015,6 +7504,23 @@
         "Microscape public game data (November 17, 2026)",
         "https://microscape.cc/play/assets/index-Bjzb2vNm.js"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/longBlondWorld-BhHhQtOE.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          44,
+          28,
+          28
+        ]
+      }
     ]
   },
   {
@@ -7049,6 +7555,23 @@
         "Microscape public game data (November 17, 2026)",
         "https://microscape.cc/play/assets/index-Bjzb2vNm.js"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/mediumBlondWorld-HMMdATB_.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          44,
+          32,
+          16
+        ]
+      }
     ]
   },
   {
@@ -7083,6 +7606,23 @@
         "Microscape public game data (November 17, 2026)",
         "https://microscape.cc/play/assets/index-Bjzb2vNm.js"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/pompBlondWorld-CskEgcvw.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          40,
+          32,
+          20
+        ]
+      }
     ]
   },
   {
@@ -7117,6 +7657,23 @@
         "Microscape public game data (November 17, 2026)",
         "https://microscape.cc/play/assets/index-Bjzb2vNm.js"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/ponytailBlondWorld-iHb6nI3A.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          44,
+          40,
+          36,
+          24
+        ]
+      }
     ]
   },
   {
@@ -7151,6 +7708,23 @@
         "Microscape public game data (November 17, 2026)",
         "https://microscape.cc/play/assets/index-Bjzb2vNm.js"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/shortBlondWorld-DUxicyhG.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          52,
+          44,
+          24,
+          12
+        ]
+      }
     ]
   },
   {
@@ -7816,7 +8390,7 @@
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
     ],
-    "foeSprites": [
+    "sprites": [
       {
         "layers": [
           "https://microscape.cc/play/assets/blueDragon-DfHkdB2k.png"
@@ -8072,6 +8646,23 @@
         "Microscape public game data (November 17, 2026)",
         "https://microscape.cc/play/assets/index-Bjzb2vNm.js"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/bluePartyHatWorld-z0LgQTut.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          52,
+          40,
+          24,
+          12
+        ]
+      }
     ]
   },
   {
@@ -8173,6 +8764,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/bluegoldAxeWorld-VQCTSSLb.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          68,
+          52,
+          24,
+          20
+        ]
+      }
     ]
   },
   {
@@ -8657,6 +9265,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/shortbowWorld-Cc4xKMbL.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          72,
+          56,
+          12,
+          20
+        ]
+      }
     ]
   },
   {
@@ -9271,6 +9896,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/bronzeArmorWorld-pV2Vvi-N.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          64,
+          28,
+          12
+        ]
+      }
     ]
   },
   {
@@ -9577,6 +10219,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/bronzeAxeWorld-Dy_X7r82.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          68,
+          52,
+          24,
+          20
+        ]
+      }
     ]
   },
   {
@@ -9804,6 +10463,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/bronzeDaggerWorld-BfF_qVQs.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          68,
+          60,
+          16,
+          16
+        ]
+      }
     ]
   },
   {
@@ -9880,6 +10556,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/bronzeFullHelmWorld-CHB3h6aY.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          52,
+          40,
+          24,
+          24
+        ]
+      }
     ]
   },
   {
@@ -10137,6 +10830,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/bronzeMedHelmWorld-Bs3pGOps.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          52,
+          48,
+          24,
+          16
+        ]
+      }
     ]
   },
   {
@@ -10265,6 +10975,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/bronzePickaxeWorld-19Aygnen.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          68,
+          48,
+          24,
+          24
+        ]
+      }
     ]
   },
   {
@@ -10374,6 +11101,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/bronzeScimitarWorld-DCtP0oyh.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          68,
+          52,
+          20,
+          24
+        ]
+      }
     ]
   },
   {
@@ -10469,6 +11213,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/bronzeSqShieldWorld-BbBwGXQh.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          60,
+          12,
+          16
+        ]
+      }
     ]
   },
   {
@@ -10503,6 +11264,23 @@
         "Microscape public game data (November 17, 2026)",
         "https://microscape.cc/play/assets/index-Bjzb2vNm.js"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/boldBrownWorld-DJuVaImt.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          48,
+          12,
+          12
+        ]
+      }
     ]
   },
   {
@@ -10537,6 +11315,23 @@
         "Microscape public game data (November 17, 2026)",
         "https://microscape.cc/play/assets/index-Bjzb2vNm.js"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/longBrownWorld-Bt94MTEf.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          44,
+          28,
+          28
+        ]
+      }
     ]
   },
   {
@@ -10571,6 +11366,23 @@
         "Microscape public game data (November 17, 2026)",
         "https://microscape.cc/play/assets/index-Bjzb2vNm.js"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/mediumBrownWorld-DmGkL9hh.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          44,
+          32,
+          16
+        ]
+      }
     ]
   },
   {
@@ -10605,6 +11417,23 @@
         "Microscape public game data (November 17, 2026)",
         "https://microscape.cc/play/assets/index-Bjzb2vNm.js"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/pompBrownWorld-DX7ju8IK.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          40,
+          32,
+          20
+        ]
+      }
     ]
   },
   {
@@ -10639,6 +11468,23 @@
         "Microscape public game data (November 17, 2026)",
         "https://microscape.cc/play/assets/index-Bjzb2vNm.js"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/ponytailBrownWorld-BSFI0rkz.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          44,
+          40,
+          36,
+          24
+        ]
+      }
     ]
   },
   {
@@ -10673,6 +11519,23 @@
         "Microscape public game data (November 17, 2026)",
         "https://microscape.cc/play/assets/index-Bjzb2vNm.js"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/shortBrownWorld-PzbEi9oR.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          52,
+          44,
+          24,
+          12
+        ]
+      }
     ]
   },
   {
@@ -11134,6 +11997,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/candyCaneWorld-CQfob7ZX.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          72,
+          48,
+          24,
+          28
+        ]
+      }
     ]
   },
   {
@@ -11324,7 +12204,7 @@
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
     ],
-    "foeSprites": [
+    "sprites": [
       {
         "layers": [
           "https://microscape.cc/play/assets/caveSlime-vt5VJzXX.png"
@@ -11374,6 +12254,23 @@
         "Microscape public game data (November 17, 2026)",
         "https://microscape.cc/play/assets/index-Bjzb2vNm.js"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/longCeruleanWorld-DMopLE6Y.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          44,
+          28,
+          28
+        ]
+      }
     ]
   },
   {
@@ -11408,6 +12305,23 @@
         "Microscape public game data (November 17, 2026)",
         "https://microscape.cc/play/assets/index-Bjzb2vNm.js"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/mediumCeruleanWorld-BL-Iu18q.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          44,
+          32,
+          16
+        ]
+      }
     ]
   },
   {
@@ -11442,6 +12356,23 @@
         "Microscape public game data (November 17, 2026)",
         "https://microscape.cc/play/assets/index-Bjzb2vNm.js"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/pompCeruleanWorld-Cx7G6gBd.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          40,
+          32,
+          20
+        ]
+      }
     ]
   },
   {
@@ -11476,6 +12407,23 @@
         "Microscape public game data (November 17, 2026)",
         "https://microscape.cc/play/assets/index-Bjzb2vNm.js"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/ponytailCeruleanWorld-C_UWafNy.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          44,
+          40,
+          36,
+          24
+        ]
+      }
     ]
   },
   {
@@ -11510,6 +12458,23 @@
         "Microscape public game data (November 17, 2026)",
         "https://microscape.cc/play/assets/index-Bjzb2vNm.js"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/shortCeruleanWorld-BTzS5r0s.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          52,
+          44,
+          24,
+          12
+        ]
+      }
     ]
   },
   {
@@ -11933,6 +12898,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/chefsHatWorld-BINtogMO.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          40,
+          32,
+          20
+        ]
+      }
     ]
   },
   {
@@ -12143,7 +13125,7 @@
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
     ],
-    "foeSprites": [
+    "sprites": [
       {
         "layers": [
           "https://microscape.cc/play/assets/chicken-DfM9GleR.png"
@@ -13385,7 +14367,7 @@
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
     ],
-    "foeSprites": [
+    "sprites": [
       {
         "layers": [
           "https://microscape.cc/play/assets/cockatrice-By2SdNaf.png"
@@ -13991,6 +14973,23 @@
         "Microscape public game data (November 17, 2026)",
         "https://microscape.cc/play/assets/index-Bjzb2vNm.js"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/consolationHatWorld-C0w4UqOe.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          52,
+          40,
+          24,
+          12
+        ]
+      }
     ]
   },
   {
@@ -15030,7 +16029,7 @@
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
     ],
-    "foeSprites": [
+    "sprites": [
       {
         "label": "Default form",
         "layers": [
@@ -15355,7 +16354,7 @@
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
     ],
-    "foeSprites": [
+    "sprites": [
       {
         "layers": [
           "https://microscape.cc/play/assets/cow-kCL0quWY.png"
@@ -16643,7 +17642,7 @@
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
     ],
-    "foeSprites": [
+    "sprites": [
       {
         "layers": [
           "https://microscape.cc/play/assets/crocodile-FBqR-nS_.png"
@@ -17103,6 +18102,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/clothesDapperWorld-D8rw7gud.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          64,
+          28,
+          12
+        ]
+      }
     ]
   },
   {
@@ -17330,6 +18346,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/wizardsHatDarkWorld-CZeTtMdA.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          44,
+          36,
+          36,
+          24
+        ]
+      }
     ]
   },
   {
@@ -17448,6 +18481,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/darkWizardsRobeWorld-CeLhLG11.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          56,
+          28,
+          20
+        ]
+      }
     ]
   },
   {
@@ -18537,6 +19587,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/clothesDesertWorld-fdzai9oJ.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          56,
+          28,
+          20
+        ]
+      }
     ]
   },
   {
@@ -19292,6 +20359,23 @@
         "Microscape public game data (November 17, 2026)",
         "https://microscape.cc/play/assets/index-Bjzb2vNm.js"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/dragonHelmWorld-D50t5i6h.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          44,
+          36,
+          36,
+          28
+        ]
+      }
     ]
   },
   {
@@ -19510,6 +20594,23 @@
         "Microscape public game data (November 17, 2026)",
         "https://microscape.cc/play/assets/index-Bjzb2vNm.js"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/dragonShieldWorld-FrsD-CTf.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          44,
+          56,
+          20,
+          24
+        ]
+      }
     ]
   },
   {
@@ -19702,6 +20803,23 @@
         "Microscape public game data (November 17, 2026)",
         "https://microscape.cc/play/assets/index-Bjzb2vNm.js"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/dragonSwordWorld-xMezzrcs.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          64,
+          48,
+          28,
+          28
+        ]
+      }
     ]
   },
   {
@@ -19873,7 +20991,7 @@
     ],
     "artwork": "https://microscape.cc/play/assets/dragonWhelp-C-IlUWWv.png",
     "statsDate": "2026-11-17",
-    "foeSprites": [
+    "sprites": [
       {
         "layers": [
           "https://microscape.cc/play/assets/whelp-B1Fm2Egf.png"
@@ -21531,7 +22649,7 @@
     ],
     "artwork": "https://microscape.cc/play/assets/corruptedDruid-D8AmmHDl.png",
     "statsDate": "2026-11-17",
-    "foeSprites": [
+    "sprites": [
       {
         "label": "Default form",
         "layers": [
@@ -22322,6 +23440,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/elperHatWorld-BTlrf8pC.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          40,
+          36,
+          36,
+          20
+        ]
+      }
     ]
   },
   {
@@ -23093,7 +24228,25 @@
         "empty": "The game map lists no skilling spots here."
       }
     ],
-    "summary": "Find Insect Swarm, Snake, Cockatrice and other enemies."
+    "summary": "Find Insect Swarm, Snake, Cockatrice and other enemies.",
+    "npcSprites": [
+      {
+        "label": "Sirocco",
+        "layers": [
+          "https://microscape.cc/play/assets/sirocco-BXIYsDSe.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          40,
+          36,
+          44,
+          40
+        ]
+      }
+    ]
   },
   {
     "id": "emberstone",
@@ -24895,6 +26048,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/explorersHatWorld-DZKZT3Ch.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          40,
+          36,
+          44,
+          28
+        ]
+      }
     ]
   },
   {
@@ -25152,7 +26322,27 @@
       "good-magic",
       "fletching"
     ],
-    "summary": "Visit for Fletching, Good Magic."
+    "summary": "Visit for Fletching, Good Magic.",
+    "npcSprites": [
+      {
+        "label": "Banker",
+        "layers": [
+          "https://microscape.cc/play/assets/skin3World-uZ9SWQAz.png",
+          "https://microscape.cc/play/assets/clothesApronWorld-CxOchvWx.png",
+          "https://microscape.cc/play/assets/shortBlackWorld-CW21TBoF.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          44,
+          28,
+          32
+        ]
+      }
+    ]
   },
   {
     "id": "falcrest-castle-parlor-room",
@@ -25264,7 +26454,28 @@
       "dragon-shield-right-half",
       "consolation-hat"
     ],
-    "summary": "Visit Sir Bratley."
+    "summary": "Visit Sir Bratley.",
+    "npcSprites": [
+      {
+        "label": "Sir Bratley",
+        "layers": [
+          "https://microscape.cc/play/assets/skin1World-C5McwYaD.png",
+          "https://microscape.cc/play/assets/leatherBootsWorld-OfLt4-ZX.png",
+          "https://microscape.cc/play/assets/steelArmorWorld-ViagYfV_.png",
+          "https://microscape.cc/play/assets/steelFullHelmWorld-bq5xUf-J.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          40,
+          28,
+          36
+        ]
+      }
+    ]
   },
   {
     "id": "falcrest-fern",
@@ -25501,7 +26712,73 @@
       "piety",
       "crafting"
     ],
-    "summary": "Visit for Crafting, Piety."
+    "summary": "Visit for Crafting, Piety.",
+    "npcSprites": [
+      {
+        "label": "Brother Alep",
+        "layers": [
+          "https://microscape.cc/play/assets/skin2World-fBopXN4J.png",
+          "https://microscape.cc/play/assets/leatherBootsWorld-OfLt4-ZX.png",
+          "https://microscape.cc/play/assets/monkRobeWorld-D485cvEp.png",
+          "https://microscape.cc/play/assets/shortBlackWorld-CW21TBoF.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          44,
+          28,
+          32
+        ]
+      },
+      {
+        "label": "Brother Pela",
+        "layers": [
+          "https://microscape.cc/play/assets/skin3World-uZ9SWQAz.png",
+          "https://microscape.cc/play/assets/leatherBootsWorld-OfLt4-ZX.png",
+          "https://microscape.cc/play/assets/monkRobeWorld-D485cvEp.png",
+          "https://microscape.cc/play/assets/shortBrownWorld-PzbEi9oR.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          44,
+          28,
+          32
+        ]
+      },
+      {
+        "label": "Brother Eustace",
+        "layers": [
+          "https://microscape.cc/play/assets/skin1World-C5McwYaD.png",
+          "https://microscape.cc/play/assets/leatherBootsWorld-OfLt4-ZX.png",
+          "https://microscape.cc/play/assets/darkWizardsRobeWorld-CeLhLG11.png",
+          "https://microscape.cc/play/assets/boldBrownWorld-DJuVaImt.png",
+          "https://microscape.cc/play/assets/staffWorld-BTw7t9Bi.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          48,
+          40,
+          28
+        ],
+        "heldHand": {
+          "x": 68,
+          "y": 68,
+          "size": 4,
+          "color": "#facba6"
+        }
+      }
+    ]
   },
   {
     "id": "fanaticism",
@@ -25877,6 +27154,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/featheredCapWorld-C4blo_hJ.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          44,
+          36,
+          36,
+          20
+        ]
+      }
     ]
   },
   {
@@ -26565,6 +27859,40 @@
       "pets",
       "woodcutting",
       "fishing"
+    ],
+    "npcSprites": [
+      {
+        "label": "Mork",
+        "layers": [
+          "https://microscape.cc/play/assets/mork-zpX6G5BW.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          44,
+          40,
+          40,
+          36
+        ]
+      },
+      {
+        "label": "Otis",
+        "layers": [
+          "https://microscape.cc/play/assets/donkey-9n0HRwls.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          36,
+          40,
+          56,
+          36
+        ]
+      }
     ]
   },
   {
@@ -26806,6 +28134,26 @@
         "Access",
         "World Map"
       ]
+    ],
+    "npcSprites": [
+      {
+        "label": "Germair",
+        "layers": [
+          "https://microscape.cc/play/assets/skin4World-B3L0v_zU.png",
+          "https://microscape.cc/play/assets/clothesApronWorld-CxOchvWx.png",
+          "https://microscape.cc/play/assets/shortBlackWorld-CW21TBoF.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          44,
+          28,
+          32
+        ]
+      }
     ]
   },
   {
@@ -27074,6 +28422,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/fireBattlestaffWorld-sQd15Ff2.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          72,
+          40,
+          20,
+          36
+        ]
+      }
     ]
   },
   {
@@ -27743,7 +29108,7 @@
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
     ],
-    "foeSprites": [
+    "sprites": [
       {
         "layers": [
           "https://microscape.cc/play/assets/fireDwarf-BRKbOtf6.png"
@@ -28174,7 +29539,7 @@
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
     ],
-    "foeSprites": [
+    "sprites": [
       {
         "layers": [
           "https://microscape.cc/play/assets/fireElemental-DRBUIR_b.png"
@@ -28563,6 +29928,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/fireStaffWorld-B5z4fFGR.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          72,
+          44,
+          20,
+          32
+        ]
+      }
     ]
   },
   {
@@ -29927,6 +31309,23 @@
         "Microscape public game data (November 17, 2026)",
         "https://microscape.cc/play/assets/index-Bjzb2vNm.js"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/fishingRodWorld-B4lD5nVA.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          68,
+          40,
+          28,
+          36
+        ]
+      }
     ]
   },
   {
@@ -30213,6 +31612,23 @@
         "Microscape public game data (November 17, 2026)",
         "https://microscape.cc/play/assets/index-Bjzb2vNm.js"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/fletchersCloakWorld-Dzse_l9V.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          40,
+          64,
+          36,
+          12
+        ]
+      }
     ]
   },
   {
@@ -31362,6 +32778,23 @@
         "Microscape public game data (November 17, 2026)",
         "https://microscape.cc/play/assets/index-Bjzb2vNm.js"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/foolsHatWorld-BjLOTEUj.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          44,
+          36,
+          40,
+          24
+        ]
+      }
     ]
   },
   {
@@ -31588,6 +33021,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/foxHatWorld-DsPiRkSK.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          44,
+          44,
+          36,
+          24
+        ]
+      }
     ]
   },
   {
@@ -31982,6 +33432,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/gardenersGlovesWorld-BfokHDtV.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          52,
+          68,
+          20,
+          4
+        ]
+      }
     ]
   },
   {
@@ -32285,7 +33752,7 @@
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
     ],
-    "foeSprites": [
+    "sprites": [
       {
         "layers": [
           "https://microscape.cc/play/assets/ghost-DntAFxjU.png"
@@ -32550,7 +34017,7 @@
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
     ],
-    "foeSprites": [
+    "sprites": [
       {
         "layers": [
           "https://microscape.cc/play/assets/giantRat-3HykPjJB.png"
@@ -32778,7 +34245,7 @@
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
     ],
-    "foeSprites": [
+    "sprites": [
       {
         "layers": [
           "https://microscape.cc/play/assets/giantSnake-B7qlKfHs.png"
@@ -33332,7 +34799,7 @@
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
     ],
-    "foeSprites": [
+    "sprites": [
       {
         "layers": [
           "https://microscape.cc/play/assets/goblin-BnMUYfbt.png"
@@ -33839,6 +35306,23 @@
         "Microscape public game data (November 17, 2026)",
         "https://microscape.cc/play/assets/index-Bjzb2vNm.js"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/goldFingersWorld-DmLO66aU.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          52,
+          68,
+          20,
+          4
+        ]
+      }
     ]
   },
   {
@@ -34079,6 +35563,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/goldenRodWorld-COKmjo5x.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          68,
+          40,
+          28,
+          36
+        ]
+      }
     ]
   },
   {
@@ -35019,7 +36520,7 @@
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
     ],
-    "foeSprites": [
+    "sprites": [
       {
         "layers": [
           "https://microscape.cc/play/assets/greaterDemon-CU4rVv-2.png"
@@ -35099,6 +36600,23 @@
         "Microscape public game data (November 17, 2026)",
         "https://microscape.cc/play/assets/index-Bjzb2vNm.js"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/greenPartyHatWorld-Dje17Ved.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          52,
+          40,
+          24,
+          12
+        ]
+      }
     ]
   },
   {
@@ -35528,7 +37046,7 @@
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
     ],
-    "foeSprites": [
+    "sprites": [
       {
         "label": "Default form",
         "layers": [
@@ -35733,7 +37251,25 @@
       "cooking",
       "fishing"
     ],
-    "summary": "Visit for Crafting, Herblaw, Cooking, Firemaking."
+    "summary": "Visit for Crafting, Herblaw, Cooking, Firemaking.",
+    "npcSprites": [
+      {
+        "label": "Havendell Druid",
+        "layers": [
+          "https://microscape.cc/play/assets/havendellDruid-CBN6XLdo.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          36,
+          36,
+          56,
+          40
+        ]
+      }
+    ]
   },
   {
     "id": "havendell-dungeon",
@@ -36556,6 +38092,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/heatGlovesWorld-CpM7ic44.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          52,
+          68,
+          20,
+          4
+        ]
+      }
     ]
   },
   {
@@ -37335,6 +38888,23 @@
         "Microscape public game data (November 17, 2026)",
         "https://microscape.cc/play/assets/index-Bjzb2vNm.js"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/skin1World-C5McwYaD.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          48,
+          28,
+          28
+        ]
+      }
     ]
   },
   {
@@ -37369,6 +38939,23 @@
         "Microscape public game data (November 17, 2026)",
         "https://microscape.cc/play/assets/index-Bjzb2vNm.js"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/skin2World-fBopXN4J.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          48,
+          28,
+          28
+        ]
+      }
     ]
   },
   {
@@ -37403,6 +38990,23 @@
         "Microscape public game data (November 17, 2026)",
         "https://microscape.cc/play/assets/index-Bjzb2vNm.js"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/skin3World-uZ9SWQAz.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          48,
+          28,
+          28
+        ]
+      }
     ]
   },
   {
@@ -37437,6 +39041,23 @@
         "Microscape public game data (November 17, 2026)",
         "https://microscape.cc/play/assets/index-Bjzb2vNm.js"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/skin4World-B3L0v_zU.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          48,
+          28,
+          28
+        ]
+      }
     ]
   },
   {
@@ -37801,7 +39422,7 @@
     ],
     "artwork": "https://microscape.cc/play/assets/iceGiant-C0Ff-jll.png",
     "statsDate": "2026-11-17",
-    "foeSprites": [
+    "sprites": [
       {
         "layers": [
           "https://microscape.cc/play/assets/iceGiant-C0lBTmz2.png"
@@ -38074,7 +39695,7 @@
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
     ],
-    "foeSprites": [
+    "sprites": [
       {
         "layers": [
           "https://microscape.cc/play/assets/iceWarrior-Lk_bvHfp.png"
@@ -38630,7 +40251,7 @@
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
     ],
-    "foeSprites": [
+    "sprites": [
       {
         "layers": [
           "https://microscape.cc/play/assets/imp-cdP8co3G.png"
@@ -39030,7 +40651,7 @@
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
     ],
-    "foeSprites": [
+    "sprites": [
       {
         "layers": [
           "https://microscape.cc/play/assets/insectSwarm-YUW6UTLe.png"
@@ -39102,6 +40723,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/ironArmorWorld-hp55WnYp.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          64,
+          28,
+          12
+        ]
+      }
     ]
   },
   {
@@ -39266,6 +40904,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/bronzeAxeWorld-Dy_X7r82.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          68,
+          52,
+          24,
+          20
+        ]
+      }
     ]
   },
   {
@@ -39461,6 +41116,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/ironDaggerWorld-hc65DeLR.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          68,
+          60,
+          16,
+          16
+        ]
+      }
     ]
   },
   {
@@ -39633,6 +41305,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/ironMedHelmWorld-QPJ96pPr.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          52,
+          48,
+          24,
+          16
+        ]
+      }
     ]
   },
   {
@@ -39875,6 +41564,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/ironPickaxeWorld-BPIXXI_0.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          68,
+          48,
+          24,
+          24
+        ]
+      }
     ]
   },
   {
@@ -39939,6 +41645,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/ironScimitarWorld-C2AsJpqX.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          68,
+          52,
+          20,
+          24
+        ]
+      }
     ]
   },
   {
@@ -40076,6 +41799,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/ironSqShieldWorld-kDjMpPUP.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          60,
+          12,
+          16
+        ]
+      }
     ]
   },
   {
@@ -40205,7 +41945,7 @@
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
     ],
-    "foeSprites": [
+    "sprites": [
       {
         "layers": [
           "https://microscape.cc/play/assets/iskarn-8cKZ_0UF.png"
@@ -40299,6 +42039,23 @@
         "Microscape public game data (November 17, 2026)",
         "https://microscape.cc/play/assets/index-Bjzb2vNm.js"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/iskarnsGripWorld-961Nt3Y2.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          72,
+          44,
+          20,
+          32
+        ]
+      }
     ]
   },
   {
@@ -40374,6 +42131,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/jackoLanternWorld-BAREk1IF.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          44,
+          68,
+          20,
+          16
+        ]
+      }
     ]
   },
   {
@@ -40665,6 +42439,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/khopeshOfBaWorld-yMicwOxx.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          68,
+          48,
+          28,
+          28
+        ]
+      }
     ]
   },
   {
@@ -41070,7 +42861,7 @@
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
     ],
-    "foeSprites": [
+    "sprites": [
       {
         "label": "Default form",
         "layers": [
@@ -41286,6 +43077,23 @@
         "Microscape public game data (November 17, 2026)",
         "https://microscape.cc/play/assets/index-Bjzb2vNm.js"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/krakenClubWorld-Du8X-YvD.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          68,
+          48,
+          28,
+          28
+        ]
+      }
     ]
   },
   {
@@ -41788,6 +43596,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/lavaRodWorld-C6p1jJWp.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          72,
+          40,
+          24,
+          36
+        ]
+      }
     ]
   },
   {
@@ -42311,6 +44136,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/leatherArmorWorld-BxgPFQ7j.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          56,
+          64,
+          12,
+          8
+        ]
+      }
     ]
   },
   {
@@ -42441,6 +44283,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/leatherBootsWorld-OfLt4-ZX.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          56,
+          72,
+          12,
+          4
+        ]
+      }
     ]
   },
   {
@@ -42571,6 +44430,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/leatherGlovesWorld-BqbEg7YX.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          52,
+          68,
+          20,
+          4
+        ]
+      }
     ]
   },
   {
@@ -42735,7 +44611,7 @@
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
     ],
-    "foeSprites": [
+    "sprites": [
       {
         "layers": [
           "https://microscape.cc/play/assets/lesserDemon-eKkCC5-a.png"
@@ -43490,6 +45366,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/magicBowWorld-Diwb8Da0.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          68,
+          52,
+          16,
+          28
+        ]
+      }
     ]
   },
   {
@@ -43797,6 +45690,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/magicStaffWorld-CSrh_yvx.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          72,
+          44,
+          16,
+          32
+        ]
+      }
     ]
   },
   {
@@ -44019,7 +45929,7 @@
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
     ],
-    "foeSprites": [
+    "sprites": [
       {
         "layers": [
           "https://microscape.cc/play/assets/magmaHound-JZ6UNB9P.png"
@@ -44127,6 +46037,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/magmaMirrorWorld-BT__wQcj.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          44,
+          60,
+          20,
+          16
+        ]
+      }
     ]
   },
   {
@@ -44350,7 +46277,45 @@
         "World Map"
       ]
     ],
-    "summary": "Find Mouse."
+    "summary": "Find Mouse.",
+    "npcSprites": [
+      {
+        "label": "Ava",
+        "layers": [
+          "https://microscape.cc/play/assets/skin1World-C5McwYaD.png",
+          "https://microscape.cc/play/assets/clothesApronWorld-CxOchvWx.png",
+          "https://microscape.cc/play/assets/ponytailBrownWorld-BSFI0rkz.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          44,
+          40,
+          36,
+          36
+        ]
+      },
+      {
+        "label": "Hadley",
+        "layers": [
+          "https://microscape.cc/play/assets/skin2World-fBopXN4J.png",
+          "https://microscape.cc/play/assets/clothesScoutWorld-CysputqP.png",
+          "https://microscape.cc/play/assets/foxHatWorld-DsPiRkSK.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          44,
+          44,
+          36,
+          32
+        ]
+      }
+    ]
   },
   {
     "id": "manta-ray",
@@ -44540,6 +46505,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/mapleBowWorld-yQM6oCnf.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          72,
+          56,
+          12,
+          20
+        ]
+      }
     ]
   },
   {
@@ -44832,7 +46814,27 @@
     "related": [
       "orock-west"
     ],
-    "summary": "Visit Marcel the Stylist."
+    "summary": "Visit Marcel the Stylist.",
+    "npcSprites": [
+      {
+        "label": "Marcel the Stylist",
+        "layers": [
+          "https://microscape.cc/play/assets/skin2World-fBopXN4J.png",
+          "https://microscape.cc/play/assets/clothesDapperWorld-D8rw7gud.png",
+          "https://microscape.cc/play/assets/shortBlondWorld-DUxicyhG.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          44,
+          28,
+          32
+        ]
+      }
+    ]
   },
   {
     "id": "marshcap",
@@ -45280,7 +47282,59 @@
       "piety",
       "firemaking"
     ],
-    "summary": "Visit for Firemaking, Piety."
+    "summary": "Visit for Firemaking, Piety.",
+    "npcSprites": [
+      {
+        "label": "Merric",
+        "layers": [
+          "https://microscape.cc/play/assets/skin2World-fBopXN4J.png",
+          "https://microscape.cc/play/assets/clothesScoutWorld-CysputqP.png",
+          "https://microscape.cc/play/assets/boldBrownWorld-DJuVaImt.png",
+          "https://microscape.cc/play/assets/staffWorld-BTw7t9Bi.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          48,
+          40,
+          28
+        ],
+        "heldHand": {
+          "x": 68,
+          "y": 68,
+          "size": 4,
+          "color": "#f8dcc6"
+        }
+      },
+      {
+        "label": "Braff",
+        "layers": [
+          "https://microscape.cc/play/assets/skin3World-uZ9SWQAz.png",
+          "https://microscape.cc/play/assets/clothesApronWorld-CxOchvWx.png",
+          "https://microscape.cc/play/assets/shortBrownWorld-PzbEi9oR.png",
+          "https://microscape.cc/play/assets/battlestaffWorld-DFvRJFa3.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          44,
+          40,
+          32
+        ],
+        "heldHand": {
+          "x": 68,
+          "y": 68,
+          "size": 4,
+          "color": "#ca9f7b"
+        }
+      }
+    ]
   },
   {
     "id": "mind-rune",
@@ -46004,6 +48058,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/mithrilArmorWorld-JybBdqAw.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          64,
+          28,
+          12
+        ]
+      }
     ]
   },
   {
@@ -46428,6 +48499,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/mithrilDaggerWorld-Enyn3agI.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          68,
+          60,
+          16,
+          16
+        ]
+      }
     ]
   },
   {
@@ -46641,6 +48729,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/mithrilMedHelmWorld-B4vNlP4J.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          52,
+          48,
+          24,
+          16
+        ]
+      }
     ]
   },
   {
@@ -46851,6 +48956,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/mithrilScimitarWorld-C8eR7Gx6.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          68,
+          52,
+          20,
+          24
+        ]
+      }
     ]
   },
   {
@@ -46968,6 +49090,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/mithrilSqShieldWorld-DMrm9_5r.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          60,
+          12,
+          16
+        ]
+      }
     ]
   },
   {
@@ -47671,7 +49810,7 @@
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
     ],
-    "foeSprites": [
+    "sprites": [
       {
         "layers": [
           "https://microscape.cc/play/assets/skin2World-fBopXN4J.png",
@@ -47796,6 +49935,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/monkRobeWorld-D485cvEp.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          56,
+          28,
+          20
+        ]
+      }
     ]
   },
   {
@@ -48031,7 +50187,7 @@
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
     ],
-    "foeSprites": [
+    "sprites": [
       {
         "layers": [
           "https://microscape.cc/play/assets/morvane-BKiE9ZNv.png"
@@ -48237,7 +50393,7 @@
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
     ],
-    "foeSprites": [
+    "sprites": [
       {
         "layers": [
           "https://microscape.cc/play/assets/mossGiant-B0ynyaGo.png"
@@ -48337,6 +50493,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/mothLanternWorld-BvWEuwni.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          64,
+          12,
+          16
+        ]
+      }
     ]
   },
   {
@@ -48487,7 +50660,7 @@
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
     ],
-    "foeSprites": [
+    "sprites": [
       {
         "layers": [
           "https://microscape.cc/play/assets/mothman-Cpb3iRNV.png"
@@ -48648,7 +50821,7 @@
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
     ],
-    "foeSprites": [
+    "sprites": [
       {
         "layers": [
           "https://microscape.cc/play/assets/mouse-qD4Awg25.png"
@@ -49020,7 +51193,7 @@
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
     ],
-    "foeSprites": [
+    "sprites": [
       {
         "layers": [
           "https://microscape.cc/play/assets/mummy-DkBPqIJG.png"
@@ -50223,7 +52396,70 @@
         "World Map"
       ]
     ],
-    "summary": "Visit for Smithing, Fletching, Good Magic."
+    "summary": "Visit for Smithing, Fletching, Good Magic.",
+    "npcSprites": [
+      {
+        "label": "Joan",
+        "layers": [
+          "https://microscape.cc/play/assets/skin1World-C5McwYaD.png",
+          "https://microscape.cc/play/assets/clothesDapperWorld-D8rw7gud.png",
+          "https://microscape.cc/play/assets/ponytailBlondWorld-iHb6nI3A.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          44,
+          40,
+          36,
+          36
+        ]
+      },
+      {
+        "label": "Rodrigo",
+        "layers": [
+          "https://microscape.cc/play/assets/skin2World-fBopXN4J.png",
+          "https://microscape.cc/play/assets/clothesScoutWorld-CysputqP.png",
+          "https://microscape.cc/play/assets/shortBrownWorld-PzbEi9oR.png",
+          "https://microscape.cc/play/assets/shortbowWorld-Cc4xKMbL.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          44,
+          36,
+          32
+        ],
+        "heldHand": {
+          "x": 68,
+          "y": 68,
+          "size": 4,
+          "color": "#f8dcc6"
+        }
+      },
+      {
+        "label": "Banker",
+        "layers": [
+          "https://microscape.cc/play/assets/skin3World-uZ9SWQAz.png",
+          "https://microscape.cc/play/assets/clothesApronWorld-CxOchvWx.png",
+          "https://microscape.cc/play/assets/shortBlackWorld-CW21TBoF.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          44,
+          28,
+          32
+        ]
+      }
+    ]
   },
   {
     "id": "oak-bow",
@@ -50352,6 +52588,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/oakBowWorld-ucidGKYE.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          72,
+          56,
+          12,
+          20
+        ]
+      }
     ]
   },
   {
@@ -50761,7 +53014,41 @@
       "fire-dwarf",
       "mining"
     ],
-    "summary": "Find Imp, Fire Dwarf, Fire Dwarf (Safe)."
+    "summary": "Find Imp, Fire Dwarf, Fire Dwarf (Safe).",
+    "npcSprites": [
+      {
+        "label": "Thorgrim",
+        "layers": [
+          "https://microscape.cc/play/assets/caveDwarf-CsiUwF2C.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          44,
+          40,
+          36,
+          36
+        ]
+      },
+      {
+        "label": "???",
+        "layers": [
+          "https://microscape.cc/play/assets/orangeEgg-Bk4pR4uG.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          44,
+          36,
+          40,
+          48
+        ]
+      }
+    ]
   },
   {
     "id": "old-rod",
@@ -50853,6 +53140,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/oldRodWorld-BXjRJAxg.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          68,
+          40,
+          28,
+          36
+        ]
+      }
     ]
   },
   {
@@ -50912,6 +53216,23 @@
         "Microscape public game data (November 17, 2026)",
         "https://microscape.cc/play/assets/index-Bjzb2vNm.js"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/onyxCapeWorld-BnFmrtQj.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          40,
+          64,
+          36,
+          12
+        ]
+      }
     ]
   },
   {
@@ -51636,6 +53957,23 @@
         "Microscape public game data (November 17, 2026)",
         "https://microscape.cc/play/assets/index-Bjzb2vNm.js"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/longPeachWorld-CaypFN_B.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          44,
+          28,
+          28
+        ]
+      }
     ]
   },
   {
@@ -51670,6 +54008,23 @@
         "Microscape public game data (November 17, 2026)",
         "https://microscape.cc/play/assets/index-Bjzb2vNm.js"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/mediumPeachWorld-C-Fq7yfN.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          44,
+          32,
+          16
+        ]
+      }
     ]
   },
   {
@@ -51704,6 +54059,23 @@
         "Microscape public game data (November 17, 2026)",
         "https://microscape.cc/play/assets/index-Bjzb2vNm.js"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/pompPeachWorld-C113ihPs.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          40,
+          32,
+          20
+        ]
+      }
     ]
   },
   {
@@ -51738,6 +54110,23 @@
         "Microscape public game data (November 17, 2026)",
         "https://microscape.cc/play/assets/index-Bjzb2vNm.js"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/ponytailPeachWorld-D9RqStgT.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          44,
+          40,
+          36,
+          24
+        ]
+      }
     ]
   },
   {
@@ -51772,6 +54161,23 @@
         "Microscape public game data (November 17, 2026)",
         "https://microscape.cc/play/assets/index-Bjzb2vNm.js"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/shortPeachWorld-BdoyhN18.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          52,
+          44,
+          24,
+          12
+        ]
+      }
     ]
   },
   {
@@ -54308,7 +56714,369 @@
         "Miraheze content license · CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "companionSprites": {
+      "Beatrix": {
+        "layers": [
+          "https://microscape.cc/play/assets/beatrix-CZ5OjF36.png"
+        ],
+        "size": [
+          1024,
+          128
+        ],
+        "crop": [
+          52,
+          52,
+          24,
+          20
+        ]
+      },
+      "Bog": {
+        "layers": [
+          "https://microscape.cc/play/assets/bog-Dbew-rf4.png"
+        ],
+        "size": [
+          2048,
+          128
+        ],
+        "crop": [
+          48,
+          60,
+          32,
+          16
+        ]
+      },
+      "Fibs": {
+        "layers": [
+          "https://microscape.cc/play/assets/fibs-BEosbu9h.png"
+        ],
+        "size": [
+          2176,
+          128
+        ],
+        "crop": [
+          48,
+          52,
+          28,
+          20
+        ]
+      },
+      "Golem Core": {
+        "layers": [
+          "https://microscape.cc/play/assets/golemCore-Cf_y5DGy.png"
+        ],
+        "size": [
+          1152,
+          128
+        ],
+        "crop": [
+          56,
+          52,
+          16,
+          20
+        ]
+      },
+      "Hilda": {
+        "layers": [
+          "https://microscape.cc/play/assets/hilda-Bkm1O_6x.png"
+        ],
+        "size": [
+          1152,
+          128
+        ],
+        "crop": [
+          56,
+          52,
+          20,
+          20
+        ]
+      },
+      "Hubble": {
+        "layers": [
+          "https://microscape.cc/play/assets/hubble-rwkvHbsu.png"
+        ],
+        "size": [
+          1408,
+          128
+        ],
+        "crop": [
+          52,
+          52,
+          24,
+          16
+        ]
+      },
+      "Peace Moth": {
+        "layers": [
+          "https://microscape.cc/play/assets/peaceMoth-CJz0J7p5.png"
+        ],
+        "size": [
+          1024,
+          128
+        ],
+        "crop": [
+          52,
+          44,
+          32,
+          24
+        ]
+      },
+      "Pickles": {
+        "layers": [
+          "https://microscape.cc/play/assets/pickles-DfaKFMYL.png"
+        ],
+        "size": [
+          512,
+          128
+        ],
+        "crop": [
+          48,
+          56,
+          28,
+          16
+        ]
+      },
+      "Riddle": {
+        "layers": [
+          "https://microscape.cc/play/assets/riddle-rshMXYZy.png"
+        ],
+        "size": [
+          1664,
+          128
+        ],
+        "crop": [
+          48,
+          48,
+          32,
+          24
+        ]
+      },
+      "Scales": {
+        "layers": [
+          "https://microscape.cc/play/assets/scales-CQfQmUIb.png"
+        ],
+        "size": [
+          896,
+          128
+        ],
+        "crop": [
+          44,
+          12,
+          48,
+          40
+        ]
+      },
+      "Scoop": {
+        "layers": [
+          "https://microscape.cc/play/assets/scoop--Y7ge4xq.png"
+        ],
+        "size": [
+          512,
+          128
+        ],
+        "crop": [
+          40,
+          60,
+          40,
+          12
+        ]
+      },
+      "Tinderling": {
+        "layers": [
+          "https://microscape.cc/play/assets/tinderling-B9IdteJe.png"
+        ],
+        "size": [
+          1152,
+          128
+        ],
+        "crop": [
+          56,
+          56,
+          16,
+          16
+        ]
+      },
+      "Winkle": {
+        "layers": [
+          "https://microscape.cc/play/assets/winkle-BgCvG7fJ.png"
+        ],
+        "size": [
+          1024,
+          128
+        ],
+        "crop": [
+          52,
+          44,
+          32,
+          24
+        ]
+      },
+      "Otter": {
+        "layers": [
+          "https://microscape.cc/play/assets/otter-VrH3x-u-.png"
+        ],
+        "size": [
+          3328,
+          128
+        ],
+        "crop": [
+          44,
+          48,
+          36,
+          24
+        ]
+      },
+      "Clement": {
+        "layers": [
+          "https://microscape.cc/play/assets/clement-D7eJ9VcN.png"
+        ],
+        "size": [
+          3328,
+          128
+        ],
+        "crop": [
+          44,
+          48,
+          36,
+          24
+        ]
+      },
+      "Stump": {
+        "layers": [
+          "https://microscape.cc/play/assets/stump-DUtZO6Ps.png"
+        ],
+        "size": [
+          3328,
+          128
+        ],
+        "crop": [
+          44,
+          48,
+          36,
+          24
+        ]
+      },
+      "Cinder": {
+        "layers": [
+          "https://microscape.cc/play/assets/cinder-D2-pm17T.png"
+        ],
+        "size": [
+          3328,
+          128
+        ],
+        "crop": [
+          44,
+          48,
+          36,
+          24
+        ]
+      },
+      "Biscuit": {
+        "layers": [
+          "https://microscape.cc/play/assets/biscuit-Dasjtl3u.png"
+        ],
+        "size": [
+          3328,
+          128
+        ],
+        "crop": [
+          44,
+          48,
+          36,
+          24
+        ]
+      },
+      "Pebble": {
+        "layers": [
+          "https://microscape.cc/play/assets/pebble-Bt3YfsvS.png"
+        ],
+        "size": [
+          3328,
+          128
+        ],
+        "crop": [
+          44,
+          48,
+          36,
+          24
+        ]
+      },
+      "Smudge": {
+        "layers": [
+          "https://microscape.cc/play/assets/smudge-DFu8Qj3Y.png"
+        ],
+        "size": [
+          3328,
+          128
+        ],
+        "crop": [
+          44,
+          48,
+          36,
+          24
+        ]
+      },
+      "Stitch": {
+        "layers": [
+          "https://microscape.cc/play/assets/stitch-f84tcAHP.png"
+        ],
+        "size": [
+          3328,
+          128
+        ],
+        "crop": [
+          44,
+          48,
+          36,
+          24
+        ]
+      },
+      "Merlin": {
+        "layers": [
+          "https://microscape.cc/play/assets/merlin-CBKZBwqt.png"
+        ],
+        "size": [
+          3328,
+          128
+        ],
+        "crop": [
+          44,
+          48,
+          36,
+          24
+        ]
+      },
+      "Quill": {
+        "layers": [
+          "https://microscape.cc/play/assets/quill-DKzeYVzh.png"
+        ],
+        "size": [
+          3328,
+          128
+        ],
+        "crop": [
+          44,
+          48,
+          36,
+          24
+        ]
+      },
+      "Sage": {
+        "layers": [
+          "https://microscape.cc/play/assets/sage-DmTYwutk.png"
+        ],
+        "size": [
+          3328,
+          128
+        ],
+        "crop": [
+          44,
+          48,
+          36,
+          24
+        ]
+      }
+    }
   },
   {
     "id": "pie-dish",
@@ -55017,7 +57785,7 @@
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
     ],
-    "foeSprites": [
+    "sprites": [
       {
         "layers": [
           "https://microscape.cc/play/assets/pitGuardian-OmWqrLWm.png"
@@ -55381,6 +58149,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/darkWizardsRobeWorld-CeLhLG11.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          56,
+          28,
+          20
+        ]
+      }
     ]
   },
   {
@@ -55466,6 +58251,23 @@
         "Microscape public game data (November 17, 2026)",
         "https://microscape.cc/play/assets/index-Bjzb2vNm.js"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/progrite2hSwordWorld-BjPSww0L.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          68,
+          36,
+          36,
+          40
+        ]
+      }
     ]
   },
   {
@@ -55555,6 +58357,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/progriteArmorWorld-D3lysvYJ.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          64,
+          28,
+          12
+        ]
+      }
     ]
   },
   {
@@ -55967,6 +58786,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/progriteDaggerWorld-CgW0v9WP.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          68,
+          60,
+          16,
+          16
+        ]
+      }
     ]
   },
   {
@@ -56052,6 +58888,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/progriteFullHelmWorld-Bgtac9CD.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          52,
+          40,
+          24,
+          24
+        ]
+      }
     ]
   },
   {
@@ -56162,6 +59015,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/progriteMedHelmWorld-BsPIl6bv.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          52,
+          48,
+          24,
+          16
+        ]
+      }
     ]
   },
   {
@@ -56338,6 +59208,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/progriteScimitarWorld-y8LYEJmD.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          68,
+          52,
+          20,
+          24
+        ]
+      }
     ]
   },
   {
@@ -56423,6 +59310,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/progriteSqShieldWorld--FjTq0hF.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          60,
+          12,
+          16
+        ]
+      }
     ]
   },
   {
@@ -56785,6 +59689,23 @@
         "Microscape public game data (November 17, 2026)",
         "https://microscape.cc/play/assets/index-Bjzb2vNm.js"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/purplePartyHatWorld-BE9BubWp.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          52,
+          40,
+          24,
+          12
+        ]
+      }
     ]
   },
   {
@@ -56914,7 +59835,7 @@
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
     ],
-    "foeSprites": [
+    "sprites": [
       {
         "layers": [
           "https://microscape.cc/play/assets/fireElemental-DRBUIR_b.png"
@@ -57017,6 +59938,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/pyreshellShieldWorld-BeFPqqs0.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          44,
+          56,
+          16,
+          20
+        ]
+      }
     ]
   },
   {
@@ -59356,6 +62294,23 @@
         "Microscape public game data (November 17, 2026)",
         "https://microscape.cc/play/assets/index-Bjzb2vNm.js"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/redPartyHatWorld-D7U7xWA_.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          52,
+          40,
+          24,
+          12
+        ]
+      }
     ]
   },
   {
@@ -59707,6 +62662,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/clothesRoyalWorld-BdV92IXP.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          64,
+          28,
+          12
+        ]
+      }
     ]
   },
   {
@@ -59767,6 +62739,23 @@
         "Microscape public game data (November 17, 2026)",
         "https://microscape.cc/play/assets/index-Bjzb2vNm.js"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/royalCapeWorld-BqwMJzfE.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          40,
+          64,
+          36,
+          12
+        ]
+      }
     ]
   },
   {
@@ -59965,6 +62954,23 @@
         "Microscape public game data (November 17, 2026)",
         "https://microscape.cc/play/assets/index-Bjzb2vNm.js"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/rubberBootsWorld-CXbPVl9z.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          56,
+          72,
+          12,
+          4
+        ]
+      }
     ]
   },
   {
@@ -60933,6 +63939,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/saltedMittsWorld-DD2w0hNR.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          52,
+          68,
+          20,
+          4
+        ]
+      }
     ]
   },
   {
@@ -61195,7 +64218,7 @@
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
     ],
-    "foeSprites": [
+    "sprites": [
       {
         "layers": [
           "https://microscape.cc/play/assets/sandworm-BJiYaU2H.png"
@@ -61303,6 +64326,23 @@
         "Microscape public game data (November 17, 2026)",
         "https://microscape.cc/play/assets/index-Bjzb2vNm.js"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/sanglewoodStaffWorld-C5ugH8U3.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          52,
+          16,
+          48,
+          60
+        ]
+      }
     ]
   },
   {
@@ -61366,6 +64406,23 @@
         "Microscape public game data (November 17, 2026)",
         "https://microscape.cc/play/assets/index-Bjzb2vNm.js"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/sanguineBootsWorld-Cve98J1B.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          56,
+          72,
+          12,
+          4
+        ]
+      }
     ]
   },
   {
@@ -61543,6 +64600,23 @@
         "Microscape public game data (November 17, 2026)",
         "https://microscape.cc/play/assets/index-Bjzb2vNm.js"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/santaHatWorld-BLcP9oov.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          36,
+          40,
+          40,
+          24
+        ]
+      }
     ]
   },
   {
@@ -62425,6 +65499,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/clothesScoutWorld-CysputqP.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          64,
+          28,
+          12
+        ]
+      }
     ]
   },
   {
@@ -63022,7 +66113,7 @@
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
     ],
-    "foeSprites": [
+    "sprites": [
       {
         "layers": [
           "https://microscape.cc/play/assets/crocodile-FBqR-nS_.png"
@@ -63207,6 +66298,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/shellOfKaWorld-CoFDr8RL.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          60,
+          16,
+          16
+        ]
+      }
     ]
   },
   {
@@ -64162,7 +67270,7 @@
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
     ],
-    "foeSprites": [
+    "sprites": [
       {
         "layers": [
           "https://microscape.cc/play/assets/skeleton-BKsaDFND.png"
@@ -64245,6 +67353,23 @@
         "Microscape public game data (November 17, 2026)",
         "https://microscape.cc/play/assets/index-Bjzb2vNm.js"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/skullShieldWorld-DUHp3oPe.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          40,
+          56,
+          20,
+          20
+        ]
+      }
     ]
   },
   {
@@ -64305,6 +67430,23 @@
         "Microscape public game data (November 17, 2026)",
         "https://microscape.cc/play/assets/index-Bjzb2vNm.js"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/slimeTorsoWorld-BDTJT4cg.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          64,
+          28,
+          12
+        ]
+      }
     ]
   },
   {
@@ -64407,7 +67549,7 @@
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
     ],
-    "foeSprites": [
+    "sprites": [
       {
         "layers": [
           "https://microscape.cc/play/assets/slimelet-DT6gHVWX.png"
@@ -65710,7 +68852,7 @@
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
     ],
-    "foeSprites": [
+    "sprites": [
       {
         "layers": [
           "https://microscape.cc/play/assets/snake-CFQKFltt.png"
@@ -66773,7 +69915,34 @@
       "fishing",
       "crafting"
     ],
-    "summary": "Visit for Fishing, Crafting."
+    "summary": "Visit for Fishing, Crafting.",
+    "npcSprites": [
+      {
+        "label": "Old David",
+        "layers": [
+          "https://microscape.cc/play/assets/skin3World-uZ9SWQAz.png",
+          "https://microscape.cc/play/assets/clothesScoutWorld-CysputqP.png",
+          "https://microscape.cc/play/assets/shortBlackWorld-CW21TBoF.png",
+          "https://microscape.cc/play/assets/fishingRodWorld-B4lD5nVA.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          40,
+          48,
+          36
+        ],
+        "heldHand": {
+          "x": 68,
+          "y": 68,
+          "size": 4,
+          "color": "#ca9f7b"
+        }
+      }
+    ]
   },
   {
     "id": "sorcerers-tower",
@@ -67673,6 +70842,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/staffWorld-BTw7t9Bi.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          72,
+          48,
+          16,
+          28
+        ]
+      }
     ]
   },
   {
@@ -67934,6 +71120,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/steelArmorWorld-ViagYfV_.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          64,
+          28,
+          12
+        ]
+      }
     ]
   },
   {
@@ -68362,6 +71565,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/steelDaggerWorld-BpFjndNU.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          68,
+          60,
+          16,
+          16
+        ]
+      }
     ]
   },
   {
@@ -68431,6 +71651,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/steelFullHelmWorld-bq5xUf-J.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          52,
+          40,
+          24,
+          24
+        ]
+      }
     ]
   },
   {
@@ -68548,6 +71785,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/steelMedHelmWorld-C4JD1YFA.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          52,
+          48,
+          24,
+          16
+        ]
+      }
     ]
   },
   {
@@ -68718,6 +71972,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/steelScimitarWorld-BsmdMVo6.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          68,
+          52,
+          20,
+          24
+        ]
+      }
     ]
   },
   {
@@ -68978,6 +72249,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/steelSqShieldWorld-Dxd6rRqs.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          60,
+          12,
+          16
+        ]
+      }
     ]
   },
   {
@@ -69436,6 +72724,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/clothesSummerWorld-BN-lMmbd.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          64,
+          28,
+          12
+        ]
+      }
     ]
   },
   {
@@ -71429,6 +74734,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/telekineticGlovesWorld-B1a1pTgD.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          52,
+          68,
+          20,
+          4
+        ]
+      }
     ]
   },
   {
@@ -73019,7 +76341,7 @@
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
     ],
-    "foeSprites": [
+    "sprites": [
       {
         "layers": [
           "https://microscape.cc/play/assets/giantScorpion-DoRKy_qR.png"
@@ -73681,7 +77003,7 @@
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
     ],
-    "foeSprites": [
+    "sprites": [
       {
         "layers": [
           "https://microscape.cc/play/assets/tombSorcerer-DGdOygS5.png"
@@ -73775,6 +77097,23 @@
         "Microscape public game data (November 17, 2026)",
         "https://microscape.cc/play/assets/index-Bjzb2vNm.js"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/torchOfPyraxWorld-CJyrdHol.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          72,
+          44,
+          20,
+          32
+        ]
+      }
     ]
   },
   {
@@ -74209,7 +77548,7 @@
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
     ],
-    "foeSprites": [
+    "sprites": [
       {
         "layers": [
           "https://microscape.cc/play/assets/turkey-iLGySxK4.png"
@@ -75686,6 +79025,23 @@
         "Microscape public game data (November 17, 2026)",
         "https://microscape.cc/play/assets/index-Bjzb2vNm.js"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/foolsHatUnusualWorld-B2wFSED8.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          44,
+          36,
+          40,
+          24
+        ]
+      }
     ]
   },
   {
@@ -76434,6 +79790,23 @@
         "Microscape public game data (November 17, 2026)",
         "https://microscape.cc/play/assets/index-Bjzb2vNm.js"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/vulcanusWorld-DiV2hVlT.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          64,
+          0,
+          44,
+          76
+        ]
+      }
     ]
   },
   {
@@ -76667,6 +80040,23 @@
         "Microscape public game data (November 17, 2026)",
         "https://microscape.cc/play/assets/index-Bjzb2vNm.js"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/whitePartyHatWorld-BOj5Hs07.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          52,
+          40,
+          24,
+          12
+        ]
+      }
     ]
   },
   {
@@ -77045,6 +80435,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/willowBowWorld-BU-BkOe9.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          72,
+          56,
+          12,
+          20
+        ]
+      }
     ]
   },
   {
@@ -78046,6 +81453,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/wizardsHatBlueWorld-Dotg04sJ.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          44,
+          36,
+          36,
+          24
+        ]
+      }
     ]
   },
   {
@@ -78177,6 +81601,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/wizardsRobeWorld-DhhjdQXu.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          56,
+          28,
+          20
+        ]
+      }
     ]
   },
   {
@@ -78857,6 +82298,23 @@
         "Microscape public game data (November 17, 2026)",
         "https://microscape.cc/play/assets/index-Bjzb2vNm.js"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/yellowPartyHatWorld-Dd8adzO-.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          52,
+          40,
+          24,
+          12
+        ]
+      }
     ]
   },
   {
@@ -78985,6 +82443,23 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
+    ],
+    "sprites": [
+      {
+        "layers": [
+          "https://microscape.cc/play/assets/yewBowWorld-BMfpjHfe.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          68,
+          52,
+          16,
+          28
+        ]
+      }
     ]
   },
   {
