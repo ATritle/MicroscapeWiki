@@ -22,10 +22,12 @@ const searchForm = document.querySelector("#search-form");
 const searchInput = document.querySelector("#wiki-search");
 const number = new Intl.NumberFormat("en");
 const gameAssets = "https://microscape.cc/play/assets/";
+const liveDropsUrl = "#/live-drops";
 const topicOrder = ["skills", "items", "foes", "locations", "abilities", "pets", "reference"];
 const featured = ["energy", "dungeons", "bazaar", "activity-queue"];
 const displayCount = 36;
 let referenceLoadFailed = false;
+let stopLiveDrops;
 
 const entries = [...guides, ...tutorials];
 const byId = new Map(entries.map(entry => [entry.id, entry]));
@@ -100,10 +102,11 @@ function addToSearch(entry) {
   });
 }
 
-function renderNav(category, currentId, home) {
+function renderNav(category, currentId, home, liveDrops) {
   const sections = [
     ["Explore", [
       ["Overview", "#/", "⌂", home],
+      ["Live drops", liveDropsUrl, "◉", liveDrops],
       ["Getting started", entryUrl("getting-started"), "↳", currentId === "getting-started"],
       ["All guides", categoryUrl("guides"), "▤", category === "guides" && !currentId],
       ["Tutorials", categoryUrl("tutorials"), groups.tutorials.icon, category === "tutorials"]
@@ -146,7 +149,8 @@ function renderHome() {
       element("h1", {id:"page-title"}, "Microscape ", element("span", {class:"hero-title-wiki"}, "Wiki")),
       element("p", {}, "Player guides and reference tables for the Twitch-powered browser idle RPG."),
       element("div", {class:"actions"},
-        element("a", {class:"button primary", href:entryUrl("getting-started")}, "Getting started", glyph("→", ""))
+        element("a", {class:"button primary", href:entryUrl("getting-started")}, "Getting started", glyph("→", "")),
+        link("Live Twitch drops", liveDropsUrl, "button")
       )
     )
   );
@@ -198,6 +202,95 @@ function crumbs(category, current) {
     ...(category ? [link(groups[category].title, categoryUrl(category)), glyph("›", "")] : []),
     element("span", {"aria-current":"page"}, current)
   );
+}
+
+function renderLiveDrops() {
+  const snapshotUrl = "https://raw.githubusercontent.com/ATritle/MicroscapeWiki/live-data/drops.json";
+  const updateTime = new Intl.DateTimeFormat(undefined, {dateStyle:"medium", timeStyle:"short"});
+  const maxAge = 40 * 60_000;
+  const status = element("p", {class:"drop-status", role:"status"}, "Checking for live drops…");
+  const results = element("div", {class:"drop-groups"});
+  const refreshButton = element("button", {class:"button", type:"button"}, "Refresh");
+  let snapshot;
+  let request;
+  let stopped = false;
+
+  function eventList(type, title, empty, events, now) {
+    const matches = events.filter(event => event.type === type);
+    return element("section", {class:"drop-group"}, element("h2", {}, title),
+      matches.length ? element("ul", {}, ...matches.map(event => {
+        const minutes = Math.ceil((event.endsAt - now) / 60_000);
+        const remaining = event.endsAt === null ? "End time unavailable"
+          : minutes < 60 ? `About ${minutes} min left`
+          : `About ${Math.floor(minutes / 60)}h ${minutes % 60}m left`;
+        return element("li", {},
+          element("a", {class:"entry-card", href:"https://www.twitch.tv/" + event.channel, target:"_blank", rel:"noopener noreferrer"},
+            element("span", {}, element("strong", {}, event.name),
+              element("small", {}, event.doubleKeys ? "2× Dungeon Keys · " + remaining : remaining)),
+            glyph("↗", "arrow")
+          )
+        );
+      })) : element("p", {class:"empty"}, empty)
+    );
+  }
+
+  function showSnapshot(failed) {
+    const now = Date.now();
+    if (!snapshot || now - snapshot.checkedAt > maxAge) {
+      status.textContent = "Live data is temporarily unavailable. Open Streams in Microscape for current events.";
+      results.replaceChildren();
+      return;
+    }
+    const events = snapshot.events
+      .filter(event => event.endsAt === null || event.endsAt > now)
+      .sort((a, b) => (a.endsAt ?? Infinity) - (b.endsAt ?? Infinity) || a.name.localeCompare(b.name));
+    status.textContent = (failed ? "Refresh failed. " : "") + "Last checked " + updateTime.format(snapshot.checkedAt) + ".";
+    results.replaceChildren(
+      eventList("favor", "Drop Festivals", "No active festivals were listed.", events, now),
+      eventList("key", "Dungeon Key events", "No active Dungeon Key events were listed.", events, now)
+    );
+  }
+
+  async function refresh() {
+    if (request || stopped) return;
+    request = new AbortController();
+    refreshButton.disabled = true;
+    try {
+      const signal = AbortSignal.any([request.signal, AbortSignal.timeout(10_000)]);
+      const response = await fetch(snapshotUrl, {cache:"no-store", credentials:"omit", signal});
+      if (!response.ok) throw new Error("Live drops HTTP " + response.status);
+      const data = await response.json();
+      if (!Number.isFinite(data?.checkedAt) || !Array.isArray(data.events) || data.events.some(event =>
+        !event || !["favor", "key"].includes(event.type) || typeof event.name !== "string"
+        || !/^[a-z0-9_]{1,25}$/.test(event.channel) || !(event.endsAt === null || Number.isFinite(event.endsAt)))) {
+        throw new Error("Invalid live drops snapshot.");
+      }
+      snapshot = data;
+      if (!stopped) showSnapshot(false);
+    } catch {
+      if (!stopped) showSnapshot(true);
+    } finally {
+      request = null;
+      refreshButton.disabled = false;
+    }
+  }
+
+  main.append(element("article", {class:"article"}, crumbs(null, "Live Twitch drops"),
+    element("h1", {}, "Live Twitch drops"),
+    element("p", {class:"intro"}, "Find Twitch channels with active Audience Favor or Dungeon Key rewards. The wiki checks Microscape’s Streams list about every 15 minutes."),
+    element("div", {class:"actions"}, refreshButton, link("Open Microscape", "https://microscape.cc/play/", "button")),
+    status, results,
+    element("p", {class:"drop-help"}, entryLink("audience-favor", "How to claim Audience Favor on Twitch"), " · ",
+      entryLink("dungeons", "Dungeon Keys guide"))
+  ), footer());
+  refreshButton.addEventListener("click", refresh);
+  const timer = setInterval(() => { if (!document.hidden) refresh(); }, 5 * 60_000);
+  refresh();
+  stopLiveDrops = () => {
+    stopped = true;
+    clearInterval(timer);
+    request?.abort();
+  };
 }
 
 function renderList(category, query) {
@@ -500,13 +593,18 @@ function render({focus = false} = {}) {
   const category = view === "browse" && Object.hasOwn(groups,id) ? id : null;
   const query = new URLSearchParams(params).get("q") || "";
   const home = !view;
+  const liveDrops = view === "live-drops";
+  stopLiveDrops?.();
+  stopLiveDrops = null;
   main.replaceChildren();
   menu.setAttribute("aria-expanded","false");
   const currentCategory = entry?.id === "pets" ? "pets" : entry?.category || category;
-  renderNav(currentCategory, entry?.id, home);
+  renderNav(currentCategory, entry?.id, home, liveDrops);
   searchInput.value = view === "search" ? query : "";
-  document.title = entry ? entry.title + " · Microscape Wiki" : category ? groups[category].title + " · Microscape Wiki" : "Microscape Wiki";
+  const title = entry?.title || groups[category]?.title || (liveDrops ? "Live Twitch drops" : "");
+  document.title = title ? title + " · Microscape Wiki" : "Microscape Wiki";
   if (home) renderHome();
+  else if (liveDrops) renderLiveDrops();
   else if (entry) renderEntry(entry, currentCategory);
   else if (view === "search" || category) renderList(category, query);
   else main.append(crumbs(null, "Page unavailable"), element("h1", {}, "Page unavailable"),

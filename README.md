@@ -21,6 +21,8 @@ python -m http.server 8000 --directory docs
 
 GitHub Pages is configured to deploy from `main`, folder `/docs`. To check a change, open the site and try an affected deep link, a search, and the relevant filters.
 
+The Live drops page reads `drops.json` from the `live-data` branch. The **Refresh live Microscape drops** GitHub Actions workflow updates that snapshot every 15 minutes and can also be run manually from Actions. If the snapshot is more than 40 minutes old, the tracker directs readers to Streams in Microscape.
+
 ## Credits
 
 Microscape is created by [K3nt0456](https://microscape.cc/credits/). Game systems in the guides are sourced from the [official patch notes](https://microscape.cc/patch-notes/) and the [Miraheze Microscape Wiki](https://microscape.miraheze.org/wiki/Main_Page). The reference catalog adapts Miraheze tables, indexes and article facts with source revisions and contributor history linked on each reference page. That adapted material is available under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).

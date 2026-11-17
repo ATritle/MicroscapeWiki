@@ -1,0 +1,38 @@
+name: Refresh live Microscape drops
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/refresh-drops.yml
+      - scripts/refresh-drops.mjs
+  schedule:
+    - cron: "7,22,37,52 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-microscape-drops
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          ref: live-data
+          path: live-data
+      - name: Fetch and publish current events
+        shell: bash
+        run: |
+          node scripts/refresh-drops.mjs live-data/drops.json
+          git -C live-data config user.name "github-actions[bot]"
+          git -C live-data config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git -C live-data add -- drops.json
+          git -C live-data commit -m "Refresh Microscape live drops"
+          git -C live-data push origin HEAD:refs/heads/live-data

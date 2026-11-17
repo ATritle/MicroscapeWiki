@@ -118,6 +118,13 @@ h3 { margin-bottom: 6px; font-size: 17px; }
 .entry-card strong, .entry-card small { display: block; }
 .entry-card small { margin-top: 2px; font-size: 13px; color: var(--muted); }
 .entry-card-body { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.drop-status, .drop-help { color: var(--muted); font-size: 14px; }
+.drop-status { margin: 14px 0 0; }
+.drop-groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 295px), 1fr)); gap: 16px; }
+.drop-group h2 { margin-bottom: 10px; }
+.drop-group ul { display: grid; gap: 8px; list-style: none; padding: 0; margin: 0; }
+.drop-group li + li { margin: 0; }
+.drop-group p { margin: 0; }
 .entry-icon { flex: none; display: block; padding: 8px; border: 1px solid var(--line); border-radius: 12px; background: radial-gradient(circle at 50% 40%, #233b37, var(--panel) 72%); object-fit: contain; image-rendering: pixelated; }
 .entry-thumbnail { padding: 4px; border-radius: 8px; }
 .pet-profile-header { display: flex; align-items: center; gap: clamp(12px, 3vw, 25px); margin: 0 0 20px; }
