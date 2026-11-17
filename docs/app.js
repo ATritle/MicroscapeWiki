@@ -1,4 +1,5 @@
 import { guides } from "./guides.js";
+import { buildPetEntries } from "./pets.js";
 
 const groups = {
   guides: { title: "Guides", icon: "▤", blurb: "Start here, earn Energy, trade and plan dungeon runs." },
@@ -7,6 +8,7 @@ const groups = {
   foes: { title: "Foes", icon: "⚔", blurb: "Find enemies, dungeon bosses and their loot." },
   locations: { title: "Locations", icon: "⌖", blurb: "Find towns, resource spots and dungeons." },
   abilities: { title: "Abilities", icon: "ϟ", blurb: "Equipment requirements and limit break costs." },
+  pets: { title: "Pets", icon: "✿", blurb: "Companions, pet maps, eligible tasks and drop odds." },
   reference: { title: "Game mechanics", icon: "◈", blurb: "Pet maps, titles, healing and equipment bonuses." }
 };
 
@@ -16,7 +18,7 @@ const menu = document.querySelector("#menu-button");
 const searchForm = document.querySelector("#search-form");
 const searchInput = document.querySelector("#wiki-search");
 const number = new Intl.NumberFormat("en");
-const topicOrder = ["skills", "items", "foes", "locations", "abilities", "reference"];
+const topicOrder = ["skills", "items", "foes", "locations", "abilities", "pets", "reference"];
 const featured = ["energy", "dungeons", "bazaar", "activity-queue"];
 const displayCount = 36;
 let referenceLoadFailed = false;
@@ -24,6 +26,7 @@ let referenceLoadFailed = false;
 const entries = [...guides];
 const byId = new Map(entries.map(entry => [entry.id, entry]));
 const index = new Map();
+const petLinks = new Map();
 
 function element(tag, attributes = {}, ...children) {
   const node = document.createElement(tag);
@@ -40,6 +43,18 @@ const categoryUrl = category => "#/browse/" + category;
 const entryUrl = id => "#/entry/" + id;
 const entryLink = (id, label, className) => link(label || byId.get(id)?.title || id, entryUrl(id), className);
 const normalize = value => value.toLowerCase().normalize("NFD").replace(/\p{Diacritic}/gu, "").replace(/['’]/g, "").replace(/[^a-z0-9]+/g, " ").trim();
+
+function petImage(entry, thumbnail = false) {
+  return element("img", {
+    class: thumbnail ? "pet-icon pet-thumbnail" : "pet-icon",
+    src: entry.portrait.src,
+    alt: thumbnail ? "" : entry.title + " in-game icon",
+    width: thumbnail ? "42" : "96",
+    height: thumbnail ? "42" : "96",
+    loading: thumbnail ? "lazy" : "eager",
+    referrerpolicy: "no-referrer"
+  });
+}
 
 function addToSearch(entry) {
   index.set(entry.id, {
@@ -173,8 +188,10 @@ function renderList(category, query) {
     const filtered = matching.filter(entry => !filter || (isSearch ? entry.category : entry.group) === filter);
     count.textContent = number.format(filtered.length) + (filtered.length === 1 ? " entry" : " entries") + (isSearch && query ? " for “" + query + "”" : "");
     grid.replaceChildren(...filtered.slice(0,limit).map(entry => element("a", {class:"entry-card", href:entryUrl(entry.id)},
-      element("span", {}, element("strong", {}, entry.title),
-        element("small", {}, entry.summary || entry.group || groups[entry.category].title)),
+      element("span", {class:"entry-card-body"},
+        ...(entry.portrait ? [petImage(entry, true)] : []),
+        element("span", {}, element("strong", {}, entry.title),
+          element("small", {}, entry.summary || entry.group || groups[entry.category].title))),
       glyph("→", "arrow")
     )));
     empty.hidden = Boolean(filtered.length);
@@ -201,19 +218,24 @@ function renderList(category, query) {
   update();
   main.append(crumbs(null, name), element("h1", {}, name));
   if (category) main.append(element("p", {class:"intro"}, groups[category].blurb));
+  if (category === "pets" && byId.has("pets")) main.append(entryLink("pets", null, "button"));
   if (referenceLoadFailed && category !== "guides") main.append(element("p", {class:"notice"}, "The reference catalog could not load. Refresh the page to retry."));
   if (filterBar.children.length) main.append(filterBar);
   main.append(count, grid, empty, more, footer());
 }
 
-function renderTable(table, relatedIds = []) {
+function renderTable(table, relatedIds = [], namedLinks = new Map()) {
   const candidates = relatedIds.map(id => byId.get(id)).filter(Boolean);
   const names = new Map(candidates.map(entry => [normalize(entry.title), entry.id]));
   const wrapper = element("div", {class:"table-wrap", role:"region", tabindex:"0", "aria-label":table.title || "Reference table"});
-  const head = element("thead", {}, element("tr", {}, ...table.columns.map(col => element("th", {scope:"col"}, col))));
+  const head = element("thead", {}, element("tr", {}, ...table.columns.map(col => {
+    const target = namedLinks.get(normalize(col));
+    return element("th", {scope:"col"}, target ? entryLink(target, col) : col);
+  })));
   const body = element("tbody", {}, ...table.rows.map(row => element("tr", {},
     ...row.map((value, col) => {
-      const target = col === 0 ? names.get(normalize(value)) : null;
+      const key = normalize(value);
+      const target = namedLinks.get(key) || (col === 0 ? names.get(key) : null);
       return element("td", {}, target ? entryLink(target, value) : value);
     })
   )));
@@ -271,12 +293,19 @@ function calculator() {
   );
 }
 
-function renderEntry(entry) {
+function renderEntry(entry, category) {
   const article = element("article", {class:"article"},
-    crumbs(entry.category, entry.title),
-    element("h1", {}, entry.title)
+    crumbs(category, entry.title)
   );
-  if (entry.summary) article.append(element("p", {class:"intro"}, entry.summary));
+  const title = [
+    element("h1", {}, entry.title),
+    ...(entry.summary ? [element("p", {class:"intro"}, entry.summary)] : [])
+  ];
+  if (entry.portrait) {
+    article.append(element("header", {class:"pet-profile-header"}, petImage(entry), element("div", {}, ...title)));
+  } else {
+    article.append(...title);
+  }
   if (entry.sourceDate) {
     article.append(element("div", {class:"notice"}, glyph("◷"),
       element("p", {}, "Beta reference · Source revised ", element("time", {datetime:entry.sourceDate}, entry.sourceDate), ". Check current in-game values.")
@@ -284,14 +313,15 @@ function renderEntry(entry) {
   }
   if (entry.indexOnly) article.append(element("p", {class:"intro"}, "Listed in the community catalog. Detailed values are still needed."));
   if (entry.calculator) article.append(calculator());
-  for (const [title, text] of entry.sections || []) {
-    article.append(element("section", {}, element("h2", {}, title), element("p", {}, text)));
-  }
   if (entry.facts?.length) {
     article.append(element("dl", {class:"facts"}, ...entry.facts.map(([label, value]) => element("div", {}, element("dt", {}, label), element("dd", {}, value)))));
   }
+  for (const [heading, text] of entry.sections || []) {
+    article.append(element("section", {}, element("h2", {}, heading), element("p", {}, text)));
+  }
   for (const table of entry.tables || []) {
-    const content = renderTable(table, entry.related);
+    const showPetLinks = entry.id === "pets" || (entry.category === "foes" && table.title === "Loot");
+    const content = renderTable(table, entry.related, showPetLinks ? petLinks : undefined);
     if (table.collapsed) {
       article.append(element("details", {class:"table-disclosure"}, element("summary", {}, table.title), content));
       continue;
@@ -329,11 +359,12 @@ function render({focus = false} = {}) {
   const home = !view;
   main.replaceChildren();
   menu.setAttribute("aria-expanded","false");
-  renderNav(entry?.category || category, entry?.id, home);
+  const currentCategory = entry?.id === "pets" ? "pets" : entry?.category || category;
+  renderNav(currentCategory, entry?.id, home);
   searchInput.value = view === "search" ? query : "";
   document.title = entry ? entry.title + " · Microscape Wiki" : category ? groups[category].title + " · Microscape Wiki" : "Microscape Wiki";
   if (home) renderHome();
-  else if (entry) renderEntry(entry);
+  else if (entry) renderEntry(entry, currentCategory);
   else if (view === "search" || category) renderList(category, query);
   else main.append(crumbs(null, "Page unavailable"), element("h1", {}, "Page unavailable"),
     element("p", {class:"intro"}, referenceLoadFailed ? "The reference catalog could not load." : "This entry could not be found."),
@@ -363,10 +394,13 @@ try {
   const response = await fetch(new URL("./reference.json", import.meta.url));
   if (!response.ok) throw new Error("Reference HTTP " + response.status);
   const reference = await response.json();
-  for (const entry of reference) {
+  const pets = buildPetEntries(reference);
+  for (const entry of [...reference, ...pets]) {
     entries.push(entry);
     byId.set(entry.id, entry);
   }
+  for (const pet of pets) petLinks.set(normalize(pet.title), pet.id);
+  if (petLinks.has("scales")) petLinks.set("pet scales", petLinks.get("scales"));
 } catch (error) {
   referenceLoadFailed = true;
   console.error("Could not load the Microscape reference.", error);

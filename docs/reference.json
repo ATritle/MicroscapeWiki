@@ -13387,7 +13387,7 @@
   },
   {
     "id": "pets",
-    "title": "Pets",
+    "title": "Pet maps and drop rates",
     "category": "reference",
     "group": "Mechanics",
     "summary": "Find each pet’s map, look up eligible tasks, and compare reported beta drop odds.",
@@ -13996,6 +13996,10 @@
       },
       {
         "title": "Mork’s maps · 10 Audience Favor each",
+        "petVendor": {
+          "name": "Mork",
+          "cost": 10
+        },
         "columns": [
           "Companion",
           "Pet",
@@ -14085,6 +14089,11 @@
       },
       {
         "title": "Otis’s maps · 15 Audience Favor each, membership required",
+        "petVendor": {
+          "name": "Otis",
+          "cost": 15,
+          "membership": true
+        },
         "columns": [
           "Companion",
           "Pet",

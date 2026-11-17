@@ -14,6 +14,7 @@ python -m http.server 8000 --directory docs
 
 - Edit `docs/guides.js` for guides, patch coverage and playable walkthroughs. Each guide has a permanent ID, sections, related article IDs and sources.
 - Edit `docs/reference.json` for catalog entries. An entry can include a summary, facts and tables. Keep existing IDs stable so saved links keep working. Add the patch date and link to the evidence when revising a beta-era value.
+- Pet profiles use the map and odds tables in `docs/reference.json`. Their image sources and training locations are managed in `docs/pets.js`.
 - Edit `docs/styles.css` for the visual theme. The original pixel-art village banner lives in `docs/assets`.
 
 GitHub Pages is configured to deploy from `main`, folder `/docs`. To check a change, open the site and try an affected deep link, a search, and the relevant filters.

@@ -111,6 +111,12 @@ h3 { margin-bottom: 6px; font-size: 17px; }
 .entry-card { min-width: 0; display: flex; justify-content: space-between; align-items: start; gap: 12px; color: var(--text); text-decoration: none; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 13px 15px; overflow-wrap: anywhere; }
 .entry-card strong, .entry-card small { display: block; }
 .entry-card small { margin-top: 2px; font-size: 13px; color: var(--muted); }
+.entry-card-body { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.pet-icon { flex: none; display: block; padding: 8px; border: 1px solid var(--line); border-radius: 12px; background: radial-gradient(circle at 50% 40%, #233b37, var(--panel) 72%); object-fit: contain; image-rendering: pixelated; }
+.pet-thumbnail { padding: 4px; border-radius: 8px; }
+.pet-profile-header { display: flex; align-items: center; gap: clamp(12px, 3vw, 25px); margin: 0 0 20px; }
+.pet-profile-header .intro { margin: 0; }
+.pet-profile-header h1 { font-size: clamp(1.8rem, 4.4vw, 3.5rem); }
 .more { margin: 16px 0 0; }
 .empty { padding: 18px; border: 1px solid var(--line); border-radius: 8px; color: var(--muted); }
 .article { max-width: 950px; }
