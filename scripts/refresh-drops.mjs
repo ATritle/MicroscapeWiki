@@ -7,37 +7,59 @@ const eventFields = [
   ["key", "hasDungeonEvent", "dungeonEventRemainingMinutes"]
 ];
 
+function streamDetails(row) {
+  const channel = /^https:\/\/(?:www\.)?twitch\.tv\/([a-z0-9_]{1,25})\/?$/i.exec(row.streamUrl)?.[1];
+  if (!channel || typeof row.displayName !== "string" || !row.displayName.trim()) return null;
+
+  const avatarUrl = typeof row.imgUrl === "string"
+    && /^https:\/\/static-cdn\.jtvnw\.net\/jtv_user_pictures\/[a-zA-Z0-9._-]+$/.test(row.imgUrl)
+    ? row.imgUrl : null;
+  return {
+    channel: channel.toLowerCase(),
+    name: row.displayName,
+    ...(avatarUrl ? {avatarUrl} : {})
+  };
+}
+
 export function makeSnapshot(rows, checkedAt = Date.now()) {
   if (!Array.isArray(rows) || rows.some(row => typeof row?.live !== "boolean")) {
     throw new Error("Microscape returned an unexpected communities list.");
   }
 
   const events = [];
+  const energyCandidates = [];
   for (const row of rows) {
     if (!row.live) continue;
+    const stream = streamDetails(row);
+    // Microscape shows 1.3x for member channels that aren't long-running.
+    if (stream && row.isMemberChannel === true && !row.lr) {
+      energyCandidates.push({stream, players: row.clampedLivePlayers ?? 0});
+    }
+
     for (const [type, activeField, timeField] of eventFields) {
       if (row[activeField] !== true) continue;
       const minutes = row[timeField];
       if (minutes === 0) continue;
-      const channel = /^https:\/\/(?:www\.)?twitch\.tv\/([a-z0-9_]{1,25})\/?$/i.exec(row.streamUrl)?.[1];
-      if (!channel || typeof row.displayName !== "string" || !row.displayName.trim()) {
+      if (!stream) {
         throw new Error("Microscape returned an active event without a Twitch channel.");
       }
-      const avatarUrl = typeof row.imgUrl === "string"
-        && /^https:\/\/static-cdn\.jtvnw\.net\/jtv_user_pictures\/[a-zA-Z0-9._-]+$/.test(row.imgUrl)
-        ? row.imgUrl : null;
       events.push({
         type,
-        channel: channel.toLowerCase(),
-        name: row.displayName,
+        ...stream,
         endsAt: Number.isFinite(minutes) && minutes > 0 ? checkedAt + minutes * 60_000 : null,
-        ...(avatarUrl ? {avatarUrl} : {}),
         ...(type === "key" && row.isMemberChannel === true ? {doubleKeys: true} : {})
       });
     }
   }
 
-  return { checkedAt, events };
+  const ranked = energyCandidates.sort((a, b) => b.players - a.players);
+  const unique = new Map();
+  for (const {stream} of ranked) {
+    if (!unique.has(stream.channel)) unique.set(stream.channel, stream);
+    if (unique.size === 3) break;
+  }
+  const energyStreams = [...unique.values()];
+  return { checkedAt, events, energyStreams };
 }
 
 async function main(output) {

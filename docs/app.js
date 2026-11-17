@@ -233,6 +233,11 @@ function updateLiveDrops() {
   }
 }
 
+function validTwitchStream(stream) {
+  return typeof stream?.name === "string" && typeof stream.channel === "string"
+    && /^[a-z0-9_]{1,25}$/.test(stream.channel);
+}
+
 async function refreshLiveDrops() {
   if (liveDropsRequest) return liveDropsRequest;
   liveDropsRequest = (async () => {
@@ -242,13 +247,14 @@ async function refreshLiveDrops() {
       });
       if (!response.ok) throw new Error("Live drops HTTP " + response.status);
       const data = await response.json();
+      const energyStreams = data?.energyStreams ?? [];
       if (!Number.isFinite(data?.checkedAt) || !Array.isArray(data.events) || data.events.some(event =>
-        !event || !["favor", "key"].includes(event.type) || typeof event.name !== "string"
-        || typeof event.channel !== "string" || !/^[a-z0-9_]{1,25}$/.test(event.channel)
-        || !(event.endsAt === null || Number.isFinite(event.endsAt)))) {
+        !validTwitchStream(event) || !["favor", "key"].includes(event.type)
+        || !(event.endsAt === null || Number.isFinite(event.endsAt)))
+        || !Array.isArray(energyStreams) || !energyStreams.every(validTwitchStream)) {
         throw new Error("Invalid live drops snapshot.");
       }
-      liveDropsSnapshot = data;
+      liveDropsSnapshot = {...data, energyStreams};
       liveDropsFailed = false;
     } catch {
       liveDropsFailed = true;
@@ -272,6 +278,16 @@ function dropAvatar(event) {
   return avatar;
 }
 
+function streamCards(streams, description) {
+  return element("ul", {}, ...streams.map(stream => element("li", {},
+    element("a", {class:"entry-card", href:"https://www.twitch.tv/" + stream.channel, target:"_blank", rel:"noopener noreferrer"},
+      element("span", {class:"entry-card-body"}, dropAvatar(stream),
+        element("span", {}, element("strong", {}, stream.name), element("small", {}, description(stream)))),
+      glyph("↗", "arrow")
+    )
+  )));
+}
+
 function renderLiveDrops() {
   const updateTime = new Intl.DateTimeFormat(undefined, {dateStyle:"medium", timeStyle:"short"});
   const status = element("p", {class:"drop-status", role:"status"}, "Checking for live drops…");
@@ -281,20 +297,13 @@ function renderLiveDrops() {
   function eventList(type, title, empty, events, now) {
     const matches = events.filter(event => event.type === type);
     return element("section", {class:"drop-group"}, element("h2", {}, title),
-      matches.length ? element("ul", {}, ...matches.map(event => {
+      matches.length ? streamCards(matches, event => {
         const minutes = Math.ceil((event.endsAt - now) / 60_000);
         const remaining = event.endsAt === null ? "End time unavailable"
           : minutes < 60 ? `About ${minutes} min left`
           : `About ${Math.floor(minutes / 60)}h ${minutes % 60}m left`;
-        return element("li", {},
-          element("a", {class:"entry-card", href:"https://www.twitch.tv/" + event.channel, target:"_blank", rel:"noopener noreferrer"},
-            element("span", {class:"entry-card-body"}, dropAvatar(event),
-              element("span", {}, element("strong", {}, event.name),
-                element("small", {}, event.doubleKeys ? "2× Dungeon Keys · " + remaining : remaining))),
-            glyph("↗", "arrow")
-          )
-        );
-      })) : element("p", {class:"empty"}, empty)
+        return event.doubleKeys ? "2× Dungeon Keys · " + remaining : remaining;
+      }) : element("p", {class:"empty"}, empty)
     );
   }
 
@@ -305,8 +314,19 @@ function renderLiveDrops() {
       results.replaceChildren();
       return;
     }
-    events.sort((a, b) => (a.endsAt ?? Infinity) - (b.endsAt ?? Infinity) || a.name.localeCompare(b.name));
     status.textContent = (liveDropsFailed ? "Refresh failed. " : "") + "Last checked " + updateTime.format(snapshot.checkedAt) + ".";
+    if (!events.length) {
+      const streams = snapshot.energyStreams.slice(0, 3);
+      results.replaceChildren(element("section", {class:"drop-group"},
+        element("h2", {}, streams.length
+          ? "No live drops right now, but enjoy these channels for 1.3x energy"
+          : "No live drops right now"),
+        streams.length ? streamCards(streams, () => "1.3× Energy")
+          : element("p", {class:"empty"}, "No live 1.3× Energy streams were listed.")
+      ));
+      return;
+    }
+    events.sort((a, b) => (a.endsAt ?? Infinity) - (b.endsAt ?? Infinity) || a.name.localeCompare(b.name));
     results.replaceChildren(
       eventList("favor", "Drop Festivals", "No active festivals were listed.", events, now),
       eventList("key", "Dungeon Key events", "No active Dungeon Key events were listed.", events, now)
