@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="MzDunk’s community wiki for Microscape. Find starter guides, skills, items, foes, locations and an XP calculator.">
+  <meta name="theme-color" content="#0d1421">
+  <title>Microscape Wiki</title>
+  <link rel="icon" href="./assets/favicon.png">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+  <header class="site-header">
+    <div class="topbar">
+      <a class="brand" href="#/" aria-label="Microscape Wiki home">
+        <span class="brand-icon" aria-hidden="true">▤</span>
+        <span>Microscape<span class="brand-accent"> Wiki</span></span>
+      </a>
+      <form class="global-search" id="search-form" role="search">
+        <button class="search-submit" type="submit" aria-label="Submit wiki search"><span class="search-icon" aria-hidden="true"></span></button>
+        <input id="wiki-search" name="q" type="search" aria-label="Search the wiki" placeholder="Search items, skills, guides…" autocomplete="off" enterkeyhint="search">
+        <kbd aria-hidden="true">/</kbd>
+      </form>
+      <a class="play-link" href="https://microscape.cc/">Play Microscape <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+  <div class="shell">
+    <aside class="sidebar">
+      <button type="button" id="menu-button" aria-controls="wiki-nav" aria-expanded="false">Browse wiki <span aria-hidden="true">▾</span></button>
+      <nav id="wiki-nav" aria-label="Wiki navigation"></nav>
+    </aside>
+    <main id="content" tabindex="-1">
+      <noscript><p>This wiki uses JavaScript to browse entries and run the XP calculator. You can also visit <a href="https://microscape.miraheze.org/wiki/Main_Page">the Miraheze wiki</a>.</p></noscript>
+    </main>
+  </div>
+</body>
+</html>
