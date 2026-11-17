@@ -21,6 +21,7 @@ const menu = document.querySelector("#menu-button");
 const searchForm = document.querySelector("#search-form");
 const searchInput = document.querySelector("#wiki-search");
 const number = new Intl.NumberFormat("en");
+const gameAssets = "https://microscape.cc/play/assets/";
 const topicOrder = ["skills", "items", "foes", "locations", "abilities", "pets", "reference"];
 const featured = ["energy", "dungeons", "bazaar", "activity-queue"];
 const displayCount = 36;
@@ -59,22 +60,33 @@ function entryImage(src, alt, thumbnail = false) {
   });
 }
 
+function itemIconUrl(id) {
+  const icon = itemIcons[id];
+  return icon ? new URL(icon, gameAssets).href : null;
+}
+
+function entryThumbnail(entry) {
+  return entry.abilityBottle || entry.portrait?.src || entry.artwork || entry.mapImage?.src
+    || (entry.category === "items" ? itemIconUrl(itemIconGroups[entry.id]?.[0] || entry.id) : null);
+}
+
 function entryArtwork(entry) {
-  if (entry.artwork) {
-    return element("div", {class:"profile-art"}, entryImage(entry.artwork, entry.title + " in-game icon"));
+  const artwork = entry.abilityBottle || entry.artwork;
+  if (artwork) {
+    const label = entry.abilityBottle ? " in-game Ability XP bottle" : " in-game icon";
+    return element("div", {class:"profile-art"}, entryImage(artwork, entry.title + label));
   }
   if (entry.category !== "items") return null;
-  const gameAssets = "https://microscape.cc/play/assets/";
   const group = itemIconGroups[entry.id];
   if (group) {
     return element("div", {class:"profile-art item-art-group", role:"group", "aria-label":entry.title + " icons"},
-      ...group.map(id => entryImage(new URL(itemIcons[id], gameAssets).href, byId.get(id).title + " in-game icon", true))
+      ...group.map(id => entryImage(itemIconUrl(id), byId.get(id).title + " in-game icon", true))
     );
   }
-  const icon = itemIcons[entry.id];
+  const icon = itemIconUrl(entry.id);
   if (!icon) return null;
   const label = entry.id === "steel-pickaxe" ? " archived icon" : " in-game icon";
-  return element("div", {class:"profile-art"}, entryImage(new URL(icon, gameAssets).href, entry.title + label));
+  return element("div", {class:"profile-art"}, entryImage(icon, entry.title + label));
 }
 
 function addToSearch(entry) {
@@ -219,13 +231,16 @@ function renderList(category, query) {
   function update() {
     const filtered = matching.filter(entry => !filter || (isSearch ? entry.category : entry.group) === filter);
     count.textContent = number.format(filtered.length) + (filtered.length === 1 ? " entry" : " entries") + (isSearch && query ? " for “" + query + "”" : "");
-    grid.replaceChildren(...filtered.slice(0,limit).map(entry => element("a", {class:"entry-card", href:entryUrl(entry.id)},
-      element("span", {class:"entry-card-body"},
-        ...(entry.portrait ? [entryImage(entry.portrait.src, "", true)] : []),
-        element("span", {}, element("strong", {}, entry.title),
-          element("small", {}, entry.summary || entry.group || groups[entry.category].title))),
-      glyph("→", "arrow")
-    )));
+    grid.replaceChildren(...filtered.slice(0,limit).map(entry => {
+      const thumbnail = entryThumbnail(entry);
+      return element("a", {class:"entry-card", href:entryUrl(entry.id)},
+        element("span", {class:"entry-card-body"},
+          ...(thumbnail ? [entryImage(thumbnail, "", true)] : []),
+          element("span", {}, element("strong", {}, entry.title),
+            element("small", {}, entry.summary || entry.group || groups[entry.category].title))),
+        glyph("→", "arrow")
+      );
+    }));
     empty.hidden = Boolean(filtered.length);
     more.hidden = filtered.length <= limit;
     for (const button of filterBar.children) button.setAttribute("aria-pressed", String(button.dataset.filter === filter));

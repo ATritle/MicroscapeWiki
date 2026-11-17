@@ -3459,7 +3459,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/anglers-luck.png"
   },
   {
     "id": "apple-pie",
@@ -4286,7 +4287,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/at-any-cost.png"
   },
   {
     "id": "attack",
@@ -5047,7 +5049,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/baker.png"
   },
   {
     "id": "ball-of-wool",
@@ -5922,7 +5925,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/berserk.png"
   },
   {
     "id": "big-bones",
@@ -7282,7 +7286,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/bleeding-edge.png"
   },
   {
     "id": "blessed-greaves",
@@ -8010,7 +8015,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/blood-ward.png"
   },
   {
     "id": "bloodied-coin",
@@ -8207,7 +8213,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/bloodscent.png"
   },
   {
     "id": "blue-dragon",
@@ -9188,7 +9195,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/bounty-hook.png"
   },
   {
     "id": "bow",
@@ -11906,7 +11914,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/burst-of-strength.png"
   },
   {
     "id": "c-carcass",
@@ -12645,7 +12654,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/chaos-conduit.png"
   },
   {
     "id": "chaos-rune",
@@ -13441,7 +13451,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/clarity-of-thought.png"
   },
   {
     "id": "clay",
@@ -13725,7 +13736,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/clumsy-flame.png"
   },
   {
     "id": "coal-keeper",
@@ -13865,7 +13877,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/coal-keeper.png"
   },
   {
     "id": "coal-ore",
@@ -14755,7 +14768,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/conserve-air.png"
   },
   {
     "id": "conserve-fire",
@@ -14932,7 +14946,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/conserve-fire.png"
   },
   {
     "id": "consolation-hat",
@@ -17837,7 +17852,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/crusader.png"
   },
   {
     "id": "cursed-strength",
@@ -17984,7 +18000,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/cursed-strength.png"
   },
   {
     "id": "cursed-talisman",
@@ -18287,7 +18304,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/dark-twist.png"
   },
   {
     "id": "dark-wizards-hat",
@@ -18971,7 +18989,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/deaths-bargain.png"
   },
   {
     "id": "deep-sewers",
@@ -20549,7 +20568,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/dragon-rage.png"
   },
   {
     "id": "dragon-shield",
@@ -21906,7 +21926,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/dread-aura.png"
   },
   {
     "id": "dread-mount-onyx-antechamber",
@@ -22476,7 +22497,8 @@
         "Microscape public game client",
         "https://microscape.cc/play/assets/index-Bjzb2vNm.js"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/drosswork.png"
   },
   {
     "id": "druid-warrior",
@@ -24708,7 +24730,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/empowered-mind.png"
   },
   {
     "id": "enlightened",
@@ -24852,7 +24875,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/enlightened.png"
   },
   {
     "id": "equipment-bonuses",
@@ -25343,7 +25367,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/eruption.png"
   },
   {
     "id": "everflame-core",
@@ -26924,7 +26949,8 @@
         "Microscape public game client",
         "https://microscape.cc/play/assets/index-Bjzb2vNm.js"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/fanaticism.png"
   },
   {
     "id": "feather",
@@ -28659,7 +28685,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/fire-blast.png"
   },
   {
     "id": "fire-bolt",
@@ -28842,7 +28869,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/fire-bolt.png"
   },
   {
     "id": "fire-dwarf",
@@ -30144,7 +30172,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/fire-strike.png"
   },
   {
     "id": "fire-wave",
@@ -30301,7 +30330,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/fire-wave.png"
   },
   {
     "id": "firemaking",
@@ -31496,7 +31526,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/flame-glutton.png"
   },
   {
     "id": "flax",
@@ -31794,7 +31825,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/fletchers-eye.png"
   },
   {
     "id": "fletching",
@@ -32564,7 +32596,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/focus.png"
   },
   {
     "id": "food",
@@ -32960,7 +32993,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/forbidden-magic.png"
   },
   {
     "id": "fox-hat",
@@ -33616,7 +33650,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/gemcraft.png"
   },
   {
     "id": "ghost",
@@ -34422,7 +34457,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/gilded-pockets.png"
   },
   {
     "id": "ginger",
@@ -36247,7 +36283,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/graced-aim.png"
   },
   {
     "id": "grain",
@@ -36784,7 +36821,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/green-thumb.png"
   },
   {
     "id": "gurgle",
@@ -39908,7 +39946,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/igniting-shot.png"
   },
   {
     "id": "ill-omen",
@@ -40070,7 +40109,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/ill-omen.png"
   },
   {
     "id": "imp",
@@ -40538,7 +40578,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/inner-furnace.png"
   },
   {
     "id": "insect-swarm",
@@ -41276,7 +41317,8 @@
         "Microscape public game client",
         "https://microscape.cc/play/assets/index-Bjzb2vNm.js"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/iron-gut.png"
   },
   {
     "id": "iron-med-helm",
@@ -43260,7 +43302,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/lanterns-gift.png"
   },
   {
     "id": "lava-maze-entrance",
@@ -44861,7 +44904,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/lightbite.png"
   },
   {
     "id": "limpwurt-root",
@@ -49314,7 +49358,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/mixed-earth.png"
   },
   {
     "id": "molten-glass",
@@ -49629,7 +49674,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/molten-reflection.png"
   },
   {
     "id": "monk",
@@ -51003,7 +51049,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/mudwright.png"
   },
   {
     "id": "mummy",
@@ -53640,7 +53687,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/paralyze-monster.png"
   },
   {
     "id": "parry",
@@ -53816,7 +53864,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/parry.png"
   },
   {
     "id": "patronage",
@@ -53950,7 +53999,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/patronage.png"
   },
   {
     "id": "peach-long-hair",
@@ -54377,7 +54427,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/penance.png"
   },
   {
     "id": "pet-map-beatrix",
@@ -57969,7 +58020,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/plume-catcher.png"
   },
   {
     "id": "pot",
@@ -59501,7 +59553,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/protector-of-progryn.png"
   },
   {
     "id": "pulverize-iron",
@@ -59652,7 +59705,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/pulverize-iron.png"
   },
   {
     "id": "purple-party-hat",
@@ -60121,7 +60175,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/pyreshell-ward.png"
   },
   {
     "id": "quench",
@@ -60240,7 +60295,8 @@
         "Microscape public game client",
         "https://microscape.cc/play/assets/index-Bjzb2vNm.js"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/quench.png"
   },
   {
     "id": "quick-hex",
@@ -60383,7 +60439,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/quick-hex.png"
   },
   {
     "id": "ras-splinter",
@@ -60525,7 +60582,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/ras-splinter.png"
   },
   {
     "id": "ranged",
@@ -60981,7 +61039,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/rapid-fire.png"
   },
   {
     "id": "rapid-heal",
@@ -61137,7 +61196,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/rapid-heal.png"
   },
   {
     "id": "raw-chicken",
@@ -62921,7 +62981,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/rubber-body.png"
   },
   {
     "id": "rubber-boots",
@@ -63427,7 +63488,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/sacred-march.png"
   },
   {
     "id": "sacred-rune",
@@ -63651,7 +63713,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/sacred-strike.png"
   },
   {
     "id": "salmon",
@@ -63874,7 +63937,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/salt-cure.png"
   },
   {
     "id": "salted-mitts",
@@ -64589,7 +64653,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/sanguine-harvest.png"
   },
   {
     "id": "santa-hat",
@@ -65260,7 +65325,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/scarabs-feast.png"
   },
   {
     "id": "scarabs-plea",
@@ -65400,7 +65466,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/scarabs-plea.png"
   },
   {
     "id": "scorched-coin",
@@ -65885,7 +65952,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/serpents-return.png"
   },
   {
     "id": "serpentleaf",
@@ -66477,7 +66545,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/shell-pockets.png"
   },
   {
     "id": "shepherd",
@@ -66615,7 +66684,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/shepherd.png"
   },
   {
     "id": "shield-wall",
@@ -66754,7 +66824,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/shield-wall.png"
   },
   {
     "id": "shrimp",
@@ -69395,7 +69466,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/sniper.png"
   },
   {
     "id": "soda-ash",
@@ -69662,7 +69734,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/soft-landing.png"
   },
   {
     "id": "solace-glasshouse",
@@ -70239,7 +70312,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/soul-harvest.png"
   },
   {
     "id": "sour-stomach",
@@ -70358,7 +70432,8 @@
         "Microscape public game client",
         "https://microscape.cc/play/assets/index-Bjzb2vNm.js"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/sour-stomach.png"
   },
   {
     "id": "spell-echo",
@@ -70535,7 +70610,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/spell-echo.png"
   },
   {
     "id": "spider-silk",
@@ -71046,7 +71122,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/steady-aim.png"
   },
   {
     "id": "steel-armor",
@@ -72433,7 +72510,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/stoneskin.png"
   },
   {
     "id": "strength",
@@ -74260,7 +74338,8 @@
         "Microscape public game client",
         "https://microscape.cc/play/assets/index-Bjzb2vNm.js"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/sweet-tooth.png"
   },
   {
     "id": "swift-sands",
@@ -74398,7 +74477,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/swift-sands.png"
   },
   {
     "id": "swordfish",
@@ -74662,7 +74742,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/telegrab-loot.png"
   },
   {
     "id": "telekinetic-gloves",
@@ -75641,7 +75722,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/thick-skin.png"
   },
   {
     "id": "thread",
@@ -75876,7 +75958,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/til-death-do-us-part.png"
   },
   {
     "id": "timber-oracle",
@@ -76019,7 +76102,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/timber-oracle.png"
   },
   {
     "id": "time-crystal",
@@ -77334,7 +77418,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/tough-arrows.png"
   },
   {
     "id": "trout",
@@ -80838,7 +80923,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/wind-blast.png"
   },
   {
     "id": "wind-bolt",
@@ -81012,7 +81098,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/wind-bolt.png"
   },
   {
     "id": "wind-strike",
@@ -81248,7 +81335,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/wind-strike.png"
   },
   {
     "id": "wind-wave",
@@ -81396,7 +81484,8 @@
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
       ]
-    ]
+    ],
+    "abilityBottle": "./assets/ability-bottles/wind-wave.png"
   },
   {
     "id": "wizards-hat",
