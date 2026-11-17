@@ -123,7 +123,7 @@ function renderHome() {
       element("p", {class:"hero-brand"},
         element("span", {class:"hero-wordmark", "aria-hidden":"true"},
           element("span", {class:"hero-wordmark-signature"}),
-          element("span", {class:"hero-wordmark-suffix"}, "’s")
+          element("span", {class:"hero-wordmark-suffix"})
         ),
         element("span", {class:"visually-hidden"}, "MzDunk’s "),
         element("span", {class:"hero-brand-label"}, "Community Wiki")
