@@ -1,5 +1,6 @@
 import { guides } from "./guides.js";
 import { buildPetEntries } from "./pets.js";
+import { itemIcons, itemIconGroups } from "./item-icons.js";
 
 const groups = {
   guides: { title: "Guides", icon: "▤", blurb: "Start here, earn Energy, trade and plan dungeon runs." },
@@ -44,16 +45,31 @@ const entryUrl = id => "#/entry/" + id;
 const entryLink = (id, label, className) => link(label || byId.get(id)?.title || id, entryUrl(id), className);
 const normalize = value => value.toLowerCase().normalize("NFD").replace(/\p{Diacritic}/gu, "").replace(/['’]/g, "").replace(/[^a-z0-9]+/g, " ").trim();
 
-function petImage(entry, thumbnail = false) {
+function entryImage(src, alt, thumbnail = false) {
   return element("img", {
-    class: thumbnail ? "pet-icon pet-thumbnail" : "pet-icon",
-    src: entry.portrait.src,
-    alt: thumbnail ? "" : entry.title + " in-game icon",
+    class: thumbnail ? "entry-icon entry-thumbnail" : "entry-icon",
+    src,
+    alt,
     width: thumbnail ? "42" : "96",
     height: thumbnail ? "42" : "96",
     loading: thumbnail ? "lazy" : "eager",
     referrerpolicy: "no-referrer"
   });
+}
+
+function itemArtwork(entry) {
+  if (entry.category !== "items") return null;
+  const gameAssets = "https://microscape.cc/play/assets/";
+  const group = itemIconGroups[entry.id];
+  if (group) {
+    return element("div", {class:"item-art item-art-group", role:"group", "aria-label":entry.title + " icons"},
+      ...group.map(id => entryImage(new URL(itemIcons[id], gameAssets).href, byId.get(id).title + " in-game icon", true))
+    );
+  }
+  const icon = itemIcons[entry.id];
+  if (!icon) return null;
+  const label = entry.id === "steel-pickaxe" ? " archived icon" : " in-game icon";
+  return element("div", {class:"item-art"}, entryImage(new URL(icon, gameAssets).href, entry.title + label));
 }
 
 function addToSearch(entry) {
@@ -189,7 +205,7 @@ function renderList(category, query) {
     count.textContent = number.format(filtered.length) + (filtered.length === 1 ? " entry" : " entries") + (isSearch && query ? " for “" + query + "”" : "");
     grid.replaceChildren(...filtered.slice(0,limit).map(entry => element("a", {class:"entry-card", href:entryUrl(entry.id)},
       element("span", {class:"entry-card-body"},
-        ...(entry.portrait ? [petImage(entry, true)] : []),
+        ...(entry.portrait ? [entryImage(entry.portrait.src, "", true)] : []),
         element("span", {}, element("strong", {}, entry.title),
           element("small", {}, entry.summary || entry.group || groups[entry.category].title))),
       glyph("→", "arrow")
@@ -301,8 +317,16 @@ function renderEntry(entry, category) {
     element("h1", {}, entry.title),
     ...(entry.summary ? [element("p", {class:"intro"}, entry.summary)] : [])
   ];
-  if (entry.portrait) {
-    article.append(element("header", {class:"pet-profile-header"}, petImage(entry), element("div", {}, ...title)));
+  const facts = entry.facts?.length ? [
+    element("dl", {class:"facts"}, ...entry.facts.map(([label, value]) => element("div", {}, element("dt", {}, label), element("dd", {}, value))))
+  ] : [];
+  const art = itemArtwork(entry);
+  if (art) {
+    article.append(element("header", {class:"item-profile-header"}, art, element("div", {class:"item-title"}, ...title), ...facts));
+  } else if (entry.portrait) {
+    article.append(element("header", {class:"pet-profile-header"},
+      entryImage(entry.portrait.src, entry.title + " in-game icon"), element("div", {}, ...title)
+    ));
   } else {
     article.append(...title);
   }
@@ -315,9 +339,7 @@ function renderEntry(entry, category) {
   }
   if (entry.indexOnly) article.append(element("p", {class:"intro"}, "Listed in the community catalog. Detailed values are still needed."));
   if (entry.calculator) article.append(calculator());
-  if (entry.facts?.length) {
-    article.append(element("dl", {class:"facts"}, ...entry.facts.map(([label, value]) => element("div", {}, element("dt", {}, label), element("dd", {}, value)))));
-  }
+  if (!art) article.append(...facts);
   for (const [heading, text] of entry.sections || []) {
     article.append(element("section", {}, element("h2", {}, heading), element("p", {}, text)));
   }
@@ -339,12 +361,18 @@ function renderEntry(entry, category) {
       element("div", {class:"related"}, ...related.map(id => entryLink(id, null, "button")))
     ));
   }
-  const sources = entry.sources || [
+  const sources = [...(entry.sources || [
     [entry.sourceTitle + " on Miraheze", entry.sourceUrl],
     ...(entry.revision ? [["Source revision " + entry.revision, "https://microscape.miraheze.org/wiki/Special:PermanentLink/" + entry.revision]] : []),
     ["Contributor history", entry.sourceUrl + "?action=history"],
     ["CC BY-SA 4.0", "https://creativecommons.org/licenses/by-sa/4.0/"]
-  ];
+  ])];
+  if (art) {
+    sources.push(entry.id === "steel-pickaxe"
+      ? ["Archived Steel Pickaxe icon on Miraheze", "https://microscape.miraheze.org/wiki/File:Steel_Pickaxe.png"]
+      : ["Microscape game artwork credits", "https://microscape.cc/credits/"]
+    );
+  }
   article.append(element("section", {class:"sources"}, element("h2", {}, "Sources"),
     element("ul", {}, ...sources.map(([label, href]) => element("li", {}, link(label, href))))
   ));
