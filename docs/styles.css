@@ -82,21 +82,21 @@ h3 { margin-bottom: 6px; font-size: 17px; }
 .hero-lantern:nth-child(3n + 2) { animation-duration: 4.6s; animation-delay: -2.3s; }
 .hero-lantern:nth-child(3n) { animation-duration: 3.1s; animation-delay: -.8s; }
 .hero-lantern:nth-child(even) { animation-direction: reverse; }
-.hero-wisp { animation: village-drift 7.2s linear infinite; }
-.hero-wisp:nth-child(2) { animation-delay: -2.4s; }
-.hero-wisp:nth-child(3) { animation-delay: -4.8s; }
+.hero-wisp { animation: village-drift 12s linear infinite; }
+.hero-wisp:nth-child(2) { animation-delay: -4s; }
+.hero-wisp:nth-child(3) { animation-delay: -8s; }
 @keyframes village-flicker {
-  0%, 100% { opacity: .30; }
-  18%, 53% { opacity: .54; }
-  31% { opacity: .19; }
-  40%, 79% { opacity: .64; }
-  64%, 91% { opacity: .24; }
+  0%, 100% { opacity: .38; }
+  18%, 53% { opacity: .68; }
+  31% { opacity: .23; }
+  40%, 79% { opacity: .84; }
+  64%, 91% { opacity: .32; }
 }
 @keyframes village-drift {
   0% { transform: translate(0, 0) scale(.52); opacity: 0; }
-  13% { opacity: .23; }
-  43% { transform: translate(26px, -42px) scale(.95); opacity: .16; }
-  100% { transform: translate(100px, -106px) scale(1.65); opacity: 0; }
+  13% { opacity: .16; }
+  43% { transform: translate(23px, -36px) scale(.88); opacity: .12; }
+  100% { transform: translate(82px, -90px) scale(1.4); opacity: 0; }
 }
 @media (prefers-reduced-motion: reduce) {
   .hero-motion { display: none; }
