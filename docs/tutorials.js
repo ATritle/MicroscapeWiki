@@ -8,13 +8,44 @@ export const tutorials = [
     spriteFoes: ["gurgle"],
     summary: "Open the way to The Sump, then use Rubber Boots and watch the split counter during the Gurgle fight.",
     sections: [
-      ["How to open the fight", "In Deep Sewers, defeat the Sewer Crocodile using ranged attacks. The dungeon door opens for 60 seconds after the crocodile is defeated. Select Descend before the door closes to enter The Sump and start the Gurgle fight."],
-      ["Equip Rubber Boots", "If you have a pair, equip Rubber Boots before fighting Gurgle. They grant Soft Landing, which reduces fall damage by 75%. Keep them on through the split phases to cushion any falls."],
-      ["Watch the split counter", "Use each split window to deal damage before the slimes reunite. The fight shows which split you are on and warns you on the third, when Gurgle can flee."],
+      ["1. Travel to O’Rock Sewers", "Open the World Map, select O’Rock Sewers southeast of Jester’s Room, then choose Travel Here.", {
+        screenshot: {
+          source:{src:"https://microscape.cc/play/assets/microscape-world-map-Cjd3Id0b.png", width:2000, height:1800},
+          crop:[790, 750, 440, 330],
+          marker:[1004, 909],
+          alt:"A close-up of the Microscape World Map with a ring marking the O’Rock Sewers entrance.",
+          caption:"The ring marks O’Rock Sewers on the World Map."
+        }
+      }],
+      ["2. Descend to Deep Sewers", "In the first chamber, find the dungeon Travel marker and choose Descend to enter Deep Sewers.", {
+        screenshot: {
+          mapId:"orock-sewers",
+          marker:[208, 72],
+          alt:"The O’Rock Sewers map with a ring marking the passage to Deep Sewers.",
+          caption:"Use the Travel marker at the ring to reach Deep Sewers."
+        }
+      }],
+      ["3. Defeat the Sewer Crocodile and descend", "Defeat the Sewer Crocodile using ranged attacks. The dungeon door opens for 60 seconds after the kill. Use the dungeon Travel marker by the drain and choose Descend before the countdown ends.", {
+        screenshot: {
+          mapId:"deep-sewers",
+          marker:[448, 144],
+          alt:"The Deep Sewers map with a ring marking the drain that leads to The Sump.",
+          caption:"The ring marks the descent beside the Sewer Crocodile. Use it while the drain is open."
+        }
+      }],
+      ["4. Start the fight in The Sump", "Select Gurgle to start the fight. You need combat level 10 and a Dungeon Key. If you have Rubber Boots, equip them before engaging. They grant Soft Landing, which reduces fall damage by 75%.", {
+        screenshot: {
+          mapId:"the-sump",
+          marker:[432, 200],
+          alt:"The Sump map with a ring marking Gurgle’s position in the boss chamber.",
+          caption:"The ring marks where Gurgle starts the fight."
+        }
+      }],
+      ["5. Attack the Slimelets during the splits", "When the counter shows the first or second split, attack the Slimelets while they’re separated. Watch the countdown for when they’ll reunite. If Gurgle collapses, switch back to him to finish the fight. On the third split, the countdown shows how long you have before Gurgle can flee."],
       ["Where to get them", "Rubber Boots are a 1-in-16 drop from Gurgle. The item page lists the drop source and equipment details."]
     ],
-    related: ["gurgle", "sewer-crocodile", "deep-sewers", "the-sump", "rubber-boots", "soft-landing"],
-    sources: [["Microscape game client · Soft Landing and loot", gameClient], ["September 30 patch notes · Gurgle’s splits", patchNotes]]
+    related: ["gurgle", "orock-sewers", "deep-sewers", "the-sump", "sewer-crocodile", "slimelet", "dungeon-key", "rubber-boots", "soft-landing"],
+    sources: [["Microscape game client · Dungeon maps, fight requirements and loot", gameClient], ["September 30 patch notes · Gurgle’s splits", patchNotes]]
   },
   {
     id: "dragon-breath-tutorial",

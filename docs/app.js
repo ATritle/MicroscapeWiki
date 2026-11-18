@@ -1,5 +1,5 @@
 import { guides } from "./guides.js?v=lurk-price";
-import { tutorials } from "./tutorials.js?v=morvane-walkthrough";
+import { tutorials } from "./tutorials.js?v=gurgle-route";
 import { buildPetEntries } from "./pets.js?v=dwarven-cannon";
 import { itemIcons, itemIconGroups } from "./item-icons.js";
 
@@ -644,7 +644,7 @@ function linkMentions(text, references) {
 }
 
 function renderTutorialScreenshot(source, screenshot, references) {
-  const [x, y, width, height] = screenshot.crop;
+  const [x, y, width, height] = screenshot.crop || [0, 0, source.width, source.height];
   const marker = screenshot.marker;
   return element("figure", {class:"tutorial-screenshot"},
     element("div", {class:"tutorial-screenshot-frame", style:`aspect-ratio:${width}/${height}`},
@@ -701,12 +701,13 @@ function renderEntry(entry, category) {
   const sprites = entry.sprites || tutorialSprites;
   if (sprites.length) article.append(renderGameSprites(sprites, {title:entry.sprites ? entry.title : undefined}));
   for (const [heading, text, {steps, screenshot} = {}] of entry.sections || []) {
+    const screenshotSource = screenshot && (screenshot.source || byId.get(screenshot.mapId)?.mapImage || entry.screenshotSource);
     article.append(element("section", {},
       element("h2", {}, ...linkMentions(heading, inlineReferences)),
       element("p", {}, ...linkMentions(text, inlineReferences)),
       ...(steps ? [element("ol", {class:"tutorial-steps"},
         ...steps.map(step => element("li", {}, ...linkMentions(step, inlineReferences))))] : []),
-      ...(screenshot ? [renderTutorialScreenshot(entry.screenshotSource, screenshot, inlineReferences)] : [])
+      ...(screenshotSource ? [renderTutorialScreenshot(screenshotSource, screenshot, inlineReferences)] : [])
     ));
   }
   for (const table of entry.tables || []) {
