@@ -150,6 +150,7 @@ function footer() {
 
 function renderHome() {
   const hero = element("section", {class:"hero", "aria-labelledby":"page-title"},
+    document.querySelector("#hero-scene").content.cloneNode(true),
     element("div", {class:"hero-copy"},
       element("p", {class:"hero-brand"},
         element("span", {class:"hero-wordmark", "aria-hidden":"true"},

@@ -7,8 +7,8 @@
   <meta name="theme-color" content="#0d1421">
   <title>Microscape Wiki</title>
   <link rel="icon" href="./assets/favicon.png">
-  <link rel="stylesheet" href="./styles.css?v=live-avatars">
-  <script type="module" src="./app.js?v=dwarven-cannon"></script>
+  <link rel="stylesheet" href="./styles.css?v=animated-village">
+  <script type="module" src="./app.js?v=animated-village"></script>
 </head>
 <body>
   <a class="skip" href="#content">Skip to content</a>
@@ -35,5 +35,68 @@
       <noscript><p>This wiki uses JavaScript to browse entries and run the XP calculator. You can also visit <a href="https://microscape.miraheze.org/wiki/Main_Page">the Miraheze wiki</a>.</p></noscript>
     </main>
   </div>
+  <template id="hero-scene">
+    <div class="hero-scene" aria-hidden="true">
+      <svg viewBox="0 0 2172 724" focusable="false">
+        <defs>
+          <image id="village-art" href="./assets/twilight-village.jpg" width="2172" height="724"/>
+          <radialGradient id="village-feather">
+            <stop offset="55%" stop-color="white"/>
+            <stop offset="100%" stop-color="white" stop-opacity="0"/>
+          </radialGradient>
+          <radialGradient id="village-lantern-light">
+            <stop offset="0%" stop-color="#fff3a4" stop-opacity=".95"/>
+            <stop offset="28%" stop-color="#ffc458" stop-opacity=".65"/>
+            <stop offset="65%" stop-color="#fc792a" stop-opacity=".22"/>
+            <stop offset="100%" stop-color="#fc792a" stop-opacity="0"/>
+          </radialGradient>
+          <mask id="village-flag-mask" maskUnits="userSpaceOnUse" x="1397" y="4" width="68" height="46">
+            <ellipse cx="1425" cy="28" rx="38" ry="23" fill="url(#village-feather)"/>
+          </mask>
+          <mask id="village-smoke-mask" maskUnits="userSpaceOnUse" x="1964" y="0" width="179" height="113">
+            <ellipse cx="2047" cy="56" rx="96" ry="32" transform="rotate(-42 2047 56)" fill="url(#village-feather)"/>
+          </mask>
+          <filter id="village-flag-wave" x="1390" y="1" width="80" height="54" filterUnits="userSpaceOnUse">
+            <feTurbulence type="fractalNoise" baseFrequency=".028 .042" numOctaves="1" seed="4" result="wave">
+              <animate attributeName="baseFrequency" values=".028 .042;.044 .036;.035 .049;.028 .042" dur="3.4s" repeatCount="indefinite"/>
+            </feTurbulence>
+            <feDisplacementMap in="SourceGraphic" in2="wave" scale="15" xChannelSelector="R" yChannelSelector="G"/>
+          </filter>
+          <filter id="village-smoke-sway" x="1955" y="0" width="195" height="120" filterUnits="userSpaceOnUse">
+            <feTurbulence type="fractalNoise" baseFrequency=".012 .018" numOctaves="2" seed="8" result="drift">
+              <animate attributeName="baseFrequency" values=".012 .018;.019 .014;.014 .023;.012 .018" dur="8s" repeatCount="indefinite"/>
+            </feTurbulence>
+            <feDisplacementMap in="SourceGraphic" in2="drift" scale="24" xChannelSelector="R" yChannelSelector="G"/>
+          </filter>
+          <path id="village-wisp" d="M-12 1h4v-5h6v-4h11v3h6v5h5v7h-6v4H-5V8h-7z" fill="#dbd0cf"/>
+        </defs>
+        <use href="#village-art"/>
+        <g class="hero-motion">
+          <g mask="url(#village-flag-mask)">
+            <use href="#village-art" filter="url(#village-flag-wave)"/>
+          </g>
+          <g mask="url(#village-smoke-mask)">
+            <use href="#village-art" filter="url(#village-smoke-sway)"/>
+          </g>
+          <g transform="translate(1990 104)">
+            <use class="hero-wisp" href="#village-wisp"/>
+            <use class="hero-wisp" href="#village-wisp"/>
+            <use class="hero-wisp" href="#village-wisp"/>
+          </g>
+          <g fill="url(#village-lantern-light)">
+            <ellipse class="hero-lantern" cx="1048" cy="406" rx="30" ry="29"/>
+            <ellipse class="hero-lantern" cx="1209" cy="382" rx="24" ry="25"/>
+            <ellipse class="hero-lantern" cx="1315" cy="414" rx="28" ry="28"/>
+            <ellipse class="hero-lantern" cx="1406" cy="241" rx="25" ry="26"/>
+            <ellipse class="hero-lantern" cx="1646" cy="400" rx="22" ry="24"/>
+            <ellipse class="hero-lantern" cx="1674" cy="397" rx="27" ry="28"/>
+            <ellipse class="hero-lantern" cx="1781" cy="418" rx="31" ry="31"/>
+            <ellipse class="hero-lantern" cx="1811" cy="413" rx="26" ry="28"/>
+            <ellipse class="hero-lantern" cx="1621" cy="544" rx="35" ry="36"/>
+          </g>
+        </g>
+      </svg>
+    </div>
+  </template>
 </body>
 </html>
