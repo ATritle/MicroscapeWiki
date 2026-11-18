@@ -1,5 +1,6 @@
 const source = "https://microscape.cc/server/tapi/live-communities";
-const wikiOrigin = "https://atritle.github.io";
+const defaultWikiOrigin = "https://atritle.github.io";
+const wikiOrigins = new Set([defaultWikiOrigin, "https://microscapewiki.com", "https://www.microscapewiki.com"]);
 const feedPath = "/drops.json";
 const eventFields = [
   ["favor", "hasFestival", "festivalRemainingMinutes"],
@@ -75,25 +76,29 @@ export default {
     if (request.method !== "GET") return new Response("Method not allowed", {status: 405, headers: {Allow: "GET"}});
 
     const origin = request.headers.get("Origin");
-    if (origin && origin !== wikiOrigin) return new Response("Origin not allowed", {status: 403});
-    const headers = {"Access-Control-Allow-Origin": wikiOrigin, "X-Content-Type-Options": "nosniff"};
+    if (origin && !wikiOrigins.has(origin)) return new Response("Origin not allowed", {status: 403, headers: {Vary: "Origin"}});
+    const headers = {"X-Content-Type-Options": "nosniff"};
 
-    // Use one cache key for the public feed, regardless of query parameters.
+    // Cache the feed independently of the requesting origin and query parameters.
     const cache = globalThis.caches?.default;
     const key = new Request(new URL(feedPath, url.origin));
-    const cached = await cache?.match(key).catch(() => undefined);
-    if (cached) return cached;
-
-    try {
-      const snapshot = await fetchSnapshot(8_000);
-      const response = Response.json(snapshot, {headers: {...headers, "Cache-Control": "public, max-age=60"}});
-      if (cache) context.waitUntil(cache.put(key, response.clone()).catch(() => {}));
-      return response;
-    } catch (error) {
-      console.error("Cannot refresh Microscape streams:", error.message);
-      return Response.json({error: "Microscape streams are temporarily unavailable."}, {
-        status: 502, headers: {...headers, "Cache-Control": "no-store"}
-      });
+    let response = await cache?.match(key).catch(() => undefined);
+    if (!response) {
+      try {
+        const snapshot = await fetchSnapshot(8_000);
+        response = Response.json(snapshot, {headers: {...headers, "Cache-Control": "public, max-age=60"}});
+        if (cache) context.waitUntil(cache.put(key, response.clone()).catch(() => {}));
+      } catch (error) {
+        console.error("Cannot refresh Microscape streams:", error.message);
+        response = Response.json({error: "Microscape streams are temporarily unavailable."}, {
+          status: 502, headers: {...headers, "Cache-Control": "no-store"}
+        });
+      }
     }
+
+    const result = new Response(response.body, response);
+    result.headers.set("Access-Control-Allow-Origin", origin || defaultWikiOrigin);
+    result.headers.append("Vary", "Origin");
+    return result;
   }
 };
