@@ -1,0 +1,113 @@
+{
+  "itemResolutions": [
+    {
+      "id": "candy-cane",
+      "status": "unconfirmed-current-source"
+    },
+    {
+      "id": "dross",
+      "status": "documented-source"
+    },
+    {
+      "id": "elpers-hat",
+      "status": "unconfirmed-current-source"
+    },
+    {
+      "id": "food-scraps",
+      "status": "documented-source"
+    },
+    {
+      "id": "headless-arrows",
+      "status": "disabled-recipe"
+    },
+    {
+      "id": "iron-armor",
+      "status": "disabled-recipe"
+    },
+    {
+      "id": "iron-arrows",
+      "status": "deprecated-recipe"
+    },
+    {
+      "id": "iron-arrowtips",
+      "status": "disabled-recipe"
+    },
+    {
+      "id": "iron-axe",
+      "status": "unconfirmed-current-source"
+    },
+    {
+      "id": "iron-dagger",
+      "status": "disabled-recipe"
+    },
+    {
+      "id": "iron-med-helm",
+      "status": "disabled-recipe"
+    },
+    {
+      "id": "iron-scimitar",
+      "status": "disabled-recipe"
+    },
+    {
+      "id": "iron-sq-shield",
+      "status": "disabled-recipe"
+    },
+    {
+      "id": "lava-rod",
+      "status": "unconfirmed-current-source"
+    },
+    {
+      "id": "magic-carp",
+      "status": "documented-source"
+    },
+    {
+      "id": "santa-hat",
+      "status": "unconfirmed-current-source"
+    },
+    {
+      "id": "soft-clay",
+      "status": "disabled-recipe"
+    },
+    {
+      "id": "uncut-dragonstone",
+      "status": "unconfirmed-current-source"
+    },
+    {
+      "id": "unstrung-diamond-amulet",
+      "status": "disabled-recipe"
+    },
+    {
+      "id": "unstrung-dragonstone-amulet",
+      "status": "disabled-recipe"
+    },
+    {
+      "id": "unstrung-emerald-amulet",
+      "status": "disabled-recipe"
+    },
+    {
+      "id": "unstrung-evil-amulet",
+      "status": "disabled-recipe"
+    },
+    {
+      "id": "unstrung-gold-amulet",
+      "status": "disabled-recipe"
+    },
+    {
+      "id": "unstrung-holy-amulet",
+      "status": "disabled-recipe"
+    },
+    {
+      "id": "unstrung-ruby-amulet",
+      "status": "disabled-recipe"
+    },
+    {
+      "id": "unstrung-sapphire-amulet",
+      "status": "disabled-recipe"
+    }
+  ],
+  "foesUpdated": 43,
+  "mechanicsUpdated": 9,
+  "sourceLinksReplacedThisRun": 0,
+  "referenceEntriesCitingArchive": 671,
+  "evidenceUrl": "./assets/game-data/beta-2026-11-18.json"
+}

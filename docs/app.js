@@ -1,7 +1,7 @@
-import { guides } from "./guides.js?v=lurk-price";
-import { tutorials } from "./tutorials.js?v=gurgle-descend";
+import { guides } from "./guides.js?v=beta-audit";
+import { tutorials } from "./tutorials.js?v=beta-audit";
 import { buildPetEntries } from "./pets.js?v=dwarven-cannon";
-import { itemIcons, itemIconGroups } from "./item-icons.js";
+import { itemIcons, itemIconGroups } from "./item-icons.js?v=beta-audit";
 
 const groups = {
   guides: { title: "Guides", icon: "▤", blurb: "Start here, earn Energy, trade and plan dungeon runs." },
@@ -82,7 +82,7 @@ function entryImage(src, alt, thumbnail = false) {
 
 function itemIconUrl(id) {
   const icon = itemIcons[id];
-  return icon ? new URL(icon, gameAssets).href : null;
+  return icon ? new URL(icon, icon.startsWith("./") ? import.meta.url : gameAssets).href : null;
 }
 
 function entryThumbnail(entry) {

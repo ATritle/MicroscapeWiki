@@ -19,6 +19,14 @@ python -m http.server 8000 --directory docs
 - Pet profiles use the map and odds tables in `docs/reference.json`. Their image sources and training locations are managed in `docs/pets.js`.
 - Edit `docs/styles.css` for the visual theme. The original pixel-art village banner lives in `docs/assets`.
 
+The November 18 audit and follow-up reports are saved in `audits`. To repeat the
+completeness check against a captured public build, run
+`node scripts/audit-wiki.mjs --game-data path/to/snapshot/game-data.json --out audits/DATE --check-links`.
+Run `node scripts/check-audit-updates.mjs` to verify the filled reference pages,
+recipe status labels, source paths and artwork. The preserved factual beta
+definitions in `docs/assets/game-data/beta-2026-11-18.json` keep source citations
+working after the game's generated bundle filenames disappear.
+
 GitHub Pages is configured to deploy from `main`, folder `/docs`. To check a change, open the site and try an affected deep link, a search, and the relevant filters.
 
 The Live Drops tracker reads `drops.json` from the `microscape-live-drops` Cloudflare Worker. The Worker fetches the game’s stream list on demand and caches each response for one minute. The wiki checks on page load, every five minutes while visible, and when readers click **Refresh**. Deploy the Worker from the `workers` directory using its `wrangler.toml` configuration.

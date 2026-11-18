@@ -440,7 +440,7 @@ export const itemIcons = {
   "vial-of-poison": "vialOfPoison-CohV6uO_.png",
   "vial-of-water": "vialOfWater-BVgpOYZv.png",
   "vulcanus": "vulcanus-D50uKXbX.png",
-  "water-bucket": "waterBucket-Bi1IuLzq.png",
+  "water-bucket": "./assets/water-bucket.png",
   "wedding-band": "weddingBand-Bhf6S3OJ.png",
   "white-party-hat": "whitePartyHat-BAIZoCpM.png",
   "wickedwort": "wickedwort-3oYvoRjW.png",

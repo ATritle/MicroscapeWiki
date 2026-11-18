@@ -1,0 +1,82 @@
+{
+  "entries": 715,
+  "counts": {
+    "items": {
+      "entries": 458,
+      "affectedEntries": 7,
+      "findings": 7
+    },
+    "locations": {
+      "entries": 56,
+      "affectedEntries": 0,
+      "findings": 0
+    },
+    "abilities": {
+      "entries": 89,
+      "affectedEntries": 0,
+      "findings": 0
+    },
+    "skills": {
+      "entries": 16,
+      "affectedEntries": 0,
+      "findings": 0
+    },
+    "foes": {
+      "entries": 43,
+      "affectedEntries": 0,
+      "findings": 0
+    },
+    "reference": {
+      "entries": 13,
+      "affectedEntries": 0,
+      "findings": 0
+    },
+    "pets": {
+      "entries": 26,
+      "affectedEntries": 0,
+      "findings": 0
+    },
+    "guides": {
+      "entries": 11,
+      "affectedEntries": 0,
+      "findings": 0
+    },
+    "tutorials": {
+      "entries": 3,
+      "affectedEntries": 0,
+      "findings": 0
+    }
+  },
+  "findings": 7,
+  "byRule": {
+    "availability-needs-confirmation": 7
+  },
+  "gameCoverage": {
+    "abilities": {
+      "gameRecords": 89,
+      "matched": 89
+    },
+    "foes": {
+      "gameRecords": 47,
+      "matched": 47
+    },
+    "skills": {
+      "gameRecords": 16,
+      "matched": 16
+    },
+    "locations": {
+      "gameRecords": 51,
+      "matched": 51
+    },
+    "pets": {
+      "gameRecords": 25,
+      "matched": 25
+    }
+  },
+  "imageStatuses": {
+    "archived-200": 802,
+    "local-present": 99,
+    "not-checked": 26
+  },
+  "output": "C:\\dev\\MicroscapeWiki\\audits\\2026-11-18-after"
+}

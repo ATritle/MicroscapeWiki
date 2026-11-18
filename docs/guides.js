@@ -143,9 +143,9 @@ export const guides = [
     summary: "About MzDunk’s community wiki, its references, and how to contribute.",
     sections: [
       ["MzDunk’s community wiki", "An independent reference for players of Microscape, the browser idle RPG by K3nt0456. The original village banner was generated for this site and is illustrative."],
-      ["Reference data", "The catalog adapts the Miraheze Microscape Wiki’s indexes, tables and article facts. Each reference entry links to its source and revision history. The adapted reference data is available under Creative Commons Attribution-ShareAlike 4.0. The beta source snapshot was checked November 17, 2026. The guides also link to the official patch notes where they use them."],
+      ["Reference data", "The catalog adapts the Miraheze Microscape Wiki’s indexes, tables and article facts. Each reference entry links to its source and revision history. The adapted reference data is available under Creative Commons Attribution-ShareAlike 4.0. A November 18, 2026 public beta build was archived to check gaps in the catalog. Sources link to a preserved factual data snapshot so an old game-client filename disappearing does not remove the evidence. Disabled recipes are labelled historical, deprecated recipes are distinguished from disabled ones, and unconfirmed acquisition methods remain explicit. The guides also link to the official patch notes where they use them."],
       ["Contribute a correction", "Open an issue in the site repository. Include the article or item name, what you observed, and the patch date or an in-game tooltip so the change can be checked."]
     ],
-    sources: [["Site repository and issue tracker", "https://github.com/ATritle/MicroscapeWiki"], ["Miraheze Microscape Wiki", wiki + "Main_Page"], ["CC BY-SA 4.0", "https://creativecommons.org/licenses/by-sa/4.0/"], ["Official game credits", official + "credits/"]]
+    sources: [["Site repository and issue tracker", "https://github.com/ATritle/MicroscapeWiki"], ["Archived beta game data · November 18, 2026", "./assets/game-data/beta-2026-11-18.json"], ["Miraheze Microscape Wiki", wiki + "Main_Page"], ["CC BY-SA 4.0", "https://creativecommons.org/licenses/by-sa/4.0/"], ["Official game credits", official + "credits/"]]
   }
 ].map(guide => ({ category: "guides", ...guide }));

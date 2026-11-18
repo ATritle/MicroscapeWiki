@@ -1,0 +1,124 @@
+# Microscape Wiki completeness audit
+
+Generated: 2026-11-18T21:28:28.492Z
+
+**715 published entry definitions audited**, including generated pet pages, guides and tutorials.
+
+P1: missing core data or a client-data discrepancy. P2: missing explanatory information or documentation. P3: presentation gaps.
+
+## Coverage
+
+| Category | Entries | Pages with findings | Findings |
+|---|---:|---:|---:|
+| items | 458 | 28 | 28 |
+| locations | 56 | 0 | 0 |
+| abilities | 89 | 0 | 0 |
+| skills | 16 | 0 | 0 |
+| foes | 43 | 41 | 41 |
+| reference | 13 | 9 | 9 |
+| pets | 26 | 0 | 0 |
+| guides | 11 | 0 | 0 |
+| tutorials | 3 | 0 | 0 |
+
+## Findings
+
+| Priority | Category | Page | Gap | Evidence | Next step |
+|---|---|---|---|---|---|
+| P1 | reference | [Non-Combat](https://microscapewiki.com/#/entry/non-combat) | No explanatory content | The entry has no summary, facts, sections or populated tables. | Write the purpose, mechanics, requirements and relevant links. |
+| P1 | reference | [Smelting](https://microscapewiki.com/#/entry/smelting) | No explanatory content | The entry has no summary, facts, sections or populated tables. | Write the purpose, mechanics, requirements and relevant links. |
+| P2 | foes | [Bear](https://microscapewiki.com/#/entry/bear) | Attack speed/cooldown is not shown | The client has speed = 3; the page lists HP and combat stats but no attack interval. | Add the verified attack interval, including units and multi-hit caveats. |
+| P2 | foes | [Black Knight](https://microscapewiki.com/#/entry/black-knight) | Attack speed/cooldown is not shown | The client has speed = 3; the page lists HP and combat stats but no attack interval. | Add the verified attack interval, including units and multi-hit caveats. |
+| P2 | foes | [Blue Dragon](https://microscapewiki.com/#/entry/blue-dragon) | Attack speed/cooldown is not shown | The client has speed = 3; the page lists HP and combat stats but no attack interval. | Add the verified attack interval, including units and multi-hit caveats. |
+| P2 | foes | [Cave Slime](https://microscapewiki.com/#/entry/cave-slime) | Attack speed/cooldown is not shown | The client has speed = 3; the page lists HP and combat stats but no attack interval. | Add the verified attack interval, including units and multi-hit caveats. |
+| P2 | foes | [Chicken](https://microscapewiki.com/#/entry/chicken) | Attack speed/cooldown is not shown | The client has speed = 3; the page lists HP and combat stats but no attack interval. | Add the verified attack interval, including units and multi-hit caveats. |
+| P2 | foes | [Cockatrice](https://microscapewiki.com/#/entry/cockatrice) | Attack speed/cooldown is not shown | The client has speed = 3; the page lists HP and combat stats but no attack interval. | Add the verified attack interval, including units and multi-hit caveats. |
+| P2 | foes | [Corrupted Druid](https://microscapewiki.com/#/entry/corrupted-druid) | Attack speed/cooldown is not shown | The client has speed = 3; the page lists HP and combat stats but no attack interval. | Add the verified attack interval, including units and multi-hit caveats. |
+| P2 | foes | [Cow](https://microscapewiki.com/#/entry/cow) | Attack speed/cooldown is not shown | The client has speed = 3; the page lists HP and combat stats but no attack interval. | Add the verified attack interval, including units and multi-hit caveats. |
+| P2 | foes | [Dragon Whelp](https://microscapewiki.com/#/entry/dragon-whelp) | Attack speed/cooldown is not shown | The client has speed = 3; the page lists HP and combat stats but no attack interval. | Add the verified attack interval, including units and multi-hit caveats. |
+| P2 | foes | [Druid Warrior](https://microscapewiki.com/#/entry/druid-warrior) | Attack speed/cooldown is not shown | The client has speed = 3; the page lists HP and combat stats but no attack interval. | Add the verified attack interval, including units and multi-hit caveats. |
+| P2 | foes | [Fire Dwarf](https://microscapewiki.com/#/entry/fire-dwarf) | Attack speed/cooldown is not shown | The client has speed = 3; the page lists HP and combat stats but no attack interval. | Add the verified attack interval, including units and multi-hit caveats. |
+| P2 | foes | [Fire Elemental](https://microscapewiki.com/#/entry/fire-elemental) | Attack speed/cooldown is not shown | The client has speed = 3; the page lists HP and combat stats but no attack interval. | Add the verified attack interval, including units and multi-hit caveats. |
+| P2 | foes | [Ghost](https://microscapewiki.com/#/entry/ghost) | Attack speed/cooldown is not shown | The client has speed = 3; the page lists HP and combat stats but no attack interval. | Add the verified attack interval, including units and multi-hit caveats. |
+| P2 | foes | [Giant Rat](https://microscapewiki.com/#/entry/giant-rat) | Attack speed/cooldown is not shown | The client has speed = 3; the page lists HP and combat stats but no attack interval. | Add the verified attack interval, including units and multi-hit caveats. |
+| P2 | foes | [Giant Snake](https://microscapewiki.com/#/entry/giant-snake) | Attack speed/cooldown is not shown | The client has speed = 3; the page lists HP and combat stats but no attack interval. | Add the verified attack interval, including units and multi-hit caveats. |
+| P2 | foes | [Goblin](https://microscapewiki.com/#/entry/goblin) | Attack speed/cooldown is not shown | The client has speed = 3; the page lists HP and combat stats but no attack interval. | Add the verified attack interval, including units and multi-hit caveats. |
+| P2 | foes | [Greater Demon](https://microscapewiki.com/#/entry/greater-demon) | Attack speed/cooldown is not shown | The client has speed = 3; the page lists HP and combat stats but no attack interval. | Add the verified attack interval, including units and multi-hit caveats. |
+| P2 | foes | [Gurgle](https://microscapewiki.com/#/entry/gurgle) | Attack speed/cooldown is not shown | The client has speed = 3; the page lists HP and combat stats but no attack interval. | Add the verified attack interval, including units and multi-hit caveats. |
+| P2 | foes | [Ice Giant](https://microscapewiki.com/#/entry/ice-giant) | Attack speed/cooldown is not shown | The client has speed = 3; the page lists HP and combat stats but no attack interval. | Add the verified attack interval, including units and multi-hit caveats. |
+| P2 | foes | [Ice Warrior](https://microscapewiki.com/#/entry/ice-warrior) | Attack speed/cooldown is not shown | The client has speed = 3; the page lists HP and combat stats but no attack interval. | Add the verified attack interval, including units and multi-hit caveats. |
+| P2 | foes | [Imp](https://microscapewiki.com/#/entry/imp) | Attack speed/cooldown is not shown | The client has speed = 3; the page lists HP and combat stats but no attack interval. | Add the verified attack interval, including units and multi-hit caveats. |
+| P2 | foes | [Insect Swarm](https://microscapewiki.com/#/entry/insect-swarm) | Attack speed/cooldown is not shown | The client has speed = 3; the page lists HP and combat stats but no attack interval. | Add the verified attack interval, including units and multi-hit caveats. |
+| P2 | foes | [Iskarn](https://microscapewiki.com/#/entry/iskarn) | Attack speed/cooldown is not shown | The client has speed = 3; the page lists HP and combat stats but no attack interval. | Add the verified attack interval, including units and multi-hit caveats. |
+| P2 | foes | [King Onyx Dragon](https://microscapewiki.com/#/entry/king-onyx-dragon) | Attack speed/cooldown is not shown | The client has speed = 3; the page lists HP and combat stats but no attack interval. | Add the verified attack interval, including units and multi-hit caveats. |
+| P2 | foes | [Magma Hound](https://microscapewiki.com/#/entry/magma-hound) | Attack speed/cooldown is not shown | The client has speed = 3; the page lists HP and combat stats but no attack interval. | Add the verified attack interval, including units and multi-hit caveats. |
+| P2 | foes | [Monk](https://microscapewiki.com/#/entry/monk) | Attack speed/cooldown is not shown | The client has speed = 3; the page lists HP and combat stats but no attack interval. | Add the verified attack interval, including units and multi-hit caveats. |
+| P2 | foes | [Morvane](https://microscapewiki.com/#/entry/morvane) | Attack speed/cooldown is not shown | The client has speed = 3; the page lists HP and combat stats but no attack interval. | Add the verified attack interval, including units and multi-hit caveats. |
+| P2 | foes | [Moss Giant](https://microscapewiki.com/#/entry/moss-giant) | Attack speed/cooldown is not shown | The client has speed = 3; the page lists HP and combat stats but no attack interval. | Add the verified attack interval, including units and multi-hit caveats. |
+| P2 | foes | [Mothman](https://microscapewiki.com/#/entry/mothman) | Attack speed/cooldown is not shown | The client has speed = 3; the page lists HP and combat stats but no attack interval. | Add the verified attack interval, including units and multi-hit caveats. |
+| P2 | foes | [Mouse](https://microscapewiki.com/#/entry/mouse) | Attack speed/cooldown is not shown | The client has speed = 3; the page lists HP and combat stats but no attack interval. | Add the verified attack interval, including units and multi-hit caveats. |
+| P2 | foes | [Mummy](https://microscapewiki.com/#/entry/mummy) | Attack speed/cooldown is not shown | The client has speed = 3; the page lists HP and combat stats but no attack interval. | Add the verified attack interval, including units and multi-hit caveats. |
+| P2 | foes | [Pit Guardian](https://microscapewiki.com/#/entry/pit-guardian) | Attack speed/cooldown is not shown | The client has speed = 3; the page lists HP and combat stats but no attack interval. | Add the verified attack interval, including units and multi-hit caveats. |
+| P2 | foes | [Pyrax](https://microscapewiki.com/#/entry/pyrax) | Attack speed/cooldown is not shown | The client has speed = 3; the page lists HP and combat stats but no attack interval. | Add the verified attack interval, including units and multi-hit caveats. |
+| P2 | foes | [Sandworm](https://microscapewiki.com/#/entry/sandworm) | Attack speed/cooldown is not shown | The client has speed = 3; the page lists HP and combat stats but no attack interval. | Add the verified attack interval, including units and multi-hit caveats. |
+| P2 | foes | [Sewer Crocodile](https://microscapewiki.com/#/entry/sewer-crocodile) | Attack speed/cooldown is not shown | The client has speed = 3; the page lists HP and combat stats but no attack interval. | Add the verified attack interval, including units and multi-hit caveats. |
+| P2 | foes | [Skeleton](https://microscapewiki.com/#/entry/skeleton) | Attack speed/cooldown is not shown | The client has speed = 3; the page lists HP and combat stats but no attack interval. | Add the verified attack interval, including units and multi-hit caveats. |
+| P2 | foes | [Slimelet](https://microscapewiki.com/#/entry/slimelet) | Attack speed/cooldown is not shown | The client has speed = 3; the page lists HP and combat stats but no attack interval. | Add the verified attack interval, including units and multi-hit caveats. |
+| P2 | foes | [Snake](https://microscapewiki.com/#/entry/snake) | Attack speed/cooldown is not shown | The client has speed = 3; the page lists HP and combat stats but no attack interval. | Add the verified attack interval, including units and multi-hit caveats. |
+| P2 | foes | [Titan Scorpion](https://microscapewiki.com/#/entry/titan-scorpion) | Attack speed/cooldown is not shown | The client has speed = 3; the page lists HP and combat stats but no attack interval. | Add the verified attack interval, including units and multi-hit caveats. |
+| P2 | foes | [Tomb Sorcerer](https://microscapewiki.com/#/entry/tomb-sorcerer) | Attack speed/cooldown is not shown | The client has speed = 3; the page lists HP and combat stats but no attack interval. | Add the verified attack interval, including units and multi-hit caveats. |
+| P2 | foes | [Turkey](https://microscapewiki.com/#/entry/turkey) | Attack speed/cooldown is not shown | The client has speed = 3; the page lists HP and combat stats but no attack interval. | Add the verified attack interval, including units and multi-hit caveats. |
+| P2 | items | [Candy Cane](https://microscapewiki.com/#/entry/candy-cane) | No acquisition method | The page explicitly says acquisition details are unlisted and contains no acquisition table. | Add the recipe, drop source, shop, quest or event source; otherwise mark it historical or unobtainable with evidence. |
+| P2 | items | [Dross](https://microscapewiki.com/#/entry/dross) | No acquisition method | The page explicitly says acquisition details are unlisted and contains no acquisition table. | Add the recipe, drop source, shop, quest or event source; otherwise mark it historical or unobtainable with evidence. |
+| P2 | items | [Elper's Hat](https://microscapewiki.com/#/entry/elpers-hat) | No acquisition method | The page explicitly says acquisition details are unlisted and contains no acquisition table. | Add the recipe, drop source, shop, quest or event source; otherwise mark it historical or unobtainable with evidence. |
+| P2 | items | [Food Scraps](https://microscapewiki.com/#/entry/food-scraps) | No acquisition method | The page explicitly says acquisition details are unlisted and contains no acquisition table. | Add the recipe, drop source, shop, quest or event source; otherwise mark it historical or unobtainable with evidence. |
+| P2 | items | [Headless Arrows](https://microscapewiki.com/#/entry/headless-arrows) | No acquisition method | The page explicitly says acquisition details are unlisted and contains no acquisition table. | Add the recipe, drop source, shop, quest or event source; otherwise mark it historical or unobtainable with evidence. |
+| P2 | items | [Iron Armor](https://microscapewiki.com/#/entry/iron-armor) | No acquisition method | The page explicitly says acquisition details are unlisted and contains no acquisition table. | Add the recipe, drop source, shop, quest or event source; otherwise mark it historical or unobtainable with evidence. |
+| P2 | items | [Iron Arrows](https://microscapewiki.com/#/entry/iron-arrows) | No acquisition method | The page explicitly says acquisition details are unlisted and contains no acquisition table. | Add the recipe, drop source, shop, quest or event source; otherwise mark it historical or unobtainable with evidence. |
+| P2 | items | [Iron Arrowtips](https://microscapewiki.com/#/entry/iron-arrowtips) | No acquisition method | The page explicitly says acquisition details are unlisted and contains no acquisition table. | Add the recipe, drop source, shop, quest or event source; otherwise mark it historical or unobtainable with evidence. |
+| P2 | items | [Iron Axe](https://microscapewiki.com/#/entry/iron-axe) | No acquisition method | The page explicitly says acquisition details are unlisted and contains no acquisition table. | Add the recipe, drop source, shop, quest or event source; otherwise mark it historical or unobtainable with evidence. |
+| P2 | items | [Iron Dagger](https://microscapewiki.com/#/entry/iron-dagger) | No acquisition method | The page explicitly says acquisition details are unlisted and contains no acquisition table. | Add the recipe, drop source, shop, quest or event source; otherwise mark it historical or unobtainable with evidence. |
+| P2 | items | [Iron Med Helm](https://microscapewiki.com/#/entry/iron-med-helm) | No acquisition method | The page explicitly says acquisition details are unlisted and contains no acquisition table. | Add the recipe, drop source, shop, quest or event source; otherwise mark it historical or unobtainable with evidence. |
+| P2 | items | [Iron Scimitar](https://microscapewiki.com/#/entry/iron-scimitar) | No acquisition method | The page explicitly says acquisition details are unlisted and contains no acquisition table. | Add the recipe, drop source, shop, quest or event source; otherwise mark it historical or unobtainable with evidence. |
+| P2 | items | [Iron Sq Shield](https://microscapewiki.com/#/entry/iron-sq-shield) | No acquisition method | The page explicitly says acquisition details are unlisted and contains no acquisition table. | Add the recipe, drop source, shop, quest or event source; otherwise mark it historical or unobtainable with evidence. |
+| P2 | items | [Lava Rod](https://microscapewiki.com/#/entry/lava-rod) | No acquisition method | The page explicitly says acquisition details are unlisted and contains no acquisition table. | Add the recipe, drop source, shop, quest or event source; otherwise mark it historical or unobtainable with evidence. |
+| P2 | items | [Magic Carp](https://microscapewiki.com/#/entry/magic-carp) | No acquisition method | The page explicitly says acquisition details are unlisted and contains no acquisition table. | Add the recipe, drop source, shop, quest or event source; otherwise mark it historical or unobtainable with evidence. |
+| P2 | items | [Santa Hat](https://microscapewiki.com/#/entry/santa-hat) | No acquisition method | The page explicitly says acquisition details are unlisted and contains no acquisition table. | Add the recipe, drop source, shop, quest or event source; otherwise mark it historical or unobtainable with evidence. |
+| P2 | items | [Soft Clay](https://microscapewiki.com/#/entry/soft-clay) | No acquisition method | The page explicitly says acquisition details are unlisted and contains no acquisition table. | Add the recipe, drop source, shop, quest or event source; otherwise mark it historical or unobtainable with evidence. |
+| P2 | items | [Steel Pickaxe](https://microscapewiki.com/#/entry/steel-pickaxe) | Current stats and availability are unverified | The older index lists Steel Pickaxe. Its stats and requirements are unverified in the current game data. | Retain the archival label; confirm the current item exists before treating its old stats as current. |
+| P2 | items | [Uncut Dragonstone](https://microscapewiki.com/#/entry/uncut-dragonstone) | No acquisition method | The page explicitly says acquisition details are unlisted and contains no acquisition table. | Add the recipe, drop source, shop, quest or event source; otherwise mark it historical or unobtainable with evidence. |
+| P2 | items | [Unstrung Diamond Amulet](https://microscapewiki.com/#/entry/unstrung-diamond-amulet) | No acquisition method | The page explicitly says acquisition details are unlisted and contains no acquisition table. | Add the recipe, drop source, shop, quest or event source; otherwise mark it historical or unobtainable with evidence. |
+| P2 | items | [Unstrung Dragonstone Amulet](https://microscapewiki.com/#/entry/unstrung-dragonstone-amulet) | No acquisition method | The page explicitly says acquisition details are unlisted and contains no acquisition table. | Add the recipe, drop source, shop, quest or event source; otherwise mark it historical or unobtainable with evidence. |
+| P2 | items | [Unstrung Emerald Amulet](https://microscapewiki.com/#/entry/unstrung-emerald-amulet) | No acquisition method | The page explicitly says acquisition details are unlisted and contains no acquisition table. | Add the recipe, drop source, shop, quest or event source; otherwise mark it historical or unobtainable with evidence. |
+| P2 | items | [Unstrung Evil Amulet](https://microscapewiki.com/#/entry/unstrung-evil-amulet) | No acquisition method | The page explicitly says acquisition details are unlisted and contains no acquisition table. | Add the recipe, drop source, shop, quest or event source; otherwise mark it historical or unobtainable with evidence. |
+| P2 | items | [Unstrung Gold Amulet](https://microscapewiki.com/#/entry/unstrung-gold-amulet) | No acquisition method | The page explicitly says acquisition details are unlisted and contains no acquisition table. | Add the recipe, drop source, shop, quest or event source; otherwise mark it historical or unobtainable with evidence. |
+| P2 | items | [Unstrung Holy Amulet](https://microscapewiki.com/#/entry/unstrung-holy-amulet) | No acquisition method | The page explicitly says acquisition details are unlisted and contains no acquisition table. | Add the recipe, drop source, shop, quest or event source; otherwise mark it historical or unobtainable with evidence. |
+| P2 | items | [Unstrung Ruby Amulet](https://microscapewiki.com/#/entry/unstrung-ruby-amulet) | No acquisition method | The page explicitly says acquisition details are unlisted and contains no acquisition table. | Add the recipe, drop source, shop, quest or event source; otherwise mark it historical or unobtainable with evidence. |
+| P2 | items | [Unstrung Sapphire Amulet](https://microscapewiki.com/#/entry/unstrung-sapphire-amulet) | No acquisition method | The page explicitly says acquisition details are unlisted and contains no acquisition table. | Add the recipe, drop source, shop, quest or event source; otherwise mark it historical or unobtainable with evidence. |
+| P2 | items | [Water Bucket](https://microscapewiki.com/#/entry/water-bucket) | Image URL is no longer available | https://microscape.cc/play/assets/waterBucket-Bi1IuLzq.png — HTTP 404 | Replace with a verified original asset or a locally archived image. |
+| P2 | reference | [Double Up Bonus](https://microscapewiki.com/#/entry/double-up-bonus) | Mechanics page is only a short summary | Some equipment adds a chance to repeat an eligible action. The October 21 notes count double-ups as regular actions. | Add an explanation, current values or formula, examples, and relevant requirements. |
+| P2 | reference | [Glassblowing Pipe](https://microscapewiki.com/#/entry/glassblowing-pipe) | Reference page has a small legacy table but no explanation | No prose sections; table has 2 rows. | Add station locations, how to use it, materials, outputs and action times; verify the old XP table. |
+| P2 | reference | [Kiln](https://microscapewiki.com/#/entry/kiln) | Reference page has a small legacy table but no explanation | No prose sections; table has 3 rows. | Add station locations, how to use it, materials, outputs and action times; verify the old XP table. |
+| P2 | reference | [Level](https://microscapewiki.com/#/entry/level) | Reference page has a small legacy table but no explanation | No prose sections; table has 3 rows. | Explain and verify the combat-level formula and its inputs. |
+| P2 | reference | [Ticks](https://microscapewiki.com/#/entry/ticks) | Mechanics page is only a short summary | Activity durations are measured in game ticks. October’s rebalance changed gaps between skill actions. | Add an explanation, current values or formula, examples, and relevant requirements. |
+| P2 | reference | [Time crystal](https://microscapewiki.com/#/entry/time-crystal) | Mechanics page is only a short summary | Look up the beta time item and its connections to energy and Favor. | Add an explanation, current values or formula, examples, and relevant requirements. |
+| P2 | reference | [Vendor](https://microscapewiki.com/#/entry/vendor) | Mechanics page is only a short summary | Compare the value a vendor pays with other ways to use or trade an item. | Add an explanation, current values or formula, examples, and relevant requirements. |
+
+## Source and image checks
+
+- https://microscape.cc/play/assets/index-Bjzb2vNm.js: HTTP 404; referenced by 666 entries.
+- https://microscapewiki.com/reference.json: HTTP 200; published reference matches local: true
+- Image checks: {"200":26,"404":1,"archived-200":802,"local-present":98}
+
+## Interpretation
+
+- Empty shop/skilling tables with an explicit no-content message are intentional, not missing information.
+- Cosmetics do not need combat stats; skills/abilities do not need creature sprites.
+- Blue Lobster's missing companion sprite is documented in its page and excluded from missing-sprite findings.
+- Safe foe variants can share one page; 47 client foe definitions do not imply 47 separate wiki pages.
+- This is a structured completeness audit against the saved beta client, not a claim that every value is current for 1.0.
+
+## Intentionally excluded client records
+
+- laserDagger: Test weapon. Not obtainable in-game.
+- loot: Generic internal loot placeholder.
+- trainingSword: Test weapon. Not obtainable in-game.

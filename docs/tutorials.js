@@ -1,4 +1,4 @@
-const gameClient = "https://microscape.cc/play/assets/index-Bjzb2vNm.js";
+const gameClient = "./assets/game-data/beta-2026-11-18.json";
 const patchNotes = "https://microscape.cc/patch-notes/";
 
 export const tutorials = [
@@ -70,9 +70,8 @@ export const tutorials = [
     ],
     related: ["gurgle", "orock-sewers", "deep-sewers", "the-sump", "sewer-crocodile", "slimelet", "dungeon-key", "rubber-boots", "soft-landing"],
     sources: [
-      ["Microscape game client · Dungeon maps, fight requirements and loot", gameClient],
+      ["Archived beta game data · Dungeon maps, fight requirements and loot", gameClient],
       ["September 30 patch notes · Gurgle’s splits", patchNotes],
-      ["Microscape game client · Descend marker and Deep Sewers tile position", "https://microscape.cc/play/assets/index-CUJKZV-W.js"],
       ["Community screenshot · Sewer Crocodile", "./assets/gurgle-crocodile.png"],
       ["Community screenshot · Gurgle’s first form", "./assets/gurgle-first-form.png"],
       ["Community screenshot · Slimelets", "./assets/gurgle-slimelets.png"],
@@ -113,7 +112,7 @@ export const tutorials = [
       ["Where to get the shield", "The shield is a rare catch at Pyreshell Spots in Havendell Dungeon. Fishing for Pyreshell requires Fishing 60 and Raw Frog bait."]
     ],
     related: ["king-onyx-dragon", "dread-mount-onyx-antechamber", "dread-mount-onyx-lair", "dungeon-key", "dragon-whelp", "magma-hound", "pyreshell-shield", "pyreshell-ward", "havendell-dungeon"],
-    sources: [["Microscape game client · Dungeon access, dragon phases and Pyreshell Ward", gameClient], ["Community walkthrough screenshots", "./assets/king-onyx-dragon-tutorial.png"]]
+    sources: [["Archived beta game data · Dungeon access, dragon phases and Pyreshell Ward", gameClient], ["Community walkthrough screenshots", "./assets/king-onyx-dragon-tutorial.png"]]
   },
   {
     id: "morvane-tutorial",
@@ -165,6 +164,6 @@ export const tutorials = [
       ["Prepare for Morvane’s flurry", "Equip cooked food before engaging Morvane. If you use a one-handed weapon and have Defense 20, the Steel Sq Shield grants Shield Wall, which has a chance to cap an incoming hit at 30% of your maximum HP."]
     ],
     related: ["morvane", "havendell-dungeon", "the-sanctum", "havendell-lair", "dungeon-key", "iskarn", "pyrax", "steel-sq-shield", "shield-wall"],
-    sources: [["Microscape game client · Havendell gate, Morvane fight and Shield Wall", gameClient], ["Community walkthrough screenshots", "./assets/morvane-quick-tutorial.png"]]
+    sources: [["Archived beta game data · Havendell gate, Morvane fight and Shield Wall", gameClient], ["Community walkthrough screenshots", "./assets/morvane-quick-tutorial.png"]]
   }
 ].map(tutorial => ({ category: "tutorials", ...tutorial }));
