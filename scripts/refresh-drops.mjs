@@ -62,12 +62,16 @@ export function makeSnapshot(rows, checkedAt = Date.now()) {
   return { checkedAt, events, energyStreams };
 }
 
-async function main(output) {
-  if (!output) throw new Error("Provide a path for the live drops snapshot.");
+export async function fetchSnapshot() {
   const response = await fetch(source, {cache: "no-store", signal: AbortSignal.timeout(15_000)});
   if (!response.ok) throw new Error("Microscape returned HTTP " + response.status);
   const body = await response.json();
-  const snapshot = makeSnapshot(body?.result?.data);
+  return makeSnapshot(body?.result?.data);
+}
+
+async function main(output) {
+  if (!output) throw new Error("Provide a path for the live drops snapshot.");
+  const snapshot = await fetchSnapshot();
   await writeFile(output, JSON.stringify(snapshot) + "\n");
   console.log("Recorded " + snapshot.events.length + " active Microscape events.");
 }
