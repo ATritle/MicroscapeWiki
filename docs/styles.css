@@ -161,7 +161,9 @@ h3 { margin-bottom: 6px; font-size: 17px; }
 .entry-card-body { display: flex; align-items: center; gap: 12px; min-width: 0; }
 .entry-card.mzdunk-stream-card { border-color: #8d485f; background: #291e31; }
 .entry-card.mzdunk-stream-card:hover { border-color: #ba5772; background: #372539; }
-.mzdunk-stream-badge { display: inline-block; margin-left: 8px; padding: 1px 6px; border-radius: 4px; background: #57243a; color: #ffc2ce; font-size: 10px; line-height: 1.4; vertical-align: middle; }
+.mzdunk-stream-card + .actions { margin-top: 14px; }
+.mzdunk-stream-badge { display: inline-block; margin-left: 8px; padding: 1px 6px; border-radius: 4px; background: #38334a; color: #dfd8ed; font-size: 10px; line-height: 1.4; vertical-align: middle; }
+.mzdunk-stream-badge[data-status="live"] { background: #57243a; color: #ffc2ce; }
 .tutorial-card { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-content: start; }
 .tutorial-card-sprites { grid-column: 1 / -1; display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); place-items: center; min-height: 116px; gap: 8px; padding: 8px 12px; border: 1px solid var(--line); border-radius: 7px; background: radial-gradient(ellipse, #394d55, #23323d 82%); }
 .tutorial-card-sprites .game-sprite-frame { max-width: 108px; }

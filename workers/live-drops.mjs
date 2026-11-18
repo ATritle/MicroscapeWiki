@@ -68,7 +68,7 @@ export function makeSnapshot(rows, checkedAt = Date.now()) {
     return priority || b.players - a.players;
   });
   const unique = new Map();
-  // Keep a reserve channel when Twitch may report MzDunk offline ahead of Microscape.
+  // Give the wiki three Energy channels in addition to its featured channel.
   const limit = ranked[0]?.stream.channel === mzDunkChannel ? 4 : 3;
   for (const {stream} of ranked) {
     if (!unique.has(stream.channel)) unique.set(stream.channel, stream);
@@ -140,9 +140,10 @@ async function fetchTwitchStatus(env) {
   const body = await response.json();
   if (!Array.isArray(body.data)) throw new Error("Invalid Twitch streams response.");
   const live = body.data.some(stream => stream?.user_login === mzDunkChannel && stream.type === "live");
-  const avatarUrl = live ? await readMzDunkAvatar(env, token) : null;
+  const avatarUrl = await readMzDunkAvatar(env, token);
   return {
     checkedAt: Date.now(),
+    ...(!live && avatarUrl ? {avatarUrl} : {}),
     stream: live ? {channel: mzDunkChannel, name: "MzDunk", ...(avatarUrl ? {avatarUrl} : {})} : null
   };
 }

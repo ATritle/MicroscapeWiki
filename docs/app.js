@@ -29,6 +29,10 @@ const liveDropsSnapshotUrl = "https://raw.githubusercontent.com/ATritle/Microsca
 const liveDropsMaxAge = 40 * 60_000;
 const mzDunkChannel = "mzdunk";
 const mzDunkTwitchUrl = "https://www.twitch.tv/" + mzDunkChannel;
+const mzDunkProfile = {
+  channel:mzDunkChannel, name:"MzDunk",
+  avatarUrl:"https://static-cdn.jtvnw.net/jtv_user_pictures/dee8469b-4733-492c-a17a-e2a4a1100630-profile_image-300x300.png"
+};
 const mzDunkStatusMaxAge = 10 * 60_000;
 const topicOrder = ["skills", "items", "foes", "locations", "abilities", "pets", "reference"];
 const featured = ["energy", "dungeons", "bazaar", "activity-queue"];
@@ -36,6 +40,7 @@ const displayCount = 36;
 let referenceLoadFailed = false;
 let liveDropsSnapshot;
 let mzDunkTwitchStatus;
+let mzDunkStatusChecked = false;
 let liveDropsRequest;
 let liveDropsFailed = false;
 let liveDropsExpiry;
@@ -243,6 +248,11 @@ function updateLiveDrops() {
   const mzDunkStream = twitchStatus
     ? twitchStatus.stream && {...microscapeStream, ...twitchStatus.stream}
     : microscapeStream;
+  const mzDunkAvatarUrl = mzDunkTwitchStatus?.stream?.avatarUrl || mzDunkTwitchStatus?.avatarUrl
+    || mzDunkStream?.avatarUrl || mzDunkProfile.avatarUrl;
+  const mzDunkPresence = mzDunkStream ? "live"
+    : twitchStatus ? "offline"
+    : mzDunkStatusChecked ? "unknown" : "checking";
   const mzDunkButton = document.querySelector(".mzdunk-live-button");
 
   for (const badge of document.querySelectorAll(".live-drop-badge")) badge.hidden = !events.length;
@@ -250,14 +260,13 @@ function updateLiveDrops() {
     mzDunkButton.hidden = !mzDunkStream;
     if (mzDunkStream) {
       const icon = mzDunkButton.querySelector(".mzdunk-live-icon");
-      const avatarUrl = mzDunkStream.avatarUrl || "";
-      if (icon.dataset.avatar !== avatarUrl) {
-        icon.replaceChildren(dropAvatar(mzDunkStream), glyph("", "mzdunk-live-dot"));
-        icon.dataset.avatar = avatarUrl;
+      if (icon.dataset.avatar !== mzDunkAvatarUrl) {
+        icon.replaceChildren(dropAvatar({...mzDunkProfile, avatarUrl:mzDunkAvatarUrl}), glyph("", "mzdunk-live-dot"));
+        icon.dataset.avatar = mzDunkAvatarUrl;
       }
     }
   }
-  renderDropResults?.(snapshot, events, now, mzDunkStream, twitchStatus?.stream === null);
+  renderDropResults?.(snapshot, events, now, mzDunkPresence, mzDunkAvatarUrl);
 
   const nextChange = Math.min(
     snapshot ? snapshot.checkedAt + liveDropsMaxAge : Infinity,
@@ -278,8 +287,10 @@ async function refreshLiveDrops() {
   liveDropsRequest = (async () => {
     const twitchCheck = readMzDunkStatus().then(status => {
       mzDunkTwitchStatus = status;
+    }, () => {}).finally(() => {
+      mzDunkStatusChecked = true;
       updateLiveDrops();
-    }, () => {});
+    });
     try {
       let received = false;
       for (const url of [liveDropsWorkerUrl, liveDropsSnapshotUrl]) {
@@ -347,17 +358,18 @@ function dropAvatar(event) {
   return avatar;
 }
 
-function streamCards(streams, description, featuredChannel) {
-  return element("ul", {}, ...streams.map(stream => element("li", {},
-    element("a", {class:stream.channel === featuredChannel ? "entry-card mzdunk-stream-card" : "entry-card",
-      href:"https://www.twitch.tv/" + stream.channel, target:"_blank", rel:"noopener noreferrer"},
-      element("span", {class:"entry-card-body"}, dropAvatar(stream),
-        element("span", {}, element("strong", {}, stream.channel === featuredChannel ? "MzDunk" : stream.name,
-          ...(stream.channel === featuredChannel ? [element("span", {class:"mzdunk-stream-badge"}, "LIVE")] : [])),
-        element("small", {}, description(stream)))),
-      glyph("↗", "arrow")
-    )
-  )));
+function streamCard(stream, description, badge) {
+  return element("a", {class:badge ? "entry-card mzdunk-stream-card" : "entry-card",
+    href:"https://www.twitch.tv/" + stream.channel, target:"_blank", rel:"noopener noreferrer"},
+    element("span", {class:"entry-card-body"}, dropAvatar(stream),
+      element("span", {}, element("strong", {}, stream.name, ...(badge ? [" ", badge] : [])),
+        element("small", {}, description))),
+    glyph("↗", "arrow")
+  );
+}
+
+function streamCards(streams, description) {
+  return element("ul", {}, ...streams.map(stream => element("li", {}, streamCard(stream, description(stream)))));
 }
 
 function renderLiveDrops() {
@@ -366,6 +378,11 @@ function renderLiveDrops() {
   const results = element("div", {class:"drop-groups"});
   const energyResults = element("div");
   const refreshButton = element("button", {class:"button", type:"button"}, "Refresh");
+  const presenceLabels = {live:"Live", offline:"Offline", checking:"Checking", unknown:"Status unavailable"};
+  const featuredBadge = element("span", {class:"mzdunk-stream-badge", "aria-live":"polite"}, presenceLabels.checking);
+  const featuredStream = streamCard(mzDunkProfile, "Wiki community channel", featuredBadge);
+  const featuredCaption = featuredStream.querySelector("small");
+  let featuredAvatarUrl = mzDunkProfile.avatarUrl;
 
   function eventList(type, title, empty, events, now) {
     const matches = events.filter(event => event.type === type);
@@ -380,21 +397,26 @@ function renderLiveDrops() {
     );
   }
 
-  renderDropResults = (snapshot, events, now, mzDunkStream, mzDunkOffline) => {
-    const ranked = liveDropsSnapshot?.energyStreams.filter(stream => !mzDunkOffline || stream.channel !== mzDunkChannel) || [];
-    const mzDunkEnergy = mzDunkStream && ranked.some(stream => stream.channel === mzDunkChannel);
-    const streams = mzDunkStream
-      ? [mzDunkStream, ...ranked.filter(stream => stream.channel !== mzDunkChannel).slice(0, mzDunkEnergy ? 2 : 3)]
-      : ranked.slice(0, 3);
+  renderDropResults = (snapshot, events, now, mzDunkPresence, mzDunkAvatarUrl) => {
+    const caption = mzDunkPresence === "live" && snapshot?.energyStreams.some(stream => stream.channel === mzDunkChannel)
+      ? "Wiki community channel · 1.3× Energy" : "Wiki community channel";
+    if (featuredCaption.textContent !== caption) featuredCaption.textContent = caption;
+    if (featuredBadge.dataset.status !== mzDunkPresence) {
+      featuredBadge.dataset.status = mzDunkPresence;
+      featuredBadge.textContent = presenceLabels[mzDunkPresence];
+    }
+    if (featuredAvatarUrl !== mzDunkAvatarUrl) {
+      featuredStream.querySelector(".drop-avatar").replaceWith(dropAvatar({...mzDunkProfile, avatarUrl:mzDunkAvatarUrl}));
+      featuredAvatarUrl = mzDunkAvatarUrl;
+    }
+
+    const streams = (liveDropsSnapshot?.energyStreams || []).filter(stream => stream.channel !== mzDunkChannel).slice(0, 3);
     energyResults.replaceChildren(element("section", {class:"drop-group"},
-      element("h2", {}, mzDunkStream && !mzDunkEnergy ? "Live Twitch and 1.3× Energy" : "Top 1.3× Energy channels"),
+      element("h2", {}, "Top 1.3× Energy channels"),
       ...(streams.length && !snapshot
         ? [element("p", {class:"drop-status"}, "From the last update. Check Twitch to see if these channels are still live.")]
         : []),
-      streams.length ? streamCards(streams, stream => {
-        if (stream.channel !== mzDunkStream?.channel) return "1.3× Energy";
-        return "Wiki community channel · " + (mzDunkEnergy ? "1.3× Energy" : "Live on Twitch");
-      }, mzDunkStream?.channel)
+      streams.length ? streamCards(streams, () => "1.3× Energy")
         : element("p", {class:"empty"}, !liveDropsSnapshot && !liveDropsFailed
           ? "Checking for live channels…"
           : snapshot ? "No live 1.3× Energy channels were listed." : "Energy channel data is unavailable.")
@@ -426,6 +448,7 @@ function renderLiveDrops() {
   main.append(element("article", {class:"article"}, crumbs(null, "Live Twitch drops"),
     element("h1", {}, "Live Twitch drops"),
     element("p", {class:"intro"}, "Find Twitch channels with active Audience Favor or Dungeon Key rewards, and the top streams for 1.3× Energy."),
+    featuredStream,
     element("div", {class:"actions"}, refreshButton, link("Open Microscape", "https://microscape.cc/play/", "button")),
     status, results, energyResults,
     element("p", {class:"drop-help"}, entryLink("audience-favor", "How to claim Audience Favor on Twitch"), " · ",
