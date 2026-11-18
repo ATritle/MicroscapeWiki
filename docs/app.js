@@ -41,6 +41,7 @@ let referenceLoadFailed = false;
 let liveDropsSnapshot;
 let mzDunkTwitchStatus;
 let mzDunkStatusChecked = false;
+let mzDunkStatusRequest;
 let liveDropsRequest;
 let liveDropsFailed = false;
 let liveDropsExpiry;
@@ -264,12 +265,21 @@ function updateLiveDrops() {
   const mzDunkPresence = mzDunkStream ? "live"
     : twitchStatus ? "offline"
     : mzDunkStatusChecked ? "unknown" : "checking";
+  const lastKnownStream = mzDunkTwitchStatus ? mzDunkTwitchStatus.stream : liveDropsSnapshot?.mzDunkStream;
+  const flydownStream = mzDunkStream || lastKnownStream;
   const mzDunkFlydown = document.querySelector(".mzdunk-live-flydown");
 
   for (const badge of document.querySelectorAll(".live-drop-badge")) badge.hidden = !events.length;
   if (mzDunkFlydown) {
-    mzDunkFlydown.hidden = !mzDunkStream;
-    if (mzDunkStream) {
+    mzDunkFlydown.hidden = !flydownStream;
+    if (flydownStream) {
+      const confirmedLive = mzDunkPresence === "live";
+      const badge = mzDunkFlydown.querySelector(".mzdunk-live-badge");
+      badge.textContent = confirmedLive ? "LIVE" : "Checking";
+      badge.dataset.status = confirmedLive ? "live" : "checking";
+      mzDunkFlydown.querySelector("a").setAttribute("aria-label", confirmedLive
+        ? "MzDunk is live on Twitch (opens in a new tab)"
+        : "MzDunk on Twitch — checking live status (opens in a new tab)");
       const icon = mzDunkFlydown.querySelector(".mzdunk-live-icon");
       if (icon.dataset.avatar !== mzDunkAvatarUrl) {
         icon.replaceChildren(dropAvatar({...mzDunkProfile, avatarUrl:mzDunkAvatarUrl}));
@@ -296,12 +306,7 @@ function validTwitchStream(stream) {
 async function refreshLiveDrops() {
   if (liveDropsRequest) return liveDropsRequest;
   liveDropsRequest = (async () => {
-    const twitchCheck = readMzDunkStatus().then(status => {
-      mzDunkTwitchStatus = status;
-    }, () => {}).finally(() => {
-      mzDunkStatusChecked = true;
-      updateLiveDrops();
-    });
+    const twitchCheck = refreshMzDunkStatus();
     try {
       let received = false;
       for (const url of [liveDropsWorkerUrl, liveDropsSnapshotUrl]) {
@@ -324,6 +329,29 @@ async function refreshLiveDrops() {
     }
   })();
   return liveDropsRequest;
+}
+
+async function refreshMzDunkStatus() {
+  if (mzDunkStatusRequest) return mzDunkStatusRequest;
+  mzDunkStatusRequest = (async () => {
+    try {
+      mzDunkTwitchStatus = await readMzDunkStatus();
+    } catch {
+      // Keep the last confirmed status during a failed check.
+    } finally {
+      mzDunkStatusChecked = true;
+      mzDunkStatusRequest = null;
+      updateLiveDrops();
+    }
+  })();
+  return mzDunkStatusRequest;
+}
+
+function resumeLiveUpdates() {
+  if (document.hidden) return;
+  updateLiveDrops();
+  refreshMzDunkStatus();
+  if (!liveDropsSnapshot || Date.now() - liveDropsSnapshot.checkedAt >= 60_000) refreshLiveDrops();
 }
 
 async function readMzDunkStatus() {
@@ -870,7 +898,12 @@ try {
 entries.forEach(addToSearch);
 render();
 refreshLiveDrops();
+setInterval(() => { if (!document.hidden) refreshMzDunkStatus(); }, 60_000);
 setInterval(() => { if (!document.hidden) refreshLiveDrops(); }, 5 * 60_000);
+document.addEventListener("visibilitychange", resumeLiveUpdates);
+window.addEventListener("focus", resumeLiveUpdates);
+window.addEventListener("pageshow", resumeLiveUpdates);
+window.addEventListener("online", resumeLiveUpdates);
 window.addEventListener("hashchange", () => {
   if (window.location.hash === "#content") return;
   render({focus:true});

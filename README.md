@@ -23,7 +23,7 @@ GitHub Pages is configured to deploy from `main`, folder `/docs`. To check a cha
 
 The Live Drops tracker reads `drops.json` from the `microscape-live-drops` Cloudflare Worker. The Worker fetches the game’s stream list on demand and caches each response for one minute. The wiki checks on page load, every five minutes while visible, and when readers click **Refresh**. Deploy the Worker from the `workers` directory using its `wrangler.toml` configuration.
 
-The same Worker serves `/mzdunk.json` for Twitch status. Set `TWITCH_CLIENT_ID` as a Worker variable and `TWITCH_CLIENT_SECRET` as a Worker secret from the wiki’s dedicated Twitch app. The wiki uses Microscape’s stream list as a fallback while Twitch status is unavailable.
+The same Worker serves `/mzdunk.json` for Twitch status. Set `TWITCH_CLIENT_ID` as a Worker variable and `TWITCH_CLIENT_SECRET` as a Worker secret from the wiki’s dedicated Twitch app. The wiki checks Twitch every minute while visible and immediately on tab visibility, focus, page restoration, or reconnection. Concurrent Twitch checks share one request. The wiki uses Microscape’s stream list as a fallback while Twitch status is unavailable. When the last confirmed live status is too old, the sidebar keeps the channel link visible with a Checking badge until another check confirms whether she is live or offline.
 
 If the Worker is unavailable, the tracker tries `drops.json` from the `live-data` branch. The **Refresh live Microscape drops** GitHub Actions workflow can publish that fallback automatically or run manually from Actions. If both sources are unavailable or more than 40 minutes old, the tracker directs readers to Streams in Microscape.
 
