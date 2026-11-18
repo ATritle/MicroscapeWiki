@@ -149,9 +149,22 @@ function renderNav(category, currentId, home, liveDrops) {
   ];
   nav.replaceChildren(...sections.map(([heading, links]) => element("div", {class:"nav-group"},
     element("p", {class:"nav-heading"}, heading),
-    ...links.map(([label, href, icon, active]) => element("a", {
-      class:"nav-link", href, ...(active ? {"aria-current":"page"} : {})
-    }, glyph(icon), label, ...(href === liveDropsUrl ? [liveDropBadge()] : [])))
+    ...links.map(([label, href, icon, active]) => {
+      const navLink = element("a", {
+        class:"nav-link", href, ...(active ? {"aria-current":"page"} : {})
+      }, glyph(icon), label, ...(href === liveDropsUrl ? [liveDropBadge()] : []));
+      if (href !== liveDropsUrl) return navLink;
+      return element("div", {class:"nav-live-drops"}, navLink,
+        element("div", {class:"mzdunk-live-flydown", hidden:""},
+          element("a", {class:"nav-link mzdunk-live-button", href:mzDunkTwitchUrl,
+            target:"_blank", rel:"noopener noreferrer", "aria-label":"MzDunk is live on Twitch (opens in a new tab)"},
+            element("span", {class:"mzdunk-live-icon", "aria-hidden":"true"}),
+            element("span", {class:"mzdunk-live-label"}, "MzDunk",
+              element("span", {class:"mzdunk-live-badge"}, "LIVE"))
+          )
+        )
+      );
+    })
   )));
 }
 
@@ -180,9 +193,7 @@ function renderHome() {
       element("p", {}, "Player guides and reference tables for the Twitch-powered browser idle RPG."),
       element("div", {class:"actions"},
         element("a", {class:"button primary", href:entryUrl("getting-started")}, "Getting started", glyph("→", "")),
-        element("a", {class:"button", href:liveDropsUrl}, "Live Twitch drops", liveDropBadge()),
-        element("a", {class:"button mzdunk-live-button", href:mzDunkTwitchUrl, target:"_blank", rel:"noopener noreferrer", hidden:""},
-          element("span", {class:"mzdunk-live-icon", "aria-hidden":"true"}), "MzDunk is live", glyph("↗", ""))
+        element("a", {class:"button", href:liveDropsUrl}, "Live Twitch drops", liveDropBadge())
       )
     )
   );
@@ -253,15 +264,15 @@ function updateLiveDrops() {
   const mzDunkPresence = mzDunkStream ? "live"
     : twitchStatus ? "offline"
     : mzDunkStatusChecked ? "unknown" : "checking";
-  const mzDunkButton = document.querySelector(".mzdunk-live-button");
+  const mzDunkFlydown = document.querySelector(".mzdunk-live-flydown");
 
   for (const badge of document.querySelectorAll(".live-drop-badge")) badge.hidden = !events.length;
-  if (mzDunkButton) {
-    mzDunkButton.hidden = !mzDunkStream;
+  if (mzDunkFlydown) {
+    mzDunkFlydown.hidden = !mzDunkStream;
     if (mzDunkStream) {
-      const icon = mzDunkButton.querySelector(".mzdunk-live-icon");
+      const icon = mzDunkFlydown.querySelector(".mzdunk-live-icon");
       if (icon.dataset.avatar !== mzDunkAvatarUrl) {
-        icon.replaceChildren(dropAvatar({...mzDunkProfile, avatarUrl:mzDunkAvatarUrl}), glyph("", "mzdunk-live-dot"));
+        icon.replaceChildren(dropAvatar({...mzDunkProfile, avatarUrl:mzDunkAvatarUrl}));
         icon.dataset.avatar = mzDunkAvatarUrl;
       }
     }
