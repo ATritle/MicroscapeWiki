@@ -293,6 +293,7 @@ function renderLiveDrops() {
   const updateTime = new Intl.DateTimeFormat(undefined, {dateStyle:"medium", timeStyle:"short"});
   const status = element("p", {class:"drop-status", role:"status"}, "Checking for live drops…");
   const results = element("div", {class:"drop-groups"});
+  const energyResults = element("div");
   const refreshButton = element("button", {class:"button", type:"button"}, "Refresh");
 
   function eventList(type, title, empty, events, now) {
@@ -309,6 +310,18 @@ function renderLiveDrops() {
   }
 
   renderDropResults = (snapshot, events, now) => {
+    const streams = liveDropsSnapshot?.energyStreams.slice(0, 3) || [];
+    energyResults.replaceChildren(element("section", {class:"drop-group"},
+      element("h2", {}, "Top 1.3× Energy channels"),
+      ...(streams.length && !snapshot
+        ? [element("p", {class:"drop-status"}, "From the last update. Check Twitch to see if these channels are still live.")]
+        : []),
+      streams.length ? streamCards(streams, () => "1.3× Energy")
+        : element("p", {class:"empty"}, !liveDropsSnapshot && !liveDropsFailed
+          ? "Checking for live channels…"
+          : snapshot ? "No live 1.3× Energy channels were listed." : "Energy channel data is unavailable.")
+    ));
+
     if (!snapshot) {
       if (liveDropsSnapshot) {
         status.textContent = "Live updates are delayed. Last checked " + updateTime.format(liveDropsSnapshot.checkedAt)
@@ -322,14 +335,7 @@ function renderLiveDrops() {
     }
     status.textContent = (liveDropsFailed ? "Refresh failed. " : "") + "Last checked " + updateTime.format(snapshot.checkedAt) + ".";
     if (!events.length) {
-      const streams = snapshot.energyStreams.slice(0, 3);
-      results.replaceChildren(element("section", {class:"drop-group"},
-        element("h2", {}, streams.length
-          ? "No live drops right now, but enjoy these channels for 1.3x energy"
-          : "No live drops right now"),
-        streams.length ? streamCards(streams, () => "1.3× Energy")
-          : element("p", {class:"empty"}, "No live 1.3× Energy streams were listed.")
-      ));
+      results.replaceChildren(element("p", {class:"empty"}, "No live drops right now."));
       return;
     }
     events.sort((a, b) => (a.endsAt ?? Infinity) - (b.endsAt ?? Infinity) || a.name.localeCompare(b.name));
@@ -341,9 +347,9 @@ function renderLiveDrops() {
 
   main.append(element("article", {class:"article"}, crumbs(null, "Live Twitch drops"),
     element("h1", {}, "Live Twitch drops"),
-    element("p", {class:"intro"}, "Find Twitch channels with active Audience Favor or Dungeon Key rewards. The wiki checks Microscape’s Streams list about every 15 minutes."),
+    element("p", {class:"intro"}, "Find Twitch channels with active Audience Favor or Dungeon Key rewards, and the top streams for 1.3× Energy."),
     element("div", {class:"actions"}, refreshButton, link("Open Microscape", "https://microscape.cc/play/", "button")),
-    status, results,
+    status, results, energyResults,
     element("p", {class:"drop-help"}, entryLink("audience-favor", "How to claim Audience Favor on Twitch"), " · ",
       entryLink("dungeons", "Dungeon Keys guide"))
   ), footer());
