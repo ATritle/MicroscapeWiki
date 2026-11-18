@@ -17,14 +17,28 @@ export const tutorials = [
   },
   {
     id: "dragon-breath-tutorial",
-    title: "Protect against dragon breath",
-    summary: "Equip the Pyreshell Shield for Pyreshell Ward against fire breath, such as King Onyx Dragon’s.",
+    title: "King Onyx Dragon Boss",
+    summary: "Open the passage below Dread Mount Onyx and use Pyreshell Ward to reduce the dragon’s fire-breath damage.",
     sections: [
+      ["How to open the fight", "Bring a Dungeon Key and reach combat level 60. Select Dread Mount Onyx on the World Map and travel to The Antechamber. Defeat Dragon Whelps and Magma Hounds to fill the passage meter. When the passage opens, use the dungeon Travel marker and choose Descend before the countdown ends. Select King Onyx Dragon in The Lair to start the fight."],
       ["Equip the Pyreshell Shield", "At Defense 40, equip the Pyreshell Shield to use Pyreshell Ward. It reduces damage from a dragon’s fire breath. The reduction scales from 1% to 80% with the ability’s level."],
-      ["Where to use it", "Bring the shield to Dread Mount Onyx for King Onyx Dragon’s fire breath. Keep food equipped for the rest of the fight."],
-      ["Where to get it", "The shield is a rare catch at Pyreshell Spots in Havendell Dungeon. Fishing for Pyreshell requires Fishing 60 and Raw Frog bait."]
+      ["When the dragon takes flight", "Hit the airborne dragon with long-range attacks or defeat Dragon Whelps to force it back down. When the dragon lands and calls for more whelps, focus on finishing the boss before they swarm you. Keep food equipped throughout the fight."],
+      ["Where to get the shield", "The shield is a rare catch at Pyreshell Spots in Havendell Dungeon. Fishing for Pyreshell requires Fishing 60 and Raw Frog bait."]
     ],
-    related: ["pyreshell-shield", "pyreshell-ward", "king-onyx-dragon", "dread-mount-onyx-lair", "havendell-dungeon"],
-    sources: [["Microscape game client · Pyreshell Ward, King Onyx Dragon and Fishing", gameClient]]
+    related: ["king-onyx-dragon", "dread-mount-onyx-antechamber", "dread-mount-onyx-lair", "dungeon-key", "dragon-whelp", "magma-hound", "pyreshell-shield", "pyreshell-ward", "havendell-dungeon"],
+    sources: [["Microscape game client · Dungeon access, dragon phases and Pyreshell Ward", gameClient]]
+  },
+  {
+    id: "morvane-tutorial",
+    title: "Morvane Boss",
+    summary: "Break the seal in The Sanctum to face Morvane, Corrupted Keeper of the Heartwood, in Havendell Lair.",
+    sections: [
+      ["How to open the fight", "Bring a Dungeon Key and reach combat level 40. Travel to Havendell Dungeon from the World Map, then use the dungeon Travel marker and choose Descend to reach The Sanctum. Defeat both Iskarn and Pyrax. Once one falls, finish the other before it can reseal the gate. When the gate opens, choose Descend while it’s still open, then select Morvane in Havendell Lair to start the fight."],
+      ["Get past the guardians", "Iskarn can chill you in place and Pyrax can burn you if you’re within eight paces. If you’re fighting in a group, coordinate your attacks so both guardians are low on health before finishing the first one."],
+      ["Prepare for Morvane’s flurry", "Equip cooked food before engaging Morvane. If you use a one-handed weapon and have Defense 20, the Steel Sq Shield grants Shield Wall, which has a chance to cap an incoming hit at 30% of your maximum HP."],
+      ["Watch for Mass Elemental Revive", "When Morvane summons Iskarn and Pyrax in the lair, check the dungeon display for each guardian’s remaining health. The display also shows the progress of Mass Elemental Revive when Morvane starts casting it. Watch the meter so you’re ready if the guardians return."]
+    ],
+    related: ["morvane", "havendell-dungeon", "the-sanctum", "havendell-lair", "dungeon-key", "iskarn", "pyrax", "steel-sq-shield", "shield-wall"],
+    sources: [["Microscape game client · Havendell gate, Morvane fight and Shield Wall", gameClient]]
   }
 ].map(tutorial => ({ category: "tutorials", ...tutorial }));

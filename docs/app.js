@@ -1,5 +1,5 @@
 import { guides } from "./guides.js?v=lurk-price";
-import { tutorials } from "./tutorials.js?v=gurgle-boss";
+import { tutorials } from "./tutorials.js?v=onyx-morvane";
 import { buildPetEntries } from "./pets.js?v=dwarven-cannon";
 import { itemIcons, itemIconGroups } from "./item-icons.js";
 
