@@ -6,6 +6,7 @@ on:
     paths:
       - .github/workflows/refresh-drops.yml
       - scripts/refresh-drops.mjs
+      - workers/live-drops.mjs
   schedule:
     - cron: "2,17,32,47 * * * *"
   workflow_dispatch:
