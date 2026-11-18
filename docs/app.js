@@ -1,5 +1,5 @@
 import { guides } from "./guides.js?v=lurk-price";
-import { tutorials } from "./tutorials.js?v=boss-sprites";
+import { tutorials } from "./tutorials.js?v=morvane-walkthrough";
 import { buildPetEntries } from "./pets.js?v=dwarven-cannon";
 import { itemIcons, itemIconGroups } from "./item-icons.js";
 
@@ -107,7 +107,8 @@ function addToSearch(entry) {
     title: normalize(entry.title),
     full: normalize([
       entry.title, entry.aliases?.join(" "), entry.group, entry.summary, groups[entry.category].title,
-      entry.sections?.flat().join(" "), entry.facts?.flat().join(" "),
+      entry.sections?.flatMap(([heading, text, {steps = []} = {}]) => [heading, text, ...steps]).join(" "),
+      entry.facts?.flat().join(" "),
       entry.tables?.flatMap(table => [table.title, ...table.columns, ...table.rows.flat()]).join(" ")
     ].filter(Boolean).join(" "))
   });
@@ -585,16 +586,32 @@ function renderGameSprites(sprites, {title, heading = "In-game appearance"} = {}
 }
 
 function linkMentions(text, references) {
-  let parts = [text];
-  for (const {id, title} of references) {
-    parts = parts.flatMap(part => {
-      if (typeof part !== "string") return [part];
-      return part.split(title).flatMap((piece, index) =>
-        index === 0 ? [piece] : [entryLink(id, title), piece]
-      );
-    });
+  if (!references.length) return [text];
+  const targets = new Map(references.map(({id, title}) => [title.toLowerCase(), id]));
+  for (const {id, title, category} of references) {
+    if (category === "foes") targets.set(title.toLowerCase() + "s", id);
   }
-  return parts;
+  const names = [...targets.keys()].sort((a, b) => b.length - a.length)
+    .map(name => name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
+  const mentions = new RegExp(`\\b(${names.join("|")})\\b`, "gi");
+  return text.split(mentions).map((part, index) => index % 2 ? entryLink(targets.get(part.toLowerCase()), part) : part);
+}
+
+function renderTutorialScreenshot(source, screenshot, references) {
+  const [x, y, width, height] = screenshot.crop;
+  const marker = screenshot.marker;
+  return element("figure", {class:"tutorial-screenshot"},
+    element("div", {class:"tutorial-screenshot-frame", style:`aspect-ratio:${width}/${height}`},
+      element("img", {
+        src:source.src, alt:screenshot.alt, width:source.width, height:source.height,
+        loading:"lazy", decoding:"async",
+        style:`left:${-100 * x / width}%;top:${-100 * y / height}%;width:${100 * source.width / width}%`
+      }),
+      ...(marker ? [element("span", {class:"tutorial-screenshot-marker", "aria-hidden":"true",
+        style:`left:${100 * (marker[0] - x) / width}%;top:${100 * (marker[1] - y) / height}%`})] : [])
+    ),
+    element("figcaption", {}, ...linkMentions(screenshot.caption, references))
+  );
 }
 
 function renderEntry(entry, category) {
@@ -602,7 +619,7 @@ function renderEntry(entry, category) {
     crumbs(category, entry.title)
   );
   const inlineReferences = category === "tutorials"
-    ? (entry.related || []).map(id => byId.get(id)).filter(ref => ref?.category === "items" || ref?.category === "abilities")
+    ? (entry.related || []).map(id => byId.get(id)).filter(ref => ["items", "abilities", "foes"].includes(ref?.category))
     : [];
   const title = [
     element("h1", {}, entry.title),
@@ -637,10 +654,13 @@ function renderEntry(entry, category) {
   })));
   const sprites = entry.sprites || tutorialSprites;
   if (sprites.length) article.append(renderGameSprites(sprites, {title:entry.sprites ? entry.title : undefined}));
-  for (const [heading, text] of entry.sections || []) {
+  for (const [heading, text, {steps, screenshot} = {}] of entry.sections || []) {
     article.append(element("section", {},
       element("h2", {}, ...linkMentions(heading, inlineReferences)),
-      element("p", {}, ...linkMentions(text, inlineReferences))
+      element("p", {}, ...linkMentions(text, inlineReferences)),
+      ...(steps ? [element("ol", {class:"tutorial-steps"},
+        ...steps.map(step => element("li", {}, ...linkMentions(step, inlineReferences))))] : []),
+      ...(screenshot ? [renderTutorialScreenshot(entry.screenshotSource, screenshot, inlineReferences)] : [])
     ));
   }
   for (const table of entry.tables || []) {
