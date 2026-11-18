@@ -1,6 +1,6 @@
 # Microscape Wiki completeness audit
 
-Generated: 2026-11-18T21:42:34.558Z
+Generated: 2026-11-18T21:44:06.382Z
 
 **715 published entry definitions audited**, including generated pet pages, guides and tutorials.
 
@@ -34,7 +34,8 @@ P1: missing core data or a client-data discrepancy. P2: missing explanatory info
 
 ## Source and image checks
 
-- Image checks: {"archived-200":802,"local-present":99,"not-checked":26}
+- https://microscapewiki.com/reference.json: HTTP 200; published reference matches local: true
+- Image checks: {"200":26,"archived-200":802,"local-present":99}
 
 ## Interpretation
 

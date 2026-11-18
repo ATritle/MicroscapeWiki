@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-18T21:42:34.558Z",
+  "generatedAt": "2026-11-18T21:44:06.382Z",
   "entriesAudited": 715,
   "wikiReferenceSha256": "7c4d6146030b6fc957e773270494a52a0ef5af3e5d2a19f23dcd2c4764da9edc",
   "baseline": {
@@ -4578,110 +4578,116 @@
     },
     {
       "url": "https://static.wikitide.net/microscapewiki/d/d1/Steel_Pickaxe.png",
-      "status": "not-checked"
+      "status": 200
     },
     {
       "url": "https://static.wikitide.net/microscapewiki/8/89/BeatrixIcon.png",
-      "status": "not-checked"
+      "status": 200
     },
     {
       "url": "https://static.wikitide.net/microscapewiki/a/a2/BiscuitIcon.png",
-      "status": "not-checked"
+      "status": 200
     },
     {
       "url": "https://static.wikitide.net/microscapewiki/b/bc/RawBlueLobsterIcon.png",
-      "status": "not-checked"
+      "status": 200
     },
     {
       "url": "https://static.wikitide.net/microscapewiki/4/48/BogIcon.png",
-      "status": "not-checked"
+      "status": 200
     },
     {
       "url": "https://static.wikitide.net/microscapewiki/3/39/CinderIcon.png",
-      "status": "not-checked"
-    },
-    {
-      "url": "https://static.wikitide.net/microscapewiki/7/79/ClementIcon.png",
-      "status": "not-checked"
+      "status": 200
     },
     {
       "url": "https://static.wikitide.net/microscapewiki/7/74/FibsIcon.png",
-      "status": "not-checked"
-    },
-    {
-      "url": "https://static.wikitide.net/microscapewiki/c/cd/GolemCoreIcon.png",
-      "status": "not-checked"
+      "status": 200
     },
     {
       "url": "https://static.wikitide.net/microscapewiki/f/fb/HildaIcon.png",
-      "status": "not-checked"
+      "status": 200
+    },
+    {
+      "url": "https://static.wikitide.net/microscapewiki/c/cd/GolemCoreIcon.png",
+      "status": 200
     },
     {
       "url": "https://static.wikitide.net/microscapewiki/f/f2/HubbleIcon.png",
-      "status": "not-checked"
+      "status": 200
+    },
+    {
+      "url": "https://static.wikitide.net/microscapewiki/7/79/ClementIcon.png",
+      "status": 200
     },
     {
       "url": "https://static.wikitide.net/microscapewiki/b/b0/MerlinIcon.png",
-      "status": "not-checked"
+      "status": 200
     },
     {
       "url": "https://static.wikitide.net/microscapewiki/5/5f/OtterIcon.png",
-      "status": "not-checked"
+      "status": 200
     },
     {
       "url": "https://static.wikitide.net/microscapewiki/d/d9/PeaceMothIcon.png",
-      "status": "not-checked"
-    },
-    {
-      "url": "https://static.wikitide.net/microscapewiki/7/77/PebbleIcon.png",
-      "status": "not-checked"
-    },
-    {
-      "url": "https://static.wikitide.net/microscapewiki/2/24/PicklesIcon.png",
-      "status": "not-checked"
+      "status": 200
     },
     {
       "url": "https://static.wikitide.net/microscapewiki/1/18/QuillIcon.png",
-      "status": "not-checked"
+      "status": 200
+    },
+    {
+      "url": "https://static.wikitide.net/microscapewiki/2/24/PicklesIcon.png",
+      "status": 200
     },
     {
       "url": "https://static.wikitide.net/microscapewiki/d/d5/RiddleIcon.png",
-      "status": "not-checked"
+      "status": 200
+    },
+    {
+      "url": "https://static.wikitide.net/microscapewiki/7/77/PebbleIcon.png",
+      "status": 200
     },
     {
       "url": "https://static.wikitide.net/microscapewiki/0/05/SageIcon.png",
-      "status": "not-checked"
-    },
-    {
-      "url": "https://static.wikitide.net/microscapewiki/d/d8/ScalesIcon.png",
-      "status": "not-checked"
+      "status": 200
     },
     {
       "url": "https://static.wikitide.net/microscapewiki/c/c4/ScoopIcon.png",
-      "status": "not-checked"
+      "status": 200
     },
     {
-      "url": "https://static.wikitide.net/microscapewiki/b/b9/SmudgeIcon.png",
-      "status": "not-checked"
-    },
-    {
-      "url": "https://static.wikitide.net/microscapewiki/5/5d/StitchIcon.png",
-      "status": "not-checked"
+      "url": "https://static.wikitide.net/microscapewiki/d/d8/ScalesIcon.png",
+      "status": 200
     },
     {
       "url": "https://static.wikitide.net/microscapewiki/2/21/StumpIcon.png",
-      "status": "not-checked"
+      "status": 200
     },
     {
       "url": "https://static.wikitide.net/microscapewiki/8/84/TinderlingIcon.png",
-      "status": "not-checked"
+      "status": 200
+    },
+    {
+      "url": "https://static.wikitide.net/microscapewiki/b/b9/SmudgeIcon.png",
+      "status": 200
+    },
+    {
+      "url": "https://static.wikitide.net/microscapewiki/5/5d/StitchIcon.png",
+      "status": 200
     },
     {
       "url": "https://static.wikitide.net/microscapewiki/a/ad/WinkleIcon.png",
-      "status": "not-checked"
+      "status": 200
     }
   ],
-  "linkChecks": [],
+  "linkChecks": [
+    {
+      "url": "https://microscapewiki.com/reference.json",
+      "status": 200,
+      "matchesLocalReference": true
+    }
+  ],
   "exclusions": [
     {
       "type": "internal-game-record",

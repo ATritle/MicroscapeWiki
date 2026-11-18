@@ -74,9 +74,9 @@
     }
   },
   "imageStatuses": {
+    "200": 26,
     "archived-200": 802,
-    "local-present": 99,
-    "not-checked": 26
+    "local-present": 99
   },
   "output": "C:\\dev\\MicroscapeWiki\\audits\\2026-11-18-after"
 }
