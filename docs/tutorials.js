@@ -27,25 +27,43 @@ export const tutorials = [
       }],
       ["3. Defeat the Sewer Crocodile and descend", "Defeat the Sewer Crocodile using ranged attacks. The dungeon door opens for 60 seconds after the kill. Use the dungeon Travel marker by the drain and choose Descend before the countdown ends.", {
         screenshot: {
-          mapId:"deep-sewers",
-          marker:[448, 144],
-          alt:"The Deep Sewers map with a ring marking the drain that leads to The Sump.",
-          caption:"The ring marks the descent beside the Sewer Crocodile. Use it while the drain is open."
+          source:{src:"./assets/gurgle-crocodile.png", width:1001, height:674},
+          alt:"A player using ranged attacks against the Sewer Crocodile in the green drain at the end of Deep Sewers.",
+          caption:"Find the Sewer Crocodile in the green drain shown here. Defeat it with ranged attacks, then descend within 60 seconds."
         }
       }],
       ["4. Start the fight in The Sump", "Select Gurgle to start the fight. You need combat level 10 and a Dungeon Key. If you have Rubber Boots, equip them before engaging. They grant Soft Landing, which reduces fall damage by 75%.", {
         screenshot: {
-          mapId:"the-sump",
-          marker:[432, 200],
-          alt:"The Sump map with a ring marking Gurgle’s position in the boss chamber.",
-          caption:"The ring marks where Gurgle starts the fight."
+          source:{src:"./assets/gurgle-first-form.png", width:788, height:606},
+          alt:"Players surrounding Gurgle’s large, round first form in The Sump.",
+          caption:"Gurgle’s normal first form. Equip Rubber Boots before starting the fight."
         }
       }],
-      ["5. Attack the Slimelets during the splits", "When the counter shows the first or second split, attack the Slimelets while they’re separated. Watch the countdown for when they’ll reunite. If Gurgle collapses, switch back to him to finish the fight. On the third split, the countdown shows how long you have before Gurgle can flee."],
+      ["5. Attack the Slimelets during the splits", "When the counter shows the first or second split, attack the Slimelets while they’re separated. Watch the countdown for when they’ll reunite. On the third split, the countdown shows how long you have before Gurgle can flee.", {
+        screenshot: {
+          source:{src:"./assets/gurgle-slimelets.png", width:852, height:584},
+          alt:"Players fighting three small green Slimelets spread around The Sump after Gurgle splits.",
+          caption:"Gurgle splits into Slimelets. Attack them while they’re separated and watch the countdown."
+        }
+      }],
+      ["6. Finish Gurgle’s final form", "When Gurgle collapses into his final form, switch your attacks back to him to finish the fight.", {
+        screenshot: {
+          source:{src:"./assets/gurgle-final-form.png", width:893, height:607},
+          alt:"Players surrounding Gurgle’s collapsed, two-lobed final form in The Sump.",
+          caption:"Gurgle’s final form. Switch back to Gurgle and finish the fight."
+        }
+      }],
       ["Where to get Rubber Boots", "Gurgle drops Rubber Boots at a 1-in-16 rate."]
     ],
     related: ["gurgle", "orock-sewers", "deep-sewers", "the-sump", "sewer-crocodile", "slimelet", "dungeon-key", "rubber-boots", "soft-landing"],
-    sources: [["Microscape game client · Dungeon maps, fight requirements and loot", gameClient], ["September 30 patch notes · Gurgle’s splits", patchNotes]]
+    sources: [
+      ["Microscape game client · Dungeon maps, fight requirements and loot", gameClient],
+      ["September 30 patch notes · Gurgle’s splits", patchNotes],
+      ["Community screenshot · Sewer Crocodile", "./assets/gurgle-crocodile.png"],
+      ["Community screenshot · Gurgle’s first form", "./assets/gurgle-first-form.png"],
+      ["Community screenshot · Slimelets", "./assets/gurgle-slimelets.png"],
+      ["Community screenshot · Gurgle’s final form", "./assets/gurgle-final-form.png"]
+    ]
   },
   {
     id: "dragon-breath-tutorial",
