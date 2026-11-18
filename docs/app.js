@@ -568,8 +568,13 @@ function renderSpriteFrame(sprite, label) {
 function renderGameSprites(sprites, {title, heading = "In-game appearance"} = {}) {
   const figures = sprites.map(sprite => {
     const label = (title || sprite.label) + " full in-game sprite" + (title && sprite.label ? " · " + sprite.label : "");
+    const frame = renderSpriteFrame(sprite, label);
+    const stage = sprite.foeId
+      ? element("a", {class:"game-sprite-stage game-sprite-link", href:entryUrl(sprite.foeId), "aria-label":`View ${sprite.label} in Foes`},
+        frame, glyph("→", "arrow"))
+      : element("div", {class:"game-sprite-stage"}, frame);
     return element("figure", {class:"game-sprite"},
-      element("div", {class:"game-sprite-stage"}, renderSpriteFrame(sprite, label)),
+      stage,
       ...(sprite.label ? [element("figcaption", {}, sprite.label)] : [])
     );
   });
@@ -628,7 +633,7 @@ function renderEntry(entry, category) {
   if (entry.calculator) article.append(calculator());
   if (!art && !entry.mapImage) article.append(...facts);
   const tutorialSprites = tutorialSpriteFoes(entry).flatMap(foe => foe.sprites.map(sprite => ({
-    ...sprite, label:sprite.label ? `${foe.title} · ${sprite.label}` : foe.title
+    ...sprite, foeId:foe.id, label:sprite.label ? `${foe.title} · ${sprite.label}` : foe.title
   })));
   const sprites = entry.sprites || tutorialSprites;
   if (sprites.length) article.append(renderGameSprites(sprites, {title:entry.sprites ? entry.title : undefined}));

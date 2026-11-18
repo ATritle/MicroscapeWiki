@@ -197,6 +197,9 @@ h3 { margin-bottom: 6px; font-size: 17px; }
 .game-sprites { display: flex; flex-wrap: wrap; gap: 12px; }
 .game-sprite { flex: 0 1 260px; min-width: 0; margin: 0; }
 .game-sprite-stage { display: grid; grid-template-columns: minmax(0, 1fr); place-items: center; min-height: 226px; padding: 12px; background: radial-gradient(ellipse, #52636b, #263943 82%); border: 1px solid var(--line); border-radius: 12px; }
+.game-sprite-link { position: relative; text-decoration: none; }
+.game-sprite-link:hover { border-color: var(--mint); }
+.game-sprite-link .arrow { position: absolute; top: 8px; right: 12px; }
 .game-sprite-frame { position: relative; display: block; width: min(100%, var(--sprite-width)); overflow: hidden; }
 .game-sprite-frame.flipped { transform: scaleX(-1); }
 .game-sprite-layer { position: absolute; image-rendering: pixelated; }
