@@ -23091,6 +23091,52 @@
     ]
   },
   {
+    "id": "dwarven-cannon",
+    "title": "Dwarven Cannon",
+    "category": "items",
+    "group": "Equipment",
+    "summary": "Pet-slot equipment from the King’s Jubilee that fires steel bars. Requires Ranged 5.",
+    "statsDate": "2026-11-17",
+    "artwork": "https://microscape.cc/play/assets/dwarvenCannon-D9MRTAb8.png",
+    "facts": [
+      ["Slot", "Pet"],
+      ["Equip requirement", "Ranged 5"],
+      ["Ammunition", "Steel bars from your inventory"],
+      ["Vendor sell value", "1,000 coins"]
+    ],
+    "sections": [
+      [
+        "How to get Dwarven Cannon",
+        "Open a Jester’s Pouch at a Chillin’ Spot with Piety 1. Each pouch has a 1 in 10 (10%) chance to contain the cannon. Get more pouches from the Jester’s Chest in O’Rock’s Jester’s Room by trading Rusty, Bloodied, or Scorched Coins."
+      ],
+      [
+        "How it works",
+        "Equip the Dwarven Cannon in your pet slot and keep steel bars in your inventory for it to fire."
+      ]
+    ],
+    "tables": [
+      {
+        "title": "Drop odds",
+        "columns": ["Activity", "Requirements", "Station", "Materials per action", "Odds"],
+        "rows": [
+          ["Open Jester’s Pouch", "Piety 1", "Chillin’ Spot", "1 × Jester’s Pouch", "1 in 10 (10%)"]
+        ]
+      }
+    ],
+    "sprites": [
+      {
+        "layers": ["https://microscape.cc/play/assets/cannon-BiDRg7dc.png"],
+        "size": [128, 128],
+        "crop": [32, 48, 80, 36]
+      }
+    ],
+    "related": ["pet-dwarven-cannon", "jesters-pouch", "jesters-room", "ranged", "steel-bar"],
+    "sources": [
+      ["Microscape public game data (November 17, 2026)", "https://microscape.cc/play/assets/index-Bjzb2vNm.js"],
+      ["King’s Jubilee patch notes", "https://microscape.cc/patch-notes/"]
+    ]
+  },
+  {
     "id": "dwarven-mine",
     "title": "Dwarven Mine",
     "category": "locations",
@@ -42294,7 +42340,8 @@
       "piety",
       "rusty-coin",
       "bloodied-coin",
-      "scorched-coin"
+      "scorched-coin",
+      "dwarven-cannon"
     ],
     "sources": [
       [
@@ -60609,6 +60656,10 @@
           [
             "Bow",
             "bow"
+          ],
+          [
+            "Dwarven Cannon",
+            "dwarven-cannon"
           ],
           [
             "Oak Bow",

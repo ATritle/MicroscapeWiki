@@ -1,6 +1,6 @@
 import { guides } from "./guides.js?v=lurk-price";
 import { tutorials } from "./tutorials.js";
-import { buildPetEntries } from "./pets.js?v=world-sprites";
+import { buildPetEntries } from "./pets.js?v=dwarven-cannon";
 import { itemIcons, itemIconGroups } from "./item-icons.js";
 
 const groups = {

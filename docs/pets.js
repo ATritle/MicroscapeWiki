@@ -159,5 +159,17 @@ export function buildPetEntries(reference) {
       ["Miraheze pet reference", overview.sourceUrl]
     ]
   });
+
+  const cannon = byId.get("dwarven-cannon");
+  if (cannon) {
+    const id = "pet-dwarven-cannon";
+    profiles.push({
+      ...cannon,
+      id,
+      category: "pets",
+      group: "Pet-slot equipment",
+      related: [cannon.id, "pets", ...cannon.related.filter(relatedId => relatedId !== id)]
+    });
+  }
   return profiles.sort((a, b) => a.title.localeCompare(b.title));
 }
