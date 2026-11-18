@@ -23,6 +23,7 @@ const searchInput = document.querySelector("#wiki-search");
 const number = new Intl.NumberFormat("en");
 const gameAssets = "https://microscape.cc/play/assets/";
 const liveDropsUrl = "#/live-drops";
+const liveDropsWorkerUrl = "https://microscape-wiki-api.pages.dev/drops.json";
 const liveDropsSnapshotUrl = "https://raw.githubusercontent.com/ATritle/MicroscapeWiki/refs/heads/live-data/drops.json";
 const liveDropsMaxAge = 40 * 60_000;
 const topicOrder = ["skills", "items", "foes", "locations", "abilities", "pets", "reference"];
@@ -243,28 +244,42 @@ async function refreshLiveDrops() {
   if (liveDropsRequest) return liveDropsRequest;
   liveDropsRequest = (async () => {
     try {
-      const response = await fetch(liveDropsSnapshotUrl, {
-        cache:"no-store", credentials:"omit", signal:AbortSignal.timeout(10_000)
-      });
-      if (!response.ok) throw new Error("Live drops HTTP " + response.status);
-      const data = await response.json();
-      const energyStreams = data?.energyStreams ?? [];
-      if (!Number.isFinite(data?.checkedAt) || !Array.isArray(data.events) || data.events.some(event =>
-        !validTwitchStream(event) || !["favor", "key"].includes(event.type)
-        || !(event.endsAt === null || Number.isFinite(event.endsAt)))
-        || !Array.isArray(energyStreams) || !energyStreams.every(validTwitchStream)) {
-        throw new Error("Invalid live drops snapshot.");
+      let received = false;
+      for (const url of [liveDropsWorkerUrl, liveDropsSnapshotUrl]) {
+        try {
+          const snapshot = await readLiveDrops(url);
+          received = true;
+          if (!liveDropsSnapshot || snapshot.checkedAt >= liveDropsSnapshot.checkedAt) {
+            liveDropsSnapshot = snapshot;
+          }
+          if (Date.now() - snapshot.checkedAt < liveDropsMaxAge) break;
+        } catch {
+          // If the Worker is unavailable, try the last published GitHub snapshot.
+        }
       }
-      liveDropsSnapshot = {...data, energyStreams};
-      liveDropsFailed = false;
-    } catch {
-      liveDropsFailed = true;
+      liveDropsFailed = !received;
     } finally {
       liveDropsRequest = null;
       updateLiveDrops();
     }
   })();
   return liveDropsRequest;
+}
+
+async function readLiveDrops(url) {
+  const response = await fetch(url, {
+    cache:"no-store", credentials:"omit", signal:AbortSignal.timeout(10_000)
+  });
+  if (!response.ok) throw new Error("Live drops HTTP " + response.status);
+  const data = await response.json();
+  const energyStreams = data?.energyStreams ?? [];
+  if (!Number.isFinite(data?.checkedAt) || !Array.isArray(data.events) || data.events.some(event =>
+    !validTwitchStream(event) || !["favor", "key"].includes(event.type)
+    || !(event.endsAt === null || Number.isFinite(event.endsAt)))
+    || !Array.isArray(energyStreams) || !energyStreams.every(validTwitchStream)) {
+    throw new Error("Invalid live drops snapshot.");
+  }
+  return {...data, energyStreams};
 }
 
 function dropAvatar(event) {
