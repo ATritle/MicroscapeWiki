@@ -1,5 +1,5 @@
 import { guides } from "./guides.js?v=lurk-price";
-import { tutorials } from "./tutorials.js?v=onyx-morvane";
+import { tutorials } from "./tutorials.js?v=boss-sprites";
 import { buildPetEntries } from "./pets.js?v=dwarven-cannon";
 import { itemIcons, itemIconGroups } from "./item-icons.js";
 
@@ -77,6 +77,10 @@ function itemIconUrl(id) {
 function entryThumbnail(entry) {
   return entry.abilityBottle || entry.portrait?.src || entry.artwork || entry.mapImage?.src
     || (entry.category === "items" ? itemIconUrl(itemIconGroups[entry.id]?.[0] || entry.id) : null);
+}
+
+function tutorialSpriteFoes(entry) {
+  return (entry.spriteFoes || []).map(id => byId.get(id)).filter(foe => foe?.sprites?.length);
 }
 
 function entryArtwork(entry) {
@@ -408,7 +412,10 @@ function renderList(category, query) {
     count.textContent = number.format(filtered.length) + (filtered.length === 1 ? " entry" : " entries") + (isSearch && query ? " for “" + query + "”" : "");
     grid.replaceChildren(...filtered.slice(0,limit).map(entry => {
       const thumbnail = entryThumbnail(entry);
-      return element("a", {class:"entry-card", href:entryUrl(entry.id)},
+      const spriteFoes = tutorialSpriteFoes(entry);
+      return element("a", {class:spriteFoes.length ? "entry-card tutorial-card" : "entry-card", href:entryUrl(entry.id)},
+        ...(spriteFoes.length ? [element("span", {class:"tutorial-card-sprites", "aria-hidden":"true"},
+          ...spriteFoes.map(foe => renderSpriteFrame(foe.sprites[0])))] : []),
         element("span", {class:"entry-card-body"},
           ...(thumbnail ? [entryImage(thumbnail, "", true)] : []),
           element("span", {}, element("strong", {}, entry.title),
@@ -535,31 +542,34 @@ function renderLocationMap(entry) {
   );
 }
 
+function renderSpriteFrame(sprite, label) {
+  const [x, y, width, height] = sprite.crop;
+  const [imageWidth, imageHeight] = sprite.size;
+  const longestSide = Math.max(width, height);
+  const displayWidth = Math.round(width * Math.min(208, Math.max(128, longestSide)) / longestSide);
+  const percent = (value, whole) => 100 * value / whole + "%";
+  const layerStyle = `left:${percent(-x, width)};top:${percent(-y, height)};width:${percent(imageWidth, width)};height:${percent(imageHeight, height)}`;
+  const layers = sprite.layers.map(src => element("img", {
+    class:"game-sprite-layer", src, alt:"", width:imageWidth, height:imageHeight,
+    decoding:"async", referrerpolicy:"no-referrer", style:layerStyle
+  }));
+  if (sprite.heldHand) {
+    const hand = sprite.heldHand;
+    const position = `left:${percent(hand.x - x, width)};top:${percent(hand.y - y, height)};width:${percent(hand.size, width)};height:${percent(hand.size, height)}`;
+    layers.splice(-1, 0, element("span", {class:"game-sprite-layer", style:`${position};background:${hand.color}`}));
+  }
+  return element("span", {
+    class:sprite.flipped ? "game-sprite-frame flipped" : "game-sprite-frame",
+    ...(label ? {role:"img", "aria-label":label} : {}),
+    style:`--sprite-width:${displayWidth}px;aspect-ratio:${width}/${height}`
+  }, ...layers);
+}
+
 function renderGameSprites(sprites, {title, heading = "In-game appearance"} = {}) {
   const figures = sprites.map(sprite => {
-    const [x, y, width, height] = sprite.crop;
-    const [imageWidth, imageHeight] = sprite.size;
-    const longestSide = Math.max(width, height);
-    const displayWidth = Math.round(width * Math.min(208, Math.max(128, longestSide)) / longestSide);
-    const percent = (value, whole) => 100 * value / whole + "%";
-    const layerStyle = `left:${percent(-x, width)};top:${percent(-y, height)};width:${percent(imageWidth, width)};height:${percent(imageHeight, height)}`;
-    const layers = sprite.layers.map(src => element("img", {
-      class:"game-sprite-layer", src, alt:"", width:imageWidth, height:imageHeight,
-      decoding:"async", referrerpolicy:"no-referrer", style:layerStyle
-    }));
-    if (sprite.heldHand) {
-      const hand = sprite.heldHand;
-      const position = `left:${percent(hand.x - x, width)};top:${percent(hand.y - y, height)};width:${percent(hand.size, width)};height:${percent(hand.size, height)}`;
-      layers.splice(-1, 0, element("span", {class:"game-sprite-layer", style:`${position};background:${hand.color}`}));
-    }
     const label = (title || sprite.label) + " full in-game sprite" + (title && sprite.label ? " · " + sprite.label : "");
     return element("figure", {class:"game-sprite"},
-      element("div", {class:"game-sprite-stage"},
-        element("div", {
-          class:sprite.flipped ? "game-sprite-frame flipped" : "game-sprite-frame",
-          role:"img", "aria-label":label, style:`--sprite-width:${displayWidth}px;aspect-ratio:${width}/${height}`
-        }, ...layers)
-      ),
+      element("div", {class:"game-sprite-stage"}, renderSpriteFrame(sprite, label)),
       ...(sprite.label ? [element("figcaption", {}, sprite.label)] : [])
     );
   });
@@ -617,7 +627,11 @@ function renderEntry(entry, category) {
   if (entry.indexOnly) article.append(element("p", {class:"intro"}, "Listed in the community catalog. Detailed values are still needed."));
   if (entry.calculator) article.append(calculator());
   if (!art && !entry.mapImage) article.append(...facts);
-  if (entry.sprites?.length) article.append(renderGameSprites(entry.sprites, {title:entry.title}));
+  const tutorialSprites = tutorialSpriteFoes(entry).flatMap(foe => foe.sprites.map(sprite => ({
+    ...sprite, label:sprite.label ? `${foe.title} · ${sprite.label}` : foe.title
+  })));
+  const sprites = entry.sprites || tutorialSprites;
+  if (sprites.length) article.append(renderGameSprites(sprites, {title:entry.sprites ? entry.title : undefined}));
   for (const [heading, text] of entry.sections || []) {
     article.append(element("section", {},
       element("h2", {}, ...linkMentions(heading, inlineReferences)),
@@ -655,7 +669,7 @@ function renderEntry(entry, category) {
     ["Contributor history", entry.sourceUrl + "?action=history"],
     ["CC BY-SA 4.0", "https://creativecommons.org/licenses/by-sa/4.0/"]
   ])];
-  if (art || entry.mapImage || entry.sprites?.length) {
+  if (art || entry.mapImage || sprites.length) {
     sources.push(entry.id === "steel-pickaxe"
       ? ["Archived Steel Pickaxe icon on Miraheze", "https://microscape.miraheze.org/wiki/File:Steel_Pickaxe.png"]
       : ["Microscape game artwork credits", "https://microscape.cc/credits/"]

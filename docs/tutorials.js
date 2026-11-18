@@ -5,6 +5,7 @@ export const tutorials = [
   {
     id: "gurgle-split-tutorial",
     title: "Gurgle Boss",
+    spriteFoes: ["gurgle"],
     summary: "Open the way to The Sump, then use Rubber Boots and watch the split counter during the Gurgle fight.",
     sections: [
       ["How to open the fight", "In Deep Sewers, defeat the Sewer Crocodile using ranged attacks. The dungeon door opens for 60 seconds after the crocodile is defeated. Select Descend before the door closes to enter The Sump and start the Gurgle fight."],
@@ -18,6 +19,7 @@ export const tutorials = [
   {
     id: "dragon-breath-tutorial",
     title: "King Onyx Dragon Boss",
+    spriteFoes: ["king-onyx-dragon"],
     summary: "Open the passage below Dread Mount Onyx and use Pyreshell Ward to reduce the dragon’s fire-breath damage.",
     sections: [
       ["How to open the fight", "Bring a Dungeon Key and reach combat level 60. Select Dread Mount Onyx on the World Map and travel to The Antechamber. Defeat Dragon Whelps and Magma Hounds to fill the passage meter. When the passage opens, use the dungeon Travel marker and choose Descend before the countdown ends. Select King Onyx Dragon in The Lair to start the fight."],
@@ -31,6 +33,7 @@ export const tutorials = [
   {
     id: "morvane-tutorial",
     title: "Morvane Boss",
+    spriteFoes: ["morvane", "iskarn", "pyrax"],
     summary: "Break the seal in The Sanctum to face Morvane, Corrupted Keeper of the Heartwood, in Havendell Lair.",
     sections: [
       ["How to open the fight", "Bring a Dungeon Key and reach combat level 40. Travel to Havendell Dungeon from the World Map, then use the dungeon Travel marker and choose Descend to reach The Sanctum. Defeat both Iskarn and Pyrax. Once one falls, finish the other before it can reseal the gate. When the gate opens, choose Descend while it’s still open, then select Morvane in Havendell Lair to start the fight."],
