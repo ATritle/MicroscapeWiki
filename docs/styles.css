@@ -223,6 +223,8 @@ h3 { margin-bottom: 6px; font-size: 17px; }
 .tutorial-screenshot { max-width: 790px; margin: 16px 0 0; }
 .tutorial-screenshot-frame { position: relative; overflow: hidden; border-radius: 10px; background: var(--panel); }
 .tutorial-screenshot-frame img { position: absolute; display: block; max-width: none; height: auto; image-rendering: pixelated; }
+.tutorial-screenshot-tile { position: absolute; aspect-ratio: 1; display: flex; align-items: center; justify-content: center; transform: translate(-50%, -65%); background-size: 100% 100%; image-rendering: pixelated; }
+.tutorial-screenshot-tile img { position: static; width: 66.6667%; height: 66.6667%; }
 .tutorial-screenshot-marker { position: absolute; width: clamp(16px, 3vw, 32px); aspect-ratio: 1; transform: translate(-50%, -50%); border: 2px solid #fff08a; border-radius: 50%; box-shadow: 0 0 0 2px #19120e; }
 .tutorial-screenshot figcaption { padding-top: 7px; color: var(--muted); font-size: 13px; }
 .tutorial-steps { max-width: 76ch; padding-left: 25px; }

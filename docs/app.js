@@ -1,5 +1,5 @@
 import { guides } from "./guides.js?v=lurk-price";
-import { tutorials } from "./tutorials.js?v=gurgle-fight-photos";
+import { tutorials } from "./tutorials.js?v=gurgle-descend";
 import { buildPetEntries } from "./pets.js?v=dwarven-cannon";
 import { itemIcons, itemIconGroups } from "./item-icons.js";
 
@@ -692,6 +692,7 @@ function linkMentions(text, references) {
 function renderTutorialScreenshot(source, screenshot, references) {
   const [x, y, width, height] = screenshot.crop || [0, 0, source.width, source.height];
   const marker = screenshot.marker;
+  const tile = screenshot.tile;
   return element("figure", {class:"tutorial-screenshot"},
     element("div", {class:"tutorial-screenshot-frame", style:`aspect-ratio:${width}/${height}`},
       element("img", {
@@ -699,6 +700,10 @@ function renderTutorialScreenshot(source, screenshot, references) {
         loading:"lazy", decoding:"async",
         style:`left:${-100 * x / width}%;top:${-100 * y / height}%;width:${100 * source.width / width}%`
       }),
+      ...(tile ? [element("span", {class:"tutorial-screenshot-tile", "aria-hidden":"true",
+        style:`left:${100 * (tile.position[0] - x) / width}%;top:${100 * (tile.position[1] - y) / height}%;width:${100 * tile.size / width}%;background-image:url('${tile.frame}')`},
+        element("img", {src:tile.src, alt:"", width:32, height:32})
+      )] : []),
       ...(marker ? [element("span", {class:"tutorial-screenshot-marker", "aria-hidden":"true",
         style:`left:${100 * (marker[0] - x) / width}%;top:${100 * (marker[1] - y) / height}%`})] : [])
     ),

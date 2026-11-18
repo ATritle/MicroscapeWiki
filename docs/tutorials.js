@@ -25,11 +25,24 @@ export const tutorials = [
           caption:"Use the Travel marker at the ring to reach Deep Sewers."
         }
       }],
-      ["3. Defeat the Sewer Crocodile and descend", "Defeat the Sewer Crocodile using ranged attacks. The dungeon door opens for 60 seconds after the kill. Use the dungeon Travel marker by the drain and choose Descend before the countdown ends.", {
+      ["3a. Defeat the Sewer Crocodile", "Defeat the Sewer Crocodile using ranged attacks. The dungeon door opens for 60 seconds after the kill.", {
         screenshot: {
           source:{src:"./assets/gurgle-crocodile.png", width:1001, height:674},
           alt:"A player using ranged attacks against the Sewer Crocodile in the green drain at the end of Deep Sewers.",
           caption:"Find the Sewer Crocodile in the green drain shown here. Defeat it with ranged attacks, then descend within 60 seconds."
+        }
+      }],
+      ["3b. Click the open drain and descend", "After the Sewer Crocodile is defeated, click the gold-framed dungeon Travel marker in the drain, then choose Descend to enter The Sump. Do this before the 60-second opening ends.", {
+        screenshot: {
+          source:{src:"./assets/gurgle-open-drain-map.png", width:688, height:344},
+          crop:[335, 65, 180, 130],
+          tile:{
+            position:[448, 144], size:12,
+            src:"./assets/dungeon-travel-icon.png",
+            frame:"./assets/dungeon-travel-frame.png"
+          },
+          alt:"Illustration of the cleared drain in Deep Sewers, with the original gold-framed dungeon Travel marker at the entrance to The Sump and no Crocodile.",
+          caption:"After the Crocodile is defeated, click this dungeon marker and choose Descend. Illustrated using the original game map and marker."
         }
       }],
       ["4. Start the fight in The Sump", "Select Gurgle to start the fight. You need combat level 10 and a Dungeon Key. If you have Rubber Boots, equip them before engaging. They grant Soft Landing, which reduces fall damage by 75%.", {
@@ -59,6 +72,7 @@ export const tutorials = [
     sources: [
       ["Microscape game client · Dungeon maps, fight requirements and loot", gameClient],
       ["September 30 patch notes · Gurgle’s splits", patchNotes],
+      ["Microscape game client · Descend marker and Deep Sewers tile position", "https://microscape.cc/play/assets/index-CUJKZV-W.js"],
       ["Community screenshot · Sewer Crocodile", "./assets/gurgle-crocodile.png"],
       ["Community screenshot · Gurgle’s first form", "./assets/gurgle-first-form.png"],
       ["Community screenshot · Slimelets", "./assets/gurgle-slimelets.png"],
