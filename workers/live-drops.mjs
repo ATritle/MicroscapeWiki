@@ -2,10 +2,14 @@ const source = "https://microscape.cc/server/tapi/live-communities";
 const defaultWikiOrigin = "https://atritle.github.io";
 const wikiOrigins = new Set([defaultWikiOrigin, "https://microscapewiki.com", "https://www.microscapewiki.com"]);
 const feedPath = "/drops.json";
+const twitchStatusPath = "/mzdunk.json";
+const mzDunkChannel = "mzdunk";
+const twitchStreamsUrl = "https://api.twitch.tv/helix/streams?user_login=" + mzDunkChannel;
 const eventFields = [
   ["favor", "hasFestival", "festivalRemainingMinutes"],
   ["key", "hasDungeonEvent", "dungeonEventRemainingMinutes"]
 ];
+let twitchToken;
 
 function streamDetails(row) {
   const channel = /^https:\/\/(?:www\.)?twitch\.tv\/([a-z0-9_]{1,25})\/?$/i.exec(row.streamUrl)?.[1];
@@ -28,9 +32,11 @@ export function makeSnapshot(rows, checkedAt = Date.now()) {
 
   const events = [];
   const energyCandidates = [];
+  let mzDunkStream;
   for (const row of rows) {
     if (!row.live) continue;
     const stream = streamDetails(row);
+    if (stream?.channel === mzDunkChannel) mzDunkStream = {...stream, name:"MzDunk"};
     // Microscape shows 1.3x for member channels that aren't long-running.
     if (stream && row.isMemberChannel === true && !row.lr) {
       energyCandidates.push({stream, players: row.clampedLivePlayers ?? 0});
@@ -52,14 +58,19 @@ export function makeSnapshot(rows, checkedAt = Date.now()) {
     }
   }
 
-  const ranked = energyCandidates.sort((a, b) => b.players - a.players);
+  const ranked = energyCandidates.sort((a, b) => {
+    const priority = Number(b.stream.channel === mzDunkChannel) - Number(a.stream.channel === mzDunkChannel);
+    return priority || b.players - a.players;
+  });
   const unique = new Map();
+  // Keep a reserve channel when Twitch may report MzDunk offline ahead of Microscape.
+  const limit = ranked[0]?.stream.channel === mzDunkChannel ? 4 : 3;
   for (const {stream} of ranked) {
     if (!unique.has(stream.channel)) unique.set(stream.channel, stream);
-    if (unique.size === 3) break;
+    if (unique.size === limit) break;
   }
   const energyStreams = [...unique.values()];
-  return { checkedAt, events, energyStreams };
+  return {checkedAt, events, energyStreams, ...(mzDunkStream ? {mzDunkStream} : {})};
 }
 
 export async function fetchSnapshot(timeout = 15_000) {
@@ -69,28 +80,74 @@ export async function fetchSnapshot(timeout = 15_000) {
   return makeSnapshot(body?.result?.data);
 }
 
+async function getTwitchToken(env) {
+  if (twitchToken?.expiresAt > Date.now() + 60_000) return twitchToken.value;
+  const response = await fetch("https://id.twitch.tv/oauth2/token", {
+    method: "POST",
+    body: new URLSearchParams({
+      client_id: env.TWITCH_CLIENT_ID,
+      client_secret: env.TWITCH_CLIENT_SECRET,
+      grant_type: "client_credentials"
+    }),
+    signal: AbortSignal.timeout(2_500)
+  });
+  if (!response.ok) throw new Error("Twitch token HTTP " + response.status);
+  const body = await response.json();
+  if (typeof body.access_token !== "string" || !Number.isFinite(body.expires_in)) {
+    throw new Error("Invalid Twitch token response.");
+  }
+  twitchToken = {value: body.access_token, expiresAt: Date.now() + body.expires_in * 1_000};
+  return twitchToken.value;
+}
+
+async function fetchTwitchStatus(env) {
+  const readStreams = token => fetch(twitchStreamsUrl, {
+    headers: {"Client-Id": env.TWITCH_CLIENT_ID, Authorization: "Bearer " + token},
+    signal: AbortSignal.timeout(2_500)
+  });
+  const token = await getTwitchToken(env);
+  let response = await readStreams(token);
+  if (response.status === 401) {
+    if (twitchToken?.value === token) twitchToken = undefined;
+    response = await readStreams(await getTwitchToken(env));
+  }
+  if (!response.ok) throw new Error("Twitch streams HTTP " + response.status);
+  const body = await response.json();
+  if (!Array.isArray(body.data)) throw new Error("Invalid Twitch streams response.");
+  const live = body.data.some(stream => stream?.user_login === mzDunkChannel && stream.type === "live");
+  return {checkedAt: Date.now(), stream: live ? {channel: mzDunkChannel, name: "MzDunk"} : null};
+}
+
 export default {
-  async fetch(request, _env, context) {
+  async fetch(request, env, context) {
     const url = new URL(request.url);
-    if (url.pathname !== feedPath) return new Response("Not found", {status: 404});
+    const twitchStatus = url.pathname === twitchStatusPath;
+    if (!twitchStatus && url.pathname !== feedPath) return new Response("Not found", {status: 404});
     if (request.method !== "GET") return new Response("Method not allowed", {status: 405, headers: {Allow: "GET"}});
 
     const origin = request.headers.get("Origin");
     if (origin && !wikiOrigins.has(origin)) return new Response("Origin not allowed", {status: 403, headers: {Vary: "Origin"}});
     const headers = {"X-Content-Type-Options": "nosniff"};
 
-    // Cache the feed independently of the requesting origin and query parameters.
+    // Share each endpoint's response across wiki origins and ignore query parameters.
     const cache = globalThis.caches?.default;
-    const key = new Request(new URL(feedPath, url.origin));
+    const key = new Request(new URL(url.pathname, url.origin));
     let response = await cache?.match(key).catch(() => undefined);
     if (!response) {
       try {
-        const snapshot = await fetchSnapshot(8_000);
-        response = Response.json(snapshot, {headers: {...headers, "Cache-Control": "public, max-age=60"}});
-        if (cache) context.waitUntil(cache.put(key, response.clone()).catch(() => {}));
+        if (twitchStatus && (!env.TWITCH_CLIENT_ID || !env.TWITCH_CLIENT_SECRET)) {
+          response = Response.json({error: "Twitch status is not configured."}, {
+            status: 503, headers: {...headers, "Cache-Control": "no-store"}
+          });
+        } else {
+          const snapshot = twitchStatus ? await fetchTwitchStatus(env) : await fetchSnapshot(8_000);
+          response = Response.json(snapshot, {headers: {...headers, "Cache-Control": "public, max-age=60"}});
+          if (cache) context.waitUntil(cache.put(key, response.clone()).catch(() => {}));
+        }
       } catch (error) {
-        console.error("Cannot refresh Microscape streams:", error.message);
-        response = Response.json({error: "Microscape streams are temporarily unavailable."}, {
+        const service = twitchStatus ? "Twitch status" : "Microscape streams";
+        console.error(`${service} request failed:`, error.message);
+        response = Response.json({error: `${service} temporarily unavailable.`}, {
           status: 502, headers: {...headers, "Cache-Control": "no-store"}
         });
       }

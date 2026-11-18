@@ -24,13 +24,18 @@ const number = new Intl.NumberFormat("en");
 const gameAssets = "https://microscape.cc/play/assets/";
 const liveDropsUrl = "#/live-drops";
 const liveDropsWorkerUrl = "https://microscape-wiki-api.pages.dev/drops.json";
+const mzDunkStatusUrl = new URL("mzdunk.json", liveDropsWorkerUrl).href;
 const liveDropsSnapshotUrl = "https://raw.githubusercontent.com/ATritle/MicroscapeWiki/refs/heads/live-data/drops.json";
 const liveDropsMaxAge = 40 * 60_000;
+const mzDunkChannel = "mzdunk";
+const mzDunkTwitchUrl = "https://www.twitch.tv/" + mzDunkChannel;
+const mzDunkStatusMaxAge = 10 * 60_000;
 const topicOrder = ["skills", "items", "foes", "locations", "abilities", "pets", "reference"];
 const featured = ["energy", "dungeons", "bazaar", "activity-queue"];
 const displayCount = 36;
 let referenceLoadFailed = false;
 let liveDropsSnapshot;
+let mzDunkTwitchStatus;
 let liveDropsRequest;
 let liveDropsFailed = false;
 let liveDropsExpiry;
@@ -170,7 +175,9 @@ function renderHome() {
       element("p", {}, "Player guides and reference tables for the Twitch-powered browser idle RPG."),
       element("div", {class:"actions"},
         element("a", {class:"button primary", href:entryUrl("getting-started")}, "Getting started", glyph("→", "")),
-        element("a", {class:"button", href:liveDropsUrl}, "Live Twitch drops", liveDropBadge())
+        element("a", {class:"button", href:liveDropsUrl}, "Live Twitch drops", liveDropBadge()),
+        element("a", {class:"button mzdunk-live-button", href:mzDunkTwitchUrl, target:"_blank", rel:"noopener noreferrer", hidden:""},
+          glyph("", "mzdunk-live-dot"), "MzDunk is live", glyph("↗", ""))
       )
     )
   );
@@ -230,14 +237,25 @@ function updateLiveDrops() {
   const snapshot = liveDropsSnapshot && now - liveDropsSnapshot.checkedAt < liveDropsMaxAge
     ? liveDropsSnapshot : null;
   const events = snapshot?.events.filter(event => event.endsAt === null || event.endsAt > now) || [];
+  const twitchStatus = mzDunkTwitchStatus && now - mzDunkTwitchStatus.checkedAt < mzDunkStatusMaxAge
+    ? mzDunkTwitchStatus : null;
+  const microscapeStream = snapshot && now - snapshot.checkedAt < mzDunkStatusMaxAge ? snapshot.mzDunkStream : null;
+  const mzDunkStream = twitchStatus
+    ? twitchStatus.stream && {...microscapeStream, ...twitchStatus.stream}
+    : microscapeStream;
+  const mzDunkButton = document.querySelector(".mzdunk-live-button");
 
   for (const badge of document.querySelectorAll(".live-drop-badge")) badge.hidden = !events.length;
-  renderDropResults?.(snapshot, events, now);
+  if (mzDunkButton) mzDunkButton.hidden = !mzDunkStream;
+  renderDropResults?.(snapshot, events, now, mzDunkStream, twitchStatus?.stream === null);
 
-  if (snapshot) {
-    const nextChange = Math.min(snapshot.checkedAt + liveDropsMaxAge, ...events.map(event => event.endsAt ?? Infinity));
-    liveDropsExpiry = setTimeout(updateLiveDrops, nextChange - now);
-  }
+  const nextChange = Math.min(
+    snapshot ? snapshot.checkedAt + liveDropsMaxAge : Infinity,
+    microscapeStream ? snapshot.checkedAt + mzDunkStatusMaxAge : Infinity,
+    twitchStatus ? twitchStatus.checkedAt + mzDunkStatusMaxAge : Infinity,
+    ...events.map(event => event.endsAt ?? Infinity)
+  );
+  if (Number.isFinite(nextChange)) liveDropsExpiry = setTimeout(updateLiveDrops, nextChange - now);
 }
 
 function validTwitchStream(stream) {
@@ -248,6 +266,10 @@ function validTwitchStream(stream) {
 async function refreshLiveDrops() {
   if (liveDropsRequest) return liveDropsRequest;
   liveDropsRequest = (async () => {
+    const twitchCheck = readMzDunkStatus().then(status => {
+      mzDunkTwitchStatus = status;
+      updateLiveDrops();
+    }, () => {});
     try {
       let received = false;
       for (const url of [liveDropsWorkerUrl, liveDropsSnapshotUrl]) {
@@ -264,11 +286,25 @@ async function refreshLiveDrops() {
       }
       liveDropsFailed = !received;
     } finally {
+      await twitchCheck;
       liveDropsRequest = null;
       updateLiveDrops();
     }
   })();
   return liveDropsRequest;
+}
+
+async function readMzDunkStatus() {
+  const response = await fetch(mzDunkStatusUrl, {
+    cache:"no-store", credentials:"omit", signal:AbortSignal.timeout(10_000)
+  });
+  if (!response.ok) throw new Error("Twitch status HTTP " + response.status);
+  const status = await response.json();
+  if (!Number.isFinite(status?.checkedAt) || (status.stream !== null &&
+      !(validTwitchStream(status.stream) && status.stream.channel === mzDunkChannel))) {
+    throw new Error("Invalid Twitch status.");
+  }
+  return status;
 }
 
 async function readLiveDrops(url) {
@@ -284,7 +320,9 @@ async function readLiveDrops(url) {
     || !Array.isArray(energyStreams) || !energyStreams.every(validTwitchStream)) {
     throw new Error("Invalid live drops snapshot.");
   }
-  return {...data, energyStreams};
+  const mzDunkStream = [data.mzDunkStream, ...energyStreams, ...data.events].find(stream =>
+    validTwitchStream(stream) && stream.channel === mzDunkChannel);
+  return {...data, energyStreams, mzDunkStream};
 }
 
 function dropAvatar(event) {
@@ -299,11 +337,14 @@ function dropAvatar(event) {
   return avatar;
 }
 
-function streamCards(streams, description) {
+function streamCards(streams, description, featuredChannel) {
   return element("ul", {}, ...streams.map(stream => element("li", {},
-    element("a", {class:"entry-card", href:"https://www.twitch.tv/" + stream.channel, target:"_blank", rel:"noopener noreferrer"},
+    element("a", {class:stream.channel === featuredChannel ? "entry-card mzdunk-stream-card" : "entry-card",
+      href:"https://www.twitch.tv/" + stream.channel, target:"_blank", rel:"noopener noreferrer"},
       element("span", {class:"entry-card-body"}, dropAvatar(stream),
-        element("span", {}, element("strong", {}, stream.name), element("small", {}, description(stream)))),
+        element("span", {}, element("strong", {}, stream.channel === featuredChannel ? "MzDunk" : stream.name,
+          ...(stream.channel === featuredChannel ? [element("span", {class:"mzdunk-stream-badge"}, "LIVE")] : [])),
+        element("small", {}, description(stream)))),
       glyph("↗", "arrow")
     )
   )));
@@ -329,14 +370,19 @@ function renderLiveDrops() {
     );
   }
 
-  renderDropResults = (snapshot, events, now) => {
-    const streams = liveDropsSnapshot?.energyStreams.slice(0, 3) || [];
+  renderDropResults = (snapshot, events, now, mzDunkStream, mzDunkOffline) => {
+    const ranked = liveDropsSnapshot?.energyStreams.filter(stream => !mzDunkOffline || stream.channel !== mzDunkChannel) || [];
+    const mzDunkEnergy = mzDunkStream && ranked.some(stream => stream.channel === mzDunkChannel);
+    const streams = mzDunkStream
+      ? [mzDunkStream, ...ranked.filter(stream => stream.channel !== mzDunkChannel).slice(0, mzDunkEnergy ? 2 : 3)]
+      : ranked.slice(0, 3);
     energyResults.replaceChildren(element("section", {class:"drop-group"},
-      element("h2", {}, "Top 1.3× Energy channels"),
+      element("h2", {}, mzDunkStream && !mzDunkEnergy ? "Live Twitch and 1.3× Energy" : "Top 1.3× Energy channels"),
       ...(streams.length && !snapshot
         ? [element("p", {class:"drop-status"}, "From the last update. Check Twitch to see if these channels are still live.")]
         : []),
-      streams.length ? streamCards(streams, () => "1.3× Energy")
+      streams.length ? streamCards(streams, stream => stream.channel === mzDunkStream?.channel && !mzDunkEnergy
+        ? "Live on Twitch" : "1.3× Energy", mzDunkStream?.channel)
         : element("p", {class:"empty"}, !liveDropsSnapshot && !liveDropsFailed
           ? "Checking for live channels…"
           : snapshot ? "No live 1.3× Energy channels were listed." : "Energy channel data is unavailable.")

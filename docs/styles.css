@@ -117,6 +117,9 @@ h3 { margin-bottom: 6px; font-size: 17px; }
 .button.primary:hover { background: #a1e7ce; }
 .button.outline { border-color: #617184; background: #102030a8; }
 .button.outline:hover { background: #22374c; }
+.button.mzdunk-live-button { gap: 8px; color: #fff1f5; border-color: #ba5772; background: #57243a; }
+.button.mzdunk-live-button:hover { background: #73324d; }
+.mzdunk-live-dot { width: 8px; height: 8px; flex: none; border-radius: 50%; background: #ff879d; }
 .notice { margin: 16px 0 30px; display: flex; gap: 10px; align-items: baseline; background: #24211d; border: 1px solid #4a3a25; border-radius: 8px; padding: 10px 15px; color: #ece0ce; font-size: 13px; }
 .notice a, .notice .glyph { color: var(--amber); font-weight: 700; }
 .notice p { margin: 0; }
@@ -154,6 +157,9 @@ h3 { margin-bottom: 6px; font-size: 17px; }
 .entry-card strong, .entry-card small { display: block; }
 .entry-card small { margin-top: 2px; font-size: 13px; color: var(--muted); }
 .entry-card-body { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.entry-card.mzdunk-stream-card { border-color: #8d485f; background: #291e31; }
+.entry-card.mzdunk-stream-card:hover { border-color: #ba5772; background: #372539; }
+.mzdunk-stream-badge { display: inline-block; margin-left: 8px; padding: 1px 6px; border-radius: 4px; background: #57243a; color: #ffc2ce; font-size: 10px; line-height: 1.4; vertical-align: middle; }
 .tutorial-card { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-content: start; }
 .tutorial-card-sprites { grid-column: 1 / -1; display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); place-items: center; min-height: 116px; gap: 8px; padding: 8px 12px; border: 1px solid var(--line); border-radius: 7px; background: radial-gradient(ellipse, #394d55, #23323d 82%); }
 .tutorial-card-sprites .game-sprite-frame { max-width: 108px; }
