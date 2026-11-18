@@ -23,7 +23,7 @@ const searchInput = document.querySelector("#wiki-search");
 const number = new Intl.NumberFormat("en");
 const gameAssets = "https://microscape.cc/play/assets/";
 const liveDropsUrl = "#/live-drops";
-const liveDropsSnapshotUrl = "https://raw.githubusercontent.com/ATritle/MicroscapeWiki/live-data/drops.json";
+const liveDropsSnapshotUrl = "https://raw.githubusercontent.com/ATritle/MicroscapeWiki/refs/heads/live-data/drops.json";
 const liveDropsMaxAge = 40 * 60_000;
 const topicOrder = ["skills", "items", "foes", "locations", "abilities", "pets", "reference"];
 const featured = ["energy", "dungeons", "bazaar", "activity-queue"];
@@ -309,8 +309,13 @@ function renderLiveDrops() {
 
   renderDropResults = (snapshot, events, now) => {
     if (!snapshot) {
-      status.textContent = !liveDropsSnapshot && !liveDropsFailed ? "Checking for live drops…"
-        : "Live data is temporarily unavailable. Open Streams in Microscape for current events.";
+      if (liveDropsSnapshot) {
+        status.textContent = "Live updates are delayed. Last checked " + updateTime.format(liveDropsSnapshot.checkedAt)
+          + ". Open Streams in Microscape for current events.";
+      } else {
+        status.textContent = liveDropsFailed ? "Couldn’t load the live streams. Open Streams in Microscape for current events."
+          : "Checking for live drops…";
+      }
       results.replaceChildren();
       return;
     }
