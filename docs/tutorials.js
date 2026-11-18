@@ -42,7 +42,7 @@ export const tutorials = [
         }
       }],
       ["5. Attack the Slimelets during the splits", "When the counter shows the first or second split, attack the Slimelets while they’re separated. Watch the countdown for when they’ll reunite. If Gurgle collapses, switch back to him to finish the fight. On the third split, the countdown shows how long you have before Gurgle can flee."],
-      ["Where to get them", "Rubber Boots are a 1-in-16 drop from Gurgle. The item page lists the drop source and equipment details."]
+      ["Where to get Rubber Boots", "Gurgle drops Rubber Boots at a 1-in-16 rate."]
     ],
     related: ["gurgle", "orock-sewers", "deep-sewers", "the-sump", "sewer-crocodile", "slimelet", "dungeon-key", "rubber-boots", "soft-landing"],
     sources: [["Microscape game client · Dungeon maps, fight requirements and loot", gameClient], ["September 30 patch notes · Gurgle’s splits", patchNotes]]
