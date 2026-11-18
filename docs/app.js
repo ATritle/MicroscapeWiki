@@ -177,7 +177,7 @@ function renderHome() {
         element("a", {class:"button primary", href:entryUrl("getting-started")}, "Getting started", glyph("→", "")),
         element("a", {class:"button", href:liveDropsUrl}, "Live Twitch drops", liveDropBadge()),
         element("a", {class:"button mzdunk-live-button", href:mzDunkTwitchUrl, target:"_blank", rel:"noopener noreferrer", hidden:""},
-          glyph("", "mzdunk-live-dot"), "MzDunk is live", glyph("↗", ""))
+          element("span", {class:"mzdunk-live-icon", "aria-hidden":"true"}), "MzDunk is live", glyph("↗", ""))
       )
     )
   );
@@ -246,7 +246,17 @@ function updateLiveDrops() {
   const mzDunkButton = document.querySelector(".mzdunk-live-button");
 
   for (const badge of document.querySelectorAll(".live-drop-badge")) badge.hidden = !events.length;
-  if (mzDunkButton) mzDunkButton.hidden = !mzDunkStream;
+  if (mzDunkButton) {
+    mzDunkButton.hidden = !mzDunkStream;
+    if (mzDunkStream) {
+      const icon = mzDunkButton.querySelector(".mzdunk-live-icon");
+      const avatarUrl = mzDunkStream.avatarUrl || "";
+      if (icon.dataset.avatar !== avatarUrl) {
+        icon.replaceChildren(dropAvatar(mzDunkStream), glyph("", "mzdunk-live-dot"));
+        icon.dataset.avatar = avatarUrl;
+      }
+    }
+  }
   renderDropResults?.(snapshot, events, now, mzDunkStream, twitchStatus?.stream === null);
 
   const nextChange = Math.min(
@@ -381,8 +391,10 @@ function renderLiveDrops() {
       ...(streams.length && !snapshot
         ? [element("p", {class:"drop-status"}, "From the last update. Check Twitch to see if these channels are still live.")]
         : []),
-      streams.length ? streamCards(streams, stream => stream.channel === mzDunkStream?.channel && !mzDunkEnergy
-        ? "Live on Twitch" : "1.3× Energy", mzDunkStream?.channel)
+      streams.length ? streamCards(streams, stream => {
+        if (stream.channel !== mzDunkStream?.channel) return "1.3× Energy";
+        return "Wiki community channel · " + (mzDunkEnergy ? "1.3× Energy" : "Live on Twitch");
+      }, mzDunkStream?.channel)
         : element("p", {class:"empty"}, !liveDropsSnapshot && !liveDropsFailed
           ? "Checking for live channels…"
           : snapshot ? "No live 1.3× Energy channels were listed." : "Energy channel data is unavailable.")

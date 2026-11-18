@@ -5,19 +5,24 @@ const feedPath = "/drops.json";
 const twitchStatusPath = "/mzdunk.json";
 const mzDunkChannel = "mzdunk";
 const twitchStreamsUrl = "https://api.twitch.tv/helix/streams?user_login=" + mzDunkChannel;
+const twitchUsersUrl = "https://api.twitch.tv/helix/users?login=" + mzDunkChannel;
 const eventFields = [
   ["favor", "hasFestival", "festivalRemainingMinutes"],
   ["key", "hasDungeonEvent", "dungeonEventRemainingMinutes"]
 ];
 let twitchToken;
+let mzDunkAvatar;
+
+function twitchAvatarUrl(url) {
+  return typeof url === "string"
+    && /^https:\/\/static-cdn\.jtvnw\.net\/jtv_user_pictures\/[a-zA-Z0-9._-]+$/.test(url) ? url : null;
+}
 
 function streamDetails(row) {
   const channel = /^https:\/\/(?:www\.)?twitch\.tv\/([a-z0-9_]{1,25})\/?$/i.exec(row.streamUrl)?.[1];
   if (!channel || typeof row.displayName !== "string" || !row.displayName.trim()) return null;
 
-  const avatarUrl = typeof row.imgUrl === "string"
-    && /^https:\/\/static-cdn\.jtvnw\.net\/jtv_user_pictures\/[a-zA-Z0-9._-]+$/.test(row.imgUrl)
-    ? row.imgUrl : null;
+  const avatarUrl = twitchAvatarUrl(row.imgUrl);
   return {
     channel: channel.toLowerCase(),
     name: row.displayName,
@@ -100,22 +105,46 @@ async function getTwitchToken(env) {
   return twitchToken.value;
 }
 
-async function fetchTwitchStatus(env) {
-  const readStreams = token => fetch(twitchStreamsUrl, {
+function fetchTwitch(url, env, token) {
+  return fetch(url, {
     headers: {"Client-Id": env.TWITCH_CLIENT_ID, Authorization: "Bearer " + token},
     signal: AbortSignal.timeout(2_500)
   });
-  const token = await getTwitchToken(env);
-  let response = await readStreams(token);
+}
+
+async function readMzDunkAvatar(env, token) {
+  if (mzDunkAvatar?.expiresAt > Date.now()) return mzDunkAvatar.url;
+  try {
+    const response = await fetchTwitch(twitchUsersUrl, env, token);
+    if (response.ok) {
+      const body = await response.json();
+      const user = body.data?.find(user => user?.login === mzDunkChannel);
+      const url = twitchAvatarUrl(user?.profile_image_url);
+      if (url) mzDunkAvatar = {url, expiresAt: Date.now() + 60 * 60_000};
+    }
+  } catch {
+    // A profile lookup failure should never hide an active stream.
+  }
+  return mzDunkAvatar?.url;
+}
+
+async function fetchTwitchStatus(env) {
+  let token = await getTwitchToken(env);
+  let response = await fetchTwitch(twitchStreamsUrl, env, token);
   if (response.status === 401) {
     if (twitchToken?.value === token) twitchToken = undefined;
-    response = await readStreams(await getTwitchToken(env));
+    token = await getTwitchToken(env);
+    response = await fetchTwitch(twitchStreamsUrl, env, token);
   }
   if (!response.ok) throw new Error("Twitch streams HTTP " + response.status);
   const body = await response.json();
   if (!Array.isArray(body.data)) throw new Error("Invalid Twitch streams response.");
   const live = body.data.some(stream => stream?.user_login === mzDunkChannel && stream.type === "live");
-  return {checkedAt: Date.now(), stream: live ? {channel: mzDunkChannel, name: "MzDunk"} : null};
+  const avatarUrl = live ? await readMzDunkAvatar(env, token) : null;
+  return {
+    checkedAt: Date.now(),
+    stream: live ? {channel: mzDunkChannel, name: "MzDunk", ...(avatarUrl ? {avatarUrl} : {})} : null
+  };
 }
 
 export default {

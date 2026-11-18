@@ -119,7 +119,9 @@ h3 { margin-bottom: 6px; font-size: 17px; }
 .button.outline:hover { background: #22374c; }
 .button.mzdunk-live-button { gap: 8px; color: #fff1f5; border-color: #ba5772; background: #57243a; }
 .button.mzdunk-live-button:hover { background: #73324d; }
-.mzdunk-live-dot { width: 8px; height: 8px; flex: none; border-radius: 50%; background: #ff879d; }
+.mzdunk-live-icon { position: relative; flex: none; }
+.mzdunk-live-icon .drop-avatar { width: 26px; height: 26px; border-color: #d27f97; }
+.mzdunk-live-dot { position: absolute; right: -2px; bottom: -1px; width: 10px; height: 10px; border: 2px solid #57243a; border-radius: 50%; background: #ff879d; }
 .notice { margin: 16px 0 30px; display: flex; gap: 10px; align-items: baseline; background: #24211d; border: 1px solid #4a3a25; border-radius: 8px; padding: 10px 15px; color: #ece0ce; font-size: 13px; }
 .notice a, .notice .glyph { color: var(--amber); font-weight: 700; }
 .notice p { margin: 0; }
@@ -173,6 +175,7 @@ h3 { margin-bottom: 6px; font-size: 17px; }
 .drop-group p { margin: 0; }
 .drop-avatar { position: relative; display: grid; place-items: center; flex: none; width: 36px; height: 36px; border: 1px solid var(--line); border-radius: 50%; overflow: hidden; background: #233b37; color: var(--mint); font-weight: 700; }
 .drop-avatar img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.mzdunk-stream-card .drop-avatar { width: 44px; height: 44px; border-color: #d27f97; }
 .entry-icon { flex: none; display: block; padding: 8px; border: 1px solid var(--line); border-radius: 12px; background: radial-gradient(circle at 50% 40%, #233b37, var(--panel) 72%); object-fit: contain; image-rendering: pixelated; }
 .entry-thumbnail { padding: 4px; border-radius: 8px; }
 .pet-profile-header { display: flex; align-items: center; gap: clamp(12px, 3vw, 25px); margin: 0 0 20px; }
