@@ -31,6 +31,12 @@ not its displayed world number. The client resolves it through
 found, so world information is omitted from the page until joinable world
 numbers can be verified.
 
+The public character endpoint also returns identical location, activity and HP
+values for different players. Those fields are not verified live state and are
+discarded by the Worker. The page labels them unavailable, including when an old
+cached response still contains them. See `audits/2026-11-19-player-lookup-status.md`
+for the comparison and evidence.
+
 ## Edit the wiki
 
 - Edit `docs/guides.js` for guides, patch coverage and playable walkthroughs. Each guide has a permanent ID, sections, related article IDs and sources.

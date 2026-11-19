@@ -120,13 +120,13 @@ export function renderPlayerLookup({main, element:e, crumbs, footer, byId, entry
   const empty = e("div", {class:"player-lookup-empty"},
     e("span", {class:"player-empty-icon", "aria-hidden":"true"}, "⌕"),
     e("h2", {}, "Find your adventurer"),
-    e("p", {}, "See skill levels, equipped gear and where a character is training—all in one place."),
+    e("p", {}, "See skill levels, XP and equipped gear—all in one place."),
     e("button", {type:"button", class:"button"}, "Try User12345")
   );
   empty.querySelector("button").addEventListener("click", () => {input.value = "User12345"; lookup(input.value);});
   results.append(empty);
   main.append(e("article", {class:"player-lookup-page"}, crumbs(null, "Player lookup"), heading,
-    e("p", {class:"intro"}, "An adventurer’s skills, gear and journey. Look up a player to see their public game profile."),
+    e("p", {class:"intro"}, "An adventurer’s skills and gear. Look up a player to see their public game profile."),
     form, status, results), footer());
 
   function clearSuggestions() {
@@ -186,6 +186,7 @@ export function renderPlayerLookup({main, element:e, crumbs, footer, byId, entry
   }
   function result(snapshot, data) {
     const {player} = snapshot, stats = playerStats(player.exp);
+    const liveStatusAvailable = player.liveStatusAvailable === true;
     const canvas = e("canvas", {width:128, height:128, role:"img",
       "aria-label":player.name + " in-game appearance with current equipped gear"});
     const artNote = e("p", {class:"player-art-note", hidden:""});
@@ -194,7 +195,7 @@ export function renderPlayerLookup({main, element:e, crumbs, footer, byId, entry
     const pet = data.pets[player.equipment.pet];
     if (pet?.sprite) artStage.firstChild.append(e("span", {class:"player-pet", role:"img", "aria-label":pet.name}, renderSpriteFrame(pet.sprite)));
     const metric = (label, value) => e("div", {}, e("dt", {}, label), e("dd", {}, value));
-    const health = player.hp !== null && player.maxHp > 0 ? Math.max(0, Math.min(100, player.hp / player.maxHp * 100)) : null;
+    const health = liveStatusAvailable && player.hp !== null && player.maxHp > 0 ? Math.max(0, Math.min(100, player.hp / player.maxHp * 100)) : null;
     const hero = e("section", {class:"player-profile-hero", "aria-label":player.name + " profile"},
       artStage, e("div", {class:"player-profile-identity"},
         e("p", {class:"player-eyebrow"}, "ADVENTURER PROFILE"),
@@ -204,26 +205,26 @@ export function renderPlayerLookup({main, element:e, crumbs, footer, byId, entry
           metric("Combat level", String(stats.combatLevel)), metric("Total level", format.format(stats.totalLevel)),
           metric("Total XP", format.format(stats.totalXp))),
         e("div", {class:"player-health"},
-          e("div", {}, e("span", {}, "Hitpoints"), e("strong", {}, health === null ? "Not reported" : player.hp + " / " + player.maxHp)),
+          e("div", {}, e("span", {}, "Hitpoints"), e("strong", {}, health === null ? "Not publicly available" : player.hp + " / " + player.maxHp)),
           ...(health === null ? [] : [e("span", {class:"player-health-track", role:"meter",
             "aria-label":"Hitpoints", "aria-valuemin":"0", "aria-valuemax":String(player.maxHp), "aria-valuenow":String(player.hp)},
             e("span", {style:"width:" + health + "%"}))]))
       )
     );
-    const location = data.locations[player.location];
-    const activity = player.activity;
+    const location = liveStatusAvailable ? data.locations[player.location] : null;
+    const activity = liveStatusAvailable ? player.activity : null;
     const activityInfo = activityDetails(activity, data);
     const skill = data.skills.find(skill => skill.id === activity?.skill);
     const where = e("section", {class:"player-whereabouts", "aria-label":"Location and activity"},
       e("div", {class:"player-location-card"},
         ...(location?.map ? [e("img", {src:location.map.src, alt:"", class:"player-location-map", width:150, height:90, loading:"lazy"})] : []),
-        e("div", {}, e("span", {class:"player-eyebrow"}, "CURRENT LOCATION"),
-          wikiLink(location?.name || displayName(player.location) || "Not reported", location?.wikiId, {class:"player-place-name"}))),
+        e("div", {}, e("span", {class:"player-eyebrow"}, liveStatusAvailable ? "CURRENT LOCATION" : "LOCATION"),
+          wikiLink(liveStatusAvailable ? location?.name || displayName(player.location) || "Not reported" : "Not publicly available", location?.wikiId, {class:"player-place-name"}))),
       e("div", {class:"player-activity-card"},
         icon(skill?.icon, "player-activity-icon"),
-        e("div", {}, e("span", {class:"player-eyebrow"}, "CURRENT ACTIVITY"),
-          wikiLink(activityInfo.label, activityInfo.foeId, {class:"player-place-name"}),
-          e("small", {}, skill ? skill.name : "Last reported by the game")))
+        e("div", {}, e("span", {class:"player-eyebrow"}, liveStatusAvailable ? "CURRENT ACTIVITY" : "ACTIVITY"),
+          wikiLink(liveStatusAvailable ? activityInfo.label : "Not publicly available", activityInfo.foeId, {class:"player-place-name"}),
+          ...(skill ? [e("small", {}, skill.name)] : [])))
     );
     const skills = e("section", {class:"player-panel", "aria-labelledby":"player-skills-heading"},
       e("div", {class:"player-panel-heading"}, e("h2", {id:"player-skills-heading"}, "Skills"),
@@ -281,7 +282,7 @@ export function renderPlayerLookup({main, element:e, crumbs, footer, byId, entry
     );
     results.replaceChildren(hero, where, e("div", {class:"player-detail-columns"}, skills, gear),
       ...(Object.keys(bonuses).length ? [bonusPanel] : []), stamp,
-      e("p", {class:"player-public-note"}, "Public game profile. A character’s activity can continue while the player is offline."));
+      e("p", {class:"player-public-note"}, "Skills and equipment come from the public game profile. Live location, activity and hitpoints cannot be verified from this profile and are not shown."));
     paintPlayer(canvas, player.equipment, data).then(complete => {
       if (!disposed && !complete) {artNote.hidden = false; artNote.textContent = "Some appearance artwork is unavailable for this build.";}
     }).catch(() => {if (!disposed) {artNote.hidden = false; artNote.textContent = "Appearance artwork could not be loaded.";}});

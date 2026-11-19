@@ -96,25 +96,11 @@ export async function fetchPlayerSnapshot(username, env, resolveUsername = resol
     /^[a-zA-Z]{1,24}$/.test(key) && Number.isFinite(value) && value >= 0));
   const equipment = Object.fromEntries(Object.entries(raw.equipment).filter(([key, value]) =>
     /^[a-zA-Z0-9]{1,24}$/.test(key) && typeof value === "string" && /^[a-zA-Z0-9_-]{1,80}$/.test(value)));
-  const current = raw.activity && typeof raw.activity === "object" ? raw.activity : null;
-  const action = current?.preparedActivity || current?.queuedActivity || current;
-  const activity = current && {
-    kind:current.preparedActivity ? "preparing" : current.queuedActivity ? "queued"
-      : current.type === "travel" ? "travel" : current.type === "banking" ? "banking"
-      : action.mob ? "combat" : action.skill ? "skilling" : "unknown",
-    ...(typeof (action.skill || action.combatSkill) === "string" ? {skill:action.skill || action.combatSkill} : {}),
-    ...(typeof action.activity === "string" ? {id:action.activity} : {}),
-    ...(typeof action.mob === "string" ? {mob:action.mob} : {}),
-    ...(typeof action.zone === "string" ? {zone:action.zone} : {}),
-    ...(typeof current.destination?.map === "string" ? {destination:current.destination.map} : {})
-  };
+  // Public profiles return identical example live-state fields across players.
+  // Keep only verified public profile data; see the November 19 status audit.
   return {checkedAt:Date.now(), player:{
     id, name:raw.name, exp, equipment, isMember:raw.isMember === true,
-    location:typeof raw.pos?.map === "string" ? raw.pos.map : null,
-    worldId:typeof raw.currentWorldId === "string" && /^[a-zA-Z0-9_-]{1,80}$/.test(raw.currentWorldId) ? raw.currentWorldId : null,
-    activity:activity || null,
-    hp:Number.isFinite(raw.resources?.hp) ? raw.resources.hp : null,
-    maxHp:Number.isFinite(raw.resources?.maxHp) ? raw.resources.maxHp : null
+    liveStatusAvailable:false, location:null, activity:null, hp:null, maxHp:null
   }};
 }
 

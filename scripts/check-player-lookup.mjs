@@ -74,7 +74,7 @@ globalThis.fetch = async (input, init = {}) => {
     equipment:{skin:"skin1",weapon:"krakenClub",head:"blackFullHelm",invalid:"../../bad",counter:7},
     isMember:true, pos:{map:"jesters-room",self:{x:17,y:14}}, currentWorldId:id === "101" ? "shared-67" : "../invalid",
     activity:{zone:"jesters-room",skill:"piety",activity:"jesters-chest-large",myState:{privateMarker:"omit"}},
-    resources:{hp:60,maxHp:60}, inventory:{privateMarker:"omit"}, communityIdAllegiances:["omit"]
+    resources:{hp:60,maxHp:60}, liveStatusAvailable:true, inventory:{privateMarker:"omit"}, communityIdAllegiances:["omit"]
   }}});
 };
 const env = {TWITCH_CLIENT_ID:"test-id",TWITCH_CLIENT_SECRET:"test-secret"};
@@ -92,21 +92,20 @@ try {
   assert.equal(alphaResponse.headers.get("Cache-Control"), "public, max-age=30");
   const alpha = await alphaResponse.json();
   assert.equal(alpha.player.id, "101");
-  assert.equal(alpha.player.hp, 60);
-  assert.equal(alpha.player.location, "jesters-room");
-  assert.equal(alpha.player.worldId, "shared-67", "Preserve the reported world ID without guessing a display number");
+  assert.equal(alpha.player.liveStatusAvailable, false, "Public profile fields must not authorize unverified live status");
+  for (const field of ["hp", "maxHp", "location", "activity"]) assert.equal(alpha.player[field], null, "Do not publish the upstream example " + field);
+  assert.equal(alpha.player.worldId, undefined);
   assert.equal(alpha.player.inventory, undefined);
   assert.equal(alpha.player.communityIdAllegiances, undefined);
   assert.equal(alpha.player.equipment.invalid, undefined);
   assert.equal(alpha.player.exp.bad, undefined);
-  assert.equal(alpha.player.activity.myState, undefined);
   await Promise.all(pending);
   const callsBefore = calls.length;
   assert.equal((await (await worker.fetch(request("ALPHA"), env, context)).json()).player.id, "101");
   assert.equal(calls.length, callsBefore, "Uppercase names share the canonical cache");
   const beta = await (await worker.fetch(request("beta"), env, context)).json();
   assert.equal(beta.player.id, "202", "Different usernames must never share a cached profile");
-  assert.equal(beta.player.worldId, null, "Omit malformed world IDs");
+  assert.equal(beta.player.worldId, undefined);
   await Promise.all(pending);
   assert([...cache.keys()].some(key => key.endsWith("?username=alpha")));
   assert([...cache.keys()].some(key => key.endsWith("?username=beta")));
