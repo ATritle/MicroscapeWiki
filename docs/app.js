@@ -2,7 +2,7 @@ import { guides } from "./guides.js?v=launch-notes-20261119";
 import { tutorials } from "./tutorials.js?v=beta-audit";
 import { buildPetEntries } from "./pets.js?v=dwarven-cannon";
 import { itemIcons, itemIconGroups } from "./item-icons.js?v=beta-audit";
-import { renderPlayerLookup } from "./player-lookup.js?v=player-lookup-20261119";
+import { renderPlayerLookup } from "./player-lookup.js?v=player-example-20261119";
 
 const groups = {
   guides: { title: "Guides", icon: "▤", blurb: "Start here, earn Energy, trade and plan dungeon runs." },

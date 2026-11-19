@@ -103,7 +103,7 @@ export function renderPlayerLookup({main, element:e, crumbs, footer, byId, entry
   let controller, disposed = false, requestNumber = 0, currentName = "", lastSnapshot;
   const heading = e("h1", {id:"page-title"}, "Player lookup");
   const status = e("p", {class:"player-lookup-status", role:"status", "aria-live":"polite"});
-  const input = e("input", {id:"player-username", name:"username", type:"text", placeholder:"e.g. xMrTwister23x",
+  const input = e("input", {id:"player-username", name:"username", type:"text", placeholder:"User12345",
     autocomplete:"off", autocapitalize:"none", spellcheck:"false", maxlength:"25", required:""});
   input.value = initialName;
   const submit = e("button", {class:"button primary", type:"submit"}, "Look up player", e("span", {"aria-hidden":"true"}, "→"));
@@ -117,9 +117,9 @@ export function renderPlayerLookup({main, element:e, crumbs, footer, byId, entry
     e("span", {class:"player-empty-icon", "aria-hidden":"true"}, "⌕"),
     e("h2", {}, "Find your adventurer"),
     e("p", {}, "See skill levels, equipped gear and where a character is training—all in one place."),
-    e("button", {type:"button", class:"button"}, "Try xMrTwister23x")
+    e("button", {type:"button", class:"button"}, "Try User12345")
   );
-  empty.querySelector("button").addEventListener("click", () => {input.value = "xMrTwister23x"; lookup(input.value);});
+  empty.querySelector("button").addEventListener("click", () => {input.value = "User12345"; lookup(input.value);});
   results.append(empty);
   main.append(e("article", {class:"player-lookup-page"}, crumbs(null, "Player lookup"), heading,
     e("p", {class:"intro"}, "An adventurer’s skills, gear and journey. Look up a player to see their public game profile."),
