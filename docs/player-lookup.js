@@ -103,7 +103,7 @@ export function renderPlayerLookup({main, element:e, crumbs, footer, byId, entry
   let controller, disposed = false, requestNumber = 0, currentName = "", lastSnapshot;
   const heading = e("h1", {id:"page-title"}, "Player lookup");
   const status = e("p", {class:"player-lookup-status", role:"status", "aria-live":"polite"});
-  const input = e("input", {id:"player-username", name:"username", type:"text", placeholder:"User12345",
+  const input = e("input", {id:"player-username", name:"username", type:"text", placeholder:"e.g. User12345",
     autocomplete:"off", autocapitalize:"none", spellcheck:"false", maxlength:"25", required:""});
   input.value = initialName;
   const submit = e("button", {class:"button primary", type:"submit"}, "Look up player", e("span", {"aria-hidden":"true"}, "→"));
@@ -162,11 +162,16 @@ export function renderPlayerLookup({main, element:e, crumbs, footer, byId, entry
     const activity = player.activity;
     const activityInfo = activityDetails(activity, data);
     const skill = data.skills.find(skill => skill.id === activity?.skill);
-    const where = e("section", {class:"player-whereabouts", "aria-label":"Location and activity"},
+    const where = e("section", {class:"player-whereabouts", "aria-label":"Location, world and activity"},
       e("div", {class:"player-location-card"},
         ...(location?.map ? [e("img", {src:location.map.src, alt:"", class:"player-location-map", width:150, height:90, loading:"lazy"})] : []),
         e("div", {}, e("span", {class:"player-eyebrow"}, "CURRENT LOCATION"),
           wikiLink(location?.name || displayName(player.location) || "Not reported", location?.wikiId, {class:"player-place-name"}))),
+      e("div", {class:"player-world-card"},
+        e("span", {class:"player-world-icon", "aria-hidden":"true"}, "◎"),
+        e("div", {}, e("span", {class:"player-eyebrow"}, "REPORTED WORLD"),
+          e("strong", {class:"player-place-name"}, player.worldId || "Not reported"),
+          e("small", {}, "Game world ID"))),
       e("div", {class:"player-activity-card"},
         icon(skill?.icon, "player-activity-icon"),
         e("div", {}, e("span", {class:"player-eyebrow"}, "CURRENT ACTIVITY"),
@@ -229,7 +234,7 @@ export function renderPlayerLookup({main, element:e, crumbs, footer, byId, entry
     );
     results.replaceChildren(hero, where, e("div", {class:"player-detail-columns"}, skills, gear),
       ...(Object.keys(bonuses).length ? [bonusPanel] : []), stamp,
-      e("p", {class:"player-public-note"}, "Public game profile. A character’s activity can continue while the player is offline."));
+      e("p", {class:"player-public-note"}, "Public game profile. A character’s activity can continue while the player is offline. World IDs may differ from the numbered world names shown in-game."));
     paintPlayer(canvas, player.equipment, data).then(complete => {
       if (!disposed && !complete) {artNote.hidden = false; artNote.textContent = "Some appearance artwork is unavailable for this build.";}
     }).catch(() => {if (!disposed) {artNote.hidden = false; artNote.textContent = "Appearance artwork could not be loaded.";}});

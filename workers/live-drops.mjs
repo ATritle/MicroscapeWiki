@@ -72,6 +72,7 @@ export async function fetchPlayerSnapshot(username, env, resolveUsername = resol
   return {checkedAt:Date.now(), player:{
     id, name:raw.name, exp, equipment, isMember:raw.isMember === true,
     location:typeof raw.pos?.map === "string" ? raw.pos.map : null,
+    worldId:typeof raw.currentWorldId === "string" && /^[a-zA-Z0-9_-]{1,80}$/.test(raw.currentWorldId) ? raw.currentWorldId : null,
     activity:activity || null,
     hp:Number.isFinite(raw.resources?.hp) ? raw.resources.hp : null,
     maxHp:Number.isFinite(raw.resources?.maxHp) ? raw.resources.maxHp : null

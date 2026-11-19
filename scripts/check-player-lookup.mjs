@@ -63,7 +63,7 @@ globalThis.fetch = async (input, init = {}) => {
   return Response.json({result:{data:{
     id, name:id === "101" ? "Alpha" : "Beta", exp:{attack:1154352,strength:0,defense:0,bad:"wrong"},
     equipment:{skin:"skin1",weapon:"krakenClub",head:"blackFullHelm",invalid:"../../bad",counter:7},
-    isMember:true, pos:{map:"jesters-room",self:{x:17,y:14}},
+    isMember:true, pos:{map:"jesters-room",self:{x:17,y:14}}, currentWorldId:id === "101" ? "shared-67" : "../invalid",
     activity:{zone:"jesters-room",skill:"piety",activity:"jesters-chest-large",myState:{privateMarker:"omit"}},
     resources:{hp:60,maxHp:60}, inventory:{privateMarker:"omit"}, communityIdAllegiances:["omit"]
   }}});
@@ -85,6 +85,7 @@ try {
   assert.equal(alpha.player.id, "101");
   assert.equal(alpha.player.hp, 60);
   assert.equal(alpha.player.location, "jesters-room");
+  assert.equal(alpha.player.worldId, "shared-67", "Preserve the reported world ID without guessing a display number");
   assert.equal(alpha.player.inventory, undefined);
   assert.equal(alpha.player.communityIdAllegiances, undefined);
   assert.equal(alpha.player.equipment.invalid, undefined);
@@ -96,6 +97,7 @@ try {
   assert.equal(calls.length, callsBefore, "Uppercase names share the canonical cache");
   const beta = await (await worker.fetch(request("beta"), env, context)).json();
   assert.equal(beta.player.id, "202", "Different usernames must never share a cached profile");
+  assert.equal(beta.player.worldId, null, "Omit malformed world IDs");
   await Promise.all(pending);
   assert([...cache.keys()].some(key => key.endsWith("?username=alpha")));
   assert([...cache.keys()].some(key => key.endsWith("?username=beta")));

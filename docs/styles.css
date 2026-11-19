@@ -293,12 +293,13 @@ tr:last-child td { border-bottom: 0; }
 .player-health strong { color: #c8ebd8; }
 .player-health-track { display: block; height: 6px; border-radius: 8px; overflow: hidden; background: #0c1a19; }
 .player-health-track > span { display: block; height: 100%; border-radius: inherit; background: #54c790; }
-.player-whereabouts { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 14px; }
-.player-location-card, .player-activity-card { display: flex; align-items: center; gap: 14px; min-width: 0; min-height: 94px; padding: 16px 18px; border: 1px solid var(--line); border-radius: 10px; background: var(--panel); overflow: hidden; }
+.player-whereabouts { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; margin-top: 14px; }
+.player-location-card, .player-activity-card, .player-world-card { display: flex; align-items: center; gap: 14px; min-width: 0; min-height: 94px; padding: 16px 18px; border: 1px solid var(--line); border-radius: 10px; background: var(--panel); overflow: hidden; }
 .player-location-map { flex: none; width: 92px; height: 62px; object-fit: contain; image-rendering: pixelated; background: #0c1621; border-radius: 6px; }
 .player-place-name { display: block; margin-top: 3px; color: var(--text); font-size: 16px; font-weight: 700; overflow-wrap: anywhere; text-decoration: none; }
 a.player-place-name:hover { color: var(--mint); text-decoration: underline; }
-.player-activity-card small { display: block; color: var(--muted); font-size: 11px; }
+.player-activity-card small, .player-world-card small { display: block; color: var(--muted); font-size: 11px; }
+.player-world-icon { flex: none; color: var(--mint); font-size: 32px; line-height: 1; }
 .player-activity-icon { width: 36px; height: 36px; object-fit: contain; image-rendering: pixelated; color: var(--mint); }
 .player-detail-columns { display: grid; grid-template-columns: 1fr 1fr; align-items: start; gap: 16px; margin-top: 22px; }
 .player-panel { min-width: 0; padding: 18px; border: 1px solid var(--line); border-radius: 12px; background: #111d2b; }
@@ -338,6 +339,8 @@ a.player-gear-slot:hover { border-color: #568d76; background: #192e38; }
   .player-profile-hero { grid-template-columns: 170px minmax(0,1fr); padding: 18px; gap: 18px; }
   .player-sprite-stage { height: 184px; }
   .player-detail-columns { grid-template-columns: 1fr; }
+  .player-whereabouts { grid-template-columns: 1fr 1fr; }
+  .player-location-card { grid-column: 1 / -1; }
 }
 @media (max-width: 520px) {
   .player-search-row { flex-direction: column; }
