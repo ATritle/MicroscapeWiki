@@ -66,7 +66,7 @@ for (const entry of entries) {
     flag(entry, "P2", "unverified-item", "Current stats and availability are unverified",
       entry.summary, "Retain the archival label; confirm the current item exists before treating its old stats as current.");
   }
-  if (["unconfirmed-current-source", "absent-current-build"].includes(entry.availabilityStatus)) {
+  if (entry.availabilityStatus === "unconfirmed-current-source") {
     flag(entry, "P2", "availability-needs-confirmation", "Availability explicitly documented; further confirmation needed",
       entry.summary, "Keep the documented limitation; confirm from the game or developer rather than inventing a current source.");
   }
@@ -265,9 +265,10 @@ if (args.includes("--check-links")) {
 } else for (const url of pending) imageChecks.push({url, status:"not-checked"});
 notes.push("Empty shop/skilling tables with an explicit no-content message are intentional, not missing information.");
 notes.push("Cosmetics do not need combat stats; skills/abilities do not need creature sprites.");
-notes.push("Blue Lobster's missing companion sprite is documented in its page and excluded from missing-sprite findings.");
-notes.push("Safe foe variants can share one page; 47 client foe definitions do not imply 47 separate wiki pages.");
-notes.push("This is a structured completeness audit against the saved beta client, not a claim that every value is current for 1.0.");
+notes.push("Blob now has a release companion sprite. Removed beta content is explicitly archived.");
+notes.push("Safe foe variants can share a page; client foe-definition counts do not equal the number of wiki pages.");
+notes.push("This structured audit checks the supplied captured build. Server-only behavior and future hotfixes require separate confirmation.");
+notes.push(entries.filter(entry=>entry.availabilityStatus==="absent-current-build").length+" entries are explicitly archived because they are absent from the checked client. These are documented historical records, not missing current sources.");
 
 const counts = Object.fromEntries([...new Set(entries.map(entry => entry.category))].map(category => [category, {
   entries:entries.filter(entry => entry.category === category).length,

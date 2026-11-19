@@ -13,7 +13,7 @@ assert.equal(stats.totalLevel, 282, "Total level must sum levels, not XP");
 assert.equal(stats.combatLevel, 49);
 assert.equal(stats.levels.attack, 51);
 assert.equal(stats.levels.defense, 49);
-const layers = appearanceLayers({weapon:"krakenClub",head:"blackFullHelm",skin:"skin1",hair:"mediumBrown",
+const layers = appearanceLayers({weapon:"adamantDagger",head:"blackFullHelm",skin:"skin1",hair:"mediumBrown",
   body:"adamantArmor",hands:"leatherGloves",feet:"rubberBoots",shield:"shellOfKa",food:"cookedSalmon"}, reference);
 assert.deepEqual(layers.map(layer => layer.slot), ["skin","hands","feet","body","head","shield","weapon"]);
 assert(!layers.some(layer => layer.slot === "hair"), "Hair must be hidden under a helmet");

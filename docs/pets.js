@@ -57,6 +57,8 @@ function boostedOdds(base, boost) {
 }
 
 export function buildPetEntries(reference) {
+  // Release profiles are stored directly with the other reference entries.
+  if (reference.some(entry => entry.releasePet)) return [];
   const byId = new Map(reference.map(entry => [entry.id, entry]));
   const overview = byId.get("pets");
   if (!overview) return [];

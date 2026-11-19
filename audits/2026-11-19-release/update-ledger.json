@@ -1,0 +1,5115 @@
+{
+  "capturedAt": "2026-11-19T20:54:38.279Z",
+  "client": "https://microscape.cc/play/assets/index-DtM1klQp.js",
+  "clientSha256": "fe44b7bc2ebbcc2cfbc620bc80827a5e3bcbdff6815a1fff5261943caa3e9835",
+  "gameTables": {
+    "abilities": 89,
+    "achievements": 196,
+    "activities": 477,
+    "appearance": 33,
+    "entities": 138,
+    "foes": 48,
+    "items": 460,
+    "locations": 52,
+    "npcs": 20,
+    "pets": 36,
+    "shops": 10,
+    "skills": 16,
+    "spells": 8
+  },
+  "wikiEntries": 730,
+  "changed": [
+    {
+      "id": "al-sigil",
+      "category": "items",
+      "gameId": "sigilAl",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "del-sigil",
+      "category": "items",
+      "gameId": "sigilDel",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "di-sigil",
+      "category": "items",
+      "gameId": "sigilDi",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "la-sigil",
+      "category": "items",
+      "gameId": "sigilLa",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "mar-sigil",
+      "category": "items",
+      "gameId": "sigilMar",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "ner-sigil",
+      "category": "items",
+      "gameId": "sigilNer",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "the-johnny",
+      "category": "items",
+      "gameId": "theJohnny",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "the-julian",
+      "category": "items",
+      "gameId": "clothesJulian",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "adamant-armor",
+      "category": "items",
+      "gameId": "adamantArmor",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "adamant-arrows",
+      "category": "items",
+      "gameId": "adamantArrows",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "adamant-arrowtips",
+      "category": "items",
+      "gameId": "adamantArrowtips",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "adamant-dagger",
+      "category": "items",
+      "gameId": "adamantDagger",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "adamant-med-helm",
+      "category": "items",
+      "gameId": "adamantMedHelm",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "adamant-scimitar",
+      "category": "items",
+      "gameId": "adamantScimitar",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "adamant-sq-shield",
+      "category": "items",
+      "gameId": "adamantSqShield",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "adamantite-bar",
+      "category": "items",
+      "gameId": "adamantiteBar",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "adamantite-ore",
+      "category": "items",
+      "gameId": "adamantiteOre",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "adventurers-clothes",
+      "category": "items",
+      "gameId": "clothesAdventurer",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "air-battlestaff",
+      "category": "items",
+      "gameId": "airBattlestaff",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "air-orb",
+      "category": "items",
+      "gameId": "airOrb",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "air-rune",
+      "category": "items",
+      "gameId": "airRune",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "air-staff",
+      "category": "items",
+      "gameId": "airStaff",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "al-sahra",
+      "category": "locations",
+      "gameId": "al-sahra",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "al-sahra-mine",
+      "category": "locations",
+      "gameId": "al-sahra-mine",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "amulet-of-magic",
+      "category": "items",
+      "gameId": "amuletOfMagic",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "amulet-of-power",
+      "category": "items",
+      "gameId": "amuletOfPower",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "amulet-of-progress",
+      "category": "items",
+      "gameId": "amuletOfProgress",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "amulet-of-protection",
+      "category": "items",
+      "gameId": "amuletOfProtection",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "amulet-of-strength",
+      "category": "items",
+      "gameId": "amuletOfStrength",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "anglers-luck",
+      "category": "abilities",
+      "gameId": "anglersLuck",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "apple-pie",
+      "category": "items",
+      "gameId": "applePie",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "apron",
+      "category": "items",
+      "gameId": "clothesApron",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "arrow-shafts",
+      "category": "items",
+      "gameId": "arrowShafts",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "ash-gloves",
+      "category": "items",
+      "gameId": "ashGloves",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "ashes",
+      "category": "items",
+      "gameId": "ashes",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "at-any-cost",
+      "category": "abilities",
+      "gameId": "atAnyCost",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "attack",
+      "category": "skills",
+      "gameId": "attack",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "attack-potion",
+      "category": "items",
+      "gameId": "attackPotion",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "item-audience-favor",
+      "category": "items",
+      "gameId": "audienceFavor",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "baker",
+      "category": "abilities",
+      "gameId": "baker",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "ball-of-wool",
+      "category": "items",
+      "gameId": "ballOfWool",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "bank-vault",
+      "category": "locations",
+      "gameId": "bank-vault",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "battlestaff",
+      "category": "items",
+      "gameId": "battlestaff",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "bazaar-permit",
+      "category": "items",
+      "gameId": "bazaarPermit",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "bear",
+      "category": "foes",
+      "gameId": "bear",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "berserk",
+      "category": "abilities",
+      "gameId": "berserk",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "big-bones",
+      "category": "items",
+      "gameId": "bigBones",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "black-2h-sword",
+      "category": "items",
+      "gameId": "black2hSword",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "black-armor",
+      "category": "items",
+      "gameId": "blackArmor",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "black-bubble-hair",
+      "category": "items",
+      "gameId": "bubbleBlack",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "black-full-helm",
+      "category": "items",
+      "gameId": "blackFullHelm",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "black-knight",
+      "category": "foes",
+      "gameId": "black-knight",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "black-knights-fort",
+      "category": "locations",
+      "gameId": "black-knights-fort",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "black-long-hair",
+      "category": "items",
+      "gameId": "longBlack",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "black-lush-hair",
+      "category": "items",
+      "gameId": "lushBlack",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "black-medium-hair",
+      "category": "items",
+      "gameId": "mediumBlack",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "black-pomp-hair",
+      "category": "items",
+      "gameId": "pompBlack",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "black-ponytail",
+      "category": "items",
+      "gameId": "ponytailBlack",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "black-short-hair",
+      "category": "items",
+      "gameId": "shortBlack",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "bleeding-edge",
+      "category": "abilities",
+      "gameId": "bleedingEdge",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "blessed-greaves",
+      "category": "items",
+      "gameId": "blessedGreaves",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "blink-bone",
+      "category": "items",
+      "gameId": "blinkBone",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "blond-long-hair",
+      "category": "items",
+      "gameId": "longBlond",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "blond-medium-hair",
+      "category": "items",
+      "gameId": "mediumBlond",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "blond-pomp-hair",
+      "category": "items",
+      "gameId": "pompBlond",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "blond-ponytail",
+      "category": "items",
+      "gameId": "ponytailBlond",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "blond-short-hair",
+      "category": "items",
+      "gameId": "shortBlond",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "blood-rune",
+      "category": "items",
+      "gameId": "bloodRune",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "blood-shard",
+      "category": "items",
+      "gameId": "bloodShard",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "blood-ward",
+      "category": "abilities",
+      "gameId": "bloodWard",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "bloodied-coin",
+      "category": "items",
+      "gameId": "bloodiedCoin",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "bloodscent",
+      "category": "abilities",
+      "gameId": "bloodscent",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "blue-dragon",
+      "category": "foes",
+      "gameId": "blue-dragon",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "blue-flame",
+      "category": "items",
+      "gameId": "blueFlame",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "blue-lobster",
+      "category": "items",
+      "gameId": "petBlueLobster",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "blue-party-hat",
+      "category": "items",
+      "gameId": "bluePartyHat",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "bluegold-axe",
+      "category": "items",
+      "gameId": "bluegoldAxe",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "bones",
+      "category": "items",
+      "gameId": "bones",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "bounty-hook",
+      "category": "abilities",
+      "gameId": "bountyHook",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "bow",
+      "category": "items",
+      "gameId": "shortbow",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "bow-u",
+      "category": "items",
+      "gameId": "shortbowU",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "bow-string",
+      "category": "items",
+      "gameId": "bowString",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "braised-pyreshell",
+      "category": "items",
+      "gameId": "cookedPyreshell",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "bread",
+      "category": "items",
+      "gameId": "bread",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "brimstone",
+      "category": "items",
+      "gameId": "brimstone",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "brimstone-axe-head",
+      "category": "items",
+      "gameId": "brimstoneAxeHead",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "bronze-armor",
+      "category": "items",
+      "gameId": "bronzeArmor",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "bronze-arrows",
+      "category": "items",
+      "gameId": "arrows",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "bronze-arrowtips",
+      "category": "items",
+      "gameId": "bronzeArrowtips",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "bronze-axe",
+      "category": "items",
+      "gameId": "loggingAxe",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "bronze-bar",
+      "category": "items",
+      "gameId": "bronzeBar",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "bronze-dagger",
+      "category": "items",
+      "gameId": "bronzeDagger",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "bronze-full-helm",
+      "category": "items",
+      "gameId": "bronzeFullHelm",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "bronze-hammer",
+      "category": "items",
+      "gameId": "hammer",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "bronze-ladle",
+      "category": "items",
+      "gameId": "ladle",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "bronze-med-helm",
+      "category": "items",
+      "gameId": "bronzeMedHelm",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "bronze-pickaxe",
+      "category": "items",
+      "gameId": "pickaxe",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "bronze-scimitar",
+      "category": "items",
+      "gameId": "bronzeScimitar",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "bronze-sq-shield",
+      "category": "items",
+      "gameId": "bronzeSqShield",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "brown-bold-hair",
+      "category": "items",
+      "gameId": "boldBrown",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "brown-long-hair",
+      "category": "items",
+      "gameId": "longBrown",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "brown-medium-hair",
+      "category": "items",
+      "gameId": "mediumBrown",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "brown-pomp-hair",
+      "category": "items",
+      "gameId": "pompBrown",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "brown-ponytail",
+      "category": "items",
+      "gameId": "ponytailBrown",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "brown-short-hair",
+      "category": "items",
+      "gameId": "shortBrown",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "bucket",
+      "category": "items",
+      "gameId": "bucket",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "burst-of-strength",
+      "category": "abilities",
+      "gameId": "burstOfStrength",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "c-carcass",
+      "category": "items",
+      "gameId": "cockatriceCarcass",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "candy-cane",
+      "category": "items",
+      "gameId": "candyCane",
+      "newPage": false,
+      "status": "unconfirmed-current-source"
+    },
+    {
+      "id": "cave-slime",
+      "category": "foes",
+      "gameId": "cave-slime",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "cerulean-long-hair",
+      "category": "items",
+      "gameId": "longCerulean",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "cerulean-medium-hair",
+      "category": "items",
+      "gameId": "mediumCerulean",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "cerulean-pomp-hair",
+      "category": "items",
+      "gameId": "pompCerulean",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "cerulean-ponytail",
+      "category": "items",
+      "gameId": "ponytailCerulean",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "cerulean-short-hair",
+      "category": "items",
+      "gameId": "shortCerulean",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "chaos-conduit",
+      "category": "abilities",
+      "gameId": "chaosConduit",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "chaos-rune",
+      "category": "items",
+      "gameId": "chaosRune",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "chaos-shard",
+      "category": "items",
+      "gameId": "chaosShard",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "chefs-hat",
+      "category": "items",
+      "gameId": "chefsHat",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "items-chicken",
+      "category": "items",
+      "gameId": "cookedChicken",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "chicken",
+      "category": "foes",
+      "gameId": "chicken",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "chocolate-dust",
+      "category": "items",
+      "gameId": "chocolateDust",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "clarity-of-thought",
+      "category": "abilities",
+      "gameId": "clarityOfThought",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "clay",
+      "category": "items",
+      "gameId": "clay",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "cleared-rubble",
+      "category": "items",
+      "gameId": "clearedRubble",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "clumsy-flame",
+      "category": "abilities",
+      "gameId": "clumsyFlame",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "coal-keeper",
+      "category": "abilities",
+      "gameId": "coalKeeper",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "coal-ore",
+      "category": "items",
+      "gameId": "coalOre",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "coal-tar",
+      "category": "items",
+      "gameId": "coalTar",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "cockatrice",
+      "category": "foes",
+      "gameId": "cockatrice",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "coins",
+      "category": "items",
+      "gameId": "coins",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "conserve-air",
+      "category": "abilities",
+      "gameId": "conserveAir",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "conserve-fire",
+      "category": "abilities",
+      "gameId": "conserveFire",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "consolation-hat",
+      "category": "items",
+      "gameId": "consolationHat",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "cooking",
+      "category": "skills",
+      "gameId": "cooking",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "cooking-apple",
+      "category": "items",
+      "gameId": "cookingApple",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "cooking-potion",
+      "category": "items",
+      "gameId": "cookingPotion",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "copper-ore",
+      "category": "items",
+      "gameId": "copperOre",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "corrupted-druid",
+      "category": "foes",
+      "gameId": "corrupted-druid",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "cosmic-rune",
+      "category": "items",
+      "gameId": "cosmicRune",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "cow",
+      "category": "foes",
+      "gameId": "cow",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "cow-hide",
+      "category": "items",
+      "gameId": "cowHide",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "crafting",
+      "category": "skills",
+      "gameId": "crafting",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "crafting-potion",
+      "category": "items",
+      "gameId": "craftingPotion",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "crocodile",
+      "category": "foes",
+      "gameId": "crocodile-safe",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "crusader",
+      "category": "abilities",
+      "gameId": "crusader",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "cursed-strength",
+      "category": "abilities",
+      "gameId": "cursedStrength",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "cursed-talisman",
+      "category": "items",
+      "gameId": "cursedTalisman",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "dapper-outfit",
+      "category": "items",
+      "gameId": "clothesDapper",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "dark-twist",
+      "category": "abilities",
+      "gameId": "darkTwist",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "dark-wizards-hat",
+      "category": "items",
+      "gameId": "wizardsHatDark",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "dark-wizards-robes",
+      "category": "items",
+      "gameId": "darkWizardsRobe",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "death-rune",
+      "category": "items",
+      "gameId": "deathRune",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "death-shard",
+      "category": "items",
+      "gameId": "deathShard",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "death-wish-bone",
+      "category": "items",
+      "gameId": "deathWishBone",
+      "newPage": false,
+      "status": "absent-current-build"
+    },
+    {
+      "id": "deaths-bargain",
+      "category": "abilities",
+      "gameId": "deathsBargain",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "deep-sewers",
+      "category": "locations",
+      "gameId": "rock-sewers-deep",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "defense",
+      "category": "skills",
+      "gameId": "defense",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "defense-potion",
+      "category": "items",
+      "gameId": "defensePotion",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "desert-robes",
+      "category": "items",
+      "gameId": "clothesDesert",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "diamond",
+      "category": "items",
+      "gameId": "cutDiamond",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "diamond-amulet",
+      "category": "items",
+      "gameId": "diamondAmulet",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "dim-evil-amulet",
+      "category": "items",
+      "gameId": "dimEvilAmulet",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "dim-holy-amulet",
+      "category": "items",
+      "gameId": "dimHolyAmulet",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "distilled-ash",
+      "category": "items",
+      "gameId": "distilledAsh",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "dough",
+      "category": "items",
+      "gameId": "dough",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "dragon-bones",
+      "category": "items",
+      "gameId": "dragonBones",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "dragon-helm",
+      "category": "items",
+      "gameId": "dragonHelm",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "dragon-rage",
+      "category": "abilities",
+      "gameId": "dragonRage",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "dragon-shield",
+      "category": "items",
+      "gameId": "dragonShield",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "dragon-shield-left-half",
+      "category": "items",
+      "gameId": "dragonShieldLeft",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "dragon-shield-right-half",
+      "category": "items",
+      "gameId": "dragonShieldRight",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "dragon-sword",
+      "category": "items",
+      "gameId": "dragonSword",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "dragon-whelp",
+      "category": "foes",
+      "gameId": "dragon-whelp",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "dragons-breath",
+      "category": "items",
+      "gameId": "dragonsBreath",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "dragonstone",
+      "category": "items",
+      "gameId": "cutDragonstone",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "dragonstone-amulet",
+      "category": "items",
+      "gameId": "dragonstoneAmulet",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "dragontongue",
+      "category": "items",
+      "gameId": "dragontongue",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "drakestem",
+      "category": "items",
+      "gameId": "drakestem",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "drakestone-isle-mine",
+      "category": "locations",
+      "gameId": "drakestone-isle-mine",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "dread-aura",
+      "category": "abilities",
+      "gameId": "dreadAura",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "dread-mount-onyx-antechamber",
+      "category": "locations",
+      "gameId": "dread-mount-onyx-antechamber",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "dread-mount-onyx-lair",
+      "category": "locations",
+      "gameId": "dread-mount-onyx-lair",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "dross",
+      "category": "items",
+      "gameId": "dross",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "drosswork",
+      "category": "abilities",
+      "gameId": "drosswork",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "druid-warrior",
+      "category": "foes",
+      "gameId": "druid-warrior",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "drymor-mansion",
+      "category": "locations",
+      "gameId": "drymor-mansion",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "drymor-village",
+      "category": "locations",
+      "gameId": "drymor-village-seashore",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "dungeon-key",
+      "category": "items",
+      "gameId": "dungeonKey",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "dwarven-cannon",
+      "category": "items",
+      "gameId": "dwarvenCannon",
+      "newPage": false,
+      "status": "absent-current-build"
+    },
+    {
+      "id": "dwarven-mine",
+      "category": "locations",
+      "gameId": "dwarven-guild-mine",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "dwellberries",
+      "category": "items",
+      "gameId": "dwellberries",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "elmwort",
+      "category": "items",
+      "gameId": "elmwort",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "elpers-hat",
+      "category": "items",
+      "gameId": "elperHat",
+      "newPage": false,
+      "status": "unconfirmed-current-source"
+    },
+    {
+      "id": "elshand-temple-b1",
+      "category": "locations",
+      "gameId": "elshand-temple-b1",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "elshand-temple-b2",
+      "category": "locations",
+      "gameId": "elshand-temple-b2",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "elshand-temple-b3",
+      "category": "locations",
+      "gameId": "elshand-temple-b3",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "elshand-temple-b4",
+      "category": "locations",
+      "gameId": "elshand-temple-b4",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "elshand-temple-ruins",
+      "category": "locations",
+      "gameId": "elshand-temple-ruins",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "emberstone",
+      "category": "items",
+      "gameId": "emberstone",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "emerald",
+      "category": "items",
+      "gameId": "cutEmerald",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "emerald-amulet",
+      "category": "items",
+      "gameId": "emeraldAmulet",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "empowered-mind",
+      "category": "abilities",
+      "gameId": "empoweredMind",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "enlightened",
+      "category": "abilities",
+      "gameId": "enlightened",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "equipment-bonuses",
+      "category": "reference",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "eruption",
+      "category": "abilities",
+      "gameId": "eruption",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "everflame-core",
+      "category": "items",
+      "gameId": "everflameCore",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "evil-amulet",
+      "category": "items",
+      "gameId": "evilAmulet",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "evil-magic",
+      "category": "skills",
+      "gameId": "evilMagic",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "evil-magic-potion",
+      "category": "items",
+      "gameId": "evilMagicPotion",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "explorers-hat",
+      "category": "items",
+      "gameId": "explorersHat",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "eye-of-newt",
+      "category": "items",
+      "gameId": "eyeOfNewt",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "falcrest-bank",
+      "category": "locations",
+      "gameId": "falcrest-reach-bank",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "falcrest-castle-parlor-room",
+      "category": "locations",
+      "gameId": "falcrest-reach-castle-parlor",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "falcrest-fern",
+      "category": "items",
+      "gameId": "falcrestFern",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "falcrest-reach-temple",
+      "category": "locations",
+      "gameId": "falcrest-reach-temple",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "fanaticism",
+      "category": "abilities",
+      "gameId": "fanaticism",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "feather",
+      "category": "items",
+      "gameId": "feather",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "feathered-cap",
+      "category": "items",
+      "gameId": "featheredCap",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "feathered-seed",
+      "category": "items",
+      "gameId": "featheredSeed",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "feathers",
+      "category": "items",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "fellroot",
+      "category": "items",
+      "gameId": "fellroot",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "fellroot-swamp",
+      "category": "locations",
+      "gameId": "fellroot-swamp",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "fellroot-swamp-hut",
+      "category": "locations",
+      "gameId": "fellroot-swamp-hut",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "fencewell-bridge",
+      "category": "locations",
+      "gameId": "fencewell-bridge",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "fencewell-fields",
+      "category": "locations",
+      "gameId": "fencewell-fields",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "fire-battlestaff",
+      "category": "items",
+      "gameId": "fireBattlestaff",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "fire-blast",
+      "category": "abilities",
+      "gameId": "fireBlast",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "fire-bolt",
+      "category": "abilities",
+      "gameId": "fireBolt",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "fire-dwarf",
+      "category": "foes",
+      "gameId": "fire-dwarf",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "fire-dwarf-gloves",
+      "category": "items",
+      "gameId": "fireDwarfGloves",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "fire-elemental",
+      "category": "foes",
+      "gameId": "fire-elemental",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "fire-orb",
+      "category": "items",
+      "gameId": "fireOrb",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "fire-rune",
+      "category": "items",
+      "gameId": "fireRune",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "fire-staff",
+      "category": "items",
+      "gameId": "fireStaff",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "fire-strike",
+      "category": "abilities",
+      "gameId": "fireStrike",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "fire-wave",
+      "category": "abilities",
+      "gameId": "fireWave",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "firemaking",
+      "category": "skills",
+      "gameId": "firemaking",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "firemaking-potion",
+      "category": "items",
+      "gameId": "firemakingPotion",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "fishing",
+      "category": "skills",
+      "gameId": "fishing",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "fishing-bait",
+      "category": "items",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "fishing-potion",
+      "category": "items",
+      "gameId": "fishingPotion",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "fishing-rod",
+      "category": "items",
+      "gameId": "fishingRod",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "flame-glutton",
+      "category": "abilities",
+      "gameId": "flameGlutton",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "flax",
+      "category": "items",
+      "gameId": "flax",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "fletchers-cloak",
+      "category": "items",
+      "gameId": "fletchersCloak",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "fletchers-eye",
+      "category": "abilities",
+      "gameId": "fletchersEye",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "fletching",
+      "category": "skills",
+      "gameId": "fletching",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "fletching-potion",
+      "category": "items",
+      "gameId": "fletchingPotion",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "flour-pot",
+      "category": "items",
+      "gameId": "flourPot",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "focus",
+      "category": "abilities",
+      "gameId": "focus",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "food",
+      "category": "reference",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "food-scraps",
+      "category": "items",
+      "gameId": "foodScraps",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "fools-hat",
+      "category": "items",
+      "gameId": "foolsHat",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "forbidden-magic",
+      "category": "abilities",
+      "gameId": "forbiddenMagic",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "fox-hat",
+      "category": "items",
+      "gameId": "foxHat",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "frog-on-a-stick",
+      "category": "items",
+      "gameId": "cookedFrog",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "frostcurl",
+      "category": "items",
+      "gameId": "frostcurl",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "frozen-orb",
+      "category": "items",
+      "gameId": "frozenOrb",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "fur",
+      "category": "items",
+      "gameId": "fur",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "gardeners-gloves",
+      "category": "items",
+      "gameId": "gardenersGloves",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "gemcraft",
+      "category": "abilities",
+      "gameId": "gemcraft",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "ghost",
+      "category": "foes",
+      "gameId": "ghost",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "giant-plume",
+      "category": "items",
+      "gameId": "giantPlume",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "giant-rat",
+      "category": "foes",
+      "gameId": "giant-rat",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "giant-snake",
+      "category": "foes",
+      "gameId": "giant-snake",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "gilded-pockets",
+      "category": "abilities",
+      "gameId": "gildedPockets",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "ginger",
+      "category": "items",
+      "gameId": "ginger",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "glassblowing-pipe",
+      "category": "reference",
+      "gameId": "glassblowing-pipe",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "gloomroot",
+      "category": "items",
+      "gameId": "gloomroot",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "goblin",
+      "category": "foes",
+      "gameId": "goblin",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "goblin-camp",
+      "category": "locations",
+      "gameId": "goblin-camp",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "gold-amulet",
+      "category": "items",
+      "gameId": "goldAmulet",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "gold-bar",
+      "category": "items",
+      "gameId": "goldBar",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "gold-fingers",
+      "category": "items",
+      "gameId": "goldFingers",
+      "newPage": false,
+      "status": "absent-current-build"
+    },
+    {
+      "id": "gold-ore",
+      "category": "items",
+      "gameId": "goldOre",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "golden-rod",
+      "category": "items",
+      "gameId": "goldenRod",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "good-magic",
+      "category": "skills",
+      "gameId": "goodMagic",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "good-magic-potion",
+      "category": "items",
+      "gameId": "goodMagicPotion",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "graced-aim",
+      "category": "abilities",
+      "gameId": "gracedAim",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "grain",
+      "category": "items",
+      "gameId": "grain",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "greater-demon",
+      "category": "foes",
+      "gameId": "greater-demon",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "green-party-hat",
+      "category": "items",
+      "gameId": "greenPartyHat",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "green-thumb",
+      "category": "abilities",
+      "gameId": "greenThumb",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "gurgle",
+      "category": "foes",
+      "gameId": "gurgle",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "havendell",
+      "category": "locations",
+      "gameId": "havendell",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "havendell-dungeon",
+      "category": "locations",
+      "gameId": "havendell-dungeon",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "havendell-lair",
+      "category": "locations",
+      "gameId": "havendell-lair",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "havenfrond",
+      "category": "items",
+      "gameId": "havenfrond",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "headless-arrows",
+      "category": "items",
+      "gameId": "headlessArrows",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "heartwood-bough",
+      "category": "items",
+      "gameId": "heartwoodBough",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "heartwood-haft",
+      "category": "items",
+      "gameId": "heartwoodHaft",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "heat-gloves",
+      "category": "items",
+      "gameId": "heatGloves",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "herblaw",
+      "category": "skills",
+      "gameId": "herblaw",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "herblaw-potion",
+      "category": "items",
+      "gameId": "herblawPotion",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "holy-amulet",
+      "category": "items",
+      "gameId": "holyAmulet",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "human-1",
+      "category": "items",
+      "gameId": "skin1",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "human-2",
+      "category": "items",
+      "gameId": "skin2",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "human-3",
+      "category": "items",
+      "gameId": "skin3",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "human-4",
+      "category": "items",
+      "gameId": "skin4",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "ice-cavern",
+      "category": "locations",
+      "gameId": "ice-cavern",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "ice-giant",
+      "category": "foes",
+      "gameId": "ice-giant",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "ice-warrior",
+      "category": "foes",
+      "gameId": "ice-warrior",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "igniting-shot",
+      "category": "abilities",
+      "gameId": "ignitingShot",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "ill-omen",
+      "category": "abilities",
+      "gameId": "illOmen",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "imp",
+      "category": "foes",
+      "gameId": "imp",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "impweed",
+      "category": "items",
+      "gameId": "impweed",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "inner-furnace",
+      "category": "abilities",
+      "gameId": "innerFurnace",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "insect-swarm",
+      "category": "foes",
+      "gameId": "insect-swarm",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "iron-armor",
+      "category": "items",
+      "gameId": "ironArmor",
+      "newPage": false,
+      "status": "absent-current-build"
+    },
+    {
+      "id": "iron-arrows",
+      "category": "items",
+      "gameId": "ironArrows",
+      "newPage": false,
+      "status": "absent-current-build"
+    },
+    {
+      "id": "iron-arrowtips",
+      "category": "items",
+      "gameId": "ironArrowtips",
+      "newPage": false,
+      "status": "absent-current-build"
+    },
+    {
+      "id": "iron-axe",
+      "category": "items",
+      "gameId": "ironAxe",
+      "newPage": false,
+      "status": "absent-current-build"
+    },
+    {
+      "id": "iron-bar",
+      "category": "items",
+      "gameId": "ironBar",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "iron-dagger",
+      "category": "items",
+      "gameId": "ironDagger",
+      "newPage": false,
+      "status": "absent-current-build"
+    },
+    {
+      "id": "iron-gut",
+      "category": "abilities",
+      "gameId": "ironGut",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "iron-med-helm",
+      "category": "items",
+      "gameId": "ironMedHelm",
+      "newPage": false,
+      "status": "absent-current-build"
+    },
+    {
+      "id": "iron-ore",
+      "category": "items",
+      "gameId": "ironOre",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "iron-pickaxe",
+      "category": "items",
+      "gameId": "ironbreakerPickaxe",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "iron-scimitar",
+      "category": "items",
+      "gameId": "ironScimitar",
+      "newPage": false,
+      "status": "absent-current-build"
+    },
+    {
+      "id": "iron-shears",
+      "category": "items",
+      "gameId": "ironShears",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "iron-sq-shield",
+      "category": "items",
+      "gameId": "ironSqShield",
+      "newPage": false,
+      "status": "absent-current-build"
+    },
+    {
+      "id": "iskarn",
+      "category": "foes",
+      "gameId": "iskarn",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "iskarns-grip",
+      "category": "items",
+      "gameId": "iskarnsGrip",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "jack-o-lantern",
+      "category": "items",
+      "gameId": "jackoLantern",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "jesters-room",
+      "category": "locations",
+      "gameId": "jesters-room",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "khopesh-of-ba",
+      "category": "items",
+      "gameId": "khopeshOfBa",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "kiln",
+      "category": "reference",
+      "gameId": "kiln",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "king-onyx-dragon",
+      "category": "foes",
+      "gameId": "king-onyx-dragon",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "knightveil",
+      "category": "items",
+      "gameId": "knightveil",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "kraken-club",
+      "category": "items",
+      "gameId": "krakenClub",
+      "newPage": false,
+      "status": "absent-current-build"
+    },
+    {
+      "id": "lanterns-gift",
+      "category": "abilities",
+      "gameId": "lanternsGift",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "lava-maze-entrance",
+      "category": "locations",
+      "gameId": "lava-maze-entrance",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "lava-maze-mine",
+      "category": "locations",
+      "gameId": "lava-maze-mine",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "lava-rod",
+      "category": "items",
+      "gameId": "lavaRod",
+      "newPage": false,
+      "status": "unconfirmed-current-source"
+    },
+    {
+      "id": "lavabloom",
+      "category": "items",
+      "gameId": "lavabloom",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "law-rune",
+      "category": "items",
+      "gameId": "lawRune",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "leather",
+      "category": "items",
+      "gameId": "leather",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "leather-armor",
+      "category": "items",
+      "gameId": "leatherArmor",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "leather-boots",
+      "category": "items",
+      "gameId": "leatherBoots",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "leather-gloves",
+      "category": "items",
+      "gameId": "leatherGloves",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "lesser-demon",
+      "category": "foes",
+      "gameId": "lesser-demon-safe",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "lightbite",
+      "category": "abilities",
+      "gameId": "lightBite",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "limpwurt-root",
+      "category": "items",
+      "gameId": "limpwurtRoot",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "lobster",
+      "category": "items",
+      "gameId": "cookedLobster",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "logs",
+      "category": "items",
+      "gameId": "logs",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "lucky-paw",
+      "category": "items",
+      "gameId": "luckyPaw",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "lucky-token",
+      "category": "items",
+      "gameId": "luckyToken",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "magic-bow",
+      "category": "items",
+      "gameId": "magicBow",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "magic-bow-u",
+      "category": "items",
+      "gameId": "magicBowU",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "magic-carp",
+      "category": "items",
+      "gameId": "magicCarp",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "magic-logs",
+      "category": "items",
+      "gameId": "magicLogs",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "magic-staff",
+      "category": "items",
+      "gameId": "magicStaff",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "magma-core",
+      "category": "items",
+      "gameId": "magmaCore",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "magma-hound",
+      "category": "foes",
+      "gameId": "magma-hound",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "magma-mirror",
+      "category": "items",
+      "gameId": "magmaMirror",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "manor-kitchen",
+      "category": "locations",
+      "gameId": "manor-kitchen",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "manta-ray",
+      "category": "items",
+      "gameId": "cookedMantaRay",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "maple-bow",
+      "category": "items",
+      "gameId": "mapleBow",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "maple-bow-u",
+      "category": "items",
+      "gameId": "mapleBowU",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "maple-logs",
+      "category": "items",
+      "gameId": "mapleLogs",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "marcels-hair-salon",
+      "category": "locations",
+      "gameId": "hair-salon",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "marshcap",
+      "category": "items",
+      "gameId": "marshcap",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "meat",
+      "category": "items",
+      "gameId": "cookedMeat",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "meat-pie",
+      "category": "items",
+      "gameId": "meatPie",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "merrics-magic-shop",
+      "category": "locations",
+      "gameId": "magic-shop",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "mind-rune",
+      "category": "items",
+      "gameId": "mindRune",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "mind-shard",
+      "category": "items",
+      "gameId": "mindShard",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "mining",
+      "category": "skills",
+      "gameId": "mining",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "mining-potion",
+      "category": "items",
+      "gameId": "miningPotion",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "mithril-armor",
+      "category": "items",
+      "gameId": "mithrilArmor",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "mithril-arrows",
+      "category": "items",
+      "gameId": "mithrilArrows",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "mithril-arrowtips",
+      "category": "items",
+      "gameId": "mithrilArrowtips",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "mithril-bar",
+      "category": "items",
+      "gameId": "mithrilBar",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "mithril-dagger",
+      "category": "items",
+      "gameId": "mithrilDagger",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "mithril-hammer",
+      "category": "items",
+      "gameId": "hellforgedHammer",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "mithril-med-helm",
+      "category": "items",
+      "gameId": "mithrilMedHelm",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "mithril-ore",
+      "category": "items",
+      "gameId": "mithrilOre",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "mithril-scimitar",
+      "category": "items",
+      "gameId": "mithrilScimitar",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "mithril-sq-shield",
+      "category": "items",
+      "gameId": "mithrilSqShield",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "mixed-earth",
+      "category": "abilities",
+      "gameId": "mixedEarth",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "molten-glass",
+      "category": "items",
+      "gameId": "moltenGlass",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "molten-orb",
+      "category": "items",
+      "gameId": "moltenOrb",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "molten-reflection",
+      "category": "abilities",
+      "gameId": "moltenReflection",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "monk",
+      "category": "foes",
+      "gameId": "monk",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "monks-robe",
+      "category": "items",
+      "gameId": "monkRobe",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "morvane",
+      "category": "foes",
+      "gameId": "morvane",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "moss-giant",
+      "category": "foes",
+      "gameId": "moss-giant",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "moth-lantern",
+      "category": "items",
+      "gameId": "mothLantern",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "mothman",
+      "category": "foes",
+      "gameId": "mothman",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "mouse",
+      "category": "foes",
+      "gameId": "mouse",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "mudwright",
+      "category": "abilities",
+      "gameId": "mudwright",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "mummy",
+      "category": "foes",
+      "gameId": "mummy",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "nature-rune",
+      "category": "items",
+      "gameId": "natureRune",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "nervine",
+      "category": "items",
+      "gameId": "nervine",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "non-combat",
+      "category": "reference",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "orock-castle-yard",
+      "category": "locations",
+      "gameId": "rock-castle-yard",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "orock-east-mine",
+      "category": "locations",
+      "gameId": "east-rock-mine",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "orock-graveyard",
+      "category": "locations",
+      "gameId": "the-graveyard",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "orock-sewers",
+      "category": "locations",
+      "gameId": "rock-sewers",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "orock-west",
+      "category": "locations",
+      "gameId": "rock-west",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "oak-bow",
+      "category": "items",
+      "gameId": "oakBow",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "oak-bow-u",
+      "category": "items",
+      "gameId": "oakBowU",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "oak-logs",
+      "category": "items",
+      "gameId": "oakLogs",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "off-you-go-talisman",
+      "category": "items",
+      "gameId": "offYouGoTalisman",
+      "newPage": false,
+      "status": "absent-current-build"
+    },
+    {
+      "id": "old-dwarven-tunnels",
+      "category": "locations",
+      "gameId": "dwarven-tunnels",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "old-rod",
+      "category": "items",
+      "gameId": "oldRod",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "onyx-cape",
+      "category": "items",
+      "gameId": "onyxCape",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "oracle-sage",
+      "category": "items",
+      "gameId": "oracleSage",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "oracles-village",
+      "category": "locations",
+      "gameId": "oracles-village",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "paralyze-monster",
+      "category": "abilities",
+      "gameId": "paralyzeMonster",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "parry",
+      "category": "abilities",
+      "gameId": "parry",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "patronage",
+      "category": "abilities",
+      "gameId": "patronage",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "peach-long-hair",
+      "category": "items",
+      "gameId": "longPeach",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "peach-medium-hair",
+      "category": "items",
+      "gameId": "mediumPeach",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "peach-pomp-hair",
+      "category": "items",
+      "gameId": "pompPeach",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "peach-ponytail",
+      "category": "items",
+      "gameId": "ponytailPeach",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "peach-short-hair",
+      "category": "items",
+      "gameId": "shortPeach",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "penance",
+      "category": "abilities",
+      "gameId": "penance",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "pet-map-beatrix",
+      "category": "items",
+      "gameId": "petMapBeatrix",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "pet-map-biscuit",
+      "category": "items",
+      "gameId": "petMapBiscuit",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "pet-map-bog",
+      "category": "items",
+      "gameId": "petMapBog",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "pet-map-cinder",
+      "category": "items",
+      "gameId": "petMapCinder",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "pet-map-clement",
+      "category": "items",
+      "gameId": "petMapClement",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "pet-map-fibs",
+      "category": "items",
+      "gameId": "petMapFibs",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "pet-map-golem-core",
+      "category": "items",
+      "gameId": "petMapGolemCore",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "pet-map-hilda",
+      "category": "items",
+      "gameId": "petMapHilda",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "pet-map-hubble",
+      "category": "items",
+      "gameId": "petMapHubble",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "pet-map-merlin",
+      "category": "items",
+      "gameId": "petMapMerlin",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "pet-map-otter",
+      "category": "items",
+      "gameId": "petMapOtter",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "pet-map-peace-moth",
+      "category": "items",
+      "gameId": "petMapPeaceMoth",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "pet-map-pebble",
+      "category": "items",
+      "gameId": "petMapPebble",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "pet-map-pickles",
+      "category": "items",
+      "gameId": "petMapPickles",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "pet-map-quill",
+      "category": "items",
+      "gameId": "petMapQuill",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "pet-map-riddle",
+      "category": "items",
+      "gameId": "petMapRiddle",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "pet-map-sage",
+      "category": "items",
+      "gameId": "petMapSage",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "pet-map-scales",
+      "category": "items",
+      "gameId": "petMapScales",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "pet-map-scoop",
+      "category": "items",
+      "gameId": "petMapScoop",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "pet-map-smudge",
+      "category": "items",
+      "gameId": "petMapSmudge",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "pet-map-stitch",
+      "category": "items",
+      "gameId": "petMapStitch",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "pet-map-stump",
+      "category": "items",
+      "gameId": "petMapStump",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "pet-map-tinderling",
+      "category": "items",
+      "gameId": "petMapTinderling",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "pet-map-winkle",
+      "category": "items",
+      "gameId": "petMapWinkle",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "pets",
+      "category": "reference",
+      "gameId": "pets",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "pie-dish",
+      "category": "items",
+      "gameId": "pieDish",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "pie-shell",
+      "category": "items",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "piety",
+      "category": "skills",
+      "gameId": "piety",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "piety-potion",
+      "category": "items",
+      "gameId": "pietyPotion",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "pit-guardian",
+      "category": "foes",
+      "gameId": "pit-guardian",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "plume-catcher",
+      "category": "abilities",
+      "gameId": "plumeCatcher",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "pot",
+      "category": "items",
+      "gameId": "pot",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "priest-robe",
+      "category": "items",
+      "gameId": "priestRobe",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "progrite-2h-sword",
+      "category": "items",
+      "gameId": "progrite2hSword",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "progrite-armor",
+      "category": "items",
+      "gameId": "progriteArmor",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "progrite-arrows",
+      "category": "items",
+      "gameId": "progriteArrows",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "progrite-arrowtips",
+      "category": "items",
+      "gameId": "progriteArrowtips",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "progrite-bar",
+      "category": "items",
+      "gameId": "progriteBar",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "progrite-dagger",
+      "category": "items",
+      "gameId": "progriteDagger",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "progrite-full-helm",
+      "category": "items",
+      "gameId": "progriteFullHelm",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "progrite-med-helm",
+      "category": "items",
+      "gameId": "progriteMedHelm",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "progrite-ore",
+      "category": "items",
+      "gameId": "progriteOre",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "progrite-scimitar",
+      "category": "items",
+      "gameId": "progriteScimitar",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "progrite-sq-shield",
+      "category": "items",
+      "gameId": "progriteSqShield",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "protector-of-progryn",
+      "category": "abilities",
+      "gameId": "protectorOfProgryn",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "pulverize-iron",
+      "category": "abilities",
+      "gameId": "pulverizeIron",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "purple-party-hat",
+      "category": "items",
+      "gameId": "purplePartyHat",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "pyrax",
+      "category": "foes",
+      "gameId": "pyrax",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "pyreshell-shield",
+      "category": "items",
+      "gameId": "pyreshellShield",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "pyreshell-ward",
+      "category": "abilities",
+      "gameId": "pyreshellWard",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "quench",
+      "category": "abilities",
+      "gameId": "quench",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "quick-hex",
+      "category": "abilities",
+      "gameId": "quickHex",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "ras-splinter",
+      "category": "abilities",
+      "gameId": "rasSplinter",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "ranged",
+      "category": "skills",
+      "gameId": "ranged",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "ranged-potion",
+      "category": "items",
+      "gameId": "rangedPotion",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "rapid-fire",
+      "category": "abilities",
+      "gameId": "rapidFire",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "rapid-heal",
+      "category": "abilities",
+      "gameId": "rapidHeal",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "raw-chicken",
+      "category": "items",
+      "gameId": "rawChicken",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "raw-frog",
+      "category": "items",
+      "gameId": "rawFrog",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "raw-lobster",
+      "category": "items",
+      "gameId": "rawLobster",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "raw-manta-ray",
+      "category": "items",
+      "gameId": "rawMantaRay",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "raw-meat",
+      "category": "items",
+      "gameId": "rawMeat",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "raw-pyreshell",
+      "category": "items",
+      "gameId": "rawPyreshell",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "raw-salmon",
+      "category": "items",
+      "gameId": "rawSalmon",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "raw-sardine",
+      "category": "items",
+      "gameId": "rawSardine",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "raw-shark",
+      "category": "items",
+      "gameId": "rawShark",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "raw-shrimp",
+      "category": "items",
+      "gameId": "rawShrimp",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "raw-swordfish",
+      "category": "items",
+      "gameId": "rawSwordfish",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "raw-trout",
+      "category": "items",
+      "gameId": "rawTrout",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "red-party-hat",
+      "category": "items",
+      "gameId": "redPartyHat",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "redberries",
+      "category": "items",
+      "gameId": "redberries",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "redberry-pie",
+      "category": "items",
+      "gameId": "redberryPie",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "ring-of-gluttony",
+      "category": "items",
+      "gameId": "ringOfGluttony",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "royal-attire",
+      "category": "items",
+      "gameId": "clothesRoyal",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "royal-cape",
+      "category": "items",
+      "gameId": "royalCape",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "rubber-body",
+      "category": "abilities",
+      "gameId": "rubberBody",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "rubber-boots",
+      "category": "items",
+      "gameId": "rubberBoots",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "ruby",
+      "category": "items",
+      "gameId": "cutRuby",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "ruby-amulet",
+      "category": "items",
+      "gameId": "rubyAmulet",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "rusty-coin",
+      "category": "items",
+      "gameId": "rustyCoin",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "sacred-march",
+      "category": "abilities",
+      "gameId": "sacredMarch",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "sacred-rune",
+      "category": "items",
+      "gameId": "sacredRune",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "sacred-strike",
+      "category": "abilities",
+      "gameId": "sacredStrike",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "salmon",
+      "category": "items",
+      "gameId": "cookedSalmon",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "salt-cure",
+      "category": "abilities",
+      "gameId": "saltCure",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "salted-mitts",
+      "category": "items",
+      "gameId": "saltedMitts",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "sand",
+      "category": "items",
+      "gameId": "sand",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "sandworm",
+      "category": "foes",
+      "gameId": "sandworm",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "sanglewood-staff",
+      "category": "items",
+      "gameId": "sanglewoodStaff",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "sanguine-boots",
+      "category": "items",
+      "gameId": "sanguineBoots",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "sanguine-harvest",
+      "category": "abilities",
+      "gameId": "sanguineHarvest",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "santa-hat",
+      "category": "items",
+      "gameId": "santaHat",
+      "newPage": false,
+      "status": "unconfirmed-current-source"
+    },
+    {
+      "id": "sapphire",
+      "category": "items",
+      "gameId": "cutSapphire",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "sapphire-amulet",
+      "category": "items",
+      "gameId": "sapphireAmulet",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "sardine",
+      "category": "items",
+      "gameId": "cookedSardine",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "scarab-cache",
+      "category": "items",
+      "gameId": "scarabCache",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "scarab-satchel",
+      "category": "items",
+      "gameId": "scarabSatchel",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "scarabs-feast",
+      "category": "abilities",
+      "gameId": "scarabsFeast",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "scarabs-plea",
+      "category": "abilities",
+      "gameId": "scarabsPlea",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "scorched-coin",
+      "category": "items",
+      "gameId": "scorchedCoin",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "scout-uniform",
+      "category": "items",
+      "gameId": "clothesScout",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "seaweed",
+      "category": "items",
+      "gameId": "seaweed",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "serpent-quiver",
+      "category": "items",
+      "gameId": "serpentQuiver",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "serpents-return",
+      "category": "abilities",
+      "gameId": "serpentsReturn",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "serpentleaf",
+      "category": "items",
+      "gameId": "serpentleaf",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "sewer-crocodile",
+      "category": "foes",
+      "gameId": "sewer-crocodile",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "shark",
+      "category": "items",
+      "gameId": "cookedShark",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "shell-of-ka",
+      "category": "items",
+      "gameId": "shellOfKa",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "shell-pockets",
+      "category": "abilities",
+      "gameId": "shellPockets",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "shepherd",
+      "category": "abilities",
+      "gameId": "shepherd",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "shield-wall",
+      "category": "abilities",
+      "gameId": "shieldWall",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "shrimp",
+      "category": "items",
+      "gameId": "cookedShrimp",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "sigils",
+      "category": "items",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "silver-bar",
+      "category": "items",
+      "gameId": "silverBar",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "silver-ore",
+      "category": "items",
+      "gameId": "silverOre",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "skeleton",
+      "category": "foes",
+      "gameId": "skeleton",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "skull-shield",
+      "category": "items",
+      "gameId": "skullShield",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "slime-torso",
+      "category": "items",
+      "gameId": "slimeTorso",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "slimelet",
+      "category": "foes",
+      "gameId": "slimelet",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "small-coin-pouch",
+      "category": "items",
+      "gameId": "smallCoinPouch",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "smelting",
+      "category": "reference",
+      "gameId": "smelting",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "smithing",
+      "category": "skills",
+      "gameId": "smithing",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "smithing-potion",
+      "category": "items",
+      "gameId": "smithingPotion",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "snail-shell",
+      "category": "items",
+      "gameId": "snailShell",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "snake",
+      "category": "foes",
+      "gameId": "snake",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "snake-eggs",
+      "category": "items",
+      "gameId": "snakeEggs",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "snakeskin-scales",
+      "category": "items",
+      "gameId": "snakeskinScales",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "snape-grass",
+      "category": "items",
+      "gameId": "snapeGrass",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "sniper",
+      "category": "abilities",
+      "gameId": "sniper",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "soda-ash",
+      "category": "items",
+      "gameId": "sodaAsh",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "soft-clay",
+      "category": "items",
+      "gameId": "softClay",
+      "newPage": false,
+      "status": "disabled-recipe"
+    },
+    {
+      "id": "soft-landing",
+      "category": "abilities",
+      "gameId": "softLanding",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "solace-glasshouse",
+      "category": "locations",
+      "gameId": "solace-glasshouse",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "solace-shoals",
+      "category": "locations",
+      "gameId": "solace-shoals",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "sorcerers-tower",
+      "category": "locations",
+      "gameId": "sorcerers-tower",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "soul-harvest",
+      "category": "abilities",
+      "gameId": "soulHarvest",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "sour-stomach",
+      "category": "abilities",
+      "gameId": "sourStomach",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "spell-echo",
+      "category": "abilities",
+      "gameId": "spellEcho",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "spider-silk",
+      "category": "items",
+      "gameId": "spiderSilk",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "spirit-rune",
+      "category": "items",
+      "gameId": "spiritRune",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "staff",
+      "category": "items",
+      "gameId": "staff",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "steady-aim",
+      "category": "abilities",
+      "gameId": "steadyAim",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "steel-armor",
+      "category": "items",
+      "gameId": "steelArmor",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "steel-arrows",
+      "category": "items",
+      "gameId": "steelArrows",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "steel-arrowtips",
+      "category": "items",
+      "gameId": "steelArrowtips",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "steel-bar",
+      "category": "items",
+      "gameId": "steelBar",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "steel-dagger",
+      "category": "items",
+      "gameId": "steelDagger",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "steel-full-helm",
+      "category": "items",
+      "gameId": "steelFullHelm",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "steel-med-helm",
+      "category": "items",
+      "gameId": "steelMedHelm",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "steel-scimitar",
+      "category": "items",
+      "gameId": "steelScimitar",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "steel-shovel",
+      "category": "items",
+      "gameId": "shovel",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "steel-shovel-head",
+      "category": "items",
+      "gameId": "shovelHead",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "steel-sq-shield",
+      "category": "items",
+      "gameId": "steelSqShield",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "stoneskin",
+      "category": "abilities",
+      "gameId": "stoneskin",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "strength",
+      "category": "skills",
+      "gameId": "strength",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "strength-potion",
+      "category": "items",
+      "gameId": "strengthPotion",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "summer-outfit",
+      "category": "items",
+      "gameId": "clothesSummer",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "super-attack-potion",
+      "category": "items",
+      "gameId": "superAttackPotion",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "super-cooking-potion",
+      "category": "items",
+      "gameId": "superCookingPotion",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "super-crafting-potion",
+      "category": "items",
+      "gameId": "superCraftingPotion",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "super-defense-potion",
+      "category": "items",
+      "gameId": "superDefensePotion",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "super-evil-magic-potion",
+      "category": "items",
+      "gameId": "superEvilMagicPotion",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "super-firemaking-potion",
+      "category": "items",
+      "gameId": "superFiremakingPotion",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "super-fishing-potion",
+      "category": "items",
+      "gameId": "superFishingPotion",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "super-fletching-potion",
+      "category": "items",
+      "gameId": "superFletchingPotion",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "super-good-magic-potion",
+      "category": "items",
+      "gameId": "superGoodMagicPotion",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "super-herblaw-potion",
+      "category": "items",
+      "gameId": "superHerblawPotion",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "super-mining-potion",
+      "category": "items",
+      "gameId": "superMiningPotion",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "super-piety-potion",
+      "category": "items",
+      "gameId": "superPietyPotion",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "super-ranged-potion",
+      "category": "items",
+      "gameId": "superRangedPotion",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "super-smithing-potion",
+      "category": "items",
+      "gameId": "superSmithingPotion",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "super-strength-potion",
+      "category": "items",
+      "gameId": "superStrengthPotion",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "super-woodcutting-potion",
+      "category": "items",
+      "gameId": "superWoodcuttingPotion",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "sweet-tooth",
+      "category": "abilities",
+      "gameId": "sweetTooth",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "swift-sands",
+      "category": "abilities",
+      "gameId": "swiftSands",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "swordfish",
+      "category": "items",
+      "gameId": "cookedSwordfish",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "telegrab-loot",
+      "category": "abilities",
+      "gameId": "telegrabLoot",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "telekinetic-gloves",
+      "category": "items",
+      "gameId": "telekineticGloves",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "the-emberpit",
+      "category": "locations",
+      "gameId": "the-emberpit",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "the-road",
+      "category": "locations",
+      "gameId": "the-road",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "the-sanctum",
+      "category": "locations",
+      "gameId": "havendell-sanctum",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "the-sump",
+      "category": "locations",
+      "gameId": "the-sump",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "thick-skin",
+      "category": "abilities",
+      "gameId": "thickSkin",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "thread",
+      "category": "items",
+      "gameId": "thread",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "til-death-do-us-part",
+      "category": "abilities",
+      "gameId": "tilDeathDoUsPart",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "timber-oracle",
+      "category": "abilities",
+      "gameId": "timberOracle",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "time-crystal",
+      "category": "reference",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "item-time-crystal",
+      "category": "items",
+      "gameId": "timeCrystal",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "tin-ore",
+      "category": "items",
+      "gameId": "tinOre",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "titan-scorpion",
+      "category": "foes",
+      "gameId": "giant-scorpion",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "titanium-ring",
+      "category": "items",
+      "gameId": "titaniumRing",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "titles",
+      "category": "reference",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "tomb-sorcerer",
+      "category": "foes",
+      "gameId": "tomb-sorcerer",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "torch-of-pyrax",
+      "category": "items",
+      "gameId": "torchOfPyrax",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "tough-arrows",
+      "category": "abilities",
+      "gameId": "toughArrows",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "trout",
+      "category": "items",
+      "gameId": "cookedTrout",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "turkey",
+      "category": "foes",
+      "gameId": "turkey",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "uncooked-apple-pie",
+      "category": "items",
+      "gameId": "uncookedApplePie",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "uncooked-meat-pie",
+      "category": "items",
+      "gameId": "uncookedMeatPie",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "uncooked-redberry-pie",
+      "category": "items",
+      "gameId": "uncookedRedberryPie",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "uncut-diamond",
+      "category": "items",
+      "gameId": "uncutDiamond",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "uncut-dragonstone",
+      "category": "items",
+      "gameId": "uncutDragonstone",
+      "newPage": false,
+      "status": "unconfirmed-current-source"
+    },
+    {
+      "id": "uncut-emerald",
+      "category": "items",
+      "gameId": "uncutEmerald",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "uncut-ruby",
+      "category": "items",
+      "gameId": "uncutRuby",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "uncut-sapphire",
+      "category": "items",
+      "gameId": "uncutSapphire",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "unfired-pie-dish",
+      "category": "items",
+      "gameId": "unfiredPieDish",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "unfired-pot",
+      "category": "items",
+      "gameId": "unfiredPot",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "unpowered-orb",
+      "category": "items",
+      "gameId": "unpoweredOrb",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "unstrung-diamond-amulet",
+      "category": "items",
+      "gameId": "unstrungDiamondAmulet",
+      "newPage": false,
+      "status": "disabled-recipe"
+    },
+    {
+      "id": "unstrung-dragonstone-amulet",
+      "category": "items",
+      "gameId": "unstrungDragonstoneAmulet",
+      "newPage": false,
+      "status": "disabled-recipe"
+    },
+    {
+      "id": "unstrung-emerald-amulet",
+      "category": "items",
+      "gameId": "unstrungEmeraldAmulet",
+      "newPage": false,
+      "status": "disabled-recipe"
+    },
+    {
+      "id": "unstrung-evil-amulet",
+      "category": "items",
+      "gameId": "unstrungEvilAmulet",
+      "newPage": false,
+      "status": "disabled-recipe"
+    },
+    {
+      "id": "unstrung-gold-amulet",
+      "category": "items",
+      "gameId": "unstrungGoldAmulet",
+      "newPage": false,
+      "status": "disabled-recipe"
+    },
+    {
+      "id": "unstrung-holy-amulet",
+      "category": "items",
+      "gameId": "unstrungHolyAmulet",
+      "newPage": false,
+      "status": "disabled-recipe"
+    },
+    {
+      "id": "unstrung-ruby-amulet",
+      "category": "items",
+      "gameId": "unstrungRubyAmulet",
+      "newPage": false,
+      "status": "disabled-recipe"
+    },
+    {
+      "id": "unstrung-sapphire-amulet",
+      "category": "items",
+      "gameId": "unstrungSapphireAmulet",
+      "newPage": false,
+      "status": "disabled-recipe"
+    },
+    {
+      "id": "unusual-fools-hat",
+      "category": "items",
+      "gameId": "foolsHatUnusual",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "vendor",
+      "category": "reference",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "venom-sac",
+      "category": "items",
+      "gameId": "venomSac",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "vial",
+      "category": "items",
+      "gameId": "vial",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "vial-of-poison",
+      "category": "items",
+      "gameId": "vialOfPoison",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "vial-of-water",
+      "category": "items",
+      "gameId": "vialOfWater",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "viking-village",
+      "category": "locations",
+      "gameId": "viking-village",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "vulcanus",
+      "category": "items",
+      "gameId": "vulcanus",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "water-bucket",
+      "category": "items",
+      "gameId": "waterBucket",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "wedding-band",
+      "category": "items",
+      "gameId": "weddingBand",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "white-party-hat",
+      "category": "items",
+      "gameId": "whitePartyHat",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "wicked-monastery",
+      "category": "locations",
+      "gameId": "wicked-monastery",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "wickedwort",
+      "category": "items",
+      "gameId": "wickedwort",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "willow-bow",
+      "category": "items",
+      "gameId": "willowBow",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "willow-bow-u",
+      "category": "items",
+      "gameId": "willowBowU",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "willow-logs",
+      "category": "items",
+      "gameId": "willowLogs",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "wind-blast",
+      "category": "abilities",
+      "gameId": "windBlast",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "wind-bolt",
+      "category": "abilities",
+      "gameId": "windBolt",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "wind-strike",
+      "category": "abilities",
+      "gameId": "windStrike",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "wind-wave",
+      "category": "abilities",
+      "gameId": "windWave",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "wizards-hat",
+      "category": "items",
+      "gameId": "wizardsHatBlue",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "wizards-robes",
+      "category": "items",
+      "gameId": "wizardsRobe",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "wizards-tower",
+      "category": "locations",
+      "gameId": "wizards-tower",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "woodcutting",
+      "category": "skills",
+      "gameId": "woodcutting",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "woodcutting-potion",
+      "category": "items",
+      "gameId": "woodcuttingPotion",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "wool",
+      "category": "items",
+      "gameId": "wool",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "yellow-party-hat",
+      "category": "items",
+      "gameId": "yellowPartyHat",
+      "newPage": false,
+      "status": "current"
+    },
+    {
+      "id": "yew-bow",
+      "category": "items",
+      "gameId": "yewBow",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "yew-bow-u",
+      "category": "items",
+      "gameId": "yewBowU",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "yew-logs",
+      "category": "items",
+      "gameId": "yewLogs",
+      "newPage": false,
+      "status": "documented-source"
+    },
+    {
+      "id": "bazaar-invite",
+      "category": "items",
+      "gameId": "bazaarInvite",
+      "newPage": true,
+      "status": "current"
+    },
+    {
+      "id": "pet-map-amber",
+      "category": "items",
+      "gameId": "petMapAmber",
+      "newPage": true,
+      "status": "documented-source"
+    },
+    {
+      "id": "pet-map-chia",
+      "category": "items",
+      "gameId": "petMapChia",
+      "newPage": true,
+      "status": "documented-source"
+    },
+    {
+      "id": "pet-map-crumpet",
+      "category": "items",
+      "gameId": "petMapCrumpet",
+      "newPage": true,
+      "status": "documented-source"
+    },
+    {
+      "id": "pet-map-ember",
+      "category": "items",
+      "gameId": "petMapEmber",
+      "newPage": true,
+      "status": "documented-source"
+    },
+    {
+      "id": "pet-map-gloop",
+      "category": "items",
+      "gameId": "petMapGloop",
+      "newPage": true,
+      "status": "documented-source"
+    },
+    {
+      "id": "pet-map-greta",
+      "category": "items",
+      "gameId": "petMapGreta",
+      "newPage": true,
+      "status": "documented-source"
+    },
+    {
+      "id": "pet-map-mercy",
+      "category": "items",
+      "gameId": "petMapMercy",
+      "newPage": true,
+      "status": "documented-source"
+    },
+    {
+      "id": "pet-map-mossy",
+      "category": "items",
+      "gameId": "petMapMossy",
+      "newPage": true,
+      "status": "documented-source"
+    },
+    {
+      "id": "pet-map-murk",
+      "category": "items",
+      "gameId": "petMapMurk",
+      "newPage": true,
+      "status": "documented-source"
+    },
+    {
+      "id": "pet-map-sandy",
+      "category": "items",
+      "gameId": "petMapSandy",
+      "newPage": true,
+      "status": "documented-source"
+    },
+    {
+      "id": "pet-map-scribble",
+      "category": "items",
+      "gameId": "petMapScribble",
+      "newPage": true,
+      "status": "documented-source"
+    },
+    {
+      "id": "rodent-pelt",
+      "category": "items",
+      "gameId": "rodentPelt",
+      "newPage": true,
+      "status": "documented-source"
+    },
+    {
+      "id": "ticket-to-progryn",
+      "category": "items",
+      "gameId": "ticketToProgryn",
+      "newPage": true,
+      "status": "documented-source"
+    },
+    {
+      "id": "training-fishing-rod",
+      "category": "items",
+      "gameId": "trainingFishingRod",
+      "newPage": true,
+      "status": "documented-source"
+    },
+    {
+      "id": "training-pickaxe",
+      "category": "items",
+      "gameId": "trainingPickaxe",
+      "newPage": true,
+      "status": "documented-source"
+    },
+    {
+      "id": "tutabay-atoll",
+      "category": "locations",
+      "gameId": "tutabay-atoll",
+      "newPage": true,
+      "status": "current"
+    },
+    {
+      "id": "island-rodent",
+      "category": "foes",
+      "gameId": "island-rodent",
+      "newPage": true,
+      "status": "current"
+    },
+    {
+      "id": "pet-amber",
+      "category": "pets",
+      "gameId": "petAmber",
+      "newPage": true,
+      "status": "current"
+    },
+    {
+      "id": "pet-beatrix",
+      "category": "pets",
+      "gameId": "petBeatrix",
+      "newPage": true,
+      "status": "current"
+    },
+    {
+      "id": "pet-biscuit",
+      "category": "pets",
+      "gameId": "petBiscuit",
+      "newPage": true,
+      "status": "current"
+    },
+    {
+      "id": "pet-blue-lobster",
+      "category": "pets",
+      "gameId": "petBlueLobster",
+      "newPage": true,
+      "status": "current"
+    },
+    {
+      "id": "pet-bog",
+      "category": "pets",
+      "gameId": "petBog",
+      "newPage": true,
+      "status": "current"
+    },
+    {
+      "id": "pet-chia",
+      "category": "pets",
+      "gameId": "petChia",
+      "newPage": true,
+      "status": "current"
+    },
+    {
+      "id": "pet-cinder",
+      "category": "pets",
+      "gameId": "petCinder",
+      "newPage": true,
+      "status": "current"
+    },
+    {
+      "id": "pet-clement",
+      "category": "pets",
+      "gameId": "petClement",
+      "newPage": true,
+      "status": "current"
+    },
+    {
+      "id": "pet-crumpet",
+      "category": "pets",
+      "gameId": "petCrumpet",
+      "newPage": true,
+      "status": "current"
+    },
+    {
+      "id": "pet-ember",
+      "category": "pets",
+      "gameId": "petEmber",
+      "newPage": true,
+      "status": "current"
+    },
+    {
+      "id": "pet-fibs",
+      "category": "pets",
+      "gameId": "petFibs",
+      "newPage": true,
+      "status": "current"
+    },
+    {
+      "id": "pet-gloop",
+      "category": "pets",
+      "gameId": "petGloop",
+      "newPage": true,
+      "status": "current"
+    },
+    {
+      "id": "pet-golem-core",
+      "category": "pets",
+      "gameId": "petGolemCore",
+      "newPage": true,
+      "status": "current"
+    },
+    {
+      "id": "pet-greta",
+      "category": "pets",
+      "gameId": "petGreta",
+      "newPage": true,
+      "status": "current"
+    },
+    {
+      "id": "pet-hilda",
+      "category": "pets",
+      "gameId": "petHilda",
+      "newPage": true,
+      "status": "current"
+    },
+    {
+      "id": "pet-hubble",
+      "category": "pets",
+      "gameId": "petHubble",
+      "newPage": true,
+      "status": "current"
+    },
+    {
+      "id": "pet-mercy",
+      "category": "pets",
+      "gameId": "petMercy",
+      "newPage": true,
+      "status": "current"
+    },
+    {
+      "id": "pet-merlin",
+      "category": "pets",
+      "gameId": "petMerlin",
+      "newPage": true,
+      "status": "current"
+    },
+    {
+      "id": "pet-mossy",
+      "category": "pets",
+      "gameId": "petMossy",
+      "newPage": true,
+      "status": "current"
+    },
+    {
+      "id": "pet-murk",
+      "category": "pets",
+      "gameId": "petMurk",
+      "newPage": true,
+      "status": "current"
+    },
+    {
+      "id": "pet-otter",
+      "category": "pets",
+      "gameId": "petOtter",
+      "newPage": true,
+      "status": "current"
+    },
+    {
+      "id": "pet-peace-moth",
+      "category": "pets",
+      "gameId": "petPeaceMoth",
+      "newPage": true,
+      "status": "current"
+    },
+    {
+      "id": "pet-pebble",
+      "category": "pets",
+      "gameId": "petPebble",
+      "newPage": true,
+      "status": "current"
+    },
+    {
+      "id": "pet-pickles",
+      "category": "pets",
+      "gameId": "petPickles",
+      "newPage": true,
+      "status": "current"
+    },
+    {
+      "id": "pet-quill",
+      "category": "pets",
+      "gameId": "petQuill",
+      "newPage": true,
+      "status": "current"
+    },
+    {
+      "id": "pet-riddle",
+      "category": "pets",
+      "gameId": "petRiddle",
+      "newPage": true,
+      "status": "current"
+    },
+    {
+      "id": "pet-sage",
+      "category": "pets",
+      "gameId": "petSage",
+      "newPage": true,
+      "status": "current"
+    },
+    {
+      "id": "pet-sandy",
+      "category": "pets",
+      "gameId": "petSandy",
+      "newPage": true,
+      "status": "current"
+    },
+    {
+      "id": "pet-scales",
+      "category": "pets",
+      "gameId": "petScales",
+      "newPage": true,
+      "status": "current"
+    },
+    {
+      "id": "pet-scoop",
+      "category": "pets",
+      "gameId": "petScoop",
+      "newPage": true,
+      "status": "current"
+    },
+    {
+      "id": "pet-scribble",
+      "category": "pets",
+      "gameId": "petScribble",
+      "newPage": true,
+      "status": "current"
+    },
+    {
+      "id": "pet-smudge",
+      "category": "pets",
+      "gameId": "petSmudge",
+      "newPage": true,
+      "status": "current"
+    },
+    {
+      "id": "pet-stitch",
+      "category": "pets",
+      "gameId": "petStitch",
+      "newPage": true,
+      "status": "current"
+    },
+    {
+      "id": "pet-stump",
+      "category": "pets",
+      "gameId": "petStump",
+      "newPage": true,
+      "status": "current"
+    },
+    {
+      "id": "pet-tinderling",
+      "category": "pets",
+      "gameId": "petTinderling",
+      "newPage": true,
+      "status": "current"
+    },
+    {
+      "id": "pet-winkle",
+      "category": "pets",
+      "gameId": "petWinkle",
+      "newPage": true,
+      "status": "current"
+    },
+    {
+      "id": "pet-dwarven-cannon",
+      "category": "pets",
+      "gameId": "dwarvenCannon",
+      "newPage": true,
+      "status": "absent-current-build"
+    }
+  ],
+  "archivedGameItems": [
+    "deathWishBone",
+    "dwarvenCannon",
+    "goldFingers",
+    "ironArmor",
+    "ironArrows",
+    "ironArrowtips",
+    "ironAxe",
+    "ironDagger",
+    "ironMedHelm",
+    "ironScimitar",
+    "ironSqShield",
+    "krakenClub",
+    "offYouGoTalisman"
+  ],
+  "artworkRemapped": {
+    "https://microscape.cc/play/assets/blackKnight-CRvWtYp-.png": "./assets/beta-artwork/blackKnight-CRvWtYp-.png",
+    "https://microscape.cc/play/assets/bronzeAxeWorld-Dy_X7r82.png": "./assets/beta-artwork/bronzeAxeWorld-Dy_X7r82.png",
+    "https://microscape.cc/play/assets/bronzePickaxeWorld-19Aygnen.png": "./assets/beta-artwork/bronzePickaxeWorld-19Aygnen.png",
+    "https://microscape.cc/play/assets/dread-mount-onyx-lair-BBegU-_7.png": "https://microscape.cc/play/assets/dread-mount-onyx-lair-8rY9EHJY.png",
+    "https://microscape.cc/play/assets/dwarvenCannon-D9MRTAb8.png": "./assets/beta-artwork/dwarvenCannon-D9MRTAb8.png",
+    "https://microscape.cc/play/assets/cannon-BiDRg7dc.png": "./assets/beta-artwork/cannon-BiDRg7dc.png",
+    "https://microscape.cc/play/assets/fencewell-bridge-HMbqJFc0.png": "https://microscape.cc/play/assets/fencewell-bridge-CuIi6Sws.png",
+    "https://microscape.cc/play/assets/goldFingersWorld-DmLO66aU.png": "./assets/beta-artwork/goldFingersWorld-DmLO66aU.png",
+    "https://microscape.cc/play/assets/havendell-lair-9wlOUflr.png": "https://microscape.cc/play/assets/havendell-lair-CZdjTLqZ.png",
+    "https://microscape.cc/play/assets/iceWarrior-uyuLrqLU.png": "https://microscape.cc/play/assets/iceWarrior-Lk_bvHfp.png",
+    "https://microscape.cc/play/assets/ironArmorWorld-hp55WnYp.png": "./assets/beta-artwork/ironArmorWorld-hp55WnYp.png",
+    "https://microscape.cc/play/assets/ironDaggerWorld-hc65DeLR.png": "./assets/beta-artwork/ironDaggerWorld-hc65DeLR.png",
+    "https://microscape.cc/play/assets/ironMedHelmWorld-QPJ96pPr.png": "./assets/beta-artwork/ironMedHelmWorld-QPJ96pPr.png",
+    "https://microscape.cc/play/assets/ironPickaxeWorld-BPIXXI_0.png": "./assets/beta-artwork/ironPickaxeWorld-BPIXXI_0.png",
+    "https://microscape.cc/play/assets/ironScimitarWorld-C2AsJpqX.png": "./assets/beta-artwork/ironScimitarWorld-C2AsJpqX.png",
+    "https://microscape.cc/play/assets/ironSqShieldWorld-kDjMpPUP.png": "./assets/beta-artwork/ironSqShieldWorld-kDjMpPUP.png",
+    "https://microscape.cc/play/assets/krakenClubWorld-Du8X-YvD.png": "./assets/beta-artwork/krakenClubWorld-Du8X-YvD.png",
+    "https://microscape.cc/play/assets/the-sump-CrNsbMI0.png": "https://microscape.cc/play/assets/the-sump-CtnM-AqE.png"
+  },
+  "finalReferenceSha256": "fc07713ec860e3c1259c1bc661cb77232faac47fe3cedfb5befd1e956097c617",
+  "finalWikiEntries": 745,
+  "archivedWikiEntries": [
+    "death-wish-bone",
+    "dwarven-cannon",
+    "gold-fingers",
+    "iron-armor",
+    "iron-arrows",
+    "iron-arrowtips",
+    "iron-axe",
+    "iron-dagger",
+    "iron-med-helm",
+    "iron-scimitar",
+    "iron-sq-shield",
+    "jesters-pouch",
+    "kraken-club",
+    "off-you-go-talisman",
+    "steel-pickaxe",
+    "pet-dwarven-cannon"
+  ],
+  "unconfirmedSources": [
+    "candy-cane",
+    "elpers-hat",
+    "lava-rod",
+    "santa-hat",
+    "uncut-dragonstone"
+  ]
+}

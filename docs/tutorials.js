@@ -1,4 +1,4 @@
-const gameClient = "./assets/game-data/beta-2026-11-18.json";
+const gameClient = "./assets/game-data/release-2026-11-19.json";
 const patchNotes = "https://microscape.cc/patch-notes/";
 
 export const tutorials = [
@@ -10,7 +10,7 @@ export const tutorials = [
     sections: [
       ["1. Travel to O’Rock Sewers", "Open the World Map, select O’Rock Sewers southeast of Jester’s Room, then choose Travel Here.", {
         screenshot: {
-          source:{src:"https://microscape.cc/play/assets/microscape-world-map-Cjd3Id0b.png", width:2000, height:1800},
+          source:{src:"https://microscape.cc/play/assets/microscape-world-map-8vzsaSaK.png", width:2000, height:1800},
           crop:[790, 750, 440, 330],
           marker:[1004, 909],
           alt:"A close-up of the Microscape World Map with a ring marking the O’Rock Sewers entrance.",
@@ -66,11 +66,12 @@ export const tutorials = [
           caption:"Gurgle’s final form. Switch back to Gurgle and finish the fight."
         }
       }],
-      ["Where to get Rubber Boots", "Gurgle drops Rubber Boots at a 1-in-16 rate."]
+      ["Where to get Rubber Boots", "Gurgle drops Rubber Boots at a 1-in-16 rate. The release also adds a guaranteed exchange: trade 16 Rusty Coins at the Rusty Chest in The Sump (Piety 1)."],
+      ["Release rewards", "Fletcher’s Cloak is now 1 in 128 and Royal Cape is 1 in 2,048 from Gurgle. Champion Slime Torso is 1 in 16 in the Champion drop pool. Check the Gurgle page for the full current table."]
     ],
     related: ["gurgle", "orock-sewers", "deep-sewers", "the-sump", "sewer-crocodile", "slimelet", "dungeon-key", "rubber-boots", "soft-landing"],
     sources: [
-      ["Archived beta game data · Dungeon maps, fight requirements and loot", gameClient],
+      ["Archived release game data · Dungeon maps, fight requirements and loot", gameClient],
       ["September 30 patch notes · Gurgle’s splits", patchNotes],
       ["Community screenshot · Sewer Crocodile", "./assets/gurgle-crocodile.png"],
       ["Community screenshot · Gurgle’s first form", "./assets/gurgle-first-form.png"],
@@ -100,7 +101,7 @@ export const tutorials = [
           caption:"Watch the meter at the top right. When the passage opens, use the Travel tile marked by the ring."
         }
       }],
-      ["3. Attack King Onyx Dragon in The Lair", "Select King Onyx Dragon to start the fight. You need combat level 60 and a Dungeon Key. Keep cooked food equipped throughout the encounter.", {
+      ["3. Attack King Onyx Dragon in The Lair", "Select King Onyx Dragon to start the fight. You need combat level 60 and a Dungeon Key. The release boss has 2,790 HP. Keep cooked food equipped throughout the encounter.", {
         screenshot: {
           crop:[2820, 140, 1010, 725],
           alt:"A player in The Lair facing the grounded King Onyx Dragon, with green positions marking where players can stand to fight.",
@@ -109,10 +110,11 @@ export const tutorials = [
       }],
       ["Reduce dragon breath damage with Pyreshell Ward", "At Defense 40, equip the Pyreshell Shield to use Pyreshell Ward. Once you permanently unlock Pyreshell Ward at ability level 60, you can equip the ability without the shield. Its reduction to dragon fire-breath damage scales from 1% to 80% with ability level."],
       ["When the dragon takes flight", "Use long-range attacks on the airborne dragon, such as Ranged with a bow or long-range Evil Magic spells. You can also defeat Dragon Whelps to force it back down. When it lands and calls for more whelps, focus on finishing the boss before the swarm builds up."],
-      ["Where to get the shield", "The shield is a rare catch at Pyreshell Spots in Havendell Dungeon. Fishing for Pyreshell requires Fishing 60 and Raw Frog bait."]
+      ["Where to get the shield", "The shield is a rare catch at Pyreshell Spots in Havendell Dungeon. Fishing for Pyreshell requires Fishing 60 and Raw Frog bait."],
+      ["Spend Scorched Coins", "Use the Scorched Chest inside The Lair for fixed rewards: Dragonstone (64 coins), Progrite 2h Sword (128), Dragon Helm or Dragon Sword (256 each), and Dragon Shield (Left Half) (2,048). These exchanges require Piety 1. Boss drop odds also changed; check King Onyx Dragon’s Foes page for the full release table."]
     ],
     related: ["king-onyx-dragon", "dread-mount-onyx-antechamber", "dread-mount-onyx-lair", "dungeon-key", "dragon-whelp", "magma-hound", "pyreshell-shield", "pyreshell-ward", "havendell-dungeon"],
-    sources: [["Archived beta game data · Dungeon access, dragon phases and Pyreshell Ward", gameClient], ["Community walkthrough screenshots", "./assets/king-onyx-dragon-tutorial.png"]]
+    sources: [["Archived release game data · Dungeon access, dragon phases and Pyreshell Ward", gameClient], ["Community walkthrough screenshots", "./assets/king-onyx-dragon-tutorial.png"]]
   },
   {
     id: "morvane-tutorial",
@@ -164,6 +166,6 @@ export const tutorials = [
       ["Prepare for Morvane’s flurry", "Equip cooked food before engaging Morvane. If you use a one-handed weapon and have Defense 20, the Steel Sq Shield grants Shield Wall, which has a chance to cap an incoming hit at 30% of your maximum HP."]
     ],
     related: ["morvane", "havendell-dungeon", "the-sanctum", "havendell-lair", "dungeon-key", "iskarn", "pyrax", "steel-sq-shield", "shield-wall"],
-    sources: [["Archived beta game data · Havendell gate, Morvane fight and Shield Wall", gameClient], ["Community walkthrough screenshots", "./assets/morvane-quick-tutorial.png"]]
+    sources: [["Archived release game data · Havendell gate, Morvane fight and Shield Wall", gameClient], ["Community walkthrough screenshots", "./assets/morvane-quick-tutorial.png"]]
   }
 ].map(tutorial => ({ category: "tutorials", ...tutorial }));

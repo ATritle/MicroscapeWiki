@@ -101,7 +101,7 @@ const reference = JSON.parse(await fs.readFile(path.join(root, "docs/reference.j
 const pages = [...reference, ...buildPetEntries(reference)];
 const norm = value => String(value || "").replace(/[^a-z0-9]/gi, "").toLowerCase();
 function pageFor(category, id, record) {
-  return pages.find(page => page.category === category && [page.id, page.title, page.title.replace(/\brobes\b/gi, "robe"),
+  return pages.find(page => page.category === category && [page.gameId, page.id, page.title, page.title.replace(/\brobes\b/gi, "robe"),
     ...(page.aliases || []), ...(page.facts || []).filter(([key]) => key === "In-game name").map(([, value]) => value)]
     .some(value => norm(value) === norm(id) || norm(value) === norm(record.name)));
 }
@@ -128,7 +128,7 @@ for (const [id, record] of Object.entries(game.pets)) {
   const page = pageFor("pets", id.replace(/^pet/, ""), record);
   if (page?.sprites?.[0]) pets[id] = {name:record.name, sprite:page.sprites[0]};
 }
-if (!equipment.skin1 || !equipment.adamantArmor || !equipment.krakenClub) throw Error("Required character art was not found.");
+if (!equipment.skin1 || !equipment.adamantArmor || !equipment.adamantDagger) throw Error("Required character art was not found.");
 const output = {build:path.basename(client.file), equipment, handSamples, artworkBounds, items, skills, locations, activities, foes, pets};
 await fs.writeFile(path.join(root, "docs/player-reference.json"), JSON.stringify(output, null, 2) + "\n");
 console.log(JSON.stringify({equipment:Object.keys(equipment).length, items:Object.keys(items).length,

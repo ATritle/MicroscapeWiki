@@ -1,8 +1,8 @@
-import { guides } from "./guides.js?v=launch-notes-20261119";
-import { tutorials } from "./tutorials.js?v=beta-audit";
-import { buildPetEntries } from "./pets.js?v=dwarven-cannon";
-import { itemIcons, itemIconGroups } from "./item-icons.js?v=beta-audit";
-import { renderPlayerLookup } from "./player-lookup.js?v=player-skill-scroll-20261119";
+import { guides } from "./guides.js?v=release-20261119";
+import { tutorials } from "./tutorials.js?v=release-20261119";
+import { buildPetEntries } from "./pets.js?v=release-20261119";
+import { itemIcons, itemIconGroups } from "./item-icons.js?v=release-20261119";
+import { renderPlayerLookup } from "./player-lookup.js?v=release-20261119";
 
 const groups = {
   guides: { title: "Guides", icon: "▤", blurb: "Start here, earn Energy, trade and plan dungeon runs." },
@@ -37,7 +37,7 @@ const mzDunkProfile = {
 };
 const mzDunkStatusMaxAge = 10 * 60_000;
 const topicOrder = ["skills", "items", "foes", "locations", "abilities", "pets", "reference"];
-const featured = ["energy", "dungeons", "bazaar", "activity-queue"];
+const featured = ["release-changes", "getting-started", "energy", "dungeons", "bazaar", "activity-queue"];
 const displayCount = 36;
 let referenceLoadFailed = false;
 let liveDropsSnapshot;
@@ -203,7 +203,7 @@ function renderHome() {
     )
   );
   const launch = element("div", {class:"notice"}, glyph("◷"),
-    element("p", {}, entryLink("release-notes", "November 19 launch"), " · Reference tables reflect the beta. Check the game for current values.")
+    element("p", {}, entryLink("release-changes", "November 19 release comparison"), " · Stats, recipes, drops, pets and maps checked against the launch files. Removed beta content is labeled as archived.")
   );
   const topics = element("section", {"aria-labelledby":"topic-heading"},
     element("h2", {id:"topic-heading"}, "Browse the compendium"),
@@ -236,13 +236,13 @@ function renderHome() {
       element("div", {class:"updates"},
         element("time", {datetime:"2026-11-19"}, "November 19, 2026"),
         element("h3", {}, "Microscape launches!"),
-        element("p", {}, "Launch servers open at 9:00 PM GMT (3:00 PM CST) for a fresh start."),
+        element("p", {}, "The launch servers are live. Explore the new starter island and our comparison with the saved beta build."),
         element("ul", {},
-          element("li", {}, "Updated new-player experience, new pets and more uses for dungeon coins."),
+          element("li", {}, "Tutabay Atoll, 11 new pets plus the companion Blob, and fixed dungeon coin exchanges."),
           element("li", {}, "No further character wipes planned; emergency rollbacks remain possible."),
           element("li", {}, "The Bazaar restricts targeted trading. Listings can still use any price and quantity.")
         ),
-        element("p", {}, entryLink("release-notes", "Launch summary and beta archive")),
+        element("p", {}, entryLink("release-changes", "See all documented release changes")),
         link("Read the official patch notes ↗", "https://microscape.cc/patch-notes/")
       )
     )

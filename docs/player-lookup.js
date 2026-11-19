@@ -11,7 +11,7 @@ const skillOrder = new Map([
 const displayName = text => String(text || "").replace(/[-_]/g, " ").replace(/([a-z])([A-Z])/g, "$1 $2").replace(/^./, value => value.toUpperCase());
 let referenceRequest;
 function readReference() {
-  referenceRequest ||= fetch(new URL("./player-reference.json?v=player-lookup-20261119", import.meta.url)).then(response => {
+  referenceRequest ||= fetch(new URL("./player-reference.json?v=release-20261119", import.meta.url)).then(response => {
     if (!response.ok) throw Error("Could not load the player reference artwork.");
     return response.json();
   }).catch(error => {referenceRequest = null; throw error;});
