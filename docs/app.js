@@ -2,6 +2,7 @@ import { guides } from "./guides.js?v=beta-audit";
 import { tutorials } from "./tutorials.js?v=beta-audit";
 import { buildPetEntries } from "./pets.js?v=dwarven-cannon";
 import { itemIcons, itemIconGroups } from "./item-icons.js?v=beta-audit";
+import { renderPlayerLookup } from "./player-lookup.js?v=player-lookup-20261119";
 
 const groups = {
   guides: { title: "Guides", icon: "▤", blurb: "Start here, earn Energy, trade and plan dungeon runs." },
@@ -23,6 +24,7 @@ const searchInput = document.querySelector("#wiki-search");
 const number = new Intl.NumberFormat("en");
 const gameAssets = "https://microscape.cc/play/assets/";
 const liveDropsUrl = "#/live-drops";
+const playerLookupUrl = "#/player-lookup";
 const liveDropsWorkerUrl = "https://microscape-wiki-api.pages.dev/drops.json";
 const mzDunkStatusUrl = new URL("mzdunk.json", liveDropsWorkerUrl).href;
 const liveDropsSnapshotUrl = "https://raw.githubusercontent.com/ATritle/MicroscapeWiki/refs/heads/live-data/drops.json";
@@ -46,6 +48,7 @@ let liveDropsRequest;
 let liveDropsFailed = false;
 let liveDropsExpiry;
 let renderDropResults;
+let disposePlayerLookup;
 
 const entries = [...guides, ...tutorials];
 const byId = new Map(entries.map(entry => [entry.id, entry]));
@@ -132,11 +135,12 @@ function liveDropBadge() {
   );
 }
 
-function renderNav(category, currentId, home, liveDrops) {
+function renderNav(category, currentId, home, liveDrops, playerLookup) {
   const sections = [
     ["Explore", [
       ["Overview", "#/", "⌂", home],
       ["Live drops", liveDropsUrl, "◉", liveDrops],
+      ["Player lookup", playerLookupUrl, "⌕", playerLookup],
       ["Getting started", entryUrl("getting-started"), "↳", currentId === "getting-started"],
       ["All guides", categoryUrl("guides"), "▤", category === "guides" && !currentId],
       ["Tutorials", categoryUrl("tutorials"), groups.tutorials.icon, category === "tutorials"]
@@ -841,16 +845,23 @@ function render({focus = false} = {}) {
   const query = new URLSearchParams(params).get("q") || "";
   const home = !view;
   const liveDrops = view === "live-drops";
+  const playerLookup = view === "player-lookup";
+  disposePlayerLookup?.();
+  disposePlayerLookup = null;
   renderDropResults = null;
   main.replaceChildren();
   menu.setAttribute("aria-expanded","false");
   const currentCategory = entry?.id === "pets" ? "pets" : entry?.category || category;
-  renderNav(currentCategory, entry?.id, home, liveDrops);
+  renderNav(currentCategory, entry?.id, home, liveDrops, playerLookup);
   searchInput.value = view === "search" ? query : "";
-  const title = entry?.title || groups[category]?.title || (liveDrops ? "Live Twitch drops" : "");
+  const title = entry?.title || groups[category]?.title || (liveDrops ? "Live Twitch drops" : playerLookup ? "Player lookup" : "");
   document.title = title ? title + " · Microscape Wiki" : "Microscape Wiki";
   if (home) renderHome();
   else if (liveDrops) renderLiveDrops();
+  else if (playerLookup) disposePlayerLookup = renderPlayerLookup({
+    main, element, crumbs, footer, byId, entryUrl, renderSpriteFrame,
+    initialName:new URLSearchParams(params).get("name") || ""
+  });
   else if (entry) renderEntry(entry, currentCategory);
   else if (view === "search" || category) renderList(category, query);
   else main.append(crumbs(null, "Page unavailable"), element("h1", {}, "Page unavailable"),

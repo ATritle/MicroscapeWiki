@@ -3,6 +3,7 @@ const defaultWikiOrigin = "https://atritle.github.io";
 const wikiOrigins = new Set([defaultWikiOrigin, "https://microscapewiki.com", "https://www.microscapewiki.com"]);
 const feedPath = "/drops.json";
 const twitchStatusPath = "/mzdunk.json";
+const playerPath = "/player.json";
 const mzDunkChannel = "mzdunk";
 const twitchStreamsUrl = "https://api.twitch.tv/helix/streams?user_login=" + mzDunkChannel;
 const twitchUsersUrl = "https://api.twitch.tv/helix/users?login=" + mzDunkChannel;
@@ -12,6 +13,70 @@ const eventFields = [
 ];
 let twitchToken;
 let mzDunkAvatar;
+
+export class PlayerLookupError extends Error {
+  constructor(message, status = 502) {
+    super(message);
+    this.status = status;
+  }
+}
+
+export function validPlayerUsername(username) {
+  return typeof username === "string" && /^[a-zA-Z0-9_]{1,25}$/.test(username);
+}
+
+async function resolveTwitchPlayer(username, env) {
+  let token = await getTwitchToken(env);
+  let response = await fetchTwitch("https://api.twitch.tv/helix/users?login=" + encodeURIComponent(username), env, token);
+  if (response.status === 401) {
+    if (twitchToken?.value === token) twitchToken = undefined;
+    token = await getTwitchToken(env);
+    response = await fetchTwitch("https://api.twitch.tv/helix/users?login=" + encodeURIComponent(username), env, token);
+  }
+  if (!response.ok) throw new PlayerLookupError("Player lookup is temporarily unavailable.");
+  const body = await response.json();
+  return body.data?.find(user => user?.login?.toLowerCase() === username.toLowerCase())?.id;
+}
+
+export async function fetchPlayerSnapshot(username, env, resolveUsername = resolveTwitchPlayer) {
+  if (!validPlayerUsername(username)) throw new PlayerLookupError("Enter a username using up to 25 letters, numbers or underscores.", 400);
+  const id = await resolveUsername(username.toLowerCase(), env);
+  if (!id) throw new PlayerLookupError("No player was found with that exact username. Check the spelling and try again.", 404);
+  if (!/^[0-9]{1,25}$/.test(id)) throw new PlayerLookupError("The player could not be identified.");
+  const url = new URL("https://microscape.cc/server/tapi/character-by-id");
+  url.searchParams.set("input", JSON.stringify({characterId:id}));
+  const response = await fetch(url, {signal:AbortSignal.timeout(8_000), cache:"no-store"});
+  if (response.status === 404) throw new PlayerLookupError("That channel does not have a public Microscape character.", 404);
+  if (!response.ok) throw new PlayerLookupError("Microscape could not return the player profile. Please try again.");
+  const body = await response.json();
+  const raw = body?.result?.data;
+  if (!raw || raw.id !== id || typeof raw.name !== "string" || !raw.exp || !raw.equipment) {
+    throw new PlayerLookupError("A public Microscape profile is not available for that player.", 404);
+  }
+  const exp = Object.fromEntries(Object.entries(raw.exp).filter(([key, value]) =>
+    /^[a-zA-Z]{1,24}$/.test(key) && Number.isFinite(value) && value >= 0));
+  const equipment = Object.fromEntries(Object.entries(raw.equipment).filter(([key, value]) =>
+    /^[a-zA-Z0-9]{1,24}$/.test(key) && typeof value === "string" && /^[a-zA-Z0-9_-]{1,80}$/.test(value)));
+  const current = raw.activity && typeof raw.activity === "object" ? raw.activity : null;
+  const action = current?.preparedActivity || current?.queuedActivity || current;
+  const activity = current && {
+    kind:current.preparedActivity ? "preparing" : current.queuedActivity ? "queued"
+      : current.type === "travel" ? "travel" : current.type === "banking" ? "banking"
+      : action.mob ? "combat" : action.skill ? "skilling" : "unknown",
+    ...(typeof (action.skill || action.combatSkill) === "string" ? {skill:action.skill || action.combatSkill} : {}),
+    ...(typeof action.activity === "string" ? {id:action.activity} : {}),
+    ...(typeof action.mob === "string" ? {mob:action.mob} : {}),
+    ...(typeof action.zone === "string" ? {zone:action.zone} : {}),
+    ...(typeof current.destination?.map === "string" ? {destination:current.destination.map} : {})
+  };
+  return {checkedAt:Date.now(), player:{
+    id, name:raw.name, exp, equipment, isMember:raw.isMember === true,
+    location:typeof raw.pos?.map === "string" ? raw.pos.map : null,
+    activity:activity || null,
+    hp:Number.isFinite(raw.resources?.hp) ? raw.resources.hp : null,
+    maxHp:Number.isFinite(raw.resources?.maxHp) ? raw.resources.maxHp : null
+  }};
+}
 
 function twitchAvatarUrl(url) {
   return typeof url === "string"
@@ -152,33 +217,43 @@ export default {
   async fetch(request, env, context) {
     const url = new URL(request.url);
     const twitchStatus = url.pathname === twitchStatusPath;
-    if (!twitchStatus && url.pathname !== feedPath) return new Response("Not found", {status: 404});
+    const playerLookup = url.pathname === playerPath;
+    if (!twitchStatus && !playerLookup && url.pathname !== feedPath) return new Response("Not found", {status: 404});
     if (request.method !== "GET") return new Response("Method not allowed", {status: 405, headers: {Allow: "GET"}});
 
     const origin = request.headers.get("Origin");
     if (origin && !wikiOrigins.has(origin)) return new Response("Origin not allowed", {status: 403, headers: {Vary: "Origin"}});
     const headers = {"X-Content-Type-Options": "nosniff"};
+    const username = url.searchParams.get("username")?.trim().toLowerCase();
+    if (playerLookup && !validPlayerUsername(username)) {
+      return Response.json({error:"Enter a username using up to 25 letters, numbers or underscores."}, {
+        status:400, headers:{...headers, "Cache-Control":"no-store", "Access-Control-Allow-Origin":origin || defaultWikiOrigin, Vary:"Origin"}
+      });
+    }
 
-    // Share each endpoint's response across wiki origins and ignore query parameters.
+    // Public profiles must have a separate cache key for each normalized username.
     const cache = globalThis.caches?.default;
-    const key = new Request(new URL(url.pathname, url.origin));
+    const cacheUrl = new URL(url.pathname, url.origin);
+    if (playerLookup) cacheUrl.searchParams.set("username", username);
+    const key = new Request(cacheUrl);
     let response = await cache?.match(key).catch(() => undefined);
     if (!response) {
       try {
-        if (twitchStatus && (!env.TWITCH_CLIENT_ID || !env.TWITCH_CLIENT_SECRET)) {
-          response = Response.json({error: "Twitch status is not configured."}, {
+        if ((twitchStatus || playerLookup) && (!env.TWITCH_CLIENT_ID || !env.TWITCH_CLIENT_SECRET)) {
+          response = Response.json({error:playerLookup ? "Player lookup is not configured." : "Twitch status is not configured."}, {
             status: 503, headers: {...headers, "Cache-Control": "no-store"}
           });
         } else {
-          const snapshot = twitchStatus ? await fetchTwitchStatus(env) : await fetchSnapshot(8_000);
-          response = Response.json(snapshot, {headers: {...headers, "Cache-Control": "public, max-age=60"}});
+          const snapshot = playerLookup ? await fetchPlayerSnapshot(username, env)
+            : twitchStatus ? await fetchTwitchStatus(env) : await fetchSnapshot(8_000);
+          response = Response.json(snapshot, {headers: {...headers, "Cache-Control": playerLookup ? "public, max-age=30" : "public, max-age=60"}});
           if (cache) context.waitUntil(cache.put(key, response.clone()).catch(() => {}));
         }
       } catch (error) {
-        const service = twitchStatus ? "Twitch status" : "Microscape streams";
+        const service = playerLookup ? "Player lookup" : twitchStatus ? "Twitch status" : "Microscape streams";
         console.error(`${service} request failed:`, error.message);
-        response = Response.json({error: `${service} temporarily unavailable.`}, {
-          status: 502, headers: {...headers, "Cache-Control": "no-store"}
+        response = Response.json({error: error instanceof PlayerLookupError ? error.message : `${service} temporarily unavailable.`}, {
+          status: error instanceof PlayerLookupError ? error.status : 502, headers: {...headers, "Cache-Control": "no-store"}
         });
       }
     }

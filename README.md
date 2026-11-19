@@ -10,6 +10,18 @@ From the repository root, serve the site over HTTP and open `http://localhost:80
 python -m http.server 8000 --directory docs
 ```
 
+To preview Player Lookup locally with real public profiles, run
+`node scripts/preview-player-lookup.mjs 8065` and open
+`http://127.0.0.1:8065/#/player-lookup`. This localhost-only server uses the public
+community ranking index to resolve exact usernames, then reads current profiles
+from Microscape. Unindexed characters may be missing from this preview.
+The production `/player.json` Worker endpoint resolves names directly
+through Twitch using the existing server-side app credentials. Neither command
+publishes changes. Run `node scripts/check-player-lookup.mjs` to check profile
+validation, cache isolation, skill math, sprite layers and existing feed behavior.
+The original sprite and activity metadata in `docs/player-reference.json` is built
+by `scripts/build-player-reference.mjs` from a captured public game build.
+
 ## Edit the wiki
 
 - Edit `docs/guides.js` for guides, patch coverage and playable walkthroughs. Each guide has a permanent ID, sections, related article IDs and sources.
