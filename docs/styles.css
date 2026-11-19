@@ -310,7 +310,8 @@ a.player-place-name:hover { color: var(--mint); text-decoration: underline; }
 .player-panel-heading h2 { margin: 0; font-size: 23px; }
 .player-panel-heading > span { color: var(--muted); font-size: 10px; }
 .player-panel-caption { margin: 8px 0 14px; color: var(--muted); font-size: 11px; }
-.player-skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.player-skills-grid { display: grid; grid-template-columns: 1fr; grid-auto-rows: max-content; gap: 8px; max-height: 440px; padding: 2px 6px 2px 2px; overflow-y: auto; overflow-x: hidden; overscroll-behavior: contain; scrollbar-gutter: stable; scrollbar-width: thin; scrollbar-color: #658d7d #0c1621; }
+.player-skills-grid:focus-visible { outline: 2px solid var(--mint); outline-offset: 3px; border-radius: 6px; }
 .player-skill { position: relative; display: flex; align-items: center; gap: 8px; padding: 11px 9px; min-width: 0; overflow: hidden; border: 1px solid #2b3a4c; border-radius: 7px; background: #152333; color: var(--text); text-decoration: none; }
 .player-skill:hover { border-color: #568d76; background: #192e38; }
 .player-skill-icon { width: 25px; height: 25px; flex: none; object-fit: contain; image-rendering: pixelated; }

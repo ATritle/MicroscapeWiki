@@ -191,6 +191,7 @@ export function renderPlayerLookup({main, element:e, crumbs, footer, byId, entry
   }
   function result(snapshot, data) {
     const {player} = snapshot, stats = playerStats(player.exp);
+    const skillScrollTop = results.querySelector(".player-skills-grid")?.scrollTop || 0;
     const liveStatusAvailable = player.liveStatusAvailable === true;
     const canvas = e("canvas", {width:128, height:128, role:"img",
       "aria-label":player.name + " in-game appearance with current equipped gear"});
@@ -236,8 +237,8 @@ export function renderPlayerLookup({main, element:e, crumbs, footer, byId, entry
     const skills = e("section", {class:"player-panel", "aria-labelledby":"player-skills-heading"},
       e("div", {class:"player-panel-heading"}, e("h2", {id:"player-skills-heading"}, "Skills"),
         e("span", {}, data.skills.length + " skills")),
-      e("p", {class:"player-panel-caption"}, "Base levels and XP. Temporary boosts are not included."),
-      e("div", {class:"player-skills-grid"}, ...orderedSkills.map(skill => {
+      e("p", {class:"player-panel-caption", id:"player-skills-help"}, "Base levels and XP. Temporary boosts are not included. Scroll to view all skills."),
+      e("div", {class:"player-skills-grid", tabindex:"0", role:"region", "aria-label":"Player skills", "aria-describedby":"player-skills-help"}, ...orderedSkills.map(skill => {
         const xp = player.exp[skill.id] || 0, level = stats.levels[skill.id] || 1;
         const start = xpThreshold(level), end = xpThreshold(level + 1);
         const progress = Math.max(0, Math.min(100, (xp - start) / (end - start) * 100));
@@ -290,6 +291,7 @@ export function renderPlayerLookup({main, element:e, crumbs, footer, byId, entry
     results.replaceChildren(hero, where, e("div", {class:"player-detail-columns"}, skills, gear),
       ...(Object.keys(bonuses).length ? [bonusPanel] : []), stamp,
       e("p", {class:"player-public-note"}, "Skills and equipment come from the public game profile. Live location, activity and hitpoints cannot be verified from this profile and are not shown."));
+    skills.querySelector(".player-skills-grid").scrollTop = skillScrollTop;
     paintPlayer(canvas, player.equipment, data).then(complete => {
       if (!disposed && !complete) {artNote.hidden = false; artNote.textContent = "Some appearance artwork is unavailable for this build.";}
     }).catch(() => {if (!disposed) {artNote.hidden = false; artNote.textContent = "Appearance artwork could not be loaded.";}});
