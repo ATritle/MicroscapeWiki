@@ -3,6 +3,11 @@ const apiUrl = ["localhost", "127.0.0.1"].includes(window.location.hostname)
   : new URL("https://microscape-wiki-api.pages.dev/player.json");
 const suggestionUrl = new URL("player-search.json", apiUrl);
 const format = new Intl.NumberFormat("en");
+const skillOrder = new Map([
+  "attack", "strength", "defense", "evilMagic", "ranged", "piety",
+  "woodcutting", "firemaking", "fishing", "cooking", "mining", "smithing",
+  "crafting", "goodMagic", "fletching", "herblaw"
+].map((id, index) => [id, index]));
 const displayName = text => String(text || "").replace(/[-_]/g, " ").replace(/([a-z])([A-Z])/g, "$1 $2").replace(/^./, value => value.toUpperCase());
 let referenceRequest;
 function readReference() {
@@ -226,11 +231,13 @@ export function renderPlayerLookup({main, element:e, crumbs, footer, byId, entry
           wikiLink(liveStatusAvailable ? activityInfo.label : "Not publicly available", activityInfo.foeId, {class:"player-place-name"}),
           ...(skill ? [e("small", {}, skill.name)] : [])))
     );
+    const orderedSkills = [...data.skills].sort((a, b) =>
+      (skillOrder.get(a.id) ?? Infinity) - (skillOrder.get(b.id) ?? Infinity));
     const skills = e("section", {class:"player-panel", "aria-labelledby":"player-skills-heading"},
       e("div", {class:"player-panel-heading"}, e("h2", {id:"player-skills-heading"}, "Skills"),
         e("span", {}, data.skills.length + " skills")),
       e("p", {class:"player-panel-caption"}, "Base levels and XP. Temporary boosts are not included."),
-      e("div", {class:"player-skills-grid"}, ...data.skills.map(skill => {
+      e("div", {class:"player-skills-grid"}, ...orderedSkills.map(skill => {
         const xp = player.exp[skill.id] || 0, level = stats.levels[skill.id] || 1;
         const start = xpThreshold(level), end = xpThreshold(level + 1);
         const progress = Math.max(0, Math.min(100, (xp - start) / (end - start) * 100));
