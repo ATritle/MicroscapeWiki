@@ -127,10 +127,10 @@ export const guides = [
   {
     id: "release-notes",
     title: "Release and beta archive",
-    summary: "Check the announced launch date and the beta updates behind this wiki’s first edition.",
+    summary: "Read the November 19 launch highlights and the beta updates behind this wiki’s first edition.",
     sections: [
-      ["November 19, 2026", "The developer announced November 19 as the general release date. The October 6 update describes a reset ahead of release. In-game values may change at launch. Check the latest official updates and in-game tooltips when a beta reference differs."],
-      ["November 12 • The King’s Jubilee", "The final listed beta update describes the King of O’Rock’s party and its goodie bags."],
+      ["November 19 • Microscape launches!", "Servers open at 9:00 PM GMT (3:00 PM CST). Characters start fresh, with no further progress wipes planned; serious bugs may still require rollbacks. Highlights include a revised new-player experience, new pets and additional dungeon coin uses. Resource queues remain intentional. Bazaar changes limit targeted trading while allowing sellers to choose prices and quantities. Check in-game values against beta-era reference tables."],
+      ["November 12 • The King’s Jubilee", "The King of O’Rock celebrated the closing beta with a party and goodie bags."],
       ["October 28 • Item and ability updates", "The hatchet became the logging axe and slag became dross. Equipment swaps and potions began taking effect immediately during combat. The patch revised several ability effects and investment counts."],
       ["October 21 and October 6 • Rebalance", "The patches changed recipes, XP rates, several spells, ability breakpoints and the experience curve. Use the original dates when comparing beta observations."]
     ],

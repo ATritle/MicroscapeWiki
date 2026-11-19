@@ -1,4 +1,4 @@
-import { guides } from "./guides.js?v=beta-audit";
+import { guides } from "./guides.js?v=launch-notes-20261119";
 import { tutorials } from "./tutorials.js?v=beta-audit";
 import { buildPetEntries } from "./pets.js?v=dwarven-cannon";
 import { itemIcons, itemIconGroups } from "./item-icons.js?v=beta-audit";
@@ -234,9 +234,15 @@ function renderHome() {
     element("section", {"aria-labelledby":"patch-heading"},
       element("h2", {id:"patch-heading"}, "From the patch notes"),
       element("div", {class:"updates"},
-        element("time", {datetime:"2026-11-12"}, "November 12, 2026"),
-        element("h3", {}, "The King’s Jubilee"),
-        element("p", {}, "The King of O’Rock held a party at the castle as the beta drew to a close."),
+        element("time", {datetime:"2026-11-19"}, "November 19, 2026"),
+        element("h3", {}, "Microscape launches!"),
+        element("p", {}, "Launch servers open at 9:00 PM GMT (3:00 PM CST) for a fresh start."),
+        element("ul", {},
+          element("li", {}, "Updated new-player experience, new pets and more uses for dungeon coins."),
+          element("li", {}, "No further character wipes planned; emergency rollbacks remain possible."),
+          element("li", {}, "The Bazaar restricts targeted trading. Listings can still use any price and quantity.")
+        ),
+        element("p", {}, entryLink("release-notes", "Launch summary and beta archive")),
         link("Read the official patch notes ↗", "https://microscape.cc/patch-notes/")
       )
     )
