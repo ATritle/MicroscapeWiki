@@ -2,7 +2,7 @@ import http from "node:http";
 import fs from "node:fs/promises";
 import path from "node:path";
 import {fileURLToPath} from "node:url";
-import {fetchPlayerSnapshot, PlayerLookupError} from "../workers/live-drops.mjs";
+import {fetchPlayerSnapshot, fetchPlayerSuggestions, PlayerLookupError} from "../workers/live-drops.mjs";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../docs");
 const port = Number(process.argv[2] || 8065);
 const types = {".html":"text/html", ".js":"text/javascript", ".css":"text/css",
@@ -23,10 +23,11 @@ http.createServer(async (request, response) => {
   const url = new URL(request.url, "http://127.0.0.1:" + port);
   response.setHeader("Cache-Control", "no-store");
   response.setHeader("X-Content-Type-Options", "nosniff");
-  if (url.pathname === "/api/player.json") {
+  if (["/api/player.json", "/api/player-search.json"].includes(url.pathname)) {
     response.setHeader("Content-Type", "application/json; charset=utf-8");
     try {
-      const snapshot = await fetchPlayerSnapshot(url.searchParams.get("username")?.trim(), {}, previewIdentity);
+      const snapshot = url.pathname === "/api/player-search.json" ? await fetchPlayerSuggestions(url.searchParams.get("query")?.trim())
+        : await fetchPlayerSnapshot(url.searchParams.get("username")?.trim(), {}, previewIdentity);
       response.end(JSON.stringify(snapshot));
     } catch (error) {
       response.statusCode = error instanceof PlayerLookupError ? error.status : 502;

@@ -22,6 +22,15 @@ validation, cache isolation, skill math, sprite layers and existing feed behavio
 The original sprite and activity metadata in `docs/player-reference.json` is built
 by `scripts/build-player-reference.mjs` from a captured public game build.
 
+Name suggestions use the public player index at `microwiki.mhmm.pl` through
+`/player-search.json`, with partial matches and a bounded close-spelling fallback.
+The index may omit new characters; exact username lookup still goes directly
+through Twitch and Microscape. The game's `currentWorldId` is an internal ID,
+not its displayed world number. The client resolves it through
+`meta.availableWorlds` on the authenticated game socket. No public directory was
+found, so world information is omitted from the page until joinable world
+numbers can be verified.
+
 ## Edit the wiki
 
 - Edit `docs/guides.js` for guides, patch coverage and playable walkthroughs. Each guide has a permanent ID, sections, related article IDs and sources.

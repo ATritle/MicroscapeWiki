@@ -4,6 +4,7 @@ const wikiOrigins = new Set([defaultWikiOrigin, "https://microscapewiki.com", "h
 const feedPath = "/drops.json";
 const twitchStatusPath = "/mzdunk.json";
 const playerPath = "/player.json";
+const playerSearchPath = "/player-search.json";
 const mzDunkChannel = "mzdunk";
 const twitchStreamsUrl = "https://api.twitch.tv/helix/streams?user_login=" + mzDunkChannel;
 const twitchUsersUrl = "https://api.twitch.tv/helix/users?login=" + mzDunkChannel;
@@ -23,6 +24,44 @@ export class PlayerLookupError extends Error {
 
 export function validPlayerUsername(username) {
   return typeof username === "string" && /^[a-zA-Z0-9_]{1,25}$/.test(username);
+}
+
+export function nameDistance(a, b) {
+  a = a.toLowerCase(); b = b.toLowerCase();
+  const rows = Array.from({length:a.length + 1}, () => Array(b.length + 1).fill(0));
+  for (let i = 0; i <= a.length; i++) rows[i][0] = i;
+  for (let j = 0; j <= b.length; j++) rows[0][j] = j;
+  for (let i = 1; i <= a.length; i++) for (let j = 1; j <= b.length; j++) {
+    rows[i][j] = Math.min(rows[i - 1][j] + 1, rows[i][j - 1] + 1, rows[i - 1][j - 1] + Number(a[i - 1] !== b[j - 1]));
+    if (i > 1 && j > 1 && a[i - 1] === b[j - 2] && a[i - 2] === b[j - 1]) rows[i][j] = Math.min(rows[i][j], rows[i - 2][j - 2] + 1);
+  }
+  return rows[a.length][b.length];
+}
+
+export async function fetchPlayerSuggestions(query) {
+  if (!validPlayerUsername(query) || query.length < 2) throw new PlayerLookupError("Type at least two letters, numbers or underscores.", 400);
+  query = query.toLowerCase();
+  async function search(fragment) {
+    const url = new URL("https://microwiki.mhmm.pl/api/leaderboard/search");
+    url.searchParams.set("q", fragment);
+    const response = await fetch(url, {signal:AbortSignal.timeout(4_000)});
+    if (!response.ok) throw new PlayerLookupError("Name suggestions are temporarily unavailable. You can still look up a full username.");
+    const body = await response.json();
+    if (!Array.isArray(body.results)) throw new PlayerLookupError("Name suggestions are temporarily unavailable.");
+    return body.results.slice(0, 50).map(player => player?.displayName).filter(validPlayerUsername);
+  }
+  let names = await search(query);
+  if (!names.length && query.length >= 4) {
+    const fragments = [...new Set([query.slice(0, 3), query.slice(Math.floor((query.length - 3) / 2), Math.floor((query.length - 3) / 2) + 3)])];
+    const extra = await Promise.allSettled(fragments.map(search));
+    if (extra.every(result => result.status === "rejected")) throw new PlayerLookupError("Name suggestions are temporarily unavailable. You can still look up a full username.");
+    names = extra.filter(result => result.status === "fulfilled").flatMap(result => result.value)
+      .filter(name => nameDistance(name, query) <= Math.min(4, Math.max(1, Math.floor(query.length / 3))));
+  }
+  const unique = [...new Map(names.map(name => [name.toLowerCase(), name])).values()];
+  const score = name => name.toLowerCase() === query ? -2 : name.toLowerCase().startsWith(query) ? -1 : nameDistance(name, query);
+  unique.sort((a, b) => score(a) - score(b) || a.localeCompare(b));
+  return {checkedAt:Date.now(), results:unique.slice(0, 8).map(name => ({name}))};
 }
 
 async function resolveTwitchPlayer(username, env) {
@@ -219,15 +258,17 @@ export default {
     const url = new URL(request.url);
     const twitchStatus = url.pathname === twitchStatusPath;
     const playerLookup = url.pathname === playerPath;
-    if (!twitchStatus && !playerLookup && url.pathname !== feedPath) return new Response("Not found", {status: 404});
+    const playerSearch = url.pathname === playerSearchPath;
+    if (!twitchStatus && !playerLookup && !playerSearch && url.pathname !== feedPath) return new Response("Not found", {status: 404});
     if (request.method !== "GET") return new Response("Method not allowed", {status: 405, headers: {Allow: "GET"}});
 
     const origin = request.headers.get("Origin");
     if (origin && !wikiOrigins.has(origin)) return new Response("Origin not allowed", {status: 403, headers: {Vary: "Origin"}});
     const headers = {"X-Content-Type-Options": "nosniff"};
     const username = url.searchParams.get("username")?.trim().toLowerCase();
-    if (playerLookup && !validPlayerUsername(username)) {
-      return Response.json({error:"Enter a username using up to 25 letters, numbers or underscores."}, {
+    const query = url.searchParams.get("query")?.trim().toLowerCase();
+    if ((playerLookup && !validPlayerUsername(username)) || (playerSearch && (!validPlayerUsername(query) || query.length < 2))) {
+      return Response.json({error:playerSearch ? "Type at least two letters, numbers or underscores." : "Enter a username using up to 25 letters, numbers or underscores."}, {
         status:400, headers:{...headers, "Cache-Control":"no-store", "Access-Control-Allow-Origin":origin || defaultWikiOrigin, Vary:"Origin"}
       });
     }
@@ -236,6 +277,7 @@ export default {
     const cache = globalThis.caches?.default;
     const cacheUrl = new URL(url.pathname, url.origin);
     if (playerLookup) cacheUrl.searchParams.set("username", username);
+    if (playerSearch) cacheUrl.searchParams.set("query", query);
     const key = new Request(cacheUrl);
     let response = await cache?.match(key).catch(() => undefined);
     if (!response) {
@@ -245,13 +287,13 @@ export default {
             status: 503, headers: {...headers, "Cache-Control": "no-store"}
           });
         } else {
-          const snapshot = playerLookup ? await fetchPlayerSnapshot(username, env)
+          const snapshot = playerSearch ? await fetchPlayerSuggestions(query) : playerLookup ? await fetchPlayerSnapshot(username, env)
             : twitchStatus ? await fetchTwitchStatus(env) : await fetchSnapshot(8_000);
           response = Response.json(snapshot, {headers: {...headers, "Cache-Control": playerLookup ? "public, max-age=30" : "public, max-age=60"}});
           if (cache) context.waitUntil(cache.put(key, response.clone()).catch(() => {}));
         }
       } catch (error) {
-        const service = playerLookup ? "Player lookup" : twitchStatus ? "Twitch status" : "Microscape streams";
+        const service = playerSearch ? "Name suggestions" : playerLookup ? "Player lookup" : twitchStatus ? "Twitch status" : "Microscape streams";
         console.error(`${service} request failed:`, error.message);
         response = Response.json({error: error instanceof PlayerLookupError ? error.message : `${service} temporarily unavailable.`}, {
           status: error instanceof PlayerLookupError ? error.status : 502, headers: {...headers, "Cache-Control": "no-store"}

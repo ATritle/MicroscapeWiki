@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import fs from "node:fs/promises";
-import worker, {fetchPlayerSnapshot, validPlayerUsername} from "../workers/live-drops.mjs";
+import worker, {fetchPlayerSnapshot, validPlayerUsername, nameDistance, fetchPlayerSuggestions} from "../workers/live-drops.mjs";
 
 globalThis.window = {location:{hostname:"127.0.0.1", origin:"http://127.0.0.1:8065"}};
 const {playerStats, xpThreshold, appearanceLayers, appearanceOffset, activityDetails} = await import("../docs/player-lookup.js");
@@ -35,6 +35,7 @@ assert(validPlayerUsername("xMrTwister23x"));
 assert(!validPlayerUsername("../test"));
 assert(!validPlayerUsername("name<script>"));
 assert(!validPlayerUsername("a".repeat(26)));
+assert.equal(nameDistance("MzDunk", "mzdnuk"), 1, "Adjacent spelling transpositions count as one edit");
 
 const actualFetch = globalThis.fetch;
 const cache = new Map(), pending = [], calls = [];
@@ -47,6 +48,14 @@ let failProfile = false;
 globalThis.fetch = async (input, init = {}) => {
   const url = new URL(input);
   calls.push(url.href);
+  if (url.hostname === "microwiki.mhmm.pl") {
+    const q = url.searchParams.get("q");
+    if (q === "down") return Response.json({}, {status:503});
+    return Response.json({results:["mzdun", "mzd", "mz"].includes(q) ? [
+      {displayName:"MzDunk", twitchId:"505"}, {displayName:"mzdunk", twitchId:"505"},
+      {displayName:"<script>", twitchId:"111"}
+    ] : []});
+  }
   if (url.hostname === "id.twitch.tv") return Response.json({access_token:"test-token", expires_in:3600});
   if (url.pathname === "/helix/users") {
     assert.equal(init.headers.Authorization, "Bearer test-token");
@@ -115,6 +124,20 @@ try {
   assert.equal(live.stream.channel, "mzdunk");
   const drops = await (await worker.fetch(new Request("https://worker.example/drops.json"), env, context)).json();
   assert.deepEqual(drops.events, []);
+  const searchRequest = query => new Request("https://worker.example/player-search.json?query=" + encodeURIComponent(query));
+  assert.equal((await worker.fetch(searchRequest("a"), {}, context)).status, 400);
+  const suggestions = await (await worker.fetch(searchRequest("mzdun"), {}, context)).json();
+  assert.deepEqual(suggestions.results, [{name:"mzdunk"}], "Return only safe unique names, without Twitch IDs");
+  await Promise.all(pending);
+  const beforeCachedSearch = calls.length;
+  await worker.fetch(searchRequest("MZDUN"), {}, context);
+  assert.equal(calls.length, beforeCachedSearch, "Normalize and cache suggestion queries separately");
+  const corrected = await fetchPlayerSuggestions("mzdnuk");
+  assert.deepEqual(corrected.results, [{name:"mzdunk"}], "Find close spellings when the full fragment has no match");
+  assert.deepEqual((await fetchPlayerSuggestions("zzzzzzzz" )).results, []);
+  await assert.rejects(fetchPlayerSuggestions("down"), /temporarily unavailable/);
+  assert([...cache.keys()].some(key => key.endsWith("/player-search.json?query=mzdun")));
+  console.log("Passed: partial-name suggestions, spelling corrections, safe unique results, per-query cache, and independent search errors.");
   console.log("Passed: skill math, original sprite layers and hand color, input validation, safe public profile fields, separate player caches, case handling, missing profiles, upstream errors, CORS, and existing live feeds.");
 } finally {
   globalThis.fetch = actualFetch;

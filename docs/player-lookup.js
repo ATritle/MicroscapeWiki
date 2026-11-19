@@ -1,6 +1,7 @@
 const apiUrl = ["localhost", "127.0.0.1"].includes(window.location.hostname)
   ? new URL("/api/player.json", window.location.origin)
   : new URL("https://microscape-wiki-api.pages.dev/player.json");
+const suggestionUrl = new URL("player-search.json", apiUrl);
 const format = new Intl.NumberFormat("en");
 const displayName = text => String(text || "").replace(/[-_]/g, " ").replace(/([a-z])([A-Z])/g, "$1 $2").replace(/^./, value => value.toUpperCase());
 let referenceRequest;
@@ -101,17 +102,20 @@ async function paintPlayer(canvas, equipment, data) {
 
 export function renderPlayerLookup({main, element:e, crumbs, footer, byId, entryUrl, renderSpriteFrame, initialName = ""}) {
   let controller, disposed = false, requestNumber = 0, currentName = "", lastSnapshot;
+  let suggestionController, suggestionTimer, suggestionNumber = 0;
   const heading = e("h1", {id:"page-title"}, "Player lookup");
   const status = e("p", {class:"player-lookup-status", role:"status", "aria-live":"polite"});
   const input = e("input", {id:"player-username", name:"username", type:"text", placeholder:"e.g. User12345",
-    autocomplete:"off", autocapitalize:"none", spellcheck:"false", maxlength:"25", required:""});
+    autocomplete:"off", autocapitalize:"none", spellcheck:"false", maxlength:"25", required:"", "aria-describedby":"player-username-help"});
   input.value = initialName;
   const submit = e("button", {class:"button primary", type:"submit"}, "Look up player", e("span", {"aria-hidden":"true"}, "→"));
   const form = e("form", {class:"player-lookup-form"},
     e("label", {for:"player-username"}, "In-game / Twitch username"),
     e("div", {class:"player-search-row"}, input, submit),
-    e("small", {}, "Enter the full username. No sign-in needed.")
+    e("small", {id:"player-username-help"}, "Type part of a name or choose a match. No sign-in needed.")
   );
+  const suggestions = e("div", {class:"player-suggestions", hidden:"", role:"region", "aria-label":"Player name suggestions"});
+  form.append(suggestions);
   const results = e("div", {class:"player-lookup-results", "aria-busy":"false"});
   const empty = e("div", {class:"player-lookup-empty"},
     e("span", {class:"player-empty-icon", "aria-hidden":"true"}, "⌕"),
@@ -124,6 +128,54 @@ export function renderPlayerLookup({main, element:e, crumbs, footer, byId, entry
   main.append(e("article", {class:"player-lookup-page"}, crumbs(null, "Player lookup"), heading,
     e("p", {class:"intro"}, "An adventurer’s skills, gear and journey. Look up a player to see their public game profile."),
     form, status, results), footer());
+
+  function clearSuggestions() {
+    clearTimeout(suggestionTimer);
+    suggestionController?.abort();
+    suggestionNumber++;
+    suggestions.hidden = true;
+    suggestions.replaceChildren();
+  }
+  async function suggest(name) {
+    const query = name.trim();
+    clearSuggestions();
+    if (!/^[a-zA-Z0-9_]{2,25}$/.test(query)) return;
+    const version = suggestionNumber;
+    suggestionController = new AbortController();
+    suggestions.hidden = false;
+    suggestions.replaceChildren(e("p", {role:"status"}, "Finding matching players…"));
+    try {
+      const url = new URL(suggestionUrl);
+      url.searchParams.set("query", query);
+      const response = await fetch(url, {credentials:"omit", signal:AbortSignal.any([suggestionController.signal, AbortSignal.timeout(10_000)])});
+      const body = await response.json();
+      if (disposed || version !== suggestionNumber) return;
+      if (!response.ok || !Array.isArray(body.results)) throw Error("Name suggestions are temporarily unavailable. You can still look up a full username.");
+      const names = body.results.slice(0, 8).map(player => player?.name).filter(name => /^[a-zA-Z0-9_]{1,25}$/.test(name));
+      const buttons = names.map(name => {
+        const button = e("button", {type:"button", class:"player-suggestion"}, e("span", {}, name), e("span", {"aria-hidden":"true"}, "→"));
+        button.addEventListener("click", () => {input.value = name; lookup(name);});
+        return button;
+      });
+      buttons.forEach((button, index) => button.addEventListener("keydown", event => {
+        if (event.key === "ArrowDown" || event.key === "ArrowUp") {
+          event.preventDefault(); buttons[(index + (event.key === "ArrowDown" ? 1 : buttons.length - 1)) % buttons.length].focus();
+        } else if (event.key === "Escape") {event.preventDefault(); clearSuggestions(); input.focus();}
+      }));
+      suggestions.replaceChildren(e("p", {role:"status"}, names.length ? "Matching players · select a name" : "No matching names found. Try another spelling or enter the full username."), ...buttons);
+    } catch (error) {
+      if (disposed || version !== suggestionNumber) return;
+      suggestions.replaceChildren(e("p", {role:"status"}, "Name suggestions are temporarily unavailable. You can still look up a full username."));
+    }
+  }
+  input.addEventListener("input", () => {
+    clearSuggestions();
+    suggestionTimer = setTimeout(() => suggest(input.value), 350);
+  });
+  input.addEventListener("keydown", event => {
+    if (event.key === "Escape") clearSuggestions();
+    if (event.key === "ArrowDown" && suggestions.querySelector("button")) {event.preventDefault(); suggestions.querySelector("button").focus();}
+  });
 
   function wikiLink(label, id, attributes = {}) {
     return id && byId.has(id) ? e("a", {href:entryUrl(id), ...attributes}, label) : e("span", attributes, label);
@@ -162,16 +214,11 @@ export function renderPlayerLookup({main, element:e, crumbs, footer, byId, entry
     const activity = player.activity;
     const activityInfo = activityDetails(activity, data);
     const skill = data.skills.find(skill => skill.id === activity?.skill);
-    const where = e("section", {class:"player-whereabouts", "aria-label":"Location, world and activity"},
+    const where = e("section", {class:"player-whereabouts", "aria-label":"Location and activity"},
       e("div", {class:"player-location-card"},
         ...(location?.map ? [e("img", {src:location.map.src, alt:"", class:"player-location-map", width:150, height:90, loading:"lazy"})] : []),
         e("div", {}, e("span", {class:"player-eyebrow"}, "CURRENT LOCATION"),
           wikiLink(location?.name || displayName(player.location) || "Not reported", location?.wikiId, {class:"player-place-name"}))),
-      e("div", {class:"player-world-card"},
-        e("span", {class:"player-world-icon", "aria-hidden":"true"}, "◎"),
-        e("div", {}, e("span", {class:"player-eyebrow"}, "REPORTED WORLD"),
-          e("strong", {class:"player-place-name"}, player.worldId || "Not reported"),
-          e("small", {}, "Game world ID"))),
       e("div", {class:"player-activity-card"},
         icon(skill?.icon, "player-activity-icon"),
         e("div", {}, e("span", {class:"player-eyebrow"}, "CURRENT ACTIVITY"),
@@ -234,13 +281,14 @@ export function renderPlayerLookup({main, element:e, crumbs, footer, byId, entry
     );
     results.replaceChildren(hero, where, e("div", {class:"player-detail-columns"}, skills, gear),
       ...(Object.keys(bonuses).length ? [bonusPanel] : []), stamp,
-      e("p", {class:"player-public-note"}, "Public game profile. A character’s activity can continue while the player is offline. World IDs may differ from the numbered world names shown in-game."));
+      e("p", {class:"player-public-note"}, "Public game profile. A character’s activity can continue while the player is offline."));
     paintPlayer(canvas, player.equipment, data).then(complete => {
       if (!disposed && !complete) {artNote.hidden = false; artNote.textContent = "Some appearance artwork is unavailable for this build.";}
     }).catch(() => {if (!disposed) {artNote.hidden = false; artNote.textContent = "Appearance artwork could not be loaded.";}});
   }
   async function lookup(name, refresh = false) {
     const username = name.trim();
+    if (!refresh) clearSuggestions();
     if (!/^[a-zA-Z0-9_]{1,25}$/.test(username)) {
       status.textContent = "Enter a username using up to 25 letters, numbers or underscores.";
       status.dataset.state = "error";
@@ -289,6 +337,7 @@ export function renderPlayerLookup({main, element:e, crumbs, footer, byId, entry
         e("h2", {}, error.status === 404 ? "Player not found" : "Couldn’t load this profile"),
         e("p", {}, error.status === 404 ? "Check the full username and try again. The player needs a public Microscape profile."
           : "Try again in a moment. A connection problem does not mean the player is offline.")));
+      if (!refresh && error.status === 404) suggest(username);
     } finally {
       if (!disposed && request === requestNumber) {
         submit.disabled = false;
@@ -305,6 +354,7 @@ export function renderPlayerLookup({main, element:e, crumbs, footer, byId, entry
   if (initialName) lookup(initialName);
   return () => {
     disposed = true;
+    clearSuggestions();
     controller?.abort();
     clearInterval(timer);
     document.removeEventListener("visibilitychange", resume);
