@@ -1,5 +1,6 @@
 import {communityApiBase} from "./api-config.js?v=community-api-20261119";
-import { guides } from "./guides.js?v=community-api-20261119";
+import { guides } from "./guides.js?v=bazaar-20261120";
+import {renderBazaar} from "./bazaar.js?v=bazaar-20261120";
 import { tutorials } from "./tutorials.js?v=release-20261119";
 import { buildPetEntries } from "./pets.js?v=release-20261119";
 import { itemIcons, itemIconGroups } from "./item-icons.js?v=release-20261119";
@@ -14,6 +15,7 @@ const groups = {
   locations: { title: "Locations", icon: "⌖", blurb: "Explore in-game maps, travel routes, enemies, shops and skilling spots." },
   abilities: { title: "Abilities", icon: "ϟ", blurb: "Equipment requirements and limit break costs." },
   pets: { title: "Pets", icon: "✿", blurb: "Companions, pet maps, eligible tasks and drop odds." },
+  bazaar: { title: "Bazaar", icon: "¤", blurb: "Live buy/sell orders, market prices and the trading guide." },
   reference: { title: "Game mechanics", icon: "◈", blurb: "Pet maps, titles, healing and equipment bonuses." }
 };
 
@@ -37,7 +39,7 @@ const mzDunkProfile = {
   avatarUrl:"https://static-cdn.jtvnw.net/jtv_user_pictures/dee8469b-4733-492c-a17a-e2a4a1100630-profile_image-300x300.png"
 };
 const mzDunkStatusMaxAge = 10 * 60_000;
-const topicOrder = ["skills", "items", "foes", "locations", "abilities", "pets", "reference"];
+const topicOrder = ["skills", "items", "foes", "locations", "abilities", "pets", "bazaar", "reference"];
 const featured = ["release-changes", "getting-started", "energy", "dungeons", "bazaar", "activity-queue"];
 const displayCount = 36;
 let referenceLoadFailed = false;
@@ -50,6 +52,7 @@ let liveDropsFailed = false;
 let liveDropsExpiry;
 let renderDropResults;
 let disposePlayerLookup;
+let disposeBazaar;
 
 const entries = [...guides, ...tutorials];
 const byId = new Map(entries.map(entry => [entry.id, entry]));
@@ -67,7 +70,7 @@ function link(label, href, className) {
   return element("a", className ? {href, class:className} : {href}, label);
 }
 const glyph = (text, className = "glyph") => element("span", {class:className, "aria-hidden":"true"}, text);
-const categoryUrl = category => "#/browse/" + category;
+const categoryUrl = category => category === "bazaar" ? "#/bazaar" : "#/browse/" + category;
 const entryUrl = id => "#/entry/" + id;
 const entryLink = (id, label, className) => link(label || byId.get(id)?.title || id, entryUrl(id), className);
 const normalize = value => value.toLowerCase().normalize("NFD").replace(/\p{Diacritic}/gu, "").replace(/['’]/g, "").replace(/[^a-z0-9]+/g, " ").trim();
@@ -786,6 +789,7 @@ function renderEntry(entry, category) {
     ));
   }
   if (entry.indexOnly) article.append(element("p", {class:"intro"}, "Listed in the community catalog. Detailed values are still needed."));
+  if (entry.id === "bazaar") article.append(link("Search live Bazaar orders →", "#/bazaar", "button"));
   if (entry.calculator) article.append(calculator());
   if (!art && !entry.mapImage) article.append(...facts);
   const tutorialSprites = tutorialSpriteFoes(entry).flatMap(foe => foe.sprites.map(sprite => ({
@@ -856,18 +860,23 @@ function render({focus = false} = {}) {
   const home = !view;
   const liveDrops = view === "live-drops";
   const playerLookup = view === "player-lookup";
+  const bazaar = view === "bazaar" || (view === "browse" && id === "bazaar");
   disposePlayerLookup?.();
   disposePlayerLookup = null;
+  disposeBazaar?.();
+  disposeBazaar = null;
   renderDropResults = null;
   main.replaceChildren();
   menu.setAttribute("aria-expanded","false");
-  const currentCategory = entry?.id === "pets" ? "pets" : entry?.category || category;
+  const currentCategory = bazaar || entry?.id === "bazaar" ? "bazaar" : entry?.id === "pets" ? "pets" : entry?.category || category;
   renderNav(currentCategory, entry?.id, home, liveDrops, playerLookup);
   searchInput.value = view === "search" ? query : "";
-  const title = entry?.title || groups[category]?.title || (liveDrops ? "Live Twitch drops" : playerLookup ? "Player lookup" : "");
+  const title = entry?.title || groups[category]?.title || (bazaar ? "Bazaar" : liveDrops ? "Live Twitch drops" : playerLookup ? "Player lookup" : "");
   document.title = title ? title + " · Microscape Wiki" : "Microscape Wiki";
   if (home) renderHome();
   else if (liveDrops) renderLiveDrops();
+  else if (bazaar) disposeBazaar = renderBazaar({main, element, crumbs, footer, byId, guide:byId.get("bazaar"), entryLink,
+    initialItem:new URLSearchParams(params).get("item") || ""});
   else if (playerLookup) disposePlayerLookup = renderPlayerLookup({
     main, element, crumbs, footer, byId, entryUrl, renderSpriteFrame,
     initialName:new URLSearchParams(params).get("name") || ""

@@ -1,0 +1,29 @@
+{
+  "checkedAt": "2026-11-20T06:55:43.242Z",
+  "officialGame": "https://microscape.cc/play/",
+  "clientUrl": "https://microscape.cc/play/assets/index-BsSHHy-E.js",
+  "clientSha256": "228bbcdac7deb74e394e283dc124611450abc4dd7f9d7ba98fb141846f649878",
+  "scope": "Factual values from public client and unauthenticated read-only market endpoints. No server code, account cookies, private orders or trade mutations.",
+  "mechanics": {
+    "unlockAchievement": "The Journey Begins",
+    "unlockAnySkillLevel": 10,
+    "unlockItem": "bazaarInvite",
+    "baseOrderSlots": 6,
+    "membershipExtraSlots": 5,
+    "maxBazaarPermits": 4,
+    "extraSlotsPerPermit": 1,
+    "permitAudienceFavorCost": 15,
+    "sellTaxPercentShown": 5,
+    "newOrderMaximumCancellationWarningMinutes": 30,
+    "openOrdersPerItemPerSide": 1,
+    "matchingListingCreatesCounterOrder": true,
+    "privateSettlementAlgorithmKnown": false
+  },
+  "publicProcedures": [
+    "bazaar.getAllItemSummaries",
+    "bazaar.getItemMarketSummary",
+    "bazaar.getItemOrders"
+  ],
+  "wikiRefreshSeconds": 30,
+  "wikiApiCacheSeconds": 30
+}

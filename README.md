@@ -80,6 +80,27 @@ Microscape can return a server error for an exact username without a public char
 
 Use the neutral repository-local commit identity `Microscape Wiki Community <wiki-community@users.noreply.github.com>` for community updates. Public browser requests and page links should use the community API and community channels rather than personal hosting identifiers.
 
+## Bazaar
+
+The Compendium's `#/bazaar` page combines the trading guide with a searchable,
+read-only public market. `docs/bazaar.js` filters and sorts item summaries, then
+loads both order books and recent trades for a selected item. Item names and
+icons use the wiki catalog; item detail links preserve established wiki routes.
+The existing `#/entry/bazaar` guide remains available and links to the market.
+Edit its explanation in `docs/guides.js`. Verified client constants and source
+hashes are preserved in `docs/assets/game-data/bazaar-2026-11-20.json`.
+
+The neutral gateway's `/bazaar.json` endpoint reads the official public
+`bazaar.getAllItemSummaries` procedure. Add `?item=ITEM_ID` to read
+`bazaar.getItemMarketSummary` and each side of `bazaar.getItemOrders`.
+Only named market fields are returned. No account cookies, private order
+history, Twitch tokens or trade mutations are used. The gateway caches each
+public response for 30 seconds; the page refreshes every 30 seconds while
+visible and cancels its polling and pending requests when readers leave.
+Errors retain a clearly labeled last successful snapshot instead of reporting
+an empty market. Run `node scripts/check-bazaar.mjs` to verify this API.
+The existing local preview command also serves the public Bazaar endpoint.
+
 Run `./scripts/register-drops-backup.ps1` in PowerShell 7 to register the optional **Microscape Wiki Live Drops Backup** task. Pass `-Replace` to update the existing task. It runs every 15 minutes while its user is signed in and the PC is awake, and publishes to `live-data` using the existing GitHub sign-in when the snapshot is at least 10 minutes old. Check `last-run.log` in the task’s state directory for the latest result. To stop the backup, disable the named task in Task Scheduler.
 
 ## Credits

@@ -249,6 +249,27 @@ tr:last-child td { border-bottom: 0; }
 .sources { margin-top: 30px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
 .sources h2 { font-size: 21px; }
 
+.bazaar-page { max-width: 1100px; }
+.bazaar-actions, .bazaar-controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.bazaar-controls { margin: 16px 0 10px; }
+.bazaar-controls input, .bazaar-controls select { min-width: 0; border: 1px solid #425a6a; border-radius: 8px; background: var(--bg); color: var(--text); padding: 10px 12px; height: 43px; font: inherit; }
+.bazaar-controls input { flex: 1 1 230px; }
+.bazaar-controls select { flex: 0 1 auto; max-width: 100%; }
+.bazaar-status, .bazaar-help { color: var(--muted); font-size: 13px; }
+.bazaar-warning { color: #f2c183; }
+.bazaar-item-button { display: flex; align-items: center; gap: 10px; padding: 0; border: 0; background: transparent; color: var(--mint); font: inherit; text-align: left; cursor: pointer; min-width: 145px; }
+.bazaar-item-button:hover, .bazaar-item-button[aria-pressed="true"] { text-decoration: underline; }
+.bazaar-item-button img, .bazaar-item-heading > img { width: 32px; height: 32px; object-fit: contain; image-rendering: pixelated; flex-shrink: 0; }
+.bazaar-more { margin-top: 12px; }
+.bazaar-detail { margin: 28px 0; padding: 20px; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; scroll-margin-top: 100px; }
+.bazaar-item-heading { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.bazaar-item-heading h2 { margin: 0; }
+.bazaar-item-heading .button { margin-left: auto; font-size: 13px; }
+.bazaar-guide { margin-top: 32px; scroll-margin-top: 100px; }
+.bazaar-guide details { border-bottom: 1px solid var(--line); padding: 14px 0; }
+.bazaar-guide summary { cursor: pointer; color: var(--mint); font-weight: 700; }
+.bazaar-guide details p { max-width: 80ch; }
+
 .calculator { margin: 24px 0; padding: 20px; border: 1px solid var(--line); border-radius: 10px; background: var(--panel); }
 .calc-inputs { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 12px; }
 .calc-inputs label { display: grid; gap: 5px; font-size: 13px; color: var(--muted); }
