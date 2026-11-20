@@ -1,5 +1,5 @@
 import {communityApiBase} from "./api-config.js?v=community-api-20261119";
-import {readActivityCatalog, renderActivityComparison} from "./activity-comparison.js?v=activity-order-20261120";
+import {readActivityCatalog, renderActivityComparison} from "./activity-comparison.js?v=activity-format-20261120";
 const apiUrl = ["localhost", "127.0.0.1"].includes(window.location.hostname)
   ? new URL("/api/player.json", window.location.origin)
   : new URL("player.json", communityApiBase);

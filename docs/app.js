@@ -5,7 +5,7 @@ import {renderBazaarWalkthrough} from "./bazaar-walkthrough.js?v=bazaar-visual-2
 import { tutorials } from "./tutorials.js?v=release-20261119";
 import { buildPetEntries } from "./pets.js?v=release-20261119";
 import { itemIcons, itemIconGroups } from "./item-icons.js?v=release-20261119";
-import { renderPlayerLookup } from "./player-lookup.js?v=activity-order-20261120";
+import { renderPlayerLookup } from "./player-lookup.js?v=activity-format-20261120";
 
 const groups = {
   guides: { title: "Guides", icon: "▤", blurb: "Start here, earn Energy, trade and plan dungeon runs." },
