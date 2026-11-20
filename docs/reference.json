@@ -60267,7 +60267,7 @@
     "sections": [
       [
         "Skill levels and experience",
-        "Each skill has its own XP total. The client derives a base level from that total using the shared XP curve. Skill pages list level-gated activities and equipment, and the XP calculator can estimate progress between levels. Ability levels and permanent unlocks are separate from a player’s combat level."
+        "Each skill has its own XP total. The client derives a base level from that total using the shared XP curve. Skill pages list level-gated activities and equipment. Activity Comparison uses a player’s reported levels and gear to compare training options. Ability levels and permanent unlocks are separate from a player’s combat level."
       ],
       [
         "Player combat-level formula",

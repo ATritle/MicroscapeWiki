@@ -242,7 +242,7 @@ for (const [id, entity, summary] of [
 
 const level = named("level");
 level.summary = "Skill levels come from XP; player combat level combines base offensive levels with Defense.";
-section(level, "Skill levels and experience", "Each skill has its own XP total. The client derives a base level from that total using the shared XP curve. Skill pages list level-gated activities and equipment, and the XP calculator can estimate progress between levels. Ability levels and permanent unlocks are separate from a player’s combat level.");
+section(level, "Skill levels and experience", "Each skill has its own XP total. The client derives a base level from that total using the shared XP curve. Skill pages list level-gated activities and equipment. Activity Comparison uses a player’s reported levels and gear to compare training options. Ability levels and permanent unlocks are separate from a player’s combat level.");
 section(level, "Player combat-level formula", "Combat level = floor((max((Attack + Strength) / 2, Evil Magic, Ranged) + Defense) / 2). Use base skill levels. Temporary boosts and equipment bonuses are not added by this formula. The strongest offensive route is combined with Defense; raising an unused weaker offensive route may not immediately increase combat level.");
 section(level, "Foe combat levels", "Foes use a separate formula: max(1, floor((((Attack + Strength) / 2) + Defense) / 2)). Their HP, Evil Magic and Ranged stats are still relevant in combat but are not inputs to this displayed foe-level calculation.");
 related(level, "defense", "experience", "combat");
