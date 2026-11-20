@@ -16,7 +16,8 @@ assert.equal(mouse.enemyMaxHit, 0);
 assert.equal(chicken.enemyMaxHit, 1);
 near(mouse.cycleSeconds, 6 + 12 / .65);
 near(chicken.damagePerHour / mouse.damagePerHour, 1.089041095890411);
-assert.equal(mouse.xpPerHour, null, "Do not invent an XP multiplier");
+near(mouse.xpPerHour, mouse.damagePerHour * 4);
+near(chicken.xpPerHour, chicken.damagePerHour * 4);
 
 const noPrep = compareTraining({attack:4,strength:1,defense:1}, bonuses, {prepSeconds:0});
 near(noPrep[0].damagePerHour, noPrep[1].damagePerHour);
@@ -37,6 +38,6 @@ near(meleeHitChance(1, -999, 999), .1);
 // Attack bonuses are applied AFTER the soft floor, not folded into base level.
 near(meleeHitChance(1, 20, 100), .3);
 for (const prepSeconds of [-1, NaN, Infinity, 3601]) assert.throws(() => compareTraining({}, {}, {prepSeconds}));
-for (const xpPerDamage of [-1, 0, NaN, Infinity]) assert.throws(() => compareTraining({}, {}, {xpPerDamage}));
+for (const xpPerDamage of [null, -1, 0, NaN, Infinity]) assert.throws(() => compareTraining({}, {}, {xpPerDamage}));
 assert.equal(compareTraining({}, {})[0].attackSeconds, 8, "Client's unarmed fallback is four 2-second ticks");
-console.log("Passed: client accuracy and damage caps, negative gear bonuses, exact expected swings including overkill/zero rolls/misses, timing sensitivity, optional XP conversion, and invalid inputs.");
+console.log("Passed: client accuracy and damage caps, negative gear bonuses, exact expected swings including overkill/zero rolls/misses, timing sensitivity, automatic XP conversion, and invalid inputs.");

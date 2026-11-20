@@ -1,0 +1,13 @@
+{
+  "checkedOn": "2026-11-20",
+  "source": "https://microscape.cc/play/",
+  "evidenceType": "Direct read-only observation of in-game combat rewards",
+  "observedSkill": "attack",
+  "foe": "chicken",
+  "baseStrengthLevel": 1,
+  "equipmentStrengthBonus": 2,
+  "calculatedMaximumHit": 1,
+  "repeatedDisplayedXpReward": 4,
+  "modeledBaseXpPerDamage": 4,
+  "scope": "Observed for one-damage Attack hits. Used as an estimated baseline for the other combat skills; those conversions have not been independently measured. Learned abilities, XP modifiers and spell-specific extra XP are excluded. This number is not extracted from public server source."
+}

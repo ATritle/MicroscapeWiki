@@ -1,5 +1,5 @@
 import {communityApiBase} from "./api-config.js?v=community-api-20261119";
-import {readActivityCatalog, renderActivityComparison} from "./activity-comparison.js?v=activity-format-20261120";
+import {readActivityCatalog, renderActivityComparison} from "./activity-comparison.js?v=activity-xp-20261120";
 const apiUrl = ["localhost", "127.0.0.1"].includes(window.location.hostname)
   ? new URL("/api/player.json", window.location.origin)
   : new URL("player.json", communityApiBase);
@@ -108,7 +108,7 @@ async function paintPlayer(canvas, equipment, data) {
 }
 
 export function renderPlayerLookup({main, element:e, crumbs, footer, byId, entryUrl, renderSpriteFrame, initialName = "", comparisonOnly = false}) {
-  const trainingPreferences = {prepSeconds:6, includeZero:false, xpPerDamage:null};
+  const trainingPreferences = {prepSeconds:6, includeZero:false};
   let controller, disposed = false, requestNumber = 0, currentName = "", lastSnapshot;
   let suggestionController, suggestionTimer, suggestionNumber = 0;
   const pageName = comparisonOnly ? "Activity comparison" : "Player lookup";

@@ -1,7 +1,9 @@
 // Public client checked 2026-11-20: index-BsSHHy-E.js (SX, AX, jX).
 // Encounter stats also match assets/game-data/release-2026-11-19.json.
-// Damage rolls, XP awards and encounter timing run on the server. Rates below
-// are an explicit model, not additional extracted server mechanics.
+// Damage rolls and encounter timing run on the server. Rates below are a model.
+// One-damage Attack hits awarding 4 XP were observed in game on 2026-11-20.
+// Other combat styles use this same baseline pending independent observation.
+export const BASE_COMBAT_XP_PER_DAMAGE = 4;
 export const trainingFoes = [
   {id:"mouse", name:"Mouse", hp:2, attack:1, strength:-4, defense:1},
   {id:"chicken", name:"Chicken", hp:3, attack:1, strength:5, defense:1}
@@ -39,12 +41,12 @@ export function expectedSwings(hp, maxHit, hitChance, includeZero = false) {
   }
   return expected[hp];
 }
-export function compareTraining(levels, bonuses, {prepSeconds = 6, includeZero = false, xpPerDamage = null} = {}) {
+export function compareTraining(levels, bonuses, {prepSeconds = 6, includeZero = false, xpPerDamage = BASE_COMBAT_XP_PER_DAMAGE} = {}) {
   return compareCombat(levels, bonuses, trainingFoes, {prepSeconds, includeZero, xpPerDamage});
 }
-export function compareCombat(levels, bonuses, foes, {prepSeconds = 6, includeZero = false, xpPerDamage = null, skill = "attack", spellMaxHit = null, attackSeconds:interval = null} = {}) {
+export function compareCombat(levels, bonuses, foes, {prepSeconds = 6, includeZero = false, xpPerDamage = BASE_COMBAT_XP_PER_DAMAGE, skill = "attack", spellMaxHit = null, attackSeconds:interval = null} = {}) {
   if (!Number.isFinite(prepSeconds) || prepSeconds < 0 || prepSeconds > 3600) throw Error("Use a delay from 0 to 3,600 seconds.");
-  if (xpPerDamage !== null && (!Number.isFinite(xpPerDamage) || xpPerDamage <= 0 || xpPerDamage > 1e6)) throw Error("Enter a positive measured XP value, or leave it blank.");
+  if (!Number.isFinite(xpPerDamage) || xpPerDamage <= 0 || xpPerDamage > 1e6) throw Error("The combat XP baseline must be a positive finite value.");
   if (interval !== null && (!Number.isFinite(interval) || interval <= 0 || interval > 3600)) throw Error("Use an attack interval greater than zero and no more than 3,600 seconds.");
   const attackSeconds = interval ?? Math.max(1, bonuses.attackCooldown ?? 4) * 2;
   const style = skill === "ranged" ? "ranged" : skill === "evilMagic" ? "magic" : "melee";
@@ -58,7 +60,7 @@ export function compareCombat(levels, bonuses, foes, {prepSeconds = 6, includeZe
     const cycleSeconds = prepSeconds + swings * attackSeconds;
     const damagePerHour = Number.isFinite(cycleSeconds) ? 3600 * foe.hp / cycleSeconds : 0;
     return {...foe, hitChance, dodgeChance, maxHit, enemyMaxHit:meleeMaxHit(foe.strength),
-      attackSeconds, swings, cycleSeconds, damagePerHour, xpPerHour:xpPerDamage === null ? null : damagePerHour * xpPerDamage};
+      attackSeconds, swings, cycleSeconds, damagePerHour, xpPerHour:damagePerHour * xpPerDamage};
   });
 }
 
