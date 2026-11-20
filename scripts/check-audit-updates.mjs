@@ -48,7 +48,16 @@ for(const [id,pet]of Object.entries(data.pets)){
   const p=page('pets',id);assert(p,'Pet '+id);assert(p.sprites?.[0]?.crop.every(Number.isFinite),'Full sprite '+id);
   const tasks=Object.values(data.activities).filter(a=>!a.softDeleted&&a.inventoryChanges?.[id]>0);
   assert.equal(table(p,'Drop odds by eligible task')?.rows.length||0,tasks.length,'Pet tasks '+id);
-  if(pet.requiredItemToObtain){const a=Object.values(data.activities).find(a=>a.inventoryChanges?.[pet.requiredItemToObtain]>0);assert.equal(facts(p).get('Cost'),-a.inventoryChanges.audienceFavor+' Audience Favor');}
+  if(pet.requiredItemToObtain){
+    const a=Object.values(data.activities).find(a=>!a.softDeleted&&a.inventoryChanges?.[pet.requiredItemToObtain]>0);
+    assert.equal(facts(p).get('Cost'),-a.inventoryChanges.audienceFavor+' Audience Favor');
+    assert.equal(facts(p).get('Vendor map option'),a.name,'Exact vendor menu option '+id);
+    assert(p.sections.some(([,text])=>text.includes('“'+a.name+'”')),'Pet exchange directions '+id);
+    assert.equal(facts(page('items',pet.requiredItemToObtain)).get('Vendor map option'),a.name,'Map item exchange '+id);
+    const overview=table(byId.get('pets'),'Release companions');
+    assert.equal(overview.rows.find(row=>row[0]===p.title)[overview.columns.indexOf('Vendor map option')],a.name,'Pet overview exchange '+id);
+    for(const t of p.tables||[])if(t.columns.includes('Required item'))for(const row of t.rows)assert.equal(row[t.columns.indexOf('Vendor map option')],a.name,'Required-map exchange '+id);
+  }
 }
 for(const category of ['skills','abilities','locations'])for(const id of Object.keys(data[category]))assert(page(category,id),'Coverage '+category+' '+id);
 assert.equal(Object.keys(data.pets).length,36);

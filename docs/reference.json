@@ -72525,6 +72525,10 @@
         "Pet Map: Beatrix"
       ],
       [
+        "Vendor map option",
+        "Mork's danger meadows map"
+      ],
+      [
         "Slot",
         "Not Equipped"
       ],
@@ -72542,6 +72546,10 @@
       ]
     ],
     "sections": [
+      [
+        "How to obtain this map",
+        "Visit Mork at Fellroot Swamp Hut and select “Mork's danger meadows map” to exchange 10 Audience Favor for Pet Map: Beatrix."
+      ],
       [
         "Uses",
         "Carry this map to roll for Beatrix on eligible activities. The map is consumed when you obtain the pet."
@@ -72577,7 +72585,8 @@
     "related": [
       "pet-beatrix",
       "piety",
-      "item-audience-favor"
+      "item-audience-favor",
+      "fellroot-swamp-hut"
     ],
     "sources": [
       [
@@ -72622,6 +72631,10 @@
         "Pet Map: Biscuit"
       ],
       [
+        "Vendor map option",
+        "Otis's kitchen map"
+      ],
+      [
         "Slot",
         "Not Equipped"
       ],
@@ -72639,6 +72652,10 @@
       ]
     ],
     "sections": [
+      [
+        "How to obtain this map",
+        "Visit Otis at Fellroot Swamp Hut and select “Otis's kitchen map” to exchange 15 Audience Favor for Pet Map: Biscuit."
+      ],
       [
         "Uses",
         "Carry this map to roll for Biscuit on eligible activities. The map is consumed when you obtain the pet."
@@ -72674,7 +72691,8 @@
     "related": [
       "pet-biscuit",
       "piety",
-      "item-audience-favor"
+      "item-audience-favor",
+      "fellroot-swamp-hut"
     ],
     "sources": [
       [
@@ -72719,6 +72737,10 @@
         "Pet Map: Bog"
       ],
       [
+        "Vendor map option",
+        "Mork's swamp map"
+      ],
+      [
         "Slot",
         "Not Equipped"
       ],
@@ -72736,6 +72758,10 @@
       ]
     ],
     "sections": [
+      [
+        "How to obtain this map",
+        "Visit Mork at Fellroot Swamp Hut and select “Mork's swamp map” to exchange 20 Audience Favor for Pet Map: Bog."
+      ],
       [
         "Uses",
         "Carry this map to roll for Bog on eligible activities. The map is consumed when you obtain the pet."
@@ -72771,7 +72797,8 @@
     "related": [
       "pet-bog",
       "piety",
-      "item-audience-favor"
+      "item-audience-favor",
+      "fellroot-swamp-hut"
     ],
     "sources": [
       [
@@ -72816,6 +72843,10 @@
         "Pet Map: Cinder"
       ],
       [
+        "Vendor map option",
+        "Otis's fireside map"
+      ],
+      [
         "Slot",
         "Not Equipped"
       ],
@@ -72833,6 +72864,10 @@
       ]
     ],
     "sections": [
+      [
+        "How to obtain this map",
+        "Visit Otis at Fellroot Swamp Hut and select “Otis's fireside map” to exchange 15 Audience Favor for Pet Map: Cinder."
+      ],
       [
         "Uses",
         "Carry this map to roll for Cinder on eligible activities. The map is consumed when you obtain the pet."
@@ -72868,7 +72903,8 @@
     "related": [
       "pet-cinder",
       "piety",
-      "item-audience-favor"
+      "item-audience-favor",
+      "fellroot-swamp-hut"
     ],
     "sources": [
       [
@@ -72913,6 +72949,10 @@
         "Pet Map: Clement"
       ],
       [
+        "Vendor map option",
+        "Otis's monastery map"
+      ],
+      [
         "Slot",
         "Not Equipped"
       ],
@@ -72930,6 +72970,10 @@
       ]
     ],
     "sections": [
+      [
+        "How to obtain this map",
+        "Visit Otis at Fellroot Swamp Hut and select “Otis's monastery map” to exchange 15 Audience Favor for Pet Map: Clement."
+      ],
       [
         "Uses",
         "Carry this map to roll for Clement on eligible activities. The map is consumed when you obtain the pet."
@@ -72965,7 +73009,8 @@
     "related": [
       "pet-clement",
       "piety",
-      "item-audience-favor"
+      "item-audience-favor",
+      "fellroot-swamp-hut"
     ],
     "sources": [
       [
@@ -73010,6 +73055,10 @@
         "Pet Map: Fibs"
       ],
       [
+        "Vendor map option",
+        "Mork's fletching spots map"
+      ],
+      [
         "Slot",
         "Not Equipped"
       ],
@@ -73027,6 +73076,10 @@
       ]
     ],
     "sections": [
+      [
+        "How to obtain this map",
+        "Visit Mork at Fellroot Swamp Hut and select “Mork's fletching spots map” to exchange 20 Audience Favor for Pet Map: Fibs."
+      ],
       [
         "Uses",
         "Carry this map to roll for Fibs on eligible activities. The map is consumed when you obtain the pet."
@@ -73062,7 +73115,8 @@
     "related": [
       "pet-fibs",
       "piety",
-      "item-audience-favor"
+      "item-audience-favor",
+      "fellroot-swamp-hut"
     ],
     "sources": [
       [
@@ -73107,6 +73161,10 @@
         "Pet Map: Golem Core"
       ],
       [
+        "Vendor map option",
+        "Mork's mine map"
+      ],
+      [
         "Slot",
         "Not Equipped"
       ],
@@ -73124,6 +73182,10 @@
       ]
     ],
     "sections": [
+      [
+        "How to obtain this map",
+        "Visit Mork at Fellroot Swamp Hut and select “Mork's mine map” to exchange 20 Audience Favor for Pet Map: Golem Core."
+      ],
       [
         "Uses",
         "Carry this map to roll for Golem Core on eligible activities. The map is consumed when you obtain the pet."
@@ -73159,7 +73221,8 @@
     "related": [
       "pet-golem-core",
       "piety",
-      "item-audience-favor"
+      "item-audience-favor",
+      "fellroot-swamp-hut"
     ],
     "sources": [
       [
@@ -73204,6 +73267,10 @@
         "Pet Map: Hilda"
       ],
       [
+        "Vendor map option",
+        "Mork's forge map"
+      ],
+      [
         "Slot",
         "Not Equipped"
       ],
@@ -73221,6 +73288,10 @@
       ]
     ],
     "sections": [
+      [
+        "How to obtain this map",
+        "Visit Mork at Fellroot Swamp Hut and select “Mork's forge map” to exchange 20 Audience Favor for Pet Map: Hilda."
+      ],
       [
         "Uses",
         "Carry this map to roll for Hilda on eligible activities. The map is consumed when you obtain the pet."
@@ -73256,7 +73327,8 @@
     "related": [
       "pet-hilda",
       "piety",
-      "item-audience-favor"
+      "item-audience-favor",
+      "fellroot-swamp-hut"
     ],
     "sources": [
       [
@@ -73301,6 +73373,10 @@
         "Pet Map: Hubble"
       ],
       [
+        "Vendor map option",
+        "Mork's druidic grove map"
+      ],
+      [
         "Slot",
         "Not Equipped"
       ],
@@ -73318,6 +73394,10 @@
       ]
     ],
     "sections": [
+      [
+        "How to obtain this map",
+        "Visit Mork at Fellroot Swamp Hut and select “Mork's druidic grove map” to exchange 20 Audience Favor for Pet Map: Hubble."
+      ],
       [
         "Uses",
         "Carry this map to roll for Hubble on eligible activities. The map is consumed when you obtain the pet."
@@ -73353,7 +73433,8 @@
     "related": [
       "pet-hubble",
       "piety",
-      "item-audience-favor"
+      "item-audience-favor",
+      "fellroot-swamp-hut"
     ],
     "sources": [
       [
@@ -73398,6 +73479,10 @@
         "Pet Map: Merlin"
       ],
       [
+        "Vendor map option",
+        "Otis's spellbound map"
+      ],
+      [
         "Slot",
         "Not Equipped"
       ],
@@ -73415,6 +73500,10 @@
       ]
     ],
     "sections": [
+      [
+        "How to obtain this map",
+        "Visit Otis at Fellroot Swamp Hut and select “Otis's spellbound map” to exchange 15 Audience Favor for Pet Map: Merlin."
+      ],
       [
         "Uses",
         "Carry this map to roll for Merlin on eligible activities. The map is consumed when you obtain the pet."
@@ -73450,7 +73539,8 @@
     "related": [
       "pet-merlin",
       "piety",
-      "item-audience-favor"
+      "item-audience-favor",
+      "fellroot-swamp-hut"
     ],
     "sources": [
       [
@@ -73495,6 +73585,10 @@
         "Pet Map: Otter"
       ],
       [
+        "Vendor map option",
+        "Otis's riverbank map"
+      ],
+      [
         "Slot",
         "Not Equipped"
       ],
@@ -73512,6 +73606,10 @@
       ]
     ],
     "sections": [
+      [
+        "How to obtain this map",
+        "Visit Otis at Fellroot Swamp Hut and select “Otis's riverbank map” to exchange 15 Audience Favor for Pet Map: Otter."
+      ],
       [
         "Uses",
         "Carry this map to roll for Otter on eligible activities. The map is consumed when you obtain the pet."
@@ -73547,7 +73645,8 @@
     "related": [
       "pet-otter",
       "piety",
-      "item-audience-favor"
+      "item-audience-favor",
+      "fellroot-swamp-hut"
     ],
     "sources": [
       [
@@ -73592,6 +73691,10 @@
         "Pet Map: Peace Moth"
       ],
       [
+        "Vendor map option",
+        "Mork's holy grounds map"
+      ],
+      [
         "Slot",
         "Not Equipped"
       ],
@@ -73609,6 +73712,10 @@
       ]
     ],
     "sections": [
+      [
+        "How to obtain this map",
+        "Visit Mork at Fellroot Swamp Hut and select “Mork's holy grounds map” to exchange 20 Audience Favor for Pet Map: Peace Moth."
+      ],
       [
         "Uses",
         "Carry this map to roll for Peace Moth on eligible activities. The map is consumed when you obtain the pet."
@@ -73644,7 +73751,8 @@
     "related": [
       "pet-peace-moth",
       "piety",
-      "item-audience-favor"
+      "item-audience-favor",
+      "fellroot-swamp-hut"
     ],
     "sources": [
       [
@@ -73689,6 +73797,10 @@
         "Pet Map: Pebble"
       ],
       [
+        "Vendor map option",
+        "Otis's quarry map"
+      ],
+      [
         "Slot",
         "Not Equipped"
       ],
@@ -73706,6 +73818,10 @@
       ]
     ],
     "sections": [
+      [
+        "How to obtain this map",
+        "Visit Otis at Fellroot Swamp Hut and select “Otis's quarry map” to exchange 15 Audience Favor for Pet Map: Pebble."
+      ],
       [
         "Uses",
         "Carry this map to roll for Pebble on eligible activities. The map is consumed when you obtain the pet."
@@ -73741,7 +73857,8 @@
     "related": [
       "pet-pebble",
       "piety",
-      "item-audience-favor"
+      "item-audience-favor",
+      "fellroot-swamp-hut"
     ],
     "sources": [
       [
@@ -73786,6 +73903,10 @@
         "Pet Map: Pickles"
       ],
       [
+        "Vendor map option",
+        "Mork's cuisine map"
+      ],
+      [
         "Slot",
         "Not Equipped"
       ],
@@ -73803,6 +73924,10 @@
       ]
     ],
     "sections": [
+      [
+        "How to obtain this map",
+        "Visit Mork at Fellroot Swamp Hut and select “Mork's cuisine map” to exchange 20 Audience Favor for Pet Map: Pickles."
+      ],
       [
         "Uses",
         "Carry this map to roll for Pickles on eligible activities. The map is consumed when you obtain the pet."
@@ -73838,7 +73963,8 @@
     "related": [
       "pet-pickles",
       "piety",
-      "item-audience-favor"
+      "item-audience-favor",
+      "fellroot-swamp-hut"
     ],
     "sources": [
       [
@@ -73883,6 +74009,10 @@
         "Pet Map: Quill"
       ],
       [
+        "Vendor map option",
+        "Otis's bowyer map"
+      ],
+      [
         "Slot",
         "Not Equipped"
       ],
@@ -73900,6 +74030,10 @@
       ]
     ],
     "sections": [
+      [
+        "How to obtain this map",
+        "Visit Otis at Fellroot Swamp Hut and select “Otis's bowyer map” to exchange 15 Audience Favor for Pet Map: Quill."
+      ],
       [
         "Uses",
         "Carry this map to roll for Quill on eligible activities. The map is consumed when you obtain the pet."
@@ -73935,7 +74069,8 @@
     "related": [
       "pet-quill",
       "piety",
-      "item-audience-favor"
+      "item-audience-favor",
+      "fellroot-swamp-hut"
     ],
     "sources": [
       [
@@ -73980,6 +74115,10 @@
         "Pet Map: Riddle"
       ],
       [
+        "Vendor map option",
+        "Mork's arcane map"
+      ],
+      [
         "Slot",
         "Not Equipped"
       ],
@@ -73997,6 +74136,10 @@
       ]
     ],
     "sections": [
+      [
+        "How to obtain this map",
+        "Visit Mork at Fellroot Swamp Hut and select “Mork's arcane map” to exchange 20 Audience Favor for Pet Map: Riddle."
+      ],
       [
         "Uses",
         "Carry this map to roll for Riddle on eligible activities. The map is consumed when you obtain the pet."
@@ -74032,7 +74175,8 @@
     "related": [
       "pet-riddle",
       "piety",
-      "item-audience-favor"
+      "item-audience-favor",
+      "fellroot-swamp-hut"
     ],
     "sources": [
       [
@@ -74077,6 +74221,10 @@
         "Pet Map: Sage"
       ],
       [
+        "Vendor map option",
+        "Otis's herb garden map"
+      ],
+      [
         "Slot",
         "Not Equipped"
       ],
@@ -74094,6 +74242,10 @@
       ]
     ],
     "sections": [
+      [
+        "How to obtain this map",
+        "Visit Otis at Fellroot Swamp Hut and select “Otis's herb garden map” to exchange 15 Audience Favor for Pet Map: Sage."
+      ],
       [
         "Uses",
         "Carry this map to roll for Sage on eligible activities. The map is consumed when you obtain the pet."
@@ -74129,7 +74281,8 @@
     "related": [
       "pet-sage",
       "piety",
-      "item-audience-favor"
+      "item-audience-favor",
+      "fellroot-swamp-hut"
     ],
     "sources": [
       [
@@ -74174,6 +74327,10 @@
         "Pet Map: Scales"
       ],
       [
+        "Vendor map option",
+        "Mork's danger dragon map"
+      ],
+      [
         "Slot",
         "Not Equipped"
       ],
@@ -74191,6 +74348,10 @@
       ]
     ],
     "sections": [
+      [
+        "How to obtain this map",
+        "Visit Mork at Fellroot Swamp Hut and select “Mork's danger dragon map” to exchange 10 Audience Favor for Pet Map: Scales."
+      ],
       [
         "Uses",
         "Carry this map to roll for Scales on eligible activities. The map is consumed when you obtain the pet."
@@ -74226,7 +74387,8 @@
     "related": [
       "pet-scales",
       "piety",
-      "item-audience-favor"
+      "item-audience-favor",
+      "fellroot-swamp-hut"
     ],
     "sources": [
       [
@@ -74271,6 +74433,10 @@
         "Pet Map: Scoop"
       ],
       [
+        "Vendor map option",
+        "Mork's workshop map"
+      ],
+      [
         "Slot",
         "Not Equipped"
       ],
@@ -74288,6 +74454,10 @@
       ]
     ],
     "sections": [
+      [
+        "How to obtain this map",
+        "Visit Mork at Fellroot Swamp Hut and select “Mork's workshop map” to exchange 20 Audience Favor for Pet Map: Scoop."
+      ],
       [
         "Uses",
         "Carry this map to roll for Scoop on eligible activities. The map is consumed when you obtain the pet."
@@ -74323,7 +74493,8 @@
     "related": [
       "pet-scoop",
       "piety",
-      "item-audience-favor"
+      "item-audience-favor",
+      "fellroot-swamp-hut"
     ],
     "sources": [
       [
@@ -74368,6 +74539,10 @@
         "Pet Map: Smudge"
       ],
       [
+        "Vendor map option",
+        "Otis's smithy map"
+      ],
+      [
         "Slot",
         "Not Equipped"
       ],
@@ -74385,6 +74560,10 @@
       ]
     ],
     "sections": [
+      [
+        "How to obtain this map",
+        "Visit Otis at Fellroot Swamp Hut and select “Otis's smithy map” to exchange 15 Audience Favor for Pet Map: Smudge."
+      ],
       [
         "Uses",
         "Carry this map to roll for Smudge on eligible activities. The map is consumed when you obtain the pet."
@@ -74420,7 +74599,8 @@
     "related": [
       "pet-smudge",
       "piety",
-      "item-audience-favor"
+      "item-audience-favor",
+      "fellroot-swamp-hut"
     ],
     "sources": [
       [
@@ -74465,6 +74645,10 @@
         "Pet Map: Stitch"
       ],
       [
+        "Vendor map option",
+        "Otis's workbench map"
+      ],
+      [
         "Slot",
         "Not Equipped"
       ],
@@ -74482,6 +74666,10 @@
       ]
     ],
     "sections": [
+      [
+        "How to obtain this map",
+        "Visit Otis at Fellroot Swamp Hut and select “Otis's workbench map” to exchange 15 Audience Favor for Pet Map: Stitch."
+      ],
       [
         "Uses",
         "Carry this map to roll for Stitch on eligible activities. The map is consumed when you obtain the pet."
@@ -74517,7 +74705,8 @@
     "related": [
       "pet-stitch",
       "piety",
-      "item-audience-favor"
+      "item-audience-favor",
+      "fellroot-swamp-hut"
     ],
     "sources": [
       [
@@ -74562,6 +74751,10 @@
         "Pet Map: Stump"
       ],
       [
+        "Vendor map option",
+        "Otis's timber grove map"
+      ],
+      [
         "Slot",
         "Not Equipped"
       ],
@@ -74579,6 +74772,10 @@
       ]
     ],
     "sections": [
+      [
+        "How to obtain this map",
+        "Visit Otis at Fellroot Swamp Hut and select “Otis's timber grove map” to exchange 15 Audience Favor for Pet Map: Stump."
+      ],
       [
         "Uses",
         "Carry this map to roll for Stump on eligible activities. The map is consumed when you obtain the pet."
@@ -74614,7 +74811,8 @@
     "related": [
       "pet-stump",
       "piety",
-      "item-audience-favor"
+      "item-audience-favor",
+      "fellroot-swamp-hut"
     ],
     "sources": [
       [
@@ -74659,6 +74857,10 @@
         "Pet Map: Tinderling"
       ],
       [
+        "Vendor map option",
+        "Mork's campfire map"
+      ],
+      [
         "Slot",
         "Not Equipped"
       ],
@@ -74676,6 +74878,10 @@
       ]
     ],
     "sections": [
+      [
+        "How to obtain this map",
+        "Visit Mork at Fellroot Swamp Hut and select “Mork's campfire map” to exchange 20 Audience Favor for Pet Map: Tinderling."
+      ],
       [
         "Uses",
         "Carry this map to roll for Tinderling on eligible activities. The map is consumed when you obtain the pet."
@@ -74711,7 +74917,8 @@
     "related": [
       "pet-tinderling",
       "piety",
-      "item-audience-favor"
+      "item-audience-favor",
+      "fellroot-swamp-hut"
     ],
     "sources": [
       [
@@ -74756,6 +74963,10 @@
         "Pet Map: Winkle"
       ],
       [
+        "Vendor map option",
+        "Mork's forest clearing map"
+      ],
+      [
         "Slot",
         "Not Equipped"
       ],
@@ -74773,6 +74984,10 @@
       ]
     ],
     "sections": [
+      [
+        "How to obtain this map",
+        "Visit Mork at Fellroot Swamp Hut and select “Mork's forest clearing map” to exchange 20 Audience Favor for Pet Map: Winkle."
+      ],
       [
         "Uses",
         "Carry this map to roll for Winkle on eligible activities. The map is consumed when you obtain the pet."
@@ -74808,7 +75023,8 @@
     "related": [
       "pet-winkle",
       "piety",
-      "item-audience-favor"
+      "item-audience-favor",
+      "fellroot-swamp-hut"
     ],
     "sources": [
       [
@@ -74850,6 +75066,7 @@
           "Pet",
           "Skill",
           "Map",
+          "Vendor map option",
           "Vendor",
           "Audience Favor",
           "Membership"
@@ -74859,6 +75076,7 @@
             "Amber",
             "Woodcutting",
             "Pet Map: Amber",
+            "Mork's grove map",
             "Mork",
             "10 Audience Favor",
             "Not required"
@@ -74867,6 +75085,7 @@
             "Beatrix",
             "Combat",
             "Pet Map: Beatrix",
+            "Mork's danger meadows map",
             "Mork",
             "10 Audience Favor",
             "Not required"
@@ -74875,6 +75094,7 @@
             "Biscuit",
             "Cooking",
             "Pet Map: Biscuit",
+            "Otis's kitchen map",
             "Otis",
             "15 Audience Favor",
             "Required"
@@ -74882,6 +75102,7 @@
           [
             "Blob",
             "Fishing",
+            "None required",
             "None required",
             "Rare catch",
             "None",
@@ -74891,6 +75112,7 @@
             "Bog",
             "Fishing",
             "Pet Map: Bog",
+            "Mork's swamp map",
             "Mork",
             "20 Audience Favor",
             "Not required"
@@ -74899,6 +75121,7 @@
             "Chia",
             "Fletching",
             "Pet Map: Chia",
+            "Mork's treetop map",
             "Mork",
             "10 Audience Favor",
             "Not required"
@@ -74907,6 +75130,7 @@
             "Cinder",
             "Firemaking",
             "Pet Map: Cinder",
+            "Otis's fireside map",
             "Otis",
             "15 Audience Favor",
             "Required"
@@ -74915,6 +75139,7 @@
             "Clement",
             "Piety",
             "Pet Map: Clement",
+            "Otis's monastery map",
             "Otis",
             "15 Audience Favor",
             "Required"
@@ -74923,6 +75148,7 @@
             "Crumpet",
             "Cooking",
             "Pet Map: Crumpet",
+            "Mork's kitchen map",
             "Mork",
             "10 Audience Favor",
             "Not required"
@@ -74931,6 +75157,7 @@
             "Ember",
             "Firemaking",
             "Pet Map: Ember",
+            "Mork's firepit map",
             "Mork",
             "10 Audience Favor",
             "Not required"
@@ -74939,6 +75166,7 @@
             "Fibs",
             "Fletching",
             "Pet Map: Fibs",
+            "Mork's fletching spots map",
             "Mork",
             "20 Audience Favor",
             "Not required"
@@ -74947,6 +75175,7 @@
             "Gloop",
             "Herblaw",
             "Pet Map: Gloop",
+            "Mork's mossy altar map",
             "Mork",
             "10 Audience Favor",
             "Not required"
@@ -74955,6 +75184,7 @@
             "Golem Core",
             "Mining",
             "Pet Map: Golem Core",
+            "Mork's mine map",
             "Mork",
             "20 Audience Favor",
             "Not required"
@@ -74963,6 +75193,7 @@
             "Greta",
             "Smithing",
             "Pet Map: Greta",
+            "Mork's anvil map",
             "Mork",
             "10 Audience Favor",
             "Not required"
@@ -74971,6 +75202,7 @@
             "Hilda",
             "Smithing",
             "Pet Map: Hilda",
+            "Mork's forge map",
             "Mork",
             "20 Audience Favor",
             "Not required"
@@ -74979,6 +75211,7 @@
             "Hubble",
             "Herblaw",
             "Pet Map: Hubble",
+            "Mork's druidic grove map",
             "Mork",
             "20 Audience Favor",
             "Not required"
@@ -74987,6 +75220,7 @@
             "Mercy",
             "Piety",
             "Pet Map: Mercy",
+            "Mork's graveyard map",
             "Mork",
             "10 Audience Favor",
             "Not required"
@@ -74995,6 +75229,7 @@
             "Merlin",
             "Good Magic",
             "Pet Map: Merlin",
+            "Otis's spellbound map",
             "Otis",
             "15 Audience Favor",
             "Required"
@@ -75003,6 +75238,7 @@
             "Mossy",
             "Mining",
             "Pet Map: Mossy",
+            "Mork's old tunnel map",
             "Mork",
             "10 Audience Favor",
             "Not required"
@@ -75011,6 +75247,7 @@
             "Murk",
             "Fishing",
             "Pet Map: Murk",
+            "Mork's riverbank map",
             "Mork",
             "10 Audience Favor",
             "Not required"
@@ -75019,6 +75256,7 @@
             "Otter",
             "Fishing",
             "Pet Map: Otter",
+            "Otis's riverbank map",
             "Otis",
             "15 Audience Favor",
             "Required"
@@ -75027,6 +75265,7 @@
             "Peace Moth",
             "Piety",
             "Pet Map: Peace Moth",
+            "Mork's holy grounds map",
             "Mork",
             "20 Audience Favor",
             "Not required"
@@ -75035,6 +75274,7 @@
             "Pebble",
             "Mining",
             "Pet Map: Pebble",
+            "Otis's quarry map",
             "Otis",
             "15 Audience Favor",
             "Required"
@@ -75043,6 +75283,7 @@
             "Pickles",
             "Cooking",
             "Pet Map: Pickles",
+            "Mork's cuisine map",
             "Mork",
             "20 Audience Favor",
             "Not required"
@@ -75051,6 +75292,7 @@
             "Quill",
             "Fletching",
             "Pet Map: Quill",
+            "Otis's bowyer map",
             "Otis",
             "15 Audience Favor",
             "Required"
@@ -75059,6 +75301,7 @@
             "Riddle",
             "Good Magic",
             "Pet Map: Riddle",
+            "Mork's arcane map",
             "Mork",
             "20 Audience Favor",
             "Not required"
@@ -75067,6 +75310,7 @@
             "Sage",
             "Herblaw",
             "Pet Map: Sage",
+            "Otis's herb garden map",
             "Otis",
             "15 Audience Favor",
             "Required"
@@ -75075,6 +75319,7 @@
             "Sandy",
             "Crafting",
             "Pet Map: Sandy",
+            "Mork's workbench map",
             "Mork",
             "10 Audience Favor",
             "Not required"
@@ -75083,6 +75328,7 @@
             "Scales",
             "Combat",
             "Pet Map: Scales",
+            "Mork's danger dragon map",
             "Mork",
             "10 Audience Favor",
             "Not required"
@@ -75091,6 +75337,7 @@
             "Scoop",
             "Crafting",
             "Pet Map: Scoop",
+            "Mork's workshop map",
             "Mork",
             "20 Audience Favor",
             "Not required"
@@ -75099,6 +75346,7 @@
             "Scribble",
             "Good Magic",
             "Pet Map: Scribble",
+            "Mork's spellbook map",
             "Mork",
             "10 Audience Favor",
             "Not required"
@@ -75107,6 +75355,7 @@
             "Smudge",
             "Smithing",
             "Pet Map: Smudge",
+            "Otis's smithy map",
             "Otis",
             "15 Audience Favor",
             "Required"
@@ -75115,6 +75364,7 @@
             "Stitch",
             "Crafting",
             "Pet Map: Stitch",
+            "Otis's workbench map",
             "Otis",
             "15 Audience Favor",
             "Required"
@@ -75123,6 +75373,7 @@
             "Stump",
             "Woodcutting",
             "Pet Map: Stump",
+            "Otis's timber grove map",
             "Otis",
             "15 Audience Favor",
             "Required"
@@ -75131,6 +75382,7 @@
             "Tinderling",
             "Firemaking",
             "Pet Map: Tinderling",
+            "Mork's campfire map",
             "Mork",
             "20 Audience Favor",
             "Not required"
@@ -75139,6 +75391,7 @@
             "Winkle",
             "Woodcutting",
             "Pet Map: Winkle",
+            "Mork's forest clearing map",
             "Mork",
             "20 Audience Favor",
             "Not required"
@@ -112367,6 +112620,10 @@
         "Pet Map: Amber"
       ],
       [
+        "Vendor map option",
+        "Mork's grove map"
+      ],
+      [
         "Slot",
         "Not Equipped"
       ],
@@ -112410,8 +112667,15 @@
         ]
       }
     ],
-    "sections": [],
-    "related": [],
+    "sections": [
+      [
+        "How to obtain this map",
+        "Visit Mork at Fellroot Swamp Hut and select “Mork's grove map” to exchange 10 Audience Favor for Pet Map: Amber."
+      ]
+    ],
+    "related": [
+      "fellroot-swamp-hut"
+    ],
     "sources": [
       [
         "Archived release game data · November 19, 2026",
@@ -112441,6 +112705,10 @@
       [
         "In-game name",
         "Pet Map: Chia"
+      ],
+      [
+        "Vendor map option",
+        "Mork's treetop map"
       ],
       [
         "Slot",
@@ -112486,8 +112754,15 @@
         ]
       }
     ],
-    "sections": [],
-    "related": [],
+    "sections": [
+      [
+        "How to obtain this map",
+        "Visit Mork at Fellroot Swamp Hut and select “Mork's treetop map” to exchange 10 Audience Favor for Pet Map: Chia."
+      ]
+    ],
+    "related": [
+      "fellroot-swamp-hut"
+    ],
     "sources": [
       [
         "Archived release game data · November 19, 2026",
@@ -112517,6 +112792,10 @@
       [
         "In-game name",
         "Pet Map: Crumpet"
+      ],
+      [
+        "Vendor map option",
+        "Mork's kitchen map"
       ],
       [
         "Slot",
@@ -112562,8 +112841,15 @@
         ]
       }
     ],
-    "sections": [],
-    "related": [],
+    "sections": [
+      [
+        "How to obtain this map",
+        "Visit Mork at Fellroot Swamp Hut and select “Mork's kitchen map” to exchange 10 Audience Favor for Pet Map: Crumpet."
+      ]
+    ],
+    "related": [
+      "fellroot-swamp-hut"
+    ],
     "sources": [
       [
         "Archived release game data · November 19, 2026",
@@ -112593,6 +112879,10 @@
       [
         "In-game name",
         "Pet Map: Ember"
+      ],
+      [
+        "Vendor map option",
+        "Mork's firepit map"
       ],
       [
         "Slot",
@@ -112638,8 +112928,15 @@
         ]
       }
     ],
-    "sections": [],
-    "related": [],
+    "sections": [
+      [
+        "How to obtain this map",
+        "Visit Mork at Fellroot Swamp Hut and select “Mork's firepit map” to exchange 10 Audience Favor for Pet Map: Ember."
+      ]
+    ],
+    "related": [
+      "fellroot-swamp-hut"
+    ],
     "sources": [
       [
         "Archived release game data · November 19, 2026",
@@ -112669,6 +112966,10 @@
       [
         "In-game name",
         "Pet Map: Gloop"
+      ],
+      [
+        "Vendor map option",
+        "Mork's mossy altar map"
       ],
       [
         "Slot",
@@ -112714,8 +113015,15 @@
         ]
       }
     ],
-    "sections": [],
-    "related": [],
+    "sections": [
+      [
+        "How to obtain this map",
+        "Visit Mork at Fellroot Swamp Hut and select “Mork's mossy altar map” to exchange 10 Audience Favor for Pet Map: Gloop."
+      ]
+    ],
+    "related": [
+      "fellroot-swamp-hut"
+    ],
     "sources": [
       [
         "Archived release game data · November 19, 2026",
@@ -112745,6 +113053,10 @@
       [
         "In-game name",
         "Pet Map: Greta"
+      ],
+      [
+        "Vendor map option",
+        "Mork's anvil map"
       ],
       [
         "Slot",
@@ -112790,8 +113102,15 @@
         ]
       }
     ],
-    "sections": [],
-    "related": [],
+    "sections": [
+      [
+        "How to obtain this map",
+        "Visit Mork at Fellroot Swamp Hut and select “Mork's anvil map” to exchange 10 Audience Favor for Pet Map: Greta."
+      ]
+    ],
+    "related": [
+      "fellroot-swamp-hut"
+    ],
     "sources": [
       [
         "Archived release game data · November 19, 2026",
@@ -112821,6 +113140,10 @@
       [
         "In-game name",
         "Pet Map: Mercy"
+      ],
+      [
+        "Vendor map option",
+        "Mork's graveyard map"
       ],
       [
         "Slot",
@@ -112866,8 +113189,15 @@
         ]
       }
     ],
-    "sections": [],
-    "related": [],
+    "sections": [
+      [
+        "How to obtain this map",
+        "Visit Mork at Fellroot Swamp Hut and select “Mork's graveyard map” to exchange 10 Audience Favor for Pet Map: Mercy."
+      ]
+    ],
+    "related": [
+      "fellroot-swamp-hut"
+    ],
     "sources": [
       [
         "Archived release game data · November 19, 2026",
@@ -112897,6 +113227,10 @@
       [
         "In-game name",
         "Pet Map: Mossy"
+      ],
+      [
+        "Vendor map option",
+        "Mork's old tunnel map"
       ],
       [
         "Slot",
@@ -112942,8 +113276,15 @@
         ]
       }
     ],
-    "sections": [],
-    "related": [],
+    "sections": [
+      [
+        "How to obtain this map",
+        "Visit Mork at Fellroot Swamp Hut and select “Mork's old tunnel map” to exchange 10 Audience Favor for Pet Map: Mossy."
+      ]
+    ],
+    "related": [
+      "fellroot-swamp-hut"
+    ],
     "sources": [
       [
         "Archived release game data · November 19, 2026",
@@ -112973,6 +113314,10 @@
       [
         "In-game name",
         "Pet Map: Murk"
+      ],
+      [
+        "Vendor map option",
+        "Mork's riverbank map"
       ],
       [
         "Slot",
@@ -113018,8 +113363,15 @@
         ]
       }
     ],
-    "sections": [],
-    "related": [],
+    "sections": [
+      [
+        "How to obtain this map",
+        "Visit Mork at Fellroot Swamp Hut and select “Mork's riverbank map” to exchange 10 Audience Favor for Pet Map: Murk."
+      ]
+    ],
+    "related": [
+      "fellroot-swamp-hut"
+    ],
     "sources": [
       [
         "Archived release game data · November 19, 2026",
@@ -113049,6 +113401,10 @@
       [
         "In-game name",
         "Pet Map: Sandy"
+      ],
+      [
+        "Vendor map option",
+        "Mork's workbench map"
       ],
       [
         "Slot",
@@ -113094,8 +113450,15 @@
         ]
       }
     ],
-    "sections": [],
-    "related": [],
+    "sections": [
+      [
+        "How to obtain this map",
+        "Visit Mork at Fellroot Swamp Hut and select “Mork's workbench map” to exchange 10 Audience Favor for Pet Map: Sandy."
+      ]
+    ],
+    "related": [
+      "fellroot-swamp-hut"
+    ],
     "sources": [
       [
         "Archived release game data · November 19, 2026",
@@ -113125,6 +113488,10 @@
       [
         "In-game name",
         "Pet Map: Scribble"
+      ],
+      [
+        "Vendor map option",
+        "Mork's spellbook map"
       ],
       [
         "Slot",
@@ -113170,8 +113537,15 @@
         ]
       }
     ],
-    "sections": [],
-    "related": [],
+    "sections": [
+      [
+        "How to obtain this map",
+        "Visit Mork at Fellroot Swamp Hut and select “Mork's spellbook map” to exchange 10 Audience Favor for Pet Map: Scribble."
+      ]
+    ],
+    "related": [
+      "fellroot-swamp-hut"
+    ],
     "sources": [
       [
         "Archived release game data · November 19, 2026",
@@ -114069,6 +114443,10 @@
         "Pet Map: Amber"
       ],
       [
+        "Vendor map option",
+        "Mork's grove map"
+      ],
+      [
         "Membership to obtain",
         "Not required"
       ],
@@ -114185,7 +114563,7 @@
     "sections": [
       [
         "How to get Amber",
-        "Buy Pet Map: Amber from Mork at Fellroot Swamp Hut for 10 Audience Favor. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found. "
+        "Visit Mork at Fellroot Swamp Hut and select “Mork's grove map” to exchange 10 Audience Favor for Pet Map: Amber. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found."
       ],
       [
         "Level bonuses",
@@ -114257,6 +114635,10 @@
         "Pet Map: Beatrix"
       ],
       [
+        "Vendor map option",
+        "Mork's danger meadows map"
+      ],
+      [
         "Membership to obtain",
         "Not required"
       ],
@@ -114276,44 +114658,51 @@
           "Encounter",
           "Where to find it",
           "Odds per eligible kill",
-          "Required item"
+          "Required item",
+          "Vendor map option"
         ],
         "rows": [
           [
             "Bear",
             "O’Rock East Mine",
             "1 in 65,536",
-            "Pet Map: Beatrix"
+            "Pet Map: Beatrix",
+            "Mork's danger meadows map"
           ],
           [
             "Cow",
             "Fencewell Bridge",
             "1 in 262,144",
-            "Pet Map: Beatrix"
+            "Pet Map: Beatrix",
+            "Mork's danger meadows map"
           ],
           [
             "Druid Warrior",
             "Havendell Dungeon",
             "1 in 32,768",
-            "Pet Map: Beatrix"
+            "Pet Map: Beatrix",
+            "Mork's danger meadows map"
           ],
           [
             "Insect Swarm",
             "Elshand Temple Ruins",
             "1 in 262,144",
-            "Pet Map: Beatrix"
+            "Pet Map: Beatrix",
+            "Mork's danger meadows map"
           ],
           [
             "Morvane",
             "Havendell Lair",
             "1 in 64",
-            "Pet Map: Beatrix"
+            "Pet Map: Beatrix",
+            "Mork's danger meadows map"
           ],
           [
             "Moss Giant",
             "O’Rock Sewers",
             "1 in 32,768",
-            "Pet Map: Beatrix"
+            "Pet Map: Beatrix",
+            "Mork's danger meadows map"
           ]
         ],
         "links": [
@@ -114375,7 +114764,7 @@
     "sections": [
       [
         "How to get Beatrix",
-        "Buy Pet Map: Beatrix from Mork at Fellroot Swamp Hut for 10 Audience Favor. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found. "
+        "Visit Mork at Fellroot Swamp Hut and select “Mork's danger meadows map” to exchange 10 Audience Favor for Pet Map: Beatrix. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found."
       ],
       [
         "Level bonuses",
@@ -114450,6 +114839,10 @@
       [
         "Pet Map",
         "Pet Map: Biscuit"
+      ],
+      [
+        "Vendor map option",
+        "Otis's kitchen map"
       ],
       [
         "Membership to obtain",
@@ -114768,7 +115161,7 @@
     "sections": [
       [
         "How to get Biscuit",
-        "Buy Pet Map: Biscuit from Otis at Fellroot Swamp Hut for 15 Audience Favor. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found. Adventurer’s Guild membership is required to obtain this pet."
+        "Visit Otis at Fellroot Swamp Hut and select “Otis's kitchen map” to exchange 15 Audience Favor for Pet Map: Biscuit. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found. Adventurer’s Guild membership is required to obtain this pet."
       ],
       [
         "Level bonuses",
@@ -114940,6 +115333,10 @@
       [
         "Pet Map",
         "Pet Map: Bog"
+      ],
+      [
+        "Vendor map option",
+        "Mork's swamp map"
       ],
       [
         "Membership to obtain",
@@ -115126,7 +115523,7 @@
     "sections": [
       [
         "How to get Bog",
-        "Buy Pet Map: Bog from Mork at Fellroot Swamp Hut for 20 Audience Favor. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found. "
+        "Visit Mork at Fellroot Swamp Hut and select “Mork's swamp map” to exchange 20 Audience Favor for Pet Map: Bog. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found."
       ],
       [
         "Level bonuses",
@@ -115196,6 +115593,10 @@
       [
         "Pet Map",
         "Pet Map: Chia"
+      ],
+      [
+        "Vendor map option",
+        "Mork's treetop map"
       ],
       [
         "Membership to obtain",
@@ -115558,7 +115959,7 @@
     "sections": [
       [
         "How to get Chia",
-        "Buy Pet Map: Chia from Mork at Fellroot Swamp Hut for 10 Audience Favor. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found. "
+        "Visit Mork at Fellroot Swamp Hut and select “Mork's treetop map” to exchange 10 Audience Favor for Pet Map: Chia. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found."
       ],
       [
         "Level bonuses",
@@ -115628,6 +116029,10 @@
       [
         "Pet Map",
         "Pet Map: Cinder"
+      ],
+      [
+        "Vendor map option",
+        "Otis's fireside map"
       ],
       [
         "Membership to obtain",
@@ -115794,7 +116199,7 @@
     "sections": [
       [
         "How to get Cinder",
-        "Buy Pet Map: Cinder from Otis at Fellroot Swamp Hut for 15 Audience Favor. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found. Adventurer’s Guild membership is required to obtain this pet."
+        "Visit Otis at Fellroot Swamp Hut and select “Otis's fireside map” to exchange 15 Audience Favor for Pet Map: Cinder. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found. Adventurer’s Guild membership is required to obtain this pet."
       ],
       [
         "Level bonuses",
@@ -115864,6 +116269,10 @@
       [
         "Pet Map",
         "Pet Map: Clement"
+      ],
+      [
+        "Vendor map option",
+        "Otis's monastery map"
       ],
       [
         "Membership to obtain",
@@ -115938,7 +116347,7 @@
     "sections": [
       [
         "How to get Clement",
-        "Buy Pet Map: Clement from Otis at Fellroot Swamp Hut for 15 Audience Favor. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found. Adventurer’s Guild membership is required to obtain this pet."
+        "Visit Otis at Fellroot Swamp Hut and select “Otis's monastery map” to exchange 15 Audience Favor for Pet Map: Clement. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found. Adventurer’s Guild membership is required to obtain this pet."
       ],
       [
         "Level bonuses",
@@ -116008,6 +116417,10 @@
       [
         "Pet Map",
         "Pet Map: Crumpet"
+      ],
+      [
+        "Vendor map option",
+        "Mork's kitchen map"
       ],
       [
         "Membership to obtain",
@@ -116326,7 +116739,7 @@
     "sections": [
       [
         "How to get Crumpet",
-        "Buy Pet Map: Crumpet from Mork at Fellroot Swamp Hut for 10 Audience Favor. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found. "
+        "Visit Mork at Fellroot Swamp Hut and select “Mork's kitchen map” to exchange 10 Audience Favor for Pet Map: Crumpet. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found."
       ],
       [
         "Level bonuses",
@@ -116396,6 +116809,10 @@
       [
         "Pet Map",
         "Pet Map: Ember"
+      ],
+      [
+        "Vendor map option",
+        "Mork's firepit map"
       ],
       [
         "Membership to obtain",
@@ -116562,7 +116979,7 @@
     "sections": [
       [
         "How to get Ember",
-        "Buy Pet Map: Ember from Mork at Fellroot Swamp Hut for 10 Audience Favor. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found. "
+        "Visit Mork at Fellroot Swamp Hut and select “Mork's firepit map” to exchange 10 Audience Favor for Pet Map: Ember. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found."
       ],
       [
         "Level bonuses",
@@ -116632,6 +117049,10 @@
       [
         "Pet Map",
         "Pet Map: Fibs"
+      ],
+      [
+        "Vendor map option",
+        "Mork's fletching spots map"
       ],
       [
         "Membership to obtain",
@@ -116994,7 +117415,7 @@
     "sections": [
       [
         "How to get Fibs",
-        "Buy Pet Map: Fibs from Mork at Fellroot Swamp Hut for 20 Audience Favor. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found. "
+        "Visit Mork at Fellroot Swamp Hut and select “Mork's fletching spots map” to exchange 20 Audience Favor for Pet Map: Fibs. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found."
       ],
       [
         "Level bonuses",
@@ -117064,6 +117485,10 @@
       [
         "Pet Map",
         "Pet Map: Gloop"
+      ],
+      [
+        "Vendor map option",
+        "Mork's mossy altar map"
       ],
       [
         "Membership to obtain",
@@ -117486,7 +117911,7 @@
     "sections": [
       [
         "How to get Gloop",
-        "Buy Pet Map: Gloop from Mork at Fellroot Swamp Hut for 10 Audience Favor. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found. "
+        "Visit Mork at Fellroot Swamp Hut and select “Mork's mossy altar map” to exchange 10 Audience Favor for Pet Map: Gloop. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found."
       ],
       [
         "Level bonuses",
@@ -117556,6 +117981,10 @@
       [
         "Pet Map",
         "Pet Map: Golem Core"
+      ],
+      [
+        "Vendor map option",
+        "Mork's mine map"
       ],
       [
         "Membership to obtain",
@@ -117702,7 +118131,7 @@
     "sections": [
       [
         "How to get Golem Core",
-        "Buy Pet Map: Golem Core from Mork at Fellroot Swamp Hut for 20 Audience Favor. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found. "
+        "Visit Mork at Fellroot Swamp Hut and select “Mork's mine map” to exchange 20 Audience Favor for Pet Map: Golem Core. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found."
       ],
       [
         "Level bonuses",
@@ -117772,6 +118201,10 @@
       [
         "Pet Map",
         "Pet Map: Greta"
+      ],
+      [
+        "Vendor map option",
+        "Mork's anvil map"
       ],
       [
         "Membership to obtain",
@@ -118318,7 +118751,7 @@
     "sections": [
       [
         "How to get Greta",
-        "Buy Pet Map: Greta from Mork at Fellroot Swamp Hut for 10 Audience Favor. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found. "
+        "Visit Mork at Fellroot Swamp Hut and select “Mork's anvil map” to exchange 10 Audience Favor for Pet Map: Greta. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found."
       ],
       [
         "Level bonuses",
@@ -118388,6 +118821,10 @@
       [
         "Pet Map",
         "Pet Map: Hilda"
+      ],
+      [
+        "Vendor map option",
+        "Mork's forge map"
       ],
       [
         "Membership to obtain",
@@ -118934,7 +119371,7 @@
     "sections": [
       [
         "How to get Hilda",
-        "Buy Pet Map: Hilda from Mork at Fellroot Swamp Hut for 20 Audience Favor. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found. "
+        "Visit Mork at Fellroot Swamp Hut and select “Mork's forge map” to exchange 20 Audience Favor for Pet Map: Hilda. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found."
       ],
       [
         "Level bonuses",
@@ -119004,6 +119441,10 @@
       [
         "Pet Map",
         "Pet Map: Hubble"
+      ],
+      [
+        "Vendor map option",
+        "Mork's druidic grove map"
       ],
       [
         "Membership to obtain",
@@ -119426,7 +119867,7 @@
     "sections": [
       [
         "How to get Hubble",
-        "Buy Pet Map: Hubble from Mork at Fellroot Swamp Hut for 20 Audience Favor. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found. "
+        "Visit Mork at Fellroot Swamp Hut and select “Mork's druidic grove map” to exchange 20 Audience Favor for Pet Map: Hubble. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found."
       ],
       [
         "Level bonuses",
@@ -119496,6 +119937,10 @@
       [
         "Pet Map",
         "Pet Map: Mercy"
+      ],
+      [
+        "Vendor map option",
+        "Mork's graveyard map"
       ],
       [
         "Membership to obtain",
@@ -119570,7 +120015,7 @@
     "sections": [
       [
         "How to get Mercy",
-        "Buy Pet Map: Mercy from Mork at Fellroot Swamp Hut for 10 Audience Favor. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found. "
+        "Visit Mork at Fellroot Swamp Hut and select “Mork's graveyard map” to exchange 10 Audience Favor for Pet Map: Mercy. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found."
       ],
       [
         "Level bonuses",
@@ -119640,6 +120085,10 @@
       [
         "Pet Map",
         "Pet Map: Merlin"
+      ],
+      [
+        "Vendor map option",
+        "Otis's spellbound map"
       ],
       [
         "Membership to obtain",
@@ -119830,7 +120279,7 @@
     "sections": [
       [
         "How to get Merlin",
-        "Buy Pet Map: Merlin from Otis at Fellroot Swamp Hut for 15 Audience Favor. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found. Adventurer’s Guild membership is required to obtain this pet."
+        "Visit Otis at Fellroot Swamp Hut and select “Otis's spellbound map” to exchange 15 Audience Favor for Pet Map: Merlin. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found. Adventurer’s Guild membership is required to obtain this pet."
       ],
       [
         "Level bonuses",
@@ -119900,6 +120349,10 @@
       [
         "Pet Map",
         "Pet Map: Mossy"
+      ],
+      [
+        "Vendor map option",
+        "Mork's old tunnel map"
       ],
       [
         "Membership to obtain",
@@ -120046,7 +120499,7 @@
     "sections": [
       [
         "How to get Mossy",
-        "Buy Pet Map: Mossy from Mork at Fellroot Swamp Hut for 10 Audience Favor. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found. "
+        "Visit Mork at Fellroot Swamp Hut and select “Mork's old tunnel map” to exchange 10 Audience Favor for Pet Map: Mossy. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found."
       ],
       [
         "Level bonuses",
@@ -120116,6 +120569,10 @@
       [
         "Pet Map",
         "Pet Map: Murk"
+      ],
+      [
+        "Vendor map option",
+        "Mork's riverbank map"
       ],
       [
         "Membership to obtain",
@@ -120302,7 +120759,7 @@
     "sections": [
       [
         "How to get Murk",
-        "Buy Pet Map: Murk from Mork at Fellroot Swamp Hut for 10 Audience Favor. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found. "
+        "Visit Mork at Fellroot Swamp Hut and select “Mork's riverbank map” to exchange 10 Audience Favor for Pet Map: Murk. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found."
       ],
       [
         "Level bonuses",
@@ -120372,6 +120829,10 @@
       [
         "Pet Map",
         "Pet Map: Otter"
+      ],
+      [
+        "Vendor map option",
+        "Otis's riverbank map"
       ],
       [
         "Membership to obtain",
@@ -120558,7 +121019,7 @@
     "sections": [
       [
         "How to get Otter",
-        "Buy Pet Map: Otter from Otis at Fellroot Swamp Hut for 15 Audience Favor. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found. Adventurer’s Guild membership is required to obtain this pet."
+        "Visit Otis at Fellroot Swamp Hut and select “Otis's riverbank map” to exchange 15 Audience Favor for Pet Map: Otter. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found. Adventurer’s Guild membership is required to obtain this pet."
       ],
       [
         "Level bonuses",
@@ -120628,6 +121089,10 @@
       [
         "Pet Map",
         "Pet Map: Peace Moth"
+      ],
+      [
+        "Vendor map option",
+        "Mork's holy grounds map"
       ],
       [
         "Membership to obtain",
@@ -120702,7 +121167,7 @@
     "sections": [
       [
         "How to get Peace Moth",
-        "Buy Pet Map: Peace Moth from Mork at Fellroot Swamp Hut for 20 Audience Favor. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found. "
+        "Visit Mork at Fellroot Swamp Hut and select “Mork's holy grounds map” to exchange 20 Audience Favor for Pet Map: Peace Moth. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found."
       ],
       [
         "Level bonuses",
@@ -120772,6 +121237,10 @@
       [
         "Pet Map",
         "Pet Map: Pebble"
+      ],
+      [
+        "Vendor map option",
+        "Otis's quarry map"
       ],
       [
         "Membership to obtain",
@@ -120918,7 +121387,7 @@
     "sections": [
       [
         "How to get Pebble",
-        "Buy Pet Map: Pebble from Otis at Fellroot Swamp Hut for 15 Audience Favor. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found. Adventurer’s Guild membership is required to obtain this pet."
+        "Visit Otis at Fellroot Swamp Hut and select “Otis's quarry map” to exchange 15 Audience Favor for Pet Map: Pebble. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found. Adventurer’s Guild membership is required to obtain this pet."
       ],
       [
         "Level bonuses",
@@ -120988,6 +121457,10 @@
       [
         "Pet Map",
         "Pet Map: Pickles"
+      ],
+      [
+        "Vendor map option",
+        "Mork's cuisine map"
       ],
       [
         "Membership to obtain",
@@ -121306,7 +121779,7 @@
     "sections": [
       [
         "How to get Pickles",
-        "Buy Pet Map: Pickles from Mork at Fellroot Swamp Hut for 20 Audience Favor. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found. "
+        "Visit Mork at Fellroot Swamp Hut and select “Mork's cuisine map” to exchange 20 Audience Favor for Pet Map: Pickles. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found."
       ],
       [
         "Level bonuses",
@@ -121376,6 +121849,10 @@
       [
         "Pet Map",
         "Pet Map: Quill"
+      ],
+      [
+        "Vendor map option",
+        "Otis's bowyer map"
       ],
       [
         "Membership to obtain",
@@ -121738,7 +122215,7 @@
     "sections": [
       [
         "How to get Quill",
-        "Buy Pet Map: Quill from Otis at Fellroot Swamp Hut for 15 Audience Favor. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found. Adventurer’s Guild membership is required to obtain this pet."
+        "Visit Otis at Fellroot Swamp Hut and select “Otis's bowyer map” to exchange 15 Audience Favor for Pet Map: Quill. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found. Adventurer’s Guild membership is required to obtain this pet."
       ],
       [
         "Level bonuses",
@@ -121808,6 +122285,10 @@
       [
         "Pet Map",
         "Pet Map: Riddle"
+      ],
+      [
+        "Vendor map option",
+        "Mork's arcane map"
       ],
       [
         "Membership to obtain",
@@ -121998,7 +122479,7 @@
     "sections": [
       [
         "How to get Riddle",
-        "Buy Pet Map: Riddle from Mork at Fellroot Swamp Hut for 20 Audience Favor. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found. "
+        "Visit Mork at Fellroot Swamp Hut and select “Mork's arcane map” to exchange 20 Audience Favor for Pet Map: Riddle. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found."
       ],
       [
         "Level bonuses",
@@ -122068,6 +122549,10 @@
       [
         "Pet Map",
         "Pet Map: Sage"
+      ],
+      [
+        "Vendor map option",
+        "Otis's herb garden map"
       ],
       [
         "Membership to obtain",
@@ -122490,7 +122975,7 @@
     "sections": [
       [
         "How to get Sage",
-        "Buy Pet Map: Sage from Otis at Fellroot Swamp Hut for 15 Audience Favor. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found. Adventurer’s Guild membership is required to obtain this pet."
+        "Visit Otis at Fellroot Swamp Hut and select “Otis's herb garden map” to exchange 15 Audience Favor for Pet Map: Sage. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found. Adventurer’s Guild membership is required to obtain this pet."
       ],
       [
         "Level bonuses",
@@ -122560,6 +123045,10 @@
       [
         "Pet Map",
         "Pet Map: Sandy"
+      ],
+      [
+        "Vendor map option",
+        "Mork's workbench map"
       ],
       [
         "Membership to obtain",
@@ -123158,7 +123647,7 @@
     "sections": [
       [
         "How to get Sandy",
-        "Buy Pet Map: Sandy from Mork at Fellroot Swamp Hut for 10 Audience Favor. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found. "
+        "Visit Mork at Fellroot Swamp Hut and select “Mork's workbench map” to exchange 10 Audience Favor for Pet Map: Sandy. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found."
       ],
       [
         "Level bonuses",
@@ -123230,6 +123719,10 @@
         "Pet Map: Scales"
       ],
       [
+        "Vendor map option",
+        "Mork's danger dragon map"
+      ],
+      [
         "Membership to obtain",
         "Not required"
       ],
@@ -123249,26 +123742,30 @@
           "Encounter",
           "Where to find it",
           "Odds per eligible kill",
-          "Required item"
+          "Required item",
+          "Vendor map option"
         ],
         "rows": [
           [
             "Blue Dragon",
             "Havendell Dungeon",
             "1 in 262,144",
-            "Pet Map: Scales"
+            "Pet Map: Scales",
+            "Mork's danger dragon map"
           ],
           [
             "Dragon Whelp",
             "Dread Mount Onyx Antechamber · Dread Mount Onyx Lair",
             "1 in 1,048,576",
-            "Pet Map: Scales"
+            "Pet Map: Scales",
+            "Mork's danger dragon map"
           ],
           [
             "King Onyx Dragon",
             "Dread Mount Onyx Lair",
             "1 in 256",
-            "Pet Map: Scales"
+            "Pet Map: Scales",
+            "Mork's danger dragon map"
           ]
         ],
         "links": [
@@ -123306,7 +123803,7 @@
     "sections": [
       [
         "How to get Scales",
-        "Buy Pet Map: Scales from Mork at Fellroot Swamp Hut for 10 Audience Favor. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found. "
+        "Visit Mork at Fellroot Swamp Hut and select “Mork's danger dragon map” to exchange 10 Audience Favor for Pet Map: Scales. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found."
       ],
       [
         "Level bonuses",
@@ -123378,6 +123875,10 @@
       [
         "Pet Map",
         "Pet Map: Scoop"
+      ],
+      [
+        "Vendor map option",
+        "Mork's workshop map"
       ],
       [
         "Membership to obtain",
@@ -123976,7 +124477,7 @@
     "sections": [
       [
         "How to get Scoop",
-        "Buy Pet Map: Scoop from Mork at Fellroot Swamp Hut for 20 Audience Favor. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found. "
+        "Visit Mork at Fellroot Swamp Hut and select “Mork's workshop map” to exchange 20 Audience Favor for Pet Map: Scoop. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found."
       ],
       [
         "Level bonuses",
@@ -124046,6 +124547,10 @@
       [
         "Pet Map",
         "Pet Map: Scribble"
+      ],
+      [
+        "Vendor map option",
+        "Mork's spellbook map"
       ],
       [
         "Membership to obtain",
@@ -124236,7 +124741,7 @@
     "sections": [
       [
         "How to get Scribble",
-        "Buy Pet Map: Scribble from Mork at Fellroot Swamp Hut for 10 Audience Favor. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found. "
+        "Visit Mork at Fellroot Swamp Hut and select “Mork's spellbook map” to exchange 10 Audience Favor for Pet Map: Scribble. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found."
       ],
       [
         "Level bonuses",
@@ -124306,6 +124811,10 @@
       [
         "Pet Map",
         "Pet Map: Smudge"
+      ],
+      [
+        "Vendor map option",
+        "Otis's smithy map"
       ],
       [
         "Membership to obtain",
@@ -124852,7 +125361,7 @@
     "sections": [
       [
         "How to get Smudge",
-        "Buy Pet Map: Smudge from Otis at Fellroot Swamp Hut for 15 Audience Favor. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found. Adventurer’s Guild membership is required to obtain this pet."
+        "Visit Otis at Fellroot Swamp Hut and select “Otis's smithy map” to exchange 15 Audience Favor for Pet Map: Smudge. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found. Adventurer’s Guild membership is required to obtain this pet."
       ],
       [
         "Level bonuses",
@@ -124922,6 +125431,10 @@
       [
         "Pet Map",
         "Pet Map: Stitch"
+      ],
+      [
+        "Vendor map option",
+        "Otis's workbench map"
       ],
       [
         "Membership to obtain",
@@ -125520,7 +126033,7 @@
     "sections": [
       [
         "How to get Stitch",
-        "Buy Pet Map: Stitch from Otis at Fellroot Swamp Hut for 15 Audience Favor. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found. Adventurer’s Guild membership is required to obtain this pet."
+        "Visit Otis at Fellroot Swamp Hut and select “Otis's workbench map” to exchange 15 Audience Favor for Pet Map: Stitch. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found. Adventurer’s Guild membership is required to obtain this pet."
       ],
       [
         "Level bonuses",
@@ -125590,6 +126103,10 @@
       [
         "Pet Map",
         "Pet Map: Stump"
+      ],
+      [
+        "Vendor map option",
+        "Otis's timber grove map"
       ],
       [
         "Membership to obtain",
@@ -125708,7 +126225,7 @@
     "sections": [
       [
         "How to get Stump",
-        "Buy Pet Map: Stump from Otis at Fellroot Swamp Hut for 15 Audience Favor. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found. Adventurer’s Guild membership is required to obtain this pet."
+        "Visit Otis at Fellroot Swamp Hut and select “Otis's timber grove map” to exchange 15 Audience Favor for Pet Map: Stump. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found. Adventurer’s Guild membership is required to obtain this pet."
       ],
       [
         "Level bonuses",
@@ -125778,6 +126295,10 @@
       [
         "Pet Map",
         "Pet Map: Tinderling"
+      ],
+      [
+        "Vendor map option",
+        "Mork's campfire map"
       ],
       [
         "Membership to obtain",
@@ -125944,7 +126465,7 @@
     "sections": [
       [
         "How to get Tinderling",
-        "Buy Pet Map: Tinderling from Mork at Fellroot Swamp Hut for 20 Audience Favor. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found. "
+        "Visit Mork at Fellroot Swamp Hut and select “Mork's campfire map” to exchange 20 Audience Favor for Pet Map: Tinderling. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found."
       ],
       [
         "Level bonuses",
@@ -126014,6 +126535,10 @@
       [
         "Pet Map",
         "Pet Map: Winkle"
+      ],
+      [
+        "Vendor map option",
+        "Mork's forest clearing map"
       ],
       [
         "Membership to obtain",
@@ -126132,7 +126657,7 @@
     "sections": [
       [
         "How to get Winkle",
-        "Buy Pet Map: Winkle from Mork at Fellroot Swamp Hut for 20 Audience Favor. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found. "
+        "Visit Mork at Fellroot Swamp Hut and select “Mork's forest clearing map” to exchange 20 Audience Favor for Pet Map: Winkle. Carry the map while completing one of the eligible tasks or encounters below. The map is consumed when the pet is found."
       ],
       [
         "Level bonuses",

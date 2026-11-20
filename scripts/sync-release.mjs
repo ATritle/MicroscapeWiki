@@ -4,6 +4,7 @@ import {fileURLToPath} from "node:url";
 import {execFileSync} from "node:child_process";
 import {loadArtwork,norm,title,slug,baseName} from "./release-tools.mjs";
 import {itemIcons,itemIconGroups} from "../docs/item-icons.js";
+import {addPetMapOptions} from "./pet-map-options.mjs";
 
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),"..");
 const snapshot=path.resolve(process.argv[2]||"");
@@ -261,6 +262,7 @@ function updateText(value){if(typeof value!=="string")return value;for(const [be
   return value.replaceAll("November 18 beta client","November 19 release client").replaceAll("November 18 beta build","November 19 release build").replaceAll("checked beta client","checked release client").replaceAll("checked beta build","checked release build").replaceAll("The beta definition","The release definition");}
 function updateTree(value){if(typeof value==="string")return updateText(value);if(Array.isArray(value))return value.map(updateTree);if(value&&typeof value==="object")return Object.fromEntries(Object.entries(value).map(([key,value])=>[key,updateTree(value)]));return value;}
 for(const page of reference){if(page.availabilityStatus==="absent-current-build")continue;for(const field of ["summary","sections","facts","tables"])if(page[field])page[field]=updateTree(page[field]);}
+addPetMapOptions(reference,data);
 const linkIndex=new Map();for(const page of reference)for(const name of [page.title,...(page.aliases||[])])linkIndex.set(norm(name),page.id);
 for(const page of reference){for(const t of page.tables||[]){const links=new Map(t.links||[]);for(const row of t.rows)for(const cell of row)for(const part of String(cell).split(/ · |, /)){const id=linkIndex.get(norm(part));if(id&&id!==page.id)links.set(part,id);}if(links.size)t.links=[...links];}page.related=[...new Set(page.related||[])].filter(id=>byId.has(id)&&id!==page.id);}
 
