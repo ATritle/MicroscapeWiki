@@ -591,13 +591,19 @@ function renderList(category, query) {
   main.append(count, grid, empty, more, footer());
 }
 
-function renderTable(table, relatedIds = [], namedLinks = new Map()) {
+function renderTable(table, relatedIds = [], namedLinks = new Map(), showItemIcons = false) {
   const candidates = relatedIds.map(id => byId.get(id)).filter(Boolean);
   const itemLinks = table.links || [];
   const names = new Map([
     ...candidates.map(entry => [normalize(entry.title), entry.id]),
     ...itemLinks.filter(([, id]) => byId.has(id)).map(([label,id]) => [normalize(label),id])
   ]);
+  const tableLink = (id, label) => {
+    const src = showItemIcons && byId.get(id)?.category === "items" && itemIconUrl(itemIconGroups[id]?.[0] || id);
+    return src ? element("a", {href:entryUrl(id), class:"table-item-link"},
+      element("img", {src, alt:"", width:"32", height:"32", loading:"lazy", decoding:"async", referrerpolicy:"no-referrer"}),
+      element("span", {}, label)) : entryLink(id, label);
+  };
   const wrapper = element("div", {class:"table-wrap", role:"region", tabindex:"0", "aria-label":table.title || "Reference table"});
   const head = element("thead", {}, element("tr", {}, ...table.columns.map(col => {
     const target = namedLinks.get(normalize(col));
@@ -608,12 +614,12 @@ function renderTable(table, relatedIds = [], namedLinks = new Map()) {
       if (table.listColumns?.includes(col)) {
         return element("td", {}, ...value.split(" · ").flatMap((label, index) => {
           const target = names.get(normalize(label));
-          return [...(index ? [" · "] : []), target ? entryLink(target, label) : label];
+          return [...(index ? [" · "] : []), target ? tableLink(target, label) : label];
         }));
       }
       const key = normalize(value);
       const target = namedLinks.get(key) || (col === 0 ? names.get(key) : null);
-      return element("td", {}, target ? entryLink(target, value) : value);
+      return element("td", {}, target ? tableLink(target, value) : value);
     })
   )));
   wrapper.append(element("table", {}, head, body));
@@ -786,7 +792,7 @@ function renderEntry(entry, category) {
       continue;
     }
     const showPetLinks = entry.id === "pets";
-    const content = renderTable(table, table.related || entry.related, showPetLinks ? petLinks : petMapLinks);
+    const content = renderTable(table, table.related || entry.related, showPetLinks ? petLinks : petMapLinks, category === "shops");
     if (table.collapsed) {
       article.append(element("details", {class:"table-disclosure"}, element("summary", {}, table.title), content));
       continue;
