@@ -13,7 +13,7 @@ const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const read=async file=>JSON.parse(await fs.readFile(path.join(root,file),'utf8'));
 const reference=await read('docs/reference.json'), evidence=await read('docs/assets/game-data/release-2026-11-19.json'),data=evidence.definitions;
 const all=[...reference,...buildPetEntries(reference),...guides,...tutorials],byId=new Map(all.map(p=>[p.id,p]));
-const old=JSON.parse(execFileSync('git',['-C',root,'show','fd7cad9:docs/reference.json'],{encoding:'utf8',maxBuffer:32*1024*1024}));
+const old=JSON.parse(execFileSync('git',['-C',root,'show','3ecd9bbb33237f7659698d32976145b0e81e5368:docs/reference.json'],{encoding:'utf8',maxBuffer:32*1024*1024}));
 for(const p of [...old,...buildPetEntries(old)])assert(byId.has(p.id),'Preserve route '+p.id);
 assert.equal(byId.size,all.length,'Unique page IDs');
 const page=(category,id)=>reference.find(p=>p.category===category&&p.gameId===id);

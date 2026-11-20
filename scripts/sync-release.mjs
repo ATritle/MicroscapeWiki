@@ -16,7 +16,7 @@ const beta=path.resolve(snapshot,"../2026-11-18T21-13-11-926Z-pre-1.0-beta");
 const old=await read(path.resolve(snapshot,"../../normalized-beta/game-data.json"));
 const oldManifest=await read(path.join(beta,"manifest.json"));
 // Always migrate from the frozen pre-release wiki, so a rehearsal can be repeated.
-const reference=JSON.parse(execFileSync("git",["-C",root,"show","fd7cad9:docs/reference.json"],{encoding:"utf8",maxBuffer:32*1024*1024}));
+const reference=JSON.parse(execFileSync("git",["-C",root,"show","3ecd9bbb33237f7659698d32976145b0e81e5368:docs/reference.json"],{encoding:"utf8",maxBuffer:32*1024*1024}));
 const original=structuredClone(reference);
 const byId=new Map(reference.map(page=>[page.id,page]));
 const date="2026-11-19",evidenceUrl="./assets/game-data/release-2026-11-19.json";
