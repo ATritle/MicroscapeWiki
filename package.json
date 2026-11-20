@@ -1,0 +1,11 @@
+{
+  "name": "microscape-community-wiki",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.25.0",
+  "scripts": {
+    "build": "node scripts/build-seo.mjs",
+    "check:seo": "node scripts/check-seo.mjs"
+  },
+  "devDependencies": { "linkedom": "0.18.12" }
+}

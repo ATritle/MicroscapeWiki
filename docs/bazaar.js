@@ -117,7 +117,7 @@ export function renderBazaar({main, element, crumbs, footer, byId, guide, entryL
     selected=id;detailController?.abort();const controller=new AbortController();detailController=controller;
     const previous=detailSnapshot?.item.itemId===id?detailSnapshot:null;
     if (!previous) detail.replaceChildren(element("h2",{},meta(id).title),element("p",{role:"status"},"Loading current buy/sell orders…"));
-    window.history.replaceState(null,"","#/bazaar?"+new URLSearchParams({item:id}));drawList();
+    window.history.replaceState(null,"","/bazaar/?"+new URLSearchParams({item:id}));drawList();
     if(scroll)detail.scrollIntoView({behavior:"smooth",block:"start"});
     try {
       const snapshot=await read(id,controller.signal);if(disposed||selected!==id)return;

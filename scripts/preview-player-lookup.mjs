@@ -4,7 +4,7 @@ import path from "node:path";
 import {fileURLToPath} from "node:url";
 import {fetchPlayerSnapshot, fetchPlayerSuggestions, PlayerLookupError} from "../workers/live-drops.mjs";
 import gateway from "../api-gateway/_worker.js";
-const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../docs");
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), process.argv[3] || "../docs");
 const port = Number(process.argv[2] || 8065);
 const types = {".html":"text/html", ".js":"text/javascript", ".css":"text/css",
   ".json":"application/json", ".png":"image/png", ".jpg":"image/jpeg", ".svg":"image/svg+xml"};
@@ -45,7 +45,7 @@ http.createServer(async (request, response) => {
   let pathname;
   try { pathname = decodeURIComponent(url.pathname); }
   catch { response.writeHead(400).end("Invalid path"); return; }
-  const file = path.resolve(root, "." + (pathname === "/" ? "/index.html" : pathname));
+  const file = path.resolve(root, "." + (pathname.endsWith("/") ? pathname + "index.html" : pathname));
   if (!file.startsWith(root + path.sep)) {
     response.writeHead(404).end();
     return;

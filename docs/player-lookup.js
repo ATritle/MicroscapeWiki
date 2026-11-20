@@ -342,8 +342,11 @@ export function renderPlayerLookup({main, element:e, crumbs, footer, byId, entry
       status.dataset.state = "success";
       status.textContent = "Profile found · " + snapshot.player.name;
       const target = new URL(window.location.href);
-      target.hash = (comparisonOnly ? "/activity-comparison?" : "/player-lookup?") + new URLSearchParams({name:username});
+      target.pathname = comparisonOnly ? "/activity-comparison/" : "/player-lookup/";
+      target.hash = "";
+      target.search = new URLSearchParams({name:username}).toString();
       window.history.replaceState(null, "", target);
+      document.querySelector('meta[name="robots"]')?.setAttribute("content", "noindex,follow");
     } catch (error) {
       if (disposed || request !== requestNumber) return;
       status.dataset.state = "error";

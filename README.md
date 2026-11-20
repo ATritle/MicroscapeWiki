@@ -1,13 +1,16 @@
 # Microscape Wiki
 
-MzDunk’s community wiki for the Twitch-powered browser idle RPG Microscape. The site uses static HTML, CSS and JavaScript. GitHub Pages serves the `docs` folder.
+MzDunk’s community wiki for the Twitch-powered browser idle RPG Microscape. The site uses static HTML, CSS and JavaScript. GitHub Actions renders the `docs` sources into searchable HTML and deploys the generated `.seo-site` directory to GitHub Pages.
 
 ## Preview locally
 
-From the repository root, serve the site over HTTP and open `http://localhost:8000`.
+From the repository root, install the pinned build dependencies and render the site:
 
 ```sh
-python -m http.server 8000 --directory docs
+pnpm install --frozen-lockfile
+pnpm build
+pnpm check:seo
+node scripts/preview-player-lookup.mjs 8065 ../.seo-site
 ```
 
 To preview Player Lookup locally with real public profiles, run
@@ -68,7 +71,15 @@ recipe changes, source paths and current artwork. The preserved factual beta
 definitions in `docs/assets/game-data/beta-2026-11-18.json` keep source citations
 working after the game's generated bundle filenames disappear.
 
-GitHub Pages is configured to deploy from `main`, folder `/docs`. To check a change, open the site and try an affected deep link, a search, and the relevant filters.
+GitHub Pages uses **GitHub Actions** as its source. The `Build and deploy searchable wiki` workflow builds on changes to `docs`, the SEO build/check scripts or dependency files. It validates every generated page before publishing. To check a change, open the site and try an affected deep link, a search, and the relevant filters.
+
+## Search indexing and rollback
+
+The SEO build uses the same `docs/app.js` renderer as the browser. It preserves the existing markup, CSS, tools and visible content while generating one HTML document per entry, directory and tool. `docs/seo.js` maps old hash links to stable paths such as `/items/rubber-boots/`, updates page metadata on navigation and retains old bookmarks. A root `<base>` keeps existing asset and citation URLs working on nested pages. Home, article and directory content is available in the initial HTML without executing JavaScript.
+
+The build publishes canonical URLs, unique titles and descriptions, Open Graph/Twitter metadata, WebSite/WebPage structured data, `sitemap.xml`, `robots.txt`, and a custom noindex 404 page. Search results and player lookup are excluded from the sitemap. Individual player results are marked noindex; live feeds and player data are never captured during the build. The existing attribution and artwork source links remain intact. The public Google verification tag in `docs/index.html` must remain for Search Console ownership verification.
+
+The pre-SEO rollback branch is `seo-rollback-2026-11-20`, commit `82f9956c3f1a016d1432b08e93e7e1e8cd5d3f62`. To fully revert, restore the pre-SEO source through a new commit and change Settings → Pages → Source back to **Deploy from a branch**, **main**, **/docs**. Preserve the custom domain and HTTPS settings. Reverting does not immediately remove search-engine caches.
 
 The public community API is `https://microscape-wiki-api.pages.dev/`, configured once in `docs/api-config.js`. Its Cloudflare Pages Function forwards only the five read-only wiki endpoints through the `LIVE_DROPS` service binding to the `microscape-live-drops` Worker. Build output is `api-gateway`; no build command or copied Twitch credentials are needed. Redeploy after configuring the production binding. The Worker fetches the game’s stream list on demand and caches each response for one minute. The wiki checks on page load, every five minutes while visible, and when readers click **Refresh**. Deploy backend changes separately from the `workers` directory; publishing the wiki does not update a manually deployed Worker.
 

@@ -1,11 +1,12 @@
 import {communityApiBase} from "./api-config.js?v=community-api-20261119";
 import { guides } from "./guides.js?v=activity-20261120";
-import {renderBazaar} from "./bazaar.js?v=bazaar-visual-20261120";
+import {renderBazaar} from "./bazaar.js?v=seo-20261120";
 import {renderBazaarWalkthrough} from "./bazaar-walkthrough.js?v=bazaar-visual-20261120";
 import { tutorials } from "./tutorials.js?v=release-20261119";
 import { buildPetEntries } from "./pets.js?v=release-20261119";
 import { itemIcons, itemIconGroups } from "./item-icons.js?v=release-20261119";
-import { renderPlayerLookup } from "./player-lookup.js?v=vendors-20261120";
+import { renderPlayerLookup } from "./player-lookup.js?v=seo-20261120";
+import {publicUrl, legacyRoute, pageMetadata, updateMetadata} from "./seo.js?v=seo-20261120";
 
 const groups = {
   guides: { title: "Guides", icon: "▤", blurb: "Start here, earn Energy, trade and plan dungeon runs." },
@@ -63,7 +64,7 @@ const petLinks = new Map();
 
 function element(tag, attributes = {}, ...children) {
   const node = document.createElement(tag);
-  for (const [name, value] of Object.entries(attributes)) node.setAttribute(name, value);
+  for (const [name, value] of Object.entries(attributes)) node.setAttribute(name, name === "href" ? publicUrl(value, byId) : value);
   node.append(...children);
   return node;
 }
@@ -830,7 +831,8 @@ function renderEntry(entry, category) {
 }
 
 function render({focus = false} = {}) {
-  const [path, params] = window.location.hash.slice(1).split("?");
+  const route = legacyRoute(window.location, byId, groups);
+  const [path, params] = route.split("?");
   if (path === "content") return;
   const [, view, id] = path.split("/");
   const entry = view === "entry" ? byId.get(id) : null;
@@ -851,8 +853,7 @@ function render({focus = false} = {}) {
   const currentCategory = bazaar || entry?.id === "bazaar" ? "bazaar" : entry?.id === "pets" ? "pets" : entry?.category || category;
   renderNav(currentCategory, entry?.id, home, liveDrops, playerLookup, activityComparison);
   searchInput.value = view === "search" ? query : "";
-  const title = entry?.title || groups[category]?.title || (bazaar ? "Bazaar" : liveDrops ? "Live Twitch drops" : playerLookup ? "Player lookup" : activityComparison ? "Activity comparison" : "");
-  document.title = title ? title + " · Microscape Wiki" : "Microscape Wiki";
+  updateMetadata(document, pageMetadata(route, byId, groups));
   if (home) renderHome();
   else if (liveDrops) renderLiveDrops();
   else if (bazaar) disposeBazaar = renderBazaar({main, element, crumbs, footer, byId, guide:byId.get("bazaar"), entryLink,
@@ -874,8 +875,7 @@ menu.addEventListener("click", () => menu.setAttribute("aria-expanded", String(m
 searchForm.addEventListener("submit", event => {
   event.preventDefault();
   const next = "#/search?" + new URLSearchParams({q:searchInput.value.trim()});
-  if (window.location.hash === next) main.focus();
-  else window.location.hash = next;
+  navigate(publicUrl(next, byId));
 });
 document.querySelector(".skip").addEventListener("click", event => {
   event.preventDefault();
@@ -906,7 +906,20 @@ try {
   console.error("Could not load the Microscape reference.", error);
 }
 entries.forEach(addToSearch);
+function normalizeLegacyLocation() {
+  if (window.location.hash.startsWith("#/")) {
+    const next = publicUrl(window.location.hash, byId);
+    if (!next.startsWith("#")) window.history.replaceState(null, "", next);
+  }
+}
+function navigate(url) {
+  window.history.pushState(null,"",url);
+  render({focus:true});
+  window.scrollTo(0,0);
+}
+normalizeLegacyLocation();
 render();
+if (!globalThis.__WIKI_PRERENDER__) {
 refreshLiveDrops();
 setInterval(() => { if (!document.hidden) refreshMzDunkStatus(); }, 60_000);
 setInterval(() => { if (!document.hidden) refreshLiveDrops(); }, 5 * 60_000);
@@ -914,8 +927,23 @@ document.addEventListener("visibilitychange", resumeLiveUpdates);
 window.addEventListener("focus", resumeLiveUpdates);
 window.addEventListener("pageshow", resumeLiveUpdates);
 window.addEventListener("online", resumeLiveUpdates);
+}
+document.addEventListener("click", event => {
+  const anchor = event.target.closest?.("a[href]");
+  if (!anchor || anchor.target || anchor.hasAttribute("download") || event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+  const url = new URL(anchor.getAttribute("href"), window.location.href);
+  if (url.origin !== window.location.origin || url.hash || !url.pathname.endsWith("/")) return;
+  const route = legacyRoute(url, byId, groups);
+  if (route === "/not-found") return;
+  event.preventDefault();
+  navigate(url.pathname + url.search);
+});
+window.addEventListener("popstate", () => {render({focus:true});});
 window.addEventListener("hashchange", () => {
   if (window.location.hash === "#content") return;
+  normalizeLegacyLocation();
   render({focus:true});
   window.scrollTo(0,0);
 });
+
+export {render, entries, byId, groups};
