@@ -2,7 +2,7 @@ import {compareCombat, equipmentBonuses} from "./combat-comparison.js?v=activity
 
 let catalogRequest;
 export function readActivityCatalog() {
-  catalogRequest ||= fetch(new URL("./activity-catalog.json?v=activity-20261120", import.meta.url)).then(async response => {
+  catalogRequest ||= fetch(new URL("./activity-catalog.json?v=activity-order-20261120", import.meta.url)).then(async response => {
     if (!response.ok) throw Error("The activity catalog could not load. Please try again.");
     const data = await response.json();
     if (data.schemaVersion !== 1 || !Array.isArray(data.activities)) throw Error("The activity catalog is incomplete.");
@@ -13,7 +13,8 @@ export function readActivityCatalog() {
 
 export function activitiesForSkill(catalog, skill) {
   return catalog.activities.filter(activity => activity.skill === skill)
-    .sort((a, b) => a.level - b.level || a.name.localeCompare(b.name));
+    .sort((a, b) => Number(!!a.otherActivity) - Number(!!b.otherActivity)
+      || (a.sortLevel ?? a.level) - (b.sortLevel ?? b.level));
 }
 export function validateActivityPair(catalog, skill, firstId, secondId) {
   const rows = [firstId, secondId].map(id => catalog.activities.find(activity => activity.id === id));
@@ -70,10 +71,17 @@ export function renderActivityComparison({e, player, levels, catalog, byId, entr
   };
   function fillActivities(reset = false) {
     const activities = activitiesForSkill(catalog, skillSelect.value);
-    for (const select of [firstSelect, secondSelect]) select.replaceChildren(...activities.map(activity => {
-      const locked = !(catalog.skills.find(s => s.id === skillSelect.value)?.combat) && (levels[skillSelect.value] || 1) < activity.level;
-      return e("option", {value:activity.id}, activity.name + (activity.level > 1 ? " · Lv " + activity.level : "") + (locked ? " · locked" : ""));
-    }));
+    const combat = catalog.skills.find(s => s.id === skillSelect.value)?.combat;
+    const optionFor = activity => {
+      const locked = !combat && (levels[skillSelect.value] || 1) < activity.level;
+      const displayLevel = combat ? activity.combatLevel : activity.level;
+      return e("option", {value:activity.id}, activity.name + (combat || displayLevel > 1 ? " · Lv " + displayLevel : "") + (locked ? " · locked" : ""));
+    };
+    const guidebook = activities.filter(activity => !activity.otherActivity), other = activities.filter(activity => activity.otherActivity);
+    for (const select of [firstSelect, secondSelect]) select.replaceChildren(...(other.length ? [
+      e("optgroup", {label:"Guidebook activities"}, ...guidebook.map(optionFor)),
+      e("optgroup", {label:combat ? "Other encounters" : "Other activities"}, ...other.map(optionFor))
+    ] : guidebook.map(optionFor)));
     const defaultFirst = activities.find(a => a.mob === "mouse") || activities[0];
     const defaultSecond = activities.find(a => a.mob === "chicken") || activities[1];
     firstSelect.value = !reset && activities.some(a => a.id === preferences.firstId) ? preferences.firstId : defaultFirst?.id || "";

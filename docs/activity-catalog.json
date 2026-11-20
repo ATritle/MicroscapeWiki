@@ -125,1684 +125,2404 @@
   ],
   "activities": [
     {
-      "id": "attack/fight-bear",
-      "skill": "attack",
-      "name": "Bear",
-      "mob": "bear",
-      "level": 0
-    },
-    {
-      "id": "attack/fight-black-knight",
-      "skill": "attack",
-      "name": "Black Knight",
-      "mob": "black-knight",
-      "level": 0
-    },
-    {
-      "id": "attack/fight-black-knight-safe",
-      "skill": "attack",
-      "name": "Black Knight (Safe spot)",
-      "mob": "black-knight-safe",
-      "level": 0
-    },
-    {
-      "id": "attack/fight-blue-dragon",
-      "skill": "attack",
-      "name": "Blue Dragon",
-      "mob": "blue-dragon",
-      "level": 0
-    },
-    {
-      "id": "attack/fight-cave-slime",
-      "skill": "attack",
-      "name": "Cave Slime",
-      "mob": "cave-slime",
-      "level": 0
-    },
-    {
-      "id": "attack/fight-chicken",
-      "skill": "attack",
-      "name": "Chicken",
-      "mob": "chicken",
-      "level": 0
-    },
-    {
-      "id": "attack/fight-cockatrice",
-      "skill": "attack",
-      "name": "Cockatrice",
-      "mob": "cockatrice",
-      "level": 0
-    },
-    {
-      "id": "attack/fight-corrupted-druid",
-      "skill": "attack",
-      "name": "Corrupted Druid",
-      "mob": "corrupted-druid",
-      "level": 0
-    },
-    {
-      "id": "attack/fight-cow",
-      "skill": "attack",
-      "name": "Cow",
-      "mob": "cow",
-      "level": 0
-    },
-    {
-      "id": "attack/fight-crocodile-safe",
-      "skill": "attack",
-      "name": "Crocodile (Safe spot)",
-      "mob": "crocodile-safe",
-      "level": 0
-    },
-    {
-      "id": "attack/fight-dragon-whelp",
-      "skill": "attack",
-      "name": "Dragon Whelp",
-      "mob": "dragon-whelp",
-      "level": 0
-    },
-    {
-      "id": "attack/fight-druid-warrior",
-      "skill": "attack",
-      "name": "Druid Warrior",
-      "mob": "druid-warrior",
-      "level": 0
-    },
-    {
-      "id": "attack/fight-fire-dwarf",
-      "skill": "attack",
-      "name": "Fire Dwarf",
-      "mob": "fire-dwarf",
-      "level": 0
-    },
-    {
-      "id": "attack/fight-fire-dwarf-safe",
-      "skill": "attack",
-      "name": "Fire Dwarf (Safe spot)",
-      "mob": "fire-dwarf-safe",
-      "level": 0
-    },
-    {
-      "id": "attack/fight-fire-elemental",
-      "skill": "attack",
-      "name": "Fire Elemental",
-      "mob": "fire-elemental",
-      "level": 0
-    },
-    {
-      "id": "attack/fight-fire-elemental-safe",
-      "skill": "attack",
-      "name": "Fire Elemental (Safe spot)",
-      "mob": "fire-elemental-safe",
-      "level": 0
-    },
-    {
-      "id": "attack/fight-ghost",
-      "skill": "attack",
-      "name": "Ghost",
-      "mob": "ghost",
-      "level": 0
-    },
-    {
-      "id": "attack/fight-giant-rat",
-      "skill": "attack",
-      "name": "Giant Rat",
-      "mob": "giant-rat",
-      "level": 0
-    },
-    {
-      "id": "attack/fight-giant-snake",
-      "skill": "attack",
-      "name": "Giant Snake",
-      "mob": "giant-snake",
-      "level": 0
-    },
-    {
-      "id": "attack/fight-goblin",
-      "skill": "attack",
-      "name": "Goblin",
-      "mob": "goblin",
-      "level": 0
-    },
-    {
-      "id": "attack/fight-greater-demon",
-      "skill": "attack",
-      "name": "Greater Demon",
-      "mob": "greater-demon",
-      "level": 0
-    },
-    {
-      "id": "attack/fight-gurgle",
-      "skill": "attack",
-      "name": "Gurgle",
-      "mob": "gurgle",
-      "level": 0
-    },
-    {
-      "id": "attack/fight-ice-giant",
-      "skill": "attack",
-      "name": "Ice Giant",
-      "mob": "ice-giant",
-      "level": 0
-    },
-    {
-      "id": "attack/fight-ice-warrior",
-      "skill": "attack",
-      "name": "Ice Warrior",
-      "mob": "ice-warrior",
-      "level": 0
-    },
-    {
-      "id": "attack/fight-ice-warrior-safe",
-      "skill": "attack",
-      "name": "Ice Warrior (Safe spot)",
-      "mob": "ice-warrior-safe",
-      "level": 0
-    },
-    {
-      "id": "attack/fight-imp",
-      "skill": "attack",
-      "name": "Imp",
-      "mob": "imp",
-      "level": 0
-    },
-    {
       "id": "attack/fight-insect-swarm",
       "skill": "attack",
       "name": "Insect Swarm",
       "mob": "insect-swarm",
-      "level": 0
-    },
-    {
-      "id": "attack/fight-iskarn",
-      "skill": "attack",
-      "name": "Iskarn",
-      "mob": "iskarn",
-      "level": 0
-    },
-    {
-      "id": "attack/fight-island-rodent",
-      "skill": "attack",
-      "name": "Island Rodent",
-      "mob": "island-rodent",
-      "level": 0
-    },
-    {
-      "id": "attack/fight-king-onyx-dragon",
-      "skill": "attack",
-      "name": "King Onyx Dragon",
-      "mob": "king-onyx-dragon",
-      "level": 0
-    },
-    {
-      "id": "attack/fight-lesser-demon-safe",
-      "skill": "attack",
-      "name": "Lesser Demon (Safe spot)",
-      "mob": "lesser-demon-safe",
-      "level": 0
-    },
-    {
-      "id": "attack/fight-magma-hound",
-      "skill": "attack",
-      "name": "Magma Hound",
-      "mob": "magma-hound",
-      "level": 0
-    },
-    {
-      "id": "attack/fight-monk",
-      "skill": "attack",
-      "name": "Monk",
-      "mob": "monk",
-      "level": 0
-    },
-    {
-      "id": "attack/fight-morvane",
-      "skill": "attack",
-      "name": "Morvane, Corrupted Keeper Of The Heartwood",
-      "mob": "morvane",
-      "level": 0
-    },
-    {
-      "id": "attack/fight-moss-giant",
-      "skill": "attack",
-      "name": "Moss Giant",
-      "mob": "moss-giant",
-      "level": 0
-    },
-    {
-      "id": "attack/fight-mothman",
-      "skill": "attack",
-      "name": "Mothman",
-      "mob": "mothman",
-      "level": 0
-    },
-    {
-      "id": "attack/fight-mouse",
-      "skill": "attack",
-      "name": "Mouse",
-      "mob": "mouse",
-      "level": 0
-    },
-    {
-      "id": "attack/fight-mummy",
-      "skill": "attack",
-      "name": "Mummy",
-      "mob": "mummy",
-      "level": 0
-    },
-    {
-      "id": "attack/fight-pit-guardian",
-      "skill": "attack",
-      "name": "Pit Guardian",
-      "mob": "pit-guardian",
-      "level": 0
-    },
-    {
-      "id": "attack/fight-pyrax",
-      "skill": "attack",
-      "name": "Pyrax",
-      "mob": "pyrax",
-      "level": 0
-    },
-    {
-      "id": "attack/fight-sandworm",
-      "skill": "attack",
-      "name": "Sandworm",
-      "mob": "sandworm",
-      "level": 0
-    },
-    {
-      "id": "attack/fight-scorpion",
-      "skill": "attack",
-      "name": "Titan Scorpion",
-      "mob": "giant-scorpion",
-      "level": 0
-    },
-    {
-      "id": "attack/fight-sewer-crocodile",
-      "skill": "attack",
-      "name": "Sewer Crocodile (Safe spot)",
-      "mob": "sewer-crocodile",
-      "level": 0
-    },
-    {
-      "id": "attack/fight-skeleton",
-      "skill": "attack",
-      "name": "Skeleton",
-      "mob": "skeleton",
-      "level": 0
-    },
-    {
-      "id": "attack/fight-slimelet",
-      "skill": "attack",
-      "name": "Slimelet",
-      "mob": "slimelet",
-      "level": 0
+      "level": 0,
+      "combatLevel": 10,
+      "sortLevel": 10,
+      "otherActivity": false
     },
     {
       "id": "attack/fight-snake",
       "skill": "attack",
       "name": "Snake",
       "mob": "snake",
-      "level": 0
+      "level": 0,
+      "combatLevel": 14,
+      "sortLevel": 14,
+      "otherActivity": false
+    },
+    {
+      "id": "attack/fight-crocodile-safe",
+      "skill": "attack",
+      "name": "Crocodile (Safe spot)",
+      "mob": "crocodile-safe",
+      "level": 0,
+      "combatLevel": 18,
+      "sortLevel": 18,
+      "otherActivity": true
+    },
+    {
+      "id": "attack/fight-giant-snake",
+      "skill": "attack",
+      "name": "Giant Snake",
+      "mob": "giant-snake",
+      "level": 0,
+      "combatLevel": 56,
+      "sortLevel": 56,
+      "otherActivity": false
+    },
+    {
+      "id": "attack/fight-mummy",
+      "skill": "attack",
+      "name": "Mummy",
+      "mob": "mummy",
+      "level": 0,
+      "combatLevel": 36,
+      "sortLevel": 36,
+      "otherActivity": false
+    },
+    {
+      "id": "attack/fight-cockatrice",
+      "skill": "attack",
+      "name": "Cockatrice",
+      "mob": "cockatrice",
+      "level": 0,
+      "combatLevel": 44,
+      "sortLevel": 44,
+      "otherActivity": false
+    },
+    {
+      "id": "attack/fight-pit-guardian",
+      "skill": "attack",
+      "name": "Pit Guardian",
+      "mob": "pit-guardian",
+      "level": 0,
+      "combatLevel": 63,
+      "sortLevel": 63,
+      "otherActivity": false
+    },
+    {
+      "id": "attack/fight-fire-elemental",
+      "skill": "attack",
+      "name": "Fire Elemental",
+      "mob": "fire-elemental",
+      "level": 0,
+      "combatLevel": 67,
+      "sortLevel": 67,
+      "otherActivity": false
+    },
+    {
+      "id": "attack/fight-fire-elemental-safe",
+      "skill": "attack",
+      "name": "Fire Elemental (Safe spot)",
+      "mob": "fire-elemental-safe",
+      "level": 0,
+      "combatLevel": 67,
+      "sortLevel": 67,
+      "otherActivity": true
     },
     {
       "id": "attack/fight-tomb-sorcerer",
       "skill": "attack",
       "name": "Tomb Sorcerer",
       "mob": "tomb-sorcerer",
-      "level": 0
+      "level": 0,
+      "combatLevel": 75,
+      "sortLevel": 75,
+      "otherActivity": false
+    },
+    {
+      "id": "attack/fight-sandworm",
+      "skill": "attack",
+      "name": "Sandworm",
+      "mob": "sandworm",
+      "level": 0,
+      "combatLevel": 81,
+      "sortLevel": 81,
+      "otherActivity": false
+    },
+    {
+      "id": "attack/fight-mouse",
+      "skill": "attack",
+      "name": "Mouse",
+      "mob": "mouse",
+      "level": 0,
+      "combatLevel": 1,
+      "sortLevel": 1,
+      "otherActivity": false
+    },
+    {
+      "id": "attack/fight-island-rodent",
+      "skill": "attack",
+      "name": "Island Rodent",
+      "mob": "island-rodent",
+      "level": 0,
+      "combatLevel": 1,
+      "sortLevel": 1,
+      "otherActivity": true
+    },
+    {
+      "id": "attack/fight-chicken",
+      "skill": "attack",
+      "name": "Chicken",
+      "mob": "chicken",
+      "level": 0,
+      "combatLevel": 2,
+      "sortLevel": 2,
+      "otherActivity": false
+    },
+    {
+      "id": "attack/fight-giant-rat",
+      "skill": "attack",
+      "name": "Giant Rat",
+      "mob": "giant-rat",
+      "level": 0,
+      "combatLevel": 3,
+      "sortLevel": 3,
+      "otherActivity": false
+    },
+    {
+      "id": "attack/fight-cow",
+      "skill": "attack",
+      "name": "Cow",
+      "mob": "cow",
+      "level": 0,
+      "combatLevel": 4,
+      "sortLevel": 4,
+      "otherActivity": false
+    },
+    {
+      "id": "attack/fight-goblin",
+      "skill": "attack",
+      "name": "Goblin",
+      "mob": "goblin",
+      "level": 0,
+      "combatLevel": 9,
+      "sortLevel": 9,
+      "otherActivity": false
+    },
+    {
+      "id": "attack/fight-scorpion",
+      "skill": "attack",
+      "name": "Titan Scorpion",
+      "mob": "giant-scorpion",
+      "level": 0,
+      "combatLevel": 12,
+      "sortLevel": 12,
+      "otherActivity": false
+    },
+    {
+      "id": "attack/fight-imp",
+      "skill": "attack",
+      "name": "Imp",
+      "mob": "imp",
+      "level": 0,
+      "combatLevel": 13,
+      "sortLevel": 13,
+      "otherActivity": false
+    },
+    {
+      "id": "attack/fight-monk",
+      "skill": "attack",
+      "name": "Monk",
+      "mob": "monk",
+      "level": 0,
+      "combatLevel": 16,
+      "sortLevel": 16,
+      "otherActivity": false
+    },
+    {
+      "id": "attack/fight-skeleton",
+      "skill": "attack",
+      "name": "Skeleton",
+      "mob": "skeleton",
+      "level": 0,
+      "combatLevel": 19,
+      "sortLevel": 19,
+      "otherActivity": false
+    },
+    {
+      "id": "attack/fight-ghost",
+      "skill": "attack",
+      "name": "Ghost",
+      "mob": "ghost",
+      "level": 0,
+      "combatLevel": 29,
+      "sortLevel": 29,
+      "otherActivity": false
+    },
+    {
+      "id": "attack/fight-cave-slime",
+      "skill": "attack",
+      "name": "Cave Slime",
+      "mob": "cave-slime",
+      "level": 0,
+      "combatLevel": 25,
+      "sortLevel": 25,
+      "otherActivity": false
+    },
+    {
+      "id": "attack/fight-bear",
+      "skill": "attack",
+      "name": "Bear",
+      "mob": "bear",
+      "level": 0,
+      "combatLevel": 26,
+      "sortLevel": 26,
+      "otherActivity": false
+    },
+    {
+      "id": "attack/fight-fire-dwarf",
+      "skill": "attack",
+      "name": "Fire Dwarf",
+      "mob": "fire-dwarf",
+      "level": 0,
+      "combatLevel": 33,
+      "sortLevel": 33,
+      "otherActivity": false
+    },
+    {
+      "id": "attack/fight-fire-dwarf-safe",
+      "skill": "attack",
+      "name": "Fire Dwarf (Safe spot)",
+      "mob": "fire-dwarf-safe",
+      "level": 0,
+      "combatLevel": 33,
+      "sortLevel": 33,
+      "otherActivity": true
+    },
+    {
+      "id": "attack/fight-black-knight",
+      "skill": "attack",
+      "name": "Black Knight",
+      "mob": "black-knight",
+      "level": 0,
+      "combatLevel": 38,
+      "sortLevel": 38,
+      "otherActivity": false
+    },
+    {
+      "id": "attack/fight-black-knight-safe",
+      "skill": "attack",
+      "name": "Black Knight (Safe spot)",
+      "mob": "black-knight-safe",
+      "level": 0,
+      "combatLevel": 38,
+      "sortLevel": 38,
+      "otherActivity": true
+    },
+    {
+      "id": "attack/fight-moss-giant",
+      "skill": "attack",
+      "name": "Moss Giant",
+      "mob": "moss-giant",
+      "level": 0,
+      "combatLevel": 42,
+      "sortLevel": 42,
+      "otherActivity": false
+    },
+    {
+      "id": "attack/fight-ice-warrior",
+      "skill": "attack",
+      "name": "Ice Warrior",
+      "mob": "ice-warrior",
+      "level": 0,
+      "combatLevel": 57,
+      "sortLevel": 57,
+      "otherActivity": false
+    },
+    {
+      "id": "attack/fight-ice-warrior-safe",
+      "skill": "attack",
+      "name": "Ice Warrior (Safe spot)",
+      "mob": "ice-warrior-safe",
+      "level": 0,
+      "combatLevel": 57,
+      "sortLevel": 57,
+      "otherActivity": true
+    },
+    {
+      "id": "attack/fight-mothman",
+      "skill": "attack",
+      "name": "Mothman",
+      "mob": "mothman",
+      "level": 0,
+      "combatLevel": 60,
+      "sortLevel": 60,
+      "otherActivity": false
+    },
+    {
+      "id": "attack/fight-ice-giant",
+      "skill": "attack",
+      "name": "Ice Giant",
+      "mob": "ice-giant",
+      "level": 0,
+      "combatLevel": 68,
+      "sortLevel": 68,
+      "otherActivity": false
+    },
+    {
+      "id": "attack/fight-greater-demon",
+      "skill": "attack",
+      "name": "Greater Demon",
+      "mob": "greater-demon",
+      "level": 0,
+      "combatLevel": 87,
+      "sortLevel": 87,
+      "otherActivity": false
+    },
+    {
+      "id": "attack/fight-corrupted-druid",
+      "skill": "attack",
+      "name": "Corrupted Druid",
+      "mob": "corrupted-druid",
+      "level": 0,
+      "combatLevel": 52,
+      "sortLevel": 52,
+      "otherActivity": false
+    },
+    {
+      "id": "attack/fight-druid-warrior",
+      "skill": "attack",
+      "name": "Druid Warrior",
+      "mob": "druid-warrior",
+      "level": 0,
+      "combatLevel": 72,
+      "sortLevel": 72,
+      "otherActivity": false
+    },
+    {
+      "id": "attack/fight-blue-dragon",
+      "skill": "attack",
+      "name": "Blue Dragon",
+      "mob": "blue-dragon",
+      "level": 0,
+      "combatLevel": 105,
+      "sortLevel": 105,
+      "otherActivity": false
+    },
+    {
+      "id": "attack/fight-lesser-demon-safe",
+      "skill": "attack",
+      "name": "Lesser Demon (Safe spot)",
+      "mob": "lesser-demon-safe",
+      "level": 0,
+      "combatLevel": 79,
+      "sortLevel": 79,
+      "otherActivity": true
     },
     {
       "id": "attack/fight-turkey",
       "skill": "attack",
       "name": "Turkey",
       "mob": "turkey",
-      "level": 0
+      "level": 0,
+      "combatLevel": 15,
+      "sortLevel": 15,
+      "otherActivity": false
     },
     {
-      "id": "strength/fight-bear",
-      "skill": "strength",
-      "name": "Bear",
-      "mob": "bear",
-      "level": 0
-    },
-    {
-      "id": "strength/fight-black-knight",
-      "skill": "strength",
-      "name": "Black Knight",
-      "mob": "black-knight",
-      "level": 0
-    },
-    {
-      "id": "strength/fight-black-knight-safe",
-      "skill": "strength",
-      "name": "Black Knight (Safe spot)",
-      "mob": "black-knight-safe",
-      "level": 0
-    },
-    {
-      "id": "strength/fight-blue-dragon",
-      "skill": "strength",
-      "name": "Blue Dragon",
-      "mob": "blue-dragon",
-      "level": 0
-    },
-    {
-      "id": "strength/fight-cave-slime",
-      "skill": "strength",
-      "name": "Cave Slime",
-      "mob": "cave-slime",
-      "level": 0
-    },
-    {
-      "id": "strength/fight-chicken",
-      "skill": "strength",
-      "name": "Chicken",
-      "mob": "chicken",
-      "level": 0
-    },
-    {
-      "id": "strength/fight-cockatrice",
-      "skill": "strength",
-      "name": "Cockatrice",
-      "mob": "cockatrice",
-      "level": 0
-    },
-    {
-      "id": "strength/fight-corrupted-druid",
-      "skill": "strength",
-      "name": "Corrupted Druid",
-      "mob": "corrupted-druid",
-      "level": 0
-    },
-    {
-      "id": "strength/fight-cow",
-      "skill": "strength",
-      "name": "Cow",
-      "mob": "cow",
-      "level": 0
-    },
-    {
-      "id": "strength/fight-crocodile-safe",
-      "skill": "strength",
-      "name": "Crocodile (Safe spot)",
-      "mob": "crocodile-safe",
-      "level": 0
-    },
-    {
-      "id": "strength/fight-dragon-whelp",
-      "skill": "strength",
+      "id": "attack/fight-dragon-whelp",
+      "skill": "attack",
       "name": "Dragon Whelp",
       "mob": "dragon-whelp",
-      "level": 0
+      "level": 0,
+      "combatLevel": 43,
+      "sortLevel": 43,
+      "otherActivity": true
     },
     {
-      "id": "strength/fight-druid-warrior",
-      "skill": "strength",
-      "name": "Druid Warrior",
-      "mob": "druid-warrior",
-      "level": 0
+      "id": "attack/fight-magma-hound",
+      "skill": "attack",
+      "name": "Magma Hound",
+      "mob": "magma-hound",
+      "level": 0,
+      "combatLevel": 65,
+      "sortLevel": 65,
+      "otherActivity": true
     },
     {
-      "id": "strength/fight-fire-dwarf",
-      "skill": "strength",
-      "name": "Fire Dwarf",
-      "mob": "fire-dwarf",
-      "level": 0
+      "id": "attack/fight-king-onyx-dragon",
+      "skill": "attack",
+      "name": "King Onyx Dragon",
+      "mob": "king-onyx-dragon",
+      "level": 0,
+      "combatLevel": 155,
+      "sortLevel": 155,
+      "otherActivity": true
     },
     {
-      "id": "strength/fight-fire-dwarf-safe",
-      "skill": "strength",
-      "name": "Fire Dwarf (Safe spot)",
-      "mob": "fire-dwarf-safe",
-      "level": 0
+      "id": "attack/fight-iskarn",
+      "skill": "attack",
+      "name": "Iskarn",
+      "mob": "iskarn",
+      "level": 0,
+      "combatLevel": 80,
+      "sortLevel": 80,
+      "otherActivity": true
     },
     {
-      "id": "strength/fight-fire-elemental",
-      "skill": "strength",
-      "name": "Fire Elemental",
-      "mob": "fire-elemental",
-      "level": 0
+      "id": "attack/fight-pyrax",
+      "skill": "attack",
+      "name": "Pyrax",
+      "mob": "pyrax",
+      "level": 0,
+      "combatLevel": 80,
+      "sortLevel": 80,
+      "otherActivity": true
     },
     {
-      "id": "strength/fight-fire-elemental-safe",
-      "skill": "strength",
-      "name": "Fire Elemental (Safe spot)",
-      "mob": "fire-elemental-safe",
-      "level": 0
+      "id": "attack/fight-morvane",
+      "skill": "attack",
+      "name": "Morvane, Corrupted Keeper Of The Heartwood",
+      "mob": "morvane",
+      "level": 0,
+      "combatLevel": 95,
+      "sortLevel": 95,
+      "otherActivity": true
     },
     {
-      "id": "strength/fight-ghost",
-      "skill": "strength",
-      "name": "Ghost",
-      "mob": "ghost",
-      "level": 0
+      "id": "attack/fight-sewer-crocodile",
+      "skill": "attack",
+      "name": "Sewer Crocodile (Safe spot)",
+      "mob": "sewer-crocodile",
+      "level": 0,
+      "combatLevel": 35,
+      "sortLevel": 35,
+      "otherActivity": true
     },
     {
-      "id": "strength/fight-giant-rat",
-      "skill": "strength",
-      "name": "Giant Rat",
-      "mob": "giant-rat",
-      "level": 0
-    },
-    {
-      "id": "strength/fight-giant-snake",
-      "skill": "strength",
-      "name": "Giant Snake",
-      "mob": "giant-snake",
-      "level": 0
-    },
-    {
-      "id": "strength/fight-goblin",
-      "skill": "strength",
-      "name": "Goblin",
-      "mob": "goblin",
-      "level": 0
-    },
-    {
-      "id": "strength/fight-greater-demon",
-      "skill": "strength",
-      "name": "Greater Demon",
-      "mob": "greater-demon",
-      "level": 0
-    },
-    {
-      "id": "strength/fight-gurgle",
-      "skill": "strength",
+      "id": "attack/fight-gurgle",
+      "skill": "attack",
       "name": "Gurgle",
       "mob": "gurgle",
-      "level": 0
+      "level": 0,
+      "combatLevel": 40,
+      "sortLevel": 40,
+      "otherActivity": true
     },
     {
-      "id": "strength/fight-ice-giant",
-      "skill": "strength",
-      "name": "Ice Giant",
-      "mob": "ice-giant",
-      "level": 0
-    },
-    {
-      "id": "strength/fight-ice-warrior",
-      "skill": "strength",
-      "name": "Ice Warrior",
-      "mob": "ice-warrior",
-      "level": 0
-    },
-    {
-      "id": "strength/fight-ice-warrior-safe",
-      "skill": "strength",
-      "name": "Ice Warrior (Safe spot)",
-      "mob": "ice-warrior-safe",
-      "level": 0
-    },
-    {
-      "id": "strength/fight-imp",
-      "skill": "strength",
-      "name": "Imp",
-      "mob": "imp",
-      "level": 0
+      "id": "attack/fight-slimelet",
+      "skill": "attack",
+      "name": "Slimelet",
+      "mob": "slimelet",
+      "level": 0,
+      "combatLevel": 25,
+      "sortLevel": 25,
+      "otherActivity": true
     },
     {
       "id": "strength/fight-insect-swarm",
       "skill": "strength",
       "name": "Insect Swarm",
       "mob": "insect-swarm",
-      "level": 0
-    },
-    {
-      "id": "strength/fight-iskarn",
-      "skill": "strength",
-      "name": "Iskarn",
-      "mob": "iskarn",
-      "level": 0
-    },
-    {
-      "id": "strength/fight-island-rodent",
-      "skill": "strength",
-      "name": "Island Rodent",
-      "mob": "island-rodent",
-      "level": 0
-    },
-    {
-      "id": "strength/fight-king-onyx-dragon",
-      "skill": "strength",
-      "name": "King Onyx Dragon",
-      "mob": "king-onyx-dragon",
-      "level": 0
-    },
-    {
-      "id": "strength/fight-lesser-demon-safe",
-      "skill": "strength",
-      "name": "Lesser Demon (Safe spot)",
-      "mob": "lesser-demon-safe",
-      "level": 0
-    },
-    {
-      "id": "strength/fight-magma-hound",
-      "skill": "strength",
-      "name": "Magma Hound",
-      "mob": "magma-hound",
-      "level": 0
-    },
-    {
-      "id": "strength/fight-monk",
-      "skill": "strength",
-      "name": "Monk",
-      "mob": "monk",
-      "level": 0
-    },
-    {
-      "id": "strength/fight-morvane",
-      "skill": "strength",
-      "name": "Morvane, Corrupted Keeper Of The Heartwood",
-      "mob": "morvane",
-      "level": 0
-    },
-    {
-      "id": "strength/fight-moss-giant",
-      "skill": "strength",
-      "name": "Moss Giant",
-      "mob": "moss-giant",
-      "level": 0
-    },
-    {
-      "id": "strength/fight-mothman",
-      "skill": "strength",
-      "name": "Mothman",
-      "mob": "mothman",
-      "level": 0
-    },
-    {
-      "id": "strength/fight-mouse",
-      "skill": "strength",
-      "name": "Mouse",
-      "mob": "mouse",
-      "level": 0
-    },
-    {
-      "id": "strength/fight-mummy",
-      "skill": "strength",
-      "name": "Mummy",
-      "mob": "mummy",
-      "level": 0
-    },
-    {
-      "id": "strength/fight-pit-guardian",
-      "skill": "strength",
-      "name": "Pit Guardian",
-      "mob": "pit-guardian",
-      "level": 0
-    },
-    {
-      "id": "strength/fight-pyrax",
-      "skill": "strength",
-      "name": "Pyrax",
-      "mob": "pyrax",
-      "level": 0
-    },
-    {
-      "id": "strength/fight-sandworm",
-      "skill": "strength",
-      "name": "Sandworm",
-      "mob": "sandworm",
-      "level": 0
-    },
-    {
-      "id": "strength/fight-scorpion",
-      "skill": "strength",
-      "name": "Titan Scorpion",
-      "mob": "giant-scorpion",
-      "level": 0
-    },
-    {
-      "id": "strength/fight-sewer-crocodile",
-      "skill": "strength",
-      "name": "Sewer Crocodile (Safe spot)",
-      "mob": "sewer-crocodile",
-      "level": 0
-    },
-    {
-      "id": "strength/fight-skeleton",
-      "skill": "strength",
-      "name": "Skeleton",
-      "mob": "skeleton",
-      "level": 0
-    },
-    {
-      "id": "strength/fight-slimelet",
-      "skill": "strength",
-      "name": "Slimelet",
-      "mob": "slimelet",
-      "level": 0
+      "level": 0,
+      "combatLevel": 10,
+      "sortLevel": 10,
+      "otherActivity": false
     },
     {
       "id": "strength/fight-snake",
       "skill": "strength",
       "name": "Snake",
       "mob": "snake",
-      "level": 0
+      "level": 0,
+      "combatLevel": 14,
+      "sortLevel": 14,
+      "otherActivity": false
+    },
+    {
+      "id": "strength/fight-crocodile-safe",
+      "skill": "strength",
+      "name": "Crocodile (Safe spot)",
+      "mob": "crocodile-safe",
+      "level": 0,
+      "combatLevel": 18,
+      "sortLevel": 18,
+      "otherActivity": true
+    },
+    {
+      "id": "strength/fight-giant-snake",
+      "skill": "strength",
+      "name": "Giant Snake",
+      "mob": "giant-snake",
+      "level": 0,
+      "combatLevel": 56,
+      "sortLevel": 56,
+      "otherActivity": false
+    },
+    {
+      "id": "strength/fight-mummy",
+      "skill": "strength",
+      "name": "Mummy",
+      "mob": "mummy",
+      "level": 0,
+      "combatLevel": 36,
+      "sortLevel": 36,
+      "otherActivity": false
+    },
+    {
+      "id": "strength/fight-cockatrice",
+      "skill": "strength",
+      "name": "Cockatrice",
+      "mob": "cockatrice",
+      "level": 0,
+      "combatLevel": 44,
+      "sortLevel": 44,
+      "otherActivity": false
+    },
+    {
+      "id": "strength/fight-pit-guardian",
+      "skill": "strength",
+      "name": "Pit Guardian",
+      "mob": "pit-guardian",
+      "level": 0,
+      "combatLevel": 63,
+      "sortLevel": 63,
+      "otherActivity": false
+    },
+    {
+      "id": "strength/fight-fire-elemental",
+      "skill": "strength",
+      "name": "Fire Elemental",
+      "mob": "fire-elemental",
+      "level": 0,
+      "combatLevel": 67,
+      "sortLevel": 67,
+      "otherActivity": false
+    },
+    {
+      "id": "strength/fight-fire-elemental-safe",
+      "skill": "strength",
+      "name": "Fire Elemental (Safe spot)",
+      "mob": "fire-elemental-safe",
+      "level": 0,
+      "combatLevel": 67,
+      "sortLevel": 67,
+      "otherActivity": true
     },
     {
       "id": "strength/fight-tomb-sorcerer",
       "skill": "strength",
       "name": "Tomb Sorcerer",
       "mob": "tomb-sorcerer",
-      "level": 0
+      "level": 0,
+      "combatLevel": 75,
+      "sortLevel": 75,
+      "otherActivity": false
+    },
+    {
+      "id": "strength/fight-sandworm",
+      "skill": "strength",
+      "name": "Sandworm",
+      "mob": "sandworm",
+      "level": 0,
+      "combatLevel": 81,
+      "sortLevel": 81,
+      "otherActivity": false
+    },
+    {
+      "id": "strength/fight-mouse",
+      "skill": "strength",
+      "name": "Mouse",
+      "mob": "mouse",
+      "level": 0,
+      "combatLevel": 1,
+      "sortLevel": 1,
+      "otherActivity": false
+    },
+    {
+      "id": "strength/fight-island-rodent",
+      "skill": "strength",
+      "name": "Island Rodent",
+      "mob": "island-rodent",
+      "level": 0,
+      "combatLevel": 1,
+      "sortLevel": 1,
+      "otherActivity": true
+    },
+    {
+      "id": "strength/fight-chicken",
+      "skill": "strength",
+      "name": "Chicken",
+      "mob": "chicken",
+      "level": 0,
+      "combatLevel": 2,
+      "sortLevel": 2,
+      "otherActivity": false
+    },
+    {
+      "id": "strength/fight-giant-rat",
+      "skill": "strength",
+      "name": "Giant Rat",
+      "mob": "giant-rat",
+      "level": 0,
+      "combatLevel": 3,
+      "sortLevel": 3,
+      "otherActivity": false
+    },
+    {
+      "id": "strength/fight-cow",
+      "skill": "strength",
+      "name": "Cow",
+      "mob": "cow",
+      "level": 0,
+      "combatLevel": 4,
+      "sortLevel": 4,
+      "otherActivity": false
+    },
+    {
+      "id": "strength/fight-goblin",
+      "skill": "strength",
+      "name": "Goblin",
+      "mob": "goblin",
+      "level": 0,
+      "combatLevel": 9,
+      "sortLevel": 9,
+      "otherActivity": false
+    },
+    {
+      "id": "strength/fight-scorpion",
+      "skill": "strength",
+      "name": "Titan Scorpion",
+      "mob": "giant-scorpion",
+      "level": 0,
+      "combatLevel": 12,
+      "sortLevel": 12,
+      "otherActivity": false
+    },
+    {
+      "id": "strength/fight-imp",
+      "skill": "strength",
+      "name": "Imp",
+      "mob": "imp",
+      "level": 0,
+      "combatLevel": 13,
+      "sortLevel": 13,
+      "otherActivity": false
+    },
+    {
+      "id": "strength/fight-monk",
+      "skill": "strength",
+      "name": "Monk",
+      "mob": "monk",
+      "level": 0,
+      "combatLevel": 16,
+      "sortLevel": 16,
+      "otherActivity": false
+    },
+    {
+      "id": "strength/fight-skeleton",
+      "skill": "strength",
+      "name": "Skeleton",
+      "mob": "skeleton",
+      "level": 0,
+      "combatLevel": 19,
+      "sortLevel": 19,
+      "otherActivity": false
+    },
+    {
+      "id": "strength/fight-ghost",
+      "skill": "strength",
+      "name": "Ghost",
+      "mob": "ghost",
+      "level": 0,
+      "combatLevel": 29,
+      "sortLevel": 29,
+      "otherActivity": false
+    },
+    {
+      "id": "strength/fight-cave-slime",
+      "skill": "strength",
+      "name": "Cave Slime",
+      "mob": "cave-slime",
+      "level": 0,
+      "combatLevel": 25,
+      "sortLevel": 25,
+      "otherActivity": false
+    },
+    {
+      "id": "strength/fight-bear",
+      "skill": "strength",
+      "name": "Bear",
+      "mob": "bear",
+      "level": 0,
+      "combatLevel": 26,
+      "sortLevel": 26,
+      "otherActivity": false
+    },
+    {
+      "id": "strength/fight-fire-dwarf",
+      "skill": "strength",
+      "name": "Fire Dwarf",
+      "mob": "fire-dwarf",
+      "level": 0,
+      "combatLevel": 33,
+      "sortLevel": 33,
+      "otherActivity": false
+    },
+    {
+      "id": "strength/fight-fire-dwarf-safe",
+      "skill": "strength",
+      "name": "Fire Dwarf (Safe spot)",
+      "mob": "fire-dwarf-safe",
+      "level": 0,
+      "combatLevel": 33,
+      "sortLevel": 33,
+      "otherActivity": true
+    },
+    {
+      "id": "strength/fight-black-knight",
+      "skill": "strength",
+      "name": "Black Knight",
+      "mob": "black-knight",
+      "level": 0,
+      "combatLevel": 38,
+      "sortLevel": 38,
+      "otherActivity": false
+    },
+    {
+      "id": "strength/fight-black-knight-safe",
+      "skill": "strength",
+      "name": "Black Knight (Safe spot)",
+      "mob": "black-knight-safe",
+      "level": 0,
+      "combatLevel": 38,
+      "sortLevel": 38,
+      "otherActivity": true
+    },
+    {
+      "id": "strength/fight-moss-giant",
+      "skill": "strength",
+      "name": "Moss Giant",
+      "mob": "moss-giant",
+      "level": 0,
+      "combatLevel": 42,
+      "sortLevel": 42,
+      "otherActivity": false
+    },
+    {
+      "id": "strength/fight-ice-warrior",
+      "skill": "strength",
+      "name": "Ice Warrior",
+      "mob": "ice-warrior",
+      "level": 0,
+      "combatLevel": 57,
+      "sortLevel": 57,
+      "otherActivity": false
+    },
+    {
+      "id": "strength/fight-ice-warrior-safe",
+      "skill": "strength",
+      "name": "Ice Warrior (Safe spot)",
+      "mob": "ice-warrior-safe",
+      "level": 0,
+      "combatLevel": 57,
+      "sortLevel": 57,
+      "otherActivity": true
+    },
+    {
+      "id": "strength/fight-mothman",
+      "skill": "strength",
+      "name": "Mothman",
+      "mob": "mothman",
+      "level": 0,
+      "combatLevel": 60,
+      "sortLevel": 60,
+      "otherActivity": false
+    },
+    {
+      "id": "strength/fight-ice-giant",
+      "skill": "strength",
+      "name": "Ice Giant",
+      "mob": "ice-giant",
+      "level": 0,
+      "combatLevel": 68,
+      "sortLevel": 68,
+      "otherActivity": false
+    },
+    {
+      "id": "strength/fight-greater-demon",
+      "skill": "strength",
+      "name": "Greater Demon",
+      "mob": "greater-demon",
+      "level": 0,
+      "combatLevel": 87,
+      "sortLevel": 87,
+      "otherActivity": false
+    },
+    {
+      "id": "strength/fight-corrupted-druid",
+      "skill": "strength",
+      "name": "Corrupted Druid",
+      "mob": "corrupted-druid",
+      "level": 0,
+      "combatLevel": 52,
+      "sortLevel": 52,
+      "otherActivity": false
+    },
+    {
+      "id": "strength/fight-druid-warrior",
+      "skill": "strength",
+      "name": "Druid Warrior",
+      "mob": "druid-warrior",
+      "level": 0,
+      "combatLevel": 72,
+      "sortLevel": 72,
+      "otherActivity": false
+    },
+    {
+      "id": "strength/fight-blue-dragon",
+      "skill": "strength",
+      "name": "Blue Dragon",
+      "mob": "blue-dragon",
+      "level": 0,
+      "combatLevel": 105,
+      "sortLevel": 105,
+      "otherActivity": false
+    },
+    {
+      "id": "strength/fight-lesser-demon-safe",
+      "skill": "strength",
+      "name": "Lesser Demon (Safe spot)",
+      "mob": "lesser-demon-safe",
+      "level": 0,
+      "combatLevel": 79,
+      "sortLevel": 79,
+      "otherActivity": true
     },
     {
       "id": "strength/fight-turkey",
       "skill": "strength",
       "name": "Turkey",
       "mob": "turkey",
-      "level": 0
+      "level": 0,
+      "combatLevel": 15,
+      "sortLevel": 15,
+      "otherActivity": false
     },
     {
-      "id": "defense/fight-bear",
-      "skill": "defense",
-      "name": "Bear",
-      "mob": "bear",
-      "level": 0
-    },
-    {
-      "id": "defense/fight-black-knight",
-      "skill": "defense",
-      "name": "Black Knight",
-      "mob": "black-knight",
-      "level": 0
-    },
-    {
-      "id": "defense/fight-black-knight-safe",
-      "skill": "defense",
-      "name": "Black Knight (Safe spot)",
-      "mob": "black-knight-safe",
-      "level": 0
-    },
-    {
-      "id": "defense/fight-blue-dragon",
-      "skill": "defense",
-      "name": "Blue Dragon",
-      "mob": "blue-dragon",
-      "level": 0
-    },
-    {
-      "id": "defense/fight-cave-slime",
-      "skill": "defense",
-      "name": "Cave Slime",
-      "mob": "cave-slime",
-      "level": 0
-    },
-    {
-      "id": "defense/fight-chicken",
-      "skill": "defense",
-      "name": "Chicken",
-      "mob": "chicken",
-      "level": 0
-    },
-    {
-      "id": "defense/fight-cockatrice",
-      "skill": "defense",
-      "name": "Cockatrice",
-      "mob": "cockatrice",
-      "level": 0
-    },
-    {
-      "id": "defense/fight-corrupted-druid",
-      "skill": "defense",
-      "name": "Corrupted Druid",
-      "mob": "corrupted-druid",
-      "level": 0
-    },
-    {
-      "id": "defense/fight-cow",
-      "skill": "defense",
-      "name": "Cow",
-      "mob": "cow",
-      "level": 0
-    },
-    {
-      "id": "defense/fight-crocodile-safe",
-      "skill": "defense",
-      "name": "Crocodile (Safe spot)",
-      "mob": "crocodile-safe",
-      "level": 0
-    },
-    {
-      "id": "defense/fight-dragon-whelp",
-      "skill": "defense",
+      "id": "strength/fight-dragon-whelp",
+      "skill": "strength",
       "name": "Dragon Whelp",
       "mob": "dragon-whelp",
-      "level": 0
+      "level": 0,
+      "combatLevel": 43,
+      "sortLevel": 43,
+      "otherActivity": true
     },
     {
-      "id": "defense/fight-druid-warrior",
-      "skill": "defense",
-      "name": "Druid Warrior",
-      "mob": "druid-warrior",
-      "level": 0
+      "id": "strength/fight-magma-hound",
+      "skill": "strength",
+      "name": "Magma Hound",
+      "mob": "magma-hound",
+      "level": 0,
+      "combatLevel": 65,
+      "sortLevel": 65,
+      "otherActivity": true
     },
     {
-      "id": "defense/fight-fire-dwarf",
-      "skill": "defense",
-      "name": "Fire Dwarf",
-      "mob": "fire-dwarf",
-      "level": 0
+      "id": "strength/fight-king-onyx-dragon",
+      "skill": "strength",
+      "name": "King Onyx Dragon",
+      "mob": "king-onyx-dragon",
+      "level": 0,
+      "combatLevel": 155,
+      "sortLevel": 155,
+      "otherActivity": true
     },
     {
-      "id": "defense/fight-fire-dwarf-safe",
-      "skill": "defense",
-      "name": "Fire Dwarf (Safe spot)",
-      "mob": "fire-dwarf-safe",
-      "level": 0
+      "id": "strength/fight-iskarn",
+      "skill": "strength",
+      "name": "Iskarn",
+      "mob": "iskarn",
+      "level": 0,
+      "combatLevel": 80,
+      "sortLevel": 80,
+      "otherActivity": true
     },
     {
-      "id": "defense/fight-fire-elemental",
-      "skill": "defense",
-      "name": "Fire Elemental",
-      "mob": "fire-elemental",
-      "level": 0
+      "id": "strength/fight-pyrax",
+      "skill": "strength",
+      "name": "Pyrax",
+      "mob": "pyrax",
+      "level": 0,
+      "combatLevel": 80,
+      "sortLevel": 80,
+      "otherActivity": true
     },
     {
-      "id": "defense/fight-fire-elemental-safe",
-      "skill": "defense",
-      "name": "Fire Elemental (Safe spot)",
-      "mob": "fire-elemental-safe",
-      "level": 0
+      "id": "strength/fight-morvane",
+      "skill": "strength",
+      "name": "Morvane, Corrupted Keeper Of The Heartwood",
+      "mob": "morvane",
+      "level": 0,
+      "combatLevel": 95,
+      "sortLevel": 95,
+      "otherActivity": true
     },
     {
-      "id": "defense/fight-ghost",
-      "skill": "defense",
-      "name": "Ghost",
-      "mob": "ghost",
-      "level": 0
+      "id": "strength/fight-sewer-crocodile",
+      "skill": "strength",
+      "name": "Sewer Crocodile (Safe spot)",
+      "mob": "sewer-crocodile",
+      "level": 0,
+      "combatLevel": 35,
+      "sortLevel": 35,
+      "otherActivity": true
     },
     {
-      "id": "defense/fight-giant-rat",
-      "skill": "defense",
-      "name": "Giant Rat",
-      "mob": "giant-rat",
-      "level": 0
-    },
-    {
-      "id": "defense/fight-giant-snake",
-      "skill": "defense",
-      "name": "Giant Snake",
-      "mob": "giant-snake",
-      "level": 0
-    },
-    {
-      "id": "defense/fight-goblin",
-      "skill": "defense",
-      "name": "Goblin",
-      "mob": "goblin",
-      "level": 0
-    },
-    {
-      "id": "defense/fight-greater-demon",
-      "skill": "defense",
-      "name": "Greater Demon",
-      "mob": "greater-demon",
-      "level": 0
-    },
-    {
-      "id": "defense/fight-gurgle",
-      "skill": "defense",
+      "id": "strength/fight-gurgle",
+      "skill": "strength",
       "name": "Gurgle",
       "mob": "gurgle",
-      "level": 0
+      "level": 0,
+      "combatLevel": 40,
+      "sortLevel": 40,
+      "otherActivity": true
     },
     {
-      "id": "defense/fight-ice-giant",
-      "skill": "defense",
-      "name": "Ice Giant",
-      "mob": "ice-giant",
-      "level": 0
-    },
-    {
-      "id": "defense/fight-ice-warrior",
-      "skill": "defense",
-      "name": "Ice Warrior",
-      "mob": "ice-warrior",
-      "level": 0
-    },
-    {
-      "id": "defense/fight-ice-warrior-safe",
-      "skill": "defense",
-      "name": "Ice Warrior (Safe spot)",
-      "mob": "ice-warrior-safe",
-      "level": 0
-    },
-    {
-      "id": "defense/fight-imp",
-      "skill": "defense",
-      "name": "Imp",
-      "mob": "imp",
-      "level": 0
+      "id": "strength/fight-slimelet",
+      "skill": "strength",
+      "name": "Slimelet",
+      "mob": "slimelet",
+      "level": 0,
+      "combatLevel": 25,
+      "sortLevel": 25,
+      "otherActivity": true
     },
     {
       "id": "defense/fight-insect-swarm",
       "skill": "defense",
       "name": "Insect Swarm",
       "mob": "insect-swarm",
-      "level": 0
-    },
-    {
-      "id": "defense/fight-iskarn",
-      "skill": "defense",
-      "name": "Iskarn",
-      "mob": "iskarn",
-      "level": 0
-    },
-    {
-      "id": "defense/fight-island-rodent",
-      "skill": "defense",
-      "name": "Island Rodent",
-      "mob": "island-rodent",
-      "level": 0
-    },
-    {
-      "id": "defense/fight-king-onyx-dragon",
-      "skill": "defense",
-      "name": "King Onyx Dragon",
-      "mob": "king-onyx-dragon",
-      "level": 0
-    },
-    {
-      "id": "defense/fight-lesser-demon-safe",
-      "skill": "defense",
-      "name": "Lesser Demon (Safe spot)",
-      "mob": "lesser-demon-safe",
-      "level": 0
-    },
-    {
-      "id": "defense/fight-magma-hound",
-      "skill": "defense",
-      "name": "Magma Hound",
-      "mob": "magma-hound",
-      "level": 0
-    },
-    {
-      "id": "defense/fight-monk",
-      "skill": "defense",
-      "name": "Monk",
-      "mob": "monk",
-      "level": 0
-    },
-    {
-      "id": "defense/fight-morvane",
-      "skill": "defense",
-      "name": "Morvane, Corrupted Keeper Of The Heartwood",
-      "mob": "morvane",
-      "level": 0
-    },
-    {
-      "id": "defense/fight-moss-giant",
-      "skill": "defense",
-      "name": "Moss Giant",
-      "mob": "moss-giant",
-      "level": 0
-    },
-    {
-      "id": "defense/fight-mothman",
-      "skill": "defense",
-      "name": "Mothman",
-      "mob": "mothman",
-      "level": 0
-    },
-    {
-      "id": "defense/fight-mouse",
-      "skill": "defense",
-      "name": "Mouse",
-      "mob": "mouse",
-      "level": 0
-    },
-    {
-      "id": "defense/fight-mummy",
-      "skill": "defense",
-      "name": "Mummy",
-      "mob": "mummy",
-      "level": 0
-    },
-    {
-      "id": "defense/fight-pit-guardian",
-      "skill": "defense",
-      "name": "Pit Guardian",
-      "mob": "pit-guardian",
-      "level": 0
-    },
-    {
-      "id": "defense/fight-pyrax",
-      "skill": "defense",
-      "name": "Pyrax",
-      "mob": "pyrax",
-      "level": 0
-    },
-    {
-      "id": "defense/fight-sandworm",
-      "skill": "defense",
-      "name": "Sandworm",
-      "mob": "sandworm",
-      "level": 0
-    },
-    {
-      "id": "defense/fight-scorpion",
-      "skill": "defense",
-      "name": "Titan Scorpion",
-      "mob": "giant-scorpion",
-      "level": 0
-    },
-    {
-      "id": "defense/fight-sewer-crocodile",
-      "skill": "defense",
-      "name": "Sewer Crocodile (Safe spot)",
-      "mob": "sewer-crocodile",
-      "level": 0
-    },
-    {
-      "id": "defense/fight-skeleton",
-      "skill": "defense",
-      "name": "Skeleton",
-      "mob": "skeleton",
-      "level": 0
-    },
-    {
-      "id": "defense/fight-slimelet",
-      "skill": "defense",
-      "name": "Slimelet",
-      "mob": "slimelet",
-      "level": 0
+      "level": 0,
+      "combatLevel": 10,
+      "sortLevel": 10,
+      "otherActivity": false
     },
     {
       "id": "defense/fight-snake",
       "skill": "defense",
       "name": "Snake",
       "mob": "snake",
-      "level": 0
+      "level": 0,
+      "combatLevel": 14,
+      "sortLevel": 14,
+      "otherActivity": false
+    },
+    {
+      "id": "defense/fight-crocodile-safe",
+      "skill": "defense",
+      "name": "Crocodile (Safe spot)",
+      "mob": "crocodile-safe",
+      "level": 0,
+      "combatLevel": 18,
+      "sortLevel": 18,
+      "otherActivity": true
+    },
+    {
+      "id": "defense/fight-giant-snake",
+      "skill": "defense",
+      "name": "Giant Snake",
+      "mob": "giant-snake",
+      "level": 0,
+      "combatLevel": 56,
+      "sortLevel": 56,
+      "otherActivity": false
+    },
+    {
+      "id": "defense/fight-mummy",
+      "skill": "defense",
+      "name": "Mummy",
+      "mob": "mummy",
+      "level": 0,
+      "combatLevel": 36,
+      "sortLevel": 36,
+      "otherActivity": false
+    },
+    {
+      "id": "defense/fight-cockatrice",
+      "skill": "defense",
+      "name": "Cockatrice",
+      "mob": "cockatrice",
+      "level": 0,
+      "combatLevel": 44,
+      "sortLevel": 44,
+      "otherActivity": false
+    },
+    {
+      "id": "defense/fight-pit-guardian",
+      "skill": "defense",
+      "name": "Pit Guardian",
+      "mob": "pit-guardian",
+      "level": 0,
+      "combatLevel": 63,
+      "sortLevel": 63,
+      "otherActivity": false
+    },
+    {
+      "id": "defense/fight-fire-elemental",
+      "skill": "defense",
+      "name": "Fire Elemental",
+      "mob": "fire-elemental",
+      "level": 0,
+      "combatLevel": 67,
+      "sortLevel": 67,
+      "otherActivity": false
+    },
+    {
+      "id": "defense/fight-fire-elemental-safe",
+      "skill": "defense",
+      "name": "Fire Elemental (Safe spot)",
+      "mob": "fire-elemental-safe",
+      "level": 0,
+      "combatLevel": 67,
+      "sortLevel": 67,
+      "otherActivity": true
     },
     {
       "id": "defense/fight-tomb-sorcerer",
       "skill": "defense",
       "name": "Tomb Sorcerer",
       "mob": "tomb-sorcerer",
-      "level": 0
+      "level": 0,
+      "combatLevel": 75,
+      "sortLevel": 75,
+      "otherActivity": false
+    },
+    {
+      "id": "defense/fight-sandworm",
+      "skill": "defense",
+      "name": "Sandworm",
+      "mob": "sandworm",
+      "level": 0,
+      "combatLevel": 81,
+      "sortLevel": 81,
+      "otherActivity": false
+    },
+    {
+      "id": "defense/fight-mouse",
+      "skill": "defense",
+      "name": "Mouse",
+      "mob": "mouse",
+      "level": 0,
+      "combatLevel": 1,
+      "sortLevel": 1,
+      "otherActivity": false
+    },
+    {
+      "id": "defense/fight-island-rodent",
+      "skill": "defense",
+      "name": "Island Rodent",
+      "mob": "island-rodent",
+      "level": 0,
+      "combatLevel": 1,
+      "sortLevel": 1,
+      "otherActivity": true
+    },
+    {
+      "id": "defense/fight-chicken",
+      "skill": "defense",
+      "name": "Chicken",
+      "mob": "chicken",
+      "level": 0,
+      "combatLevel": 2,
+      "sortLevel": 2,
+      "otherActivity": false
+    },
+    {
+      "id": "defense/fight-giant-rat",
+      "skill": "defense",
+      "name": "Giant Rat",
+      "mob": "giant-rat",
+      "level": 0,
+      "combatLevel": 3,
+      "sortLevel": 3,
+      "otherActivity": false
+    },
+    {
+      "id": "defense/fight-cow",
+      "skill": "defense",
+      "name": "Cow",
+      "mob": "cow",
+      "level": 0,
+      "combatLevel": 4,
+      "sortLevel": 4,
+      "otherActivity": false
+    },
+    {
+      "id": "defense/fight-goblin",
+      "skill": "defense",
+      "name": "Goblin",
+      "mob": "goblin",
+      "level": 0,
+      "combatLevel": 9,
+      "sortLevel": 9,
+      "otherActivity": false
+    },
+    {
+      "id": "defense/fight-scorpion",
+      "skill": "defense",
+      "name": "Titan Scorpion",
+      "mob": "giant-scorpion",
+      "level": 0,
+      "combatLevel": 12,
+      "sortLevel": 12,
+      "otherActivity": false
+    },
+    {
+      "id": "defense/fight-imp",
+      "skill": "defense",
+      "name": "Imp",
+      "mob": "imp",
+      "level": 0,
+      "combatLevel": 13,
+      "sortLevel": 13,
+      "otherActivity": false
+    },
+    {
+      "id": "defense/fight-monk",
+      "skill": "defense",
+      "name": "Monk",
+      "mob": "monk",
+      "level": 0,
+      "combatLevel": 16,
+      "sortLevel": 16,
+      "otherActivity": false
+    },
+    {
+      "id": "defense/fight-skeleton",
+      "skill": "defense",
+      "name": "Skeleton",
+      "mob": "skeleton",
+      "level": 0,
+      "combatLevel": 19,
+      "sortLevel": 19,
+      "otherActivity": false
+    },
+    {
+      "id": "defense/fight-ghost",
+      "skill": "defense",
+      "name": "Ghost",
+      "mob": "ghost",
+      "level": 0,
+      "combatLevel": 29,
+      "sortLevel": 29,
+      "otherActivity": false
+    },
+    {
+      "id": "defense/fight-cave-slime",
+      "skill": "defense",
+      "name": "Cave Slime",
+      "mob": "cave-slime",
+      "level": 0,
+      "combatLevel": 25,
+      "sortLevel": 25,
+      "otherActivity": false
+    },
+    {
+      "id": "defense/fight-bear",
+      "skill": "defense",
+      "name": "Bear",
+      "mob": "bear",
+      "level": 0,
+      "combatLevel": 26,
+      "sortLevel": 26,
+      "otherActivity": false
+    },
+    {
+      "id": "defense/fight-fire-dwarf",
+      "skill": "defense",
+      "name": "Fire Dwarf",
+      "mob": "fire-dwarf",
+      "level": 0,
+      "combatLevel": 33,
+      "sortLevel": 33,
+      "otherActivity": false
+    },
+    {
+      "id": "defense/fight-fire-dwarf-safe",
+      "skill": "defense",
+      "name": "Fire Dwarf (Safe spot)",
+      "mob": "fire-dwarf-safe",
+      "level": 0,
+      "combatLevel": 33,
+      "sortLevel": 33,
+      "otherActivity": true
+    },
+    {
+      "id": "defense/fight-black-knight",
+      "skill": "defense",
+      "name": "Black Knight",
+      "mob": "black-knight",
+      "level": 0,
+      "combatLevel": 38,
+      "sortLevel": 38,
+      "otherActivity": false
+    },
+    {
+      "id": "defense/fight-black-knight-safe",
+      "skill": "defense",
+      "name": "Black Knight (Safe spot)",
+      "mob": "black-knight-safe",
+      "level": 0,
+      "combatLevel": 38,
+      "sortLevel": 38,
+      "otherActivity": true
+    },
+    {
+      "id": "defense/fight-moss-giant",
+      "skill": "defense",
+      "name": "Moss Giant",
+      "mob": "moss-giant",
+      "level": 0,
+      "combatLevel": 42,
+      "sortLevel": 42,
+      "otherActivity": false
+    },
+    {
+      "id": "defense/fight-ice-warrior",
+      "skill": "defense",
+      "name": "Ice Warrior",
+      "mob": "ice-warrior",
+      "level": 0,
+      "combatLevel": 57,
+      "sortLevel": 57,
+      "otherActivity": false
+    },
+    {
+      "id": "defense/fight-ice-warrior-safe",
+      "skill": "defense",
+      "name": "Ice Warrior (Safe spot)",
+      "mob": "ice-warrior-safe",
+      "level": 0,
+      "combatLevel": 57,
+      "sortLevel": 57,
+      "otherActivity": true
+    },
+    {
+      "id": "defense/fight-mothman",
+      "skill": "defense",
+      "name": "Mothman",
+      "mob": "mothman",
+      "level": 0,
+      "combatLevel": 60,
+      "sortLevel": 60,
+      "otherActivity": false
+    },
+    {
+      "id": "defense/fight-ice-giant",
+      "skill": "defense",
+      "name": "Ice Giant",
+      "mob": "ice-giant",
+      "level": 0,
+      "combatLevel": 68,
+      "sortLevel": 68,
+      "otherActivity": false
+    },
+    {
+      "id": "defense/fight-greater-demon",
+      "skill": "defense",
+      "name": "Greater Demon",
+      "mob": "greater-demon",
+      "level": 0,
+      "combatLevel": 87,
+      "sortLevel": 87,
+      "otherActivity": false
+    },
+    {
+      "id": "defense/fight-corrupted-druid",
+      "skill": "defense",
+      "name": "Corrupted Druid",
+      "mob": "corrupted-druid",
+      "level": 0,
+      "combatLevel": 52,
+      "sortLevel": 52,
+      "otherActivity": false
+    },
+    {
+      "id": "defense/fight-druid-warrior",
+      "skill": "defense",
+      "name": "Druid Warrior",
+      "mob": "druid-warrior",
+      "level": 0,
+      "combatLevel": 72,
+      "sortLevel": 72,
+      "otherActivity": false
+    },
+    {
+      "id": "defense/fight-blue-dragon",
+      "skill": "defense",
+      "name": "Blue Dragon",
+      "mob": "blue-dragon",
+      "level": 0,
+      "combatLevel": 105,
+      "sortLevel": 105,
+      "otherActivity": false
+    },
+    {
+      "id": "defense/fight-lesser-demon-safe",
+      "skill": "defense",
+      "name": "Lesser Demon (Safe spot)",
+      "mob": "lesser-demon-safe",
+      "level": 0,
+      "combatLevel": 79,
+      "sortLevel": 79,
+      "otherActivity": true
     },
     {
       "id": "defense/fight-turkey",
       "skill": "defense",
       "name": "Turkey",
       "mob": "turkey",
-      "level": 0
+      "level": 0,
+      "combatLevel": 15,
+      "sortLevel": 15,
+      "otherActivity": false
     },
     {
-      "id": "evilMagic/fight-bear",
-      "skill": "evilMagic",
-      "name": "Bear",
-      "mob": "bear",
-      "level": 0
-    },
-    {
-      "id": "evilMagic/fight-black-knight",
-      "skill": "evilMagic",
-      "name": "Black Knight",
-      "mob": "black-knight",
-      "level": 0
-    },
-    {
-      "id": "evilMagic/fight-black-knight-safe",
-      "skill": "evilMagic",
-      "name": "Black Knight (Safe spot)",
-      "mob": "black-knight-safe",
-      "level": 0
-    },
-    {
-      "id": "evilMagic/fight-blue-dragon",
-      "skill": "evilMagic",
-      "name": "Blue Dragon",
-      "mob": "blue-dragon",
-      "level": 0
-    },
-    {
-      "id": "evilMagic/fight-cave-slime",
-      "skill": "evilMagic",
-      "name": "Cave Slime",
-      "mob": "cave-slime",
-      "level": 0
-    },
-    {
-      "id": "evilMagic/fight-chicken",
-      "skill": "evilMagic",
-      "name": "Chicken",
-      "mob": "chicken",
-      "level": 0
-    },
-    {
-      "id": "evilMagic/fight-cockatrice",
-      "skill": "evilMagic",
-      "name": "Cockatrice",
-      "mob": "cockatrice",
-      "level": 0
-    },
-    {
-      "id": "evilMagic/fight-corrupted-druid",
-      "skill": "evilMagic",
-      "name": "Corrupted Druid",
-      "mob": "corrupted-druid",
-      "level": 0
-    },
-    {
-      "id": "evilMagic/fight-cow",
-      "skill": "evilMagic",
-      "name": "Cow",
-      "mob": "cow",
-      "level": 0
-    },
-    {
-      "id": "evilMagic/fight-crocodile-safe",
-      "skill": "evilMagic",
-      "name": "Crocodile (Safe spot)",
-      "mob": "crocodile-safe",
-      "level": 0
-    },
-    {
-      "id": "evilMagic/fight-dragon-whelp",
-      "skill": "evilMagic",
+      "id": "defense/fight-dragon-whelp",
+      "skill": "defense",
       "name": "Dragon Whelp",
       "mob": "dragon-whelp",
-      "level": 0
+      "level": 0,
+      "combatLevel": 43,
+      "sortLevel": 43,
+      "otherActivity": true
     },
     {
-      "id": "evilMagic/fight-druid-warrior",
-      "skill": "evilMagic",
-      "name": "Druid Warrior",
-      "mob": "druid-warrior",
-      "level": 0
+      "id": "defense/fight-magma-hound",
+      "skill": "defense",
+      "name": "Magma Hound",
+      "mob": "magma-hound",
+      "level": 0,
+      "combatLevel": 65,
+      "sortLevel": 65,
+      "otherActivity": true
     },
     {
-      "id": "evilMagic/fight-fire-dwarf",
-      "skill": "evilMagic",
-      "name": "Fire Dwarf",
-      "mob": "fire-dwarf",
-      "level": 0
+      "id": "defense/fight-king-onyx-dragon",
+      "skill": "defense",
+      "name": "King Onyx Dragon",
+      "mob": "king-onyx-dragon",
+      "level": 0,
+      "combatLevel": 155,
+      "sortLevel": 155,
+      "otherActivity": true
     },
     {
-      "id": "evilMagic/fight-fire-dwarf-safe",
-      "skill": "evilMagic",
-      "name": "Fire Dwarf (Safe spot)",
-      "mob": "fire-dwarf-safe",
-      "level": 0
+      "id": "defense/fight-iskarn",
+      "skill": "defense",
+      "name": "Iskarn",
+      "mob": "iskarn",
+      "level": 0,
+      "combatLevel": 80,
+      "sortLevel": 80,
+      "otherActivity": true
     },
     {
-      "id": "evilMagic/fight-fire-elemental",
-      "skill": "evilMagic",
-      "name": "Fire Elemental",
-      "mob": "fire-elemental",
-      "level": 0
+      "id": "defense/fight-pyrax",
+      "skill": "defense",
+      "name": "Pyrax",
+      "mob": "pyrax",
+      "level": 0,
+      "combatLevel": 80,
+      "sortLevel": 80,
+      "otherActivity": true
     },
     {
-      "id": "evilMagic/fight-fire-elemental-safe",
-      "skill": "evilMagic",
-      "name": "Fire Elemental (Safe spot)",
-      "mob": "fire-elemental-safe",
-      "level": 0
+      "id": "defense/fight-morvane",
+      "skill": "defense",
+      "name": "Morvane, Corrupted Keeper Of The Heartwood",
+      "mob": "morvane",
+      "level": 0,
+      "combatLevel": 95,
+      "sortLevel": 95,
+      "otherActivity": true
     },
     {
-      "id": "evilMagic/fight-ghost",
-      "skill": "evilMagic",
-      "name": "Ghost",
-      "mob": "ghost",
-      "level": 0
+      "id": "defense/fight-sewer-crocodile",
+      "skill": "defense",
+      "name": "Sewer Crocodile (Safe spot)",
+      "mob": "sewer-crocodile",
+      "level": 0,
+      "combatLevel": 35,
+      "sortLevel": 35,
+      "otherActivity": true
     },
     {
-      "id": "evilMagic/fight-giant-rat",
-      "skill": "evilMagic",
-      "name": "Giant Rat",
-      "mob": "giant-rat",
-      "level": 0
-    },
-    {
-      "id": "evilMagic/fight-giant-snake",
-      "skill": "evilMagic",
-      "name": "Giant Snake",
-      "mob": "giant-snake",
-      "level": 0
-    },
-    {
-      "id": "evilMagic/fight-goblin",
-      "skill": "evilMagic",
-      "name": "Goblin",
-      "mob": "goblin",
-      "level": 0
-    },
-    {
-      "id": "evilMagic/fight-greater-demon",
-      "skill": "evilMagic",
-      "name": "Greater Demon",
-      "mob": "greater-demon",
-      "level": 0
-    },
-    {
-      "id": "evilMagic/fight-gurgle",
-      "skill": "evilMagic",
+      "id": "defense/fight-gurgle",
+      "skill": "defense",
       "name": "Gurgle",
       "mob": "gurgle",
-      "level": 0
+      "level": 0,
+      "combatLevel": 40,
+      "sortLevel": 40,
+      "otherActivity": true
     },
     {
-      "id": "evilMagic/fight-ice-giant",
-      "skill": "evilMagic",
-      "name": "Ice Giant",
-      "mob": "ice-giant",
-      "level": 0
-    },
-    {
-      "id": "evilMagic/fight-ice-warrior",
-      "skill": "evilMagic",
-      "name": "Ice Warrior",
-      "mob": "ice-warrior",
-      "level": 0
-    },
-    {
-      "id": "evilMagic/fight-ice-warrior-safe",
-      "skill": "evilMagic",
-      "name": "Ice Warrior (Safe spot)",
-      "mob": "ice-warrior-safe",
-      "level": 0
-    },
-    {
-      "id": "evilMagic/fight-imp",
-      "skill": "evilMagic",
-      "name": "Imp",
-      "mob": "imp",
-      "level": 0
+      "id": "defense/fight-slimelet",
+      "skill": "defense",
+      "name": "Slimelet",
+      "mob": "slimelet",
+      "level": 0,
+      "combatLevel": 25,
+      "sortLevel": 25,
+      "otherActivity": true
     },
     {
       "id": "evilMagic/fight-insect-swarm",
       "skill": "evilMagic",
       "name": "Insect Swarm",
       "mob": "insect-swarm",
-      "level": 0
-    },
-    {
-      "id": "evilMagic/fight-iskarn",
-      "skill": "evilMagic",
-      "name": "Iskarn",
-      "mob": "iskarn",
-      "level": 0
-    },
-    {
-      "id": "evilMagic/fight-island-rodent",
-      "skill": "evilMagic",
-      "name": "Island Rodent",
-      "mob": "island-rodent",
-      "level": 0
-    },
-    {
-      "id": "evilMagic/fight-king-onyx-dragon",
-      "skill": "evilMagic",
-      "name": "King Onyx Dragon",
-      "mob": "king-onyx-dragon",
-      "level": 0
-    },
-    {
-      "id": "evilMagic/fight-lesser-demon-safe",
-      "skill": "evilMagic",
-      "name": "Lesser Demon (Safe spot)",
-      "mob": "lesser-demon-safe",
-      "level": 0
-    },
-    {
-      "id": "evilMagic/fight-magma-hound",
-      "skill": "evilMagic",
-      "name": "Magma Hound",
-      "mob": "magma-hound",
-      "level": 0
-    },
-    {
-      "id": "evilMagic/fight-monk",
-      "skill": "evilMagic",
-      "name": "Monk",
-      "mob": "monk",
-      "level": 0
-    },
-    {
-      "id": "evilMagic/fight-morvane",
-      "skill": "evilMagic",
-      "name": "Morvane, Corrupted Keeper Of The Heartwood",
-      "mob": "morvane",
-      "level": 0
-    },
-    {
-      "id": "evilMagic/fight-moss-giant",
-      "skill": "evilMagic",
-      "name": "Moss Giant",
-      "mob": "moss-giant",
-      "level": 0
-    },
-    {
-      "id": "evilMagic/fight-mothman",
-      "skill": "evilMagic",
-      "name": "Mothman",
-      "mob": "mothman",
-      "level": 0
-    },
-    {
-      "id": "evilMagic/fight-mouse",
-      "skill": "evilMagic",
-      "name": "Mouse",
-      "mob": "mouse",
-      "level": 0
-    },
-    {
-      "id": "evilMagic/fight-mummy",
-      "skill": "evilMagic",
-      "name": "Mummy",
-      "mob": "mummy",
-      "level": 0
-    },
-    {
-      "id": "evilMagic/fight-pit-guardian",
-      "skill": "evilMagic",
-      "name": "Pit Guardian",
-      "mob": "pit-guardian",
-      "level": 0
-    },
-    {
-      "id": "evilMagic/fight-pyrax",
-      "skill": "evilMagic",
-      "name": "Pyrax",
-      "mob": "pyrax",
-      "level": 0
-    },
-    {
-      "id": "evilMagic/fight-sandworm",
-      "skill": "evilMagic",
-      "name": "Sandworm",
-      "mob": "sandworm",
-      "level": 0
-    },
-    {
-      "id": "evilMagic/fight-scorpion",
-      "skill": "evilMagic",
-      "name": "Titan Scorpion",
-      "mob": "giant-scorpion",
-      "level": 0
-    },
-    {
-      "id": "evilMagic/fight-sewer-crocodile",
-      "skill": "evilMagic",
-      "name": "Sewer Crocodile (Safe spot)",
-      "mob": "sewer-crocodile",
-      "level": 0
-    },
-    {
-      "id": "evilMagic/fight-skeleton",
-      "skill": "evilMagic",
-      "name": "Skeleton",
-      "mob": "skeleton",
-      "level": 0
-    },
-    {
-      "id": "evilMagic/fight-slimelet",
-      "skill": "evilMagic",
-      "name": "Slimelet",
-      "mob": "slimelet",
-      "level": 0
+      "level": 0,
+      "combatLevel": 10,
+      "sortLevel": 10,
+      "otherActivity": false
     },
     {
       "id": "evilMagic/fight-snake",
       "skill": "evilMagic",
       "name": "Snake",
       "mob": "snake",
-      "level": 0
+      "level": 0,
+      "combatLevel": 14,
+      "sortLevel": 14,
+      "otherActivity": false
+    },
+    {
+      "id": "evilMagic/fight-crocodile-safe",
+      "skill": "evilMagic",
+      "name": "Crocodile (Safe spot)",
+      "mob": "crocodile-safe",
+      "level": 0,
+      "combatLevel": 18,
+      "sortLevel": 18,
+      "otherActivity": false
+    },
+    {
+      "id": "evilMagic/fight-giant-snake",
+      "skill": "evilMagic",
+      "name": "Giant Snake",
+      "mob": "giant-snake",
+      "level": 0,
+      "combatLevel": 56,
+      "sortLevel": 56,
+      "otherActivity": false
+    },
+    {
+      "id": "evilMagic/fight-mummy",
+      "skill": "evilMagic",
+      "name": "Mummy",
+      "mob": "mummy",
+      "level": 0,
+      "combatLevel": 36,
+      "sortLevel": 36,
+      "otherActivity": false
+    },
+    {
+      "id": "evilMagic/fight-cockatrice",
+      "skill": "evilMagic",
+      "name": "Cockatrice",
+      "mob": "cockatrice",
+      "level": 0,
+      "combatLevel": 44,
+      "sortLevel": 44,
+      "otherActivity": false
+    },
+    {
+      "id": "evilMagic/fight-pit-guardian",
+      "skill": "evilMagic",
+      "name": "Pit Guardian",
+      "mob": "pit-guardian",
+      "level": 0,
+      "combatLevel": 63,
+      "sortLevel": 63,
+      "otherActivity": false
+    },
+    {
+      "id": "evilMagic/fight-fire-elemental",
+      "skill": "evilMagic",
+      "name": "Fire Elemental",
+      "mob": "fire-elemental",
+      "level": 0,
+      "combatLevel": 67,
+      "sortLevel": 67,
+      "otherActivity": false
+    },
+    {
+      "id": "evilMagic/fight-fire-elemental-safe",
+      "skill": "evilMagic",
+      "name": "Fire Elemental (Safe spot)",
+      "mob": "fire-elemental-safe",
+      "level": 0,
+      "combatLevel": 67,
+      "sortLevel": 67,
+      "otherActivity": false
     },
     {
       "id": "evilMagic/fight-tomb-sorcerer",
       "skill": "evilMagic",
       "name": "Tomb Sorcerer",
       "mob": "tomb-sorcerer",
-      "level": 0
+      "level": 0,
+      "combatLevel": 75,
+      "sortLevel": 75,
+      "otherActivity": false
+    },
+    {
+      "id": "evilMagic/fight-sandworm",
+      "skill": "evilMagic",
+      "name": "Sandworm",
+      "mob": "sandworm",
+      "level": 0,
+      "combatLevel": 81,
+      "sortLevel": 81,
+      "otherActivity": false
+    },
+    {
+      "id": "evilMagic/fight-mouse",
+      "skill": "evilMagic",
+      "name": "Mouse",
+      "mob": "mouse",
+      "level": 0,
+      "combatLevel": 1,
+      "sortLevel": 1,
+      "otherActivity": false
+    },
+    {
+      "id": "evilMagic/fight-island-rodent",
+      "skill": "evilMagic",
+      "name": "Island Rodent",
+      "mob": "island-rodent",
+      "level": 0,
+      "combatLevel": 1,
+      "sortLevel": 1,
+      "otherActivity": true
+    },
+    {
+      "id": "evilMagic/fight-chicken",
+      "skill": "evilMagic",
+      "name": "Chicken",
+      "mob": "chicken",
+      "level": 0,
+      "combatLevel": 2,
+      "sortLevel": 2,
+      "otherActivity": false
+    },
+    {
+      "id": "evilMagic/fight-giant-rat",
+      "skill": "evilMagic",
+      "name": "Giant Rat",
+      "mob": "giant-rat",
+      "level": 0,
+      "combatLevel": 3,
+      "sortLevel": 3,
+      "otherActivity": false
+    },
+    {
+      "id": "evilMagic/fight-cow",
+      "skill": "evilMagic",
+      "name": "Cow",
+      "mob": "cow",
+      "level": 0,
+      "combatLevel": 4,
+      "sortLevel": 4,
+      "otherActivity": false
+    },
+    {
+      "id": "evilMagic/fight-goblin",
+      "skill": "evilMagic",
+      "name": "Goblin",
+      "mob": "goblin",
+      "level": 0,
+      "combatLevel": 9,
+      "sortLevel": 9,
+      "otherActivity": false
+    },
+    {
+      "id": "evilMagic/fight-scorpion",
+      "skill": "evilMagic",
+      "name": "Titan Scorpion",
+      "mob": "giant-scorpion",
+      "level": 0,
+      "combatLevel": 12,
+      "sortLevel": 12,
+      "otherActivity": false
+    },
+    {
+      "id": "evilMagic/fight-imp",
+      "skill": "evilMagic",
+      "name": "Imp",
+      "mob": "imp",
+      "level": 0,
+      "combatLevel": 13,
+      "sortLevel": 13,
+      "otherActivity": false
+    },
+    {
+      "id": "evilMagic/fight-monk",
+      "skill": "evilMagic",
+      "name": "Monk",
+      "mob": "monk",
+      "level": 0,
+      "combatLevel": 16,
+      "sortLevel": 16,
+      "otherActivity": false
+    },
+    {
+      "id": "evilMagic/fight-skeleton",
+      "skill": "evilMagic",
+      "name": "Skeleton",
+      "mob": "skeleton",
+      "level": 0,
+      "combatLevel": 19,
+      "sortLevel": 19,
+      "otherActivity": false
+    },
+    {
+      "id": "evilMagic/fight-ghost",
+      "skill": "evilMagic",
+      "name": "Ghost",
+      "mob": "ghost",
+      "level": 0,
+      "combatLevel": 29,
+      "sortLevel": 29,
+      "otherActivity": false
+    },
+    {
+      "id": "evilMagic/fight-cave-slime",
+      "skill": "evilMagic",
+      "name": "Cave Slime",
+      "mob": "cave-slime",
+      "level": 0,
+      "combatLevel": 25,
+      "sortLevel": 25,
+      "otherActivity": false
+    },
+    {
+      "id": "evilMagic/fight-bear",
+      "skill": "evilMagic",
+      "name": "Bear",
+      "mob": "bear",
+      "level": 0,
+      "combatLevel": 26,
+      "sortLevel": 26,
+      "otherActivity": false
+    },
+    {
+      "id": "evilMagic/fight-fire-dwarf",
+      "skill": "evilMagic",
+      "name": "Fire Dwarf",
+      "mob": "fire-dwarf",
+      "level": 0,
+      "combatLevel": 33,
+      "sortLevel": 33,
+      "otherActivity": false
+    },
+    {
+      "id": "evilMagic/fight-fire-dwarf-safe",
+      "skill": "evilMagic",
+      "name": "Fire Dwarf (Safe spot)",
+      "mob": "fire-dwarf-safe",
+      "level": 0,
+      "combatLevel": 33,
+      "sortLevel": 33,
+      "otherActivity": false
+    },
+    {
+      "id": "evilMagic/fight-black-knight",
+      "skill": "evilMagic",
+      "name": "Black Knight",
+      "mob": "black-knight",
+      "level": 0,
+      "combatLevel": 38,
+      "sortLevel": 38,
+      "otherActivity": false
+    },
+    {
+      "id": "evilMagic/fight-black-knight-safe",
+      "skill": "evilMagic",
+      "name": "Black Knight (Safe spot)",
+      "mob": "black-knight-safe",
+      "level": 0,
+      "combatLevel": 38,
+      "sortLevel": 38,
+      "otherActivity": false
+    },
+    {
+      "id": "evilMagic/fight-moss-giant",
+      "skill": "evilMagic",
+      "name": "Moss Giant",
+      "mob": "moss-giant",
+      "level": 0,
+      "combatLevel": 42,
+      "sortLevel": 42,
+      "otherActivity": false
+    },
+    {
+      "id": "evilMagic/fight-ice-warrior",
+      "skill": "evilMagic",
+      "name": "Ice Warrior",
+      "mob": "ice-warrior",
+      "level": 0,
+      "combatLevel": 57,
+      "sortLevel": 57,
+      "otherActivity": false
+    },
+    {
+      "id": "evilMagic/fight-ice-warrior-safe",
+      "skill": "evilMagic",
+      "name": "Ice Warrior (Safe spot)",
+      "mob": "ice-warrior-safe",
+      "level": 0,
+      "combatLevel": 57,
+      "sortLevel": 57,
+      "otherActivity": false
+    },
+    {
+      "id": "evilMagic/fight-mothman",
+      "skill": "evilMagic",
+      "name": "Mothman",
+      "mob": "mothman",
+      "level": 0,
+      "combatLevel": 60,
+      "sortLevel": 60,
+      "otherActivity": false
+    },
+    {
+      "id": "evilMagic/fight-ice-giant",
+      "skill": "evilMagic",
+      "name": "Ice Giant",
+      "mob": "ice-giant",
+      "level": 0,
+      "combatLevel": 68,
+      "sortLevel": 68,
+      "otherActivity": false
+    },
+    {
+      "id": "evilMagic/fight-greater-demon",
+      "skill": "evilMagic",
+      "name": "Greater Demon",
+      "mob": "greater-demon",
+      "level": 0,
+      "combatLevel": 87,
+      "sortLevel": 87,
+      "otherActivity": false
+    },
+    {
+      "id": "evilMagic/fight-corrupted-druid",
+      "skill": "evilMagic",
+      "name": "Corrupted Druid",
+      "mob": "corrupted-druid",
+      "level": 0,
+      "combatLevel": 52,
+      "sortLevel": 52,
+      "otherActivity": false
+    },
+    {
+      "id": "evilMagic/fight-druid-warrior",
+      "skill": "evilMagic",
+      "name": "Druid Warrior",
+      "mob": "druid-warrior",
+      "level": 0,
+      "combatLevel": 72,
+      "sortLevel": 72,
+      "otherActivity": false
+    },
+    {
+      "id": "evilMagic/fight-blue-dragon",
+      "skill": "evilMagic",
+      "name": "Blue Dragon",
+      "mob": "blue-dragon",
+      "level": 0,
+      "combatLevel": 105,
+      "sortLevel": 105,
+      "otherActivity": false
+    },
+    {
+      "id": "evilMagic/fight-lesser-demon-safe",
+      "skill": "evilMagic",
+      "name": "Lesser Demon (Safe spot)",
+      "mob": "lesser-demon-safe",
+      "level": 0,
+      "combatLevel": 79,
+      "sortLevel": 79,
+      "otherActivity": false
     },
     {
       "id": "evilMagic/fight-turkey",
       "skill": "evilMagic",
       "name": "Turkey",
       "mob": "turkey",
-      "level": 0
+      "level": 0,
+      "combatLevel": 15,
+      "sortLevel": 15,
+      "otherActivity": false
     },
     {
-      "id": "ranged/fight-bear",
-      "skill": "ranged",
-      "name": "Bear",
-      "mob": "bear",
-      "level": 0
-    },
-    {
-      "id": "ranged/fight-black-knight",
-      "skill": "ranged",
-      "name": "Black Knight",
-      "mob": "black-knight",
-      "level": 0
-    },
-    {
-      "id": "ranged/fight-black-knight-safe",
-      "skill": "ranged",
-      "name": "Black Knight (Safe spot)",
-      "mob": "black-knight-safe",
-      "level": 0
-    },
-    {
-      "id": "ranged/fight-blue-dragon",
-      "skill": "ranged",
-      "name": "Blue Dragon",
-      "mob": "blue-dragon",
-      "level": 0
-    },
-    {
-      "id": "ranged/fight-cave-slime",
-      "skill": "ranged",
-      "name": "Cave Slime",
-      "mob": "cave-slime",
-      "level": 0
-    },
-    {
-      "id": "ranged/fight-chicken",
-      "skill": "ranged",
-      "name": "Chicken",
-      "mob": "chicken",
-      "level": 0
-    },
-    {
-      "id": "ranged/fight-cockatrice",
-      "skill": "ranged",
-      "name": "Cockatrice",
-      "mob": "cockatrice",
-      "level": 0
-    },
-    {
-      "id": "ranged/fight-corrupted-druid",
-      "skill": "ranged",
-      "name": "Corrupted Druid",
-      "mob": "corrupted-druid",
-      "level": 0
-    },
-    {
-      "id": "ranged/fight-cow",
-      "skill": "ranged",
-      "name": "Cow",
-      "mob": "cow",
-      "level": 0
-    },
-    {
-      "id": "ranged/fight-crocodile-safe",
-      "skill": "ranged",
-      "name": "Crocodile (Safe spot)",
-      "mob": "crocodile-safe",
-      "level": 0
-    },
-    {
-      "id": "ranged/fight-dragon-whelp",
-      "skill": "ranged",
+      "id": "evilMagic/fight-dragon-whelp",
+      "skill": "evilMagic",
       "name": "Dragon Whelp",
       "mob": "dragon-whelp",
-      "level": 0
+      "level": 0,
+      "combatLevel": 43,
+      "sortLevel": 43,
+      "otherActivity": true
     },
     {
-      "id": "ranged/fight-druid-warrior",
-      "skill": "ranged",
-      "name": "Druid Warrior",
-      "mob": "druid-warrior",
-      "level": 0
+      "id": "evilMagic/fight-magma-hound",
+      "skill": "evilMagic",
+      "name": "Magma Hound",
+      "mob": "magma-hound",
+      "level": 0,
+      "combatLevel": 65,
+      "sortLevel": 65,
+      "otherActivity": true
     },
     {
-      "id": "ranged/fight-fire-dwarf",
-      "skill": "ranged",
-      "name": "Fire Dwarf",
-      "mob": "fire-dwarf",
-      "level": 0
+      "id": "evilMagic/fight-king-onyx-dragon",
+      "skill": "evilMagic",
+      "name": "King Onyx Dragon",
+      "mob": "king-onyx-dragon",
+      "level": 0,
+      "combatLevel": 155,
+      "sortLevel": 155,
+      "otherActivity": true
     },
     {
-      "id": "ranged/fight-fire-dwarf-safe",
-      "skill": "ranged",
-      "name": "Fire Dwarf (Safe spot)",
-      "mob": "fire-dwarf-safe",
-      "level": 0
+      "id": "evilMagic/fight-iskarn",
+      "skill": "evilMagic",
+      "name": "Iskarn",
+      "mob": "iskarn",
+      "level": 0,
+      "combatLevel": 80,
+      "sortLevel": 80,
+      "otherActivity": true
     },
     {
-      "id": "ranged/fight-fire-elemental",
-      "skill": "ranged",
-      "name": "Fire Elemental",
-      "mob": "fire-elemental",
-      "level": 0
+      "id": "evilMagic/fight-pyrax",
+      "skill": "evilMagic",
+      "name": "Pyrax",
+      "mob": "pyrax",
+      "level": 0,
+      "combatLevel": 80,
+      "sortLevel": 80,
+      "otherActivity": true
     },
     {
-      "id": "ranged/fight-fire-elemental-safe",
-      "skill": "ranged",
-      "name": "Fire Elemental (Safe spot)",
-      "mob": "fire-elemental-safe",
-      "level": 0
+      "id": "evilMagic/fight-morvane",
+      "skill": "evilMagic",
+      "name": "Morvane, Corrupted Keeper Of The Heartwood",
+      "mob": "morvane",
+      "level": 0,
+      "combatLevel": 95,
+      "sortLevel": 95,
+      "otherActivity": true
     },
     {
-      "id": "ranged/fight-ghost",
-      "skill": "ranged",
-      "name": "Ghost",
-      "mob": "ghost",
-      "level": 0
+      "id": "evilMagic/fight-sewer-crocodile",
+      "skill": "evilMagic",
+      "name": "Sewer Crocodile (Safe spot)",
+      "mob": "sewer-crocodile",
+      "level": 0,
+      "combatLevel": 35,
+      "sortLevel": 35,
+      "otherActivity": true
     },
     {
-      "id": "ranged/fight-giant-rat",
-      "skill": "ranged",
-      "name": "Giant Rat",
-      "mob": "giant-rat",
-      "level": 0
-    },
-    {
-      "id": "ranged/fight-giant-snake",
-      "skill": "ranged",
-      "name": "Giant Snake",
-      "mob": "giant-snake",
-      "level": 0
-    },
-    {
-      "id": "ranged/fight-goblin",
-      "skill": "ranged",
-      "name": "Goblin",
-      "mob": "goblin",
-      "level": 0
-    },
-    {
-      "id": "ranged/fight-greater-demon",
-      "skill": "ranged",
-      "name": "Greater Demon",
-      "mob": "greater-demon",
-      "level": 0
-    },
-    {
-      "id": "ranged/fight-gurgle",
-      "skill": "ranged",
+      "id": "evilMagic/fight-gurgle",
+      "skill": "evilMagic",
       "name": "Gurgle",
       "mob": "gurgle",
-      "level": 0
+      "level": 0,
+      "combatLevel": 40,
+      "sortLevel": 40,
+      "otherActivity": true
     },
     {
-      "id": "ranged/fight-ice-giant",
-      "skill": "ranged",
-      "name": "Ice Giant",
-      "mob": "ice-giant",
-      "level": 0
-    },
-    {
-      "id": "ranged/fight-ice-warrior",
-      "skill": "ranged",
-      "name": "Ice Warrior",
-      "mob": "ice-warrior",
-      "level": 0
-    },
-    {
-      "id": "ranged/fight-ice-warrior-safe",
-      "skill": "ranged",
-      "name": "Ice Warrior (Safe spot)",
-      "mob": "ice-warrior-safe",
-      "level": 0
-    },
-    {
-      "id": "ranged/fight-imp",
-      "skill": "ranged",
-      "name": "Imp",
-      "mob": "imp",
-      "level": 0
+      "id": "evilMagic/fight-slimelet",
+      "skill": "evilMagic",
+      "name": "Slimelet",
+      "mob": "slimelet",
+      "level": 0,
+      "combatLevel": 25,
+      "sortLevel": 25,
+      "otherActivity": true
     },
     {
       "id": "ranged/fight-insect-swarm",
       "skill": "ranged",
       "name": "Insect Swarm",
       "mob": "insect-swarm",
-      "level": 0
-    },
-    {
-      "id": "ranged/fight-iskarn",
-      "skill": "ranged",
-      "name": "Iskarn",
-      "mob": "iskarn",
-      "level": 0
-    },
-    {
-      "id": "ranged/fight-island-rodent",
-      "skill": "ranged",
-      "name": "Island Rodent",
-      "mob": "island-rodent",
-      "level": 0
-    },
-    {
-      "id": "ranged/fight-king-onyx-dragon",
-      "skill": "ranged",
-      "name": "King Onyx Dragon",
-      "mob": "king-onyx-dragon",
-      "level": 0
-    },
-    {
-      "id": "ranged/fight-lesser-demon-safe",
-      "skill": "ranged",
-      "name": "Lesser Demon (Safe spot)",
-      "mob": "lesser-demon-safe",
-      "level": 0
-    },
-    {
-      "id": "ranged/fight-magma-hound",
-      "skill": "ranged",
-      "name": "Magma Hound",
-      "mob": "magma-hound",
-      "level": 0
-    },
-    {
-      "id": "ranged/fight-monk",
-      "skill": "ranged",
-      "name": "Monk",
-      "mob": "monk",
-      "level": 0
-    },
-    {
-      "id": "ranged/fight-morvane",
-      "skill": "ranged",
-      "name": "Morvane, Corrupted Keeper Of The Heartwood",
-      "mob": "morvane",
-      "level": 0
-    },
-    {
-      "id": "ranged/fight-moss-giant",
-      "skill": "ranged",
-      "name": "Moss Giant",
-      "mob": "moss-giant",
-      "level": 0
-    },
-    {
-      "id": "ranged/fight-mothman",
-      "skill": "ranged",
-      "name": "Mothman",
-      "mob": "mothman",
-      "level": 0
-    },
-    {
-      "id": "ranged/fight-mouse",
-      "skill": "ranged",
-      "name": "Mouse",
-      "mob": "mouse",
-      "level": 0
-    },
-    {
-      "id": "ranged/fight-mummy",
-      "skill": "ranged",
-      "name": "Mummy",
-      "mob": "mummy",
-      "level": 0
-    },
-    {
-      "id": "ranged/fight-pit-guardian",
-      "skill": "ranged",
-      "name": "Pit Guardian",
-      "mob": "pit-guardian",
-      "level": 0
-    },
-    {
-      "id": "ranged/fight-pyrax",
-      "skill": "ranged",
-      "name": "Pyrax",
-      "mob": "pyrax",
-      "level": 0
-    },
-    {
-      "id": "ranged/fight-sandworm",
-      "skill": "ranged",
-      "name": "Sandworm",
-      "mob": "sandworm",
-      "level": 0
-    },
-    {
-      "id": "ranged/fight-scorpion",
-      "skill": "ranged",
-      "name": "Titan Scorpion",
-      "mob": "giant-scorpion",
-      "level": 0
-    },
-    {
-      "id": "ranged/fight-sewer-crocodile",
-      "skill": "ranged",
-      "name": "Sewer Crocodile (Safe spot)",
-      "mob": "sewer-crocodile",
-      "level": 0
-    },
-    {
-      "id": "ranged/fight-skeleton",
-      "skill": "ranged",
-      "name": "Skeleton",
-      "mob": "skeleton",
-      "level": 0
-    },
-    {
-      "id": "ranged/fight-slimelet",
-      "skill": "ranged",
-      "name": "Slimelet",
-      "mob": "slimelet",
-      "level": 0
+      "level": 0,
+      "combatLevel": 10,
+      "sortLevel": 10,
+      "otherActivity": false
     },
     {
       "id": "ranged/fight-snake",
       "skill": "ranged",
       "name": "Snake",
       "mob": "snake",
-      "level": 0
+      "level": 0,
+      "combatLevel": 14,
+      "sortLevel": 14,
+      "otherActivity": false
+    },
+    {
+      "id": "ranged/fight-crocodile-safe",
+      "skill": "ranged",
+      "name": "Crocodile (Safe spot)",
+      "mob": "crocodile-safe",
+      "level": 0,
+      "combatLevel": 18,
+      "sortLevel": 18,
+      "otherActivity": false
+    },
+    {
+      "id": "ranged/fight-giant-snake",
+      "skill": "ranged",
+      "name": "Giant Snake",
+      "mob": "giant-snake",
+      "level": 0,
+      "combatLevel": 56,
+      "sortLevel": 56,
+      "otherActivity": false
+    },
+    {
+      "id": "ranged/fight-mummy",
+      "skill": "ranged",
+      "name": "Mummy",
+      "mob": "mummy",
+      "level": 0,
+      "combatLevel": 36,
+      "sortLevel": 36,
+      "otherActivity": false
+    },
+    {
+      "id": "ranged/fight-cockatrice",
+      "skill": "ranged",
+      "name": "Cockatrice",
+      "mob": "cockatrice",
+      "level": 0,
+      "combatLevel": 44,
+      "sortLevel": 44,
+      "otherActivity": false
+    },
+    {
+      "id": "ranged/fight-pit-guardian",
+      "skill": "ranged",
+      "name": "Pit Guardian",
+      "mob": "pit-guardian",
+      "level": 0,
+      "combatLevel": 63,
+      "sortLevel": 63,
+      "otherActivity": false
+    },
+    {
+      "id": "ranged/fight-fire-elemental",
+      "skill": "ranged",
+      "name": "Fire Elemental",
+      "mob": "fire-elemental",
+      "level": 0,
+      "combatLevel": 67,
+      "sortLevel": 67,
+      "otherActivity": false
+    },
+    {
+      "id": "ranged/fight-fire-elemental-safe",
+      "skill": "ranged",
+      "name": "Fire Elemental (Safe spot)",
+      "mob": "fire-elemental-safe",
+      "level": 0,
+      "combatLevel": 67,
+      "sortLevel": 67,
+      "otherActivity": false
     },
     {
       "id": "ranged/fight-tomb-sorcerer",
       "skill": "ranged",
       "name": "Tomb Sorcerer",
       "mob": "tomb-sorcerer",
-      "level": 0
+      "level": 0,
+      "combatLevel": 75,
+      "sortLevel": 75,
+      "otherActivity": false
+    },
+    {
+      "id": "ranged/fight-sandworm",
+      "skill": "ranged",
+      "name": "Sandworm",
+      "mob": "sandworm",
+      "level": 0,
+      "combatLevel": 81,
+      "sortLevel": 81,
+      "otherActivity": false
+    },
+    {
+      "id": "ranged/fight-mouse",
+      "skill": "ranged",
+      "name": "Mouse",
+      "mob": "mouse",
+      "level": 0,
+      "combatLevel": 1,
+      "sortLevel": 1,
+      "otherActivity": false
+    },
+    {
+      "id": "ranged/fight-island-rodent",
+      "skill": "ranged",
+      "name": "Island Rodent",
+      "mob": "island-rodent",
+      "level": 0,
+      "combatLevel": 1,
+      "sortLevel": 1,
+      "otherActivity": true
+    },
+    {
+      "id": "ranged/fight-chicken",
+      "skill": "ranged",
+      "name": "Chicken",
+      "mob": "chicken",
+      "level": 0,
+      "combatLevel": 2,
+      "sortLevel": 2,
+      "otherActivity": false
+    },
+    {
+      "id": "ranged/fight-giant-rat",
+      "skill": "ranged",
+      "name": "Giant Rat",
+      "mob": "giant-rat",
+      "level": 0,
+      "combatLevel": 3,
+      "sortLevel": 3,
+      "otherActivity": false
+    },
+    {
+      "id": "ranged/fight-cow",
+      "skill": "ranged",
+      "name": "Cow",
+      "mob": "cow",
+      "level": 0,
+      "combatLevel": 4,
+      "sortLevel": 4,
+      "otherActivity": false
+    },
+    {
+      "id": "ranged/fight-goblin",
+      "skill": "ranged",
+      "name": "Goblin",
+      "mob": "goblin",
+      "level": 0,
+      "combatLevel": 9,
+      "sortLevel": 9,
+      "otherActivity": false
+    },
+    {
+      "id": "ranged/fight-scorpion",
+      "skill": "ranged",
+      "name": "Titan Scorpion",
+      "mob": "giant-scorpion",
+      "level": 0,
+      "combatLevel": 12,
+      "sortLevel": 12,
+      "otherActivity": false
+    },
+    {
+      "id": "ranged/fight-imp",
+      "skill": "ranged",
+      "name": "Imp",
+      "mob": "imp",
+      "level": 0,
+      "combatLevel": 13,
+      "sortLevel": 13,
+      "otherActivity": false
+    },
+    {
+      "id": "ranged/fight-monk",
+      "skill": "ranged",
+      "name": "Monk",
+      "mob": "monk",
+      "level": 0,
+      "combatLevel": 16,
+      "sortLevel": 16,
+      "otherActivity": false
+    },
+    {
+      "id": "ranged/fight-skeleton",
+      "skill": "ranged",
+      "name": "Skeleton",
+      "mob": "skeleton",
+      "level": 0,
+      "combatLevel": 19,
+      "sortLevel": 19,
+      "otherActivity": false
+    },
+    {
+      "id": "ranged/fight-ghost",
+      "skill": "ranged",
+      "name": "Ghost",
+      "mob": "ghost",
+      "level": 0,
+      "combatLevel": 29,
+      "sortLevel": 29,
+      "otherActivity": false
+    },
+    {
+      "id": "ranged/fight-cave-slime",
+      "skill": "ranged",
+      "name": "Cave Slime",
+      "mob": "cave-slime",
+      "level": 0,
+      "combatLevel": 25,
+      "sortLevel": 25,
+      "otherActivity": false
+    },
+    {
+      "id": "ranged/fight-bear",
+      "skill": "ranged",
+      "name": "Bear",
+      "mob": "bear",
+      "level": 0,
+      "combatLevel": 26,
+      "sortLevel": 26,
+      "otherActivity": false
+    },
+    {
+      "id": "ranged/fight-fire-dwarf",
+      "skill": "ranged",
+      "name": "Fire Dwarf",
+      "mob": "fire-dwarf",
+      "level": 0,
+      "combatLevel": 33,
+      "sortLevel": 33,
+      "otherActivity": false
+    },
+    {
+      "id": "ranged/fight-fire-dwarf-safe",
+      "skill": "ranged",
+      "name": "Fire Dwarf (Safe spot)",
+      "mob": "fire-dwarf-safe",
+      "level": 0,
+      "combatLevel": 33,
+      "sortLevel": 33,
+      "otherActivity": false
+    },
+    {
+      "id": "ranged/fight-black-knight",
+      "skill": "ranged",
+      "name": "Black Knight",
+      "mob": "black-knight",
+      "level": 0,
+      "combatLevel": 38,
+      "sortLevel": 38,
+      "otherActivity": false
+    },
+    {
+      "id": "ranged/fight-black-knight-safe",
+      "skill": "ranged",
+      "name": "Black Knight (Safe spot)",
+      "mob": "black-knight-safe",
+      "level": 0,
+      "combatLevel": 38,
+      "sortLevel": 38,
+      "otherActivity": false
+    },
+    {
+      "id": "ranged/fight-moss-giant",
+      "skill": "ranged",
+      "name": "Moss Giant",
+      "mob": "moss-giant",
+      "level": 0,
+      "combatLevel": 42,
+      "sortLevel": 42,
+      "otherActivity": false
+    },
+    {
+      "id": "ranged/fight-ice-warrior",
+      "skill": "ranged",
+      "name": "Ice Warrior",
+      "mob": "ice-warrior",
+      "level": 0,
+      "combatLevel": 57,
+      "sortLevel": 57,
+      "otherActivity": false
+    },
+    {
+      "id": "ranged/fight-ice-warrior-safe",
+      "skill": "ranged",
+      "name": "Ice Warrior (Safe spot)",
+      "mob": "ice-warrior-safe",
+      "level": 0,
+      "combatLevel": 57,
+      "sortLevel": 57,
+      "otherActivity": false
+    },
+    {
+      "id": "ranged/fight-mothman",
+      "skill": "ranged",
+      "name": "Mothman",
+      "mob": "mothman",
+      "level": 0,
+      "combatLevel": 60,
+      "sortLevel": 60,
+      "otherActivity": false
+    },
+    {
+      "id": "ranged/fight-ice-giant",
+      "skill": "ranged",
+      "name": "Ice Giant",
+      "mob": "ice-giant",
+      "level": 0,
+      "combatLevel": 68,
+      "sortLevel": 68,
+      "otherActivity": false
+    },
+    {
+      "id": "ranged/fight-greater-demon",
+      "skill": "ranged",
+      "name": "Greater Demon",
+      "mob": "greater-demon",
+      "level": 0,
+      "combatLevel": 87,
+      "sortLevel": 87,
+      "otherActivity": false
+    },
+    {
+      "id": "ranged/fight-corrupted-druid",
+      "skill": "ranged",
+      "name": "Corrupted Druid",
+      "mob": "corrupted-druid",
+      "level": 0,
+      "combatLevel": 52,
+      "sortLevel": 52,
+      "otherActivity": false
+    },
+    {
+      "id": "ranged/fight-druid-warrior",
+      "skill": "ranged",
+      "name": "Druid Warrior",
+      "mob": "druid-warrior",
+      "level": 0,
+      "combatLevel": 72,
+      "sortLevel": 72,
+      "otherActivity": false
+    },
+    {
+      "id": "ranged/fight-blue-dragon",
+      "skill": "ranged",
+      "name": "Blue Dragon",
+      "mob": "blue-dragon",
+      "level": 0,
+      "combatLevel": 105,
+      "sortLevel": 105,
+      "otherActivity": false
+    },
+    {
+      "id": "ranged/fight-lesser-demon-safe",
+      "skill": "ranged",
+      "name": "Lesser Demon (Safe spot)",
+      "mob": "lesser-demon-safe",
+      "level": 0,
+      "combatLevel": 79,
+      "sortLevel": 79,
+      "otherActivity": false
     },
     {
       "id": "ranged/fight-turkey",
       "skill": "ranged",
       "name": "Turkey",
       "mob": "turkey",
-      "level": 0
+      "level": 0,
+      "combatLevel": 15,
+      "sortLevel": 15,
+      "otherActivity": false
+    },
+    {
+      "id": "ranged/fight-dragon-whelp",
+      "skill": "ranged",
+      "name": "Dragon Whelp",
+      "mob": "dragon-whelp",
+      "level": 0,
+      "combatLevel": 43,
+      "sortLevel": 43,
+      "otherActivity": true
+    },
+    {
+      "id": "ranged/fight-magma-hound",
+      "skill": "ranged",
+      "name": "Magma Hound",
+      "mob": "magma-hound",
+      "level": 0,
+      "combatLevel": 65,
+      "sortLevel": 65,
+      "otherActivity": true
+    },
+    {
+      "id": "ranged/fight-king-onyx-dragon",
+      "skill": "ranged",
+      "name": "King Onyx Dragon",
+      "mob": "king-onyx-dragon",
+      "level": 0,
+      "combatLevel": 155,
+      "sortLevel": 155,
+      "otherActivity": true
+    },
+    {
+      "id": "ranged/fight-iskarn",
+      "skill": "ranged",
+      "name": "Iskarn",
+      "mob": "iskarn",
+      "level": 0,
+      "combatLevel": 80,
+      "sortLevel": 80,
+      "otherActivity": true
+    },
+    {
+      "id": "ranged/fight-pyrax",
+      "skill": "ranged",
+      "name": "Pyrax",
+      "mob": "pyrax",
+      "level": 0,
+      "combatLevel": 80,
+      "sortLevel": 80,
+      "otherActivity": true
+    },
+    {
+      "id": "ranged/fight-morvane",
+      "skill": "ranged",
+      "name": "Morvane, Corrupted Keeper Of The Heartwood",
+      "mob": "morvane",
+      "level": 0,
+      "combatLevel": 95,
+      "sortLevel": 95,
+      "otherActivity": true
+    },
+    {
+      "id": "ranged/fight-sewer-crocodile",
+      "skill": "ranged",
+      "name": "Sewer Crocodile (Safe spot)",
+      "mob": "sewer-crocodile",
+      "level": 0,
+      "combatLevel": 35,
+      "sortLevel": 35,
+      "otherActivity": true
+    },
+    {
+      "id": "ranged/fight-gurgle",
+      "skill": "ranged",
+      "name": "Gurgle",
+      "mob": "gurgle",
+      "level": 0,
+      "combatLevel": 40,
+      "sortLevel": 40,
+      "otherActivity": true
+    },
+    {
+      "id": "ranged/fight-slimelet",
+      "skill": "ranged",
+      "name": "Slimelet",
+      "mob": "slimelet",
+      "level": 0,
+      "combatLevel": 25,
+      "sortLevel": 25,
+      "otherActivity": true
     },
     {
       "id": "piety/bury-bones",
@@ -1811,6 +2531,8 @@
       "level": 1,
       "duration": 3,
       "exp": 4,
+      "sortLevel": 1,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "bones",
@@ -1837,6 +2559,8 @@
       "level": 1,
       "duration": 3,
       "exp": 12,
+      "sortLevel": 1,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "bigBones",
@@ -1863,6 +2587,8 @@
       "level": 1,
       "duration": 3,
       "exp": 60,
+      "sortLevel": 1,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "dragonBones",
@@ -1889,6 +2615,8 @@
       "level": 1,
       "duration": 7,
       "exp": 12,
+      "sortLevel": 1,
+      "otherActivity": false,
       "inputs": [],
       "icon": "https://microscape.cc/play/assets/logs-DmE-oFjf.png",
       "wikiId": "logs",
@@ -1918,6 +2646,8 @@
       "level": 15,
       "duration": 7,
       "exp": 30,
+      "sortLevel": 15,
+      "otherActivity": false,
       "inputs": [],
       "icon": "https://microscape.cc/play/assets/oakLogs-DUt3m6AV.png",
       "wikiId": "oak-logs",
@@ -1943,6 +2673,8 @@
       "level": 30,
       "duration": 7,
       "exp": 50,
+      "sortLevel": 30,
+      "otherActivity": false,
       "inputs": [],
       "icon": "https://microscape.cc/play/assets/willowLogs-C-GiuOwk.png",
       "wikiId": "willow-logs",
@@ -1968,6 +2700,8 @@
       "level": 45,
       "duration": 9,
       "exp": 100,
+      "sortLevel": 45,
+      "otherActivity": false,
       "inputs": [],
       "icon": "https://microscape.cc/play/assets/mapleLogs-CTMoz4q1.png",
       "wikiId": "maple-logs",
@@ -1989,6 +2723,8 @@
       "level": 60,
       "duration": 10,
       "exp": 175,
+      "sortLevel": 60,
+      "otherActivity": false,
       "inputs": [],
       "icon": "https://microscape.cc/play/assets/yewLogs-iZc0Ar8T.png",
       "wikiId": "yew-logs",
@@ -2014,6 +2750,8 @@
       "level": 75,
       "duration": 11,
       "exp": 250,
+      "sortLevel": 75,
+      "otherActivity": false,
       "inputs": [],
       "icon": "https://microscape.cc/play/assets/magicLogs-C4Jwitib.png",
       "wikiId": "magic-logs",
@@ -2039,6 +2777,8 @@
       "level": 1,
       "duration": 5,
       "exp": 12,
+      "sortLevel": 1,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "logs",
@@ -2093,6 +2833,8 @@
       "level": 15,
       "duration": 9,
       "exp": 30,
+      "sortLevel": 15,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "oakLogs",
@@ -2147,6 +2889,8 @@
       "level": 30,
       "duration": 9,
       "exp": 50,
+      "sortLevel": 30,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "willowLogs",
@@ -2201,6 +2945,8 @@
       "level": 45,
       "duration": 11,
       "exp": 100,
+      "sortLevel": 45,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "mapleLogs",
@@ -2255,6 +3001,8 @@
       "level": 60,
       "duration": 16,
       "exp": 175,
+      "sortLevel": 60,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "yewLogs",
@@ -2309,6 +3057,8 @@
       "level": 75,
       "duration": 21,
       "exp": 250,
+      "sortLevel": 75,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "magicLogs",
@@ -2363,6 +3113,8 @@
       "level": 76,
       "duration": 5,
       "exp": 56,
+      "sortLevel": 76,
+      "otherActivity": true,
       "inputs": [
         {
           "id": "ashes",
@@ -2401,6 +3153,8 @@
       "level": 85,
       "duration": 10801,
       "exp": 900000,
+      "sortLevel": 85,
+      "otherActivity": true,
       "inputs": [
         {
           "id": "distilledAsh",
@@ -2435,6 +3189,8 @@
       "level": 1,
       "duration": 5,
       "exp": 8,
+      "sortLevel": 1,
+      "otherActivity": false,
       "inputs": [],
       "icon": "https://microscape.cc/play/assets/rawFrog-22DMSY3u.png",
       "wikiId": "raw-frog",
@@ -2464,6 +3220,8 @@
       "level": 1,
       "duration": 11,
       "exp": 40,
+      "sortLevel": 1,
+      "otherActivity": false,
       "inputs": [],
       "icon": "https://microscape.cc/play/assets/rawShrimp-CzYN5G7G.png",
       "wikiId": "raw-shrimp",
@@ -2493,6 +3251,8 @@
       "level": 10,
       "duration": 11,
       "exp": 50,
+      "sortLevel": 10,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "rawShrimp",
@@ -2519,6 +3279,8 @@
       "level": 20,
       "duration": 11,
       "exp": 55,
+      "sortLevel": 20,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "feather",
@@ -2549,6 +3311,8 @@
       "level": 30,
       "duration": 11,
       "exp": 70,
+      "sortLevel": 30,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "feather",
@@ -2579,6 +3343,8 @@
       "level": 40,
       "duration": 11,
       "exp": 83,
+      "sortLevel": 40,
+      "otherActivity": false,
       "inputs": [],
       "icon": "https://microscape.cc/play/assets/rawLobster-BiGy4bl1.png",
       "wikiId": "raw-lobster",
@@ -2600,6 +3366,8 @@
       "level": 50,
       "duration": 11,
       "exp": 89,
+      "sortLevel": 50,
+      "otherActivity": false,
       "inputs": [],
       "icon": "https://microscape.cc/play/assets/rawSwordfish-oW6XfHmz.png",
       "wikiId": "raw-swordfish",
@@ -2621,6 +3389,8 @@
       "level": 60,
       "duration": 11,
       "exp": 100,
+      "sortLevel": 60,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "rawFrog",
@@ -2647,6 +3417,8 @@
       "level": 76,
       "duration": 11,
       "exp": 110,
+      "sortLevel": 76,
+      "otherActivity": false,
       "inputs": [],
       "icon": "https://microscape.cc/play/assets/rawShark-am_igC3E.png",
       "wikiId": "raw-shark",
@@ -2668,6 +3440,8 @@
       "level": 81,
       "duration": 11,
       "exp": 115,
+      "sortLevel": 81,
+      "otherActivity": false,
       "inputs": [],
       "icon": "https://microscape.cc/play/assets/rawMantaRay-DYivbLt9.png",
       "wikiId": "raw-manta-ray",
@@ -2689,6 +3463,8 @@
       "level": 1,
       "duration": 3,
       "exp": 8,
+      "sortLevel": 1,
+      "otherActivity": false,
       "inputs": [],
       "icon": "https://microscape.cc/play/assets/grain-BQ8eoUpf.png",
       "wikiId": "grain",
@@ -2710,6 +3486,8 @@
       "level": 1,
       "duration": 3,
       "exp": 8,
+      "sortLevel": 1,
+      "otherActivity": false,
       "inputs": [],
       "icon": "https://microscape.cc/play/assets/redberries-DjSFh1bl.png",
       "wikiId": "redberries",
@@ -2731,6 +3509,8 @@
       "level": 1,
       "duration": 2,
       "exp": 8,
+      "sortLevel": 1,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "grain",
@@ -2761,6 +3541,8 @@
       "level": 1,
       "duration": 2,
       "exp": 8,
+      "sortLevel": 1,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "flourPot",
@@ -2795,6 +3577,8 @@
       "level": 1,
       "duration": 9,
       "exp": 10,
+      "sortLevel": 1,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "rawShrimp",
@@ -2849,6 +3633,8 @@
       "level": 1,
       "duration": 9,
       "exp": 10,
+      "sortLevel": 1,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "rawMeat",
@@ -2903,6 +3689,8 @@
       "level": 1,
       "duration": 9,
       "exp": 10,
+      "sortLevel": 1,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "logs",
@@ -2961,6 +3749,8 @@
       "level": 1,
       "duration": 9,
       "exp": 10,
+      "sortLevel": 1,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "rawChicken",
@@ -3015,6 +3805,8 @@
       "level": 5,
       "duration": 9,
       "exp": 20,
+      "sortLevel": 5,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "rawSardine",
@@ -3069,6 +3861,8 @@
       "level": 1,
       "duration": 9,
       "exp": 40,
+      "sortLevel": 1,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "dough",
@@ -3123,6 +3917,8 @@
       "level": 10,
       "duration": 2,
       "exp": 33,
+      "sortLevel": 10,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "dough",
@@ -3161,6 +3957,8 @@
       "level": 10,
       "duration": 9,
       "exp": 62,
+      "sortLevel": 10,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "uncookedRedberryPie",
@@ -3215,6 +4013,8 @@
       "level": 15,
       "duration": 9,
       "exp": 42,
+      "sortLevel": 15,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "rawTrout",
@@ -3269,6 +4069,8 @@
       "level": 20,
       "duration": 2,
       "exp": 41,
+      "sortLevel": 20,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "dough",
@@ -3307,6 +4109,8 @@
       "level": 20,
       "duration": 9,
       "exp": 79,
+      "sortLevel": 20,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "uncookedMeatPie",
@@ -3361,6 +4165,8 @@
       "level": 25,
       "duration": 9,
       "exp": 54,
+      "sortLevel": 25,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "rawSalmon",
@@ -3415,6 +4221,8 @@
       "level": 30,
       "duration": 2,
       "exp": 45,
+      "sortLevel": 30,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "cookingApple",
@@ -3453,6 +4261,8 @@
       "level": 30,
       "duration": 9,
       "exp": 89,
+      "sortLevel": 30,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "uncookedApplePie",
@@ -3507,6 +4317,8 @@
       "level": 40,
       "duration": 9,
       "exp": 72,
+      "sortLevel": 40,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "rawLobster",
@@ -3561,6 +4373,8 @@
       "level": 45,
       "duration": 9,
       "exp": 84,
+      "sortLevel": 45,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "rawSwordfish",
@@ -3615,6 +4429,8 @@
       "level": 60,
       "duration": 9,
       "exp": 100,
+      "sortLevel": 60,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "ginger",
@@ -3673,6 +4489,8 @@
       "level": 80,
       "duration": 9,
       "exp": 126,
+      "sortLevel": 80,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "rawShark",
@@ -3727,6 +4545,8 @@
       "level": 91,
       "duration": 9,
       "exp": 130,
+      "sortLevel": 91,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "rawMantaRay",
@@ -3781,6 +4601,8 @@
       "level": 1,
       "duration": 9,
       "exp": 15,
+      "sortLevel": 1,
+      "otherActivity": false,
       "inputs": [],
       "icon": "https://microscape.cc/play/assets/copperOre-CoCuAu5d.png",
       "wikiId": "copper-ore",
@@ -3810,6 +4632,8 @@
       "level": 1,
       "duration": 9,
       "exp": 15,
+      "sortLevel": 1,
+      "otherActivity": false,
       "inputs": [],
       "icon": "https://microscape.cc/play/assets/tinOre-jQ7IlfYp.png",
       "wikiId": "tin-ore",
@@ -3835,6 +4659,8 @@
       "level": 15,
       "duration": 11,
       "exp": 35,
+      "sortLevel": 15,
+      "otherActivity": false,
       "inputs": [],
       "icon": "https://microscape.cc/play/assets/ironOre-DKu_dY1B.png",
       "wikiId": "iron-ore",
@@ -3860,6 +4686,8 @@
       "level": 20,
       "duration": 13,
       "exp": 40,
+      "sortLevel": 20,
+      "otherActivity": false,
       "inputs": [],
       "icon": "https://microscape.cc/play/assets/silverOre-u3KxOYAU.png",
       "wikiId": "silver-ore",
@@ -3881,6 +4709,8 @@
       "level": 30,
       "duration": 15,
       "exp": 56,
+      "sortLevel": 30,
+      "otherActivity": false,
       "inputs": [],
       "icon": "https://microscape.cc/play/assets/coalOre-Jey-nOX2.png",
       "wikiId": "coal-ore",
@@ -3902,6 +4732,8 @@
       "level": 40,
       "duration": 16,
       "exp": 66,
+      "sortLevel": 40,
+      "otherActivity": false,
       "inputs": [],
       "icon": "https://microscape.cc/play/assets/goldOre-DU7K7MUj.png",
       "wikiId": "gold-ore",
@@ -3923,6 +4755,8 @@
       "level": 55,
       "duration": 19,
       "exp": 91,
+      "sortLevel": 55,
+      "otherActivity": false,
       "inputs": [],
       "icon": "https://microscape.cc/play/assets/mithrilOre-ztn3k-2h.png",
       "wikiId": "mithril-ore",
@@ -3948,6 +4782,8 @@
       "level": 70,
       "duration": 26,
       "exp": 95,
+      "sortLevel": 70,
+      "otherActivity": false,
       "inputs": [],
       "icon": "https://microscape.cc/play/assets/adamantiteOre-CtBRb8Pb.png",
       "wikiId": "adamantite-ore",
@@ -3973,6 +4809,8 @@
       "level": 85,
       "duration": 41,
       "exp": 125,
+      "sortLevel": 85,
+      "otherActivity": false,
       "inputs": [],
       "icon": "https://microscape.cc/play/assets/progriteOre-D8-t5LB8.png",
       "wikiId": "progrite-ore",
@@ -3998,6 +4836,8 @@
       "level": 1,
       "duration": 5,
       "exp": 6,
+      "sortLevel": 1,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "copperOre",
@@ -4040,6 +4880,8 @@
       "level": 1,
       "duration": 4,
       "exp": 18,
+      "sortLevel": 1,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "bronzeBar",
@@ -4074,6 +4916,8 @@
       "level": 3,
       "duration": 4,
       "exp": 18,
+      "sortLevel": 3,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "bronzeBar",
@@ -4108,6 +4952,8 @@
       "level": 5,
       "duration": 7,
       "exp": 36,
+      "sortLevel": 5,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "bronzeBar",
@@ -4142,6 +4988,8 @@
       "level": 5,
       "duration": 4,
       "exp": 18,
+      "sortLevel": 5,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "bronzeBar",
@@ -4176,6 +5024,8 @@
       "level": 7,
       "duration": 7,
       "exp": 36,
+      "sortLevel": 7,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "bronzeBar",
@@ -4210,6 +5060,8 @@
       "level": 9,
       "duration": 16,
       "exp": 91,
+      "sortLevel": 9,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "bronzeBar",
@@ -4244,6 +5096,8 @@
       "level": 15,
       "duration": 9,
       "exp": 12,
+      "sortLevel": 15,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "ironOre",
@@ -4282,6 +5136,8 @@
       "level": 15,
       "duration": 7,
       "exp": 40,
+      "sortLevel": 15,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "ironBar",
@@ -4316,6 +5172,8 @@
       "level": 19,
       "duration": 7,
       "exp": 40,
+      "sortLevel": 19,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "ironBar",
@@ -4350,6 +5208,8 @@
       "level": 20,
       "duration": 9,
       "exp": 13,
+      "sortLevel": 20,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "silverOre",
@@ -4388,6 +5248,8 @@
       "level": 23,
       "duration": 13,
       "exp": 84,
+      "sortLevel": 23,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "ironBar",
@@ -4422,6 +5284,8 @@
       "level": 27,
       "duration": 19,
       "exp": 126,
+      "sortLevel": 27,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "ironBar",
@@ -4456,6 +5320,8 @@
       "level": 30,
       "duration": 13,
       "exp": 20,
+      "sortLevel": 30,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "coalOre",
@@ -4498,6 +5364,8 @@
       "level": 30,
       "duration": 9,
       "exp": 71,
+      "sortLevel": 30,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "steelBar",
@@ -4532,6 +5400,8 @@
       "level": 32,
       "duration": 9,
       "exp": 71,
+      "sortLevel": 32,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "steelBar",
@@ -4566,6 +5436,8 @@
       "level": 34,
       "duration": 17,
       "exp": 149,
+      "sortLevel": 34,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "steelBar",
@@ -4600,6 +5472,8 @@
       "level": 35,
       "duration": 9,
       "exp": 71,
+      "sortLevel": 35,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "steelBar",
@@ -4634,6 +5508,8 @@
       "level": 36,
       "duration": 17,
       "exp": 149,
+      "sortLevel": 36,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "steelBar",
@@ -4668,6 +5544,8 @@
       "level": 38,
       "duration": 41,
       "exp": 373,
+      "sortLevel": 38,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "steelBar",
@@ -4702,6 +5580,8 @@
       "level": 40,
       "duration": 11,
       "exp": 22,
+      "sortLevel": 40,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "goldOre",
@@ -4740,6 +5620,8 @@
       "level": 50,
       "duration": 19,
       "exp": 35,
+      "sortLevel": 50,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "coalOre",
@@ -4782,6 +5664,8 @@
       "level": 50,
       "duration": 41,
       "exp": 303,
+      "sortLevel": 50,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "mithrilBar",
@@ -4816,6 +5700,8 @@
       "level": 52,
       "duration": 41,
       "exp": 303,
+      "sortLevel": 52,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "mithrilBar",
@@ -4850,6 +5736,8 @@
       "level": 54,
       "duration": 71,
       "exp": 669,
+      "sortLevel": 54,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "mithrilBar",
@@ -4884,6 +5772,8 @@
       "level": 55,
       "duration": 11,
       "exp": 101,
+      "sortLevel": 55,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "mithrilBar",
@@ -4918,6 +5808,8 @@
       "level": 56,
       "duration": 71,
       "exp": 669,
+      "sortLevel": 56,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "mithrilBar",
@@ -4952,6 +5844,8 @@
       "level": 58,
       "duration": 161,
       "exp": 1713,
+      "sortLevel": 58,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "mithrilBar",
@@ -4986,6 +5880,8 @@
       "level": 70,
       "duration": 50,
       "exp": 96,
+      "sortLevel": 70,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "adamantiteOre",
@@ -5028,6 +5924,8 @@
       "level": 70,
       "duration": 98,
       "exp": 1086,
+      "sortLevel": 70,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "adamantiteBar",
@@ -5062,6 +5960,8 @@
       "level": 72,
       "duration": 98,
       "exp": 1086,
+      "sortLevel": 72,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "adamantiteBar",
@@ -5096,6 +5996,8 @@
       "level": 74,
       "duration": 170,
       "exp": 2130,
+      "sortLevel": 74,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "adamantiteBar",
@@ -5130,6 +6032,8 @@
       "level": 75,
       "duration": 30,
       "exp": 362,
+      "sortLevel": 75,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "adamantiteBar",
@@ -5164,6 +6068,8 @@
       "level": 76,
       "duration": 170,
       "exp": 2130,
+      "sortLevel": 76,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "adamantiteBar",
@@ -5198,6 +6104,8 @@
       "level": 78,
       "duration": 386,
       "exp": 5466,
+      "sortLevel": 78,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "adamantiteBar",
@@ -5232,6 +6140,8 @@
       "level": 85,
       "duration": 95,
       "exp": 186,
+      "sortLevel": 85,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "coalOre",
@@ -5274,6 +6184,8 @@
       "level": 85,
       "duration": 167,
       "exp": 2259,
+      "sortLevel": 85,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "progriteBar",
@@ -5308,6 +6220,8 @@
       "level": 87,
       "duration": 167,
       "exp": 2259,
+      "sortLevel": 87,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "progriteBar",
@@ -5342,6 +6256,8 @@
       "level": 89,
       "duration": 293,
       "exp": 4617,
+      "sortLevel": 89,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "progriteBar",
@@ -5376,6 +6292,8 @@
       "level": 90,
       "duration": 53,
       "exp": 753,
+      "sortLevel": 90,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "progriteBar",
@@ -5410,6 +6328,8 @@
       "level": 91,
       "duration": 293,
       "exp": 4617,
+      "sortLevel": 91,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "progriteBar",
@@ -5444,6 +6364,8 @@
       "level": 93,
       "duration": 671,
       "exp": 11511,
+      "sortLevel": 93,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "progriteBar",
@@ -5478,6 +6400,8 @@
       "level": 86,
       "duration": 10801,
       "exp": 900000,
+      "sortLevel": 86,
+      "otherActivity": true,
       "inputs": [
         {
           "id": "brimstone",
@@ -5516,6 +6440,8 @@
       "level": 1,
       "duration": 3,
       "exp": 1,
+      "sortLevel": 1,
+      "otherActivity": false,
       "inputs": [],
       "icon": "https://microscape.cc/play/assets/clay-DnHllx-w.png",
       "wikiId": "clay",
@@ -5537,6 +6463,8 @@
       "level": 1,
       "duration": 3,
       "exp": 1,
+      "sortLevel": 1,
+      "otherActivity": false,
       "inputs": [],
       "icon": "https://microscape.cc/play/assets/sand-BsCmNMzO.png",
       "wikiId": "sand",
@@ -5558,6 +6486,8 @@
       "level": 1,
       "duration": 3,
       "exp": 1,
+      "sortLevel": 1,
+      "otherActivity": false,
       "inputs": [],
       "icon": "https://microscape.cc/play/assets/wool-Bqj1UVLp.png",
       "wikiId": "wool",
@@ -5579,6 +6509,8 @@
       "level": 1,
       "duration": 3,
       "exp": 1,
+      "sortLevel": 1,
+      "otherActivity": false,
       "inputs": [],
       "icon": "https://microscape.cc/play/assets/flax-Dyja31zz.png",
       "wikiId": "flax",
@@ -5600,6 +6532,8 @@
       "level": 1,
       "duration": 4,
       "exp": 12,
+      "sortLevel": 1,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "wool",
@@ -5630,6 +6564,8 @@
       "level": 1,
       "duration": 5,
       "exp": 17,
+      "sortLevel": 1,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "clay",
@@ -5660,6 +6596,8 @@
       "level": 1,
       "duration": 5,
       "exp": 25,
+      "sortLevel": 1,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "unfiredPot",
@@ -5690,6 +6628,8 @@
       "level": 1,
       "duration": 6,
       "exp": 37,
+      "sortLevel": 1,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "leather",
@@ -5724,6 +6664,8 @@
       "level": 1,
       "duration": 2,
       "exp": 1,
+      "sortLevel": 1,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "seaweed",
@@ -5778,6 +6720,8 @@
       "level": 1,
       "duration": 5,
       "exp": 35,
+      "sortLevel": 1,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "sand",
@@ -5812,6 +6756,8 @@
       "level": 4,
       "duration": 5,
       "exp": 20,
+      "sortLevel": 4,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "clay",
@@ -5842,6 +6788,8 @@
       "level": 4,
       "duration": 5,
       "exp": 28,
+      "sortLevel": 4,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "unfiredPieDish",
@@ -5872,6 +6820,8 @@
       "level": 5,
       "duration": 6,
       "exp": 25,
+      "sortLevel": 5,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "oakLogs",
@@ -5902,6 +6852,8 @@
       "level": 7,
       "duration": 6,
       "exp": 53,
+      "sortLevel": 7,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "leather",
@@ -5936,6 +6888,8 @@
       "level": 8,
       "duration": 6,
       "exp": 49,
+      "sortLevel": 8,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "ballOfWool",
@@ -5978,6 +6932,8 @@
       "level": 10,
       "duration": 4,
       "exp": 20,
+      "sortLevel": 10,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "flax",
@@ -6008,6 +6964,8 @@
       "level": 10,
       "duration": 6,
       "exp": 30,
+      "sortLevel": 10,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "shovelHead",
@@ -6042,6 +7000,8 @@
       "level": 14,
       "duration": 7,
       "exp": 70,
+      "sortLevel": 14,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "leather",
@@ -6076,6 +7036,8 @@
       "level": 15,
       "duration": 8,
       "exp": 109,
+      "sortLevel": 15,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "moltenGlass",
@@ -6110,6 +7072,8 @@
       "level": 16,
       "duration": 6,
       "exp": 96,
+      "sortLevel": 16,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "ballOfWool",
@@ -6152,6 +7116,8 @@
       "level": 17,
       "duration": 6,
       "exp": 100,
+      "sortLevel": 17,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "ballOfWool",
@@ -6194,6 +7160,8 @@
       "level": 20,
       "duration": 4,
       "exp": 120,
+      "sortLevel": 20,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "uncutSapphire",
@@ -6224,6 +7192,8 @@
       "level": 22,
       "duration": 8,
       "exp": 120,
+      "sortLevel": 22,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "ballOfWool",
@@ -6262,6 +7232,8 @@
       "level": 24,
       "duration": 10,
       "exp": 264,
+      "sortLevel": 24,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "ballOfWool",
@@ -6308,6 +7280,8 @@
       "level": 27,
       "duration": 4,
       "exp": 162,
+      "sortLevel": 27,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "uncutEmerald",
@@ -6338,6 +7312,8 @@
       "level": 28,
       "duration": 10,
       "exp": 150,
+      "sortLevel": 28,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "airRune",
@@ -6380,6 +7356,8 @@
       "level": 30,
       "duration": 10,
       "exp": 276,
+      "sortLevel": 30,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "ballOfWool",
@@ -6426,6 +7404,8 @@
       "level": 32,
       "duration": 10,
       "exp": 176,
+      "sortLevel": 32,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "cosmicRune",
@@ -6468,6 +7448,8 @@
       "level": 19,
       "duration": 4,
       "exp": 60,
+      "sortLevel": 19,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "moltenGlass",
@@ -6494,6 +7476,8 @@
       "level": 34,
       "duration": 4,
       "exp": 204,
+      "sortLevel": 34,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "uncutRuby",
@@ -6524,6 +7508,8 @@
       "level": 43,
       "duration": 4,
       "exp": 258,
+      "sortLevel": 43,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "uncutDiamond",
@@ -6554,6 +7540,8 @@
       "level": 46,
       "duration": 6,
       "exp": 163,
+      "sortLevel": 46,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "moltenGlass",
@@ -6580,6 +7568,8 @@
       "level": 50,
       "duration": 10,
       "exp": 414,
+      "sortLevel": 50,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "ballOfWool",
@@ -6626,6 +7616,8 @@
       "level": 52,
       "duration": 10,
       "exp": 100,
+      "sortLevel": 52,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "magicLogs",
@@ -6660,6 +7652,8 @@
       "level": 54,
       "duration": 6,
       "exp": 95,
+      "sortLevel": 54,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "airOrb",
@@ -6694,6 +7688,8 @@
       "level": 62,
       "duration": 6,
       "exp": 115,
+      "sortLevel": 62,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "battlestaff",
@@ -6728,6 +7724,8 @@
       "level": 85,
       "duration": 3601,
       "exp": 464400,
+      "sortLevel": 85,
+      "otherActivity": true,
       "inputs": [
         {
           "id": "moltenOrb",
@@ -6762,6 +7760,8 @@
       "level": 85,
       "duration": 3601,
       "exp": 464400,
+      "sortLevel": 85,
+      "otherActivity": true,
       "inputs": [
         {
           "id": "frozenOrb",
@@ -6796,6 +7796,8 @@
       "level": 70,
       "duration": 10,
       "exp": 540,
+      "sortLevel": 70,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "ballOfWool",
@@ -6842,6 +7844,8 @@
       "level": 80,
       "duration": 10801,
       "exp": 1006113,
+      "sortLevel": 80,
+      "otherActivity": true,
       "inputs": [
         {
           "id": "ballOfWool",
@@ -6888,6 +7892,8 @@
       "level": 82,
       "duration": 5401,
       "exp": 450000,
+      "sortLevel": 82,
+      "otherActivity": true,
       "inputs": [
         {
           "id": "hellforgedHammer",
@@ -6918,6 +7924,8 @@
       "level": 84,
       "duration": 10801,
       "exp": 900000,
+      "sortLevel": 84,
+      "otherActivity": true,
       "inputs": [
         {
           "id": "emberstone",
@@ -6952,6 +7960,8 @@
       "level": 1,
       "duration": 11,
       "exp": 12,
+      "sortLevel": 1,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "fireRune",
@@ -6985,6 +7995,8 @@
       "level": 5,
       "duration": 16,
       "exp": 25,
+      "sortLevel": 5,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "bones",
@@ -7015,6 +8027,8 @@
       "level": 10,
       "duration": 9,
       "exp": 35,
+      "sortLevel": 10,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "airRune",
@@ -7053,6 +8067,8 @@
       "level": 20,
       "duration": 11,
       "exp": 55,
+      "sortLevel": 20,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "airRune",
@@ -7091,6 +8107,8 @@
       "level": 33,
       "duration": 31,
       "exp": 80,
+      "sortLevel": 33,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "airRune",
@@ -7121,6 +8139,8 @@
       "level": 33,
       "duration": 21,
       "exp": 80,
+      "sortLevel": 33,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "airRune",
@@ -7151,6 +8171,8 @@
       "level": 38,
       "duration": 6,
       "exp": 90,
+      "sortLevel": 38,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "coalOre",
@@ -7195,6 +8217,8 @@
       "level": 40,
       "duration": 8,
       "exp": 100,
+      "sortLevel": 40,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "coalOre",
@@ -7239,6 +8263,8 @@
       "level": 42,
       "duration": 26,
       "exp": 240,
+      "sortLevel": 42,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "adamantiteOre",
@@ -7283,6 +8309,8 @@
       "level": 45,
       "duration": 11,
       "exp": 130,
+      "sortLevel": 45,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "airRune",
@@ -7312,6 +8340,8 @@
       "level": 49,
       "duration": 13,
       "exp": 150,
+      "sortLevel": 49,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "cosmicRune",
@@ -7350,6 +8380,8 @@
       "level": 55,
       "duration": 13,
       "exp": 180,
+      "sortLevel": 55,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "fireRune",
@@ -7383,6 +8415,8 @@
       "level": 57,
       "duration": 16,
       "exp": 200,
+      "sortLevel": 57,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "airRune",
@@ -7421,6 +8455,8 @@
       "level": 68,
       "duration": 10801,
       "exp": 293652,
+      "sortLevel": 68,
+      "otherActivity": true,
       "inputs": [
         {
           "id": "airRune",
@@ -7459,6 +8495,8 @@
       "level": 63,
       "duration": 6,
       "exp": 240,
+      "sortLevel": 63,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "airRune",
@@ -7493,6 +8531,8 @@
       "level": 66,
       "duration": 6,
       "exp": 300,
+      "sortLevel": 66,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "cosmicRune",
@@ -7527,6 +8567,8 @@
       "level": 1,
       "duration": 13,
       "exp": 7,
+      "sortLevel": 1,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "logs",
@@ -7557,6 +8599,8 @@
       "level": 15,
       "duration": 13,
       "exp": 13,
+      "sortLevel": 15,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "oakLogs",
@@ -7587,6 +8631,8 @@
       "level": 30,
       "duration": 13,
       "exp": 20,
+      "sortLevel": 30,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "willowLogs",
@@ -7617,6 +8663,8 @@
       "level": 45,
       "duration": 13,
       "exp": 26,
+      "sortLevel": 45,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "mapleLogs",
@@ -7647,6 +8695,8 @@
       "level": 60,
       "duration": 13,
       "exp": 33,
+      "sortLevel": 60,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "yewLogs",
@@ -7677,6 +8727,8 @@
       "level": 75,
       "duration": 13,
       "exp": 39,
+      "sortLevel": 75,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "magicLogs",
@@ -7707,6 +8759,8 @@
       "level": 1,
       "duration": 14,
       "exp": 16,
+      "sortLevel": 1,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "arrowShafts",
@@ -7745,6 +8799,8 @@
       "level": 30,
       "duration": 14,
       "exp": 65,
+      "sortLevel": 30,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "arrowShafts",
@@ -7783,6 +8839,8 @@
       "level": 45,
       "duration": 14,
       "exp": 98,
+      "sortLevel": 45,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "arrowShafts",
@@ -7821,6 +8879,8 @@
       "level": 60,
       "duration": 14,
       "exp": 130,
+      "sortLevel": 60,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "adamantArrowtips",
@@ -7859,6 +8919,8 @@
       "level": 75,
       "duration": 14,
       "exp": 163,
+      "sortLevel": 75,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "arrowShafts",
@@ -7897,6 +8959,8 @@
       "level": 5,
       "duration": 5,
       "exp": 7,
+      "sortLevel": 5,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "logs",
@@ -7927,6 +8991,8 @@
       "level": 5,
       "duration": 5,
       "exp": 10,
+      "sortLevel": 5,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "bowString",
@@ -7961,6 +9027,8 @@
       "level": 20,
       "duration": 11,
       "exp": 25,
+      "sortLevel": 20,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "oakLogs",
@@ -7991,6 +9059,8 @@
       "level": 20,
       "duration": 5,
       "exp": 26,
+      "sortLevel": 20,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "bowString",
@@ -8025,6 +9095,8 @@
       "level": 35,
       "duration": 14,
       "exp": 60,
+      "sortLevel": 35,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "willowLogs",
@@ -8055,6 +9127,8 @@
       "level": 35,
       "duration": 6,
       "exp": 59,
+      "sortLevel": 35,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "bowString",
@@ -8089,6 +9163,8 @@
       "level": 50,
       "duration": 16,
       "exp": 104,
+      "sortLevel": 50,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "mapleLogs",
@@ -8119,6 +9195,8 @@
       "level": 50,
       "duration": 7,
       "exp": 91,
+      "sortLevel": 50,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "bowString",
@@ -8153,6 +9231,8 @@
       "level": 65,
       "duration": 18,
       "exp": 155,
+      "sortLevel": 65,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "yewLogs",
@@ -8183,6 +9263,8 @@
       "level": 65,
       "duration": 7,
       "exp": 130,
+      "sortLevel": 65,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "bowString",
@@ -8217,6 +9299,8 @@
       "level": 80,
       "duration": 21,
       "exp": 216,
+      "sortLevel": 80,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "magicLogs",
@@ -8247,6 +9331,8 @@
       "level": 80,
       "duration": 8,
       "exp": 169,
+      "sortLevel": 80,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "bowString",
@@ -8281,6 +9367,8 @@
       "level": 10,
       "duration": 10,
       "exp": 22,
+      "sortLevel": 10,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "bowString",
@@ -8323,6 +9411,8 @@
       "level": 40,
       "duration": 10,
       "exp": 80,
+      "sortLevel": 40,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "bowString",
@@ -8361,6 +9451,8 @@
       "level": 1,
       "duration": 193,
       "exp": 384,
+      "sortLevel": 1,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "eyeOfNewt",
@@ -8391,6 +9483,8 @@
       "level": 2,
       "duration": 193,
       "exp": 453,
+      "sortLevel": 2,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "fellroot",
@@ -8421,6 +9515,8 @@
       "level": 4,
       "duration": 193,
       "exp": 525,
+      "sortLevel": 4,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "impweed",
@@ -8451,6 +9547,8 @@
       "level": 7,
       "duration": 193,
       "exp": 594,
+      "sortLevel": 7,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "elmwort",
@@ -8481,6 +9579,8 @@
       "level": 10,
       "duration": 193,
       "exp": 666,
+      "sortLevel": 10,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "dwellberries",
@@ -8511,6 +9611,8 @@
       "level": 13,
       "duration": 193,
       "exp": 735,
+      "sortLevel": 13,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "limpwurtRoot",
@@ -8541,6 +9643,8 @@
       "level": 16,
       "duration": 193,
       "exp": 807,
+      "sortLevel": 16,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "chocolateDust",
@@ -8571,6 +9675,8 @@
       "level": 18,
       "duration": 193,
       "exp": 876,
+      "sortLevel": 18,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "marshcap",
@@ -8601,6 +9707,8 @@
       "level": 21,
       "duration": 193,
       "exp": 948,
+      "sortLevel": 21,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "ashes",
@@ -8631,6 +9739,8 @@
       "level": 24,
       "duration": 193,
       "exp": 1017,
+      "sortLevel": 24,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "featheredSeed",
@@ -8661,6 +9771,8 @@
       "level": 27,
       "duration": 193,
       "exp": 1089,
+      "sortLevel": 27,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "havenfrond",
@@ -8691,6 +9803,8 @@
       "level": 30,
       "duration": 193,
       "exp": 1158,
+      "sortLevel": 30,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "spiderSilk",
@@ -8721,6 +9835,8 @@
       "level": 32,
       "duration": 193,
       "exp": 1230,
+      "sortLevel": 32,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "snailShell",
@@ -8751,6 +9867,8 @@
       "level": 35,
       "duration": 193,
       "exp": 1299,
+      "sortLevel": 35,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "gloomroot",
@@ -8781,6 +9899,8 @@
       "level": 38,
       "duration": 193,
       "exp": 1371,
+      "sortLevel": 38,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "coalTar",
@@ -8811,6 +9931,8 @@
       "level": 41,
       "duration": 193,
       "exp": 1440,
+      "sortLevel": 41,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "knightveil",
@@ -8841,6 +9963,8 @@
       "level": 44,
       "duration": 193,
       "exp": 1920,
+      "sortLevel": 44,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "eyeOfNewt",
@@ -8875,6 +9999,8 @@
       "level": 46,
       "duration": 193,
       "exp": 2004,
+      "sortLevel": 46,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "fellroot",
@@ -8909,6 +10035,8 @@
       "level": 49,
       "duration": 193,
       "exp": 2085,
+      "sortLevel": 49,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "impweed",
@@ -8943,6 +10071,8 @@
       "level": 52,
       "duration": 193,
       "exp": 2169,
+      "sortLevel": 52,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "elmwort",
@@ -8977,6 +10107,8 @@
       "level": 55,
       "duration": 193,
       "exp": 2253,
+      "sortLevel": 55,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "dwellberries",
@@ -9011,6 +10143,8 @@
       "level": 58,
       "duration": 193,
       "exp": 2337,
+      "sortLevel": 58,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "drakestem",
@@ -9045,6 +10179,8 @@
       "level": 60,
       "duration": 193,
       "exp": 2418,
+      "sortLevel": 60,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "chocolateDust",
@@ -9079,6 +10215,8 @@
       "level": 63,
       "duration": 193,
       "exp": 2502,
+      "sortLevel": 63,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "marshcap",
@@ -9113,6 +10251,8 @@
       "level": 66,
       "duration": 193,
       "exp": 2586,
+      "sortLevel": 66,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "ashes",
@@ -9147,6 +10287,8 @@
       "level": 69,
       "duration": 193,
       "exp": 2670,
+      "sortLevel": 69,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "featheredSeed",
@@ -9181,6 +10323,8 @@
       "level": 72,
       "duration": 193,
       "exp": 2751,
+      "sortLevel": 72,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "havenfrond",
@@ -9215,6 +10359,8 @@
       "level": 74,
       "duration": 193,
       "exp": 2835,
+      "sortLevel": 74,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "spiderSilk",
@@ -9249,6 +10395,8 @@
       "level": 77,
       "duration": 193,
       "exp": 2919,
+      "sortLevel": 77,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "nervine",
@@ -9283,6 +10431,8 @@
       "level": 80,
       "duration": 193,
       "exp": 3003,
+      "sortLevel": 80,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "dragontongue",
@@ -9317,6 +10467,8 @@
       "level": 83,
       "duration": 193,
       "exp": 3084,
+      "sortLevel": 83,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "coalTar",
@@ -9351,6 +10503,8 @@
       "level": 85,
       "duration": 193,
       "exp": 3168,
+      "sortLevel": 85,
+      "otherActivity": false,
       "inputs": [
         {
           "id": "drakestem",

@@ -17,7 +17,14 @@ const items = Object.fromEntries(Object.entries({...game.items, ...game.appearan
 }]));
 const locationsFor = entity => Object.entries(game.locations).filter(([, location]) => location.entities?.[entity])
   .map(([id, location]) => ({name:location.name, wikiId:pageFor("locations", id)?.id}));
-const combat = Object.entries(game.activities).filter(([key, a]) => key.startsWith("combat/") && a.mob);
+// This array retains the client's source order; the flattened activity map is
+// alphabetized by the extractor and loses the guidebook's equal-level ordering.
+const combat = game.skills.ranged.activities;
+if (!Array.isArray(combat) || !combat.every(activity => activity.mob)) throw Error("The ordered combat definitions could not be read.");
+const outsideMainland = entity => {
+  const places = Object.values(game.locations).filter(location => location.entities?.[entity]);
+  return places.length > 0 && !places.some(location => location.continent === "mainland");
+};
 const foes = Object.fromEntries(Object.entries(game.foes).map(([id, foe]) => [id, {
   id, name:title(foe.name) + (foe.safeSpot ? " (Safe spot)" : ""), ...finite(foe.stats),
   speed:foe.speed, safeSpot:foe.safeSpot === true, requiredItem:foe.requiredItem,
@@ -31,8 +38,15 @@ const skills = reference.skills.map(skill => ({...skill, combat:game.skills[skil
 const activities = [];
 for (const skill of skills) {
   if (skill.combat) {
-    for (const [, activity] of combat) if (foes[activity.mob]) activities.push({id:skill.id + "/" + activity.id,
-      skill:skill.id, name:foes[activity.mob].name, mob:activity.mob, level:0});
+    for (const activity of combat) if (foes[activity.mob]) {
+      const foe = foes[activity.mob];
+      // Client Ag/vf: order combat by the foe's melee combat level.
+      const combatLevel = Math.max(1, Math.floor(((foe.attack + foe.strength) / 2 + foe.defense) / 2));
+      activities.push({id:skill.id + "/" + activity.id, skill:skill.id, name:foe.name, mob:activity.mob, level:0,
+        combatLevel, sortLevel:combatLevel,
+        otherActivity:!!(activity.notInGuidebook || game.foes[activity.mob].notInGuidebook || foe.special || outsideMainland(activity.mob)
+          || (foe.safeSpot && ["attack", "strength", "defense"].includes(skill.id)))});
+    }
     continue;
   }
   for (const activity of game.skills[skill.id]?.activities || []) {
@@ -42,6 +56,7 @@ for (const skill of skills) {
     const iconId = activity.icon || (activity.useInputAsIcon ? inputs[0]?.id : outputs[0]?.[0]);
     activities.push({id:skill.id + "/" + activity.id, skill:skill.id, name:title(activity.name),
       level:activity.level || 1, duration:activity.duration, exp:activity.exp,
+      sortLevel:activity.level || 0, otherActivity:!!(activity.notInGuidebook || activity.isOthered || outsideMainland(activity.entity)),
       inputs, icon:items[iconId]?.icon || skill.icon, wikiId:items[iconId]?.wikiId,
       entity:game.entities[activity.entity]?.name || game.npcs[activity.entity]?.name || title(activity.entity),
       locations:locationsFor(activity.entity), otherExp:finite(activity.otherExp),
