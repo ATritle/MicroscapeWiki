@@ -347,7 +347,7 @@ export function renderPlayerLookup({main, element:e, crumbs, footer, byId, entry
         e("h2", {}, error.status === 404 ? "Player not found" : "Couldn’t load this profile"),
         e("p", {}, error.status === 404 ? "Check the full username and try again. The player needs a public Microscape profile."
           : "Try again in a moment. A connection problem does not mean the player is offline.")));
-      if (!refresh && error.status === 404) suggest(username);
+      if (!refresh && [404, 503].includes(error.status)) suggest(username);
     } finally {
       if (!disposed && request === requestNumber) {
         submit.disabled = false;

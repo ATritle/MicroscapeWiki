@@ -43,7 +43,7 @@ globalThis.caches = {default:{
   match:async request => cache.get(request.url)?.clone(),
   put:async (request, response) => {cache.set(request.url, response.clone());}
 }};
-const ids = {alpha:"101", beta:"202", nogame:"303", malformed:"404", mzdunk:"505"};
+const ids = {alpha:"101", beta:"202", nogame:"303", malformed:"404", mzdunk:"505", gamma:"606"};
 let failProfile = false;
 globalThis.fetch = async (input, init = {}) => {
   const url = new URL(input);
@@ -67,7 +67,7 @@ globalThis.fetch = async (input, init = {}) => {
   assert.equal(url.pathname, "/server/tapi/character-by-id");
   const {characterId:id} = JSON.parse(url.searchParams.get("input"));
   if (id === "303") return Response.json({error:"No game profile"}, {status:404});
-  if (failProfile) return Response.json({error:"Busy"}, {status:503});
+  if (failProfile) return Response.json({error:"Busy"}, {status:Number.isInteger(failProfile) ? failProfile : 503});
   if (id === "404") return Response.json({result:{data:{id,name:"malformed"}}});
   return Response.json({result:{data:{
     id, name:id === "101" ? "Alpha" : "Beta", exp:{attack:1154352,strength:0,defense:0,bad:"wrong"},
@@ -113,6 +113,11 @@ try {
   assert(![...cache.keys()].some(key => /unknown|nogame|malformed/.test(key)), "Do not cache lookup errors");
   failProfile = true;
   await assert.rejects(fetchPlayerSnapshot("alpha", env), /could not return/);
+  failProfile = 500;
+  const failedPublicProfile = await worker.fetch(request("gamma"), env, context);
+  assert.equal(failedPublicProfile.status, 503, "An upstream missing-profile/internal error must be reported separately from a broken gateway");
+  assert((await failedPublicProfile.json()).error.includes("suggested full username"));
+  assert(![...cache.keys()].some(key=>key.endsWith("?username=gamma")), "Never cache an upstream profile failure");
   failProfile = false;
   const denied = await worker.fetch(new Request("https://worker.example/player.json?username=alpha",
     {headers:{Origin:"https://untrusted.example"}}), env, context);

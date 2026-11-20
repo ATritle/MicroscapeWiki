@@ -1,7 +1,8 @@
 const source = "https://microscape.cc/server/tapi/live-communities";
-const defaultWikiOrigin = "https://atritle.github.io";
+const defaultWikiOrigin = "https://microscapewiki.com";
 const wikiOrigins = new Set([defaultWikiOrigin, "https://microscapewiki.com", "https://www.microscapewiki.com"]);
 const feedPath = "/drops.json";
+const backupFeedPath = "/drops-backup.json";
 const twitchStatusPath = "/mzdunk.json";
 const playerPath = "/player.json";
 const playerSearchPath = "/player-search.json";
@@ -84,9 +85,11 @@ export async function fetchPlayerSnapshot(username, env, resolveUsername = resol
   if (!/^[0-9]{1,25}$/.test(id)) throw new PlayerLookupError("The player could not be identified.");
   const url = new URL("https://microscape.cc/server/tapi/character-by-id");
   url.searchParams.set("input", JSON.stringify({characterId:id}));
-  const response = await fetch(url, {signal:AbortSignal.timeout(8_000), cache:"no-store"});
+  let response;
+  try {response = await fetch(url, {signal:AbortSignal.timeout(8_000), cache:"no-store"});}
+  catch {throw new PlayerLookupError("Microscape could not return this public profile. Try again or choose a suggested full username.", 503);}
   if (response.status === 404) throw new PlayerLookupError("That channel does not have a public Microscape character.", 404);
-  if (!response.ok) throw new PlayerLookupError("Microscape could not return the player profile. Please try again.");
+  if (!response.ok) throw new PlayerLookupError("Microscape could not return a public profile for that exact username. Try again or choose a suggested full username.", 503);
   const body = await response.json();
   const raw = body?.result?.data;
   if (!raw || raw.id !== id || typeof raw.name !== "string" || !raw.exp || !raw.equipment) {
@@ -239,13 +242,24 @@ async function fetchTwitchStatus(env) {
   };
 }
 
+export async function fetchBackupSnapshot(env) {
+  const url = env.DROPS_BACKUP_URL;
+  if (typeof url !== "string" || new URL(url).hostname !== "raw.githubusercontent.com" || !url.startsWith("https://")) throw new Error("Backup feed is not configured.");
+  const response = await fetch(url, {signal:AbortSignal.timeout(6_000), cache:"no-store"});
+  if (!response.ok) throw new Error("Backup feed is temporarily unavailable.");
+  const data = await response.json();
+  if (!Number.isFinite(data?.checkedAt) || !Array.isArray(data.events) || !Array.isArray(data.energyStreams)) throw new Error("Invalid backup feed.");
+  return data;
+}
+
 export default {
   async fetch(request, env, context) {
     const url = new URL(request.url);
     const twitchStatus = url.pathname === twitchStatusPath;
     const playerLookup = url.pathname === playerPath;
     const playerSearch = url.pathname === playerSearchPath;
-    if (!twitchStatus && !playerLookup && !playerSearch && url.pathname !== feedPath) return new Response("Not found", {status: 404});
+    const backupFeed = url.pathname === backupFeedPath;
+    if (!twitchStatus && !playerLookup && !playerSearch && !backupFeed && url.pathname !== feedPath) return new Response("Not found", {status: 404});
     if (request.method !== "GET") return new Response("Method not allowed", {status: 405, headers: {Allow: "GET"}});
 
     const origin = request.headers.get("Origin");
@@ -273,7 +287,7 @@ export default {
             status: 503, headers: {...headers, "Cache-Control": "no-store"}
           });
         } else {
-          const snapshot = playerSearch ? await fetchPlayerSuggestions(query) : playerLookup ? await fetchPlayerSnapshot(username, env)
+          const snapshot = backupFeed ? await fetchBackupSnapshot(env) : playerSearch ? await fetchPlayerSuggestions(query) : playerLookup ? await fetchPlayerSnapshot(username, env)
             : twitchStatus ? await fetchTwitchStatus(env) : await fetchSnapshot(8_000);
           response = Response.json(snapshot, {headers: {...headers, "Cache-Control": playerLookup ? "public, max-age=30" : "public, max-age=60"}});
           if (cache) context.waitUntil(cache.put(key, response.clone()).catch(() => {}));
