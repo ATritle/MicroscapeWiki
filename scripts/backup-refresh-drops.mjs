@@ -2,8 +2,12 @@ import { spawnSync } from "node:child_process";
 import { existsSync, mkdirSync, writeFileSync } from "node:fs";
 import { join, resolve } from "node:path";
 import { fetchSnapshot } from "./refresh-drops.mjs";
+import {fileURLToPath} from "node:url";
 
-const repository = "https://github.com/ATritle/MicroscapeWiki.git";
+const projectRoot = fileURLToPath(new URL("../", import.meta.url));
+const origin = spawnSync("git", ["-C", projectRoot, "remote", "get-url", "origin"], {encoding:"utf8",windowsHide:true});
+if (origin.status !== 0) throw Error("The wiki origin remote is not configured.");
+const repository = origin.stdout.trim();
 const branch = "refs/heads/live-data";
 const freshness = 10 * 60_000;
 const [, , directory] = process.argv;
@@ -51,7 +55,7 @@ async function publish() {
   const tree = git(["mktree"], files.join("\n") + "\n");
   const commit = git([
     "-c", "user.name=Microscape Wiki feed backup",
-    "-c", "user.email=155339308+ATritle@users.noreply.github.com",
+    "-c", "user.email=wiki-community@users.noreply.github.com",
     "commit-tree", tree, "-p", current.head, "-m", "Refresh Microscape live drops from Windows backup"
   ]);
 

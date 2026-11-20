@@ -1,6 +1,7 @@
+import {communityApiBase} from "./api-config.js?v=community-api-20261119";
 const apiUrl = ["localhost", "127.0.0.1"].includes(window.location.hostname)
   ? new URL("/api/player.json", window.location.origin)
-  : new URL("https://microscape-wiki-api.pages.dev/player.json");
+  : new URL("player.json", communityApiBase);
 const suggestionUrl = new URL("player-search.json", apiUrl);
 const format = new Intl.NumberFormat("en");
 const skillOrder = new Map([

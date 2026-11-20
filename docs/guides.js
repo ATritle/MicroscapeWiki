@@ -153,9 +153,9 @@ export const guides = [
     sections: [
       ["MzDunk’s community wiki", "An independent reference for players of Microscape, the browser idle RPG by K3nt0456. The original village banner was generated for this site and is illustrative."],
       ["Reference data", "The catalog adapts the Miraheze Microscape Wiki’s indexes, tables and article facts, with source and revision-history links. Adapted reference data is available under Creative Commons Attribution-ShareAlike 4.0. The saved November 18 beta was compared with the public November 19 release client. Current definitions, recipes, drops, pet odds, skills, maps and artwork were refreshed from that capture. Durable factual snapshots preserve evidence when hashed client filenames disappear. Disabled recipes and removed beta items are labeled historical; deprecated recipes and unconfirmed sources remain explicit. Server-only rules require separate confirmation."],
-      ["Contribute a correction", "Open an issue in the site repository. Include the article or item name, what you observed, and the patch date or an in-game tooltip so the change can be checked."]
+      ["Contribute a correction", "Share corrections with MzDunk’s community. Include the article or item name, what you observed, and the patch date or an in-game tooltip so the change can be checked."]
     ],
-    sources: [["Site repository and issue tracker", "https://github.com/ATritle/MicroscapeWiki"], ["Archived beta game data · November 18, 2026", "./assets/game-data/beta-2026-11-18.json"], ["Miraheze Microscape Wiki", wiki + "Main_Page"], ["CC BY-SA 4.0", "https://creativecommons.org/licenses/by-sa/4.0/"], ["Official game credits", official + "credits/"]]
+    sources: [["MzDunk’s community", "https://www.twitch.tv/mzdunk"], ["Archived beta game data · November 18, 2026", "./assets/game-data/beta-2026-11-18.json"], ["Miraheze Microscape Wiki", wiki + "Main_Page"], ["CC BY-SA 4.0", "https://creativecommons.org/licenses/by-sa/4.0/"], ["Official game credits", official + "credits/"]]
   }
 ].map(guide => ({ category: "guides", ...guide,
   sources:[...(guide.sources||[]), ...((guide.sources||[]).some(([,url])=>url==="./assets/game-data/release-2026-11-19.json")?[]:[["Archived release game data · November 19, 2026", "./assets/game-data/release-2026-11-19.json"]])]

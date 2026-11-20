@@ -1,8 +1,9 @@
-import { guides } from "./guides.js?v=release-20261119";
+import {communityApiBase} from "./api-config.js?v=community-api-20261119";
+import { guides } from "./guides.js?v=community-api-20261119";
 import { tutorials } from "./tutorials.js?v=release-20261119";
 import { buildPetEntries } from "./pets.js?v=release-20261119";
 import { itemIcons, itemIconGroups } from "./item-icons.js?v=release-20261119";
-import { renderPlayerLookup } from "./player-lookup.js?v=release-20261119";
+import { renderPlayerLookup } from "./player-lookup.js?v=community-api-20261119";
 
 const groups = {
   guides: { title: "Guides", icon: "▤", blurb: "Start here, earn Energy, trade and plan dungeon runs." },
@@ -25,9 +26,9 @@ const number = new Intl.NumberFormat("en");
 const gameAssets = "https://microscape.cc/play/assets/";
 const liveDropsUrl = "#/live-drops";
 const playerLookupUrl = "#/player-lookup";
-const liveDropsWorkerUrl = "https://microscape-wiki-api.pages.dev/drops.json";
+const liveDropsWorkerUrl = new URL("drops.json", communityApiBase).href;
 const mzDunkStatusUrl = new URL("mzdunk.json", liveDropsWorkerUrl).href;
-const liveDropsSnapshotUrl = "https://raw.githubusercontent.com/ATritle/MicroscapeWiki/refs/heads/live-data/drops.json";
+const liveDropsSnapshotUrl = new URL("drops-backup.json", communityApiBase).href;
 const liveDropsMaxAge = 40 * 60_000;
 const mzDunkChannel = "mzdunk";
 const mzDunkTwitchUrl = "https://www.twitch.tv/" + mzDunkChannel;
@@ -177,7 +178,6 @@ function footer() {
   return element("footer", {class:"footer"},
     element("span", {}, "MzDunk’s community wiki"),
     entryLink("about", "About and sources"),
-    link("Suggest an edit", "https://github.com/ATritle/MicroscapeWiki/issues"),
     link("Official patch notes", "https://microscape.cc/patch-notes/")
   );
 }
