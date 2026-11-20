@@ -1,4 +1,4 @@
-import {BASE_COMBAT_XP_PER_DAMAGE, compareCombat, equipmentBonuses} from "./combat-comparison.js?v=activity-xp-20261120";
+import {compareCombat, equipmentBonuses} from "./combat-comparison.js?v=vendors-20261120";
 
 let catalogRequest;
 export function readActivityCatalog() {
@@ -171,7 +171,9 @@ export function renderActivityComparison({e, player, levels, catalog, byId, entr
     const theoretical = ranked.status === "theoretical";
     return e("div", {class:"training-recommendation"}, e("span", {class:"player-eyebrow"}, theoretical ? "THEORETICAL COMPARISON · REQUIREMENT NOT MET" : combat ? "BEFORE FOOD & BANKING" : "BEFORE SUPPLY GATHERING & BANKING"),
       e("strong", {}, title), ...(theoretical ? [e("p", {}, "The comparison includes an activity or spell above this player’s level, or an unmet membership requirement. Rates are shown for planning; the option remains locked in the game.")] : []),
-      e("p", {}, combat ? "XP/hour uses an automatic " + BASE_COMBAT_XP_PER_DAMAGE + "-XP-per-damage baseline. Food use, survival and XP-granting abilities can change actual rates."
+      e("p", {}, combat ? (rows[0].xpRateStatus === "observed" ? "XP/hour uses the observed Attack baseline of " + rows[0].xpPerDamage + " XP per damage. "
+        : "The XP conversion for " + (catalog.skills.find(skill => skill.id === rows[0].xpSkill)?.name || rows[0].xpSkill) + " is unverified; this estimate assumes " + rows[0].xpPerDamage + " XP per damage. ")
+        + "Food use, survival and XP-granting abilities can change actual rates."
         : settings.modelDoubleUps ? "This estimate includes one bonus action per double-up, using your selected delay." : "Base XP/hour uses the listed XP and duration. Your double-up chance is shown separately and is excluded from this rate."));
   }
   function update() {
@@ -220,6 +222,7 @@ export function renderActivityComparison({e, player, levels, catalog, byId, entr
         const activity = activities[index], card = e("div", {class:"training-foe-card"}, activityHeader(activity));
         if (skill.combat) {
           card.append(e("dl", {}, metric("Your hit chance", pct(row.hitChance)), metric("Your melee dodge chance", pct(row.dodgeChance)),
+            metric("XP conversion", row.xpPerDamage + " XP/damage · " + row.xpRateStatus),
             metric("Your maximum hit", fmt(row.maxHit)), metric("Enemy max melee hit", fmt(row.enemyMaxHit)),
             metric("Estimated kill cycle", row.unsupported ? "Not modeled" : fmt(row.cycleSeconds) + "s"),
             metric("Estimated damage/hour", row.unsupported ? "Not modeled" : fmt(row.damagePerHour)),

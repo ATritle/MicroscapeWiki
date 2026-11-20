@@ -1,0 +1,2524 @@
+{
+  "checkedAt": "2026-11-20T17:53:14.165Z",
+  "client": "https://microscape.cc/play/assets/index-BsSHHy-E.js",
+  "clientSha256": "228bbcdac7deb74e394e283dc124611450abc4dd7f9d7ba98fb141846f649878",
+  "priceRules": {
+    "shopBuy": "floor(item value * (item-specific multiplier ?? shop general multiplier))",
+    "shopSell": "Positive item base value",
+    "exactStockIds": true,
+    "salon": "Literal price table used by the salon UI"
+  },
+  "suppliers": [
+    {
+      "id": "avasCookery",
+      "wikiId": "shop-avas-cookery",
+      "name": "Ava's Cookery",
+      "entity": "avas-cookery",
+      "npc": "Ava",
+      "type": "shop",
+      "locations": [
+        {
+          "id": "manor-kitchen",
+          "name": "Manor Kitchen",
+          "wikiId": "manor-kitchen",
+          "npc": "ava"
+        }
+      ],
+      "stock": [
+        {
+          "id": "chefsHat",
+          "name": "Chef's Hat",
+          "wikiId": "chefs-hat",
+          "buyPrice": 75,
+          "sellValue": 25,
+          "multiplier": 3,
+          "equipRequirements": "None listed"
+        },
+        {
+          "id": "cookingApple",
+          "name": "Cooking Apple",
+          "wikiId": "cooking-apple",
+          "buyPrice": 9,
+          "sellValue": 3,
+          "multiplier": 3,
+          "equipRequirements": "None listed"
+        },
+        {
+          "id": "redberries",
+          "name": "Redberries",
+          "wikiId": "redberries",
+          "buyPrice": 3,
+          "sellValue": 1,
+          "multiplier": 3,
+          "equipRequirements": "None listed"
+        },
+        {
+          "id": "seaweed",
+          "name": "Seaweed",
+          "wikiId": "seaweed",
+          "buyPrice": 3,
+          "sellValue": 1,
+          "multiplier": 3,
+          "equipRequirements": "None listed"
+        },
+        {
+          "id": "ginger",
+          "name": "Ginger",
+          "wikiId": "ginger",
+          "buyPrice": 3,
+          "sellValue": 1,
+          "multiplier": 3,
+          "equipRequirements": "None listed"
+        },
+        {
+          "id": "chocolateDust",
+          "name": "Chocolate Dust",
+          "wikiId": "chocolate-dust",
+          "buyPrice": 52,
+          "sellValue": 2,
+          "multiplier": 26,
+          "equipRequirements": "None listed"
+        },
+        {
+          "id": "snapeGrass",
+          "name": "Snape Grass",
+          "wikiId": "snape-grass",
+          "buyPrice": 130,
+          "sellValue": 2,
+          "multiplier": 65,
+          "equipRequirements": "None listed"
+        }
+      ]
+    },
+    {
+      "id": "braffsStaves",
+      "wikiId": "shop-braffs-staves",
+      "name": "Braff's Staves",
+      "entity": "braffs-staves",
+      "npc": "Braff",
+      "type": "shop",
+      "locations": [
+        {
+          "id": "magic-shop",
+          "name": "Merric’s Magic Shop",
+          "wikiId": "merrics-magic-shop",
+          "npc": "braff"
+        }
+      ],
+      "stock": [
+        {
+          "id": "battlestaff",
+          "name": "Battlestaff",
+          "wikiId": "battlestaff",
+          "buyPrice": 1176,
+          "sellValue": 196,
+          "multiplier": 6,
+          "equipRequirements": "Attack 10 · Evil Magic 10"
+        }
+      ]
+    },
+    {
+      "id": "brotherEustaceShop",
+      "wikiId": "shop-brother-eustace",
+      "name": "Brother Eustace's Shop",
+      "entity": "brother-eustace",
+      "npc": "Brother Eustace",
+      "type": "shop",
+      "locations": [
+        {
+          "id": "falcrest-reach-temple",
+          "name": "Falcrest Reach Temple",
+          "wikiId": "falcrest-reach-temple",
+          "npc": "brother-eustace"
+        }
+      ],
+      "stock": [
+        {
+          "id": "monkRobe",
+          "name": "Monk's Robe",
+          "wikiId": "monks-robe",
+          "buyPrice": 360,
+          "sellValue": 120,
+          "multiplier": 3,
+          "equipRequirements": "Piety 5"
+        }
+      ]
+    },
+    {
+      "id": "fishingGearShop",
+      "wikiId": "shop-fishing-gear-shop",
+      "name": "Old David's Shop",
+      "entity": "fishing-gear-shop",
+      "npc": "Old David",
+      "type": "shop",
+      "locations": [
+        {
+          "id": "solace-shoals",
+          "name": "Solace Shoals",
+          "wikiId": "solace-shoals",
+          "npc": "old-david"
+        }
+      ],
+      "stock": [
+        {
+          "id": "feather",
+          "name": "Feather",
+          "wikiId": "feather",
+          "buyPrice": 3,
+          "sellValue": 1,
+          "multiplier": 3,
+          "equipRequirements": "None listed"
+        }
+      ]
+    },
+    {
+      "id": "generalStore",
+      "wikiId": "shop-general-store",
+      "name": "General Store",
+      "entity": "general-store",
+      "npc": "Shopkeeper",
+      "type": "shop",
+      "locations": [
+        {
+          "id": "al-sahra",
+          "name": "Al-Sahra",
+          "wikiId": "al-sahra",
+          "npc": "shopkeeper"
+        }
+      ],
+      "stock": [
+        {
+          "id": "bucket",
+          "name": "Bucket",
+          "wikiId": "bucket",
+          "buyPrice": 3,
+          "sellValue": 1,
+          "multiplier": 3,
+          "equipRequirements": "None listed"
+        },
+        {
+          "id": "pieDish",
+          "name": "Pie Dish",
+          "wikiId": "pie-dish",
+          "buyPrice": 6,
+          "sellValue": 2,
+          "multiplier": 3,
+          "equipRequirements": "None listed"
+        },
+        {
+          "id": "pot",
+          "name": "Pot",
+          "wikiId": "pot",
+          "buyPrice": 3,
+          "sellValue": 1,
+          "multiplier": 3,
+          "equipRequirements": "None listed"
+        },
+        {
+          "id": "thread",
+          "name": "Thread",
+          "wikiId": "thread",
+          "buyPrice": 6,
+          "sellValue": 2,
+          "multiplier": 3,
+          "equipRequirements": "None listed"
+        }
+      ]
+    },
+    {
+      "id": "germairsClads",
+      "wikiId": "shop-germairs-clads",
+      "name": "Germair's Clads",
+      "entity": "germairsClads",
+      "npc": "Germair",
+      "type": "shop",
+      "locations": [
+        {
+          "id": "fencewell-bridge",
+          "name": "Fencewell Bridge",
+          "wikiId": "fencewell-bridge",
+          "npc": "germair"
+        }
+      ],
+      "stock": [
+        {
+          "id": "bronzeArmor",
+          "name": "Bronze Armor",
+          "wikiId": "bronze-armor",
+          "buyPrice": 80,
+          "sellValue": 10,
+          "multiplier": 8,
+          "equipRequirements": "Defense 1"
+        },
+        {
+          "id": "bronzeDagger",
+          "name": "Bronze Dagger",
+          "wikiId": "bronze-dagger",
+          "buyPrice": 16,
+          "sellValue": 2,
+          "multiplier": 8,
+          "equipRequirements": "Attack 1"
+        },
+        {
+          "id": "bronzeMedHelm",
+          "name": "Bronze Med Helm",
+          "wikiId": "bronze-med-helm",
+          "buyPrice": 16,
+          "sellValue": 2,
+          "multiplier": 8,
+          "equipRequirements": "Defense 1"
+        },
+        {
+          "id": "bronzeSqShield",
+          "name": "Bronze Sq Shield",
+          "wikiId": "bronze-sq-shield",
+          "buyPrice": 32,
+          "sellValue": 4,
+          "multiplier": 8,
+          "equipRequirements": "Defense 1"
+        },
+        {
+          "id": "steelFullHelm",
+          "name": "Steel Full Helm",
+          "wikiId": "steel-full-helm",
+          "buyPrice": 128,
+          "sellValue": 16,
+          "multiplier": 8,
+          "equipRequirements": "Defense 20"
+        }
+      ]
+    },
+    {
+      "id": "jaciensSupplies",
+      "wikiId": "shop-jaciens",
+      "name": "Jaciens' Supplies",
+      "entity": "jaciens",
+      "npc": "Jaciens",
+      "type": "shop",
+      "locations": [
+        {
+          "id": "tutabay-atoll",
+          "name": "Tutabay Atoll",
+          "wikiId": "tutabay-atoll",
+          "npc": "jaciens"
+        }
+      ],
+      "stock": [
+        {
+          "id": "trainingPickaxe",
+          "name": "Training Pickaxe",
+          "wikiId": "training-pickaxe",
+          "buyPrice": 7,
+          "sellValue": 1,
+          "multiplier": 7,
+          "equipRequirements": "None listed"
+        },
+        {
+          "id": "trainingFishingRod",
+          "name": "Training Fishing Rod",
+          "wikiId": "training-fishing-rod",
+          "buyPrice": 4,
+          "sellValue": 1,
+          "multiplier": 4,
+          "equipRequirements": "None listed"
+        }
+      ]
+    },
+    {
+      "id": "joansGarments",
+      "wikiId": "shop-joans-garments",
+      "name": "Joan's Garments",
+      "entity": "joans-garments",
+      "npc": "Joan",
+      "type": "shop",
+      "locations": [
+        {
+          "id": "rock-west",
+          "name": "O’Rock West",
+          "wikiId": "orock-west",
+          "npc": "joan"
+        }
+      ],
+      "stock": [
+        {
+          "id": "clothesAdventurer",
+          "name": "Adventurer's Clothes",
+          "wikiId": "adventurers-clothes",
+          "buyPrice": 600,
+          "sellValue": 200,
+          "multiplier": 3,
+          "equipRequirements": "None listed"
+        },
+        {
+          "id": "clothesApron",
+          "name": "Apron",
+          "wikiId": "apron",
+          "buyPrice": 150,
+          "sellValue": 50,
+          "multiplier": 3,
+          "equipRequirements": "None listed"
+        },
+        {
+          "id": "clothesDapper",
+          "name": "Dapper Outfit",
+          "wikiId": "dapper-outfit",
+          "buyPrice": 1230,
+          "sellValue": 410,
+          "multiplier": 3,
+          "equipRequirements": "None listed"
+        },
+        {
+          "id": "clothesDesert",
+          "name": "Desert Robes",
+          "wikiId": "desert-robes",
+          "buyPrice": 600,
+          "sellValue": 200,
+          "multiplier": 3,
+          "equipRequirements": "None listed"
+        },
+        {
+          "id": "clothesJulian",
+          "name": "\"the Julian\"",
+          "wikiId": "the-julian",
+          "buyPrice": 2820,
+          "sellValue": 940,
+          "multiplier": 3,
+          "equipRequirements": "None listed"
+        },
+        {
+          "id": "clothesRoyal",
+          "name": "Royal Attire",
+          "wikiId": "royal-attire",
+          "buyPrice": 9600,
+          "sellValue": 3200,
+          "multiplier": 3,
+          "equipRequirements": "None listed"
+        },
+        {
+          "id": "clothesScout",
+          "name": "Scout Uniform",
+          "wikiId": "scout-uniform",
+          "buyPrice": 150,
+          "sellValue": 50,
+          "multiplier": 3,
+          "equipRequirements": "None listed"
+        },
+        {
+          "id": "clothesSummer",
+          "name": "Summer Outfit",
+          "wikiId": "summer-outfit",
+          "buyPrice": 600,
+          "sellValue": 200,
+          "multiplier": 3,
+          "equipRequirements": "None listed"
+        },
+        {
+          "id": "priestRobe",
+          "name": "Priest Robe",
+          "wikiId": "priest-robe",
+          "buyPrice": 150,
+          "sellValue": 50,
+          "multiplier": 3,
+          "equipRequirements": "Piety 1"
+        }
+      ]
+    },
+    {
+      "id": "merricsMagic",
+      "wikiId": "shop-merrics-magic",
+      "name": "Merric's Magic Shop",
+      "entity": "merricsMagic",
+      "npc": "Merric",
+      "type": "shop",
+      "locations": [
+        {
+          "id": "magic-shop",
+          "name": "Merric’s Magic Shop",
+          "wikiId": "merrics-magic-shop",
+          "npc": "merric"
+        }
+      ],
+      "stock": [
+        {
+          "id": "staff",
+          "name": "Staff",
+          "wikiId": "staff",
+          "buyPrice": 28,
+          "sellValue": 2,
+          "multiplier": 14,
+          "equipRequirements": "None listed"
+        },
+        {
+          "id": "airRune",
+          "name": "Air Rune",
+          "wikiId": "air-rune",
+          "buyPrice": 3,
+          "sellValue": 1,
+          "multiplier": 3,
+          "equipRequirements": "None listed"
+        },
+        {
+          "id": "fireRune",
+          "name": "Fire Rune",
+          "wikiId": "fire-rune",
+          "buyPrice": 3,
+          "sellValue": 1,
+          "multiplier": 3,
+          "equipRequirements": "None listed"
+        },
+        {
+          "id": "mindRune",
+          "name": "Mind Rune",
+          "wikiId": "mind-rune",
+          "buyPrice": 6,
+          "sellValue": 2,
+          "multiplier": 3,
+          "equipRequirements": "None listed"
+        },
+        {
+          "id": "chaosRune",
+          "name": "Chaos Rune",
+          "wikiId": "chaos-rune",
+          "buyPrice": 9,
+          "sellValue": 3,
+          "multiplier": 3,
+          "equipRequirements": "None listed"
+        },
+        {
+          "id": "deathRune",
+          "name": "Death Rune",
+          "wikiId": "death-rune",
+          "buyPrice": 15,
+          "sellValue": 5,
+          "multiplier": 3,
+          "equipRequirements": "None listed"
+        },
+        {
+          "id": "cosmicRune",
+          "name": "Cosmic Rune",
+          "wikiId": "cosmic-rune",
+          "buyPrice": 12,
+          "sellValue": 4,
+          "multiplier": 3,
+          "equipRequirements": "None listed"
+        },
+        {
+          "id": "natureRune",
+          "name": "Nature Rune",
+          "wikiId": "nature-rune",
+          "buyPrice": 24,
+          "sellValue": 8,
+          "multiplier": 3,
+          "equipRequirements": "None listed"
+        },
+        {
+          "id": "lawRune",
+          "name": "Law Rune",
+          "wikiId": "law-rune",
+          "buyPrice": 27,
+          "sellValue": 9,
+          "multiplier": 3,
+          "equipRequirements": "None listed"
+        }
+      ]
+    },
+    {
+      "id": "rodrigosArrows",
+      "wikiId": "shop-rodrigos-arrows",
+      "name": "Rodrigo's Arrows",
+      "entity": "rodrigos-arrows",
+      "npc": "Rodrigo",
+      "type": "shop",
+      "locations": [
+        {
+          "id": "rock-west",
+          "name": "O’Rock West",
+          "wikiId": "orock-west",
+          "npc": "rodrigo"
+        }
+      ],
+      "stock": [
+        {
+          "id": "arrows",
+          "name": "Bronze Arrows",
+          "wikiId": "bronze-arrows",
+          "buyPrice": 6,
+          "sellValue": 1,
+          "multiplier": 6,
+          "equipRequirements": "None listed"
+        },
+        {
+          "id": "shortbow",
+          "name": "Bow",
+          "wikiId": "bow",
+          "buyPrice": 18,
+          "sellValue": 3,
+          "multiplier": 6,
+          "equipRequirements": "Ranged 1"
+        }
+      ]
+    },
+    {
+      "id": "thorgrim",
+      "wikiId": "vendor-thorgrim",
+      "name": "Thorgrim",
+      "npc": "Thorgrim",
+      "entity": "thorgrim",
+      "type": "service",
+      "locations": [
+        {
+          "id": "dwarven-tunnels",
+          "name": "Old Dwarven Tunnels",
+          "wikiId": "old-dwarven-tunnels",
+          "npc": "thorgrim"
+        }
+      ],
+      "offers": [
+        {
+          "id": "crafting/adapt-heat-gloves",
+          "name": "Adapt dwarven gloves",
+          "skill": "crafting",
+          "level": 1,
+          "inputs": [
+            {
+              "id": "airRune",
+              "amount": 10
+            },
+            {
+              "id": "coins",
+              "amount": 20
+            },
+            {
+              "id": "fireDwarfGloves",
+              "amount": 1
+            },
+            {
+              "id": "waterBucket",
+              "amount": 1
+            }
+          ],
+          "outputs": [
+            {
+              "id": "bucket",
+              "amount": 1
+            },
+            {
+              "id": "heatGloves",
+              "amount": 1
+            }
+          ],
+          "requiresMembership": false,
+          "requiresAbility": null,
+          "singleExecution": false
+        }
+      ]
+    },
+    {
+      "id": "brother-alep",
+      "wikiId": "vendor-brother-alep",
+      "name": "Brother Alep",
+      "npc": "Brother Alep",
+      "entity": "brother-alep",
+      "type": "service",
+      "locations": [
+        {
+          "id": "falcrest-reach-temple",
+          "name": "Falcrest Reach Temple",
+          "wikiId": "falcrest-reach-temple",
+          "npc": "brother-alep"
+        }
+      ],
+      "offers": [
+        {
+          "id": "crafting/bless-holy-amulet",
+          "name": "bless holy amulet",
+          "skill": "crafting",
+          "level": 18,
+          "inputs": [
+            {
+              "id": "coins",
+              "amount": 20
+            },
+            {
+              "id": "dimHolyAmulet",
+              "amount": 1
+            }
+          ],
+          "outputs": [
+            {
+              "id": "holyAmulet",
+              "amount": 1
+            }
+          ],
+          "requiresMembership": false,
+          "requiresAbility": null,
+          "singleExecution": false
+        },
+        {
+          "id": "piety/convert-audience-favor",
+          "name": "A prayer for time",
+          "skill": "piety",
+          "level": 1,
+          "inputs": [
+            {
+              "id": "audienceFavor",
+              "amount": 3
+            }
+          ],
+          "outputs": [
+            {
+              "id": "timeCrystal",
+              "amount": 1
+            }
+          ],
+          "requiresMembership": false,
+          "requiresAbility": null,
+          "singleExecution": true
+        },
+        {
+          "id": "piety/convert-audience-favor-bazaar",
+          "name": "A prayer for commerce",
+          "skill": "piety",
+          "level": 1,
+          "inputs": [
+            {
+              "id": "audienceFavor",
+              "amount": 15
+            }
+          ],
+          "outputs": [
+            {
+              "id": "bazaarPermit",
+              "amount": 1
+            }
+          ],
+          "requiresMembership": false,
+          "requiresAbility": null,
+          "singleExecution": true
+        },
+        {
+          "id": "piety/craft-blessed-greaves",
+          "name": "Craft Blessed Greaves",
+          "skill": "piety",
+          "level": 10,
+          "inputs": [
+            {
+              "id": "leatherBoots",
+              "amount": 1
+            },
+            {
+              "id": "silverBar",
+              "amount": 1
+            },
+            {
+              "id": "spiritRune",
+              "amount": 1000
+            },
+            {
+              "id": "steelBar",
+              "amount": 2
+            }
+          ],
+          "outputs": [
+            {
+              "id": "blessedGreaves",
+              "amount": 1
+            }
+          ],
+          "requiresMembership": false,
+          "requiresAbility": null,
+          "singleExecution": false
+        }
+      ]
+    },
+    {
+      "id": "sir-bratley",
+      "wikiId": "vendor-sir-bratley",
+      "name": "Sir Bratley",
+      "npc": "Sir Bratley",
+      "entity": "sir-bratley",
+      "type": "service",
+      "locations": [
+        {
+          "id": "falcrest-reach-castle-parlor",
+          "name": "Falcrest Castle Parlor Room",
+          "wikiId": "falcrest-castle-parlor-room",
+          "npc": "sir-bratley"
+        }
+      ],
+      "offers": [
+        {
+          "id": "crafting/buy-consolation-hat",
+          "name": "Missed the party?",
+          "skill": "crafting",
+          "level": 1,
+          "inputs": [
+            {
+              "id": "coins",
+              "amount": 100
+            }
+          ],
+          "outputs": [
+            {
+              "id": "consolationHat",
+              "amount": 1
+            }
+          ],
+          "requiresMembership": false,
+          "requiresAbility": null,
+          "singleExecution": true
+        },
+        {
+          "id": "crafting/buy-dragon-shield-right",
+          "name": "Financial troubles",
+          "skill": "crafting",
+          "level": 1,
+          "inputs": [
+            {
+              "id": "coins",
+              "amount": 7300000
+            }
+          ],
+          "outputs": [
+            {
+              "id": "dragonShieldRight",
+              "amount": 1
+            }
+          ],
+          "requiresMembership": false,
+          "requiresAbility": null,
+          "singleExecution": true
+        }
+      ]
+    },
+    {
+      "id": "glovecrafter",
+      "wikiId": "vendor-glovecrafter",
+      "name": "Azar's Glovecraft",
+      "npc": "Azar's Glovecraft",
+      "entity": "glovecrafter",
+      "type": "service",
+      "locations": [
+        {
+          "id": "al-sahra",
+          "name": "Al-Sahra",
+          "wikiId": "al-sahra",
+          "npc": "glovecrafter"
+        }
+      ],
+      "offers": [
+        {
+          "id": "crafting/craft-ash-gloves",
+          "name": "Order ash gloves",
+          "skill": "crafting",
+          "level": 1,
+          "inputs": [
+            {
+              "id": "ashes",
+              "amount": 20
+            },
+            {
+              "id": "coins",
+              "amount": 30
+            },
+            {
+              "id": "leatherGloves",
+              "amount": 1
+            }
+          ],
+          "outputs": [
+            {
+              "id": "ashGloves",
+              "amount": 1
+            }
+          ],
+          "requiresMembership": false,
+          "requiresAbility": null,
+          "singleExecution": false
+        },
+        {
+          "id": "crafting/craft-serpent-quiver",
+          "name": "Order serpent quiver",
+          "skill": "crafting",
+          "level": 1,
+          "inputs": [
+            {
+              "id": "coins",
+              "amount": 50
+            },
+            {
+              "id": "snakeskinScales",
+              "amount": 30
+            },
+            {
+              "id": "thread",
+              "amount": 1
+            }
+          ],
+          "outputs": [
+            {
+              "id": "serpentQuiver",
+              "amount": 1
+            }
+          ],
+          "requiresMembership": false,
+          "requiresAbility": null,
+          "singleExecution": false
+        },
+        {
+          "id": "crafting/split-plume",
+          "name": "Split plume",
+          "skill": "crafting",
+          "level": 1,
+          "inputs": [
+            {
+              "id": "giantPlume",
+              "amount": 1
+            }
+          ],
+          "outputs": [
+            {
+              "id": "feather",
+              "amount": 25
+            }
+          ],
+          "requiresMembership": false,
+          "requiresAbility": null,
+          "singleExecution": false
+        },
+        {
+          "id": "crafting/split-plume-10",
+          "name": "Split plume (x10)",
+          "skill": "crafting",
+          "level": 1,
+          "inputs": [
+            {
+              "id": "giantPlume",
+              "amount": 10
+            }
+          ],
+          "outputs": [
+            {
+              "id": "feather",
+              "amount": 250
+            }
+          ],
+          "requiresMembership": false,
+          "requiresAbility": null,
+          "singleExecution": false
+        }
+      ]
+    },
+    {
+      "id": "hide-tanner",
+      "wikiId": "vendor-hide-tanner",
+      "name": "Hide Tanner",
+      "npc": "Tanner",
+      "entity": "hide-tanner",
+      "type": "service",
+      "locations": [
+        {
+          "id": "al-sahra",
+          "name": "Al-Sahra",
+          "wikiId": "al-sahra",
+          "npc": "tanner"
+        }
+      ],
+      "offers": [
+        {
+          "id": "crafting/tan-leather",
+          "name": "tan leather",
+          "skill": "crafting",
+          "level": 1,
+          "inputs": [
+            {
+              "id": "coins",
+              "amount": 3
+            },
+            {
+              "id": "cowHide",
+              "amount": 1
+            }
+          ],
+          "outputs": [
+            {
+              "id": "leather",
+              "amount": 1
+            }
+          ],
+          "requiresMembership": false,
+          "requiresAbility": null,
+          "singleExecution": false
+        }
+      ]
+    },
+    {
+      "id": "hadley",
+      "wikiId": "vendor-hadley",
+      "name": "Hadley",
+      "npc": "Hadley",
+      "entity": "hadley",
+      "type": "service",
+      "locations": [
+        {
+          "id": "manor-kitchen",
+          "name": "Manor Kitchen",
+          "wikiId": "manor-kitchen",
+          "npc": "hadley"
+        }
+      ],
+      "offers": [
+        {
+          "id": "crafting/trade-fox-hat",
+          "name": "trade for fox hat",
+          "skill": "crafting",
+          "level": 1,
+          "inputs": [
+            {
+              "id": "luckyPaw",
+              "amount": 1
+            }
+          ],
+          "outputs": [
+            {
+              "id": "foxHat",
+              "amount": 1
+            }
+          ],
+          "requiresMembership": false,
+          "requiresAbility": null,
+          "singleExecution": false
+        }
+      ]
+    },
+    {
+      "id": "thomas",
+      "wikiId": "vendor-thomas",
+      "name": "Thomas",
+      "npc": "Thomas",
+      "entity": "thomas",
+      "type": "service",
+      "locations": [
+        {
+          "id": "tutabay-atoll",
+          "name": "Tutabay Atoll",
+          "wikiId": "tutabay-atoll",
+          "npc": "thomas"
+        }
+      ],
+      "offers": [
+        {
+          "id": "fishing/trade-dagger-for-ticket",
+          "name": "A Dagger for Thomas",
+          "skill": "fishing",
+          "level": 1,
+          "inputs": [
+            {
+              "id": "bronzeDagger",
+              "amount": 1
+            }
+          ],
+          "outputs": [
+            {
+              "id": "ticketToProgryn",
+              "amount": 1
+            }
+          ],
+          "requiresMembership": false,
+          "requiresAbility": null,
+          "singleExecution": true
+        },
+        {
+          "id": "fishing/trade-pelt-for-ticket",
+          "name": "Pelts for Passage",
+          "skill": "fishing",
+          "level": 1,
+          "inputs": [
+            {
+              "id": "rodentPelt",
+              "amount": 1
+            }
+          ],
+          "outputs": [
+            {
+              "id": "ticketToProgryn",
+              "amount": 1
+            }
+          ],
+          "requiresMembership": false,
+          "requiresAbility": null,
+          "singleExecution": true
+        }
+      ]
+    },
+    {
+      "id": "lucille",
+      "wikiId": "vendor-lucille",
+      "name": "Lucille",
+      "npc": "Lucille",
+      "entity": "lucille",
+      "type": "service",
+      "locations": [
+        {
+          "id": "tutabay-atoll",
+          "name": "Tutabay Atoll",
+          "wikiId": "tutabay-atoll",
+          "npc": "lucille"
+        }
+      ],
+      "offers": [
+        {
+          "id": "mining/trade-copper-for-tin",
+          "name": "Tin from the Mainland",
+          "skill": "mining",
+          "level": 1,
+          "inputs": [
+            {
+              "id": "copperOre",
+              "amount": 3
+            }
+          ],
+          "outputs": [
+            {
+              "id": "tinOre",
+              "amount": 1
+            }
+          ],
+          "requiresMembership": false,
+          "requiresAbility": null,
+          "singleExecution": true
+        }
+      ]
+    },
+    {
+      "id": "bloodied-chest",
+      "wikiId": "exchange-bloodied-chest",
+      "name": "Bloodied Chest",
+      "npc": "Dungeon reward chest",
+      "entity": "bloodied-chest",
+      "type": "dungeon-exchange",
+      "locations": [
+        {
+          "id": "havendell-lair",
+          "name": "Havendell Lair",
+          "wikiId": "havendell-lair"
+        }
+      ],
+      "offers": [
+        {
+          "id": "piety/bloodied-chest-cursed-talisman",
+          "name": "Search for trinkets",
+          "skill": "piety",
+          "level": 1,
+          "inputs": [
+            {
+              "id": "bloodiedCoin",
+              "amount": 64
+            }
+          ],
+          "outputs": [
+            {
+              "id": "cursedTalisman",
+              "amount": 1
+            }
+          ],
+          "requiresMembership": false,
+          "requiresAbility": null,
+          "singleExecution": true
+        },
+        {
+          "id": "piety/bloodied-chest-dark-wizards-hat",
+          "name": "Search for hats",
+          "skill": "piety",
+          "level": 1,
+          "inputs": [
+            {
+              "id": "bloodiedCoin",
+              "amount": 32
+            }
+          ],
+          "outputs": [
+            {
+              "id": "wizardsHatDark",
+              "amount": 1
+            }
+          ],
+          "requiresMembership": false,
+          "requiresAbility": null,
+          "singleExecution": true
+        },
+        {
+          "id": "piety/bloodied-chest-dark-wizards-robe",
+          "name": "Search for robes",
+          "skill": "piety",
+          "level": 1,
+          "inputs": [
+            {
+              "id": "bloodiedCoin",
+              "amount": 32
+            }
+          ],
+          "outputs": [
+            {
+              "id": "darkWizardsRobe",
+              "amount": 1
+            }
+          ],
+          "requiresMembership": false,
+          "requiresAbility": null,
+          "singleExecution": true
+        },
+        {
+          "id": "piety/bloodied-chest-sanguine-boots",
+          "name": "Search for boots",
+          "skill": "piety",
+          "level": 1,
+          "inputs": [
+            {
+              "id": "bloodiedCoin",
+              "amount": 64
+            }
+          ],
+          "outputs": [
+            {
+              "id": "sanguineBoots",
+              "amount": 1
+            }
+          ],
+          "requiresMembership": false,
+          "requiresAbility": null,
+          "singleExecution": true
+        },
+        {
+          "id": "piety/bloodied-chest-skull-shield",
+          "name": "Search for shields",
+          "skill": "piety",
+          "level": 1,
+          "inputs": [
+            {
+              "id": "bloodiedCoin",
+              "amount": 128
+            }
+          ],
+          "outputs": [
+            {
+              "id": "skullShield",
+              "amount": 1
+            }
+          ],
+          "requiresMembership": false,
+          "requiresAbility": null,
+          "singleExecution": true
+        }
+      ]
+    },
+    {
+      "id": "brother-pela",
+      "wikiId": "vendor-brother-pela",
+      "name": "Brother Pela",
+      "npc": "Brother Pela",
+      "entity": "brother-pela",
+      "type": "service",
+      "locations": [
+        {
+          "id": "falcrest-reach-temple",
+          "name": "Falcrest Reach Temple",
+          "wikiId": "falcrest-reach-temple",
+          "npc": "brother-pela"
+        }
+      ],
+      "offers": [
+        {
+          "id": "piety/convert-time-crystal-to-audience-favor",
+          "name": "Time for a favor",
+          "skill": "piety",
+          "level": 1,
+          "inputs": [
+            {
+              "id": "timeCrystal",
+              "amount": 1
+            }
+          ],
+          "outputs": [
+            {
+              "id": "audienceFavor",
+              "amount": 1
+            }
+          ],
+          "requiresMembership": false,
+          "requiresAbility": null,
+          "singleExecution": true
+        }
+      ]
+    },
+    {
+      "id": "sirocco",
+      "wikiId": "vendor-sirocco",
+      "name": "Sirocco",
+      "npc": "Sirocco",
+      "entity": "sirocco",
+      "type": "service",
+      "locations": [
+        {
+          "id": "elshand-temple-ruins",
+          "name": "Elshand Temple Ruins",
+          "wikiId": "elshand-temple-ruins",
+          "npc": "sirocco"
+        }
+      ],
+      "offers": [
+        {
+          "id": "piety/craft-vial-of-poison",
+          "name": "brew vial of poison",
+          "skill": "piety",
+          "level": 1,
+          "inputs": [
+            {
+              "id": "natureRune",
+              "amount": 1
+            },
+            {
+              "id": "venomSac",
+              "amount": 1
+            },
+            {
+              "id": "vial",
+              "amount": 1
+            }
+          ],
+          "outputs": [
+            {
+              "id": "vialOfPoison",
+              "amount": 1
+            }
+          ],
+          "requiresMembership": false,
+          "requiresAbility": null,
+          "singleExecution": false
+        }
+      ]
+    },
+    {
+      "id": "mork",
+      "wikiId": "vendor-mork",
+      "name": "Mork",
+      "npc": "Mork",
+      "entity": "mork",
+      "type": "service",
+      "locations": [
+        {
+          "id": "fellroot-swamp-hut",
+          "name": "Fellroot Swamp Hut",
+          "wikiId": "fellroot-swamp-hut",
+          "npc": "mork"
+        }
+      ],
+      "offers": [
+        {
+          "id": "piety/exchange-audience-favor-for-pet-map-amber",
+          "name": "Mork's grove map",
+          "skill": "piety",
+          "level": 1,
+          "inputs": [
+            {
+              "id": "audienceFavor",
+              "amount": 10
+            }
+          ],
+          "outputs": [
+            {
+              "id": "petMapAmber",
+              "amount": 1
+            }
+          ],
+          "requiresMembership": false,
+          "requiresAbility": null,
+          "singleExecution": true
+        },
+        {
+          "id": "piety/exchange-audience-favor-for-pet-map-beatrix",
+          "name": "Mork's danger meadows map",
+          "skill": "piety",
+          "level": 1,
+          "inputs": [
+            {
+              "id": "audienceFavor",
+              "amount": 10
+            }
+          ],
+          "outputs": [
+            {
+              "id": "petMapBeatrix",
+              "amount": 1
+            }
+          ],
+          "requiresMembership": false,
+          "requiresAbility": null,
+          "singleExecution": true
+        },
+        {
+          "id": "piety/exchange-audience-favor-for-pet-map-bog",
+          "name": "Mork's swamp map",
+          "skill": "piety",
+          "level": 1,
+          "inputs": [
+            {
+              "id": "audienceFavor",
+              "amount": 20
+            }
+          ],
+          "outputs": [
+            {
+              "id": "petMapBog",
+              "amount": 1
+            }
+          ],
+          "requiresMembership": false,
+          "requiresAbility": null,
+          "singleExecution": true
+        },
+        {
+          "id": "piety/exchange-audience-favor-for-pet-map-chia",
+          "name": "Mork's treetop map",
+          "skill": "piety",
+          "level": 1,
+          "inputs": [
+            {
+              "id": "audienceFavor",
+              "amount": 10
+            }
+          ],
+          "outputs": [
+            {
+              "id": "petMapChia",
+              "amount": 1
+            }
+          ],
+          "requiresMembership": false,
+          "requiresAbility": null,
+          "singleExecution": true
+        },
+        {
+          "id": "piety/exchange-audience-favor-for-pet-map-crumpet",
+          "name": "Mork's kitchen map",
+          "skill": "piety",
+          "level": 1,
+          "inputs": [
+            {
+              "id": "audienceFavor",
+              "amount": 10
+            }
+          ],
+          "outputs": [
+            {
+              "id": "petMapCrumpet",
+              "amount": 1
+            }
+          ],
+          "requiresMembership": false,
+          "requiresAbility": null,
+          "singleExecution": true
+        },
+        {
+          "id": "piety/exchange-audience-favor-for-pet-map-ember",
+          "name": "Mork's firepit map",
+          "skill": "piety",
+          "level": 1,
+          "inputs": [
+            {
+              "id": "audienceFavor",
+              "amount": 10
+            }
+          ],
+          "outputs": [
+            {
+              "id": "petMapEmber",
+              "amount": 1
+            }
+          ],
+          "requiresMembership": false,
+          "requiresAbility": null,
+          "singleExecution": true
+        },
+        {
+          "id": "piety/exchange-audience-favor-for-pet-map-fibs",
+          "name": "Mork's fletching spots map",
+          "skill": "piety",
+          "level": 1,
+          "inputs": [
+            {
+              "id": "audienceFavor",
+              "amount": 20
+            }
+          ],
+          "outputs": [
+            {
+              "id": "petMapFibs",
+              "amount": 1
+            }
+          ],
+          "requiresMembership": false,
+          "requiresAbility": null,
+          "singleExecution": true
+        },
+        {
+          "id": "piety/exchange-audience-favor-for-pet-map-gloop",
+          "name": "Mork's mossy altar map",
+          "skill": "piety",
+          "level": 1,
+          "inputs": [
+            {
+              "id": "audienceFavor",
+              "amount": 10
+            }
+          ],
+          "outputs": [
+            {
+              "id": "petMapGloop",
+              "amount": 1
+            }
+          ],
+          "requiresMembership": false,
+          "requiresAbility": null,
+          "singleExecution": true
+        },
+        {
+          "id": "piety/exchange-audience-favor-for-pet-map-golem-core",
+          "name": "Mork's mine map",
+          "skill": "piety",
+          "level": 1,
+          "inputs": [
+            {
+              "id": "audienceFavor",
+              "amount": 20
+            }
+          ],
+          "outputs": [
+            {
+              "id": "petMapGolemCore",
+              "amount": 1
+            }
+          ],
+          "requiresMembership": false,
+          "requiresAbility": null,
+          "singleExecution": true
+        },
+        {
+          "id": "piety/exchange-audience-favor-for-pet-map-greta",
+          "name": "Mork's anvil map",
+          "skill": "piety",
+          "level": 1,
+          "inputs": [
+            {
+              "id": "audienceFavor",
+              "amount": 10
+            }
+          ],
+          "outputs": [
+            {
+              "id": "petMapGreta",
+              "amount": 1
+            }
+          ],
+          "requiresMembership": false,
+          "requiresAbility": null,
+          "singleExecution": true
+        },
+        {
+          "id": "piety/exchange-audience-favor-for-pet-map-hilda",
+          "name": "Mork's forge map",
+          "skill": "piety",
+          "level": 1,
+          "inputs": [
+            {
+              "id": "audienceFavor",
+              "amount": 20
+            }
+          ],
+          "outputs": [
+            {
+              "id": "petMapHilda",
+              "amount": 1
+            }
+          ],
+          "requiresMembership": false,
+          "requiresAbility": null,
+          "singleExecution": true
+        },
+        {
+          "id": "piety/exchange-audience-favor-for-pet-map-hubble",
+          "name": "Mork's druidic grove map",
+          "skill": "piety",
+          "level": 1,
+          "inputs": [
+            {
+              "id": "audienceFavor",
+              "amount": 20
+            }
+          ],
+          "outputs": [
+            {
+              "id": "petMapHubble",
+              "amount": 1
+            }
+          ],
+          "requiresMembership": false,
+          "requiresAbility": null,
+          "singleExecution": true
+        },
+        {
+          "id": "piety/exchange-audience-favor-for-pet-map-mercy",
+          "name": "Mork's graveyard map",
+          "skill": "piety",
+          "level": 1,
+          "inputs": [
+            {
+              "id": "audienceFavor",
+              "amount": 10
+            }
+          ],
+          "outputs": [
+            {
+              "id": "petMapMercy",
+              "amount": 1
+            }
+          ],
+          "requiresMembership": false,
+          "requiresAbility": null,
+          "singleExecution": true
+        },
+        {
+          "id": "piety/exchange-audience-favor-for-pet-map-mossy",
+          "name": "Mork's old tunnel map",
+          "skill": "piety",
+          "level": 1,
+          "inputs": [
+            {
+              "id": "audienceFavor",
+              "amount": 10
+            }
+          ],
+          "outputs": [
+            {
+              "id": "petMapMossy",
+              "amount": 1
+            }
+          ],
+          "requiresMembership": false,
+          "requiresAbility": null,
+          "singleExecution": true
+        },
+        {
+          "id": "piety/exchange-audience-favor-for-pet-map-murk",
+          "name": "Mork's riverbank map",
+          "skill": "piety",
+          "level": 1,
+          "inputs": [
+            {
+              "id": "audienceFavor",
+              "amount": 10
+            }
+          ],
+          "outputs": [
+            {
+              "id": "petMapMurk",
+              "amount": 1
+            }
+          ],
+          "requiresMembership": false,
+          "requiresAbility": null,
+          "singleExecution": true
+        },
+        {
+          "id": "piety/exchange-audience-favor-for-pet-map-peace-moth",
+          "name": "Mork's holy grounds map",
+          "skill": "piety",
+          "level": 1,
+          "inputs": [
+            {
+              "id": "audienceFavor",
+              "amount": 20
+            }
+          ],
+          "outputs": [
+            {
+              "id": "petMapPeaceMoth",
+              "amount": 1
+            }
+          ],
+          "requiresMembership": false,
+          "requiresAbility": null,
+          "singleExecution": true
+        },
+        {
+          "id": "piety/exchange-audience-favor-for-pet-map-pickle",
+          "name": "Mork's cuisine map",
+          "skill": "piety",
+          "level": 1,
+          "inputs": [
+            {
+              "id": "audienceFavor",
+              "amount": 20
+            }
+          ],
+          "outputs": [
+            {
+              "id": "petMapPickles",
+              "amount": 1
+            }
+          ],
+          "requiresMembership": false,
+          "requiresAbility": null,
+          "singleExecution": true
+        },
+        {
+          "id": "piety/exchange-audience-favor-for-pet-map-riddle",
+          "name": "Mork's arcane map",
+          "skill": "piety",
+          "level": 1,
+          "inputs": [
+            {
+              "id": "audienceFavor",
+              "amount": 20
+            }
+          ],
+          "outputs": [
+            {
+              "id": "petMapRiddle",
+              "amount": 1
+            }
+          ],
+          "requiresMembership": false,
+          "requiresAbility": null,
+          "singleExecution": true
+        },
+        {
+          "id": "piety/exchange-audience-favor-for-pet-map-sandy",
+          "name": "Mork's workbench map",
+          "skill": "piety",
+          "level": 1,
+          "inputs": [
+            {
+              "id": "audienceFavor",
+              "amount": 10
+            }
+          ],
+          "outputs": [
+            {
+              "id": "petMapSandy",
+              "amount": 1
+            }
+          ],
+          "requiresMembership": false,
+          "requiresAbility": null,
+          "singleExecution": true
+        },
+        {
+          "id": "piety/exchange-audience-favor-for-pet-map-scales",
+          "name": "Mork's danger dragon map",
+          "skill": "piety",
+          "level": 1,
+          "inputs": [
+            {
+              "id": "audienceFavor",
+              "amount": 10
+            }
+          ],
+          "outputs": [
+            {
+              "id": "petMapScales",
+              "amount": 1
+            }
+          ],
+          "requiresMembership": false,
+          "requiresAbility": null,
+          "singleExecution": true
+        },
+        {
+          "id": "piety/exchange-audience-favor-for-pet-map-scoops",
+          "name": "Mork's workshop map",
+          "skill": "piety",
+          "level": 1,
+          "inputs": [
+            {
+              "id": "audienceFavor",
+              "amount": 20
+            }
+          ],
+          "outputs": [
+            {
+              "id": "petMapScoop",
+              "amount": 1
+            }
+          ],
+          "requiresMembership": false,
+          "requiresAbility": null,
+          "singleExecution": true
+        },
+        {
+          "id": "piety/exchange-audience-favor-for-pet-map-scribble",
+          "name": "Mork's spellbook map",
+          "skill": "piety",
+          "level": 1,
+          "inputs": [
+            {
+              "id": "audienceFavor",
+              "amount": 10
+            }
+          ],
+          "outputs": [
+            {
+              "id": "petMapScribble",
+              "amount": 1
+            }
+          ],
+          "requiresMembership": false,
+          "requiresAbility": null,
+          "singleExecution": true
+        },
+        {
+          "id": "piety/exchange-audience-favor-for-pet-map-tinderling",
+          "name": "Mork's campfire map",
+          "skill": "piety",
+          "level": 1,
+          "inputs": [
+            {
+              "id": "audienceFavor",
+              "amount": 20
+            }
+          ],
+          "outputs": [
+            {
+              "id": "petMapTinderling",
+              "amount": 1
+            }
+          ],
+          "requiresMembership": false,
+          "requiresAbility": null,
+          "singleExecution": true
+        },
+        {
+          "id": "piety/exchange-audience-favor-for-pet-map-winkle",
+          "name": "Mork's forest clearing map",
+          "skill": "piety",
+          "level": 1,
+          "inputs": [
+            {
+              "id": "audienceFavor",
+              "amount": 20
+            }
+          ],
+          "outputs": [
+            {
+              "id": "petMapWinkle",
+              "amount": 1
+            }
+          ],
+          "requiresMembership": false,
+          "requiresAbility": null,
+          "singleExecution": true
+        }
+      ]
+    },
+    {
+      "id": "otis",
+      "wikiId": "vendor-otis",
+      "name": "Otis",
+      "npc": "Otis",
+      "entity": "otis",
+      "type": "service",
+      "locations": [
+        {
+          "id": "fellroot-swamp-hut",
+          "name": "Fellroot Swamp Hut",
+          "wikiId": "fellroot-swamp-hut",
+          "npc": "otis"
+        }
+      ],
+      "offers": [
+        {
+          "id": "piety/exchange-audience-favor-for-pet-map-biscuit",
+          "name": "Otis's kitchen map",
+          "skill": "piety",
+          "level": 1,
+          "inputs": [
+            {
+              "id": "audienceFavor",
+              "amount": 15
+            }
+          ],
+          "outputs": [
+            {
+              "id": "petMapBiscuit",
+              "amount": 1
+            }
+          ],
+          "requiresMembership": true,
+          "requiresAbility": null,
+          "singleExecution": true
+        },
+        {
+          "id": "piety/exchange-audience-favor-for-pet-map-cinder",
+          "name": "Otis's fireside map",
+          "skill": "piety",
+          "level": 1,
+          "inputs": [
+            {
+              "id": "audienceFavor",
+              "amount": 15
+            }
+          ],
+          "outputs": [
+            {
+              "id": "petMapCinder",
+              "amount": 1
+            }
+          ],
+          "requiresMembership": true,
+          "requiresAbility": null,
+          "singleExecution": true
+        },
+        {
+          "id": "piety/exchange-audience-favor-for-pet-map-clement",
+          "name": "Otis's monastery map",
+          "skill": "piety",
+          "level": 1,
+          "inputs": [
+            {
+              "id": "audienceFavor",
+              "amount": 15
+            }
+          ],
+          "outputs": [
+            {
+              "id": "petMapClement",
+              "amount": 1
+            }
+          ],
+          "requiresMembership": true,
+          "requiresAbility": null,
+          "singleExecution": true
+        },
+        {
+          "id": "piety/exchange-audience-favor-for-pet-map-merlin",
+          "name": "Otis's spellbound map",
+          "skill": "piety",
+          "level": 1,
+          "inputs": [
+            {
+              "id": "audienceFavor",
+              "amount": 15
+            }
+          ],
+          "outputs": [
+            {
+              "id": "petMapMerlin",
+              "amount": 1
+            }
+          ],
+          "requiresMembership": true,
+          "requiresAbility": null,
+          "singleExecution": true
+        },
+        {
+          "id": "piety/exchange-audience-favor-for-pet-map-otter",
+          "name": "Otis's riverbank map",
+          "skill": "piety",
+          "level": 1,
+          "inputs": [
+            {
+              "id": "audienceFavor",
+              "amount": 15
+            }
+          ],
+          "outputs": [
+            {
+              "id": "petMapOtter",
+              "amount": 1
+            }
+          ],
+          "requiresMembership": true,
+          "requiresAbility": null,
+          "singleExecution": true
+        },
+        {
+          "id": "piety/exchange-audience-favor-for-pet-map-pebble",
+          "name": "Otis's quarry map",
+          "skill": "piety",
+          "level": 1,
+          "inputs": [
+            {
+              "id": "audienceFavor",
+              "amount": 15
+            }
+          ],
+          "outputs": [
+            {
+              "id": "petMapPebble",
+              "amount": 1
+            }
+          ],
+          "requiresMembership": true,
+          "requiresAbility": null,
+          "singleExecution": true
+        },
+        {
+          "id": "piety/exchange-audience-favor-for-pet-map-quill",
+          "name": "Otis's bowyer map",
+          "skill": "piety",
+          "level": 1,
+          "inputs": [
+            {
+              "id": "audienceFavor",
+              "amount": 15
+            }
+          ],
+          "outputs": [
+            {
+              "id": "petMapQuill",
+              "amount": 1
+            }
+          ],
+          "requiresMembership": true,
+          "requiresAbility": null,
+          "singleExecution": true
+        },
+        {
+          "id": "piety/exchange-audience-favor-for-pet-map-sage",
+          "name": "Otis's herb garden map",
+          "skill": "piety",
+          "level": 1,
+          "inputs": [
+            {
+              "id": "audienceFavor",
+              "amount": 15
+            }
+          ],
+          "outputs": [
+            {
+              "id": "petMapSage",
+              "amount": 1
+            }
+          ],
+          "requiresMembership": true,
+          "requiresAbility": null,
+          "singleExecution": true
+        },
+        {
+          "id": "piety/exchange-audience-favor-for-pet-map-smudge",
+          "name": "Otis's smithy map",
+          "skill": "piety",
+          "level": 1,
+          "inputs": [
+            {
+              "id": "audienceFavor",
+              "amount": 15
+            }
+          ],
+          "outputs": [
+            {
+              "id": "petMapSmudge",
+              "amount": 1
+            }
+          ],
+          "requiresMembership": true,
+          "requiresAbility": null,
+          "singleExecution": true
+        },
+        {
+          "id": "piety/exchange-audience-favor-for-pet-map-stitch",
+          "name": "Otis's workbench map",
+          "skill": "piety",
+          "level": 1,
+          "inputs": [
+            {
+              "id": "audienceFavor",
+              "amount": 15
+            }
+          ],
+          "outputs": [
+            {
+              "id": "petMapStitch",
+              "amount": 1
+            }
+          ],
+          "requiresMembership": true,
+          "requiresAbility": null,
+          "singleExecution": true
+        },
+        {
+          "id": "piety/exchange-audience-favor-for-pet-map-stump",
+          "name": "Otis's timber grove map",
+          "skill": "piety",
+          "level": 1,
+          "inputs": [
+            {
+              "id": "audienceFavor",
+              "amount": 15
+            }
+          ],
+          "outputs": [
+            {
+              "id": "petMapStump",
+              "amount": 1
+            }
+          ],
+          "requiresMembership": true,
+          "requiresAbility": null,
+          "singleExecution": true
+        }
+      ]
+    },
+    {
+      "id": "rusty-chest",
+      "wikiId": "exchange-rusty-chest",
+      "name": "Rusty Chest",
+      "npc": "Dungeon reward chest",
+      "entity": "rusty-chest",
+      "type": "dungeon-exchange",
+      "locations": [
+        {
+          "id": "the-sump",
+          "name": "The Sump",
+          "wikiId": "the-sump"
+        }
+      ],
+      "offers": [
+        {
+          "id": "piety/rusty-chest-fletchers-cloak",
+          "name": "Search for cloaks",
+          "skill": "piety",
+          "level": 1,
+          "inputs": [
+            {
+              "id": "rustyCoin",
+              "amount": 128
+            }
+          ],
+          "outputs": [
+            {
+              "id": "fletchersCloak",
+              "amount": 1
+            }
+          ],
+          "requiresMembership": false,
+          "requiresAbility": null,
+          "singleExecution": true
+        },
+        {
+          "id": "piety/rusty-chest-rubber-boots",
+          "name": "Search for boots",
+          "skill": "piety",
+          "level": 1,
+          "inputs": [
+            {
+              "id": "rustyCoin",
+              "amount": 16
+            }
+          ],
+          "outputs": [
+            {
+              "id": "rubberBoots",
+              "amount": 1
+            }
+          ],
+          "requiresMembership": false,
+          "requiresAbility": null,
+          "singleExecution": true
+        },
+        {
+          "id": "piety/rusty-chest-wedding-band",
+          "name": "Search for rings",
+          "skill": "piety",
+          "level": 1,
+          "inputs": [
+            {
+              "id": "rustyCoin",
+              "amount": 256
+            }
+          ],
+          "outputs": [
+            {
+              "id": "weddingBand",
+              "amount": 1
+            }
+          ],
+          "requiresMembership": false,
+          "requiresAbility": null,
+          "singleExecution": true
+        }
+      ]
+    },
+    {
+      "id": "scorched-chest",
+      "wikiId": "exchange-scorched-chest",
+      "name": "Scorched Chest",
+      "npc": "Dungeon reward chest",
+      "entity": "scorched-chest",
+      "type": "dungeon-exchange",
+      "locations": [
+        {
+          "id": "dread-mount-onyx-lair",
+          "name": "Dread Mount Onyx Lair",
+          "wikiId": "dread-mount-onyx-lair"
+        }
+      ],
+      "offers": [
+        {
+          "id": "piety/scorched-chest-cut-dragonstone",
+          "name": "Search for gems",
+          "skill": "piety",
+          "level": 1,
+          "inputs": [
+            {
+              "id": "scorchedCoin",
+              "amount": 64
+            }
+          ],
+          "outputs": [
+            {
+              "id": "cutDragonstone",
+              "amount": 1
+            }
+          ],
+          "requiresMembership": false,
+          "requiresAbility": null,
+          "singleExecution": true
+        },
+        {
+          "id": "piety/scorched-chest-dragon-helm",
+          "name": "Search for armor",
+          "skill": "piety",
+          "level": 1,
+          "inputs": [
+            {
+              "id": "scorchedCoin",
+              "amount": 256
+            }
+          ],
+          "outputs": [
+            {
+              "id": "dragonHelm",
+              "amount": 1
+            }
+          ],
+          "requiresMembership": false,
+          "requiresAbility": null,
+          "singleExecution": true
+        },
+        {
+          "id": "piety/scorched-chest-dragon-shield-left-half",
+          "name": "Search for relics",
+          "skill": "piety",
+          "level": 1,
+          "inputs": [
+            {
+              "id": "scorchedCoin",
+              "amount": 2048
+            }
+          ],
+          "outputs": [
+            {
+              "id": "dragonShieldLeft",
+              "amount": 1
+            }
+          ],
+          "requiresMembership": false,
+          "requiresAbility": null,
+          "singleExecution": true
+        },
+        {
+          "id": "piety/scorched-chest-dragon-sword",
+          "name": "Search for swords",
+          "skill": "piety",
+          "level": 1,
+          "inputs": [
+            {
+              "id": "scorchedCoin",
+              "amount": 256
+            }
+          ],
+          "outputs": [
+            {
+              "id": "dragonSword",
+              "amount": 1
+            }
+          ],
+          "requiresMembership": false,
+          "requiresAbility": null,
+          "singleExecution": true
+        },
+        {
+          "id": "piety/scorched-chest-progrite-2h-sword",
+          "name": "Search for large weapons",
+          "skill": "piety",
+          "level": 1,
+          "inputs": [
+            {
+              "id": "scorchedCoin",
+              "amount": 128
+            }
+          ],
+          "outputs": [
+            {
+              "id": "progrite2hSword",
+              "amount": 1
+            }
+          ],
+          "requiresMembership": false,
+          "requiresAbility": null,
+          "singleExecution": true
+        }
+      ]
+    },
+    {
+      "id": "hair-stylist",
+      "wikiId": "vendor-hair-stylist",
+      "name": "Marcel the Stylist",
+      "npc": "Marcel the Stylist",
+      "entity": "hair-stylist",
+      "type": "appearance",
+      "locations": [
+        {
+          "id": "hair-salon",
+          "name": "Marcel's Hair Salon",
+          "wikiId": "marcels-hair-salon",
+          "npc": "hair-stylist"
+        }
+      ],
+      "styles": [
+        {
+          "id": "boldBrown",
+          "name": "Brown \"Bold\" Hair",
+          "slot": "hair",
+          "price": 20,
+          "wikiId": "brown-bold-hair"
+        },
+        {
+          "id": "bubbleBlack",
+          "name": "Black Bubble Hair",
+          "slot": "hair",
+          "price": 100,
+          "wikiId": "black-bubble-hair"
+        },
+        {
+          "id": "longBlack",
+          "name": "Black Long Hair",
+          "slot": "hair",
+          "price": 150,
+          "wikiId": "black-long-hair"
+        },
+        {
+          "id": "longBlond",
+          "name": "Blond Long Hair",
+          "slot": "hair",
+          "price": 150,
+          "wikiId": "blond-long-hair"
+        },
+        {
+          "id": "longBrown",
+          "name": "Brown Long Hair",
+          "slot": "hair",
+          "price": 150,
+          "wikiId": "brown-long-hair"
+        },
+        {
+          "id": "longCerulean",
+          "name": "Cerulean Long Hair",
+          "slot": "hair",
+          "price": 150,
+          "wikiId": "cerulean-long-hair"
+        },
+        {
+          "id": "longPeach",
+          "name": "Peach Long Hair",
+          "slot": "hair",
+          "price": 150,
+          "wikiId": "peach-long-hair"
+        },
+        {
+          "id": "lushBlack",
+          "name": "Black Lush Hair",
+          "slot": "hair",
+          "price": 175,
+          "wikiId": "black-lush-hair"
+        },
+        {
+          "id": "mediumBlack",
+          "name": "Black Medium Hair",
+          "slot": "hair",
+          "price": 100,
+          "wikiId": "black-medium-hair"
+        },
+        {
+          "id": "mediumBlond",
+          "name": "Blond Medium Hair",
+          "slot": "hair",
+          "price": 100,
+          "wikiId": "blond-medium-hair"
+        },
+        {
+          "id": "mediumBrown",
+          "name": "Brown Medium Hair",
+          "slot": "hair",
+          "price": 100,
+          "wikiId": "brown-medium-hair"
+        },
+        {
+          "id": "mediumCerulean",
+          "name": "Cerulean Medium Hair",
+          "slot": "hair",
+          "price": 100,
+          "wikiId": "cerulean-medium-hair"
+        },
+        {
+          "id": "mediumPeach",
+          "name": "Peach Medium Hair",
+          "slot": "hair",
+          "price": 100,
+          "wikiId": "peach-medium-hair"
+        },
+        {
+          "id": "pompBlack",
+          "name": "Black Pomp Hair",
+          "slot": "hair",
+          "price": 125,
+          "wikiId": "black-pomp-hair"
+        },
+        {
+          "id": "pompBlond",
+          "name": "Blond Pomp Hair",
+          "slot": "hair",
+          "price": 125,
+          "wikiId": "blond-pomp-hair"
+        },
+        {
+          "id": "pompBrown",
+          "name": "Brown Pomp Hair",
+          "slot": "hair",
+          "price": 125,
+          "wikiId": "brown-pomp-hair"
+        },
+        {
+          "id": "pompCerulean",
+          "name": "Cerulean Pomp Hair",
+          "slot": "hair",
+          "price": 125,
+          "wikiId": "cerulean-pomp-hair"
+        },
+        {
+          "id": "pompPeach",
+          "name": "Peach Pomp Hair",
+          "slot": "hair",
+          "price": 125,
+          "wikiId": "peach-pomp-hair"
+        },
+        {
+          "id": "ponytailBlack",
+          "name": "Black Ponytail",
+          "slot": "hair",
+          "price": 100,
+          "wikiId": "black-ponytail"
+        },
+        {
+          "id": "ponytailBlond",
+          "name": "Blond Ponytail",
+          "slot": "hair",
+          "price": 100,
+          "wikiId": "blond-ponytail"
+        },
+        {
+          "id": "ponytailBrown",
+          "name": "Brown Ponytail",
+          "slot": "hair",
+          "price": 100,
+          "wikiId": "brown-ponytail"
+        },
+        {
+          "id": "ponytailCerulean",
+          "name": "Cerulean Ponytail",
+          "slot": "hair",
+          "price": 100,
+          "wikiId": "cerulean-ponytail"
+        },
+        {
+          "id": "ponytailPeach",
+          "name": "Peach Ponytail",
+          "slot": "hair",
+          "price": 100,
+          "wikiId": "peach-ponytail"
+        },
+        {
+          "id": "shortBlack",
+          "name": "Black Short Hair",
+          "slot": "hair",
+          "price": 50,
+          "wikiId": "black-short-hair"
+        },
+        {
+          "id": "shortBlond",
+          "name": "Blond Short Hair",
+          "slot": "hair",
+          "price": 50,
+          "wikiId": "blond-short-hair"
+        },
+        {
+          "id": "shortBrown",
+          "name": "Brown Short Hair",
+          "slot": "hair",
+          "price": 50,
+          "wikiId": "brown-short-hair"
+        },
+        {
+          "id": "shortCerulean",
+          "name": "Cerulean Short Hair",
+          "slot": "hair",
+          "price": 50,
+          "wikiId": "cerulean-short-hair"
+        },
+        {
+          "id": "shortPeach",
+          "name": "Peach Short Hair",
+          "slot": "hair",
+          "price": 50,
+          "wikiId": "peach-short-hair"
+        },
+        {
+          "id": "skin1",
+          "name": "Human 1",
+          "slot": "skin",
+          "price": 0,
+          "wikiId": "human-1"
+        },
+        {
+          "id": "skin2",
+          "name": "Human 2",
+          "slot": "skin",
+          "price": 0,
+          "wikiId": "human-2"
+        },
+        {
+          "id": "skin3",
+          "name": "Human 3",
+          "slot": "skin",
+          "price": 0,
+          "wikiId": "human-3"
+        },
+        {
+          "id": "skin4",
+          "name": "Human 4",
+          "slot": "skin",
+          "price": 0,
+          "wikiId": "human-4"
+        },
+        {
+          "id": "theJohnny",
+          "name": "\"The Johnny\"",
+          "slot": "hair",
+          "price": 30000,
+          "wikiId": "the-johnny"
+        }
+      ]
+    }
+  ]
+}

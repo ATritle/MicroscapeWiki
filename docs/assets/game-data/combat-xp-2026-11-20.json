@@ -9,5 +9,23 @@
   "calculatedMaximumHit": 1,
   "repeatedDisplayedXpReward": 4,
   "modeledBaseXpPerDamage": 4,
-  "scope": "Observed for one-damage Attack hits. Used as an estimated baseline for the other combat skills; those conversions have not been independently measured. Learned abilities, XP modifiers and spell-specific extra XP are excluded. This number is not extracted from public server source."
+  "scope": "Observed for one-damage Attack hits. Used as an estimated baseline for the other combat skills; those conversions have not been independently measured. Learned abilities, XP modifiers and spell-specific extra XP are excluded. This number is not extracted from public server source.",
+  "researchOnlyFollowup": {
+    "checkedOn": "2026-11-20",
+    "publicClient": "https://microscape.cc/play/assets/index-BsSHHy-E.js",
+    "finding": "The public client states that combat XP comes from damage but does not expose the server XP conversion by combat skill. No independent primary measurement for the four remaining skills was found. No character actions or equipment changes were made for this research.",
+    "communityCorroboration": {
+      "tool": "https://thescribe.tips/tools/combat",
+      "publishedRules": "https://thescribe.tips/_next/static/chunks/catalog-VxqU8NXU.js",
+      "rule": "combat.damage.xpPerHpRemoved = 4",
+      "limitation": "This is the community planner's common model setting, not independent verification of each game skill's server rewards."
+    },
+    "perSkill": {
+      "attack": {"modeledXpPerDamage":4,"status":"observed"},
+      "strength": {"modeledXpPerDamage":4,"status":"unverified"},
+      "defense": {"modeledXpPerDamage":4,"status":"unverified"},
+      "ranged": {"modeledXpPerDamage":4,"status":"unverified"},
+      "evilMagic": {"modeledXpPerDamage":4,"status":"unverified"}
+    }
+  }
 }

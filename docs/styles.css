@@ -413,6 +413,7 @@ a.player-gear-slot:hover { border-color: #568d76; background: #192e38; }
 .comparison-spell-control { margin-bottom: 16px; }
 .activity-comparison-form > button { min-height: 44px; padding: 9px 16px; font-size: 16px; }
 .comparison-activity-icon { flex: none; object-fit: contain; image-rendering: pixelated; }
+.shop-card .game-sprite-frame { width: 56px; flex: none; }
 .comparison-location, .comparison-requirements { margin: 14px 0 0; color: #afc1cd; font-size: 14px; }
 .comparison-warning { padding: 9px 11px; border: 1px solid #735d38; border-radius: 6px; color: var(--amber); font-size: 14px; }
 .player-comparison-link { margin: 18px 0; }

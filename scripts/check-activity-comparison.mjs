@@ -43,6 +43,7 @@ const foes = [catalog.foes.mouse, catalog.foes.chicken];
 const ranged = compareCombat({ranged:10,defense:1}, {ranged:2,attackCooldown:3}, foes, {skill:"ranged", prepSeconds:0});
 near(ranged[0].hitChance, .76);
 assert.equal(ranged[0].maxHit, 3);
+assert.equal(ranged[0].xpRateStatus, "unverified", "A shared community-model rate must not become verified server behavior");
 const magic = compareCombat({evilMagic:1}, {}, foes, {skill:"evilMagic",spellMaxHit:2});
 near(magic[0].hitChance, .85);
 assert.equal(magic[0].maxHit, 2);

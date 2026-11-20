@@ -116,7 +116,7 @@ for(const [id,page]of wikiIds.items){const record=data.items[id]||data.appearanc
   table(page,"Combat drops",["Encounter","Quantity","Drop odds","Drop pool","Required item"],drops);
   const used=activities.filter(([,a])=>active(a)&&typeof a.inventoryChanges?.[id]==="number"&&a.inventoryChanges[id]<0);
   table(page,"Used in activities",["Activity","Requirements","Amount used"],used.map(([key,a])=>[title(a.name),skillName(key.split("/")[0])+" "+a.level,String(-a.inventoryChanges[id])]),{collapsed:true});
-  const shops=Object.values(data.shops).filter(shop=>shop.items?.some(stock=>stock===id||stock===record.category||stock==="arrows"&&id.endsWith("Arrows")));
+  const shops=Object.values(data.shops).filter(shop=>shop.items?.includes(id));
   table(page,"Shops",["Shop","Location","Purchase price"],shops.map(shop=>[shop.name,locationsOf(shop.id).map(([id])=>locationName(id)).join(" · ")||locationsOf(shop.entityType).map(([id])=>locationName(id)).join(" · "),Number.isFinite(record.value)?Math.floor(record.value*(shop.specificItemBuyMultipliers?.[id]??shop.globalBuyMultiplier??1))+" coins":"Not specified"]));
   if(!page.summary)page.summary=page.title+" · "+title(record.category||"appearance")+".";
   if(produced.some(([,a])=>active(a))||drops.length||shops.length){page.availabilityStatus="documented-source";page.sections=(page.sections||[]).filter(([heading])=>!["Availability","Current build status"].includes(heading));}

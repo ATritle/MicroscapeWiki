@@ -1107,9 +1107,10 @@
     "sourceUrl": "https://microscape.miraheze.org/wiki/Items/the_Julian",
     "related": [
       "defense",
-      "orock-west"
+      "orock-west",
+      "shop-joans-garments"
     ],
-    "statsDate": "2026-11-19",
+    "statsDate": "2026-11-20",
     "facts": [
       [
         "In-game name",
@@ -1143,19 +1144,30 @@
         "rows": [
           [
             "Joan's Garments",
-            "O’Rock West",
-            "2820 coins"
+            "O’Rock West (area)",
+            "2,820 coins"
           ]
         ],
         "links": [
           [
-            "O’Rock West",
+            "Joan's Garments",
+            "shop-joans-garments"
+          ],
+          [
+            "O’Rock West (area)",
             "orock-west"
           ]
+        ],
+        "listColumns": [
+          1
         ]
       }
     ],
     "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
       [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
@@ -1440,27 +1452,6 @@
             "130",
             "34s",
             "Deprecated; still listed"
-          ]
-        ]
-      },
-      {
-        "title": "Shops",
-        "columns": [
-          "Shop",
-          "Location",
-          "Purchase price"
-        ],
-        "rows": [
-          [
-            "Rodrigo's Arrows",
-            "O’Rock West",
-            "36 coins"
-          ]
-        ],
-        "links": [
-          [
-            "O’Rock West",
-            "orock-west"
           ]
         ]
       }
@@ -2539,9 +2530,10 @@
     "sourceUrl": "https://microscape.miraheze.org/wiki/Items/Adventurer's_Clothes",
     "related": [
       "defense",
-      "orock-west"
+      "orock-west",
+      "shop-joans-garments"
     ],
-    "statsDate": "2026-11-19",
+    "statsDate": "2026-11-20",
     "facts": [
       [
         "In-game name",
@@ -2575,19 +2567,30 @@
         "rows": [
           [
             "Joan's Garments",
-            "O’Rock West",
+            "O’Rock West (area)",
             "600 coins"
           ]
         ],
         "links": [
           [
-            "O’Rock West",
+            "Joan's Garments",
+            "shop-joans-garments"
+          ],
+          [
+            "O’Rock West (area)",
             "orock-west"
           ]
+        ],
+        "listColumns": [
+          1
         ]
       }
     ],
     "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
       [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
@@ -2914,7 +2917,7 @@
     "sourceDate": "2026-09-27",
     "sourceTitle": "Items",
     "sourceUrl": "https://microscape.miraheze.org/wiki/Items",
-    "statsDate": "2026-11-19",
+    "statsDate": "2026-11-20",
     "facts": [
       [
         "In-game name",
@@ -3051,27 +3054,35 @@
         "rows": [
           [
             "Merric's Magic Shop",
-            "Merric’s Magic Shop",
+            "Merric’s Magic Shop (area)",
             "3 coins"
           ]
         ],
         "links": [
           [
             "Merric's Magic Shop",
-            "merrics-magic-shop"
+            "shop-merrics-magic"
           ],
           [
-            "Merric’s Magic Shop",
+            "Merric’s Magic Shop (area)",
             "merrics-magic-shop"
           ]
+        ],
+        "listColumns": [
+          1
         ]
       }
     ],
     "related": [
       "corrupted-druid",
-      "ice-giant"
+      "ice-giant",
+      "shop-merrics-magic"
     ],
     "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
       [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
@@ -3320,6 +3331,30 @@
         ],
         "links": [
           [
+            "General Store",
+            "shop-general-store"
+          ],
+          [
+            "Shopkeeper",
+            "shop-general-store"
+          ],
+          [
+            "Azar's Glovecraft",
+            "vendor-glovecrafter"
+          ],
+          [
+            "Azar's Glovecraft",
+            "vendor-glovecrafter"
+          ],
+          [
+            "Hide Tanner",
+            "vendor-hide-tanner"
+          ],
+          [
+            "Tanner",
+            "vendor-hide-tanner"
+          ],
+          [
             "Bucket",
             "bucket"
           ],
@@ -3424,7 +3459,10 @@
       "leather-gloves",
       "ashes",
       "snakeskin-scales",
-      "giant-plume"
+      "giant-plume",
+      "shop-general-store",
+      "vendor-glovecrafter",
+      "vendor-hide-tanner"
     ],
     "mapImage": {
       "src": "https://microscape.cc/play/assets/al-sahra-C_R4-0Qe.png",
@@ -4582,9 +4620,10 @@
     "sourceUrl": "https://microscape.miraheze.org/wiki/Items/Apron",
     "related": [
       "defense",
-      "orock-west"
+      "orock-west",
+      "shop-joans-garments"
     ],
-    "statsDate": "2026-11-19",
+    "statsDate": "2026-11-20",
     "facts": [
       [
         "In-game name",
@@ -4618,19 +4657,30 @@
         "rows": [
           [
             "Joan's Garments",
-            "O’Rock West",
+            "O’Rock West (area)",
             "150 coins"
           ]
         ],
         "links": [
           [
-            "O’Rock West",
+            "Joan's Garments",
+            "shop-joans-garments"
+          ],
+          [
+            "O’Rock West (area)",
             "orock-west"
           ]
+        ],
+        "listColumns": [
+          1
         ]
       }
     ],
     "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
       [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
@@ -7411,7 +7461,7 @@
     "sourceDate": "2026-09-27",
     "sourceTitle": "Items",
     "sourceUrl": "https://microscape.miraheze.org/wiki/Items",
-    "statsDate": "2026-11-19",
+    "statsDate": "2026-11-20",
     "facts": [
       [
         "Hands",
@@ -7535,15 +7585,22 @@
         "rows": [
           [
             "Braff's Staves",
-            "Merric’s Magic Shop",
-            "1176 coins"
+            "Merric’s Magic Shop (area)",
+            "1,176 coins"
           ]
         ],
         "links": [
           [
-            "Merric’s Magic Shop",
+            "Braff's Staves",
+            "shop-braffs-staves"
+          ],
+          [
+            "Merric’s Magic Shop (area)",
             "merrics-magic-shop"
           ]
+        ],
+        "listColumns": [
+          1
         ]
       }
     ],
@@ -7555,9 +7612,14 @@
       "mar-sigil",
       "del-sigil",
       "magic-logs",
-      "progrite-bar"
+      "progrite-bar",
+      "shop-braffs-staves"
     ],
     "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
       [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
@@ -12421,9 +12483,10 @@
       "ranged",
       "fletching",
       "bow-u",
-      "bow-string"
+      "bow-string",
+      "shop-rodrigos-arrows"
     ],
-    "statsDate": "2026-11-19",
+    "statsDate": "2026-11-20",
     "facts": [
       [
         "Hands",
@@ -12490,19 +12553,30 @@
         "rows": [
           [
             "Rodrigo's Arrows",
-            "O’Rock West",
+            "O’Rock West (area)",
             "18 coins"
           ]
         ],
         "links": [
           [
-            "O’Rock West",
+            "Rodrigo's Arrows",
+            "shop-rodrigos-arrows"
+          ],
+          [
+            "O’Rock West (area)",
             "orock-west"
           ]
+        ],
+        "listColumns": [
+          1
         ]
       }
     ],
     "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
       [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
@@ -13318,9 +13392,10 @@
       "defense",
       "smithing",
       "bronze-bar",
-      "fencewell-bridge"
+      "fencewell-bridge",
+      "shop-germairs-clads"
     ],
-    "statsDate": "2026-11-19",
+    "statsDate": "2026-11-20",
     "facts": [
       [
         "In-game name",
@@ -13379,19 +13454,30 @@
         "rows": [
           [
             "Germair's Clads",
-            "Fencewell Bridge",
+            "Fencewell Bridge (area)",
             "80 coins"
           ]
         ],
         "links": [
           [
-            "Fencewell Bridge",
+            "Germair's Clads",
+            "shop-germairs-clads"
+          ],
+          [
+            "Fencewell Bridge (area)",
             "fencewell-bridge"
           ]
+        ],
+        "listColumns": [
+          1
         ]
       }
     ],
     "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
       [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
@@ -13457,7 +13543,7 @@
     "sourceDate": "2026-09-27",
     "sourceTitle": "Items",
     "sourceUrl": "https://microscape.miraheze.org/wiki/Items",
-    "statsDate": "2026-11-19",
+    "statsDate": "2026-11-20",
     "facts": [
       [
         "Bonuses",
@@ -13551,15 +13637,22 @@
         "rows": [
           [
             "Rodrigo's Arrows",
-            "O’Rock West",
+            "O’Rock West (area)",
             "6 coins"
           ]
         ],
         "links": [
           [
-            "O’Rock West",
+            "Rodrigo's Arrows",
+            "shop-rodrigos-arrows"
+          ],
+          [
+            "O’Rock West (area)",
             "orock-west"
           ]
+        ],
+        "listColumns": [
+          1
         ]
       }
     ],
@@ -13568,9 +13661,14 @@
       "arrow-shafts",
       "feather",
       "bronze-arrowtips",
-      "goblin"
+      "goblin",
+      "shop-rodrigos-arrows"
     ],
     "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
       [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
@@ -14068,7 +14166,7 @@
     "sourceDate": "2026-09-27",
     "sourceTitle": "Items",
     "sourceUrl": "https://microscape.miraheze.org/wiki/Items",
-    "statsDate": "2026-11-19",
+    "statsDate": "2026-11-20",
     "facts": [
       [
         "In-game name",
@@ -14151,24 +14249,36 @@
         "rows": [
           [
             "Germair's Clads",
-            "Fencewell Bridge",
+            "Fencewell Bridge (area)",
             "16 coins"
           ]
         ],
         "links": [
           [
-            "Fencewell Bridge",
+            "Germair's Clads",
+            "shop-germairs-clads"
+          ],
+          [
+            "Fencewell Bridge (area)",
             "fencewell-bridge"
           ]
+        ],
+        "listColumns": [
+          1
         ]
       }
     ],
     "related": [
       "attack",
       "smithing",
-      "bronze-bar"
+      "bronze-bar",
+      "shop-germairs-clads"
     ],
     "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
       [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
@@ -14572,9 +14682,10 @@
       "defense",
       "smithing",
       "bronze-bar",
-      "fencewell-bridge"
+      "fencewell-bridge",
+      "shop-germairs-clads"
     ],
-    "statsDate": "2026-11-19",
+    "statsDate": "2026-11-20",
     "facts": [
       [
         "In-game name",
@@ -14633,19 +14744,30 @@
         "rows": [
           [
             "Germair's Clads",
-            "Fencewell Bridge",
+            "Fencewell Bridge (area)",
             "16 coins"
           ]
         ],
         "links": [
           [
-            "Fencewell Bridge",
+            "Germair's Clads",
+            "shop-germairs-clads"
+          ],
+          [
+            "Fencewell Bridge (area)",
             "fencewell-bridge"
           ]
+        ],
+        "listColumns": [
+          1
         ]
       }
     ],
     "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
       [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
@@ -15068,9 +15190,10 @@
       "defense",
       "smithing",
       "bronze-bar",
-      "fencewell-bridge"
+      "fencewell-bridge",
+      "shop-germairs-clads"
     ],
-    "statsDate": "2026-11-19",
+    "statsDate": "2026-11-20",
     "facts": [
       [
         "In-game name",
@@ -15129,19 +15252,30 @@
         "rows": [
           [
             "Germair's Clads",
-            "Fencewell Bridge",
+            "Fencewell Bridge (area)",
             "32 coins"
           ]
         ],
         "links": [
           [
-            "Fencewell Bridge",
+            "Germair's Clads",
+            "shop-germairs-clads"
+          ],
+          [
+            "Fencewell Bridge (area)",
             "fencewell-bridge"
           ]
+        ],
+        "listColumns": [
+          1
         ]
       }
     ],
     "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
       [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
@@ -15621,7 +15755,7 @@
     "sourceDate": "2026-09-27",
     "sourceTitle": "Items",
     "sourceUrl": "https://microscape.miraheze.org/wiki/Items",
-    "statsDate": "2026-11-19",
+    "statsDate": "2026-11-20",
     "facts": [
       [
         "In-game name",
@@ -15801,15 +15935,22 @@
         "rows": [
           [
             "General Store",
-            "Al-Sahra",
+            "Al-Sahra (area)",
             "3 coins"
           ]
         ],
         "links": [
           [
-            "Al-Sahra",
+            "General Store",
+            "shop-general-store"
+          ],
+          [
+            "Al-Sahra (area)",
             "al-sahra"
           ]
+        ],
+        "listColumns": [
+          1
         ]
       }
     ],
@@ -15825,9 +15966,14 @@
       "fire-dwarf-gloves",
       "air-rune",
       "coins",
-      "imp"
+      "imp",
+      "shop-general-store"
     ],
     "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
       [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
@@ -17043,7 +17189,7 @@
     "sourceDate": "2026-09-27",
     "sourceTitle": "Items",
     "sourceUrl": "https://microscape.miraheze.org/wiki/Items",
-    "statsDate": "2026-11-19",
+    "statsDate": "2026-11-20",
     "facts": [
       [
         "In-game name",
@@ -17149,19 +17295,22 @@
         "rows": [
           [
             "Merric's Magic Shop",
-            "Merric’s Magic Shop",
+            "Merric’s Magic Shop (area)",
             "9 coins"
           ]
         ],
         "links": [
           [
             "Merric's Magic Shop",
-            "merrics-magic-shop"
+            "shop-merrics-magic"
           ],
           [
-            "Merric’s Magic Shop",
+            "Merric’s Magic Shop (area)",
             "merrics-magic-shop"
           ]
+        ],
+        "listColumns": [
+          1
         ]
       }
     ],
@@ -17170,9 +17319,14 @@
       "greater-demon",
       "gurgle",
       "ice-warrior",
-      "tomb-sorcerer"
+      "tomb-sorcerer",
+      "shop-merrics-magic"
     ],
     "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
       [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
@@ -17345,15 +17499,22 @@
         "rows": [
           [
             "Ava's Cookery",
-            "Manor Kitchen",
+            "Manor Kitchen (area)",
             "75 coins"
           ]
         ],
         "links": [
           [
-            "Manor Kitchen",
+            "Ava's Cookery",
+            "shop-avas-cookery"
+          ],
+          [
+            "Manor Kitchen (area)",
             "manor-kitchen"
           ]
+        ],
+        "listColumns": [
+          1
         ]
       }
     ],
@@ -17362,9 +17523,10 @@
       "goblin",
       "defense",
       "cooking",
-      "manor-kitchen"
+      "manor-kitchen",
+      "shop-avas-cookery"
     ],
-    "statsDate": "2026-11-19",
+    "statsDate": "2026-11-20",
     "facts": [
       [
         "In-game name",
@@ -17396,6 +17558,10 @@
       ]
     ],
     "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
       [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
@@ -17743,7 +17909,7 @@
     "sourceDate": "2026-09-27",
     "sourceTitle": "Items",
     "sourceUrl": "https://microscape.miraheze.org/wiki/Items",
-    "statsDate": "2026-11-19",
+    "statsDate": "2026-11-20",
     "facts": [
       [
         "In-game name",
@@ -17829,22 +17995,34 @@
         "rows": [
           [
             "Ava's Cookery",
-            "Manor Kitchen",
+            "Manor Kitchen (area)",
             "52 coins"
           ]
         ],
         "links": [
           [
-            "Manor Kitchen",
+            "Ava's Cookery",
+            "shop-avas-cookery"
+          ],
+          [
+            "Manor Kitchen (area)",
             "manor-kitchen"
           ]
+        ],
+        "listColumns": [
+          1
         ]
       }
     ],
     "related": [
-      "monk"
+      "monk",
+      "shop-avas-cookery"
     ],
     "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
       [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
@@ -20829,7 +21007,7 @@
     "sourceDate": "2026-09-27",
     "sourceTitle": "Items",
     "sourceUrl": "https://microscape.miraheze.org/wiki/Items",
-    "statsDate": "2026-11-19",
+    "statsDate": "2026-11-20",
     "facts": [
       [
         "In-game name",
@@ -20875,20 +21053,33 @@
         "rows": [
           [
             "Ava's Cookery",
-            "Manor Kitchen",
+            "Manor Kitchen (area)",
             "9 coins"
           ]
         ],
         "links": [
           [
-            "Manor Kitchen",
+            "Ava's Cookery",
+            "shop-avas-cookery"
+          ],
+          [
+            "Manor Kitchen (area)",
             "manor-kitchen"
           ]
+        ],
+        "listColumns": [
+          1
         ]
       }
     ],
-    "related": [],
+    "related": [
+      "shop-avas-cookery"
+    ],
     "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
       [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
@@ -21508,7 +21699,7 @@
     "sourceDate": "2026-09-27",
     "sourceTitle": "Items",
     "sourceUrl": "https://microscape.miraheze.org/wiki/Items",
-    "statsDate": "2026-11-19",
+    "statsDate": "2026-11-20",
     "facts": [
       [
         "In-game name",
@@ -21637,26 +21828,34 @@
         "rows": [
           [
             "Merric's Magic Shop",
-            "Merric’s Magic Shop",
+            "Merric’s Magic Shop (area)",
             "12 coins"
           ]
         ],
         "links": [
           [
             "Merric's Magic Shop",
-            "merrics-magic-shop"
+            "shop-merrics-magic"
           ],
           [
-            "Merric’s Magic Shop",
+            "Merric’s Magic Shop (area)",
             "merrics-magic-shop"
           ]
+        ],
+        "listColumns": [
+          1
         ]
       }
     ],
     "related": [
-      "tomb-sorcerer"
+      "tomb-sorcerer",
+      "shop-merrics-magic"
     ],
     "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
       [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
@@ -24579,9 +24778,10 @@
     "sourceUrl": "https://microscape.miraheze.org/wiki/Items/Dapper_Outfit",
     "related": [
       "defense",
-      "orock-west"
+      "orock-west",
+      "shop-joans-garments"
     ],
-    "statsDate": "2026-11-19",
+    "statsDate": "2026-11-20",
     "facts": [
       [
         "In-game name",
@@ -24615,19 +24815,30 @@
         "rows": [
           [
             "Joan's Garments",
-            "O’Rock West",
-            "1230 coins"
+            "O’Rock West (area)",
+            "1,230 coins"
           ]
         ],
         "links": [
           [
-            "O’Rock West",
+            "Joan's Garments",
+            "shop-joans-garments"
+          ],
+          [
+            "O’Rock West (area)",
             "orock-west"
           ]
+        ],
+        "listColumns": [
+          1
         ]
       }
     ],
     "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
       [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
@@ -25213,7 +25424,7 @@
     "sourceDate": "2026-09-27",
     "sourceTitle": "Items",
     "sourceUrl": "https://microscape.miraheze.org/wiki/Items",
-    "statsDate": "2026-11-19",
+    "statsDate": "2026-11-20",
     "facts": [
       [
         "In-game name",
@@ -25389,19 +25600,22 @@
         "rows": [
           [
             "Merric's Magic Shop",
-            "Merric’s Magic Shop",
+            "Merric’s Magic Shop (area)",
             "15 coins"
           ]
         ],
         "links": [
           [
             "Merric's Magic Shop",
-            "merrics-magic-shop"
+            "shop-merrics-magic"
           ],
           [
-            "Merric’s Magic Shop",
+            "Merric’s Magic Shop (area)",
             "merrics-magic-shop"
           ]
+        ],
+        "listColumns": [
+          1
         ]
       }
     ],
@@ -25416,9 +25630,14 @@
       "king-onyx-dragon",
       "lesser-demon",
       "mummy",
-      "tomb-sorcerer"
+      "tomb-sorcerer",
+      "shop-merrics-magic"
     ],
     "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
       [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
@@ -26901,9 +27120,10 @@
     "sourceUrl": "https://microscape.miraheze.org/wiki/Items/Desert_Robes",
     "related": [
       "defense",
-      "orock-west"
+      "orock-west",
+      "shop-joans-garments"
     ],
-    "statsDate": "2026-11-19",
+    "statsDate": "2026-11-20",
     "facts": [
       [
         "In-game name",
@@ -26937,19 +27157,30 @@
         "rows": [
           [
             "Joan's Garments",
-            "O’Rock West",
+            "O’Rock West (area)",
             "600 coins"
           ]
         ],
         "links": [
           [
-            "O’Rock West",
+            "Joan's Garments",
+            "shop-joans-garments"
+          ],
+          [
+            "O’Rock West (area)",
             "orock-west"
           ]
+        ],
+        "listColumns": [
+          1
         ]
       }
     ],
     "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
       [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
@@ -30451,6 +30682,16 @@
             "Dungeon coin exchange",
             "Search For Gems · Search For Armor · Search For Relics · Search For Swords · Search For Large Weapons"
           ]
+        ],
+        "links": [
+          [
+            "Scorched Chest",
+            "exchange-scorched-chest"
+          ],
+          [
+            "Dungeon reward chest",
+            "exchange-scorched-chest"
+          ]
         ]
       },
       {
@@ -30522,7 +30763,8 @@
       "dread-mount-onyx-antechamber",
       "king-onyx-dragon",
       "dungeon-key",
-      "dragon-whelp"
+      "dragon-whelp",
+      "exchange-scorched-chest"
     ],
     "summary": "Explore Dread Mount Onyx Lair; current enemies, services, training spots and travel details are listed below.",
     "gameId": "dread-mount-onyx-lair"
@@ -32871,7 +33113,8 @@
       "cockatrice",
       "snake-eggs",
       "sandworm",
-      "c-carcass"
+      "c-carcass",
+      "vendor-sirocco"
     ],
     "mapImage": {
       "src": "https://microscape.cc/play/assets/elshand-temple-ruins-ClaZX-Mv.png",
@@ -32994,6 +33237,16 @@
             "Sirocco",
             "NPC",
             "Brew Vial Of Poison"
+          ]
+        ],
+        "links": [
+          [
+            "Sirocco",
+            "vendor-sirocco"
+          ],
+          [
+            "Sirocco",
+            "vendor-sirocco"
           ]
         ]
       },
@@ -36333,6 +36586,16 @@
             "NPC",
             "Missed The Party? · Financial Troubles"
           ]
+        ],
+        "links": [
+          [
+            "Sir Bratley",
+            "vendor-sir-bratley"
+          ],
+          [
+            "Sir Bratley",
+            "vendor-sir-bratley"
+          ]
         ]
       },
       {
@@ -36362,7 +36625,8 @@
     "related": [
       "falcrest-reach-temple",
       "dragon-shield-right-half",
-      "consolation-hat"
+      "consolation-hat",
+      "vendor-sir-bratley"
     ],
     "summary": "Visit Sir Bratley.",
     "npcSprites": [
@@ -36631,6 +36895,30 @@
         ],
         "links": [
           [
+            "Brother Eustace's Shop",
+            "shop-brother-eustace"
+          ],
+          [
+            "Brother Eustace",
+            "shop-brother-eustace"
+          ],
+          [
+            "Brother Alep",
+            "vendor-brother-alep"
+          ],
+          [
+            "Brother Alep",
+            "vendor-brother-alep"
+          ],
+          [
+            "Brother Pela",
+            "vendor-brother-pela"
+          ],
+          [
+            "Brother Pela",
+            "vendor-brother-pela"
+          ],
+          [
             "Monk's Robe",
             "monks-robe"
           ]
@@ -36681,7 +36969,10 @@
       "time-crystal",
       "bazaar-permit",
       "piety",
-      "crafting"
+      "crafting",
+      "shop-brother-eustace",
+      "vendor-brother-alep",
+      "vendor-brother-pela"
     ],
     "summary": "Visit for Crafting, Piety.",
     "npcSprites": [
@@ -36915,7 +37206,7 @@
     "sourceDate": "2026-09-27",
     "sourceTitle": "Items",
     "sourceUrl": "https://microscape.miraheze.org/wiki/Items",
-    "statsDate": "2026-11-19",
+    "statsDate": "2026-11-20",
     "facts": [
       [
         "In-game name",
@@ -37101,15 +37392,22 @@
         "rows": [
           [
             "Old David's Shop",
-            "Solace Shoals",
+            "Solace Shoals (area)",
             "3 coins"
           ]
         ],
         "links": [
           [
-            "Solace Shoals",
+            "Old David's Shop",
+            "shop-fishing-gear-shop"
+          ],
+          [
+            "Solace Shoals (area)",
             "solace-shoals"
           ]
+        ],
+        "listColumns": [
+          1
         ]
       }
     ],
@@ -37117,9 +37415,14 @@
       "crafting",
       "giant-plume",
       "chicken",
-      "turkey"
+      "turkey",
+      "shop-fishing-gear-shop"
     ],
     "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
       [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
@@ -38121,6 +38424,24 @@
             "NPC",
             "Otis's Kitchen Map · Otis's Fireside Map · Otis's Monastery Map · Otis's Spellbound Map · Otis's Riverbank Map · Otis's Quarry Map · Otis's Bowyer Map · Otis's Herb Garden Map · Otis's Smithy Map · Otis's Workbench Map · Otis's Timber Grove Map"
           ]
+        ],
+        "links": [
+          [
+            "Mork",
+            "vendor-mork"
+          ],
+          [
+            "Mork",
+            "vendor-mork"
+          ],
+          [
+            "Otis",
+            "vendor-otis"
+          ],
+          [
+            "Otis",
+            "vendor-otis"
+          ]
         ]
       },
       {
@@ -38177,7 +38498,9 @@
       "fellroot-swamp",
       "pets",
       "woodcutting",
-      "fishing"
+      "fishing",
+      "vendor-mork",
+      "vendor-otis"
     ],
     "npcSprites": [
       {
@@ -38277,6 +38600,14 @@
           ]
         ],
         "links": [
+          [
+            "Germair's Clads",
+            "shop-germairs-clads"
+          ],
+          [
+            "Germair",
+            "shop-germairs-clads"
+          ],
           [
             "Bronze Armor",
             "bronze-armor"
@@ -38406,7 +38737,8 @@
       "raw-shrimp",
       "food",
       "copper-ore",
-      "tin-ore"
+      "tin-ore",
+      "shop-germairs-clads"
     ],
     "mapImage": {
       "src": "https://microscape.cc/play/assets/fencewell-bridge-CuIi6Sws.png",
@@ -40269,7 +40601,7 @@
     "sourceDate": "2026-09-27",
     "sourceTitle": "Items",
     "sourceUrl": "https://microscape.miraheze.org/wiki/Items",
-    "statsDate": "2026-11-19",
+    "statsDate": "2026-11-20",
     "facts": [
       [
         "In-game name",
@@ -40454,19 +40786,22 @@
         "rows": [
           [
             "Merric's Magic Shop",
-            "Merric’s Magic Shop",
+            "Merric’s Magic Shop (area)",
             "3 coins"
           ]
         ],
         "links": [
           [
             "Merric's Magic Shop",
-            "merrics-magic-shop"
+            "shop-merrics-magic"
           ],
           [
-            "Merric’s Magic Shop",
+            "Merric’s Magic Shop (area)",
             "merrics-magic-shop"
           ]
+        ],
+        "listColumns": [
+          1
         ]
       }
     ],
@@ -40477,9 +40812,14 @@
       "lesser-demon",
       "magma-hound",
       "mummy",
-      "tomb-sorcerer"
+      "tomb-sorcerer",
+      "shop-merrics-magic"
     ],
     "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
       [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
@@ -46738,7 +47078,7 @@
     "sourceDate": "2026-09-27",
     "sourceTitle": "Items",
     "sourceUrl": "https://microscape.miraheze.org/wiki/Items",
-    "statsDate": "2026-11-19",
+    "statsDate": "2026-11-20",
     "facts": [
       [
         "In-game name",
@@ -46790,20 +47130,33 @@
         "rows": [
           [
             "Ava's Cookery",
-            "Manor Kitchen",
+            "Manor Kitchen (area)",
             "3 coins"
           ]
         ],
         "links": [
           [
-            "Manor Kitchen",
+            "Ava's Cookery",
+            "shop-avas-cookery"
+          ],
+          [
+            "Manor Kitchen (area)",
             "manor-kitchen"
           ]
+        ],
+        "listColumns": [
+          1
         ]
       }
     ],
-    "related": [],
+    "related": [
+      "shop-avas-cookery"
+    ],
     "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
       [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
@@ -50784,6 +51137,16 @@
             "Dungeon coin exchange",
             "Search For Trinkets · Search For Hats · Search For Robes · Search For Boots · Search For Shields"
           ]
+        ],
+        "links": [
+          [
+            "Bloodied Chest",
+            "exchange-bloodied-chest"
+          ],
+          [
+            "Dungeon reward chest",
+            "exchange-bloodied-chest"
+          ]
         ]
       },
       {
@@ -50857,7 +51220,8 @@
       "morvane",
       "dungeon-key",
       "iskarn",
-      "pyrax"
+      "pyrax",
+      "exchange-bloodied-chest"
     ],
     "summary": "Explore Havendell Lair; current enemies, services, training spots and travel details are listed below.",
     "gameId": "havendell-lair"
@@ -59058,7 +59422,7 @@
     "sourceDate": "2026-09-27",
     "sourceTitle": "Items",
     "sourceUrl": "https://microscape.miraheze.org/wiki/Items",
-    "statsDate": "2026-11-19",
+    "statsDate": "2026-11-20",
     "facts": [
       [
         "In-game name",
@@ -59204,19 +59568,22 @@
         "rows": [
           [
             "Merric's Magic Shop",
-            "Merric’s Magic Shop",
+            "Merric’s Magic Shop (area)",
             "27 coins"
           ]
         ],
         "links": [
           [
             "Merric's Magic Shop",
-            "merrics-magic-shop"
+            "shop-merrics-magic"
           ],
           [
-            "Merric’s Magic Shop",
+            "Merric’s Magic Shop (area)",
             "merrics-magic-shop"
           ]
+        ],
+        "listColumns": [
+          1
         ]
       }
     ],
@@ -59227,9 +59594,14 @@
       "corrupted-druid",
       "druid-warrior",
       "ice-warrior",
-      "king-onyx-dragon"
+      "king-onyx-dragon",
+      "shop-merrics-magic"
     ],
     "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
       [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
@@ -62227,6 +62599,22 @@
         ],
         "links": [
           [
+            "Ava's Cookery",
+            "shop-avas-cookery"
+          ],
+          [
+            "Ava",
+            "shop-avas-cookery"
+          ],
+          [
+            "Hadley",
+            "vendor-hadley"
+          ],
+          [
+            "Hadley",
+            "vendor-hadley"
+          ],
+          [
             "Chef's Hat",
             "chefs-hat"
           ],
@@ -62343,7 +62731,9 @@
       "bucket",
       "al-sahra",
       "chefs-hat",
-      "cooking-apple"
+      "cooking-apple",
+      "shop-avas-cookery",
+      "vendor-hadley"
     ],
     "mapImage": {
       "src": "https://microscape.cc/play/assets/manor-kitchen-BTAj6lOV.png",
@@ -63058,6 +63448,16 @@
             "NPC",
             "Talk to this character in-game"
           ]
+        ],
+        "links": [
+          [
+            "Marcel the Stylist",
+            "vendor-hair-stylist"
+          ],
+          [
+            "Marcel the Stylist",
+            "vendor-hair-stylist"
+          ]
         ]
       },
       {
@@ -63079,7 +63479,8 @@
       }
     ],
     "related": [
-      "orock-west"
+      "orock-west",
+      "vendor-hair-stylist"
     ],
     "summary": "Visit Marcel the Stylist.",
     "npcSprites": [
@@ -63574,6 +63975,22 @@
         ],
         "links": [
           [
+            "Braff's Staves",
+            "shop-braffs-staves"
+          ],
+          [
+            "Braff",
+            "shop-braffs-staves"
+          ],
+          [
+            "Merric's Magic Shop",
+            "shop-merrics-magic"
+          ],
+          [
+            "Merric",
+            "shop-merrics-magic"
+          ],
+          [
             "Battlestaff",
             "battlestaff"
           ],
@@ -63656,7 +64073,9 @@
     "related": [
       "falcrest-reach-temple",
       "piety",
-      "firemaking"
+      "firemaking",
+      "shop-braffs-staves",
+      "shop-merrics-magic"
     ],
     "summary": "Visit for Firemaking, Piety.",
     "npcSprites": [
@@ -63710,7 +64129,7 @@
     "sourceDate": "2026-09-27",
     "sourceTitle": "Items",
     "sourceUrl": "https://microscape.miraheze.org/wiki/Items",
-    "statsDate": "2026-11-19",
+    "statsDate": "2026-11-20",
     "facts": [
       [
         "In-game name",
@@ -63787,28 +64206,36 @@
         "rows": [
           [
             "Merric's Magic Shop",
-            "Merric’s Magic Shop",
+            "Merric’s Magic Shop (area)",
             "6 coins"
           ]
         ],
         "links": [
           [
             "Merric's Magic Shop",
-            "merrics-magic-shop"
+            "shop-merrics-magic"
           ],
           [
-            "Merric’s Magic Shop",
+            "Merric’s Magic Shop (area)",
             "merrics-magic-shop"
           ]
+        ],
+        "listColumns": [
+          1
         ]
       }
     ],
     "related": [
       "corrupted-druid",
       "goblin",
-      "skeleton"
+      "skeleton",
+      "shop-merrics-magic"
     ],
     "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
       [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
@@ -64702,27 +65129,6 @@
             "98",
             "34s",
             "Deprecated; still listed"
-          ]
-        ]
-      },
-      {
-        "title": "Shops",
-        "columns": [
-          "Shop",
-          "Location",
-          "Purchase price"
-        ],
-        "rows": [
-          [
-            "Rodrigo's Arrows",
-            "O’Rock West",
-            "24 coins"
-          ]
-        ],
-        "links": [
-          [
-            "O’Rock West",
-            "orock-west"
           ]
         ]
       }
@@ -66918,7 +67324,7 @@
     "sourceDate": "2026-09-27",
     "sourceTitle": "Items",
     "sourceUrl": "https://microscape.miraheze.org/wiki/Items",
-    "statsDate": "2026-11-19",
+    "statsDate": "2026-11-20",
     "facts": [
       [
         "In-game name",
@@ -66985,15 +67391,22 @@
         "rows": [
           [
             "Brother Eustace's Shop",
-            "Falcrest Reach Temple",
+            "Falcrest Reach Temple (area)",
             "360 coins"
           ]
         ],
         "links": [
           [
-            "Falcrest Reach Temple",
+            "Brother Eustace's Shop",
+            "shop-brother-eustace"
+          ],
+          [
+            "Falcrest Reach Temple (area)",
             "falcrest-reach-temple"
           ]
+        ],
+        "listColumns": [
+          1
         ]
       }
     ],
@@ -67001,9 +67414,14 @@
       "burst-of-strength",
       "clarity-of-thought",
       "piety",
-      "monk"
+      "monk",
+      "shop-brother-eustace"
     ],
     "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
       [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
@@ -68562,7 +68980,7 @@
     "sourceDate": "2026-09-27",
     "sourceTitle": "Items",
     "sourceUrl": "https://microscape.miraheze.org/wiki/Items",
-    "statsDate": "2026-11-19",
+    "statsDate": "2026-11-20",
     "facts": [
       [
         "In-game name",
@@ -68733,19 +69151,22 @@
         "rows": [
           [
             "Merric's Magic Shop",
-            "Merric’s Magic Shop",
+            "Merric’s Magic Shop (area)",
             "24 coins"
           ]
         ],
         "links": [
           [
             "Merric's Magic Shop",
-            "merrics-magic-shop"
+            "shop-merrics-magic"
           ],
           [
-            "Merric’s Magic Shop",
+            "Merric’s Magic Shop (area)",
             "merrics-magic-shop"
           ]
+        ],
+        "listColumns": [
+          1
         ]
       }
     ],
@@ -68761,9 +69182,14 @@
       "gurgle",
       "king-onyx-dragon",
       "moss-giant",
-      "sewer-crocodile"
+      "sewer-crocodile",
+      "shop-merrics-magic"
     ],
     "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
       [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
@@ -69913,6 +70339,22 @@
         ],
         "links": [
           [
+            "Joan's Garments",
+            "shop-joans-garments"
+          ],
+          [
+            "Joan",
+            "shop-joans-garments"
+          ],
+          [
+            "Rodrigo's Arrows",
+            "shop-rodrigos-arrows"
+          ],
+          [
+            "Rodrigo",
+            "shop-rodrigos-arrows"
+          ],
+          [
             "Adventurer's Clothes",
             "adventurers-clothes"
           ],
@@ -70007,7 +70449,9 @@
       "smithing",
       "good-magic",
       "fletching",
-      "thick-skin"
+      "thick-skin",
+      "shop-joans-garments",
+      "shop-rodrigos-arrows"
     ],
     "mapImage": {
       "src": "https://microscape.cc/play/assets/rock-west-Kree2GTP.png",
@@ -70773,6 +71217,16 @@
             "NPC",
             "Adapt Dwarven Gloves"
           ]
+        ],
+        "links": [
+          [
+            "Thorgrim",
+            "vendor-thorgrim"
+          ],
+          [
+            "Thorgrim",
+            "vendor-thorgrim"
+          ]
         ]
       },
       {
@@ -70820,7 +71274,8 @@
       "heat-gloves",
       "imp",
       "fire-dwarf",
-      "mining"
+      "mining",
+      "vendor-thorgrim"
     ],
     "summary": "Explore Old Dwarven Tunnels; current enemies, services, training spots and travel details are listed below.",
     "npcSprites": [
@@ -76367,9 +76822,10 @@
       "kiln",
       "viking-village",
       "solace-glasshouse",
-      "pie-shell"
+      "pie-shell",
+      "shop-general-store"
     ],
-    "statsDate": "2026-11-19",
+    "statsDate": "2026-11-20",
     "facts": [
       [
         "In-game name",
@@ -76456,19 +76912,30 @@
         "rows": [
           [
             "General Store",
-            "Al-Sahra",
+            "Al-Sahra (area)",
             "6 coins"
           ]
         ],
         "links": [
           [
-            "Al-Sahra",
+            "General Store",
+            "shop-general-store"
+          ],
+          [
+            "Al-Sahra (area)",
             "al-sahra"
           ]
+        ],
+        "listColumns": [
+          1
         ]
       }
     ],
     "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
       [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
@@ -78128,7 +78595,7 @@
     "sourceDate": "2026-09-27",
     "sourceTitle": "Items",
     "sourceUrl": "https://microscape.miraheze.org/wiki/Items",
-    "statsDate": "2026-11-19",
+    "statsDate": "2026-11-20",
     "facts": [
       [
         "In-game name",
@@ -78240,15 +78707,22 @@
         "rows": [
           [
             "General Store",
-            "Al-Sahra",
+            "Al-Sahra (area)",
             "3 coins"
           ]
         ],
         "links": [
           [
-            "Al-Sahra",
+            "General Store",
+            "shop-general-store"
+          ],
+          [
+            "Al-Sahra (area)",
             "al-sahra"
           ]
+        ],
+        "listColumns": [
+          1
         ]
       }
     ],
@@ -78258,9 +78732,14 @@
       "flour-pot",
       "water-bucket",
       "unfired-pot",
-      "imp"
+      "imp",
+      "shop-general-store"
     ],
     "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
       [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
@@ -78309,7 +78788,7 @@
     "sourceDate": "2026-09-27",
     "sourceTitle": "Items",
     "sourceUrl": "https://microscape.miraheze.org/wiki/Items",
-    "statsDate": "2026-11-19",
+    "statsDate": "2026-11-20",
     "facts": [
       [
         "In-game name",
@@ -78351,23 +78830,35 @@
         "rows": [
           [
             "Joan's Garments",
-            "O’Rock West",
+            "O’Rock West (area)",
             "150 coins"
           ]
         ],
         "links": [
           [
-            "O’Rock West",
+            "Joan's Garments",
+            "shop-joans-garments"
+          ],
+          [
+            "O’Rock West (area)",
             "orock-west"
           ]
+        ],
+        "listColumns": [
+          1
         ]
       }
     ],
     "related": [
       "thick-skin",
-      "piety"
+      "piety",
+      "shop-joans-garments"
     ],
     "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
       [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
@@ -78776,27 +79267,6 @@
             "163",
             "34s",
             "Deprecated; still listed"
-          ]
-        ]
-      },
-      {
-        "title": "Shops",
-        "columns": [
-          "Shop",
-          "Location",
-          "Purchase price"
-        ],
-        "rows": [
-          [
-            "Rodrigo's Arrows",
-            "O’Rock West",
-            "48 coins"
-          ]
-        ],
-        "links": [
-          [
-            "O’Rock West",
-            "orock-west"
           ]
         ]
       }
@@ -84282,7 +84752,7 @@
     "sourceDate": "2026-09-27",
     "sourceTitle": "Items",
     "sourceUrl": "https://microscape.miraheze.org/wiki/Items",
-    "statsDate": "2026-11-19",
+    "statsDate": "2026-11-20",
     "facts": [
       [
         "In-game name",
@@ -84378,23 +84848,35 @@
         "rows": [
           [
             "Ava's Cookery",
-            "Manor Kitchen",
+            "Manor Kitchen (area)",
             "3 coins"
           ]
         ],
         "links": [
           [
-            "Manor Kitchen",
+            "Ava's Cookery",
+            "shop-avas-cookery"
+          ],
+          [
+            "Manor Kitchen (area)",
             "manor-kitchen"
           ]
+        ],
+        "listColumns": [
+          1
         ]
       }
     ],
     "related": [
       "cooking",
-      "bear"
+      "bear",
+      "shop-avas-cookery"
     ],
     "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
       [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
@@ -84665,7 +85147,7 @@
     "sourceDate": "2026-09-27",
     "sourceTitle": "Items",
     "sourceUrl": "https://microscape.miraheze.org/wiki/Items",
-    "statsDate": "2026-11-19",
+    "statsDate": "2026-11-20",
     "facts": [
       [
         "In-game name",
@@ -84699,20 +85181,33 @@
         "rows": [
           [
             "Joan's Garments",
-            "O’Rock West",
-            "9600 coins"
+            "O’Rock West (area)",
+            "9,600 coins"
           ]
         ],
         "links": [
           [
-            "O’Rock West",
+            "Joan's Garments",
+            "shop-joans-garments"
+          ],
+          [
+            "O’Rock West (area)",
             "orock-west"
           ]
+        ],
+        "listColumns": [
+          1
         ]
       }
     ],
-    "related": [],
+    "related": [
+      "shop-joans-garments"
+    ],
     "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
       [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
@@ -88499,7 +88994,7 @@
     "sourceDate": "2026-09-27",
     "sourceTitle": "Items",
     "sourceUrl": "https://microscape.miraheze.org/wiki/Items",
-    "statsDate": "2026-11-19",
+    "statsDate": "2026-11-20",
     "facts": [
       [
         "In-game name",
@@ -88533,20 +89028,33 @@
         "rows": [
           [
             "Joan's Garments",
-            "O’Rock West",
+            "O’Rock West (area)",
             "150 coins"
           ]
         ],
         "links": [
           [
-            "O’Rock West",
+            "Joan's Garments",
+            "shop-joans-garments"
+          ],
+          [
+            "O’Rock West (area)",
             "orock-west"
           ]
+        ],
+        "listColumns": [
+          1
         ]
       }
     ],
-    "related": [],
+    "related": [
+      "shop-joans-garments"
+    ],
     "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
       [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
@@ -88619,9 +89127,10 @@
       "raw-sardine",
       "lobster",
       "manta-ray",
-      "soda-ash"
+      "soda-ash",
+      "shop-avas-cookery"
     ],
-    "statsDate": "2026-11-19",
+    "statsDate": "2026-11-20",
     "facts": [
       [
         "In-game name",
@@ -88726,19 +89235,30 @@
         "rows": [
           [
             "Ava's Cookery",
-            "Manor Kitchen",
+            "Manor Kitchen (area)",
             "3 coins"
           ]
         ],
         "links": [
           [
-            "Manor Kitchen",
+            "Ava's Cookery",
+            "shop-avas-cookery"
+          ],
+          [
+            "Manor Kitchen (area)",
             "manor-kitchen"
           ]
+        ],
+        "listColumns": [
+          1
         ]
       }
     ],
     "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
       [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
@@ -93676,7 +94196,7 @@
     "sourceDate": "2026-09-27",
     "sourceTitle": "Items",
     "sourceUrl": "https://microscape.miraheze.org/wiki/Items",
-    "statsDate": "2026-11-19",
+    "statsDate": "2026-11-20",
     "facts": [
       [
         "In-game name",
@@ -93805,15 +94325,22 @@
         "rows": [
           [
             "Ava's Cookery",
-            "Manor Kitchen",
+            "Manor Kitchen (area)",
             "130 coins"
           ]
         ],
         "links": [
           [
-            "Manor Kitchen",
+            "Ava's Cookery",
+            "shop-avas-cookery"
+          ],
+          [
+            "Manor Kitchen (area)",
             "manor-kitchen"
           ]
+        ],
+        "listColumns": [
+          1
         ]
       }
     ],
@@ -93821,9 +94348,14 @@
       "fishing",
       "feather",
       "crocodile",
-      "moss-giant"
+      "moss-giant",
+      "shop-avas-cookery"
     ],
     "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
       [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
@@ -94776,6 +95308,14 @@
         ],
         "links": [
           [
+            "Old David's Shop",
+            "shop-fishing-gear-shop"
+          ],
+          [
+            "Old David",
+            "shop-fishing-gear-shop"
+          ],
+          [
             "Feather",
             "feather"
           ]
@@ -94830,7 +95370,8 @@
     "related": [
       "solace-glasshouse",
       "fishing",
-      "crafting"
+      "crafting",
+      "shop-fishing-gear-shop"
     ],
     "summary": "Visit for Fishing, Crafting.",
     "npcSprites": [
@@ -95857,7 +96398,7 @@
     "sourceDate": "2026-09-27",
     "sourceTitle": "Items",
     "sourceUrl": "https://microscape.miraheze.org/wiki/Items",
-    "statsDate": "2026-11-19",
+    "statsDate": "2026-11-20",
     "facts": [
       [
         "In-game name",
@@ -95968,19 +96509,22 @@
         "rows": [
           [
             "Merric's Magic Shop",
-            "Merric’s Magic Shop",
+            "Merric’s Magic Shop (area)",
             "28 coins"
           ]
         ],
         "links": [
           [
             "Merric's Magic Shop",
-            "merrics-magic-shop"
+            "shop-merrics-magic"
           ],
           [
-            "Merric’s Magic Shop",
+            "Merric’s Magic Shop (area)",
             "merrics-magic-shop"
           ]
+        ],
+        "listColumns": [
+          1
         ]
       }
     ],
@@ -95989,9 +96533,14 @@
       "crafting",
       "oak-logs",
       "monk",
-      "tomb-sorcerer"
+      "tomb-sorcerer",
+      "shop-merrics-magic"
     ],
     "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
       [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
@@ -96488,27 +97037,6 @@
             "65",
             "34s",
             "Deprecated; still listed"
-          ]
-        ]
-      },
-      {
-        "title": "Shops",
-        "columns": [
-          "Shop",
-          "Location",
-          "Purchase price"
-        ],
-        "rows": [
-          [
-            "Rodrigo's Arrows",
-            "O’Rock West",
-            "12 coins"
-          ]
-        ],
-        "links": [
-          [
-            "O’Rock West",
-            "orock-west"
           ]
         ]
       }
@@ -97055,7 +97583,7 @@
     "sourceDate": "2026-09-27",
     "sourceTitle": "Items",
     "sourceUrl": "https://microscape.miraheze.org/wiki/Items",
-    "statsDate": "2026-11-19",
+    "statsDate": "2026-11-20",
     "facts": [
       [
         "In-game name",
@@ -97089,22 +97617,34 @@
         "rows": [
           [
             "Germair's Clads",
-            "Fencewell Bridge",
+            "Fencewell Bridge (area)",
             "128 coins"
           ]
         ],
         "links": [
           [
-            "Fencewell Bridge",
+            "Germair's Clads",
+            "shop-germairs-clads"
+          ],
+          [
+            "Fencewell Bridge (area)",
             "fencewell-bridge"
           ]
+        ],
+        "listColumns": [
+          1
         ]
       }
     ],
     "related": [
-      "defense"
+      "defense",
+      "shop-germairs-clads"
     ],
     "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
       [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
@@ -98881,7 +99421,7 @@
     "sourceDate": "2026-09-27",
     "sourceTitle": "Items",
     "sourceUrl": "https://microscape.miraheze.org/wiki/Items",
-    "statsDate": "2026-11-19",
+    "statsDate": "2026-11-20",
     "facts": [
       [
         "In-game name",
@@ -98915,20 +99455,33 @@
         "rows": [
           [
             "Joan's Garments",
-            "O’Rock West",
+            "O’Rock West (area)",
             "600 coins"
           ]
         ],
         "links": [
           [
-            "O’Rock West",
+            "Joan's Garments",
+            "shop-joans-garments"
+          ],
+          [
+            "O’Rock West (area)",
             "orock-west"
           ]
+        ],
+        "listColumns": [
+          1
         ]
       }
     ],
-    "related": [],
+    "related": [
+      "shop-joans-garments"
+    ],
     "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
       [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
@@ -102074,6 +102627,16 @@
             "Dungeon coin exchange",
             "Search For Cloaks · Search For Boots · Search For Rings"
           ]
+        ],
+        "links": [
+          [
+            "Rusty Chest",
+            "exchange-rusty-chest"
+          ],
+          [
+            "Dungeon reward chest",
+            "exchange-rusty-chest"
+          ]
         ]
       },
       {
@@ -102134,7 +102697,8 @@
       "deep-sewers",
       "gurgle",
       "dungeon-key",
-      "slimelet"
+      "slimelet",
+      "exchange-rusty-chest"
     ],
     "summary": "Explore The Sump; current enemies, services, training spots and travel details are listed below.",
     "gameId": "the-sump"
@@ -102472,7 +103036,7 @@
     "sourceDate": "2026-09-27",
     "sourceTitle": "Items",
     "sourceUrl": "https://microscape.miraheze.org/wiki/Items",
-    "statsDate": "2026-11-19",
+    "statsDate": "2026-11-20",
     "facts": [
       [
         "In-game name",
@@ -102547,20 +103111,33 @@
         "rows": [
           [
             "General Store",
-            "Al-Sahra",
+            "Al-Sahra (area)",
             "6 coins"
           ]
         ],
         "links": [
           [
-            "Al-Sahra",
+            "General Store",
+            "shop-general-store"
+          ],
+          [
+            "Al-Sahra (area)",
             "al-sahra"
           ]
+        ],
+        "listColumns": [
+          1
         ]
       }
     ],
-    "related": [],
+    "related": [
+      "shop-general-store"
+    ],
     "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
       [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
@@ -107738,10 +108315,10 @@
   },
   {
     "id": "vendor",
-    "title": "Vendor",
+    "title": "Shops, vendors and sell values",
     "category": "reference",
     "group": "Mechanics",
-    "summary": "An item’s vendor value is its base sell price; shop purchase prices use that shop’s markup.",
+    "summary": "Find every defined coin shop, named barter vendor, appearance service and dungeon coin exchange, with locations and exact costs.",
     "revision": 827,
     "sourceDate": "2026-05-16",
     "sourceTitle": "Vendor",
@@ -107761,6 +108338,413 @@
       ]
     ],
     "tables": [
+      {
+        "title": "Shop and vendor directory",
+        "columns": [
+          "Shop / vendor",
+          "NPC / provider",
+          "Location",
+          "Type",
+          "Offers"
+        ],
+        "rows": [
+          [
+            "Ava's Cookery",
+            "Ava",
+            "Manor Kitchen (area)",
+            "Coin shops",
+            "7"
+          ],
+          [
+            "Braff's Staves",
+            "Braff",
+            "Merric’s Magic Shop (area)",
+            "Coin shops",
+            "1"
+          ],
+          [
+            "Brother Eustace's Shop",
+            "Brother Eustace",
+            "Falcrest Reach Temple (area)",
+            "Coin shops",
+            "1"
+          ],
+          [
+            "Old David's Shop",
+            "Old David",
+            "Solace Shoals (area)",
+            "Coin shops",
+            "1"
+          ],
+          [
+            "General Store",
+            "Shopkeeper",
+            "Al-Sahra (area)",
+            "Coin shops",
+            "4"
+          ],
+          [
+            "Germair's Clads",
+            "Germair",
+            "Fencewell Bridge (area)",
+            "Coin shops",
+            "5"
+          ],
+          [
+            "Jaciens' Supplies",
+            "Jaciens",
+            "Tutabay Atoll (area)",
+            "Coin shops",
+            "2"
+          ],
+          [
+            "Joan's Garments",
+            "Joan",
+            "O’Rock West (area)",
+            "Coin shops",
+            "9"
+          ],
+          [
+            "Merric's Magic Shop",
+            "Merric",
+            "Merric’s Magic Shop (area)",
+            "Coin shops",
+            "9"
+          ],
+          [
+            "Rodrigo's Arrows",
+            "Rodrigo",
+            "O’Rock West (area)",
+            "Coin shops",
+            "2"
+          ],
+          [
+            "Thorgrim",
+            "Thorgrim",
+            "Old Dwarven Tunnels (area)",
+            "Barter and services",
+            "1"
+          ],
+          [
+            "Brother Alep",
+            "Brother Alep",
+            "Falcrest Reach Temple (area)",
+            "Barter and services",
+            "4"
+          ],
+          [
+            "Sir Bratley",
+            "Sir Bratley",
+            "Falcrest Castle Parlor Room (area)",
+            "Barter and services",
+            "2"
+          ],
+          [
+            "Azar's Glovecraft",
+            "Azar's Glovecraft",
+            "Al-Sahra (area)",
+            "Barter and services",
+            "4"
+          ],
+          [
+            "Hide Tanner",
+            "Tanner",
+            "Al-Sahra (area)",
+            "Barter and services",
+            "1"
+          ],
+          [
+            "Hadley",
+            "Hadley",
+            "Manor Kitchen (area)",
+            "Barter and services",
+            "1"
+          ],
+          [
+            "Thomas",
+            "Thomas",
+            "Tutabay Atoll (area)",
+            "Barter and services",
+            "2"
+          ],
+          [
+            "Lucille",
+            "Lucille",
+            "Tutabay Atoll (area)",
+            "Barter and services",
+            "1"
+          ],
+          [
+            "Bloodied Chest",
+            "Dungeon reward chest",
+            "Havendell Lair (area)",
+            "Dungeon exchanges",
+            "5"
+          ],
+          [
+            "Brother Pela",
+            "Brother Pela",
+            "Falcrest Reach Temple (area)",
+            "Barter and services",
+            "1"
+          ],
+          [
+            "Sirocco",
+            "Sirocco",
+            "Elshand Temple Ruins (area)",
+            "Barter and services",
+            "1"
+          ],
+          [
+            "Mork",
+            "Mork",
+            "Fellroot Swamp Hut (area)",
+            "Barter and services",
+            "24"
+          ],
+          [
+            "Otis",
+            "Otis",
+            "Fellroot Swamp Hut (area)",
+            "Barter and services",
+            "11"
+          ],
+          [
+            "Rusty Chest",
+            "Dungeon reward chest",
+            "The Sump (area)",
+            "Dungeon exchanges",
+            "3"
+          ],
+          [
+            "Scorched Chest",
+            "Dungeon reward chest",
+            "Dread Mount Onyx Lair (area)",
+            "Dungeon exchanges",
+            "5"
+          ],
+          [
+            "Marcel the Stylist",
+            "Marcel the Stylist",
+            "Marcel's Hair Salon (area)",
+            "Appearance services",
+            "33"
+          ]
+        ],
+        "links": [
+          [
+            "Ava's Cookery",
+            "shop-avas-cookery"
+          ],
+          [
+            "Braff's Staves",
+            "shop-braffs-staves"
+          ],
+          [
+            "Brother Eustace's Shop",
+            "shop-brother-eustace"
+          ],
+          [
+            "Old David's Shop",
+            "shop-fishing-gear-shop"
+          ],
+          [
+            "General Store",
+            "shop-general-store"
+          ],
+          [
+            "Germair's Clads",
+            "shop-germairs-clads"
+          ],
+          [
+            "Jaciens' Supplies",
+            "shop-jaciens"
+          ],
+          [
+            "Joan's Garments",
+            "shop-joans-garments"
+          ],
+          [
+            "Merric's Magic Shop",
+            "shop-merrics-magic"
+          ],
+          [
+            "Rodrigo's Arrows",
+            "shop-rodrigos-arrows"
+          ],
+          [
+            "Thorgrim",
+            "vendor-thorgrim"
+          ],
+          [
+            "Brother Alep",
+            "vendor-brother-alep"
+          ],
+          [
+            "Sir Bratley",
+            "vendor-sir-bratley"
+          ],
+          [
+            "Azar's Glovecraft",
+            "vendor-glovecrafter"
+          ],
+          [
+            "Hide Tanner",
+            "vendor-hide-tanner"
+          ],
+          [
+            "Hadley",
+            "vendor-hadley"
+          ],
+          [
+            "Thomas",
+            "vendor-thomas"
+          ],
+          [
+            "Lucille",
+            "vendor-lucille"
+          ],
+          [
+            "Bloodied Chest",
+            "exchange-bloodied-chest"
+          ],
+          [
+            "Brother Pela",
+            "vendor-brother-pela"
+          ],
+          [
+            "Sirocco",
+            "vendor-sirocco"
+          ],
+          [
+            "Mork",
+            "vendor-mork"
+          ],
+          [
+            "Otis",
+            "vendor-otis"
+          ],
+          [
+            "Rusty Chest",
+            "exchange-rusty-chest"
+          ],
+          [
+            "Scorched Chest",
+            "exchange-scorched-chest"
+          ],
+          [
+            "Marcel the Stylist",
+            "vendor-hair-stylist"
+          ],
+          [
+            "Manor Kitchen (area)",
+            "manor-kitchen"
+          ],
+          [
+            "Merric’s Magic Shop (area)",
+            "merrics-magic-shop"
+          ],
+          [
+            "Falcrest Reach Temple (area)",
+            "falcrest-reach-temple"
+          ],
+          [
+            "Solace Shoals (area)",
+            "solace-shoals"
+          ],
+          [
+            "Al-Sahra (area)",
+            "al-sahra"
+          ],
+          [
+            "Fencewell Bridge (area)",
+            "fencewell-bridge"
+          ],
+          [
+            "Tutabay Atoll (area)",
+            "tutabay-atoll"
+          ],
+          [
+            "O’Rock West (area)",
+            "orock-west"
+          ],
+          [
+            "Merric’s Magic Shop (area)",
+            "merrics-magic-shop"
+          ],
+          [
+            "O’Rock West (area)",
+            "orock-west"
+          ],
+          [
+            "Old Dwarven Tunnels (area)",
+            "old-dwarven-tunnels"
+          ],
+          [
+            "Falcrest Reach Temple (area)",
+            "falcrest-reach-temple"
+          ],
+          [
+            "Falcrest Castle Parlor Room (area)",
+            "falcrest-castle-parlor-room"
+          ],
+          [
+            "Al-Sahra (area)",
+            "al-sahra"
+          ],
+          [
+            "Al-Sahra (area)",
+            "al-sahra"
+          ],
+          [
+            "Manor Kitchen (area)",
+            "manor-kitchen"
+          ],
+          [
+            "Tutabay Atoll (area)",
+            "tutabay-atoll"
+          ],
+          [
+            "Tutabay Atoll (area)",
+            "tutabay-atoll"
+          ],
+          [
+            "Havendell Lair (area)",
+            "havendell-lair"
+          ],
+          [
+            "Falcrest Reach Temple (area)",
+            "falcrest-reach-temple"
+          ],
+          [
+            "Elshand Temple Ruins (area)",
+            "elshand-temple-ruins"
+          ],
+          [
+            "Fellroot Swamp Hut (area)",
+            "fellroot-swamp-hut"
+          ],
+          [
+            "Fellroot Swamp Hut (area)",
+            "fellroot-swamp-hut"
+          ],
+          [
+            "The Sump (area)",
+            "the-sump"
+          ],
+          [
+            "Dread Mount Onyx Lair (area)",
+            "dread-mount-onyx-lair"
+          ],
+          [
+            "Marcel's Hair Salon (area)",
+            "marcels-hair-salon"
+          ]
+        ],
+        "listColumns": [
+          2
+        ]
+      },
       {
         "title": "Shop purchase markups",
         "columns": [
@@ -107826,10 +108810,56 @@
       "al-sahra",
       "merrics-magic-shop",
       "orock-west",
-      "manor-kitchen"
+      "manor-kitchen",
+      "shop-avas-cookery",
+      "shop-braffs-staves",
+      "shop-brother-eustace",
+      "shop-fishing-gear-shop",
+      "shop-general-store",
+      "shop-germairs-clads",
+      "shop-jaciens",
+      "shop-joans-garments",
+      "shop-merrics-magic",
+      "shop-rodrigos-arrows",
+      "vendor-thorgrim",
+      "vendor-brother-alep",
+      "vendor-sir-bratley",
+      "vendor-glovecrafter",
+      "vendor-hide-tanner",
+      "vendor-hadley",
+      "vendor-thomas",
+      "vendor-lucille",
+      "exchange-bloodied-chest",
+      "vendor-brother-pela",
+      "vendor-sirocco",
+      "vendor-mork",
+      "vendor-otis",
+      "exchange-rusty-chest",
+      "exchange-scorched-chest",
+      "vendor-hair-stylist",
+      "falcrest-reach-temple",
+      "solace-shoals",
+      "fencewell-bridge",
+      "tutabay-atoll",
+      "old-dwarven-tunnels",
+      "falcrest-castle-parlor-room",
+      "havendell-lair",
+      "elshand-temple-ruins",
+      "fellroot-swamp-hut",
+      "the-sump",
+      "dread-mount-onyx-lair",
+      "marcels-hair-salon"
     ],
-    "statsDate": "2026-11-18",
+    "statsDate": "2026-11-20",
     "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
+      [
+        "Official Microscape game",
+        "https://microscape.cc/play/"
+      ],
       [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
@@ -107853,10 +108883,20 @@
       [
         "CC BY-SA 4.0",
         "https://creativecommons.org/licenses/by-sa/4.0/"
+      ]
+    ],
+    "facts": [
+      [
+        "Coin shops",
+        "10"
       ],
       [
-        "Microscape official game",
-        "https://microscape.cc/play/"
+        "Coin-shop listings",
+        "41"
+      ],
+      [
+        "Other traders and services",
+        "16"
       ]
     ]
   },
@@ -113804,21 +114844,34 @@
         "rows": [
           [
             "Jaciens' Supplies",
-            "Tutabay Atoll",
+            "Tutabay Atoll (area)",
             "4 coins"
           ]
         ],
         "links": [
           [
-            "Tutabay Atoll",
+            "Jaciens' Supplies",
+            "shop-jaciens"
+          ],
+          [
+            "Tutabay Atoll (area)",
             "tutabay-atoll"
           ]
+        ],
+        "listColumns": [
+          1
         ]
       }
     ],
     "sections": [],
-    "related": [],
+    "related": [
+      "shop-jaciens"
+    ],
     "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
       [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
@@ -113829,7 +114882,7 @@
       ]
     ],
     "gameId": "trainingFishingRod",
-    "statsDate": "2026-11-19",
+    "statsDate": "2026-11-20",
     "portrait": {
       "src": "https://microscape.cc/play/assets/trainingFishingRod-B3KS4sC1.png",
       "source": "https://microscape.cc/play/"
@@ -113901,21 +114954,34 @@
         "rows": [
           [
             "Jaciens' Supplies",
-            "Tutabay Atoll",
+            "Tutabay Atoll (area)",
             "7 coins"
           ]
         ],
         "links": [
           [
-            "Tutabay Atoll",
+            "Jaciens' Supplies",
+            "shop-jaciens"
+          ],
+          [
+            "Tutabay Atoll (area)",
             "tutabay-atoll"
           ]
+        ],
+        "listColumns": [
+          1
         ]
       }
     ],
     "sections": [],
-    "related": [],
+    "related": [
+      "shop-jaciens"
+    ],
     "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
       [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
@@ -113926,7 +114992,7 @@
       ]
     ],
     "gameId": "trainingPickaxe",
-    "statsDate": "2026-11-19",
+    "statsDate": "2026-11-20",
     "portrait": {
       "src": "https://microscape.cc/play/assets/trainingPickaxe-COFKrNU1.png",
       "source": "https://microscape.cc/play/"
@@ -114024,6 +115090,30 @@
           ]
         ],
         "links": [
+          [
+            "Jaciens' Supplies",
+            "shop-jaciens"
+          ],
+          [
+            "Jaciens",
+            "shop-jaciens"
+          ],
+          [
+            "Thomas",
+            "vendor-thomas"
+          ],
+          [
+            "Thomas",
+            "vendor-thomas"
+          ],
+          [
+            "Lucille",
+            "vendor-lucille"
+          ],
+          [
+            "Lucille",
+            "vendor-lucille"
+          ],
           [
             "Training Pickaxe",
             "training-pickaxe"
@@ -114195,7 +115285,10 @@
       "ticket-to-progryn",
       "training-pickaxe",
       "training-fishing-rod",
-      "fencewell-bridge"
+      "fencewell-bridge",
+      "shop-jaciens",
+      "vendor-thomas",
+      "vendor-lucille"
     ],
     "sources": [
       [
@@ -126815,5 +127908,3798 @@
     "availabilityStatus": "absent-current-build",
     "gameId": "dwarvenCannon",
     "releasePet": true
+  },
+  {
+    "id": "shop-avas-cookery",
+    "title": "Ava's Cookery",
+    "category": "shops",
+    "group": "Coin shops",
+    "generatedShopDirectory": true,
+    "summary": "Ava · Manor Kitchen · 7 items for coins.",
+    "statsDate": "2026-11-20",
+    "facts": [
+      [
+        "Vendor / provider",
+        "Ava"
+      ],
+      [
+        "Location",
+        "Manor Kitchen"
+      ],
+      [
+        "Type",
+        "Coin shops"
+      ],
+      [
+        "Currency",
+        "Coins"
+      ],
+      [
+        "Items for sale",
+        "7"
+      ]
+    ],
+    "tables": [
+      {
+        "title": "Items for sale",
+        "columns": [
+          "Item",
+          "You pay per item",
+          "You receive when selling",
+          "Equip requirements"
+        ],
+        "rows": [
+          [
+            "Chef's Hat",
+            "75 coins",
+            "25 coins",
+            "None listed"
+          ],
+          [
+            "Cooking Apple",
+            "9 coins",
+            "3 coins",
+            "None listed"
+          ],
+          [
+            "Redberries",
+            "3 coins",
+            "1 coin",
+            "None listed"
+          ],
+          [
+            "Seaweed",
+            "3 coins",
+            "1 coin",
+            "None listed"
+          ],
+          [
+            "Ginger",
+            "3 coins",
+            "1 coin",
+            "None listed"
+          ],
+          [
+            "Chocolate Dust",
+            "52 coins",
+            "2 coins",
+            "None listed"
+          ],
+          [
+            "Snape Grass",
+            "130 coins",
+            "2 coins",
+            "None listed"
+          ]
+        ]
+      }
+    ],
+    "sections": [
+      [
+        "Buying and selling",
+        "The buy price is what you pay for one item. The sell value is what a shop pays for one item; it is not the purchase price or a Bazaar price. Item-specific markups override the shop’s general markup. Equipment requirements describe wearing or using the item, not a confirmed restriction on buying it."
+      ]
+    ],
+    "related": [
+      "manor-kitchen",
+      "chefs-hat",
+      "cooking-apple",
+      "redberries",
+      "seaweed",
+      "ginger",
+      "chocolate-dust",
+      "snape-grass"
+    ],
+    "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
+      [
+        "Official Microscape game",
+        "https://microscape.cc/play/"
+      ]
+    ],
+    "sprites": [
+      {
+        "label": "Ava",
+        "layers": [
+          "https://microscape.cc/play/assets/skin2World-fBopXN4J.png",
+          "https://microscape.cc/play/assets/clothesAdventurerWorld-DwoehAjo.png",
+          "https://microscape.cc/play/assets/ponytailBrownWorld-BSFI0rkz.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          44,
+          40,
+          36,
+          36
+        ]
+      }
+    ]
+  },
+  {
+    "id": "vendor-glovecrafter",
+    "title": "Azar's Glovecraft",
+    "category": "shops",
+    "group": "Barter and services",
+    "generatedShopDirectory": true,
+    "summary": "Al-Sahra · 4 trade or service options.",
+    "statsDate": "2026-11-20",
+    "facts": [
+      [
+        "Vendor / provider",
+        "Azar's Glovecraft"
+      ],
+      [
+        "Location",
+        "Al-Sahra"
+      ],
+      [
+        "Type",
+        "Barter and services"
+      ],
+      [
+        "Offers",
+        "4"
+      ]
+    ],
+    "tables": [
+      {
+        "title": "Trade and service offers",
+        "columns": [
+          "Offer",
+          "You receive",
+          "You provide",
+          "Reward sell value per item",
+          "Activity requirements"
+        ],
+        "rows": [
+          [
+            "Order Ash Gloves",
+            "1 × Ash Gloves",
+            "20 × Ashes · 30 × Coins · 1 × Leather Gloves",
+            "Ash Gloves: 57 coins",
+            "Crafting 1"
+          ],
+          [
+            "Order Serpent Quiver",
+            "1 × Serpent Quiver",
+            "50 × Coins · 30 × Snakeskin Scales · 1 × Thread",
+            "Serpent Quiver: 300 coins",
+            "Crafting 1"
+          ],
+          [
+            "Split Plume",
+            "25 × Feather",
+            "1 × Giant Plume",
+            "Feather: 1 coin",
+            "Crafting 1"
+          ],
+          [
+            "Split Plume (X10)",
+            "250 × Feather",
+            "10 × Giant Plume",
+            "Feather: 1 coin",
+            "Crafting 1"
+          ]
+        ],
+        "links": [
+          [
+            "20 × Ashes",
+            "ashes"
+          ],
+          [
+            "30 × Coins",
+            "coins"
+          ],
+          [
+            "1 × Leather Gloves",
+            "leather-gloves"
+          ],
+          [
+            "1 × Ash Gloves",
+            "ash-gloves"
+          ],
+          [
+            "50 × Coins",
+            "coins"
+          ],
+          [
+            "30 × Snakeskin Scales",
+            "snakeskin-scales"
+          ],
+          [
+            "1 × Thread",
+            "thread"
+          ],
+          [
+            "1 × Serpent Quiver",
+            "serpent-quiver"
+          ],
+          [
+            "1 × Giant Plume",
+            "giant-plume"
+          ],
+          [
+            "25 × Feather",
+            "feather"
+          ],
+          [
+            "10 × Giant Plume",
+            "giant-plume"
+          ],
+          [
+            "250 × Feather",
+            "feather"
+          ]
+        ],
+        "listColumns": [
+          1,
+          2
+        ]
+      }
+    ],
+    "sections": [
+      [
+        "How to use these offers",
+        "These are NPC trades, crafting services or reward exchanges. Bring every listed input; coin-shop markups do not apply to these costs. The reward’s sell value is shown separately and does not convert Audience Favor, dungeon coins or ingredients into ordinary coins. Item possession, membership and completed unlocks must still be checked in game."
+      ]
+    ],
+    "related": [
+      "al-sahra",
+      "ashes",
+      "coins",
+      "leather-gloves",
+      "ash-gloves",
+      "snakeskin-scales",
+      "thread",
+      "serpent-quiver",
+      "giant-plume",
+      "feather"
+    ],
+    "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
+      [
+        "Official Microscape game",
+        "https://microscape.cc/play/"
+      ]
+    ],
+    "sprites": [
+      {
+        "label": "Azar's Glovecraft",
+        "layers": [
+          "https://microscape.cc/play/assets/skin3World-uZ9SWQAz.png",
+          "https://microscape.cc/play/assets/ashGlovesWorld-CRkRCHAc.png",
+          "https://microscape.cc/play/assets/clothesScoutWorld-CysputqP.png",
+          "https://microscape.cc/play/assets/shortBlackWorld-CW21TBoF.png",
+          "https://microscape.cc/play/assets/staffWorld-BTw7t9Bi.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          44,
+          40,
+          32
+        ]
+      }
+    ]
+  },
+  {
+    "id": "exchange-bloodied-chest",
+    "title": "Bloodied Chest",
+    "category": "shops",
+    "group": "Dungeon exchanges",
+    "generatedShopDirectory": true,
+    "summary": "Havendell Lair · 5 trade or service options.",
+    "statsDate": "2026-11-20",
+    "facts": [
+      [
+        "Vendor / provider",
+        "Dungeon reward chest"
+      ],
+      [
+        "Location",
+        "Havendell Lair"
+      ],
+      [
+        "Type",
+        "Dungeon exchanges"
+      ],
+      [
+        "Offers",
+        "5"
+      ]
+    ],
+    "tables": [
+      {
+        "title": "Dungeon coin rewards",
+        "columns": [
+          "Offer",
+          "You receive",
+          "You provide",
+          "Reward sell value per item",
+          "Activity requirements"
+        ],
+        "rows": [
+          [
+            "Search For Trinkets",
+            "1 × Cursed Talisman",
+            "64 × Bloodied Coin",
+            "Cursed Talisman: 620 coins",
+            "Piety 1 · Single execution"
+          ],
+          [
+            "Search For Hats",
+            "1 × Dark Wizard's Hat",
+            "32 × Bloodied Coin",
+            "Dark Wizard's Hat: 140 coins",
+            "Piety 1 · Single execution"
+          ],
+          [
+            "Search For Robes",
+            "1 × Dark Wizard's Robes",
+            "32 × Bloodied Coin",
+            "Dark Wizard's Robes: 300 coins",
+            "Piety 1 · Single execution"
+          ],
+          [
+            "Search For Boots",
+            "1 × Sanguine Boots",
+            "64 × Bloodied Coin",
+            "Sanguine Boots: 12,032 coins",
+            "Piety 1 · Single execution"
+          ],
+          [
+            "Search For Shields",
+            "1 × Skull Shield",
+            "128 × Bloodied Coin",
+            "Skull Shield: 500 coins",
+            "Piety 1 · Single execution"
+          ]
+        ],
+        "links": [
+          [
+            "64 × Bloodied Coin",
+            "bloodied-coin"
+          ],
+          [
+            "1 × Cursed Talisman",
+            "cursed-talisman"
+          ],
+          [
+            "32 × Bloodied Coin",
+            "bloodied-coin"
+          ],
+          [
+            "1 × Dark Wizard's Hat",
+            "dark-wizards-hat"
+          ],
+          [
+            "32 × Bloodied Coin",
+            "bloodied-coin"
+          ],
+          [
+            "1 × Dark Wizard's Robes",
+            "dark-wizards-robes"
+          ],
+          [
+            "64 × Bloodied Coin",
+            "bloodied-coin"
+          ],
+          [
+            "1 × Sanguine Boots",
+            "sanguine-boots"
+          ],
+          [
+            "128 × Bloodied Coin",
+            "bloodied-coin"
+          ],
+          [
+            "1 × Skull Shield",
+            "skull-shield"
+          ]
+        ],
+        "listColumns": [
+          1,
+          2
+        ]
+      }
+    ],
+    "sections": [
+      [
+        "How to use these offers",
+        "These are NPC trades, crafting services or reward exchanges. Bring every listed input; coin-shop markups do not apply to these costs. The reward’s sell value is shown separately and does not convert Audience Favor, dungeon coins or ingredients into ordinary coins. Item possession, membership and completed unlocks must still be checked in game."
+      ]
+    ],
+    "related": [
+      "havendell-lair",
+      "bloodied-coin",
+      "cursed-talisman",
+      "dark-wizards-hat",
+      "dark-wizards-robes",
+      "sanguine-boots",
+      "skull-shield"
+    ],
+    "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
+      [
+        "Official Microscape game",
+        "https://microscape.cc/play/"
+      ]
+    ],
+    "portrait": {
+      "src": "https://microscape.cc/play/assets/coins-BcEf0E2I.png",
+      "source": "https://microscape.cc/play/"
+    }
+  },
+  {
+    "id": "shop-braffs-staves",
+    "title": "Braff's Staves",
+    "category": "shops",
+    "group": "Coin shops",
+    "generatedShopDirectory": true,
+    "summary": "Braff · Merric’s Magic Shop · 1 item for coins.",
+    "statsDate": "2026-11-20",
+    "facts": [
+      [
+        "Vendor / provider",
+        "Braff"
+      ],
+      [
+        "Location",
+        "Merric’s Magic Shop"
+      ],
+      [
+        "Type",
+        "Coin shops"
+      ],
+      [
+        "Currency",
+        "Coins"
+      ],
+      [
+        "Items for sale",
+        "1"
+      ]
+    ],
+    "tables": [
+      {
+        "title": "Items for sale",
+        "columns": [
+          "Item",
+          "You pay per item",
+          "You receive when selling",
+          "Equip requirements"
+        ],
+        "rows": [
+          [
+            "Battlestaff",
+            "1,176 coins",
+            "196 coins",
+            "Attack 10 · Evil Magic 10"
+          ]
+        ]
+      }
+    ],
+    "sections": [
+      [
+        "Buying and selling",
+        "The buy price is what you pay for one item. The sell value is what a shop pays for one item; it is not the purchase price or a Bazaar price. Item-specific markups override the shop’s general markup. Equipment requirements describe wearing or using the item, not a confirmed restriction on buying it."
+      ]
+    ],
+    "related": [
+      "merrics-magic-shop",
+      "battlestaff"
+    ],
+    "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
+      [
+        "Official Microscape game",
+        "https://microscape.cc/play/"
+      ]
+    ],
+    "sprites": [
+      {
+        "label": "Braff",
+        "layers": [
+          "https://microscape.cc/play/assets/skin3World-uZ9SWQAz.png",
+          "https://microscape.cc/play/assets/clothesApronWorld-CxOchvWx.png",
+          "https://microscape.cc/play/assets/shortBrownWorld-PzbEi9oR.png",
+          "https://microscape.cc/play/assets/battlestaffWorld-DFvRJFa3.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          44,
+          40,
+          32
+        ]
+      }
+    ]
+  },
+  {
+    "id": "vendor-brother-alep",
+    "title": "Brother Alep",
+    "category": "shops",
+    "group": "Barter and services",
+    "generatedShopDirectory": true,
+    "summary": "Falcrest Reach Temple · 4 trade or service options.",
+    "statsDate": "2026-11-20",
+    "facts": [
+      [
+        "Vendor / provider",
+        "Brother Alep"
+      ],
+      [
+        "Location",
+        "Falcrest Reach Temple"
+      ],
+      [
+        "Type",
+        "Barter and services"
+      ],
+      [
+        "Offers",
+        "4"
+      ]
+    ],
+    "tables": [
+      {
+        "title": "Trade and service offers",
+        "columns": [
+          "Offer",
+          "You receive",
+          "You provide",
+          "Reward sell value per item",
+          "Activity requirements"
+        ],
+        "rows": [
+          [
+            "Bless Holy Amulet",
+            "1 × Holy Amulet",
+            "20 × Coins · 1 × Dim Holy Amulet",
+            "Holy Amulet: 17 coins",
+            "Crafting 18"
+          ],
+          [
+            "A Prayer For Time",
+            "1 × Time Crystal",
+            "3 × Audience Favor",
+            "Time Crystal: No sell value listed",
+            "Piety 1 · Single execution"
+          ],
+          [
+            "A Prayer For Commerce",
+            "1 × Bazaar Permit",
+            "15 × Audience Favor",
+            "Bazaar Permit: No sell value listed",
+            "Piety 1 · Single execution"
+          ],
+          [
+            "Craft Blessed Greaves",
+            "1 × Blessed Greaves",
+            "1 × Leather Boots · 1 × Silver Bar · 1,000 × Spirit Rune · 2 × Steel Bar",
+            "Blessed Greaves: 40 coins",
+            "Piety 10"
+          ]
+        ],
+        "links": [
+          [
+            "20 × Coins",
+            "coins"
+          ],
+          [
+            "1 × Dim Holy Amulet",
+            "dim-holy-amulet"
+          ],
+          [
+            "1 × Holy Amulet",
+            "holy-amulet"
+          ],
+          [
+            "3 × Audience Favor",
+            "item-audience-favor"
+          ],
+          [
+            "1 × Time Crystal",
+            "item-time-crystal"
+          ],
+          [
+            "15 × Audience Favor",
+            "item-audience-favor"
+          ],
+          [
+            "1 × Bazaar Permit",
+            "bazaar-permit"
+          ],
+          [
+            "1 × Leather Boots",
+            "leather-boots"
+          ],
+          [
+            "1 × Silver Bar",
+            "silver-bar"
+          ],
+          [
+            "1,000 × Spirit Rune",
+            "spirit-rune"
+          ],
+          [
+            "2 × Steel Bar",
+            "steel-bar"
+          ],
+          [
+            "1 × Blessed Greaves",
+            "blessed-greaves"
+          ]
+        ],
+        "listColumns": [
+          1,
+          2
+        ]
+      }
+    ],
+    "sections": [
+      [
+        "How to use these offers",
+        "These are NPC trades, crafting services or reward exchanges. Bring every listed input; coin-shop markups do not apply to these costs. The reward’s sell value is shown separately and does not convert Audience Favor, dungeon coins or ingredients into ordinary coins. Item possession, membership and completed unlocks must still be checked in game."
+      ]
+    ],
+    "related": [
+      "falcrest-reach-temple",
+      "coins",
+      "dim-holy-amulet",
+      "holy-amulet",
+      "item-audience-favor",
+      "item-time-crystal",
+      "bazaar-permit",
+      "leather-boots",
+      "silver-bar",
+      "spirit-rune",
+      "steel-bar",
+      "blessed-greaves"
+    ],
+    "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
+      [
+        "Official Microscape game",
+        "https://microscape.cc/play/"
+      ]
+    ],
+    "sprites": [
+      {
+        "label": "Brother Alep",
+        "layers": [
+          "https://microscape.cc/play/assets/skin2World-fBopXN4J.png",
+          "https://microscape.cc/play/assets/leatherBootsWorld-OfLt4-ZX.png",
+          "https://microscape.cc/play/assets/monkRobeWorld-D485cvEp.png",
+          "https://microscape.cc/play/assets/shortBlackWorld-CW21TBoF.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          44,
+          28,
+          32
+        ]
+      }
+    ]
+  },
+  {
+    "id": "shop-brother-eustace",
+    "title": "Brother Eustace's Shop",
+    "category": "shops",
+    "group": "Coin shops",
+    "generatedShopDirectory": true,
+    "summary": "Brother Eustace · Falcrest Reach Temple · 1 item for coins.",
+    "statsDate": "2026-11-20",
+    "facts": [
+      [
+        "Vendor / provider",
+        "Brother Eustace"
+      ],
+      [
+        "Location",
+        "Falcrest Reach Temple"
+      ],
+      [
+        "Type",
+        "Coin shops"
+      ],
+      [
+        "Currency",
+        "Coins"
+      ],
+      [
+        "Items for sale",
+        "1"
+      ]
+    ],
+    "tables": [
+      {
+        "title": "Items for sale",
+        "columns": [
+          "Item",
+          "You pay per item",
+          "You receive when selling",
+          "Equip requirements"
+        ],
+        "rows": [
+          [
+            "Monk's Robe",
+            "360 coins",
+            "120 coins",
+            "Piety 5"
+          ]
+        ]
+      }
+    ],
+    "sections": [
+      [
+        "Buying and selling",
+        "The buy price is what you pay for one item. The sell value is what a shop pays for one item; it is not the purchase price or a Bazaar price. Item-specific markups override the shop’s general markup. Equipment requirements describe wearing or using the item, not a confirmed restriction on buying it."
+      ]
+    ],
+    "related": [
+      "falcrest-reach-temple",
+      "monks-robe"
+    ],
+    "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
+      [
+        "Official Microscape game",
+        "https://microscape.cc/play/"
+      ]
+    ],
+    "sprites": [
+      {
+        "label": "Brother Eustace",
+        "layers": [
+          "https://microscape.cc/play/assets/skin1World-C5McwYaD.png",
+          "https://microscape.cc/play/assets/leatherBootsWorld-OfLt4-ZX.png",
+          "https://microscape.cc/play/assets/darkWizardsRobeWorld-CeLhLG11.png",
+          "https://microscape.cc/play/assets/boldBrownWorld-DJuVaImt.png",
+          "https://microscape.cc/play/assets/staffWorld-BTw7t9Bi.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          48,
+          40,
+          28
+        ]
+      }
+    ]
+  },
+  {
+    "id": "vendor-brother-pela",
+    "title": "Brother Pela",
+    "category": "shops",
+    "group": "Barter and services",
+    "generatedShopDirectory": true,
+    "summary": "Falcrest Reach Temple · 1 trade or service option.",
+    "statsDate": "2026-11-20",
+    "facts": [
+      [
+        "Vendor / provider",
+        "Brother Pela"
+      ],
+      [
+        "Location",
+        "Falcrest Reach Temple"
+      ],
+      [
+        "Type",
+        "Barter and services"
+      ],
+      [
+        "Offers",
+        "1"
+      ]
+    ],
+    "tables": [
+      {
+        "title": "Trade and service offers",
+        "columns": [
+          "Offer",
+          "You receive",
+          "You provide",
+          "Reward sell value per item",
+          "Activity requirements"
+        ],
+        "rows": [
+          [
+            "Time For A Favor",
+            "1 × Audience Favor",
+            "1 × Time Crystal",
+            "Audience Favor: No sell value listed",
+            "Piety 1 · Single execution"
+          ]
+        ],
+        "links": [
+          [
+            "1 × Time Crystal",
+            "item-time-crystal"
+          ],
+          [
+            "1 × Audience Favor",
+            "item-audience-favor"
+          ]
+        ],
+        "listColumns": [
+          1,
+          2
+        ]
+      }
+    ],
+    "sections": [
+      [
+        "How to use these offers",
+        "These are NPC trades, crafting services or reward exchanges. Bring every listed input; coin-shop markups do not apply to these costs. The reward’s sell value is shown separately and does not convert Audience Favor, dungeon coins or ingredients into ordinary coins. Item possession, membership and completed unlocks must still be checked in game."
+      ]
+    ],
+    "related": [
+      "falcrest-reach-temple",
+      "item-time-crystal",
+      "item-audience-favor"
+    ],
+    "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
+      [
+        "Official Microscape game",
+        "https://microscape.cc/play/"
+      ]
+    ],
+    "sprites": [
+      {
+        "label": "Brother Pela",
+        "layers": [
+          "https://microscape.cc/play/assets/skin3World-uZ9SWQAz.png",
+          "https://microscape.cc/play/assets/leatherBootsWorld-OfLt4-ZX.png",
+          "https://microscape.cc/play/assets/monkRobeWorld-D485cvEp.png",
+          "https://microscape.cc/play/assets/shortBrownWorld-PzbEi9oR.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          44,
+          28,
+          32
+        ]
+      }
+    ]
+  },
+  {
+    "id": "shop-general-store",
+    "title": "General Store",
+    "category": "shops",
+    "group": "Coin shops",
+    "generatedShopDirectory": true,
+    "summary": "Shopkeeper · Al-Sahra · 4 items for coins.",
+    "statsDate": "2026-11-20",
+    "facts": [
+      [
+        "Vendor / provider",
+        "Shopkeeper"
+      ],
+      [
+        "Location",
+        "Al-Sahra"
+      ],
+      [
+        "Type",
+        "Coin shops"
+      ],
+      [
+        "Currency",
+        "Coins"
+      ],
+      [
+        "Items for sale",
+        "4"
+      ]
+    ],
+    "tables": [
+      {
+        "title": "Items for sale",
+        "columns": [
+          "Item",
+          "You pay per item",
+          "You receive when selling",
+          "Equip requirements"
+        ],
+        "rows": [
+          [
+            "Bucket",
+            "3 coins",
+            "1 coin",
+            "None listed"
+          ],
+          [
+            "Pie Dish",
+            "6 coins",
+            "2 coins",
+            "None listed"
+          ],
+          [
+            "Pot",
+            "3 coins",
+            "1 coin",
+            "None listed"
+          ],
+          [
+            "Thread",
+            "6 coins",
+            "2 coins",
+            "None listed"
+          ]
+        ]
+      }
+    ],
+    "sections": [
+      [
+        "Buying and selling",
+        "The buy price is what you pay for one item. The sell value is what a shop pays for one item; it is not the purchase price or a Bazaar price. Item-specific markups override the shop’s general markup. Equipment requirements describe wearing or using the item, not a confirmed restriction on buying it."
+      ]
+    ],
+    "related": [
+      "al-sahra",
+      "bucket",
+      "pie-dish",
+      "pot",
+      "thread"
+    ],
+    "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
+      [
+        "Official Microscape game",
+        "https://microscape.cc/play/"
+      ]
+    ],
+    "sprites": [
+      {
+        "label": "Shopkeeper",
+        "layers": [
+          "https://microscape.cc/play/assets/skin4World-B3L0v_zU.png",
+          "https://microscape.cc/play/assets/clothesDesertWorld-fdzai9oJ.png",
+          "https://microscape.cc/play/assets/shortBlackWorld-CW21TBoF.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          44,
+          28,
+          32
+        ]
+      }
+    ]
+  },
+  {
+    "id": "shop-germairs-clads",
+    "title": "Germair's Clads",
+    "category": "shops",
+    "group": "Coin shops",
+    "generatedShopDirectory": true,
+    "summary": "Germair · Fencewell Bridge · 5 items for coins.",
+    "statsDate": "2026-11-20",
+    "facts": [
+      [
+        "Vendor / provider",
+        "Germair"
+      ],
+      [
+        "Location",
+        "Fencewell Bridge"
+      ],
+      [
+        "Type",
+        "Coin shops"
+      ],
+      [
+        "Currency",
+        "Coins"
+      ],
+      [
+        "Items for sale",
+        "5"
+      ]
+    ],
+    "tables": [
+      {
+        "title": "Items for sale",
+        "columns": [
+          "Item",
+          "You pay per item",
+          "You receive when selling",
+          "Equip requirements"
+        ],
+        "rows": [
+          [
+            "Bronze Armor",
+            "80 coins",
+            "10 coins",
+            "Defense 1"
+          ],
+          [
+            "Bronze Dagger",
+            "16 coins",
+            "2 coins",
+            "Attack 1"
+          ],
+          [
+            "Bronze Med Helm",
+            "16 coins",
+            "2 coins",
+            "Defense 1"
+          ],
+          [
+            "Bronze Sq Shield",
+            "32 coins",
+            "4 coins",
+            "Defense 1"
+          ],
+          [
+            "Steel Full Helm",
+            "128 coins",
+            "16 coins",
+            "Defense 20"
+          ]
+        ]
+      }
+    ],
+    "sections": [
+      [
+        "Buying and selling",
+        "The buy price is what you pay for one item. The sell value is what a shop pays for one item; it is not the purchase price or a Bazaar price. Item-specific markups override the shop’s general markup. Equipment requirements describe wearing or using the item, not a confirmed restriction on buying it."
+      ]
+    ],
+    "related": [
+      "fencewell-bridge",
+      "bronze-armor",
+      "bronze-dagger",
+      "bronze-med-helm",
+      "bronze-sq-shield",
+      "steel-full-helm"
+    ],
+    "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
+      [
+        "Official Microscape game",
+        "https://microscape.cc/play/"
+      ]
+    ],
+    "sprites": [
+      {
+        "label": "Germair",
+        "layers": [
+          "https://microscape.cc/play/assets/skin4World-B3L0v_zU.png",
+          "https://microscape.cc/play/assets/clothesApronWorld-CxOchvWx.png",
+          "https://microscape.cc/play/assets/shortBlackWorld-CW21TBoF.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          44,
+          28,
+          32
+        ]
+      }
+    ]
+  },
+  {
+    "id": "vendor-hadley",
+    "title": "Hadley",
+    "category": "shops",
+    "group": "Barter and services",
+    "generatedShopDirectory": true,
+    "summary": "Manor Kitchen · 1 trade or service option.",
+    "statsDate": "2026-11-20",
+    "facts": [
+      [
+        "Vendor / provider",
+        "Hadley"
+      ],
+      [
+        "Location",
+        "Manor Kitchen"
+      ],
+      [
+        "Type",
+        "Barter and services"
+      ],
+      [
+        "Offers",
+        "1"
+      ]
+    ],
+    "tables": [
+      {
+        "title": "Trade and service offers",
+        "columns": [
+          "Offer",
+          "You receive",
+          "You provide",
+          "Reward sell value per item",
+          "Activity requirements"
+        ],
+        "rows": [
+          [
+            "Trade For Fox Hat",
+            "1 × Fox Hat",
+            "1 × Lucky Paw",
+            "Fox Hat: 200 coins",
+            "Crafting 1"
+          ]
+        ],
+        "links": [
+          [
+            "1 × Lucky Paw",
+            "lucky-paw"
+          ],
+          [
+            "1 × Fox Hat",
+            "fox-hat"
+          ]
+        ],
+        "listColumns": [
+          1,
+          2
+        ]
+      }
+    ],
+    "sections": [
+      [
+        "How to use these offers",
+        "These are NPC trades, crafting services or reward exchanges. Bring every listed input; coin-shop markups do not apply to these costs. The reward’s sell value is shown separately and does not convert Audience Favor, dungeon coins or ingredients into ordinary coins. Item possession, membership and completed unlocks must still be checked in game."
+      ]
+    ],
+    "related": [
+      "manor-kitchen",
+      "lucky-paw",
+      "fox-hat"
+    ],
+    "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
+      [
+        "Official Microscape game",
+        "https://microscape.cc/play/"
+      ]
+    ],
+    "sprites": [
+      {
+        "label": "Hadley",
+        "layers": [
+          "https://microscape.cc/play/assets/skin2World-fBopXN4J.png",
+          "https://microscape.cc/play/assets/clothesScoutWorld-CysputqP.png",
+          "https://microscape.cc/play/assets/foxHatWorld-DsPiRkSK.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          44,
+          44,
+          36,
+          32
+        ]
+      }
+    ]
+  },
+  {
+    "id": "vendor-hide-tanner",
+    "title": "Hide Tanner",
+    "category": "shops",
+    "group": "Barter and services",
+    "generatedShopDirectory": true,
+    "summary": "Al-Sahra · 1 trade or service option.",
+    "statsDate": "2026-11-20",
+    "facts": [
+      [
+        "Vendor / provider",
+        "Tanner"
+      ],
+      [
+        "Location",
+        "Al-Sahra"
+      ],
+      [
+        "Type",
+        "Barter and services"
+      ],
+      [
+        "Offers",
+        "1"
+      ]
+    ],
+    "tables": [
+      {
+        "title": "Trade and service offers",
+        "columns": [
+          "Offer",
+          "You receive",
+          "You provide",
+          "Reward sell value per item",
+          "Activity requirements"
+        ],
+        "rows": [
+          [
+            "Tan Leather",
+            "1 × Leather",
+            "3 × Coins · 1 × Cow Hide",
+            "Leather: 4 coins",
+            "Crafting 1"
+          ]
+        ],
+        "links": [
+          [
+            "3 × Coins",
+            "coins"
+          ],
+          [
+            "1 × Cow Hide",
+            "cow-hide"
+          ],
+          [
+            "1 × Leather",
+            "leather"
+          ]
+        ],
+        "listColumns": [
+          1,
+          2
+        ]
+      }
+    ],
+    "sections": [
+      [
+        "How to use these offers",
+        "These are NPC trades, crafting services or reward exchanges. Bring every listed input; coin-shop markups do not apply to these costs. The reward’s sell value is shown separately and does not convert Audience Favor, dungeon coins or ingredients into ordinary coins. Item possession, membership and completed unlocks must still be checked in game."
+      ]
+    ],
+    "related": [
+      "al-sahra",
+      "coins",
+      "cow-hide",
+      "leather"
+    ],
+    "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
+      [
+        "Official Microscape game",
+        "https://microscape.cc/play/"
+      ]
+    ],
+    "sprites": [
+      {
+        "label": "Tanner",
+        "layers": [
+          "https://microscape.cc/play/assets/skin3World-uZ9SWQAz.png",
+          "https://microscape.cc/play/assets/clothesApronWorld-CxOchvWx.png",
+          "https://microscape.cc/play/assets/shortBlackWorld-CW21TBoF.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          44,
+          28,
+          32
+        ]
+      }
+    ]
+  },
+  {
+    "id": "shop-jaciens",
+    "title": "Jaciens' Supplies",
+    "category": "shops",
+    "group": "Coin shops",
+    "generatedShopDirectory": true,
+    "summary": "Jaciens · Tutabay Atoll · 2 items for coins.",
+    "statsDate": "2026-11-20",
+    "facts": [
+      [
+        "Vendor / provider",
+        "Jaciens"
+      ],
+      [
+        "Location",
+        "Tutabay Atoll"
+      ],
+      [
+        "Type",
+        "Coin shops"
+      ],
+      [
+        "Currency",
+        "Coins"
+      ],
+      [
+        "Items for sale",
+        "2"
+      ]
+    ],
+    "tables": [
+      {
+        "title": "Items for sale",
+        "columns": [
+          "Item",
+          "You pay per item",
+          "You receive when selling",
+          "Equip requirements"
+        ],
+        "rows": [
+          [
+            "Training Pickaxe",
+            "7 coins",
+            "1 coin",
+            "None listed"
+          ],
+          [
+            "Training Fishing Rod",
+            "4 coins",
+            "1 coin",
+            "None listed"
+          ]
+        ]
+      }
+    ],
+    "sections": [
+      [
+        "Buying and selling",
+        "The buy price is what you pay for one item. The sell value is what a shop pays for one item; it is not the purchase price or a Bazaar price. Item-specific markups override the shop’s general markup. Equipment requirements describe wearing or using the item, not a confirmed restriction on buying it."
+      ]
+    ],
+    "related": [
+      "tutabay-atoll",
+      "training-pickaxe",
+      "training-fishing-rod"
+    ],
+    "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
+      [
+        "Official Microscape game",
+        "https://microscape.cc/play/"
+      ]
+    ],
+    "sprites": [
+      {
+        "label": "Jaciens",
+        "layers": [
+          "https://microscape.cc/play/assets/skin1World-C5McwYaD.png",
+          "https://microscape.cc/play/assets/leatherBootsWorld-OfLt4-ZX.png",
+          "https://microscape.cc/play/assets/clothesApronWorld-CxOchvWx.png",
+          "https://microscape.cc/play/assets/boldBrownWorld-DJuVaImt.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          48,
+          28,
+          28
+        ]
+      }
+    ]
+  },
+  {
+    "id": "shop-joans-garments",
+    "title": "Joan's Garments",
+    "category": "shops",
+    "group": "Coin shops",
+    "generatedShopDirectory": true,
+    "summary": "Joan · O’Rock West · 9 items for coins.",
+    "statsDate": "2026-11-20",
+    "facts": [
+      [
+        "Vendor / provider",
+        "Joan"
+      ],
+      [
+        "Location",
+        "O’Rock West"
+      ],
+      [
+        "Type",
+        "Coin shops"
+      ],
+      [
+        "Currency",
+        "Coins"
+      ],
+      [
+        "Items for sale",
+        "9"
+      ]
+    ],
+    "tables": [
+      {
+        "title": "Items for sale",
+        "columns": [
+          "Item",
+          "You pay per item",
+          "You receive when selling",
+          "Equip requirements"
+        ],
+        "rows": [
+          [
+            "Adventurer's Clothes",
+            "600 coins",
+            "200 coins",
+            "None listed"
+          ],
+          [
+            "Apron",
+            "150 coins",
+            "50 coins",
+            "None listed"
+          ],
+          [
+            "Dapper Outfit",
+            "1,230 coins",
+            "410 coins",
+            "None listed"
+          ],
+          [
+            "Desert Robes",
+            "600 coins",
+            "200 coins",
+            "None listed"
+          ],
+          [
+            "\"the Julian\"",
+            "2,820 coins",
+            "940 coins",
+            "None listed"
+          ],
+          [
+            "Royal Attire",
+            "9,600 coins",
+            "3,200 coins",
+            "None listed"
+          ],
+          [
+            "Scout Uniform",
+            "150 coins",
+            "50 coins",
+            "None listed"
+          ],
+          [
+            "Summer Outfit",
+            "600 coins",
+            "200 coins",
+            "None listed"
+          ],
+          [
+            "Priest Robe",
+            "150 coins",
+            "50 coins",
+            "Piety 1"
+          ]
+        ]
+      }
+    ],
+    "sections": [
+      [
+        "Buying and selling",
+        "The buy price is what you pay for one item. The sell value is what a shop pays for one item; it is not the purchase price or a Bazaar price. Item-specific markups override the shop’s general markup. Equipment requirements describe wearing or using the item, not a confirmed restriction on buying it."
+      ]
+    ],
+    "related": [
+      "orock-west",
+      "adventurers-clothes",
+      "apron",
+      "dapper-outfit",
+      "desert-robes",
+      "the-julian",
+      "royal-attire",
+      "scout-uniform",
+      "summer-outfit",
+      "priest-robe"
+    ],
+    "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
+      [
+        "Official Microscape game",
+        "https://microscape.cc/play/"
+      ]
+    ],
+    "sprites": [
+      {
+        "label": "Joan",
+        "layers": [
+          "https://microscape.cc/play/assets/skin1World-C5McwYaD.png",
+          "https://microscape.cc/play/assets/clothesDapperWorld-D8rw7gud.png",
+          "https://microscape.cc/play/assets/ponytailBlondWorld-iHb6nI3A.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          44,
+          40,
+          36,
+          36
+        ]
+      }
+    ]
+  },
+  {
+    "id": "vendor-lucille",
+    "title": "Lucille",
+    "category": "shops",
+    "group": "Barter and services",
+    "generatedShopDirectory": true,
+    "summary": "Tutabay Atoll · 1 trade or service option.",
+    "statsDate": "2026-11-20",
+    "facts": [
+      [
+        "Vendor / provider",
+        "Lucille"
+      ],
+      [
+        "Location",
+        "Tutabay Atoll"
+      ],
+      [
+        "Type",
+        "Barter and services"
+      ],
+      [
+        "Offers",
+        "1"
+      ]
+    ],
+    "tables": [
+      {
+        "title": "Trade and service offers",
+        "columns": [
+          "Offer",
+          "You receive",
+          "You provide",
+          "Reward sell value per item",
+          "Activity requirements"
+        ],
+        "rows": [
+          [
+            "Tin From The Mainland",
+            "1 × Tin Ore",
+            "3 × Copper Ore",
+            "Tin Ore: 1 coin",
+            "Mining 1 · Single execution"
+          ]
+        ],
+        "links": [
+          [
+            "3 × Copper Ore",
+            "copper-ore"
+          ],
+          [
+            "1 × Tin Ore",
+            "tin-ore"
+          ]
+        ],
+        "listColumns": [
+          1,
+          2
+        ]
+      }
+    ],
+    "sections": [
+      [
+        "How to use these offers",
+        "These are NPC trades, crafting services or reward exchanges. Bring every listed input; coin-shop markups do not apply to these costs. The reward’s sell value is shown separately and does not convert Audience Favor, dungeon coins or ingredients into ordinary coins. Item possession, membership and completed unlocks must still be checked in game."
+      ]
+    ],
+    "related": [
+      "tutabay-atoll",
+      "copper-ore",
+      "tin-ore"
+    ],
+    "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
+      [
+        "Official Microscape game",
+        "https://microscape.cc/play/"
+      ]
+    ],
+    "sprites": [
+      {
+        "label": "Lucille",
+        "layers": [
+          "https://microscape.cc/play/assets/skin1World-C5McwYaD.png",
+          "https://microscape.cc/play/assets/leatherBootsWorld-OfLt4-ZX.png",
+          "https://microscape.cc/play/assets/clothesApronWorld-CxOchvWx.png",
+          "https://microscape.cc/play/assets/longBrownWorld-Bt94MTEf.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          44,
+          28,
+          32
+        ]
+      }
+    ]
+  },
+  {
+    "id": "vendor-hair-stylist",
+    "title": "Marcel the Stylist",
+    "category": "shops",
+    "group": "Appearance services",
+    "generatedShopDirectory": true,
+    "summary": "Marcel's Hair Salon · Hairstyle and skin changes with individual coin prices.",
+    "statsDate": "2026-11-20",
+    "facts": [
+      [
+        "Vendor / provider",
+        "Marcel the Stylist"
+      ],
+      [
+        "Location",
+        "Marcel's Hair Salon"
+      ],
+      [
+        "Type",
+        "Appearance services"
+      ],
+      [
+        "Currency",
+        "Coins"
+      ],
+      [
+        "Appearance choices",
+        "33"
+      ]
+    ],
+    "tables": [
+      {
+        "title": "Appearance services",
+        "columns": [
+          "Style",
+          "Type",
+          "You pay"
+        ],
+        "rows": [
+          [
+            "Brown \"Bold\" Hair",
+            "Hair",
+            "20 coins"
+          ],
+          [
+            "Black Bubble Hair",
+            "Hair",
+            "100 coins"
+          ],
+          [
+            "Black Long Hair",
+            "Hair",
+            "150 coins"
+          ],
+          [
+            "Blond Long Hair",
+            "Hair",
+            "150 coins"
+          ],
+          [
+            "Brown Long Hair",
+            "Hair",
+            "150 coins"
+          ],
+          [
+            "Cerulean Long Hair",
+            "Hair",
+            "150 coins"
+          ],
+          [
+            "Peach Long Hair",
+            "Hair",
+            "150 coins"
+          ],
+          [
+            "Black Lush Hair",
+            "Hair",
+            "175 coins"
+          ],
+          [
+            "Black Medium Hair",
+            "Hair",
+            "100 coins"
+          ],
+          [
+            "Blond Medium Hair",
+            "Hair",
+            "100 coins"
+          ],
+          [
+            "Brown Medium Hair",
+            "Hair",
+            "100 coins"
+          ],
+          [
+            "Cerulean Medium Hair",
+            "Hair",
+            "100 coins"
+          ],
+          [
+            "Peach Medium Hair",
+            "Hair",
+            "100 coins"
+          ],
+          [
+            "Black Pomp Hair",
+            "Hair",
+            "125 coins"
+          ],
+          [
+            "Blond Pomp Hair",
+            "Hair",
+            "125 coins"
+          ],
+          [
+            "Brown Pomp Hair",
+            "Hair",
+            "125 coins"
+          ],
+          [
+            "Cerulean Pomp Hair",
+            "Hair",
+            "125 coins"
+          ],
+          [
+            "Peach Pomp Hair",
+            "Hair",
+            "125 coins"
+          ],
+          [
+            "Black Ponytail",
+            "Hair",
+            "100 coins"
+          ],
+          [
+            "Blond Ponytail",
+            "Hair",
+            "100 coins"
+          ],
+          [
+            "Brown Ponytail",
+            "Hair",
+            "100 coins"
+          ],
+          [
+            "Cerulean Ponytail",
+            "Hair",
+            "100 coins"
+          ],
+          [
+            "Peach Ponytail",
+            "Hair",
+            "100 coins"
+          ],
+          [
+            "Black Short Hair",
+            "Hair",
+            "50 coins"
+          ],
+          [
+            "Blond Short Hair",
+            "Hair",
+            "50 coins"
+          ],
+          [
+            "Brown Short Hair",
+            "Hair",
+            "50 coins"
+          ],
+          [
+            "Cerulean Short Hair",
+            "Hair",
+            "50 coins"
+          ],
+          [
+            "Peach Short Hair",
+            "Hair",
+            "50 coins"
+          ],
+          [
+            "Human 1",
+            "Skin",
+            "Free"
+          ],
+          [
+            "Human 2",
+            "Skin",
+            "Free"
+          ],
+          [
+            "Human 3",
+            "Skin",
+            "Free"
+          ],
+          [
+            "Human 4",
+            "Skin",
+            "Free"
+          ],
+          [
+            "\"The Johnny\"",
+            "Hair",
+            "30,000 coins"
+          ]
+        ]
+      }
+    ],
+    "sections": [
+      [
+        "Appearance changes",
+        "These prices apply to appearance changes at the salon. A zero-cost skin change is free. Appearance services do not create inventory items that can be sold back to a vendor. The preview does not charge coins until the change is confirmed in game."
+      ]
+    ],
+    "related": [
+      "marcels-hair-salon",
+      "brown-bold-hair",
+      "black-bubble-hair",
+      "black-long-hair",
+      "blond-long-hair",
+      "brown-long-hair",
+      "cerulean-long-hair",
+      "peach-long-hair",
+      "black-lush-hair",
+      "black-medium-hair",
+      "blond-medium-hair",
+      "brown-medium-hair",
+      "cerulean-medium-hair",
+      "peach-medium-hair",
+      "black-pomp-hair",
+      "blond-pomp-hair",
+      "brown-pomp-hair",
+      "cerulean-pomp-hair",
+      "peach-pomp-hair",
+      "black-ponytail",
+      "blond-ponytail",
+      "brown-ponytail",
+      "cerulean-ponytail",
+      "peach-ponytail",
+      "black-short-hair",
+      "blond-short-hair",
+      "brown-short-hair",
+      "cerulean-short-hair",
+      "peach-short-hair",
+      "human-1",
+      "human-2",
+      "human-3",
+      "human-4",
+      "the-johnny"
+    ],
+    "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
+      [
+        "Official Microscape game",
+        "https://microscape.cc/play/"
+      ]
+    ],
+    "sprites": [
+      {
+        "label": "Marcel the Stylist",
+        "layers": [
+          "https://microscape.cc/play/assets/skin2World-fBopXN4J.png",
+          "https://microscape.cc/play/assets/clothesDapperWorld-D8rw7gud.png",
+          "https://microscape.cc/play/assets/shortBlondWorld-DUxicyhG.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          44,
+          28,
+          32
+        ]
+      }
+    ]
+  },
+  {
+    "id": "shop-merrics-magic",
+    "title": "Merric's Magic Shop",
+    "category": "shops",
+    "group": "Coin shops",
+    "generatedShopDirectory": true,
+    "summary": "Merric · Merric’s Magic Shop · 9 items for coins.",
+    "statsDate": "2026-11-20",
+    "facts": [
+      [
+        "Vendor / provider",
+        "Merric"
+      ],
+      [
+        "Location",
+        "Merric’s Magic Shop"
+      ],
+      [
+        "Type",
+        "Coin shops"
+      ],
+      [
+        "Currency",
+        "Coins"
+      ],
+      [
+        "Items for sale",
+        "9"
+      ]
+    ],
+    "tables": [
+      {
+        "title": "Items for sale",
+        "columns": [
+          "Item",
+          "You pay per item",
+          "You receive when selling",
+          "Equip requirements"
+        ],
+        "rows": [
+          [
+            "Staff",
+            "28 coins",
+            "2 coins",
+            "None listed"
+          ],
+          [
+            "Air Rune",
+            "3 coins",
+            "1 coin",
+            "None listed"
+          ],
+          [
+            "Fire Rune",
+            "3 coins",
+            "1 coin",
+            "None listed"
+          ],
+          [
+            "Mind Rune",
+            "6 coins",
+            "2 coins",
+            "None listed"
+          ],
+          [
+            "Chaos Rune",
+            "9 coins",
+            "3 coins",
+            "None listed"
+          ],
+          [
+            "Death Rune",
+            "15 coins",
+            "5 coins",
+            "None listed"
+          ],
+          [
+            "Cosmic Rune",
+            "12 coins",
+            "4 coins",
+            "None listed"
+          ],
+          [
+            "Nature Rune",
+            "24 coins",
+            "8 coins",
+            "None listed"
+          ],
+          [
+            "Law Rune",
+            "27 coins",
+            "9 coins",
+            "None listed"
+          ]
+        ]
+      }
+    ],
+    "sections": [
+      [
+        "Buying and selling",
+        "The buy price is what you pay for one item. The sell value is what a shop pays for one item; it is not the purchase price or a Bazaar price. Item-specific markups override the shop’s general markup. Equipment requirements describe wearing or using the item, not a confirmed restriction on buying it."
+      ]
+    ],
+    "related": [
+      "merrics-magic-shop",
+      "staff",
+      "air-rune",
+      "fire-rune",
+      "mind-rune",
+      "chaos-rune",
+      "death-rune",
+      "cosmic-rune",
+      "nature-rune",
+      "law-rune"
+    ],
+    "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
+      [
+        "Official Microscape game",
+        "https://microscape.cc/play/"
+      ]
+    ],
+    "sprites": [
+      {
+        "label": "Merric",
+        "layers": [
+          "https://microscape.cc/play/assets/skin2World-fBopXN4J.png",
+          "https://microscape.cc/play/assets/clothesScoutWorld-CysputqP.png",
+          "https://microscape.cc/play/assets/boldBrownWorld-DJuVaImt.png",
+          "https://microscape.cc/play/assets/staffWorld-BTw7t9Bi.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          48,
+          40,
+          28
+        ]
+      }
+    ]
+  },
+  {
+    "id": "vendor-mork",
+    "title": "Mork",
+    "category": "shops",
+    "group": "Barter and services",
+    "generatedShopDirectory": true,
+    "summary": "Fellroot Swamp Hut · 24 trade or service options.",
+    "statsDate": "2026-11-20",
+    "facts": [
+      [
+        "Vendor / provider",
+        "Mork"
+      ],
+      [
+        "Location",
+        "Fellroot Swamp Hut"
+      ],
+      [
+        "Type",
+        "Barter and services"
+      ],
+      [
+        "Offers",
+        "24"
+      ]
+    ],
+    "tables": [
+      {
+        "title": "Trade and service offers",
+        "columns": [
+          "Offer",
+          "You receive",
+          "You provide",
+          "Reward sell value per item",
+          "Activity requirements"
+        ],
+        "rows": [
+          [
+            "Mork's Grove Map",
+            "1 × Pet Map: Amber",
+            "10 × Audience Favor",
+            "Pet Map: Amber: No sell value listed",
+            "Piety 1 · Single execution"
+          ],
+          [
+            "Mork's Danger Meadows Map",
+            "1 × Pet Map: Beatrix",
+            "10 × Audience Favor",
+            "Pet Map: Beatrix: No sell value listed",
+            "Piety 1 · Single execution"
+          ],
+          [
+            "Mork's Swamp Map",
+            "1 × Pet Map: Bog",
+            "20 × Audience Favor",
+            "Pet Map: Bog: No sell value listed",
+            "Piety 1 · Single execution"
+          ],
+          [
+            "Mork's Treetop Map",
+            "1 × Pet Map: Chia",
+            "10 × Audience Favor",
+            "Pet Map: Chia: No sell value listed",
+            "Piety 1 · Single execution"
+          ],
+          [
+            "Mork's Kitchen Map",
+            "1 × Pet Map: Crumpet",
+            "10 × Audience Favor",
+            "Pet Map: Crumpet: No sell value listed",
+            "Piety 1 · Single execution"
+          ],
+          [
+            "Mork's Firepit Map",
+            "1 × Pet Map: Ember",
+            "10 × Audience Favor",
+            "Pet Map: Ember: No sell value listed",
+            "Piety 1 · Single execution"
+          ],
+          [
+            "Mork's Fletching Spots Map",
+            "1 × Pet Map: Fibs",
+            "20 × Audience Favor",
+            "Pet Map: Fibs: No sell value listed",
+            "Piety 1 · Single execution"
+          ],
+          [
+            "Mork's Mossy Altar Map",
+            "1 × Pet Map: Gloop",
+            "10 × Audience Favor",
+            "Pet Map: Gloop: No sell value listed",
+            "Piety 1 · Single execution"
+          ],
+          [
+            "Mork's Mine Map",
+            "1 × Pet Map: Golem Core",
+            "20 × Audience Favor",
+            "Pet Map: Golem Core: No sell value listed",
+            "Piety 1 · Single execution"
+          ],
+          [
+            "Mork's Anvil Map",
+            "1 × Pet Map: Greta",
+            "10 × Audience Favor",
+            "Pet Map: Greta: No sell value listed",
+            "Piety 1 · Single execution"
+          ],
+          [
+            "Mork's Forge Map",
+            "1 × Pet Map: Hilda",
+            "20 × Audience Favor",
+            "Pet Map: Hilda: No sell value listed",
+            "Piety 1 · Single execution"
+          ],
+          [
+            "Mork's Druidic Grove Map",
+            "1 × Pet Map: Hubble",
+            "20 × Audience Favor",
+            "Pet Map: Hubble: No sell value listed",
+            "Piety 1 · Single execution"
+          ],
+          [
+            "Mork's Graveyard Map",
+            "1 × Pet Map: Mercy",
+            "10 × Audience Favor",
+            "Pet Map: Mercy: No sell value listed",
+            "Piety 1 · Single execution"
+          ],
+          [
+            "Mork's Old Tunnel Map",
+            "1 × Pet Map: Mossy",
+            "10 × Audience Favor",
+            "Pet Map: Mossy: No sell value listed",
+            "Piety 1 · Single execution"
+          ],
+          [
+            "Mork's Riverbank Map",
+            "1 × Pet Map: Murk",
+            "10 × Audience Favor",
+            "Pet Map: Murk: No sell value listed",
+            "Piety 1 · Single execution"
+          ],
+          [
+            "Mork's Holy Grounds Map",
+            "1 × Pet Map: Peace Moth",
+            "20 × Audience Favor",
+            "Pet Map: Peace Moth: No sell value listed",
+            "Piety 1 · Single execution"
+          ],
+          [
+            "Mork's Cuisine Map",
+            "1 × Pet Map: Pickles",
+            "20 × Audience Favor",
+            "Pet Map: Pickles: No sell value listed",
+            "Piety 1 · Single execution"
+          ],
+          [
+            "Mork's Arcane Map",
+            "1 × Pet Map: Riddle",
+            "20 × Audience Favor",
+            "Pet Map: Riddle: No sell value listed",
+            "Piety 1 · Single execution"
+          ],
+          [
+            "Mork's Workbench Map",
+            "1 × Pet Map: Sandy",
+            "10 × Audience Favor",
+            "Pet Map: Sandy: No sell value listed",
+            "Piety 1 · Single execution"
+          ],
+          [
+            "Mork's Danger Dragon Map",
+            "1 × Pet Map: Scales",
+            "10 × Audience Favor",
+            "Pet Map: Scales: No sell value listed",
+            "Piety 1 · Single execution"
+          ],
+          [
+            "Mork's Workshop Map",
+            "1 × Pet Map: Scoop",
+            "20 × Audience Favor",
+            "Pet Map: Scoop: No sell value listed",
+            "Piety 1 · Single execution"
+          ],
+          [
+            "Mork's Spellbook Map",
+            "1 × Pet Map: Scribble",
+            "10 × Audience Favor",
+            "Pet Map: Scribble: No sell value listed",
+            "Piety 1 · Single execution"
+          ],
+          [
+            "Mork's Campfire Map",
+            "1 × Pet Map: Tinderling",
+            "20 × Audience Favor",
+            "Pet Map: Tinderling: No sell value listed",
+            "Piety 1 · Single execution"
+          ],
+          [
+            "Mork's Forest Clearing Map",
+            "1 × Pet Map: Winkle",
+            "20 × Audience Favor",
+            "Pet Map: Winkle: No sell value listed",
+            "Piety 1 · Single execution"
+          ]
+        ],
+        "links": [
+          [
+            "10 × Audience Favor",
+            "item-audience-favor"
+          ],
+          [
+            "1 × Pet Map: Amber",
+            "pet-map-amber"
+          ],
+          [
+            "10 × Audience Favor",
+            "item-audience-favor"
+          ],
+          [
+            "1 × Pet Map: Beatrix",
+            "pet-map-beatrix"
+          ],
+          [
+            "20 × Audience Favor",
+            "item-audience-favor"
+          ],
+          [
+            "1 × Pet Map: Bog",
+            "pet-map-bog"
+          ],
+          [
+            "10 × Audience Favor",
+            "item-audience-favor"
+          ],
+          [
+            "1 × Pet Map: Chia",
+            "pet-map-chia"
+          ],
+          [
+            "10 × Audience Favor",
+            "item-audience-favor"
+          ],
+          [
+            "1 × Pet Map: Crumpet",
+            "pet-map-crumpet"
+          ],
+          [
+            "10 × Audience Favor",
+            "item-audience-favor"
+          ],
+          [
+            "1 × Pet Map: Ember",
+            "pet-map-ember"
+          ],
+          [
+            "20 × Audience Favor",
+            "item-audience-favor"
+          ],
+          [
+            "1 × Pet Map: Fibs",
+            "pet-map-fibs"
+          ],
+          [
+            "10 × Audience Favor",
+            "item-audience-favor"
+          ],
+          [
+            "1 × Pet Map: Gloop",
+            "pet-map-gloop"
+          ],
+          [
+            "20 × Audience Favor",
+            "item-audience-favor"
+          ],
+          [
+            "1 × Pet Map: Golem Core",
+            "pet-map-golem-core"
+          ],
+          [
+            "10 × Audience Favor",
+            "item-audience-favor"
+          ],
+          [
+            "1 × Pet Map: Greta",
+            "pet-map-greta"
+          ],
+          [
+            "20 × Audience Favor",
+            "item-audience-favor"
+          ],
+          [
+            "1 × Pet Map: Hilda",
+            "pet-map-hilda"
+          ],
+          [
+            "20 × Audience Favor",
+            "item-audience-favor"
+          ],
+          [
+            "1 × Pet Map: Hubble",
+            "pet-map-hubble"
+          ],
+          [
+            "10 × Audience Favor",
+            "item-audience-favor"
+          ],
+          [
+            "1 × Pet Map: Mercy",
+            "pet-map-mercy"
+          ],
+          [
+            "10 × Audience Favor",
+            "item-audience-favor"
+          ],
+          [
+            "1 × Pet Map: Mossy",
+            "pet-map-mossy"
+          ],
+          [
+            "10 × Audience Favor",
+            "item-audience-favor"
+          ],
+          [
+            "1 × Pet Map: Murk",
+            "pet-map-murk"
+          ],
+          [
+            "20 × Audience Favor",
+            "item-audience-favor"
+          ],
+          [
+            "1 × Pet Map: Peace Moth",
+            "pet-map-peace-moth"
+          ],
+          [
+            "20 × Audience Favor",
+            "item-audience-favor"
+          ],
+          [
+            "1 × Pet Map: Pickles",
+            "pet-map-pickles"
+          ],
+          [
+            "20 × Audience Favor",
+            "item-audience-favor"
+          ],
+          [
+            "1 × Pet Map: Riddle",
+            "pet-map-riddle"
+          ],
+          [
+            "10 × Audience Favor",
+            "item-audience-favor"
+          ],
+          [
+            "1 × Pet Map: Sandy",
+            "pet-map-sandy"
+          ],
+          [
+            "10 × Audience Favor",
+            "item-audience-favor"
+          ],
+          [
+            "1 × Pet Map: Scales",
+            "pet-map-scales"
+          ],
+          [
+            "20 × Audience Favor",
+            "item-audience-favor"
+          ],
+          [
+            "1 × Pet Map: Scoop",
+            "pet-map-scoop"
+          ],
+          [
+            "10 × Audience Favor",
+            "item-audience-favor"
+          ],
+          [
+            "1 × Pet Map: Scribble",
+            "pet-map-scribble"
+          ],
+          [
+            "20 × Audience Favor",
+            "item-audience-favor"
+          ],
+          [
+            "1 × Pet Map: Tinderling",
+            "pet-map-tinderling"
+          ],
+          [
+            "20 × Audience Favor",
+            "item-audience-favor"
+          ],
+          [
+            "1 × Pet Map: Winkle",
+            "pet-map-winkle"
+          ]
+        ],
+        "listColumns": [
+          1,
+          2
+        ]
+      }
+    ],
+    "sections": [
+      [
+        "How to use these offers",
+        "These are NPC trades, crafting services or reward exchanges. Bring every listed input; coin-shop markups do not apply to these costs. The reward’s sell value is shown separately and does not convert Audience Favor, dungeon coins or ingredients into ordinary coins. Item possession, membership and completed unlocks must still be checked in game."
+      ]
+    ],
+    "related": [
+      "fellroot-swamp-hut",
+      "item-audience-favor",
+      "pet-map-amber",
+      "pet-map-beatrix",
+      "pet-map-bog",
+      "pet-map-chia",
+      "pet-map-crumpet",
+      "pet-map-ember",
+      "pet-map-fibs",
+      "pet-map-gloop",
+      "pet-map-golem-core",
+      "pet-map-greta",
+      "pet-map-hilda",
+      "pet-map-hubble",
+      "pet-map-mercy",
+      "pet-map-mossy",
+      "pet-map-murk",
+      "pet-map-peace-moth",
+      "pet-map-pickles",
+      "pet-map-riddle",
+      "pet-map-sandy",
+      "pet-map-scales",
+      "pet-map-scoop",
+      "pet-map-scribble",
+      "pet-map-tinderling",
+      "pet-map-winkle"
+    ],
+    "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
+      [
+        "Official Microscape game",
+        "https://microscape.cc/play/"
+      ]
+    ],
+    "sprites": [
+      {
+        "label": "Mork",
+        "layers": [
+          "https://microscape.cc/play/assets/mork-zpX6G5BW.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          44,
+          40,
+          40,
+          36
+        ]
+      }
+    ]
+  },
+  {
+    "id": "shop-fishing-gear-shop",
+    "title": "Old David's Shop",
+    "category": "shops",
+    "group": "Coin shops",
+    "generatedShopDirectory": true,
+    "summary": "Old David · Solace Shoals · 1 item for coins.",
+    "statsDate": "2026-11-20",
+    "facts": [
+      [
+        "Vendor / provider",
+        "Old David"
+      ],
+      [
+        "Location",
+        "Solace Shoals"
+      ],
+      [
+        "Type",
+        "Coin shops"
+      ],
+      [
+        "Currency",
+        "Coins"
+      ],
+      [
+        "Items for sale",
+        "1"
+      ]
+    ],
+    "tables": [
+      {
+        "title": "Items for sale",
+        "columns": [
+          "Item",
+          "You pay per item",
+          "You receive when selling",
+          "Equip requirements"
+        ],
+        "rows": [
+          [
+            "Feather",
+            "3 coins",
+            "1 coin",
+            "None listed"
+          ]
+        ]
+      }
+    ],
+    "sections": [
+      [
+        "Buying and selling",
+        "The buy price is what you pay for one item. The sell value is what a shop pays for one item; it is not the purchase price or a Bazaar price. Item-specific markups override the shop’s general markup. Equipment requirements describe wearing or using the item, not a confirmed restriction on buying it."
+      ]
+    ],
+    "related": [
+      "solace-shoals",
+      "feather"
+    ],
+    "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
+      [
+        "Official Microscape game",
+        "https://microscape.cc/play/"
+      ]
+    ],
+    "sprites": [
+      {
+        "label": "Old David",
+        "layers": [
+          "https://microscape.cc/play/assets/skin3World-uZ9SWQAz.png",
+          "https://microscape.cc/play/assets/clothesScoutWorld-CysputqP.png",
+          "https://microscape.cc/play/assets/shortBlackWorld-CW21TBoF.png",
+          "https://microscape.cc/play/assets/fishingRodWorld-B4lD5nVA.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          40,
+          48,
+          36
+        ]
+      }
+    ]
+  },
+  {
+    "id": "vendor-otis",
+    "title": "Otis",
+    "category": "shops",
+    "group": "Barter and services",
+    "generatedShopDirectory": true,
+    "summary": "Fellroot Swamp Hut · 11 trade or service options.",
+    "statsDate": "2026-11-20",
+    "facts": [
+      [
+        "Vendor / provider",
+        "Otis"
+      ],
+      [
+        "Location",
+        "Fellroot Swamp Hut"
+      ],
+      [
+        "Type",
+        "Barter and services"
+      ],
+      [
+        "Offers",
+        "11"
+      ]
+    ],
+    "tables": [
+      {
+        "title": "Trade and service offers",
+        "columns": [
+          "Offer",
+          "You receive",
+          "You provide",
+          "Reward sell value per item",
+          "Activity requirements"
+        ],
+        "rows": [
+          [
+            "Otis's Kitchen Map",
+            "1 × Pet Map: Biscuit",
+            "15 × Audience Favor",
+            "Pet Map: Biscuit: No sell value listed",
+            "Piety 1 · Membership · Single execution"
+          ],
+          [
+            "Otis's Fireside Map",
+            "1 × Pet Map: Cinder",
+            "15 × Audience Favor",
+            "Pet Map: Cinder: No sell value listed",
+            "Piety 1 · Membership · Single execution"
+          ],
+          [
+            "Otis's Monastery Map",
+            "1 × Pet Map: Clement",
+            "15 × Audience Favor",
+            "Pet Map: Clement: No sell value listed",
+            "Piety 1 · Membership · Single execution"
+          ],
+          [
+            "Otis's Spellbound Map",
+            "1 × Pet Map: Merlin",
+            "15 × Audience Favor",
+            "Pet Map: Merlin: No sell value listed",
+            "Piety 1 · Membership · Single execution"
+          ],
+          [
+            "Otis's Riverbank Map",
+            "1 × Pet Map: Otter",
+            "15 × Audience Favor",
+            "Pet Map: Otter: No sell value listed",
+            "Piety 1 · Membership · Single execution"
+          ],
+          [
+            "Otis's Quarry Map",
+            "1 × Pet Map: Pebble",
+            "15 × Audience Favor",
+            "Pet Map: Pebble: No sell value listed",
+            "Piety 1 · Membership · Single execution"
+          ],
+          [
+            "Otis's Bowyer Map",
+            "1 × Pet Map: Quill",
+            "15 × Audience Favor",
+            "Pet Map: Quill: No sell value listed",
+            "Piety 1 · Membership · Single execution"
+          ],
+          [
+            "Otis's Herb Garden Map",
+            "1 × Pet Map: Sage",
+            "15 × Audience Favor",
+            "Pet Map: Sage: No sell value listed",
+            "Piety 1 · Membership · Single execution"
+          ],
+          [
+            "Otis's Smithy Map",
+            "1 × Pet Map: Smudge",
+            "15 × Audience Favor",
+            "Pet Map: Smudge: No sell value listed",
+            "Piety 1 · Membership · Single execution"
+          ],
+          [
+            "Otis's Workbench Map",
+            "1 × Pet Map: Stitch",
+            "15 × Audience Favor",
+            "Pet Map: Stitch: No sell value listed",
+            "Piety 1 · Membership · Single execution"
+          ],
+          [
+            "Otis's Timber Grove Map",
+            "1 × Pet Map: Stump",
+            "15 × Audience Favor",
+            "Pet Map: Stump: No sell value listed",
+            "Piety 1 · Membership · Single execution"
+          ]
+        ],
+        "links": [
+          [
+            "15 × Audience Favor",
+            "item-audience-favor"
+          ],
+          [
+            "1 × Pet Map: Biscuit",
+            "pet-map-biscuit"
+          ],
+          [
+            "15 × Audience Favor",
+            "item-audience-favor"
+          ],
+          [
+            "1 × Pet Map: Cinder",
+            "pet-map-cinder"
+          ],
+          [
+            "15 × Audience Favor",
+            "item-audience-favor"
+          ],
+          [
+            "1 × Pet Map: Clement",
+            "pet-map-clement"
+          ],
+          [
+            "15 × Audience Favor",
+            "item-audience-favor"
+          ],
+          [
+            "1 × Pet Map: Merlin",
+            "pet-map-merlin"
+          ],
+          [
+            "15 × Audience Favor",
+            "item-audience-favor"
+          ],
+          [
+            "1 × Pet Map: Otter",
+            "pet-map-otter"
+          ],
+          [
+            "15 × Audience Favor",
+            "item-audience-favor"
+          ],
+          [
+            "1 × Pet Map: Pebble",
+            "pet-map-pebble"
+          ],
+          [
+            "15 × Audience Favor",
+            "item-audience-favor"
+          ],
+          [
+            "1 × Pet Map: Quill",
+            "pet-map-quill"
+          ],
+          [
+            "15 × Audience Favor",
+            "item-audience-favor"
+          ],
+          [
+            "1 × Pet Map: Sage",
+            "pet-map-sage"
+          ],
+          [
+            "15 × Audience Favor",
+            "item-audience-favor"
+          ],
+          [
+            "1 × Pet Map: Smudge",
+            "pet-map-smudge"
+          ],
+          [
+            "15 × Audience Favor",
+            "item-audience-favor"
+          ],
+          [
+            "1 × Pet Map: Stitch",
+            "pet-map-stitch"
+          ],
+          [
+            "15 × Audience Favor",
+            "item-audience-favor"
+          ],
+          [
+            "1 × Pet Map: Stump",
+            "pet-map-stump"
+          ]
+        ],
+        "listColumns": [
+          1,
+          2
+        ]
+      }
+    ],
+    "sections": [
+      [
+        "How to use these offers",
+        "These are NPC trades, crafting services or reward exchanges. Bring every listed input; coin-shop markups do not apply to these costs. The reward’s sell value is shown separately and does not convert Audience Favor, dungeon coins or ingredients into ordinary coins. Item possession, membership and completed unlocks must still be checked in game."
+      ]
+    ],
+    "related": [
+      "fellroot-swamp-hut",
+      "item-audience-favor",
+      "pet-map-biscuit",
+      "pet-map-cinder",
+      "pet-map-clement",
+      "pet-map-merlin",
+      "pet-map-otter",
+      "pet-map-pebble",
+      "pet-map-quill",
+      "pet-map-sage",
+      "pet-map-smudge",
+      "pet-map-stitch",
+      "pet-map-stump"
+    ],
+    "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
+      [
+        "Official Microscape game",
+        "https://microscape.cc/play/"
+      ]
+    ],
+    "sprites": [
+      {
+        "label": "Otis",
+        "layers": [
+          "https://microscape.cc/play/assets/donkey-9n0HRwls.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          36,
+          40,
+          56,
+          36
+        ]
+      }
+    ]
+  },
+  {
+    "id": "shop-rodrigos-arrows",
+    "title": "Rodrigo's Arrows",
+    "category": "shops",
+    "group": "Coin shops",
+    "generatedShopDirectory": true,
+    "summary": "Rodrigo · O’Rock West · 2 items for coins.",
+    "statsDate": "2026-11-20",
+    "facts": [
+      [
+        "Vendor / provider",
+        "Rodrigo"
+      ],
+      [
+        "Location",
+        "O’Rock West"
+      ],
+      [
+        "Type",
+        "Coin shops"
+      ],
+      [
+        "Currency",
+        "Coins"
+      ],
+      [
+        "Items for sale",
+        "2"
+      ]
+    ],
+    "tables": [
+      {
+        "title": "Items for sale",
+        "columns": [
+          "Item",
+          "You pay per item",
+          "You receive when selling",
+          "Equip requirements"
+        ],
+        "rows": [
+          [
+            "Bronze Arrows",
+            "6 coins",
+            "1 coin",
+            "None listed"
+          ],
+          [
+            "Bow",
+            "18 coins",
+            "3 coins",
+            "Ranged 1"
+          ]
+        ]
+      }
+    ],
+    "sections": [
+      [
+        "Buying and selling",
+        "The buy price is what you pay for one item. The sell value is what a shop pays for one item; it is not the purchase price or a Bazaar price. Item-specific markups override the shop’s general markup. Equipment requirements describe wearing or using the item, not a confirmed restriction on buying it."
+      ]
+    ],
+    "related": [
+      "orock-west",
+      "bronze-arrows",
+      "bow"
+    ],
+    "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
+      [
+        "Official Microscape game",
+        "https://microscape.cc/play/"
+      ]
+    ],
+    "sprites": [
+      {
+        "label": "Rodrigo",
+        "layers": [
+          "https://microscape.cc/play/assets/skin2World-fBopXN4J.png",
+          "https://microscape.cc/play/assets/clothesScoutWorld-CysputqP.png",
+          "https://microscape.cc/play/assets/shortBrownWorld-PzbEi9oR.png",
+          "https://microscape.cc/play/assets/shortbowWorld-Cc4xKMbL.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          44,
+          36,
+          32
+        ]
+      }
+    ]
+  },
+  {
+    "id": "exchange-rusty-chest",
+    "title": "Rusty Chest",
+    "category": "shops",
+    "group": "Dungeon exchanges",
+    "generatedShopDirectory": true,
+    "summary": "The Sump · 3 trade or service options.",
+    "statsDate": "2026-11-20",
+    "facts": [
+      [
+        "Vendor / provider",
+        "Dungeon reward chest"
+      ],
+      [
+        "Location",
+        "The Sump"
+      ],
+      [
+        "Type",
+        "Dungeon exchanges"
+      ],
+      [
+        "Offers",
+        "3"
+      ]
+    ],
+    "tables": [
+      {
+        "title": "Dungeon coin rewards",
+        "columns": [
+          "Offer",
+          "You receive",
+          "You provide",
+          "Reward sell value per item",
+          "Activity requirements"
+        ],
+        "rows": [
+          [
+            "Search For Cloaks",
+            "1 × Fletcher's Cloak",
+            "128 × Rusty Coin",
+            "Fletcher's Cloak: 900 coins",
+            "Piety 1 · Single execution"
+          ],
+          [
+            "Search For Boots",
+            "1 × Rubber Boots",
+            "16 × Rusty Coin",
+            "Rubber Boots: 640 coins",
+            "Piety 1 · Single execution"
+          ],
+          [
+            "Search For Rings",
+            "1 × Wedding Band",
+            "256 × Rusty Coin",
+            "Wedding Band: 1,800 coins",
+            "Piety 1 · Single execution"
+          ]
+        ],
+        "links": [
+          [
+            "128 × Rusty Coin",
+            "rusty-coin"
+          ],
+          [
+            "1 × Fletcher's Cloak",
+            "fletchers-cloak"
+          ],
+          [
+            "16 × Rusty Coin",
+            "rusty-coin"
+          ],
+          [
+            "1 × Rubber Boots",
+            "rubber-boots"
+          ],
+          [
+            "256 × Rusty Coin",
+            "rusty-coin"
+          ],
+          [
+            "1 × Wedding Band",
+            "wedding-band"
+          ]
+        ],
+        "listColumns": [
+          1,
+          2
+        ]
+      }
+    ],
+    "sections": [
+      [
+        "How to use these offers",
+        "These are NPC trades, crafting services or reward exchanges. Bring every listed input; coin-shop markups do not apply to these costs. The reward’s sell value is shown separately and does not convert Audience Favor, dungeon coins or ingredients into ordinary coins. Item possession, membership and completed unlocks must still be checked in game."
+      ]
+    ],
+    "related": [
+      "the-sump",
+      "rusty-coin",
+      "fletchers-cloak",
+      "rubber-boots",
+      "wedding-band"
+    ],
+    "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
+      [
+        "Official Microscape game",
+        "https://microscape.cc/play/"
+      ]
+    ],
+    "portrait": {
+      "src": "https://microscape.cc/play/assets/coins-BcEf0E2I.png",
+      "source": "https://microscape.cc/play/"
+    }
+  },
+  {
+    "id": "exchange-scorched-chest",
+    "title": "Scorched Chest",
+    "category": "shops",
+    "group": "Dungeon exchanges",
+    "generatedShopDirectory": true,
+    "summary": "Dread Mount Onyx Lair · 5 trade or service options.",
+    "statsDate": "2026-11-20",
+    "facts": [
+      [
+        "Vendor / provider",
+        "Dungeon reward chest"
+      ],
+      [
+        "Location",
+        "Dread Mount Onyx Lair"
+      ],
+      [
+        "Type",
+        "Dungeon exchanges"
+      ],
+      [
+        "Offers",
+        "5"
+      ]
+    ],
+    "tables": [
+      {
+        "title": "Dungeon coin rewards",
+        "columns": [
+          "Offer",
+          "You receive",
+          "You provide",
+          "Reward sell value per item",
+          "Activity requirements"
+        ],
+        "rows": [
+          [
+            "Search For Gems",
+            "1 × Dragonstone",
+            "64 × Scorched Coin",
+            "Dragonstone: 762 coins",
+            "Piety 1 · Single execution"
+          ],
+          [
+            "Search For Armor",
+            "1 × Dragon Helm",
+            "256 × Scorched Coin",
+            "Dragon Helm: 25,088 coins",
+            "Piety 1 · Single execution"
+          ],
+          [
+            "Search For Relics",
+            "1 × Dragon Shield (Left Half)",
+            "2,048 × Scorched Coin",
+            "Dragon Shield (Left Half): 16,128 coins",
+            "Piety 1 · Single execution"
+          ],
+          [
+            "Search For Swords",
+            "1 × Dragon Sword",
+            "256 × Scorched Coin",
+            "Dragon Sword: 30,080 coins",
+            "Piety 1 · Single execution"
+          ],
+          [
+            "Search For Large Weapons",
+            "1 × Progrite 2h Sword",
+            "128 × Scorched Coin",
+            "Progrite 2h Sword: 10,112 coins",
+            "Piety 1 · Single execution"
+          ]
+        ],
+        "links": [
+          [
+            "64 × Scorched Coin",
+            "scorched-coin"
+          ],
+          [
+            "1 × Dragonstone",
+            "dragonstone"
+          ],
+          [
+            "256 × Scorched Coin",
+            "scorched-coin"
+          ],
+          [
+            "1 × Dragon Helm",
+            "dragon-helm"
+          ],
+          [
+            "2,048 × Scorched Coin",
+            "scorched-coin"
+          ],
+          [
+            "1 × Dragon Shield (Left Half)",
+            "dragon-shield-left-half"
+          ],
+          [
+            "256 × Scorched Coin",
+            "scorched-coin"
+          ],
+          [
+            "1 × Dragon Sword",
+            "dragon-sword"
+          ],
+          [
+            "128 × Scorched Coin",
+            "scorched-coin"
+          ],
+          [
+            "1 × Progrite 2h Sword",
+            "progrite-2h-sword"
+          ]
+        ],
+        "listColumns": [
+          1,
+          2
+        ]
+      }
+    ],
+    "sections": [
+      [
+        "How to use these offers",
+        "These are NPC trades, crafting services or reward exchanges. Bring every listed input; coin-shop markups do not apply to these costs. The reward’s sell value is shown separately and does not convert Audience Favor, dungeon coins or ingredients into ordinary coins. Item possession, membership and completed unlocks must still be checked in game."
+      ]
+    ],
+    "related": [
+      "dread-mount-onyx-lair",
+      "scorched-coin",
+      "dragonstone",
+      "dragon-helm",
+      "dragon-shield-left-half",
+      "dragon-sword",
+      "progrite-2h-sword"
+    ],
+    "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
+      [
+        "Official Microscape game",
+        "https://microscape.cc/play/"
+      ]
+    ],
+    "portrait": {
+      "src": "https://microscape.cc/play/assets/coins-BcEf0E2I.png",
+      "source": "https://microscape.cc/play/"
+    }
+  },
+  {
+    "id": "vendor-sir-bratley",
+    "title": "Sir Bratley",
+    "category": "shops",
+    "group": "Barter and services",
+    "generatedShopDirectory": true,
+    "summary": "Falcrest Castle Parlor Room · 2 trade or service options.",
+    "statsDate": "2026-11-20",
+    "facts": [
+      [
+        "Vendor / provider",
+        "Sir Bratley"
+      ],
+      [
+        "Location",
+        "Falcrest Castle Parlor Room"
+      ],
+      [
+        "Type",
+        "Barter and services"
+      ],
+      [
+        "Offers",
+        "2"
+      ]
+    ],
+    "tables": [
+      {
+        "title": "Trade and service offers",
+        "columns": [
+          "Offer",
+          "You receive",
+          "You provide",
+          "Reward sell value per item",
+          "Activity requirements"
+        ],
+        "rows": [
+          [
+            "Missed The Party?",
+            "1 × Consolation Hat",
+            "100 × Coins",
+            "Consolation Hat: No sell value listed",
+            "Crafting 1 · Single execution"
+          ],
+          [
+            "Financial Troubles",
+            "1 × Dragon Shield (Right Half)",
+            "7,300,000 × Coins",
+            "Dragon Shield (Right Half): 16,128 coins",
+            "Crafting 1 · Single execution"
+          ]
+        ],
+        "links": [
+          [
+            "100 × Coins",
+            "coins"
+          ],
+          [
+            "1 × Consolation Hat",
+            "consolation-hat"
+          ],
+          [
+            "7,300,000 × Coins",
+            "coins"
+          ],
+          [
+            "1 × Dragon Shield (Right Half)",
+            "dragon-shield-right-half"
+          ]
+        ],
+        "listColumns": [
+          1,
+          2
+        ]
+      }
+    ],
+    "sections": [
+      [
+        "How to use these offers",
+        "These are NPC trades, crafting services or reward exchanges. Bring every listed input; coin-shop markups do not apply to these costs. The reward’s sell value is shown separately and does not convert Audience Favor, dungeon coins or ingredients into ordinary coins. Item possession, membership and completed unlocks must still be checked in game."
+      ]
+    ],
+    "related": [
+      "falcrest-castle-parlor-room",
+      "coins",
+      "consolation-hat",
+      "dragon-shield-right-half"
+    ],
+    "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
+      [
+        "Official Microscape game",
+        "https://microscape.cc/play/"
+      ]
+    ],
+    "sprites": [
+      {
+        "label": "Sir Bratley",
+        "layers": [
+          "https://microscape.cc/play/assets/skin1World-C5McwYaD.png",
+          "https://microscape.cc/play/assets/leatherBootsWorld-OfLt4-ZX.png",
+          "https://microscape.cc/play/assets/steelArmorWorld-ViagYfV_.png",
+          "https://microscape.cc/play/assets/steelFullHelmWorld-bq5xUf-J.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          40,
+          28,
+          36
+        ]
+      }
+    ]
+  },
+  {
+    "id": "vendor-sirocco",
+    "title": "Sirocco",
+    "category": "shops",
+    "group": "Barter and services",
+    "generatedShopDirectory": true,
+    "summary": "Elshand Temple Ruins · 1 trade or service option.",
+    "statsDate": "2026-11-20",
+    "facts": [
+      [
+        "Vendor / provider",
+        "Sirocco"
+      ],
+      [
+        "Location",
+        "Elshand Temple Ruins"
+      ],
+      [
+        "Type",
+        "Barter and services"
+      ],
+      [
+        "Offers",
+        "1"
+      ]
+    ],
+    "tables": [
+      {
+        "title": "Trade and service offers",
+        "columns": [
+          "Offer",
+          "You receive",
+          "You provide",
+          "Reward sell value per item",
+          "Activity requirements"
+        ],
+        "rows": [
+          [
+            "Brew Vial Of Poison",
+            "1 × Vial of Poison",
+            "1 × Nature Rune · 1 × Venom Sac · 1 × Vial",
+            "Vial of Poison: 51 coins",
+            "Piety 1"
+          ]
+        ],
+        "links": [
+          [
+            "1 × Nature Rune",
+            "nature-rune"
+          ],
+          [
+            "1 × Venom Sac",
+            "venom-sac"
+          ],
+          [
+            "1 × Vial",
+            "vial"
+          ],
+          [
+            "1 × Vial of Poison",
+            "vial-of-poison"
+          ]
+        ],
+        "listColumns": [
+          1,
+          2
+        ]
+      }
+    ],
+    "sections": [
+      [
+        "How to use these offers",
+        "These are NPC trades, crafting services or reward exchanges. Bring every listed input; coin-shop markups do not apply to these costs. The reward’s sell value is shown separately and does not convert Audience Favor, dungeon coins or ingredients into ordinary coins. Item possession, membership and completed unlocks must still be checked in game."
+      ]
+    ],
+    "related": [
+      "elshand-temple-ruins",
+      "nature-rune",
+      "venom-sac",
+      "vial",
+      "vial-of-poison"
+    ],
+    "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
+      [
+        "Official Microscape game",
+        "https://microscape.cc/play/"
+      ]
+    ],
+    "sprites": [
+      {
+        "label": "Sirocco",
+        "layers": [
+          "https://microscape.cc/play/assets/sirocco-BXIYsDSe.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          40,
+          36,
+          44,
+          40
+        ]
+      }
+    ]
+  },
+  {
+    "id": "vendor-thomas",
+    "title": "Thomas",
+    "category": "shops",
+    "group": "Barter and services",
+    "generatedShopDirectory": true,
+    "summary": "Tutabay Atoll · 2 trade or service options.",
+    "statsDate": "2026-11-20",
+    "facts": [
+      [
+        "Vendor / provider",
+        "Thomas"
+      ],
+      [
+        "Location",
+        "Tutabay Atoll"
+      ],
+      [
+        "Type",
+        "Barter and services"
+      ],
+      [
+        "Offers",
+        "2"
+      ]
+    ],
+    "tables": [
+      {
+        "title": "Trade and service offers",
+        "columns": [
+          "Offer",
+          "You receive",
+          "You provide",
+          "Reward sell value per item",
+          "Activity requirements"
+        ],
+        "rows": [
+          [
+            "A Dagger For Thomas",
+            "1 × Ticket To Progryn",
+            "1 × Bronze Dagger",
+            "Ticket To Progryn: No sell value listed",
+            "Fishing 1 · Single execution"
+          ],
+          [
+            "Pelts For Passage",
+            "1 × Ticket To Progryn",
+            "1 × Rodent Pelt",
+            "Ticket To Progryn: No sell value listed",
+            "Fishing 1 · Single execution"
+          ]
+        ],
+        "links": [
+          [
+            "1 × Bronze Dagger",
+            "bronze-dagger"
+          ],
+          [
+            "1 × Ticket To Progryn",
+            "ticket-to-progryn"
+          ],
+          [
+            "1 × Rodent Pelt",
+            "rodent-pelt"
+          ],
+          [
+            "1 × Ticket To Progryn",
+            "ticket-to-progryn"
+          ]
+        ],
+        "listColumns": [
+          1,
+          2
+        ]
+      }
+    ],
+    "sections": [
+      [
+        "How to use these offers",
+        "These are NPC trades, crafting services or reward exchanges. Bring every listed input; coin-shop markups do not apply to these costs. The reward’s sell value is shown separately and does not convert Audience Favor, dungeon coins or ingredients into ordinary coins. Item possession, membership and completed unlocks must still be checked in game."
+      ]
+    ],
+    "related": [
+      "tutabay-atoll",
+      "bronze-dagger",
+      "ticket-to-progryn",
+      "rodent-pelt"
+    ],
+    "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
+      [
+        "Official Microscape game",
+        "https://microscape.cc/play/"
+      ]
+    ],
+    "sprites": [
+      {
+        "label": "Thomas",
+        "layers": [
+          "https://microscape.cc/play/assets/skin3World-uZ9SWQAz.png",
+          "https://microscape.cc/play/assets/leatherBootsWorld-OfLt4-ZX.png",
+          "https://microscape.cc/play/assets/clothesAdventurerWorld-DwoehAjo.png",
+          "https://microscape.cc/play/assets/shortBlackWorld-CW21TBoF.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          48,
+          44,
+          28,
+          32
+        ]
+      }
+    ]
+  },
+  {
+    "id": "vendor-thorgrim",
+    "title": "Thorgrim",
+    "category": "shops",
+    "group": "Barter and services",
+    "generatedShopDirectory": true,
+    "summary": "Old Dwarven Tunnels · 1 trade or service option.",
+    "statsDate": "2026-11-20",
+    "facts": [
+      [
+        "Vendor / provider",
+        "Thorgrim"
+      ],
+      [
+        "Location",
+        "Old Dwarven Tunnels"
+      ],
+      [
+        "Type",
+        "Barter and services"
+      ],
+      [
+        "Offers",
+        "1"
+      ]
+    ],
+    "tables": [
+      {
+        "title": "Trade and service offers",
+        "columns": [
+          "Offer",
+          "You receive",
+          "You provide",
+          "Reward sell value per item",
+          "Activity requirements"
+        ],
+        "rows": [
+          [
+            "Adapt Dwarven Gloves",
+            "1 × Bucket · 1 × Heat Gloves",
+            "10 × Air Rune · 20 × Coins · 1 × Fire Dwarf Gloves · 1 × Water Bucket",
+            "Bucket: 1 coin · Heat Gloves: 91 coins",
+            "Crafting 1"
+          ]
+        ],
+        "links": [
+          [
+            "10 × Air Rune",
+            "air-rune"
+          ],
+          [
+            "20 × Coins",
+            "coins"
+          ],
+          [
+            "1 × Fire Dwarf Gloves",
+            "fire-dwarf-gloves"
+          ],
+          [
+            "1 × Water Bucket",
+            "water-bucket"
+          ],
+          [
+            "1 × Bucket",
+            "bucket"
+          ],
+          [
+            "1 × Heat Gloves",
+            "heat-gloves"
+          ]
+        ],
+        "listColumns": [
+          1,
+          2
+        ]
+      }
+    ],
+    "sections": [
+      [
+        "How to use these offers",
+        "These are NPC trades, crafting services or reward exchanges. Bring every listed input; coin-shop markups do not apply to these costs. The reward’s sell value is shown separately and does not convert Audience Favor, dungeon coins or ingredients into ordinary coins. Item possession, membership and completed unlocks must still be checked in game."
+      ]
+    ],
+    "related": [
+      "old-dwarven-tunnels",
+      "air-rune",
+      "coins",
+      "fire-dwarf-gloves",
+      "water-bucket",
+      "bucket",
+      "heat-gloves"
+    ],
+    "sources": [
+      [
+        "Archived shop and service definitions · 2026-11-20",
+        "./assets/game-data/shops-2026-11-20.json"
+      ],
+      [
+        "Official Microscape game",
+        "https://microscape.cc/play/"
+      ]
+    ],
+    "sprites": [
+      {
+        "label": "Thorgrim",
+        "layers": [
+          "https://microscape.cc/play/assets/caveDwarf-CsiUwF2C.png"
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "crop": [
+          44,
+          40,
+          36,
+          36
+        ]
+      }
+    ]
   }
 ]

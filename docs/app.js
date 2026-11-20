@@ -5,7 +5,7 @@ import {renderBazaarWalkthrough} from "./bazaar-walkthrough.js?v=bazaar-visual-2
 import { tutorials } from "./tutorials.js?v=release-20261119";
 import { buildPetEntries } from "./pets.js?v=release-20261119";
 import { itemIcons, itemIconGroups } from "./item-icons.js?v=release-20261119";
-import { renderPlayerLookup } from "./player-lookup.js?v=activity-xp-20261120";
+import { renderPlayerLookup } from "./player-lookup.js?v=vendors-20261120";
 
 const groups = {
   guides: { title: "Guides", icon: "▤", blurb: "Start here, earn Energy, trade and plan dungeon runs." },
@@ -14,6 +14,7 @@ const groups = {
   items: { title: "Items", icon: "◇", blurb: "Browse gear, materials, food and tools." },
   foes: { title: "Foes", icon: "⚔", blurb: "Find enemies, dungeon bosses and their loot." },
   locations: { title: "Locations", icon: "⌖", blurb: "Explore in-game maps, travel routes, enemies, shops and skilling spots." },
+  shops: { title: "Shops & vendors", icon: "¤", blurb: "Find shopkeepers, locations, exact stock and prices, NPC trades, salon services and dungeon coin exchanges." },
   abilities: { title: "Abilities", icon: "ϟ", blurb: "Equipment requirements and limit break costs." },
   pets: { title: "Pets", icon: "✿", blurb: "Companions, pet maps, eligible tasks and drop odds." },
   bazaar: { title: "Bazaar", icon: "¤", blurb: "Live buy/sell orders, market prices and the trading guide." },
@@ -40,7 +41,7 @@ const mzDunkProfile = {
   avatarUrl:"https://static-cdn.jtvnw.net/jtv_user_pictures/dee8469b-4733-492c-a17a-e2a4a1100630-profile_image-300x300.png"
 };
 const mzDunkStatusMaxAge = 10 * 60_000;
-const topicOrder = ["skills", "items", "foes", "locations", "abilities", "pets", "bazaar", "reference"];
+const topicOrder = ["skills", "items", "foes", "locations", "shops", "abilities", "pets", "bazaar", "reference"];
 const featured = ["release-changes", "getting-started", "energy", "dungeons", "bazaar", "activity-queue"];
 const displayCount = 36;
 let referenceLoadFailed = false;
@@ -548,11 +549,12 @@ function renderList(category, query) {
     grid.replaceChildren(...filtered.slice(0,limit).map(entry => {
       const thumbnail = entryThumbnail(entry);
       const spriteFoes = tutorialSpriteFoes(entry);
-      return element("a", {class:spriteFoes.length ? "entry-card tutorial-card" : "entry-card", href:entryUrl(entry.id)},
+      const shopSprite = entry.category === "shops" && entry.sprites?.[0];
+      return element("a", {class:spriteFoes.length ? "entry-card tutorial-card" : shopSprite ? "entry-card shop-card" : "entry-card", href:entryUrl(entry.id)},
         ...(spriteFoes.length ? [element("span", {class:"tutorial-card-sprites", "aria-hidden":"true"},
           ...spriteFoes.map(foe => renderSpriteFrame(foe.sprites[0])))] : []),
         element("span", {class:"entry-card-body"},
-          ...(thumbnail ? [entryImage(thumbnail, "", true)] : []),
+          ...(shopSprite ? [renderSpriteFrame(shopSprite)] : thumbnail ? [entryImage(thumbnail, "", true)] : []),
           element("span", {}, element("strong", {}, entry.title),
             element("small", {}, entry.summary || entry.group || groups[entry.category].title))),
         glyph("→", "arrow")
@@ -583,6 +585,7 @@ function renderList(category, query) {
   main.append(crumbs(null, name), element("h1", {}, name));
   if (category) main.append(element("p", {class:"intro"}, groups[category].blurb));
   if (category === "pets" && byId.has("pets")) main.append(entryLink("pets", null, "button"));
+  if (category === "shops") main.append(entryLink("vendor", "How shop prices and trades work", "button"));
   if (referenceLoadFailed && category !== "guides" && category !== "tutorials") main.append(element("p", {class:"notice"}, "The reference catalog could not load. Refresh the page to retry."));
   if (filterBar.children.length) main.append(filterBar);
   main.append(count, grid, empty, more, footer());
@@ -760,6 +763,7 @@ function renderEntry(entry, category) {
   if (entry.indexOnly) article.append(element("p", {class:"intro"}, "Listed in the community catalog. Detailed values are still needed."));
   if (entry.id === "bazaar") article.append(link("Search live Bazaar orders →", "#/bazaar", "button"),renderBazaarWalkthrough(element,"bazaar-article-visual"),element("h2",{},"More detail and common questions"));
   if (entry.id === "experience") article.append(link("Open Activity Comparison", "#/activity-comparison", "button"), experienceThresholds());
+  if (entry.id === "vendor") article.append(link("Browse shops and vendors", categoryUrl("shops"), "button"));
   if (!art && !entry.mapImage) article.append(...facts);
   const tutorialSprites = tutorialSpriteFoes(entry).flatMap(foe => foe.sprites.map(sprite => ({
     ...sprite, foeId:foe.id, label:sprite.label ? `${foe.title} · ${sprite.label}` : foe.title
