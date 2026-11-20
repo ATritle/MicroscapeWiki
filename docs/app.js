@@ -755,13 +755,17 @@ function renderEntry(entry, category) {
   );
   const inlineReferences = category === "tutorials"
     ? (entry.related || []).map(id => byId.get(id)).filter(ref => ["items", "abilities", "foes"].includes(ref?.category))
-    : [];
+    : category === "pets"
+      ? (entry.related || []).map(id => byId.get(id)).filter(ref => ref?.category === "items" && ref.title.startsWith("Pet Map:"))
+      : [];
+  const petMapLinks = new Map(inlineReferences.filter(ref => ref.category === "items" && ref.title.startsWith("Pet Map:"))
+    .map(ref => [normalize(ref.title), ref.id]));
   const title = [
     element("h1", {}, entry.title),
     ...(entry.summary ? [element("p", {class:"intro"}, ...linkMentions(entry.summary, inlineReferences))] : [])
   ];
   const facts = entry.facts?.length ? [
-    element("dl", {class:"facts"}, ...entry.facts.map(([label, value]) => element("div", {}, element("dt", {}, label), element("dd", {}, value))))
+    element("dl", {class:"facts"}, ...entry.facts.map(([label, value]) => element("div", {}, element("dt", {}, label), element("dd", {}, ...linkMentions(value, inlineReferences)))))
   ] : [];
   const art = entryArtwork(entry);
   if (art) {
@@ -805,7 +809,7 @@ function renderEntry(entry, category) {
       continue;
     }
     const showPetLinks = entry.id === "pets";
-    const content = renderTable(table, table.related || entry.related, showPetLinks ? petLinks : undefined);
+    const content = renderTable(table, table.related || entry.related, showPetLinks ? petLinks : petMapLinks);
     if (table.collapsed) {
       article.append(element("details", {class:"table-disclosure"}, element("summary", {}, table.title), content));
       continue;

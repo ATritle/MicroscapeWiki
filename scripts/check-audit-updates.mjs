@@ -54,6 +54,7 @@ for(const [id,pet]of Object.entries(data.pets)){
     assert.equal(facts(p).get('Vendor map option'),a.name,'Exact vendor menu option '+id);
     assert(p.sections.some(([,text])=>text.includes('“'+a.name+'”')),'Pet exchange directions '+id);
     assert.equal(facts(page('items',pet.requiredItemToObtain)).get('Vendor map option'),a.name,'Map item exchange '+id);
+    assert(p.related.includes(page('items',pet.requiredItemToObtain).id),'Link to required map item '+id);
     const overview=table(byId.get('pets'),'Release companions');
     assert.equal(overview.rows.find(row=>row[0]===p.title)[overview.columns.indexOf('Vendor map option')],a.name,'Pet overview exchange '+id);
     for(const t of p.tables||[])if(t.columns.includes('Required item'))for(const row of t.rows)assert.equal(row[t.columns.indexOf('Vendor map option')],a.name,'Required-map exchange '+id);

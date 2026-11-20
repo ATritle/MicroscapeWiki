@@ -234,6 +234,7 @@ h3 { margin-bottom: 6px; font-size: 17px; }
 .facts div { border: 1px solid var(--line); border-radius: 8px; background: var(--panel); padding: 11px 14px; }
 .facts dt { color: var(--muted); font-size: 13px; }
 .facts dd { margin: 0; font-weight: 700; }
+.facts dd a { display: inline-block; }
 .table-wrap { overflow: auto; border: 1px solid var(--line); border-radius: 8px; }
 .table-disclosure { margin: 9px 0; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); }
 .table-disclosure summary { padding: 10px 14px; color: var(--mint); font-weight: 700; cursor: pointer; }
