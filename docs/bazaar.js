@@ -1,4 +1,5 @@
 import {communityApiBase} from "./api-config.js?v=community-api-20261119";
+import {renderBazaarWalkthrough} from "./bazaar-walkthrough.js?v=bazaar-visual-20261120";
 const number = new Intl.NumberFormat("en");
 const fallbackName = id => id.replace(/([a-z])([A-Z])/g,"$1 $2").replace(/^./,s=>s.toUpperCase());
 const stamp = time => new Date(time).toLocaleString([], {month:"short",day:"numeric",hour:"numeric",minute:"2-digit",second:"2-digit"});
@@ -30,11 +31,12 @@ export function renderBazaar({main, element, crumbs, footer, byId, guide, entryL
     element("h2",{},"Buy and sell orders"),element("p",{},"Select an item below to see its current orders and recent trades."));
   const guideSection=element("section",{class:"bazaar-guide","aria-labelledby":"bazaar-guide-title"},
     element("h2",{id:"bazaar-guide-title"},"How the Bazaar works"),
-    element("p",{class:"intro"},"Release trading rules, costs and order controls. Checked November 20, 2026."),
+    renderBazaarWalkthrough(element),
+    element("h2",{},"More detail and common questions"),
     ...guide.sections.map(([heading,text],i)=>element("details",{...(i===0?{open:""}:{})},element("summary",{},heading),element("p",{},text))),
     element("div",{class:"related"},...(guide.related||[]).map(id=>entryLink(id,null,"button"))),
     element("div",{class:"sources"},element("h3",{},"Sources"),...guide.sources.map(([label,href])=>element("p",{},element("a",{href},label)))));
-  const howButton=element("button",{class:"button",type:"button"},"How trading works ↓");
+  const howButton=element("button",{class:"button",type:"button"},"How to trade — picture guide ↓");
   howButton.addEventListener("click",()=>guideSection.scrollIntoView({behavior:"smooth",block:"start"}));
   const article=element("article",{class:"bazaar-page"},crumbs(null,"Bazaar"),element("h1",{},"Bazaar"),
     element("p",{class:"intro"},"Search Microscape’s current buy and sell orders, then learn how the release trading system works."),

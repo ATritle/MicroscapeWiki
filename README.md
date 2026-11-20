@@ -101,6 +101,11 @@ Errors retain a clearly labeled last successful snapshot instead of reporting
 an empty market. Run `node scripts/check-bazaar.mjs` to verify this API.
 The existing local preview command also serves the public Bazaar endpoint.
 
+The shared visual walkthrough in `docs/bazaar-walkthrough.js` appears on both the
+market page and the existing guide. Its seven original in-game screenshots are
+in `docs/assets/bazaar`, with capture notes there. Keep captions and example
+arithmetic consistent with those static images; market prices and times change.
+
 Run `./scripts/register-drops-backup.ps1` in PowerShell 7 to register the optional **Microscape Wiki Live Drops Backup** task. Pass `-Replace` to update the existing task. It runs every 15 minutes while its user is signed in and the PC is awake, and publishes to `live-data` using the existing GitHub sign-in when the snapshot is at least 10 minutes old. Check `last-run.log` in the task’s state directory for the latest result. To stop the backup, disable the named task in Task Scheduler.
 
 ## Credits

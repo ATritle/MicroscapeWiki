@@ -269,6 +269,28 @@ tr:last-child td { border-bottom: 0; }
 .bazaar-guide details { border-bottom: 1px solid var(--line); padding: 14px 0; }
 .bazaar-guide summary { cursor: pointer; color: var(--mint); font-weight: 700; }
 .bazaar-guide details p { max-width: 80ch; }
+.bazaar-visual { margin: 26px 0 38px; }
+.bazaar-direction-cards { display: grid; grid-template-columns: repeat(auto-fit,minmax(min(260px,100%),1fr)); gap: 12px; margin: 20px 0; }
+.bazaar-direction-cards > div { border: 1px solid var(--line); border-radius: 10px; background: var(--panel); padding: 16px; }
+.bazaar-direction-cards strong { color: var(--mint); }
+.bazaar-direction-cards p { margin-bottom: 0; }
+.bazaar-visual-contents { display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0; }
+.bazaar-visual-contents button { background: var(--panel); color: var(--mint); border: 1px solid var(--line); border-radius: 7px; padding: 8px 12px; font: inherit; font-size: 13px; cursor: pointer; }
+.bazaar-visual-contents button:hover { border-color: var(--mint); }
+.bazaar-visual-step { display: grid; grid-template-columns: minmax(0,1fr) minmax(220px,338px); gap: 24px; align-items: start; padding: 26px 0; border-top: 1px solid var(--line); scroll-margin-top: 100px; }
+.bazaar-step-label { font-size: 12px; letter-spacing: .14em; font-weight: 700; color: var(--mint); }
+.bazaar-step-copy h3 { margin-top: 8px; font-size: 24px; }
+.bazaar-step-copy li { margin: 10px 0; }
+.bazaar-visual-step figure { margin: 0; padding: 12px; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; }
+.bazaar-visual-step figure a { display: block; }
+.bazaar-visual-step img { display: block; width: 100%; height: auto; border-radius: 6px; }
+.bazaar-visual-step figcaption { margin-top: 12px; color: var(--muted); font-size: 12px; line-height: 1.6; }
+.bazaar-order-flow { margin: 28px 0; }
+.bazaar-order-flow ol { display: grid; grid-template-columns: repeat(auto-fit,minmax(min(175px,100%),1fr)); gap: 12px; list-style: none; padding: 0; }
+.bazaar-order-flow li { border: 1px solid var(--line); border-top: 3px solid var(--mint); border-radius: 9px; padding: 15px; background: var(--panel); }
+.bazaar-order-flow p { margin: 8px 0 0; font-size: 14px; }
+.bazaar-cancel-flow li { border-top-color: #f2c183; }
+@media (max-width: 720px) { .bazaar-visual-step { grid-template-columns: minmax(0,1fr); } .bazaar-visual-step figure { max-width: 410px; width: 100%; margin: 0 auto; } }
 
 .calculator { margin: 24px 0; padding: 20px; border: 1px solid var(--line); border-radius: 10px; background: var(--panel); }
 .calc-inputs { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 12px; }

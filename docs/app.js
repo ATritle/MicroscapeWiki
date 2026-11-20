@@ -1,6 +1,7 @@
 import {communityApiBase} from "./api-config.js?v=community-api-20261119";
 import { guides } from "./guides.js?v=bazaar-20261120";
-import {renderBazaar} from "./bazaar.js?v=bazaar-20261120";
+import {renderBazaar} from "./bazaar.js?v=bazaar-visual-20261120";
+import {renderBazaarWalkthrough} from "./bazaar-walkthrough.js?v=bazaar-visual-20261120";
 import { tutorials } from "./tutorials.js?v=release-20261119";
 import { buildPetEntries } from "./pets.js?v=release-20261119";
 import { itemIcons, itemIconGroups } from "./item-icons.js?v=release-20261119";
@@ -789,7 +790,7 @@ function renderEntry(entry, category) {
     ));
   }
   if (entry.indexOnly) article.append(element("p", {class:"intro"}, "Listed in the community catalog. Detailed values are still needed."));
-  if (entry.id === "bazaar") article.append(link("Search live Bazaar orders →", "#/bazaar", "button"));
+  if (entry.id === "bazaar") article.append(link("Search live Bazaar orders →", "#/bazaar", "button"),renderBazaarWalkthrough(element,"bazaar-article-visual"),element("h2",{},"More detail and common questions"));
   if (entry.calculator) article.append(calculator());
   if (!art && !entry.mapImage) article.append(...facts);
   const tutorialSprites = tutorialSpriteFoes(entry).flatMap(foe => foe.sprites.map(sprite => ({
