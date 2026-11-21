@@ -1,5 +1,6 @@
 import {communityApiBase} from "./api-config.js?v=community-api-20261119";
 import {readActivityCatalog, renderActivityComparison} from "./activity-comparison.js?v=vendors-20261120";
+import {attachHoverPreview,previewMotion,sampleMotion,weaponMotionType} from "./sprite-animation.js?v=sprites-20261121";
 const apiUrl = ["localhost", "127.0.0.1"].includes(window.location.hostname)
   ? new URL("/api/player.json", window.location.origin)
   : new URL("player.json", communityApiBase);
@@ -82,34 +83,61 @@ async function paintPlayer(canvas, equipment, data) {
   }));
   const context = canvas.getContext("2d");
   context.imageSmoothingEnabled = false;
-  context.clearRect(0, 0, 128, 128);
   const [offsetX, offsetY] = appearanceOffset(loaded.filter(layer => layer.image), data);
-  context.save();
-  context.translate(offsetX, offsetY);
   let hand;
   for (const layer of loaded) if (!["weapon", "shield"].includes(layer.slot) && data.handSamples[layer.id]) hand = data.handSamples[layer.id];
+  const pivot=(x,y,angle=0,sx=1,sy=1)=>{context.translate(x,y);context.rotate(angle*Math.PI/180);context.scale(sx,sy);context.translate(-x,-y);};
+  function draw(elapsed) {
+  context.clearRect(0,0,canvas.width,canvas.height);
+  context.save();
+  context.translate((canvas.width-128)/2+offsetX,(canvas.height-128)/2+offsetY);
+  const active=elapsed!==undefined;
+  const cycle=active?Math.floor(elapsed/2800):0,local=active?elapsed%2800-600:-1;
+  const motion=previewMotion({kind:"humanoid",weaponType:weaponMotionType(equipment.weapon)},cycle);
+  const attacking=local>=0&&local<motion.duration;
+  const body=sampleMotion(attacking?motion.body:null,local/motion.duration);
+  context.translate(body.x*4,body.y*4);
+  pivot(60,92,body.angle,1+body.squash,1-body.squash);
+  const breathe=active?(1-Math.cos(2*Math.PI*elapsed/600))/2:0;
+  pivot(60,92,0,1-.04*breathe,1+.04*breathe);
   for (const layer of loaded) {
-    if (layer.slot === "weapon" && hand) {
-      context.fillStyle = "rgba(" + hand.slice(0, 3).join(",") + "," + hand[3] / 255 + ")";
-      context.fillRect(68, 68, 4, 4);
-    }
     if (!layer.image) continue;
     context.save();
+    if (layer.slot === "weapon") {
+      const pose=sampleMotion(attacking?motion.weapon:null,local/motion.duration);
+      context.translate(pose.x*4,pose.y*4);
+      pivot(74,74,pose.angle+(attacking?0:3*breathe));
+    }
     if (layer.slot === "shield") {
-      context.translate(54, 76);
-      context.rotate(-Math.PI / 180);
-      context.translate(-54, -76);
+      const pose=sampleMotion(attacking?motion.shield:null,local/motion.duration);
+      context.translate(pose.x*4,(pose.y+(attacking?0:.1*breathe))*4);
+      pivot(54,76,-1+pose.angle-(attacking?0:2*breathe));
+    }
+    if (layer.slot === "weapon" && hand && !(attacking&&motion.hidesHeldHand)) {
+      context.fillStyle = "rgba(" + hand.slice(0, 3).join(",") + "," + hand[3] / 255 + ")";
+      context.fillRect(68, 68, 4, 4);
     }
     context.drawImage(layer.image, 0, 0, 128, 128);
     context.restore();
   }
   context.restore();
-  return loaded.length > 0 && loaded.every(layer => layer.image);
+  }
+  draw();
+  canvas.setAttribute("tabindex","0");
+  canvas.setAttribute("title","Hover or focus to preview in-game idle and weapon animations");
+  const dispose=attachHoverPreview(canvas,stop=>{
+    let raf,stopped=false;const started=performance.now();
+    const tick=now=>{if(stopped)return;if(!canvas.isConnected){stop();return;}draw(Math.max(0,now-started));raf=requestAnimationFrame(tick);};
+    raf=requestAnimationFrame(tick);
+    return ()=>{stopped=true;cancelAnimationFrame(raf);draw();};
+  });
+  return {complete:loaded.length > 0 && loaded.every(layer => layer.image),dispose};
 }
 
 export function renderPlayerLookup({main, element:e, crumbs, footer, byId, entryUrl, renderSpriteFrame, initialName = "", comparisonOnly = false}) {
   const trainingPreferences = {prepSeconds:6, includeZero:false};
   let controller, disposed = false, requestNumber = 0, currentName = "", lastSnapshot;
+  let stopPlayerPreview;
   let suggestionController, suggestionTimer, suggestionNumber = 0;
   const pageName = comparisonOnly ? "Activity comparison" : "Player lookup";
   const heading = e("h1", {id:"page-title"}, pageName);
@@ -194,10 +222,11 @@ export function renderPlayerLookup({main, element:e, crumbs, footer, byId, entry
       : e("span", {class:className, "aria-hidden":"true"}, "◇");
   }
   function result(snapshot, data, catalog) {
+    stopPlayerPreview?.();stopPlayerPreview=null;
     const {player} = snapshot, stats = playerStats(player.exp);
     const skillScrollTop = results.querySelector(".player-skills-grid")?.scrollTop || 0;
     const liveStatusAvailable = player.liveStatusAvailable === true;
-    const canvas = e("canvas", {width:128, height:128, role:"img",
+    const canvas = e("canvas", {width:192, height:192, role:"img",
       "aria-label":player.name + " in-game appearance with current equipped gear"});
     const artNote = e("p", {class:"player-art-note", hidden:""});
     const artStage = e("div", {class:"player-appearance"},
@@ -298,7 +327,9 @@ export function renderPlayerLookup({main, element:e, crumbs, footer, byId, entry
       ...(!comparisonOnly && Object.keys(bonuses).length ? [bonusPanel] : []), stamp,
       e("p", {class:"player-public-note"}, "Skills and equipment come from the public game profile. Live location, activity and hitpoints cannot be verified from this profile and are not shown."));
     skills.querySelector(".player-skills-grid").scrollTop = skillScrollTop;
-    paintPlayer(canvas, player.equipment, data).then(complete => {
+    paintPlayer(canvas, player.equipment, data).then(({complete,dispose}) => {
+      if(disposed||!canvas.isConnected){dispose();return;}
+      stopPlayerPreview=dispose;
       if (!disposed && !complete) {artNote.hidden = false; artNote.textContent = "Some appearance artwork is unavailable for this build.";}
     }).catch(() => {if (!disposed) {artNote.hidden = false; artNote.textContent = "Appearance artwork could not be loaded.";}});
   }
@@ -373,6 +404,7 @@ export function renderPlayerLookup({main, element:e, crumbs, footer, byId, entry
   if (initialName) lookup(initialName);
   return () => {
     disposed = true;
+    stopPlayerPreview?.();
     clearSuggestions();
     controller?.abort();
     clearInterval(timer);

@@ -5,9 +5,10 @@ import {renderBazaarWalkthrough} from "./bazaar-walkthrough.js?v=bazaar-visual-2
 import { tutorials } from "./tutorials.js?v=release-20261119";
 import { buildPetEntries } from "./pets.js?v=release-20261119";
 import { itemIcons, itemIconGroups } from "./item-icons.js?v=release-20261119";
-import { renderPlayerLookup } from "./player-lookup.js?v=seo-20261120";
+import { renderPlayerLookup } from "./player-lookup.js?v=sprites-20261121";
 import {publicUrl, legacyRoute, pageMetadata, updateMetadata} from "./seo.js?v=seo-20261120";
 import {lookupXpPlayer, lookupXpSuggestions, xpPlayerProgress, xpSkills} from "./xp-player.js?v=xp-matches-20261120";
+import {spriteMotion,prepareSpriteFrame,stopSpritePreviews} from "./sprite-animation.js?v=sprites-20261121";
 
 const groups = {
   guides: { title: "Guides", icon: "▤", blurb: "Start here, earn Energy, trade and plan dungeon runs." },
@@ -786,7 +787,7 @@ function renderLocationMap(entry) {
   );
 }
 
-function renderSpriteFrame(sprite, label) {
+function renderSpriteFrame(sprite, label, foeId) {
   const [x, y, width, height] = sprite.crop;
   const [imageWidth, imageHeight] = sprite.size;
   const longestSide = Math.max(width, height);
@@ -802,17 +803,19 @@ function renderSpriteFrame(sprite, label) {
     const position = `left:${percent(hand.x - x, width)};top:${percent(hand.y - y, height)};width:${percent(hand.size, width)};height:${percent(hand.size, height)}`;
     layers.splice(-1, 0, element("span", {class:"game-sprite-layer", style:`${position};background:${hand.color}`}));
   }
-  return element("span", {
+  const frame = element("span", {
     class:sprite.flipped ? "game-sprite-frame flipped" : "game-sprite-frame",
     ...(label ? {role:"img", "aria-label":label} : {}),
     style:`--sprite-width:${displayWidth}px;aspect-ratio:${width}/${height}`
   }, ...layers);
+  prepareSpriteFrame(frame,sprite,spriteMotion(sprite,foeId||sprite.foeId));
+  return frame;
 }
 
-function renderGameSprites(sprites, {title, heading = "In-game appearance"} = {}) {
+function renderGameSprites(sprites, {title, heading = "In-game appearance", foeId} = {}) {
   const figures = sprites.map(sprite => {
     const label = (title || sprite.label) + " full in-game sprite" + (title && sprite.label ? " · " + sprite.label : "");
-    const frame = renderSpriteFrame(sprite, label);
+    const frame = renderSpriteFrame(sprite, label,foeId);
     const stage = sprite.foeId
       ? element("a", {class:"game-sprite-stage game-sprite-link", href:entryUrl(sprite.foeId), "aria-label":`View ${sprite.label} in Foes`},
         frame, glyph("→", "arrow"))
@@ -907,7 +910,7 @@ function renderEntry(entry, category) {
     ...sprite, foeId:foe.id, label:sprite.label ? `${foe.title} · ${sprite.label}` : foe.title
   })));
   const sprites = entry.sprites || tutorialSprites;
-  if (sprites.length) article.append(renderGameSprites(sprites, {title:entry.sprites ? entry.title : undefined}));
+  if (sprites.length) article.append(renderGameSprites(sprites, {title:entry.sprites ? entry.title : undefined,foeId:entry.category === "foes" ? entry.gameId || entry.id : undefined}));
   for (const [heading, text, {steps, screenshot} = {}] of entry.sections || []) {
     const screenshotSource = screenshot && (screenshot.source || byId.get(screenshot.mapId)?.mapImage || entry.screenshotSource);
     article.append(element("section", {},
@@ -962,6 +965,7 @@ function renderEntry(entry, category) {
 }
 
 function render({focus = false} = {}) {
+  stopSpritePreviews();
   const route = legacyRoute(window.location, byId, groups);
   const [path, params] = route.split("?");
   if (path === "content") return;

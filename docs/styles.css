@@ -221,6 +221,12 @@ h3 { margin-bottom: 6px; font-size: 17px; }
 .game-sprite-frame { position: relative; display: block; width: min(100%, var(--sprite-width)); overflow: hidden; }
 .game-sprite-frame.flipped { transform: scaleX(-1); }
 .game-sprite-layer { position: absolute; image-rendering: pixelated; }
+.animated-game-sprite { overflow: visible; }
+.animated-game-sprite > * { pointer-events: none; }
+.animated-game-sprite:focus-visible { outline: 2px solid var(--mint); outline-offset: 6px; border-radius: 3px; }
+.sprite-motion-body, .sprite-motion-idle, .sprite-motion-clip, .sprite-gear-motion { display: block; position: absolute; inset: 0; }
+.sprite-motion-clip { overflow: hidden; }
+.sprite-pet-window { display: block; position: absolute; overflow: hidden; }
 .game-sprite figcaption { padding-top: 6px; color: var(--muted); font-size: 13px; }
 .tutorial-screenshot { max-width: 790px; margin: 16px 0 0; }
 .tutorial-screenshot-frame { position: relative; overflow: hidden; border-radius: 10px; background: var(--panel); }
@@ -336,7 +342,8 @@ tr:last-child td { border-bottom: 0; }
 .player-appearance { min-width: 0; text-align: center; }
 .player-sprite-stage { position: relative; display: grid; place-items: center; height: 205px; border: 1px solid #35594c; border-radius: 12px; background: radial-gradient(ellipse at 50% 75%, #45654b, #243f34 35%, #162b29 76%); overflow: hidden; }
 .player-sprite-stage::after { content: ""; position: absolute; width: 105px; height: 18px; top: calc(50% + 45px); border-radius: 50%; background: #06120a70; filter: blur(3px); }
-.player-sprite-stage canvas { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1; width: 224px; height: 224px; image-rendering: pixelated; }
+.player-sprite-stage canvas { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1; width: 336px; height: 336px; image-rendering: pixelated; }
+.player-sprite-stage:focus-within { outline: 2px solid var(--mint); outline-offset: 3px; }
 .player-art-note { margin: 7px 0 0; color: #92b4a5; font-size: 10px; }
 .player-pet { position: absolute; z-index: 2; right: 8px; bottom: 24px; }
 .player-pet .game-sprite-frame { width: 56px; }

@@ -2,7 +2,7 @@ name: Build and deploy searchable wiki
 on:
   push:
     branches: [main]
-    paths: ['docs/**', 'scripts/build-seo.mjs', 'scripts/check-seo.mjs', 'scripts/check-xp-player.mjs', 'package.json', 'pnpm-lock.yaml', '.github/workflows/deploy-wiki.yml']
+    paths: ['docs/**', 'scripts/build-seo.mjs', 'scripts/check-seo.mjs', 'scripts/check-xp-player.mjs', 'scripts/check-sprite-animations.mjs', 'package.json', 'pnpm-lock.yaml', '.github/workflows/deploy-wiki.yml']
   workflow_dispatch:
 permissions:
   contents: read
@@ -26,6 +26,7 @@ jobs:
       - run: pnpm build
       - run: pnpm check:seo
       - run: node scripts/check-xp-player.mjs
+      - run: node scripts/check-sprite-animations.mjs
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
         with:

@@ -93,6 +93,23 @@ Microscape can return a server error for an exact username without a public char
 
 Use the neutral repository-local commit identity `Microscape Wiki Community <wiki-community@users.noreply.github.com>` for community updates. Public browser requests and page links should use the community API and community channels rather than personal hosting identifiers.
 
+## Sprite hover previews
+
+Full sprites on Foes, Pets and Player Lookup preview the game's idle and combat
+motions on hover or keyboard focus. `docs/sprite-animation.js` uses the original
+pet frame sequences and the public client's animation timings and transforms;
+Player Lookup applies those transforms to the player's existing equipment layers.
+Previews stop when focus or the pointer leaves, on navigation and in hidden tabs,
+and respect reduced-motion preferences. The archived Dwarven Cannon stays static
+because it has no animation definition in the current client.
+
+`docs/sprite-motion-data.js` records the source URL and SHA-256. Rebuild it with
+`node scripts/build-sprite-motion-data.mjs CLIENT_JS GAME_DATA_JSON ACORN_MODULE`.
+The extractor reads literal definitions without executing the downloaded client.
+Run `node scripts/check-sprite-animations.mjs` to check all 36 current pets, the
+44 illustrated foe pages and their alternate forms, frame bounds, original motion
+settings, cleanup and the repaired Corrupted Druid / Druid Warrior icon links.
+
 ## Bazaar
 
 The Compendium's `#/bazaar` page combines the trading guide with a searchable,
