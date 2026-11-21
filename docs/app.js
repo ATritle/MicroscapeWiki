@@ -1,5 +1,5 @@
 import {communityApiBase} from "./api-config.js?v=community-api-20261119";
-import { guides } from "./guides.js?v=xp-restored-20261120";
+import { guides } from "./guides.js?v=xp-player-20261120";
 import {renderBazaar} from "./bazaar.js?v=seo-20261120";
 import {renderBazaarWalkthrough} from "./bazaar-walkthrough.js?v=bazaar-visual-20261120";
 import { tutorials } from "./tutorials.js?v=release-20261119";
@@ -7,6 +7,7 @@ import { buildPetEntries } from "./pets.js?v=release-20261119";
 import { itemIcons, itemIconGroups } from "./item-icons.js?v=release-20261119";
 import { renderPlayerLookup } from "./player-lookup.js?v=seo-20261120";
 import {publicUrl, legacyRoute, pageMetadata, updateMetadata} from "./seo.js?v=seo-20261120";
+import {lookupXpPlayer, xpPlayerProgress, xpSkills} from "./xp-player.js?v=xp-player-20261120";
 
 const groups = {
   guides: { title: "Guides", icon: "▤", blurb: "Start here, earn Energy, trade and plan dungeon runs." },
@@ -56,6 +57,7 @@ let liveDropsExpiry;
 let renderDropResults;
 let disposePlayerLookup;
 let disposeBazaar;
+let disposeCalculator;
 
 const entries = [...guides, ...tutorials];
 const byId = new Map(entries.map(entry => [entry.id, entry]));
@@ -636,13 +638,15 @@ for (let level = 1; level < 99; level++) {
 }
 
 function calculator() {
+  let snapshot, controller, disposed = false, requestNumber = 0;
+  disposeCalculator = () => {disposed = true; controller?.abort();};
   const field = (label, attrs) => {
     const input = element("input", {type:"number", ...attrs});
     return [element("label", {}, label, input), input];
   };
   const [startLabel, start] = field("Start level", {min:"1", max:"99", step:"1", value:"1", required:""});
   const [targetLabel, target] = field("Target level", {min:"1", max:"99", step:"1", value:"20", required:""});
-  const [currentLabel, current] = field("Current XP (optional)", {min:"0", step:"1", placeholder:"Use start level"});
+  const [currentLabel, current] = field("Current XP (optional)", {min:"0", step:"any", placeholder:"Use start level"});
   const [rateLabel, rate] = field("XP per action (optional)", {min:"0", step:"any", placeholder:"e.g. 40"});
   const output = element("output", {class:"calc-result", "aria-live":"polite"});
   const fields = element("div", {class:"calc-inputs"}, startLabel, targetLabel, currentLabel, rateLabel);
@@ -653,8 +657,8 @@ function calculator() {
       return;
     }
     const baseline = current.value === "" ? xp[from] : Number(current.value);
-    if (!Number.isInteger(baseline) || baseline < xp[from]) {
-      output.textContent = "Enter a whole current XP value at or above the start level’s threshold.";
+    if (!Number.isFinite(baseline) || baseline < xp[from]) {
+      output.textContent = "Enter a current XP value at or above the start level’s threshold.";
       return;
     }
     if (rate.value !== "" && (!Number.isFinite(Number(rate.value)) || !(Number(rate.value) > 0))) {
@@ -667,12 +671,64 @@ function calculator() {
   };
   fields.addEventListener("input", update);
   update();
+  const username = element("input", {id:"xp-player-username", type:"text", placeholder:"e.g. User12345", maxlength:"25", autocomplete:"off", autocapitalize:"none", spellcheck:"false", required:""});
+  const skill = element("select", {id:"xp-player-skill"}, ...xpSkills.map(id => element("option", {value:id}, byId.get(id === "evilMagic" ? "evil-magic" : id === "goodMagic" ? "good-magic" : id)?.title || id)));
+  const submit = element("button", {type:"submit", class:"button primary"}, "Look up player");
+  const status = element("p", {class:"xp-player-status", role:"status", "aria-live":"polite", hidden:""});
+  const lookup = element("form", {class:"xp-player-form", "aria-label":"Load player XP"},
+    element("div", {class:"xp-player-controls"},
+      element("label", {for:"xp-player-username"}, "Player username", username), submit,
+      element("label", {for:"xp-player-skill"}, "Skill", skill)), status,
+    element("p", {class:"xp-player-help"}, "Load a public profile and choose a skill to fill your current level and XP. You can edit the values below. Look up again to refresh your stats."));
+  function fillProgress() {
+    if (!snapshot) return;
+    status.hidden = false;
+    try {
+      const progress = xpPlayerProgress(snapshot.player, skill.value);
+      start.value = String(progress.level);
+      current.value = String(progress.xp);
+      if (!target.value || Number(target.value) < progress.level) target.value = String(Math.min(99, progress.level + 1));
+      update();
+      status.dataset.state = "success";
+      status.textContent = snapshot.player.name + " · " + skill.options[skill.selectedIndex].textContent + " level " + progress.level + " · " + number.format(progress.xp) + " XP · Checked " + new Date(snapshot.checkedAt).toLocaleTimeString([], {hour:"numeric",minute:"2-digit"});
+    } catch (error) {
+      start.value = "";
+      current.value = "";
+      update();
+      status.dataset.state = "error";
+      status.textContent = error.message;
+    }
+  }
+  skill.addEventListener("change", fillProgress);
+  username.addEventListener("input", () => {
+    controller?.abort(); requestNumber++; snapshot = null;
+    status.hidden = true; submit.disabled = false;
+  });
+  lookup.addEventListener("submit", async event => {
+    event.preventDefault();
+    controller?.abort(); controller = new AbortController();
+    const request = ++requestNumber;
+    snapshot = null; submit.disabled = true; status.hidden = false;
+    status.dataset.state = "loading"; status.textContent = "Loading public player XP…";
+    try {
+      const result = await lookupXpPlayer(username.value, {signal:controller.signal});
+      if (disposed || request !== requestNumber) return;
+      snapshot = result;
+      fillProgress();
+    } catch (error) {
+      if (disposed || request !== requestNumber) return;
+      status.dataset.state = "error";
+      status.textContent = error.name === "TimeoutError" ? "The lookup took too long. Please try again, or enter your level and XP manually." : error.message;
+    } finally {
+      if (!disposed && request === requestNumber) submit.disabled = false;
+    }
+  });
   const thresholds = renderTable({
     title:"Experience thresholds",
     columns:["Level","Total XP","XP from previous level"],
     rows: xp.slice(1).map((value,index) => [String(index + 1), number.format(value), number.format(value - xp[index])])
   });
-  return element("section", {class:"calculator", "aria-label":"XP calculator inputs"}, fields, output,
+  return element("section", {class:"calculator", "aria-label":"XP calculator inputs"}, lookup, fields, output,
     element("details", {}, element("summary", {}, "View XP thresholds"), thresholds)
   );
 }
@@ -879,6 +935,8 @@ function render({focus = false} = {}) {
   disposePlayerLookup = null;
   disposeBazaar?.();
   disposeBazaar = null;
+  disposeCalculator?.();
+  disposeCalculator = null;
   renderDropResults = null;
   main.replaceChildren();
   menu.setAttribute("aria-expanded","false");
