@@ -5,9 +5,9 @@ import {renderBazaarWalkthrough} from "./bazaar-walkthrough.js?v=bazaar-visual-2
 import { tutorials } from "./tutorials.js?v=release-20261119";
 import { buildPetEntries } from "./pets.js?v=release-20261119";
 import { itemIcons, itemIconGroups } from "./item-icons.js?v=release-20261119";
-import { renderPlayerLookup } from "./player-lookup.js?v=sprites-20261121b";
-import {publicUrl, legacyRoute, pageMetadata, updateMetadata} from "./seo.js?v=seo-20261120";
-import {lookupXpPlayer, lookupXpSuggestions, xpPlayerProgress, xpSkills} from "./xp-player.js?v=sprites-20261121b";
+import { renderPlayerLookup } from "./player-lookup.js?v=loadouts-20261121";
+import {publicUrl, legacyRoute, pageMetadata, updateMetadata} from "./seo.js?v=share-cards-20261121";
+import {lookupXpPlayer, lookupXpSuggestions, xpPlayerProgress, xpSkills} from "./xp-player.js?v=loadouts-20261121";
 import {spriteMotion,prepareSpriteFrame,stopSpritePreviews} from "./sprite-animation.js?v=sprites-20261121b";
 import {renderWorldMap} from "./world-map.js?v=map-food-search-20261121";
 
@@ -147,7 +147,7 @@ function liveDropBadge() {
   );
 }
 
-function renderNav(category, currentId, home, liveDrops, playerLookup, activityComparison = false) {
+function renderNav(category, currentId, home, liveDrops, playerLookup, activityComparison = false,gearComparison = false) {
   const sections = [
     ["Explore", [
       ["Overview", "#/", "⌂", home],
@@ -161,6 +161,7 @@ function renderNav(category, currentId, home, liveDrops, playerLookup, activityC
     ["Resources", [
       ["XP calculator", entryUrl("experience"), "∑", currentId === "experience"],
       ["Activity comparison", "#/activity-comparison", "⇄", activityComparison],
+      ["Gear comparison", "#/gear-comparison", "◇", gearComparison],
       ["Release notes", entryUrl("release-notes"), "◷", currentId === "release-notes"],
       ["About and sources", entryUrl("about"), "ⓘ", currentId === "about"]
     ]]
@@ -984,6 +985,7 @@ function render({focus = false} = {}) {
   const liveDrops = view === "live-drops";
   const playerLookup = view === "player-lookup";
   const activityComparison = view === "activity-comparison";
+  const gearComparison = view === "gear-comparison";
   const bazaar = view === "bazaar" || (view === "browse" && id === "bazaar");
   disposePlayerLookup?.();
   disposePlayerLookup = null;
@@ -997,16 +999,16 @@ function render({focus = false} = {}) {
   main.replaceChildren();
   menu.setAttribute("aria-expanded","false");
   const currentCategory = bazaar || entry?.id === "bazaar" ? "bazaar" : entry?.id === "pets" ? "pets" : entry?.category || category;
-  renderNav(currentCategory, entry?.id, home, liveDrops, playerLookup, activityComparison);
+  renderNav(currentCategory, entry?.id, home, liveDrops, playerLookup, activityComparison,gearComparison);
   searchInput.value = view === "search" ? query : "";
   updateMetadata(document, pageMetadata(route, byId, groups));
   if (home) renderHome();
   else if (liveDrops) renderLiveDrops();
   else if (bazaar) disposeBazaar = renderBazaar({main, element, crumbs, footer, byId, guide:byId.get("bazaar"), entryLink,
     initialItem:new URLSearchParams(params).get("item") || ""});
-  else if (playerLookup || activityComparison) disposePlayerLookup = renderPlayerLookup({
+  else if (playerLookup || activityComparison || gearComparison) disposePlayerLookup = renderPlayerLookup({
     main, element, crumbs, footer, byId, entryUrl, renderSpriteFrame,
-    initialName:new URLSearchParams(params).get("name") || "", comparisonOnly:activityComparison
+    initialName:new URLSearchParams(params).get("name") || "", comparisonOnly:activityComparison,loadoutOnly:gearComparison
   });
   else if (entry) renderEntry(entry, currentCategory);
   else if (view === "search" || category) renderList(category, query);

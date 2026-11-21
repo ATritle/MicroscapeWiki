@@ -389,6 +389,66 @@ tr:last-child td { border-bottom: 0; }
 .player-sprite-stage canvas { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1; width: 336px; height: 336px; image-rendering: pixelated; }
 .player-sprite-stage:focus-within { outline: 2px solid var(--mint); outline-offset: 3px; }
 .player-art-note { margin: 7px 0 0; color: #92b4a5; font-size: 10px; }
+.loadout-tool { margin-top: 24px; }
+.loadout-profile-summary { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+.loadout-profile-summary h2 { margin: 0; }
+.loadout-profile-summary p { margin: 4px 0; color: var(--muted); font-size: 14px; }
+.loadout-actions { display: flex; gap: 10px; flex-wrap: wrap; align-items: end; margin: 15px 0; }
+.loadout-actions .button { padding: 9px 14px; }
+.loadout-change-status { color: var(--mint); font-size: 15px; }
+.loadout-columns { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 18px; }
+.loadout-card { min-width: 0; border: 1px solid var(--line); border-radius: 12px; background: var(--panel); padding: 16px; }
+.loadout-card-test { border-color: #477668; }
+.loadout-card h3 { margin: 0; }
+.loadout-card .player-panel-heading > span { font-size: 13px; }
+.loadout-sprite-stage { height: 165px; margin: 12px 0; }
+.loadout-bonus-summary { min-height: 44px; color: var(--mint); font-size: 14px; }
+.loadout-gear-list { max-height: 360px; overflow: auto; scrollbar-color: #45665c var(--bg); padding-right: 5px; }
+.loadout-gear-row { display: flex; gap: 10px; align-items: center; padding: 9px 5px; border-bottom: 1px solid var(--line); min-height: 61px; }
+.loadout-gear-row > div { flex: 1; min-width: 0; font-size: 14px; line-height: 1.35; }
+.loadout-gear-row small { display: block; font-size: 12px; color: var(--muted); margin-bottom: 3px; }
+.loadout-gear-row img, .loadout-picker-item img { object-fit: contain; image-rendering: pixelated; flex: none; }
+.loadout-empty-icon { display: grid; place-items: center; width: 30px; height: 30px; color: var(--muted); flex: none; }
+.loadout-gear-row.is-changed { background: #1c3a302e; }
+.loadout-change { padding: 6px 9px; font-size: 14px; color: var(--mint); }
+.loadout-abilities { margin-top: 15px; font-size: 14px; }
+.loadout-abilities summary, .loadout-learned summary, .loadout-combat summary { cursor: pointer; }
+.loadout-granted p { margin: 10px 0; }
+.loadout-granted small { display: block; color: var(--muted); line-height: 1.45; margin-top: 3px; }
+.loadout-requirements:empty { display: none; }
+.loadout-requirements { margin-top: 18px; border: 1px solid #785e35; border-radius: 10px; background: #34291a; padding: 12px 18px; color: #f3ce93; }
+.loadout-requirements h3 { margin-top: 0; }
+.loadout-stats, .loadout-combat, .loadout-learned { margin-top: 22px; }
+.loadout-tool table { width: 100%; font-size: 14px; }
+.loadout-tool table th[scope="row"] { font-weight: 500; color: var(--text); }
+.loadout-gain { color: #8ae2ba; }
+.loadout-loss { color: #ffb0a9; }
+.loadout-combat-controls { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 15px; margin: 16px 0; }
+.loadout-combat-controls label, .loadout-timing label, .loadout-learned label { display: grid; gap: 7px; font-size: 14px; }
+.loadout-tool select, .loadout-tool input[type="number"], .loadout-picker input[type="search"] { width: 100%; min-width: 0; padding: 10px; border: 1px solid var(--line); border-radius: 7px; background: var(--bg); color: var(--text); font: inherit; font-size: 14px; }
+.loadout-combat-controls label + label { margin-top: 12px; }
+.loadout-timing { display: flex; gap: 20px; flex-wrap: wrap; align-items: center; margin: 15px 0; }
+.loadout-checkbox { display: flex !important; gap: 9px; align-items: center; font-size: 14px; }
+.loadout-checkbox input { width: 17px; height: 17px; accent-color: var(--mint); }
+.loadout-method { margin-top: 18px; font-size: 14px; color: var(--muted); }
+.loadout-learned-list > div { display: flex; gap: 15px; align-items: center; margin-top: 9px; font-size: 14px; }
+.loadout-learned-list button { padding: 3px 8px; font-size: 13px; }
+.loadout-picker { position: fixed; padding: 22px; width: min(600px,calc(100vw - 32px)); max-height: 85vh; overflow: auto; border: 1px solid #527d6f; border-radius: 14px; background: var(--panel); color: var(--text); box-shadow: 0 20px 80px #0009; }
+.loadout-picker::backdrop { background: #050b15c9; }
+.loadout-picker .player-panel-heading { margin-bottom: 18px; }
+.loadout-picker h3 { margin: 0; }
+.loadout-picker label { display: grid; gap: 7px; font-size: 14px; margin: 12px 0; }
+.loadout-picker .button { padding: 6px 12px; }
+.loadout-picker-results { display: grid; gap: 7px; margin: 16px 0; }
+.loadout-picker-item { display: flex; align-items: center; gap: 12px; padding: 12px; text-align: left; }
+.loadout-picker-item:hover { background: var(--panel-hover); border-color: var(--mint); }
+.loadout-picker-item strong { display: block; font-size: 15px; }
+.loadout-picker-item small { display: block; color: var(--muted); font-size: 13px; }
+.loadout-picker-item.is-locked small { color: var(--amber); }
+@media (max-width: 760px) {
+  .loadout-columns, .loadout-combat-controls { grid-template-columns: 1fr; }
+  .loadout-gear-list { max-height: 260px; }
+}
 .player-pet { position: absolute; z-index: 2; right: 8px; bottom: 24px; }
 .player-pet .game-sprite-frame { width: 56px; }
 .player-eyebrow { display: block; color: #8db3a3; font-size: 10px; font-weight: 700; letter-spacing: .12em; }

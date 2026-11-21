@@ -1,6 +1,7 @@
 import {communityApiBase} from "./api-config.js?v=community-api-20261119";
 import {readActivityCatalog, renderActivityComparison} from "./activity-comparison.js?v=vendors-20261120";
 import {attachHoverPreview,previewMotion,sampleMotion,weaponMotionType} from "./sprite-animation.js?v=sprites-20261121b";
+import {renderLoadoutComparison} from "./loadout-comparison.js?v=loadouts-20261121";
 const apiUrl = ["localhost", "127.0.0.1"].includes(window.location.hostname)
   ? new URL("/api/player.json", window.location.origin)
   : new URL("player.json", communityApiBase);
@@ -13,6 +14,12 @@ const skillOrder = new Map([
 ].map((id, index) => [id, index]));
 const displayName = text => String(text || "").replace(/[-_]/g, " ").replace(/([a-z])([A-Z])/g, "$1 $2").replace(/^./, value => value.toUpperCase());
 let referenceRequest;
+let loadoutReferenceRequest;
+const recentProfiles=new Map();
+function readLoadoutReference(){
+  loadoutReferenceRequest ||= fetch(new URL("./loadout-reference.json?v=loadouts-20261121",import.meta.url)).then(r=>{if(!r.ok)throw Error("Could not load equipment abilities.");return r.json();}).catch(error=>{loadoutReferenceRequest=null;throw error;});
+  return loadoutReferenceRequest;
+}
 function readReference() {
   referenceRequest ||= fetch(new URL("./player-reference.json?v=release-20261119", import.meta.url)).then(response => {
     if (!response.ok) throw Error("Could not load the player reference artwork.");
@@ -133,12 +140,14 @@ async function paintPlayer(canvas, equipment, data) {
   return {complete:loaded.length > 0 && loaded.every(layer => layer.image),dispose};
 }
 
-export function renderPlayerLookup({main, element:e, crumbs, footer, byId, entryUrl, renderSpriteFrame, initialName = "", comparisonOnly = false}) {
+export function renderPlayerLookup({main, element:e, crumbs, footer, byId, entryUrl, renderSpriteFrame, initialName = "", comparisonOnly = false, loadoutOnly = false}) {
   const trainingPreferences = {prepSeconds:6, includeZero:false};
   let controller, disposed = false, requestNumber = 0, currentName = "", lastSnapshot;
   let stopPlayerPreview;
+  let disposeLoadout;
   let suggestionController, suggestionTimer, suggestionNumber = 0;
-  const pageName = comparisonOnly ? "Activity comparison" : "Player lookup";
+  const planning=comparisonOnly||loadoutOnly;
+  const pageName = loadoutOnly ? "Gear and loadout comparison" : comparisonOnly ? "Activity comparison" : "Player lookup";
   const heading = e("h1", {id:"page-title"}, pageName);
   const status = e("p", {class:"player-lookup-status", role:"status", "aria-live":"polite"});
   const input = e("input", {id:"player-username", name:"username", type:"text", placeholder:"e.g. User12345",
@@ -155,14 +164,14 @@ export function renderPlayerLookup({main, element:e, crumbs, footer, byId, entry
   const results = e("div", {class:"player-lookup-results", "aria-busy":"false"});
   const empty = e("div", {class:"player-lookup-empty"},
     e("span", {class:"player-empty-icon", "aria-hidden":"true"}, "⌕"),
-    e("h2", {}, comparisonOnly ? "Start with a player" : "Find your adventurer"),
-    e("p", {}, comparisonOnly ? "Load a public profile, choose a skill, then select two activities to compare." : "See skill levels, XP and equipped gear—all in one place."),
+    e("h2", {}, planning ? "Start with a player" : "Find your adventurer"),
+    e("p", {}, loadoutOnly ? "Load a profile to compare current equipment with a test loadout." : comparisonOnly ? "Load a public profile, choose a skill, then select two activities to compare." : "See skill levels, XP and equipped gear—all in one place."),
     e("button", {type:"button", class:"button"}, "Try User12345")
   );
   empty.querySelector("button").addEventListener("click", () => {input.value = "User12345"; lookup(input.value);});
   results.append(empty);
   main.append(e("article", {class:"player-lookup-page"}, crumbs(null, pageName), heading,
-    e("p", {class:"intro"}, comparisonOnly ? "Find the better training option for your current levels and gear. Compare two activities in the same skill." : "An adventurer’s skills and gear. Look up a player to see their public game profile."),
+    e("p", {class:"intro"}, loadoutOnly ? "Try equipment upgrades using a player’s base levels and current gear. Compare stats, requirements and estimated combat performance." : comparisonOnly ? "Find the better training option for your current levels and gear. Compare two activities in the same skill." : "An adventurer’s skills and gear. Look up a player to see their public game profile."),
     form, status, results), footer());
 
   function clearSuggestions() {
@@ -220,9 +229,14 @@ export function renderPlayerLookup({main, element:e, crumbs, footer, byId, entry
     return src ? e("img", {class:className, src, alt:"", width:32, height:32, referrerpolicy:"no-referrer", loading:"lazy"})
       : e("span", {class:className, "aria-hidden":"true"}, "◇");
   }
-  function result(snapshot, data, catalog) {
+  function result(snapshot, data, catalog,loadoutData) {
     stopPlayerPreview?.();stopPlayerPreview=null;
+    disposeLoadout?.();disposeLoadout=null;
     const {player} = snapshot, stats = playerStats(player.exp);
+    if(loadoutOnly){
+      const tool=renderLoadoutComparison({e,player,levels:stats.levels,catalog,appearance:data,abilities:loadoutData.abilities,byId,entryUrl,paintPlayer,renderSpriteFrame,checkedAt:snapshot.checkedAt,refreshProfile:()=>lookup(currentName,true)});
+      results.replaceChildren(tool.node);disposeLoadout=tool.dispose;return;
+    }
     const skillScrollTop = results.querySelector(".player-skills-grid")?.scrollTop || 0;
     const liveStatusAvailable = player.liveStatusAvailable === true;
     const canvas = e("canvas", {width:192, height:192, role:"img",
@@ -321,7 +335,7 @@ export function renderPlayerLookup({main, element:e, crumbs, footer, byId, entry
       }))
     );
     const training = comparisonOnly ? renderActivityComparison({e, player, levels:stats.levels, catalog, byId, entryUrl, renderSpriteFrame, preferences:trainingPreferences})
-      : e("p", {class:"player-comparison-link"}, e("a", {class:"button", href:"#/activity-comparison?" + new URLSearchParams({name:player.name})}, "Compare training activities"));
+      : e("div", {class:"player-comparison-link loadout-actions"}, e("a", {class:"button", href:"#/activity-comparison?" + new URLSearchParams({name:player.name})}, "Compare training activities"),e("a", {class:"button",href:"#/gear-comparison?"+new URLSearchParams({name:player.name})},"Compare loadouts"));
     results.replaceChildren(hero, training, ...(comparisonOnly ? [] : [where, e("div", {class:"player-detail-columns"}, skills, gear)]),
       ...(!comparisonOnly && Object.keys(bonuses).length ? [bonusPanel] : []), stamp,
       e("p", {class:"player-public-note"}, "Skills and equipment come from the public game profile. Live location, activity and hitpoints cannot be verified from this profile and are not shown."));
@@ -349,13 +363,14 @@ export function renderPlayerLookup({main, element:e, crumbs, footer, byId, entry
     results.setAttribute("aria-busy", "true");
     status.dataset.state = "loading";
     status.textContent = refresh ? "Refreshing " + username + "…" : "Looking up " + username + "…";
-    if (!refresh) {lastSnapshot = null; results.replaceChildren(e("div", {class:"player-loading"}, "Loading public player profile…"));}
+    if (!refresh) {lastSnapshot = null;disposeLoadout?.();disposeLoadout=null; results.replaceChildren(e("div", {class:"player-loading"}, "Loading public player profile…"));}
     try {
       const url = new URL(apiUrl);
       url.searchParams.set("username", username);
-      const [response, data, catalog] = await Promise.all([
-        fetch(url, {cache:"no-store", credentials:"omit", signal:AbortSignal.any([controller.signal, AbortSignal.timeout(18_000)])}),
-        readReference(), comparisonOnly ? readActivityCatalog() : null
+      const cached=loadoutOnly&&!refresh?recentProfiles.get(username.toLowerCase()):null;
+      const [response, data, catalog,loadoutData] = await Promise.all([
+        cached&&Date.now()-cached.checkedAt<60_000?{ok:true,json:async()=>cached}:fetch(url, {cache:"no-store", credentials:"omit", signal:AbortSignal.any([controller.signal, AbortSignal.timeout(18_000)])}),
+        readReference(), planning ? readActivityCatalog() : null,loadoutOnly?readLoadoutReference():null
       ]);
       let snapshot;
       try {snapshot = await response.json();}
@@ -368,11 +383,12 @@ export function renderPlayerLookup({main, element:e, crumbs, footer, byId, entry
       if (!Number.isFinite(snapshot.checkedAt) || !snapshot.player?.name || !snapshot.player.exp || !snapshot.player.equipment) throw Error("The game returned an incomplete player profile.");
       if (disposed || request !== requestNumber) return;
       lastSnapshot = snapshot;
-      result(snapshot, data, catalog);
+      recentProfiles.set(username.toLowerCase(),snapshot);if(recentProfiles.size>20)recentProfiles.delete(recentProfiles.keys().next().value);
+      result(snapshot, data, catalog,loadoutData);
       status.dataset.state = "success";
       status.textContent = "Profile found · " + snapshot.player.name;
       const target = new URL(window.location.href);
-      target.pathname = comparisonOnly ? "/activity-comparison/" : "/player-lookup/";
+      target.pathname = loadoutOnly ? "/gear-comparison/" : comparisonOnly ? "/activity-comparison/" : "/player-lookup/";
       target.hash = "";
       target.search = new URLSearchParams({name:username}).toString();
       window.history.replaceState(null, "", target);
@@ -395,15 +411,16 @@ export function renderPlayerLookup({main, element:e, crumbs, footer, byId, entry
     }
   }
   form.addEventListener("submit", event => {event.preventDefault(); lookup(input.value);});
-  const timer = comparisonOnly ? null : setInterval(() => {if (!document.hidden && currentName && lastSnapshot) lookup(currentName, true);}, 60_000);
+  const timer = planning ? null : setInterval(() => {if (!document.hidden && currentName && lastSnapshot) lookup(currentName, true);}, 60_000);
   const resume = () => {
-    if (!comparisonOnly && !document.hidden && lastSnapshot && Date.now() - lastSnapshot.checkedAt >= 60_000) lookup(currentName, true);
+    if (!planning && !document.hidden && lastSnapshot && Date.now() - lastSnapshot.checkedAt >= 60_000) lookup(currentName, true);
   };
   document.addEventListener("visibilitychange", resume);
   if (initialName) lookup(initialName);
   return () => {
     disposed = true;
     stopPlayerPreview?.();
+    disposeLoadout?.();
     clearSuggestions();
     controller?.abort();
     clearInterval(timer);

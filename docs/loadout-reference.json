@@ -1,0 +1,931 @@
+{
+  "source": "./assets/game-data/release-2026-11-19.json",
+  "abilities": [
+    {
+      "id": "anglersLuck",
+      "name": "Angler's Luck",
+      "onItem": "oldRod",
+      "wikiId": "anglers-luck",
+      "requirements": {},
+      "permanentUnlockLevel": 20,
+      "type": "scaling",
+      "summary": "You can catch a Magic Carp in place of your usual catch."
+    },
+    {
+      "id": "atAnyCost",
+      "name": "At Any Cost",
+      "onItem": "willowBow",
+      "wikiId": "at-any-cost",
+      "requirements": {},
+      "permanentUnlockLevel": 20,
+      "type": "scaling",
+      "summary": "Can spend one extra arrow for 10% more experience."
+    },
+    {
+      "id": "baker",
+      "name": "Baker",
+      "onItem": "chefsHat",
+      "wikiId": "baker",
+      "requirements": {},
+      "permanentUnlockLevel": 10,
+      "type": "scaling",
+      "summary": "Baking bread can award double XP."
+    },
+    {
+      "id": "berserk",
+      "name": "Berserk",
+      "onItem": "amuletOfStrength",
+      "wikiId": "berserk",
+      "requirements": {},
+      "permanentUnlockLevel": 45,
+      "type": "scaling",
+      "summary": "Taking a hit can grant +12 Strength and −4 Attack for your next four swings."
+    },
+    {
+      "id": "bleedingEdge",
+      "name": "Bleeding Edge",
+      "onItem": "amuletOfProgress",
+      "wikiId": "bleeding-edge",
+      "requirements": {},
+      "permanentUnlockLevel": 30,
+      "type": "scaling",
+      "summary": "Skilling can award double XP. The chance is the ability’s power minus your double up chance."
+    },
+    {
+      "id": "bloodWard",
+      "name": "Blood Ward",
+      "onItem": "bloodShard",
+      "wikiId": "blood-ward",
+      "requirements": {},
+      "permanentUnlockLevel": 79,
+      "type": "scaling",
+      "summary": "Casting a Blood Rune spell can cost 5 HP and create a ward that absorbs up to 30 damage for 30 seconds."
+    },
+    {
+      "id": "bloodscent",
+      "name": "Bloodscent",
+      "onItem": "dragonSword",
+      "wikiId": "bloodscent",
+      "requirements": {},
+      "permanentUnlockLevel": 60,
+      "type": "scaling",
+      "summary": "A swing can hit three times against a target below 25% HP."
+    },
+    {
+      "id": "bountyHook",
+      "name": "Bounty Hook",
+      "onItem": "goldenRod",
+      "wikiId": "bounty-hook",
+      "requirements": {},
+      "permanentUnlockLevel": 70,
+      "type": "scaling",
+      "summary": "A catch can award twice the fish and Fishing XP."
+    },
+    {
+      "id": "burstOfStrength",
+      "name": "Burst of Strength",
+      "onItem": "monkRobe",
+      "wikiId": "burst-of-strength",
+      "requirements": {},
+      "permanentUnlockLevel": 15,
+      "type": "static",
+      "summary": "Adds 10 Strength. Uses one Spirit Rune on each melee attack."
+    },
+    {
+      "id": "chaosConduit",
+      "name": "Chaos Conduit",
+      "onItem": "chaosShard",
+      "wikiId": "chaos-conduit",
+      "requirements": {},
+      "permanentUnlockLevel": 40,
+      "type": "scaling",
+      "summary": "Casting a spell that uses a Chaos Rune can spend a Mind Rune in its place."
+    },
+    {
+      "id": "clarityOfThought",
+      "name": "Clarity of Thought",
+      "onItem": "monkRobe",
+      "wikiId": "clarity-of-thought",
+      "requirements": {},
+      "permanentUnlockLevel": 15,
+      "type": "static",
+      "summary": "Adds 10 Attack. Uses one Spirit Rune on each melee attack."
+    },
+    {
+      "id": "clumsyFlame",
+      "name": "Clumsy Flame",
+      "onItem": "petScales",
+      "wikiId": "clumsy-flame",
+      "requirements": {},
+      "permanentUnlockLevel": 3,
+      "type": "static",
+      "summary": "Scales occasionally deals a small amount of fire damage to its owner."
+    },
+    {
+      "id": "coalKeeper",
+      "name": "Coal Keeper",
+      "onItem": "heatGloves",
+      "wikiId": "coal-keeper",
+      "requirements": {
+        "smithing": 30
+      },
+      "permanentUnlockLevel": 40,
+      "type": "scaling",
+      "summary": "Smelting or superheating can use one fewer Coal Ore. The chance in percent is 10 + Firemaking level + ability level."
+    },
+    {
+      "id": "conserveAir",
+      "name": "Conserve Air",
+      "onItem": "amuletOfMagic",
+      "wikiId": "conserve-air",
+      "requirements": {},
+      "permanentUnlockLevel": 20,
+      "type": "scaling",
+      "summary": "Casting spells or performing activities can save two Air Runes."
+    },
+    {
+      "id": "conserveFire",
+      "name": "Conserve Fire",
+      "onItem": "amuletOfMagic",
+      "wikiId": "conserve-fire",
+      "requirements": {},
+      "permanentUnlockLevel": 20,
+      "type": "scaling",
+      "summary": "Casting spells or performing activities can save two Fire Runes."
+    },
+    {
+      "id": "crusader",
+      "name": "Crusader",
+      "onItem": "progrite2hSword",
+      "wikiId": "crusader",
+      "requirements": {},
+      "permanentUnlockLevel": 50,
+      "type": "scaling",
+      "summary": "A swing can grant +100 Strength for 24 seconds."
+    },
+    {
+      "id": "cursedStrength",
+      "name": "Cursed Strength",
+      "onItem": "black2hSword",
+      "wikiId": "cursed-strength",
+      "requirements": {},
+      "permanentUnlockLevel": 35,
+      "type": "static",
+      "summary": "Doubles both physical damage and the time between swings with a two-handed weapon."
+    },
+    {
+      "id": "darkTwist",
+      "name": "Dark Twist",
+      "onItem": "wizardsHatDark",
+      "wikiId": "dark-twist",
+      "requirements": {},
+      "permanentUnlockLevel": 60,
+      "type": "scaling",
+      "summary": "A spell roll of 1 damage can become a maximum-damage hit."
+    },
+    {
+      "id": "deathsBargain",
+      "name": "Death's Bargain",
+      "onItem": "skullShield",
+      "wikiId": "deaths-bargain",
+      "requirements": {},
+      "permanentUnlockLevel": 50,
+      "type": "scaling",
+      "summary": "Lets you perform the Dark Ritual at the Totem of Zem and gives you a chance to keep the Cut Diamond."
+    },
+    {
+      "id": "dragonRage",
+      "name": "Dragon Rage",
+      "onItem": "dragonHelm",
+      "wikiId": "dragon-rage",
+      "requirements": {},
+      "permanentUnlockLevel": 60,
+      "type": "scaling",
+      "summary": "A melee swing can launch a fireball that deals up to 10 fire damage."
+    },
+    {
+      "id": "dreadAura",
+      "name": "Dread Aura",
+      "onItem": "blackFullHelm",
+      "wikiId": "dread-aura",
+      "requirements": {},
+      "permanentUnlockLevel": 50,
+      "type": "scaling",
+      "summary": "Can cause your enemy to skip an attack."
+    },
+    {
+      "id": "drosswork",
+      "name": "Drosswork",
+      "onItem": "hammer",
+      "wikiId": "drosswork",
+      "requirements": {},
+      "permanentUnlockLevel": 30,
+      "type": "scaling",
+      "summary": "Forging can create one piece of Dross."
+    },
+    {
+      "id": "empoweredMind",
+      "name": "Empowered Mind",
+      "onItem": "mindShard",
+      "wikiId": "empowered-mind",
+      "requirements": {},
+      "permanentUnlockLevel": 18,
+      "type": "scaling",
+      "summary": "Casting a spell that uses a Mind Rune can raise the maximum damage of Wind Strike and Fire Strike by 2 for 22 seconds."
+    },
+    {
+      "id": "enlightened",
+      "name": "Enlightened",
+      "onItem": "amuletOfPower",
+      "wikiId": "enlightened",
+      "requirements": {},
+      "permanentUnlockLevel": 60,
+      "type": "scaling",
+      "summary": "A maximum-damage hit can award double experience."
+    },
+    {
+      "id": "eruption",
+      "name": "Eruption",
+      "onItem": "vulcanus",
+      "wikiId": "eruption",
+      "requirements": {},
+      "permanentUnlockLevel": 75,
+      "type": "scaling",
+      "summary": "A melee swing can apply the part of its damage above 10 as fire damage to you and all enemies within 20 paces."
+    },
+    {
+      "id": "fanaticism",
+      "name": "Fanaticism",
+      "onItem": "progriteScimitar",
+      "wikiId": "fanaticism",
+      "requirements": {},
+      "permanentUnlockLevel": 40,
+      "type": "scaling",
+      "summary": "Gaining a Spirit Rune in melee can speed up your next two swings. The effect uses a Blood Rune."
+    },
+    {
+      "id": "fireBlast",
+      "name": "Fire Blast",
+      "onItem": "fireBattlestaff",
+      "wikiId": "fire-blast",
+      "requirements": {
+        "evilMagic": 59
+      },
+      "permanentUnlockLevel": 60,
+      "type": "static",
+      "summary": "An offensive spell that deals fire damage."
+    },
+    {
+      "id": "fireBolt",
+      "name": "Fire Bolt",
+      "onItem": "fireStaff",
+      "wikiId": "fire-bolt",
+      "requirements": {
+        "evilMagic": 35
+      },
+      "permanentUnlockLevel": 50,
+      "type": "static",
+      "summary": "An offensive spell that deals fire damage."
+    },
+    {
+      "id": "fireStrike",
+      "name": "Fire Strike",
+      "onItem": "magicStaff",
+      "wikiId": "fire-strike",
+      "requirements": {
+        "evilMagic": 13
+      },
+      "permanentUnlockLevel": 40,
+      "type": "static",
+      "summary": "An offensive spell that deals fire damage."
+    },
+    {
+      "id": "fireWave",
+      "name": "Fire Wave",
+      "onItem": "torchOfPyrax",
+      "wikiId": "fire-wave",
+      "requirements": {
+        "evilMagic": 74
+      },
+      "permanentUnlockLevel": 65,
+      "type": "static",
+      "summary": "An offensive spell that deals fire damage."
+    },
+    {
+      "id": "flameGlutton",
+      "name": "Flame Glutton",
+      "onItem": "ashGloves",
+      "wikiId": "flame-glutton",
+      "requirements": {
+        "firemaking": 15
+      },
+      "permanentUnlockLevel": 30,
+      "type": "scaling",
+      "summary": "A burn can consume 2–8 logs in one action. You get XP for each log and less ash."
+    },
+    {
+      "id": "fletchersEye",
+      "name": "Fletcher's Eye",
+      "onItem": "fletchersCloak",
+      "wikiId": "fletchers-eye",
+      "requirements": {},
+      "permanentUnlockLevel": 30,
+      "type": "scaling",
+      "summary": "Fletching can award double XP."
+    },
+    {
+      "id": "focus",
+      "name": "Focus",
+      "onItem": "wizardsRobe",
+      "wikiId": "focus",
+      "requirements": {},
+      "permanentUnlockLevel": 50,
+      "type": "static",
+      "summary": "Spells take longer to cast and deal 20% more damage."
+    },
+    {
+      "id": "forbiddenMagic",
+      "name": "Forbidden Magic",
+      "onItem": "sanglewoodStaff",
+      "wikiId": "forbidden-magic",
+      "requirements": {
+        "evilMagic": 75
+      },
+      "permanentUnlockLevel": 75,
+      "type": "scaling",
+      "summary": "A spell can deal 50% more damage. It also hits you for the full amount, up to the point that leaves you alive."
+    },
+    {
+      "id": "gemcraft",
+      "name": "Gemcraft",
+      "onItem": "diamondAmulet",
+      "wikiId": "gemcraft",
+      "requirements": {},
+      "permanentUnlockLevel": 30,
+      "type": "scaling",
+      "summary": "Cutting gems can award triple XP."
+    },
+    {
+      "id": "gildedPockets",
+      "name": "Gilded Pockets",
+      "onItem": "scarabCache",
+      "wikiId": "gilded-pockets",
+      "requirements": {},
+      "permanentUnlockLevel": 20,
+      "type": "static",
+      "summary": "Adds three spaces to your loot bag."
+    },
+    {
+      "id": "gracedAim",
+      "name": "Graced Aim",
+      "onItem": "mapleBow",
+      "wikiId": "graced-aim",
+      "requirements": {},
+      "permanentUnlockLevel": 25,
+      "type": "scaling",
+      "summary": "A ranged miss can deal 2 damage instead."
+    },
+    {
+      "id": "greenThumb",
+      "name": "Green Thumb",
+      "onItem": "gardenersGloves",
+      "wikiId": "green-thumb",
+      "requirements": {},
+      "permanentUnlockLevel": 20,
+      "type": "scaling",
+      "summary": "Harvesting grain or flax can produce twice the usual yield."
+    },
+    {
+      "id": "ignitingShot",
+      "name": "Igniting Shot",
+      "onItem": "magicBow",
+      "wikiId": "igniting-shot",
+      "requirements": {},
+      "permanentUnlockLevel": 40,
+      "type": "scaling",
+      "summary": "A shot can cast Fire Strike when you have the runes for it."
+    },
+    {
+      "id": "illOmen",
+      "name": "Ill Omen",
+      "onItem": "cursedTalisman",
+      "wikiId": "ill-omen",
+      "requirements": {},
+      "permanentUnlockLevel": 40,
+      "type": "scaling",
+      "summary": "Spell damage ending in 4 can curse you, causing your next spell to deal 1 damage."
+    },
+    {
+      "id": "innerFurnace",
+      "name": "Inner Furnace",
+      "onItem": "dragonShield",
+      "wikiId": "inner-furnace",
+      "requirements": {},
+      "permanentUnlockLevel": 60,
+      "type": "scaling",
+      "summary": "With a shield equipped, stores a share of fire damage you take for 60 seconds. The next enemy to hit you in melee takes the stored damage as a fireball. Taking more fire damage refreshes the duration."
+    },
+    {
+      "id": "ironGut",
+      "name": "Iron Gut",
+      "onItem": "meatPie",
+      "wikiId": "iron-gut",
+      "requirements": {},
+      "permanentUnlockLevel": 30,
+      "type": "scaling",
+      "summary": "A Mining double up can add 2–6 Hunger and deal 1–3 damage to you. At 10 Hunger, the next Mining double up triggers twice and consumes your equipped Meat Pie."
+    },
+    {
+      "id": "lanternsGift",
+      "name": "Lantern's Gift",
+      "onItem": "mothLantern",
+      "wikiId": "lanterns-gift",
+      "requirements": {
+        "mining": 30
+      },
+      "permanentUnlockLevel": 35,
+      "type": "scaling",
+      "summary": "Mining ore underground can also yield Coal Ore."
+    },
+    {
+      "id": "lightBite",
+      "name": "Light Bite",
+      "onItem": "fishingRod",
+      "wikiId": "lightbite",
+      "requirements": {},
+      "permanentUnlockLevel": 30,
+      "type": "scaling",
+      "summary": "A fishing action can preserve the Feather, Raw Shrimp, or Raw Frog it uses as bait."
+    },
+    {
+      "id": "mixedEarth",
+      "name": "Mixed Earth",
+      "onItem": "pickaxe",
+      "wikiId": "mixed-earth",
+      "requirements": {},
+      "permanentUnlockLevel": 20,
+      "type": "scaling",
+      "summary": "Mining copper or tin can yield whichever of those two ores you have less of."
+    },
+    {
+      "id": "moltenReflection",
+      "name": "Molten Reflection",
+      "onItem": "magmaMirror",
+      "wikiId": "molten-reflection",
+      "requirements": {},
+      "permanentUnlockLevel": 35,
+      "type": "scaling",
+      "summary": "Can send damage from a fire spell back to its caster."
+    },
+    {
+      "id": "mudwright",
+      "name": "Mudwright",
+      "onItem": "shovel",
+      "wikiId": "mudwright",
+      "requirements": {
+        "crafting": 5
+      },
+      "permanentUnlockLevel": 30,
+      "type": "scaling",
+      "summary": "Mining clay can award 6 Crafting XP."
+    },
+    {
+      "id": "paralyzeMonster",
+      "name": "Paralyze Monster",
+      "onItem": "evilAmulet",
+      "wikiId": "paralyze-monster",
+      "requirements": {},
+      "permanentUnlockLevel": 60,
+      "type": "static",
+      "summary": "Has a 60% chance to skip an enemy attack. A skipped attack uses one Sacred Rune."
+    },
+    {
+      "id": "parry",
+      "name": "Parry",
+      "onItem": "battlestaff",
+      "wikiId": "parry",
+      "requirements": {},
+      "permanentUnlockLevel": 50,
+      "type": "scaling",
+      "summary": "A staff or two-handed melee weapon can parry enemy melee attacks."
+    },
+    {
+      "id": "patronage",
+      "name": "Patronage",
+      "onItem": "royalCape",
+      "wikiId": "patronage",
+      "requirements": {},
+      "permanentUnlockLevel": 30,
+      "type": "static",
+      "summary": "Every two minutes the cape gives another player in your zone 2–10 of your coins."
+    },
+    {
+      "id": "penance",
+      "name": "Penance",
+      "onItem": "progriteMedHelm",
+      "wikiId": "penance",
+      "requirements": {},
+      "permanentUnlockLevel": 45,
+      "type": "scaling",
+      "summary": "Taking at least 10 damage can grant a Spirit Rune."
+    },
+    {
+      "id": "plumeCatcher",
+      "name": "Plume Catcher",
+      "onItem": "featheredCap",
+      "wikiId": "plume-catcher",
+      "requirements": {
+        "fishing": 5
+      },
+      "permanentUnlockLevel": 30,
+      "type": "scaling",
+      "summary": "Fishing can yield an extra Feather."
+    },
+    {
+      "id": "protectorOfProgryn",
+      "name": "Protector of Progryn",
+      "onItem": "progriteFullHelm",
+      "wikiId": "protector-of-progryn",
+      "requirements": {},
+      "permanentUnlockLevel": 60,
+      "type": "scaling",
+      "summary": "Your active prayers can also affect allies attacking the same enemy."
+    },
+    {
+      "id": "pulverizeIron",
+      "name": "Pulverize Iron",
+      "onItem": "ironbreakerPickaxe",
+      "wikiId": "pulverize-iron",
+      "requirements": {},
+      "permanentUnlockLevel": 50,
+      "type": "scaling",
+      "summary": "An Iron Ore you mine can be destroyed to award 50% more XP."
+    },
+    {
+      "id": "pyreshellWard",
+      "name": "Pyreshell Ward",
+      "onItem": "pyreshellShield",
+      "wikiId": "pyreshell-ward",
+      "requirements": {},
+      "permanentUnlockLevel": 60,
+      "type": "scaling",
+      "summary": "Reduces incoming damage from dragon breath by a percentage that rises with ability level."
+    },
+    {
+      "id": "quench",
+      "name": "Quench",
+      "onItem": "hellforgedHammer",
+      "wikiId": "quench",
+      "requirements": {},
+      "permanentUnlockLevel": 50,
+      "type": "scaling",
+      "summary": "Forging steel or better gear can use Dross for a Quenched stack. It reduces the coal needed to smelt a bar of that metal."
+    },
+    {
+      "id": "quickHex",
+      "name": "Quick Hex",
+      "onItem": "wizardsHatBlue",
+      "wikiId": "quick-hex",
+      "requirements": {},
+      "permanentUnlockLevel": 25,
+      "type": "scaling",
+      "summary": "Can speed up the first spell you cast."
+    },
+    {
+      "id": "rapidFire",
+      "name": "Rapid Fire",
+      "onItem": "magicBow",
+      "wikiId": "rapid-fire",
+      "requirements": {},
+      "permanentUnlockLevel": 40,
+      "type": "scaling",
+      "summary": "Can fire an extra shot, and that shot can trigger Rapid Fire again."
+    },
+    {
+      "id": "rapidHeal",
+      "name": "Rapid Heal",
+      "onItem": "holyAmulet",
+      "wikiId": "rapid-heal",
+      "requirements": {},
+      "permanentUnlockLevel": 50,
+      "type": "static",
+      "summary": "Triples health regeneration speed. Each regeneration event uses one Spirit Rune."
+    },
+    {
+      "id": "rasSplinter",
+      "name": "Ra's Splinter",
+      "onItem": "bluegoldAxe",
+      "wikiId": "ras-splinter",
+      "requirements": {
+        "woodcutting": 60
+      },
+      "permanentUnlockLevel": 35,
+      "type": "scaling",
+      "summary": "Chopping a yew or magic tree can yield Gold Ore."
+    },
+    {
+      "id": "rubberBody",
+      "name": "Rubber Body",
+      "onItem": "slimeTorso",
+      "wikiId": "rubber-body",
+      "requirements": {},
+      "permanentUnlockLevel": 40,
+      "type": "scaling",
+      "summary": "An enemy swing can bounce off you."
+    },
+    {
+      "id": "sacredMarch",
+      "name": "Sacred March",
+      "onItem": "blessedGreaves",
+      "wikiId": "sacred-march",
+      "requirements": {},
+      "permanentUnlockLevel": 20,
+      "type": "scaling",
+      "summary": "Dealing damage can grant a Spirit Rune."
+    },
+    {
+      "id": "sacredStrike",
+      "name": "Sacred Strike",
+      "onItem": "progriteDagger",
+      "wikiId": "sacred-strike",
+      "requirements": {},
+      "permanentUnlockLevel": 60,
+      "type": "scaling",
+      "summary": "A Progrite weapon can swing twice against a demon."
+    },
+    {
+      "id": "saltCure",
+      "name": "Salt Cure",
+      "onItem": "saltedMitts",
+      "wikiId": "salt-cure",
+      "requirements": {
+        "cooking": 25
+      },
+      "permanentUnlockLevel": 25,
+      "type": "scaling",
+      "summary": "Cooking at a fire grants a level-dependent XP bonus and adds a 20% chance to burn the food. A burned action still awards XP."
+    },
+    {
+      "id": "sanguineHarvest",
+      "name": "Sanguine Harvest",
+      "onItem": "sanguineBoots",
+      "wikiId": "sanguine-harvest",
+      "requirements": {},
+      "permanentUnlockLevel": 50,
+      "type": "scaling",
+      "summary": "Killing an enemy with more than 100 maximum HP can grant a Blood Rune."
+    },
+    {
+      "id": "scarabsFeast",
+      "name": "Scarab's Feast",
+      "onItem": "khopeshOfBa",
+      "wikiId": "scarabs-feast",
+      "requirements": {},
+      "permanentUnlockLevel": 50,
+      "type": "scaling",
+      "summary": "A swing that deals more than 5 damage can steal 1 HP from a target that is below full health."
+    },
+    {
+      "id": "scarabsPlea",
+      "name": "Scarab's Plea",
+      "onItem": "shellOfKa",
+      "wikiId": "scarabs-plea",
+      "requirements": {},
+      "permanentUnlockLevel": 40,
+      "type": "scaling",
+      "summary": "Taking at least 4 damage can heal you for 1 HP."
+    },
+    {
+      "id": "serpentsReturn",
+      "name": "Serpent's Return",
+      "onItem": "serpentQuiver",
+      "wikiId": "serpents-return",
+      "requirements": {},
+      "permanentUnlockLevel": 45,
+      "type": "scaling",
+      "summary": "Arrows can return to you when you fight from a safe spot."
+    },
+    {
+      "id": "shellPockets",
+      "name": "Shell Pockets",
+      "onItem": "scarabSatchel",
+      "wikiId": "shell-pockets",
+      "requirements": {},
+      "permanentUnlockLevel": 10,
+      "type": "static",
+      "summary": "Adds two spaces to your loot bag."
+    },
+    {
+      "id": "shepherd",
+      "name": "Shepherd",
+      "onItem": "ironShears",
+      "wikiId": "shepherd",
+      "requirements": {
+        "crafting": 5
+      },
+      "permanentUnlockLevel": 30,
+      "type": "scaling",
+      "summary": "Shearing sheep can award 6 Crafting XP."
+    },
+    {
+      "id": "shieldWall",
+      "name": "Shield Wall",
+      "onItem": "steelSqShield",
+      "wikiId": "shield-wall",
+      "requirements": {},
+      "permanentUnlockLevel": 40,
+      "type": "scaling",
+      "summary": "With a shield equipped, an incoming hit can be capped at 30% of your maximum HP."
+    },
+    {
+      "id": "sniper",
+      "name": "Sniper",
+      "onItem": "yewBow",
+      "wikiId": "sniper",
+      "requirements": {},
+      "permanentUnlockLevel": 30,
+      "type": "scaling",
+      "summary": "A shot can deal maximum damage when the target is at full health."
+    },
+    {
+      "id": "softLanding",
+      "name": "Soft Landing",
+      "onItem": "rubberBoots",
+      "wikiId": "soft-landing",
+      "requirements": {},
+      "permanentUnlockLevel": 20,
+      "type": "static",
+      "summary": "Cuts fall damage by 75%."
+    },
+    {
+      "id": "soulHarvest",
+      "name": "Soul Harvest",
+      "onItem": "deathShard",
+      "wikiId": "soul-harvest",
+      "requirements": {},
+      "permanentUnlockLevel": 64,
+      "type": "scaling",
+      "summary": "Killing an enemy with a Death Rune spell can award one Mind Rune per point of overkill damage."
+    },
+    {
+      "id": "sourStomach",
+      "name": "Sour Stomach",
+      "onItem": "applePie",
+      "wikiId": "sour-stomach",
+      "requirements": {},
+      "permanentUnlockLevel": 30,
+      "type": "scaling",
+      "summary": "A Woodcutting double up can add 2–6 Hunger and deal 1–3 damage to you. At 10 Hunger, the next Woodcutting double up triggers twice and consumes your equipped Apple Pie."
+    },
+    {
+      "id": "spellEcho",
+      "name": "Spell Echo",
+      "onItem": "darkWizardsRobe",
+      "wikiId": "spell-echo",
+      "requirements": {},
+      "permanentUnlockLevel": 60,
+      "type": "scaling",
+      "summary": "A spell that deals at least its maximum damage can speed up the next cast."
+    },
+    {
+      "id": "steadyAim",
+      "name": "Steady Aim",
+      "onItem": "shortbow",
+      "wikiId": "steady-aim",
+      "requirements": {},
+      "permanentUnlockLevel": 10,
+      "type": "scaling",
+      "summary": "A ranged hit can deal 1 extra damage."
+    },
+    {
+      "id": "stoneskin",
+      "name": "Stoneskin",
+      "onItem": "amuletOfProtection",
+      "wikiId": "stoneskin",
+      "requirements": {},
+      "permanentUnlockLevel": 50,
+      "type": "scaling",
+      "summary": "Can reduce incoming damage by 1."
+    },
+    {
+      "id": "sweetTooth",
+      "name": "Sweet Tooth",
+      "onItem": "redberryPie",
+      "wikiId": "sweet-tooth",
+      "requirements": {},
+      "permanentUnlockLevel": 30,
+      "type": "scaling",
+      "summary": "A Fishing double up can add 2–6 Hunger and deal 1–3 damage to you. At 10 Hunger, the next Fishing double up triggers twice and consumes your equipped Redberry Pie."
+    },
+    {
+      "id": "swiftSands",
+      "name": "Swift Sands",
+      "onItem": "blinkBone",
+      "wikiId": "swift-sands",
+      "requirements": {},
+      "permanentUnlockLevel": 30,
+      "type": "scaling",
+      "summary": "Travel can finish faster."
+    },
+    {
+      "id": "telegrabLoot",
+      "name": "Telegrab Loot",
+      "onItem": "telekineticGloves",
+      "wikiId": "telegrab-loot",
+      "requirements": {
+        "goodMagic": 33
+      },
+      "permanentUnlockLevel": 60,
+      "type": "scaling",
+      "summary": "Retrieves loot from a kill made at a safe spot. You need a Law Rune and have a level-dependent chance to keep it."
+    },
+    {
+      "id": "thickSkin",
+      "name": "Thick Skin",
+      "onItem": "priestRobe",
+      "wikiId": "thick-skin",
+      "requirements": {},
+      "permanentUnlockLevel": 10,
+      "type": "static",
+      "summary": "Adds 10 Defense. Uses one Spirit Rune on each enemy attack."
+    },
+    {
+      "id": "tilDeathDoUsPart",
+      "name": "Til Death Do Us Part",
+      "onItem": "weddingBand",
+      "wikiId": "til-death-do-us-part",
+      "requirements": {},
+      "permanentUnlockLevel": 40,
+      "type": "scaling",
+      "summary": "Can block a finishing blow aimed at an ally fighting alongside you."
+    },
+    {
+      "id": "timberOracle",
+      "name": "Timber Oracle",
+      "onItem": "loggingAxe",
+      "wikiId": "timber-oracle",
+      "requirements": {},
+      "permanentUnlockLevel": 30,
+      "type": "scaling",
+      "summary": "Chopping trees can produce one extra log of a random type."
+    },
+    {
+      "id": "toughArrows",
+      "name": "Tough Arrows",
+      "onItem": "oakBow",
+      "wikiId": "tough-arrows",
+      "requirements": {},
+      "permanentUnlockLevel": 15,
+      "type": "scaling",
+      "summary": "Reduces the chance that your arrows break."
+    },
+    {
+      "id": "windBlast",
+      "name": "Wind Blast",
+      "onItem": "airBattlestaff",
+      "wikiId": "wind-blast",
+      "requirements": {
+        "evilMagic": 41
+      },
+      "permanentUnlockLevel": 30,
+      "type": "static",
+      "summary": "An offensive spell that deals air damage."
+    },
+    {
+      "id": "windBolt",
+      "name": "Wind Bolt",
+      "onItem": "airStaff",
+      "wikiId": "wind-bolt",
+      "requirements": {
+        "evilMagic": 17
+      },
+      "permanentUnlockLevel": 30,
+      "type": "static",
+      "summary": "An offensive spell that deals air damage."
+    },
+    {
+      "id": "windStrike",
+      "name": "Wind Strike",
+      "onItem": "staff",
+      "wikiId": "wind-strike",
+      "requirements": {
+        "evilMagic": 1
+      },
+      "permanentUnlockLevel": 20,
+      "type": "static",
+      "summary": "An offensive spell that deals air damage."
+    },
+    {
+      "id": "windWave",
+      "name": "Wind Wave",
+      "onItem": "iskarnsGrip",
+      "wikiId": "wind-wave",
+      "requirements": {
+        "evilMagic": 67
+      },
+      "permanentUnlockLevel": 65,
+      "type": "static",
+      "summary": "An offensive spell that deals air damage."
+    }
+  ]
+}

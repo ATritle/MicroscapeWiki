@@ -3,6 +3,7 @@ import path from "node:path";
 import {fileURLToPath, pathToFileURL} from "node:url";
 import {parseHTML} from "linkedom";
 import {entryPath, categoryPath, siteOrigin} from "../docs/seo.js";
+import {createSocialCards} from "./social-cards.mjs";
 
 const root = fileURLToPath(new URL("../", import.meta.url));
 const docs = path.join(root,"docs");
@@ -35,7 +36,7 @@ globalThis.fetch = async input => {
 };
 const {render,byId,groups} = await import(pathToFileURL(path.join(docs,"app.js")).href);
 const routes = new Set(["/", ...Object.keys(groups).map(category=>"/"+categoryPath(category)+"/"),
-  ...[...byId.values()].map(entryPath), "/live-drops/","/player-lookup/","/activity-comparison/","/bazaar/","/search/"]);
+  ...[...byId.values()].map(entryPath), "/live-drops/","/player-lookup/","/activity-comparison/","/gear-comparison/","/bazaar/","/search/"]);
 const manifest = [];
 for (const route of routes) {
   if (!/^\/(?:[a-zA-Z0-9%-]+\/)*$/.test(route)) throw Error("Unsafe route " + route);
@@ -60,4 +61,5 @@ await fs.writeFile(path.join(output,"sitemap.xml"),sitemap);
 await fs.writeFile(path.join(output,"robots.txt"),"User-agent: *\nAllow: /\n\nSitemap: "+siteOrigin+"/sitemap.xml\n");
 await fs.writeFile(path.join(output,".nojekyll"),"");
 await fs.writeFile(path.join(output,"seo-manifest.json"),JSON.stringify(manifest,null,2)+"\n");
+await createSocialCards({output,manifest,byId,groups});
 console.log(JSON.stringify({pages:manifest.length,indexable:manifest.filter(page=>page.indexable).length,output}));

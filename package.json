@@ -7,5 +7,8 @@
     "build": "node scripts/build-seo.mjs",
     "check:seo": "node scripts/check-seo.mjs"
   },
-  "devDependencies": { "linkedom": "0.18.12" }
+  "devDependencies": {
+    "linkedom": "0.18.12",
+    "sharp": "0.34.5"
+  }
 }

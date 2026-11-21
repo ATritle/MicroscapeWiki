@@ -75,6 +75,32 @@ GitHub Pages uses **GitHub Actions** as its source. The `Build and deploy search
 
 ## Search indexing and rollback
 
+The Gear and Loadout Comparison at `/gear-comparison/` reuses Player Lookup's
+username suggestions and read-only profile endpoint. A loaded profile also links
+to it through **Compare loadouts**. The baseline remains immutable; only a local
+copy is edited. Recent profiles are reused in memory for up to one minute, and
+planning pages require manual refresh so background updates cannot discard edits.
+Nothing is saved to browser storage or sent back to the game.
+
+`docs/loadout-comparison.js` filters gear by slot, checks base-level requirements,
+handles two-handed weapons/shields, renders both appearances with existing game
+layers, and uses the shared combat model. Boss/special encounters and unusable
+sets do not receive usable rate estimates. Potions, learned abilities, gear ability
+effects, supplies, eating and banking are excluded from rate estimates; ability
+lists are reference and planning notes. Run `node scripts/check-loadout-comparison.mjs`.
+Rebuild `docs/loadout-reference.json` using
+`node scripts/build-loadout-reference.mjs GAME_DATA_JSON` after a game-data update.
+
+Specific pages serve original static Open Graph cards at `/assets/social/`, with
+their own title, summary, facts and artwork. `scripts/social-cards.mjs` generates
+1200×630 PNGs during the SEO build using Sharp. `docs/share-artwork.json` contains
+deduplicated thumbnails prepared from the captured public game artwork; regenerate
+it with `node scripts/prepare-share-artwork.mjs CAPTURED_ASSET_DIRECTORY [...]`.
+The build needs no network access for artwork. Player lookup and comparison cards
+stay generic and never embed a player's profile or username. The home page keeps
+its village banner. Legacy hash fragments cannot be read by Discord; open the page
+and share its normal path URL. Discord may retain an older preview in its cache.
+
 The SEO build uses the same `docs/app.js` renderer as the browser. It preserves the existing markup, CSS, tools and visible content while generating one HTML document per entry, directory and tool. `docs/seo.js` maps old hash links to stable paths such as `/items/rubber-boots/`, updates page metadata on navigation and retains old bookmarks. A root `<base>` keeps existing asset and citation URLs working on nested pages. Home, article and directory content is available in the initial HTML without executing JavaScript.
 
 The original XP Calculator is at `/guides/experience/`, linked from Resources and Guides. Its optional username lookup uses the existing public profile endpoint through `docs/xp-player.js`; choosing one of the 16 skills fills its exact XP and its level using the same curve as Player Lookup. Partial-name and spelling suggestions use Player Lookup’s existing public `player-search.json` endpoint. Selecting a matching name loads the profile; arrow keys and Enter select results, and Escape dismisses them. Target level, XP per action and manual entry remain available. Pending requests and suggestion timers are canceled when the name changes or the reader leaves the page. No usernames or player snapshots are saved into the static pages, page URLs or browser storage. Run `node scripts/check-xp-player.mjs` to verify profile and suggestion validation, XP thresholds, zero-XP skills, errors and cancellation signals.

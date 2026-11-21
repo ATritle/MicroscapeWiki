@@ -4,6 +4,7 @@ import path from "node:path";
 import {fileURLToPath} from "node:url";
 import {parseHTML} from "linkedom";
 import {publicUrl,legacyRoute,entryPath} from "../docs/seo.js";
+import sharp from "sharp";
 const root = fileURLToPath(new URL("../.seo-site/",import.meta.url));
 const manifest = JSON.parse(await fs.readFile(path.join(root,"seo-manifest.json"),"utf8"));
 const paths = new Set(manifest.map(page=>page.path));
@@ -22,6 +23,12 @@ for (const page of manifest) {
   titles.add(document.title);
   assert(document.querySelector('meta[name="description"]').getAttribute("content").length > 30);
   assert.equal(JSON.parse(document.querySelector("#wiki-schema").textContent)["@graph"][1].url,"https://microscapewiki.com"+page.path);
+  const image=new URL(document.querySelector('meta[property="og:image"]').getAttribute("content"));
+  assert.equal(image.hostname,"microscapewiki.com","Preview artwork must use the wiki domain");
+  if(page.path!=="/"){
+    const meta=await sharp(path.join(root,image.pathname)).metadata();assert.equal(meta.width,1200);assert.equal(meta.height,630);assert.equal(meta.format,"png");
+    assert.equal(document.querySelector('meta[property="og:image:width"]').getAttribute("content"),"1200");
+  }
   for (const a of document.querySelectorAll("a[href]")) {
     const href = a.getAttribute("href");
     assert(!href.startsWith("#/"),"Unconverted legacy link on "+page.path+": "+href);
@@ -42,6 +49,8 @@ for (const entry of reference) {
 }
 assert.equal(publicUrl("#/browse/reference",byId),"/game-mechanics/");
 assert.equal(publicUrl("#/activity-comparison?name=User12345",byId),"/activity-comparison/?name=User12345");
+assert.equal(legacyRoute(new URL("https://microscapewiki.com/gear-comparison/"),byId,groups),"/gear-comparison");
+assert(paths.has("/gear-comparison/"));
 assert.equal(legacyRoute(new URL("https://microscapewiki.com/#/entry/rubber-boots"),byId,groups),"/entry/rubber-boots");
 const sitemap = await fs.readFile(path.join(root,"sitemap.xml"),"utf8");
 assert.equal((sitemap.match(/<loc>/g)||[]).length,manifest.filter(page=>page.indexable).length);
