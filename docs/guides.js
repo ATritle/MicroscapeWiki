@@ -134,10 +134,11 @@ export const guides = [
   },
   {
     id: "experience",
-    title: "Experience and leveling",
-    summary: "Understand skill XP and level thresholds, then compare training options with Activity Comparison.",
+    title: "XP calculator",
+    summary: "Calculate XP between two levels and estimate actions from your in-game XP rate.",
+    calculator: true,
     sections: [
-      ["Experience curve", "The October 6 patch adopted the Old School RuneScape experience thresholds multiplied by ten. The table shows cumulative XP and the XP needed from the previous level."],
+      ["Experience curve", "The October 6 patch adopted the Old School RuneScape experience thresholds multiplied by ten. Enter a start level and a target level to see the total required. If you know the XP per action, enter it to estimate how many actions you need. Enter your exact current XP to account for progress through your current level."],
       ["Compare training activities", "Open Activity Comparison from Resources in the left panel. Enter a player’s username, choose a skill and select two activities in that skill. The tool compares training rates using the reported base levels and equipped gear. Check the displayed timing assumptions and requirements before using an estimate."]
     ],
     related: ["getting-started", "level", "activity-queue"],

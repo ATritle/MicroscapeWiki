@@ -1,5 +1,5 @@
 import {communityApiBase} from "./api-config.js?v=community-api-20261119";
-import { guides } from "./guides.js?v=activity-20261120";
+import { guides } from "./guides.js?v=xp-restored-20261120";
 import {renderBazaar} from "./bazaar.js?v=seo-20261120";
 import {renderBazaarWalkthrough} from "./bazaar-walkthrough.js?v=bazaar-visual-20261120";
 import { tutorials } from "./tutorials.js?v=release-20261119";
@@ -154,6 +154,7 @@ function renderNav(category, currentId, home, liveDrops, playerLookup, activityC
     ]],
     ["Compendium", topicOrder.map(id => [groups[id].title, categoryUrl(id), groups[id].icon, category === id])],
     ["Resources", [
+      ["XP calculator", entryUrl("experience"), "∑", currentId === "experience"],
       ["Activity comparison", "#/activity-comparison", "⇄", activityComparison],
       ["Release notes", entryUrl("release-notes"), "◷", currentId === "release-notes"],
       ["About and sources", entryUrl("about"), "ⓘ", currentId === "about"]
@@ -634,13 +635,44 @@ for (let level = 1; level < 99; level++) {
   xp.push(10 * Math.floor(points / 4));
 }
 
-function experienceThresholds() {
+function calculator() {
+  const field = (label, attrs) => {
+    const input = element("input", {type:"number", ...attrs});
+    return [element("label", {}, label, input), input];
+  };
+  const [startLabel, start] = field("Start level", {min:"1", max:"99", step:"1", value:"1", required:""});
+  const [targetLabel, target] = field("Target level", {min:"1", max:"99", step:"1", value:"20", required:""});
+  const [currentLabel, current] = field("Current XP (optional)", {min:"0", step:"1", placeholder:"Use start level"});
+  const [rateLabel, rate] = field("XP per action (optional)", {min:"0", step:"any", placeholder:"e.g. 40"});
+  const output = element("output", {class:"calc-result", "aria-live":"polite"});
+  const fields = element("div", {class:"calc-inputs"}, startLabel, targetLabel, currentLabel, rateLabel);
+  const update = () => {
+    const from = Number(start.value), to = Number(target.value);
+    if (!start.value || !target.value || !Number.isInteger(from) || !Number.isInteger(to) || from < 1 || to > 99 || to < from) {
+      output.textContent = "Enter levels from 1 to 99, with a target at or above the start level.";
+      return;
+    }
+    const baseline = current.value === "" ? xp[from] : Number(current.value);
+    if (!Number.isInteger(baseline) || baseline < xp[from]) {
+      output.textContent = "Enter a whole current XP value at or above the start level’s threshold.";
+      return;
+    }
+    if (rate.value !== "" && (!Number.isFinite(Number(rate.value)) || !(Number(rate.value) > 0))) {
+      output.textContent = "Enter a positive XP per action.";
+      return;
+    }
+    const needed = Math.max(0, xp[to] - baseline);
+    const count = rate.value === "" ? "" : " · " + number.format(Math.ceil(needed / Number(rate.value))) + " estimated actions";
+    output.textContent = number.format(needed) + " XP remaining" + count;
+  };
+  fields.addEventListener("input", update);
+  update();
   const thresholds = renderTable({
     title:"Experience thresholds",
     columns:["Level","Total XP","XP from previous level"],
     rows: xp.slice(1).map((value,index) => [String(index + 1), number.format(value), number.format(value - xp[index])])
   });
-  return element("section", {class:"experience-thresholds", "aria-label":"Experience thresholds"},
+  return element("section", {class:"calculator", "aria-label":"XP calculator inputs"}, fields, output,
     element("details", {}, element("summary", {}, "View XP thresholds"), thresholds)
   );
 }
@@ -769,7 +801,7 @@ function renderEntry(entry, category) {
   }
   if (entry.indexOnly) article.append(element("p", {class:"intro"}, "Listed in the community catalog. Detailed values are still needed."));
   if (entry.id === "bazaar") article.append(link("Search live Bazaar orders →", "#/bazaar", "button"),renderBazaarWalkthrough(element,"bazaar-article-visual"),element("h2",{},"More detail and common questions"));
-  if (entry.id === "experience") article.append(link("Open Activity Comparison", "#/activity-comparison", "button"), experienceThresholds());
+  if (entry.calculator) article.append(calculator(), link("Open Activity Comparison", "#/activity-comparison", "button"));
   if (entry.id === "vendor") article.append(link("Browse shops and vendors", categoryUrl("shops"), "button"));
   if (!art && !entry.mapImage) article.append(...facts);
   const tutorialSprites = tutorialSpriteFoes(entry).flatMap(foe => foe.sprites.map(sprite => ({
