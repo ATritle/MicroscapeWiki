@@ -1,6 +1,6 @@
 import {communityApiBase} from "./api-config.js?v=community-api-20261119";
 import {readActivityCatalog, renderActivityComparison} from "./activity-comparison.js?v=vendors-20261120";
-import {attachHoverPreview,previewMotion,sampleMotion,weaponMotionType} from "./sprite-animation.js?v=sprites-20261121";
+import {attachHoverPreview,previewMotion,sampleMotion,weaponMotionType} from "./sprite-animation.js?v=sprites-20261121b";
 const apiUrl = ["localhost", "127.0.0.1"].includes(window.location.hostname)
   ? new URL("/api/player.json", window.location.origin)
   : new URL("player.json", communityApiBase);
@@ -124,7 +124,6 @@ async function paintPlayer(canvas, equipment, data) {
   }
   draw();
   canvas.setAttribute("tabindex","0");
-  canvas.setAttribute("title","Hover or focus to preview in-game idle and weapon animations");
   const dispose=attachHoverPreview(canvas,stop=>{
     let raf,stopped=false;const started=performance.now();
     const tick=now=>{if(stopped)return;if(!canvas.isConnected){stop();return;}draw(Math.max(0,now-started));raf=requestAnimationFrame(tick);};

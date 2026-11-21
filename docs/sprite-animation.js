@@ -68,7 +68,6 @@ export function prepareSpriteFrame(frame,sprite,profile) {
   if(!profile)return;
   frame.classList.add("animated-game-sprite");
   frame.setAttribute("tabindex","0");
-  frame.setAttribute("title",profile.kind==="pet"?"Hover or focus to preview the pet’s in-game idle animation":"Hover or focus to preview in-game idle, attack and hit animations");
   frame.setAttribute("data-sprite-kind",profile.kind);
   const [x,y,w,h]=sprite.crop;
   const body=document.createElement("span"),idle=document.createElement("span"),clip=document.createElement("span");
