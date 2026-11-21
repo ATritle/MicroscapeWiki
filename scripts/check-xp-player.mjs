@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 globalThis.window = {location:{hostname:"127.0.0.1",origin:"http://127.0.0.1:8065"}};
-const {xpPlayerProgress,lookupXpPlayer,xpSkills} = await import("../docs/xp-player.js");
+const {xpPlayerProgress,lookupXpPlayer,lookupXpSuggestions,xpSkills} = await import("../docs/xp-player.js");
 assert.equal(xpSkills.length,16);
 assert.deepEqual(xpSkills.slice(0,6),["attack","strength","defense","evilMagic","ranged","piety"]);
 assert.deepEqual(xpPlayerProgress({exp:{attack:6692}},"attack"),{level:7,xp:6692});
@@ -19,6 +19,16 @@ assert.deepEqual(await lookupXpPlayer(" User12345 ",{fetcher}),snapshot);
 assert.equal(received.url.href,"http://127.0.0.1:8065/api/player.json?username=User12345");
 assert.equal(received.options.credentials,"omit");
 assert.equal(received.options.cache,"no-store");
+const suggestionFetcher = async (url,options) => {
+  received={url,options};
+  return Response.json({results:[{name:"User12345"},{name:"User12346"},{name:"<script>"},{name:123}]});
+};
+assert.deepEqual(await lookupXpSuggestions(" User12 ",{fetcher:suggestionFetcher}),["User12345","User12346"]);
+assert.equal(received.url.href,"http://127.0.0.1:8065/api/player-search.json?query=User12");
+assert.equal(received.options.credentials,"omit");
+await assert.rejects(lookupXpSuggestions("x",{fetcher:suggestionFetcher}),/at least two/);
+await assert.rejects(lookupXpSuggestions("User12",{fetcher:async()=>Response.json({results:[]},{status:503})}),/temporarily unavailable/);
+assert.deepEqual(await lookupXpSuggestions("User12",{fetcher:async()=>Response.json({results:[]})}),[]);
 await assert.rejects(lookupXpPlayer("../bad",{fetcher}),/full username/);
 await assert.rejects(lookupXpPlayer("Unknown",{fetcher:async()=>Response.json({error:"Player not found"},{status:404})}),/Player not found/);
 await assert.rejects(lookupXpPlayer("User12345",{fetcher:async()=>new Response("<html>error</html>")}),/did not respond correctly/);
@@ -30,4 +40,6 @@ assert(received.options.signal.aborted,"Navigation or changing the name must be 
 window.location = {hostname:"microscapewiki.com",origin:"https://microscapewiki.com"};
 await lookupXpPlayer("User12345",{fetcher});
 assert.equal(received.url.href,"https://microscape-wiki-api.pages.dev/player.json?username=User12345");
-console.log("Passed: 16 skills in game order, exact XP and level thresholds, zero/missing/invalid XP, unsupported levels, public endpoint routing, safe requests, malformed profiles, upstream errors and cancellation signals.");
+await lookupXpSuggestions("User12",{fetcher:suggestionFetcher});
+assert.equal(received.url.href,"https://microscape-wiki-api.pages.dev/player-search.json?query=User12");
+console.log("Passed: 16 skills in game order, exact XP and level thresholds, zero/missing/invalid XP, public endpoint routing, safe requests, matching-name validation, empty results, upstream errors and cancellation signals.");

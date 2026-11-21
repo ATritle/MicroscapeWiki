@@ -1,5 +1,5 @@
 import {communityApiBase} from "./api-config.js?v=community-api-20261119";
-import { guides } from "./guides.js?v=xp-player-20261120";
+import { guides } from "./guides.js?v=xp-matches-20261120";
 import {renderBazaar} from "./bazaar.js?v=seo-20261120";
 import {renderBazaarWalkthrough} from "./bazaar-walkthrough.js?v=bazaar-visual-20261120";
 import { tutorials } from "./tutorials.js?v=release-20261119";
@@ -7,7 +7,7 @@ import { buildPetEntries } from "./pets.js?v=release-20261119";
 import { itemIcons, itemIconGroups } from "./item-icons.js?v=release-20261119";
 import { renderPlayerLookup } from "./player-lookup.js?v=seo-20261120";
 import {publicUrl, legacyRoute, pageMetadata, updateMetadata} from "./seo.js?v=seo-20261120";
-import {lookupXpPlayer, xpPlayerProgress, xpSkills} from "./xp-player.js?v=xp-player-20261120";
+import {lookupXpPlayer, lookupXpSuggestions, xpPlayerProgress, xpSkills} from "./xp-player.js?v=xp-matches-20261120";
 
 const groups = {
   guides: { title: "Guides", icon: "▤", blurb: "Start here, earn Energy, trade and plan dungeon runs." },
@@ -639,7 +639,8 @@ for (let level = 1; level < 99; level++) {
 
 function calculator() {
   let snapshot, controller, disposed = false, requestNumber = 0;
-  disposeCalculator = () => {disposed = true; controller?.abort();};
+  let suggestionController, suggestionTimer, suggestionNumber = 0;
+  disposeCalculator = () => {disposed = true; controller?.abort(); clearSuggestions();};
   const field = (label, attrs) => {
     const input = element("input", {type:"number", ...attrs});
     return [element("label", {}, label, input), input];
@@ -675,11 +676,45 @@ function calculator() {
   const skill = element("select", {id:"xp-player-skill"}, ...xpSkills.map(id => element("option", {value:id}, byId.get(id === "evilMagic" ? "evil-magic" : id === "goodMagic" ? "good-magic" : id)?.title || id)));
   const submit = element("button", {type:"submit", class:"button primary"}, "Look up player");
   const status = element("p", {class:"xp-player-status", role:"status", "aria-live":"polite", hidden:""});
+  const suggestions = element("div", {class:"player-suggestions", hidden:"", role:"region", "aria-label":"Player name suggestions"});
   const lookup = element("form", {class:"xp-player-form", "aria-label":"Load player XP"},
     element("div", {class:"xp-player-controls"},
       element("label", {for:"xp-player-username"}, "Player username", username), submit,
-      element("label", {for:"xp-player-skill"}, "Skill", skill)), status,
-    element("p", {class:"xp-player-help"}, "Load a public profile and choose a skill to fill your current level and XP. You can edit the values below. Look up again to refresh your stats."));
+      element("label", {for:"xp-player-skill"}, "Skill", skill)), suggestions, status,
+    element("p", {class:"xp-player-help"}, "Type part of a username and select a match, or look up a full username. Choose a skill to fill your current level and XP. You can edit the values below or look up again to refresh your stats."));
+  function clearSuggestions() {
+    clearTimeout(suggestionTimer);
+    suggestionController?.abort();
+    suggestionNumber++;
+    suggestions.hidden = true;
+    suggestions.replaceChildren();
+  }
+  async function suggest(name) {
+    clearSuggestions();
+    if (!/^[a-zA-Z0-9_]{2,25}$/.test(name.trim())) return;
+    const version = suggestionNumber;
+    suggestionController = new AbortController();
+    suggestions.hidden = false;
+    suggestions.replaceChildren(element("p", {role:"status"}, "Finding matching players…"));
+    try {
+      const names = await lookupXpSuggestions(name, {signal:suggestionController.signal});
+      if (disposed || version !== suggestionNumber) return;
+      const buttons = names.map(name => {
+        const button = element("button", {type:"button", class:"player-suggestion"}, element("span", {}, name), glyph("→", ""));
+        button.addEventListener("click", () => {username.value = name; loadPlayer();});
+        return button;
+      });
+      buttons.forEach((button,index) => button.addEventListener("keydown", event => {
+        if (event.key === "ArrowDown" || event.key === "ArrowUp") {
+          event.preventDefault(); buttons[(index + (event.key === "ArrowDown" ? 1 : buttons.length - 1)) % buttons.length].focus();
+        } else if (event.key === "Escape") {event.preventDefault(); clearSuggestions(); username.focus();}
+      }));
+      suggestions.replaceChildren(element("p", {role:"status"}, names.length ? "Matching players · select a name" : "No matching names found. Try another spelling or enter the full username."), ...buttons);
+    } catch {
+      if (disposed || version !== suggestionNumber) return;
+      suggestions.replaceChildren(element("p", {role:"status"}, "Name suggestions are temporarily unavailable. You can still look up a full username."));
+    }
+  }
   function fillProgress() {
     if (!snapshot) return;
     status.hidden = false;
@@ -703,9 +738,15 @@ function calculator() {
   username.addEventListener("input", () => {
     controller?.abort(); requestNumber++; snapshot = null;
     status.hidden = true; submit.disabled = false;
+    clearSuggestions();
+    suggestionTimer = setTimeout(() => suggest(username.value),350);
   });
-  lookup.addEventListener("submit", async event => {
-    event.preventDefault();
+  username.addEventListener("keydown", event => {
+    if (event.key === "Escape") clearSuggestions();
+    if (event.key === "ArrowDown" && suggestions.querySelector("button")) {event.preventDefault(); suggestions.querySelector("button").focus();}
+  });
+  async function loadPlayer() {
+    clearSuggestions();
     controller?.abort(); controller = new AbortController();
     const request = ++requestNumber;
     snapshot = null; submit.disabled = true; status.hidden = false;
@@ -719,10 +760,12 @@ function calculator() {
       if (disposed || request !== requestNumber) return;
       status.dataset.state = "error";
       status.textContent = error.name === "TimeoutError" ? "The lookup took too long. Please try again, or enter your level and XP manually." : error.message;
+      if ([404,503].includes(error.status)) suggest(username.value);
     } finally {
       if (!disposed && request === requestNumber) submit.disabled = false;
     }
-  });
+  }
+  lookup.addEventListener("submit", event => {event.preventDefault(); loadPlayer();});
   const thresholds = renderTable({
     title:"Experience thresholds",
     columns:["Level","Total XP","XP from previous level"],
