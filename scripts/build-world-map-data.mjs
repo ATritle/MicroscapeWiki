@@ -19,7 +19,7 @@ for(const [id,zone] of Object.entries(game.locations)) {
   const position=zone.mapPos||game.locations[entrance]?.mapPos;
   if(!page||!position||position.every(n=>n===0))continue;
   const terms=new Map();
-  const add=(kind,text,detail="")=>{if(text)terms.set(kind+":"+text+":"+detail,[kind,text,detail]);};
+  const add=(kind,text,detail="",context="")=>{if(text)terms.set(kind+":"+text+":"+detail+":"+context,context?[kind,text,detail,context]:[kind,text,detail]);};
   add("Location",page.title);add("Location",zone.name);add("Region",page.group);
   for(const [entityId,entity] of Object.entries(zone.entities||{})) {
     const entityName=game.entities[entityId]?.name||entityId;
@@ -36,10 +36,12 @@ for(const [id,zone] of Object.entries(game.locations)) {
     }
     for(const [key,activity] of activities.filter(([,a])=>a.entity===entityId||a.mob===entityId)) {
       const skill=game.skills[key.split("/")[0]]?.name||key.split("/")[0];
-      add("Activity",activity.name,skill+" · "+entityName);
-      add("Skill",skill,entityName);
+      const cooking=key.startsWith("cooking/")&&["fire","cooking-table"].includes(entityId);
+      const context=cooking?"cooking":"";
+      add("Activity",activity.name,skill+" · "+entityName,context);
+      add("Skill",skill,entityName,context);
       for(const [item,amount] of Object.entries(activity.inventoryChanges||{}))if(typeof amount==="number"&&amount>0) {
-        add("Obtain",itemName(item),activity.name+" · "+skill);
+        add("Obtain",itemName(item),activity.name+" · "+skill,cooking&&game.pets[item]?"cooking-pet":context);
         const pet=Object.values(game.pets).find(p=>p.requiredItemToObtain===item);
         if(pet)add("Pet map",pet.name,activity.name);
       }

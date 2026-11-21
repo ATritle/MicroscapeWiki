@@ -1,15 +1,20 @@
-import {worldMapData as data} from "./world-map-data.js?v=world-map-20261121";
+import {worldMapData as data} from "./world-map-data.js?v=map-food-search-20261121";
 
 export const normalizeMapSearch=value=>value.toLowerCase().normalize("NFD").replace(/\p{Diacritic}/gu,"").replace(/['’]/g,"").replace(/[^a-z0-9]+/g," ").trim();
 export function searchWorldMap(query,catalog=data) {
   const text=normalizeMapSearch(query),tokens=text.split(" ").filter(Boolean);
   if(!tokens.length)return [];
   const petHub=/^pets?$/.test(text);
+  const cooking=text==="cooking";
+  const enemyName=[text,text.endsWith("s")?text.slice(0,-1):text].find(name=>catalog.zones.some(z=>z.terms.some(([kind,label])=>kind==="Enemy"&&normalizeMapSearch(label)===name)));
   const exact=catalog.zones.filter(z=>normalizeMapSearch(z.name)===text);
   return (exact.length?exact:catalog.zones).flatMap(zone=>{
     if(petHub)return zone.petMaps?[{zone,reasons:["Pet maps · Mork and Otis"]}]:[];
-    const terms=zone.terms.filter(([kind,name,detail])=>{
-      const words=normalizeMapSearch(kind+" "+name+" "+detail).split(" ");
+    const terms=zone.terms.filter(([kind,name,detail,context])=>{
+      if(enemyName)return kind==="Enemy"&&normalizeMapSearch(name)===enemyName;
+      if(cooking)return context==="cooking"&&kind==="Skill";
+      if(context==="cooking")return false;
+      const words=normalizeMapSearch(kind+" "+name+(context==="cooking-pet"?"":" "+detail)).split(" ");
       return tokens.every(t=>words.some(word=>word.startsWith(t)));
     });
     return terms.length?[{zone,reasons:[...new Set(terms.map(([kind,name,detail])=>kind+": "+name+(detail?" · "+detail:"")))]}]:[];
@@ -28,7 +33,7 @@ export function renderWorldMap({element:e,entryUrl,initialQuery=""}) {
   const clear=e("button",{type:"button",class:"button"},"Clear search");
   const form=e("form",{class:"world-map-search",role:"search","aria-label":"Find locations on the world map"},
     e("label",{for:"location-map-search"},"Find an item or activity"),e("div",{class:"world-map-search-row"},search,clear),
-    e("p",{id:"world-map-search-help",class:"world-map-help"},"Try Pet, Mork, Copper Ore, Fishing or Bank. One matching location is centered; multiple locations are highlighted without moving your view."));
+    e("p",{id:"world-map-search-help",class:"world-map-help"},"Try Pet, Mork, Copper Ore, Fishing or Bank. Search Cooking for cooking spots. One matching location is centered; multiple locations are highlighted without moving your view."));
   const status=e("p",{class:"world-map-status",role:"status","aria-live":"polite"});
   const image=e("img",{class:"world-map-art",src:data.image.src,width:data.image.width,height:data.image.height,alt:"Microscape world map",draggable:"false",decoding:"async"});
   const pins=e("div",{class:"world-map-pins"});

@@ -9,7 +9,7 @@ import { renderPlayerLookup } from "./player-lookup.js?v=sprites-20261121b";
 import {publicUrl, legacyRoute, pageMetadata, updateMetadata} from "./seo.js?v=seo-20261120";
 import {lookupXpPlayer, lookupXpSuggestions, xpPlayerProgress, xpSkills} from "./xp-player.js?v=sprites-20261121b";
 import {spriteMotion,prepareSpriteFrame,stopSpritePreviews} from "./sprite-animation.js?v=sprites-20261121b";
-import {renderWorldMap} from "./world-map.js?v=world-map-20261121";
+import {renderWorldMap} from "./world-map.js?v=map-food-search-20261121";
 
 const groups = {
   guides: { title: "Guides", icon: "▤", blurb: "Start here, earn Energy, trade and plan dungeon runs." },

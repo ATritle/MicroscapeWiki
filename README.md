@@ -99,8 +99,11 @@ The `/locations/` directory starts with the original game world map. Scroll-whee
 zoom stays anchored to the cursor, dragging pans, and pins open existing location
 pages. Zoom buttons, arrow keys, +/- and Home provide keyboard controls. The search
 indexes activity outputs, shop stock, NPCs, skills and enemy drops rather than
-ingredients merely consumed at a location. Pet/Pets selects the Mork/Otis map hub;
-one matching location is centered, while multiple matches preserve the map view.
+ingredients merely consumed at a location. Pet/Pets selects the Mork/Otis map hub.
+Exact enemy names select their combat locations. Food searches omit cooking and
+food-preparation recipes; search Cooking for fire/cooking-table locations instead.
+Gathering, raw-item drops, shop stock and cooking-pet sources remain searchable.
+One matching location is centered, while multiple matches preserve the map view.
 Interior chambers highlight their entrance and keep their own result-page links.
 The full location directory remains below the map.
 
