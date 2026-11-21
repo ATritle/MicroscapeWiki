@@ -228,6 +228,50 @@ h3 { margin-bottom: 6px; font-size: 17px; }
 .sprite-motion-clip { overflow: hidden; }
 .sprite-pet-window { display: block; position: absolute; overflow: hidden; }
 .game-sprite figcaption { padding-top: 6px; color: var(--muted); font-size: 13px; }
+.world-map { margin: 24px 0 34px; border: 1px solid var(--line); border-radius: 14px; background: var(--panel); padding: 20px; }
+.world-map-heading, .world-map-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; }
+.world-map-heading h2 { margin: 0; }
+.world-map-key { color: var(--mint); font-size: 14px; }
+.world-map-search { margin-top: 18px; }
+.world-map-search label { display: block; margin-bottom: 7px; font-weight: 700; }
+.world-map-search-row { display: flex; gap: 10px; }
+.world-map-search input { width: 100%; min-width: 0; padding: 12px 14px; border: 1px solid #456259; border-radius: 8px; background: var(--bg); color: var(--text); font: inherit; }
+.world-map-search input::placeholder { color: var(--muted); }
+.world-map-search .button, .world-map-controls .button { padding: 8px 13px; white-space: nowrap; }
+.world-map-help { color: var(--muted); font-size: 14px; margin: 8px 0; }
+.world-map-toolbar { margin: 14px 0 10px; }
+.world-map-controls { display: flex; align-items: center; gap: 8px; }
+.world-map-controls .button { min-width: 40px; }
+.world-map-controls .button:disabled { opacity: .4; cursor: default; }
+.world-map-zoom { min-width: 48px; color: var(--muted); text-align: center; font-size: 14px; font-variant-numeric: tabular-nums; }
+.world-map-viewport { position: relative; isolation: isolate; width: 100%; height: clamp(360px, 55vw, 560px); overflow: hidden; border: 1px solid #81734e; border-radius: 10px; background: #b0a180; cursor: grab; touch-action: none; user-select: none; }
+.world-map-viewport:focus-visible { outline: 2px solid var(--mint); outline-offset: 4px; }
+.world-map-viewport.is-dragging { cursor: grabbing; }
+.world-map-art { position: absolute; left: 0; top: 0; width: 2000px; height: 1800px; max-width: none; transform-origin: 0 0; pointer-events: none; image-rendering: pixelated; }
+.world-map-pins { position: absolute; inset: 0; pointer-events: none; }
+.world-map-pin { position: absolute; display: grid; place-items: center; width: 28px; height: 30px; transform: translate(-50%,-83%); text-decoration: none; pointer-events: auto; cursor: pointer; z-index: 1; }
+.world-map-pin-dot { width: 13px; height: 16px; border-radius: 9px 9px 9px 0; transform: rotate(-45deg); border: 2px solid #fff0c2; background: #6c2a22; box-shadow: 0 1px 3px #332516; }
+.world-map-pin-label { position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); display: none; padding: 4px 9px; border: 1px solid #43675b; border-radius: 6px; background: #10281ff2; color: #f1fff8; white-space: nowrap; font-size: 14px; font-weight: 600; box-shadow: 0 2px 8px #0005; }
+.world-map-pin:hover, .world-map-pin:focus-visible { z-index: 6; }
+.world-map-pin:hover .world-map-pin-label, .world-map-pin:focus-visible .world-map-pin-label, .world-map-pin.is-single-match .world-map-pin-label { display: block; }
+.world-map-pin.is-match { z-index: 3; }
+.world-map-pin.is-match .world-map-pin-dot { background: #0e9470; border-color: #e1fff3; box-shadow: 0 0 0 6px #0c614f55, 0 0 0 10px #85f2cc33, 0 2px 5px #142c22; }
+.world-map-pin.is-muted { opacity: .45; }
+.world-map-pin.is-muted:hover, .world-map-pin.is-muted:focus-visible { opacity: 1; }
+.world-map-status { color: var(--mint); margin: 12px 0 0; font-size: 14px; }
+.world-map-results { display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%,260px),1fr)); gap: 9px; max-height: 290px; overflow-y: auto; margin-top: 12px; padding: 4px; scrollbar-color: #45665c var(--bg); }
+.world-map-result { display: grid; gap: 3px; padding: 11px 13px; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); text-decoration: none; }
+.world-map-result:hover { border-color: var(--mint); }
+.world-map-result strong { font-size: 15px; }
+.world-map-result span, .world-map-result small { color: var(--muted); font-size: 14px; line-height: 1.4; }
+.world-map-credit { color: var(--muted); font-size: 12px; margin: 12px 0 0; }
+@media (max-width: 600px) {
+  .world-map { padding: 12px; }
+  .world-map-search-row { flex-wrap: wrap; }
+  .world-map-search input { flex-basis: 100%; }
+  .world-map-toolbar { align-items: flex-start; }
+  .world-map-viewport { height: 410px; }
+}
 .tutorial-screenshot { max-width: 790px; margin: 16px 0 0; }
 .tutorial-screenshot-frame { position: relative; overflow: hidden; border-radius: 10px; background: var(--panel); }
 .tutorial-screenshot-frame img { position: absolute; display: block; max-width: none; height: auto; image-rendering: pixelated; }

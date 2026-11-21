@@ -9,6 +9,7 @@ import { renderPlayerLookup } from "./player-lookup.js?v=sprites-20261121b";
 import {publicUrl, legacyRoute, pageMetadata, updateMetadata} from "./seo.js?v=seo-20261120";
 import {lookupXpPlayer, lookupXpSuggestions, xpPlayerProgress, xpSkills} from "./xp-player.js?v=sprites-20261121b";
 import {spriteMotion,prepareSpriteFrame,stopSpritePreviews} from "./sprite-animation.js?v=sprites-20261121b";
+import {renderWorldMap} from "./world-map.js?v=world-map-20261121";
 
 const groups = {
   guides: { title: "Guides", icon: "▤", blurb: "Start here, earn Energy, trade and plan dungeon runs." },
@@ -59,6 +60,7 @@ let renderDropResults;
 let disposePlayerLookup;
 let disposeBazaar;
 let disposeCalculator;
+let disposeWorldMap;
 
 const entries = [...guides, ...tutorials];
 const byId = new Map(entries.map(entry => [entry.id, entry]));
@@ -589,6 +591,11 @@ function renderList(category, query) {
   update();
   main.append(crumbs(null, name), element("h1", {}, name));
   if (category) main.append(element("p", {class:"intro"}, groups[category].blurb));
+  if (category === "locations") {
+    const map=renderWorldMap({element,entryUrl:id=>publicUrl(entryUrl(id),byId),initialQuery:query});
+    main.append(map.node,element("h2",{},"Browse all locations"));
+    disposeWorldMap=map.dispose;
+  }
   if (category === "pets" && byId.has("pets")) main.append(entryLink("pets", null, "button"));
   if (category === "shops") main.append(entryLink("vendor", "How shop prices and trades work", "button"));
   if (referenceLoadFailed && category !== "guides" && category !== "tutorials") main.append(element("p", {class:"notice"}, "The reference catalog could not load. Refresh the page to retry."));
@@ -984,6 +991,8 @@ function render({focus = false} = {}) {
   disposeBazaar = null;
   disposeCalculator?.();
   disposeCalculator = null;
+  disposeWorldMap?.();
+  disposeWorldMap = null;
   renderDropResults = null;
   main.replaceChildren();
   menu.setAttribute("aria-expanded","false");

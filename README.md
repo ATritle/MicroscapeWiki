@@ -93,6 +93,22 @@ Microscape can return a server error for an exact username without a public char
 
 Use the neutral repository-local commit identity `Microscape Wiki Community <wiki-community@users.noreply.github.com>` for community updates. Public browser requests and page links should use the community API and community channels rather than personal hosting identifiers.
 
+## Interactive Locations map
+
+The `/locations/` directory starts with the original game world map. Scroll-wheel
+zoom stays anchored to the cursor, dragging pans, and pins open existing location
+pages. Zoom buttons, arrow keys, +/- and Home provide keyboard controls. The search
+indexes activity outputs, shop stock, NPCs, skills and enemy drops rather than
+ingredients merely consumed at a location. Pet/Pets selects the Mork/Otis map hub;
+one matching location is centered, while multiple matches preserve the map view.
+Interior chambers highlight their entrance and keep their own result-page links.
+The full location directory remains below the map.
+
+Rebuild the search and pin data with
+`node scripts/build-world-map-data.mjs GAME_DATA_JSON CLIENT_JS` and run
+`node scripts/check-world-map.mjs`. The source hash and original artwork URL are
+recorded in `docs/world-map-data.js`; asset credits are in `docs/assets/maps`.
+
 ## Sprite hover previews
 
 Full sprites on Foes, Pets and Player Lookup preview the game's idle and combat
