@@ -33,3 +33,14 @@ Correction: keep the verified public identity, equipment and XP. Return
 ID, and label live status unavailable in the UI. The UI requires an explicit
 verified-live flag before rendering those values, protecting readers from older
 cached responses. Revisit only when a reliable public live-state source exists.
+
+## November 22 recheck
+
+Repeated read-only, unauthenticated requests to the official character endpoint
+for the same three distinct profiles, with cache-busting query parameters and
+`cache: no-store`. All returned HTTP 200 and the correct distinct names, but all
+still returned activity zone `jesters-room`, skill `piety`, activity
+`jesters-chest-large`, remaining `6`, length `7`, and world ID `shared-67`.
+There is still no evidence that these public activity fields are current player
+state. Keep them excluded from lookup results. No game character, equipment,
+activity, authentication session or account setting was changed.

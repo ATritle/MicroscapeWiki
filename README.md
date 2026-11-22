@@ -245,6 +245,11 @@ arithmetic consistent with those static images; market prices and times change.
 
 Run `./scripts/register-drops-backup.ps1` in PowerShell 7 to register the optional **Microscape Wiki Live Drops Backup** task. Pass `-Replace` to update the existing task. It runs every 15 minutes while its user is signed in and the PC is awake, and publishes to `live-data` using the existing GitHub sign-in when the snapshot is at least 10 minutes old. Check `last-run.log` in the task’s state directory for the latest result. To stop the backup, disable the named task in Task Scheduler.
 
+## Future additions
+
+- **Optional Twitch sign-in — deferred at the community owner's request (November 22, 2026).** Revisit alongside saved player usernames, saved gear/ability/potion loadouts, and Bazaar watchlists that sync between devices. Keep wiki browsing and the existing public lookup/comparison tools available without signing in. No login implementation or new access permissions are authorized by this backlog entry.
+- **Verified current player activity — awaiting a reliable game data source.** The lookup can format combat, skilling and travel activities, but the public character profile still returns identical example state across different players. Revisit when an official public live-status endpoint or documented, player-authorized integration is available. Twitch sign-in alone does not supply Microscape's live game state.
+
 ## Credits
 
 Microscape is created by [K3nt0456](https://microscape.cc/credits/). Game systems in the guides are sourced from the [official patch notes](https://microscape.cc/patch-notes/) and the [Miraheze Microscape Wiki](https://microscape.miraheze.org/wiki/Main_Page). The reference catalog adapts Miraheze tables, indexes and article facts with source revisions and contributor history linked on each reference page. That adapted material is available under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
