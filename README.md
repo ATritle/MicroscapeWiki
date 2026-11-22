@@ -197,6 +197,11 @@ Errors retain a clearly labeled last successful snapshot instead of reporting
 an empty market. Run `node scripts/check-bazaar.mjs` to verify this API.
 The existing local preview command also serves the public Bazaar endpoint.
 
+Public order feeds expose no buyer/seller identity. The game's `(you)` label
+matches IDs against the authenticated player's private My Orders list; it is
+not a public username lookup. The source trace and anonymous endpoint results
+are recorded in `audits/2026-11-22-own-market-history.md`.
+
 Market column headings are buttons: click to sort and click again to reverse.
 Sorting applies to all matching items before pagination, with missing values last.
 Recent prices sorts by net percentage change across recorded samples and loads
