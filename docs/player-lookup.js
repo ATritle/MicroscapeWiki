@@ -1,7 +1,7 @@
 import {communityApiBase} from "./api-config.js?v=community-api-20261119";
 import {readActivityCatalog, renderActivityComparison} from "./activity-comparison.js?v=vendors-20261120";
 import {attachHoverPreview,previewMotion,sampleMotion,weaponMotionType} from "./sprite-animation.js?v=sprites-20261121b";
-import {renderLoadoutComparison} from "./loadout-comparison.js?v=effects-20261121";
+import {renderLoadoutComparison} from "./loadout-comparison.js?v=hypothetical-20261121";
 const apiUrl = ["localhost", "127.0.0.1"].includes(window.location.hostname)
   ? new URL("/api/player.json", window.location.origin)
   : new URL("player.json", communityApiBase);

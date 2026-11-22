@@ -84,8 +84,11 @@ Nothing is saved to browser storage or sent back to the game.
 
 `docs/loadout-comparison.js` filters gear by slot, checks base-level requirements,
 handles two-handed weapons/shields, renders both appearances with existing game
-layers, and uses the shared combat model. Boss/special encounters and unusable
-sets do not receive usable rate estimates. Each side has independent ability levels,
+layers, and uses the shared combat model. Gear and spells above trained levels
+receive labeled hypothetical estimates using the actual current levels, with
+unmet requirements listed above the result. Requirements do not raise base stats.
+Invalid slot/style combinations, missing arrows/spells and boss/special encounters
+remain unmodeled. Each side has independent ability levels,
 learned abilities, potion assumptions and spell upgrades. `docs/loadout-effects.js`
 models supported stat, damage, XP and quick-attack effects, including finite enemy
 HP and overkill. Defensive effects change incoming melee damage without inventing

@@ -6,17 +6,18 @@ export const loadoutSlots=[["head","Head"],["cape","Cape"],["amulet","Amulet"],[
 const nameOf=id=>String(id||"").replace(/([a-z])([A-Z])/g,"$1 $2").replace(/^./,s=>s.toUpperCase());
 const skillName=id=>({evilMagic:"Evil Magic",goodMagic:"Good Magic"}[id]||nameOf(id));
 export function slotAccepts(slot,item){return Boolean(item&&(slot.startsWith("potion")?item.slot==="potion1":item.slot===slot));}
-export function loadoutRequirements(equipment,levels,items) {
-  const issues=[];
+function requirementDetails(equipment,levels,items) {
+  const blockers=[],requirements=[];
   for(const [slot,label] of loadoutSlots){
     const id=equipment[slot];if(!id)continue;const item=items[id];
-    if(!item){issues.push(label+": item data unavailable");continue;}
-    if(!slotAccepts(slot,item))issues.push(item.name+" does not fit the "+label+" slot");
-    for(const [skill,level] of Object.entries(item.requirements||{}))if((levels[skill]||1)<level)issues.push(item.name+" requires "+skillName(skill)+" "+level+" (current "+(levels[skill]||1)+")");
+    if(!item){blockers.push(label+": item data unavailable");continue;}
+    if(!slotAccepts(slot,item))blockers.push(item.name+" does not fit the "+label+" slot");
+    for(const [skill,level] of Object.entries(item.requirements||{}))if((levels[skill]||1)<level)requirements.push(item.name+" requires "+skillName(skill)+" "+level+" (current "+(levels[skill]||1)+")");
   }
-  if(items[equipment.weapon]?.tags?.includes("2h")&&equipment.shield)issues.push("A two-handed weapon cannot be used with a shield");
-  return issues;
+  if(items[equipment.weapon]?.tags?.includes("2h")&&equipment.shield)blockers.push("A two-handed weapon cannot be used with a shield");
+  return {blockers,requirements};
 }
+export function loadoutRequirements(equipment,levels,items) {const {blockers,requirements}=requirementDetails(equipment,levels,items);return [...blockers,...requirements];}
 export function changeLoadout(equipment,slot,id,items) {
   if(!loadoutSlots.some(([key])=>key===slot)||id&&!slotAccepts(slot,items[id]))throw Error("Choose an item for this equipment slot.");
   const next={...equipment};if(id)next[slot]=id;else delete next[slot];
@@ -32,21 +33,23 @@ export function loadoutSkill(equipment,items,choice="auto") {
 export function modelLoadout({equipment,levels,catalog,foe,choice="auto",spellId,prepSeconds=6,includeZero=false,effectsReference={abilities:[],potions:{}},effectSettings={}}) {
   if(!Number.isFinite(prepSeconds)||prepSeconds<0||prepSeconds>3600)throw Error("Use a delay from 0 to 3,600 seconds.");
   const skill=loadoutSkill(equipment,catalog.items,choice);
-  const issues=loadoutRequirements(equipment,levels,catalog.items),notes=[];
+  const {blockers,requirements}=requirementDetails(equipment,levels,catalog.items),notes=[];
   const spell=catalog.spells.find(s=>s.id===spellId),weapon=catalog.items[equipment.weapon];
   const effects=resolveLoadoutEffects({equipment,levels,items:catalog.items,reference:effectsReference,settings:effectSettings,skill,spell});
   const bonuses=effects.bonuses;
   if(!COMBAT_XP_RATES[skill])throw Error("Choose a combat training skill.");
-  if(skill==="ranged"&&!weapon?.tags?.includes("bow"))issues.push("Ranged training needs a bow");
-  if(["attack","strength","defense"].includes(skill)&&weapon?.tags?.includes("bow"))issues.push("A bow cannot use this training style");
-  if(skill==="ranged"&&!equipment.ammo)issues.push("Equip arrows for Ranged training");
-  if(skill==="evilMagic"&&(!spell||(levels.evilMagic||1)<spell.level))issues.push(spell?spell.name+" requires Evil Magic "+spell.level:"Select a spell");
+  if(skill==="ranged"&&!weapon?.tags?.includes("bow"))blockers.push("Ranged training needs a bow");
+  if(["attack","strength","defense"].includes(skill)&&weapon?.tags?.includes("bow"))blockers.push("A bow cannot use this training style");
+  if(skill==="ranged"&&!equipment.ammo)blockers.push("Equip arrows for Ranged training");
+  if(skill==="evilMagic"&&!spell)blockers.push("Select a spell");
+  if(skill==="evilMagic"&&spell&&(levels.evilMagic||1)<spell.level)requirements.push(spell.name+" requires Evil Magic "+spell.level+" (current "+(levels.evilMagic||1)+")");
   if(skill==="evilMagic")notes.push("Spell unlocks and rune supplies must be checked in-game.");
   if(foe?.requiredItem)notes.push("Encounter item required: "+(catalog.items[foe.requiredItem]?.name||nameOf(foe.requiredItem))+". Inventory is not public.");
-  let reason=issues.length?"Requirements are not met; combat estimates are unavailable.":foe?.special?"Boss or special encounter: this basic solo model cannot estimate a fight.":foe?.safeSpot&&!["ranged","evilMagic"].includes(skill)?"This safe spot requires Ranged or Evil Magic.":null;
-  if(!foe)return {bonuses,effects,skill,issues,notes,reason:"Select an enemy",row:null};
+  const issues=[...blockers,...requirements],hypothetical=requirements.length>0;
+  let reason=blockers.length?"This loadout cannot be modeled: "+blockers.join("; ")+".":foe?.special?"Boss or special encounter: this basic solo model cannot estimate a fight.":foe?.safeSpot&&!["ranged","evilMagic"].includes(skill)?"This safe spot requires Ranged or Evil Magic.":null;
+  if(!foe)return {bonuses,effects,skill,issues,requirements,hypothetical,notes,reason:"Select an enemy",row:null};
   const modeled=reason?{row:null,effects}:compareWithEffects({equipment,levels,catalog,foe,skill,spell,reference:effectsReference,settings:effectSettings,prepSeconds,includeZero});
-  return {bonuses,effects:modeled.effects,skill,issues,notes:[...notes,...modeled.effects.notes],reason,row:modeled.row};
+  return {bonuses,effects:modeled.effects,skill,issues,requirements,hypothetical,notes:[...notes,...modeled.effects.notes],reason,row:modeled.row};
 }
 
 export function renderLoadoutComparison({e,player,levels,catalog,appearance,abilities,effectsReference,byId,entryUrl,paintPlayer,renderSpriteFrame,checkedAt,refreshProfile}) {
@@ -98,6 +101,7 @@ export function renderLoadoutComparison({e,player,levels,catalog,appearance,abil
     e("details",{class:"loadout-method"},e("summary",{},"How these estimates work"),
       e("p",{},"Hit chance, max hits, ability power and spell limit breaks follow the public client formulas. The finite-HP model tracks damage rolls, overkill, max-hit XP rewards and eligible extra attacks. It assumes uniform damage and independent procs; transformed damage is rounded down. Steady Aim is modeled on landed shots, and Enlightened on max primary rolls. Extra melee swings do not recursively trigger a new burst; Rapid Fire can chain."),
       e("p",{},"Bonus and quick attacks use the entered delay (default 2s, unverified). Same-skill potions use the strongest boost; super-potion rounding and XP stacking can be overridden. Temporary buffs use entered uptime shares. Focus needs an entered cast interval because its description does not give a number. Omitted effects are listed beside the result."),
+      e("p",{},"Gear and spells above your trained levels receive hypothetical estimates using your current base levels plus the selected bonuses. Required levels are not substituted. The warning lists what you still need to unlock; these are planning results, not equipment you can currently use. Invalid equipment combinations and unsupported encounters remain unmodeled."),
       e("p",{},"Attack uses an observed baseline of 4 XP per damage. Strength, Defense, Ranged and Evil Magic assume that rate and remain unverified. Rates assume maintained potions and required runes/arrows. Eating, deaths, banking, queues and group combat are excluded. Defense effects reduce expected incoming melee damage, but do not improve XP through eating or survival downtime. These are solo training estimates, not boss simulations."),
       e("a",{href:"./assets/game-data/loadout-effects-2026-11-21.json"},"Ability and potion model evidence"),e("br"),
       e("a",{href:"./assets/game-data/combat-xp-2026-11-20.json"},"Combat XP evidence"))));
@@ -172,7 +176,7 @@ export function renderLoadoutComparison({e,player,levels,catalog,appearance,abil
       effectControls[key].setSpell(catalog.spells.find(s=>s.id===spells[key].value));
       models[key]=modelLoadout({equipment:configs[key],levels,catalog,foe,choice:choices[key].value,spellId:spells[key].value,prepSeconds:Number(prep.value),includeZero:zero.checked,effectsReference,effectSettings:effectControls[key].read()});
     }
-    const headers=["Metric","Current gear","Test loadout","Change"],rows=[];
+    const headers=["Metric","Current gear"+(models.current.hypothetical&&!models.current.reason?" (hypothetical)":""),"Test loadout"+(models.test.hypothetical&&!models.test.reason?" (hypothetical)":""),"Change"],rows=[];
     const metric=(title,read,unit="",percent=false,lowerBetter=false)=>{
       const a=models.current,b=models.test,aRaw=a.reason?null:read(a.row),bRaw=b.reason?null:read(b.row),av=Number.isFinite(aRaw)?aRaw:null,bv=Number.isFinite(bRaw)?bRaw:null;
       const show=v=>v===null?"Not modeled":fmt(percent?v*100:v)+unit;
@@ -182,8 +186,9 @@ export function renderLoadoutComparison({e,player,levels,catalog,appearance,abil
     };
     metric("Hit chance",r=>r.hitChance,"%",true);metric("Maximum hit (highest buff state)",r=>r.maxHit);metric("Average attack interval",r=>r.attackSeconds,"s",false,true);metric("Melee dodge chance",r=>r.dodgeChance,"%",true);metric("Expected incoming melee damage/hour",r=>r.incomingDamagePerHour,"",false,true);metric("Estimated kill cycle",r=>r.cycleSeconds,"s",false,true);metric("Estimated damage/hour",r=>r.damagePerHour);metric("Estimated XP/hour",r=>r.xpPerHour);
     combatOutput.replaceChildren(e("p",{class:"loadout-combat-context"},link(foe.name,foe.wikiId)," · "+foe.hp+" HP · Current: "+skillName(models.current.skill)+" · Test: "+skillName(models.test.skill)),
+      ...["current","test"].filter(key=>models[key].hypothetical&&!models[key].reason).map(key=>e("div",{class:"comparison-warning loadout-hypothetical"},e("strong",{},(key==="current"?"Current gear":"Test loadout")+" · Hypothetical estimate"),e("p",{},"Uses your current base levels with the selected gear and spell; your levels have not been raised to meet requirements. You cannot use this setup in game yet."),e("ul",{},...models[key].requirements.map(t=>e("li",{},t))))),
       e("div",{class:"table-wrap"},e("table",{},e("thead",{},e("tr",{},...headers.map(t=>e("th",{scope:"col"},t)))),e("tbody",{},...rows))),
-      ...["current","test"].flatMap(key=>{const m=models[key],name=key==="current"?"Current gear":"Test loadout";return [...(m.reason?[e("p",{class:"comparison-warning"},name+": "+m.reason+" "+m.issues.join("; "))]:[]),
+      ...["current","test"].flatMap(key=>{const m=models[key],name=key==="current"?"Current gear":"Test loadout";return [...(m.reason?[e("p",{class:"comparison-warning"},name+": "+m.reason)]:[]),
         ...(m.effects.omitted.length?[e("div",{class:"loadout-effect-omitted"},e("strong",{},name+" · partial effect estimate"),e("ul",{},...m.effects.omitted.map(t=>e("li",{},t))))]:[]),
         ...(m.effects.applied.length?[e("p",{class:"world-map-help"},name+" configured effects (where applicable): "+m.effects.applied.join("; "))]:[]),...m.notes.map(t=>e("p",{class:"world-map-help"},name+": "+t))];}),
       e("p",{class:"world-map-help"},"XP baseline: Current "+COMBAT_XP_RATES[models.current.skill].status+" · Test "+COMBAT_XP_RATES[models.test.skill].status+". "+(models.current.skill!==models.test.skill?"These rates train different skills. ":"")+"Configured effects are included where supported. Eating, banking and survival downtime are excluded."));

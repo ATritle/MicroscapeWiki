@@ -31,7 +31,7 @@ assert(pot.row.hitChance>plain.row.hitChance);assert(pot.row.maxHit>plain.row.ma
 const armor=modelLoadout({...input,equipment:{weapon:"bronzeScimitar",potion1:"defensePotion"}});
 near(armor.row.xpPerHour,plain.row.xpPerHour);assert(armor.row.incomingDamagePerHour<plain.row.incomingDamagePerHour);
 const forbiddenUnlock=modelLoadout({...input,levels:{attack:1},equipment:{weapon:"steelScimitar",potion1:"superAttackPotion"},effectSettings:{abilities:[active("clarityOfThought")]}});
-assert(forbiddenUnlock.reason);assert.equal(forbiddenUnlock.row,null,"Buffs must not unlock gear above the trained level");
+assert.equal(forbiddenUnlock.reason,null);assert(forbiddenUnlock.hypothetical);assert(forbiddenUnlock.requirements.some(s=>s.includes("Attack 20 (current 1)")),"Buffs must not satisfy a gear requirement; hypothetical estimates retain the warning");assert(Number.isFinite(forbiddenUnlock.row.xpPerHour));
 
 // With all effects absent, the extended finite-HP model must agree with the
 // independent existing expected-swings recurrence for every supported style.
