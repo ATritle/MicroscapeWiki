@@ -195,6 +195,13 @@ Errors retain a clearly labeled last successful snapshot instead of reporting
 an empty market. Run `node scripts/check-bazaar.mjs` to verify this API.
 The existing local preview command also serves the public Bazaar endpoint.
 
+Market column headings are buttons: click to sort and click again to reverse.
+Sorting applies to all matching items before pagination, with missing values last.
+Recent prices sorts by net percentage change across recorded samples and loads
+history for all matching items in batches of 30. Prices, averages, lows, and each
+quantity can also be sorted; the dropdown stays synchronized. Sorting survives
+market refreshes and filters, and keyboard focus remains on the selected heading.
+
 `/bazaar-history.json` uses our private `microscape-market-history` Worker through
 the Pages `MARKET_HISTORY` service binding. The collector in
 `workers/market-history.mjs` polls only the official public

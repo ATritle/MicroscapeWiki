@@ -1,6 +1,6 @@
 import {communityApiBase} from "./api-config.js?v=community-api-20261119";
 import {renderBazaarWalkthrough} from "./bazaar-walkthrough.js?v=bazaar-visual-20261120";
-import {priceChange,marketRows,sparkline,priceChart} from "./market-trends.js?v=own-history-20261122";
+import {priceChange,marketRows,sparkline,priceChart,nextMarketSort,sortMarketRows} from "./market-trends.js?v=market-sorting-20261122";
 const number = new Intl.NumberFormat("en");
 const fallbackName = id => id.replace(/([a-z])([A-Z])/g,"$1 $2").replace(/^./,s=>s.toUpperCase());
 const stamp = time => new Date(time).toLocaleString([], {month:"short",day:"numeric",hour:"numeric",minute:"2-digit",second:"2-digit"});
@@ -33,6 +33,10 @@ export function renderBazaar({main, element, crumbs, footer, byId, guide, entryL
     element("option",{value:"all"},"All orders"),element("option",{value:"sell"},"Items for sale"),element("option",{value:"buy"},"Items wanted"));
   const sort=element("select",{"aria-label":"Sort market"},
     element("option",{value:"name"},"Item name"),element("option",{value:"sell"},"Lowest sell price"),element("option",{value:"buy"},"Highest buy price"),element("option",{value:"below"},"Furthest below recorded average"),element("option",{value:"above"},"Furthest above recorded average"));
+  let sorting={key:"name",direction:"asc"};
+  const sortLabels={name:"Item",sell:"Lowest sell",buy:"Highest buy",recent:"Recent prices",change:"vs 30d avg",average:"30d avg",low24h:"24h low",low7d:"7d low",sellQuantity:"For sale",buyQuantity:"Wanted"};
+  const presets={name:{key:"name",direction:"asc"},sell:{key:"sell",direction:"asc"},buy:{key:"buy",direction:"desc"},below:{key:"change",direction:"asc"},above:{key:"change",direction:"desc"}};
+  const sortStatus=element("p",{class:"bazaar-help market-sort-status",role:"status","aria-live":"polite"},"Click a column heading to sort; click it again to reverse the order.");
   const refresh=element("button",{type:"button",class:"button"},"Refresh market");
   const status=element("p",{class:"bazaar-status",role:"status"},"Loading current market…");
   const results=element("div",{class:"bazaar-results"});
@@ -60,30 +64,43 @@ export function renderBazaar({main, element, crumbs, footer, byId, guide, entryL
       element("div",{class:"market-filter-options"},element("label",{for:"market-unlisted"},allItems,"Include items with history but no open orders"),element("label",{for:"market-watched"},watchOnly,"Watchlist only")),
       status,overview,historyStatus,
       element("p",{class:"bazaar-help market-source"},"Our own price history, collected directly from ",element("a",{href:"https://microscape.cc/play/",target:"_blank",rel:"noopener noreferrer"},"Microscape")," every 15 minutes. This view checks for new history every 5 minutes. History starts on the displayed collection date; no earlier prices have been imported. The 7/30-day summaries use UTC calendar days and may cover less than the full period. Recorded lowest sell orders are separate from completed trades."),
-      watchPanel,results),detail,guideSection);
+      watchPanel,sortStatus,results),detail,guideSection);
   main.append(article,footer());
 
   function table(columns,rows,label) {
     return element("div",{class:"table-wrap",role:"region",tabindex:"0","aria-label":label},element("table",{},
-      element("thead",{},element("tr",{},...columns.map(col=>element("th",{scope:"col"},col)))),
+      element("thead",{},element("tr",{},...columns.map(col=>{
+        if(typeof col==="string")return element("th",{scope:"col"},col);
+        const keys=col.keys||[col.key],active=keys.includes(sorting.key),th=element("th",{scope:"col",...(active?{"aria-sort":sorting.direction==="asc"?"ascending":"descending"}:{})});
+        keys.forEach((key,i)=>{
+          if(i)th.append(" / ");const isActive=sorting.key===key;
+          const button=element("button",{type:"button",class:"market-header-button","data-market-sort":key,"data-active-sort":String(isActive),"aria-label":"Sort by "+sortLabels[key],title:isActive?"Sorted "+(sorting.direction==="asc"?"ascending":"descending")+"; click to reverse":"Click to sort"},sortLabels[key],element("span",{"aria-hidden":"true"},isActive?(sorting.direction==="asc"?"▲":"▼"):"↕"));
+          button.addEventListener("click",()=>{sorting=nextMarketSort(sorting,key);syncSortMenu();shown=30;drawList();});th.append(button);
+        });return th;
+      }))),
       element("tbody",{},...rows.map(row=>element("tr",{},...row.map(value=>element("td",{},value)))))));
+  }
+  function syncSortMenu(){
+    const preset=Object.entries(presets).find(([,p])=>p.key===sorting.key&&p.direction===sorting.direction)?.[0];
+    sort.querySelector('option[value="header"]')?.remove();
+    if(preset)sort.value=preset;
+    else{sort.append(element("option",{value:"header"},sortLabels[sorting.key]+" · "+(sorting.direction==="asc"?"ascending":"descending")));sort.value="header";}
   }
   function drawList() {
     if (!market) return;
+    const focusedHeader=document.activeElement?.getAttribute("data-market-sort");
     const q=search.value.trim().toLowerCase();
     const all=marketRows(market.items,history?.items,allItems.checked);
     const comparable=all.filter(row=>row.change!==null);
     overview.replaceChildren(...[[market.items.filter(r=>r.sellSummary||r.buySummary).length,"Items with open orders"],[history?comparable.filter(r=>r.change>0).length:null,"Above recorded 30d average"],[history?comparable.filter(r=>r.change<0).length:null,"Below recorded 30d average"]].map(([value,title])=>element("div",{},element("strong",{},value===null?"—":number.format(value)),element("span",{},title))));
     const watchRows=all.filter(row=>watched.has(row.itemId));
     watchPanel.replaceChildren(...(watched.size?[element("h3",{},"Your watchlist"),element("p",{class:"bazaar-help"},watchStorage?"Saved only in this browser. These are bookmarks, not price alerts.":"Browser storage is unavailable; this watchlist lasts for this visit."),element("div",{class:"market-watch-cards"},...[...watched].slice(0,100).map(id=>{const row=watchRows.find(r=>r.itemId===id),button=element("button",{type:"button",class:"market-watch-card"},picture(id),element("span",{},meta(id).title,element("small",{},"Sell "+coins(row?.sellSummary?.bestPricePerUnit)+" · Buy "+coins(row?.buySummary?.bestPricePerUnit))));button.addEventListener("click",()=>select(id,true));return button;}))]:[]));
-    const rows=all.filter(row=>(!q||[meta(row.itemId).title,row.itemId].some(s=>s.toLowerCase().includes(q)))
-      &&(side.value==="all"||row[side.value+"Summary"])&&(!watchOnly.checked||watched.has(row.itemId)));
-    rows.sort((a,b)=>{
-      if (sort.value==="sell") return (a.sellSummary?.bestPricePerUnit??Infinity)-(b.sellSummary?.bestPricePerUnit??Infinity)||meta(a.itemId).title.localeCompare(meta(b.itemId).title);
-      if (sort.value==="buy") return (b.buySummary?.bestPricePerUnit??-1)-(a.buySummary?.bestPricePerUnit??-1)||meta(a.itemId).title.localeCompare(meta(b.itemId).title);
-      if (["below","above"].includes(sort.value))return (sort.value==="below"?(a.change??Infinity)-(b.change??Infinity):(b.change??-Infinity)-(a.change??-Infinity))||meta(a.itemId).title.localeCompare(meta(b.itemId).title);
-      return meta(a.itemId).title.localeCompare(meta(b.itemId).title);
-    });
+    const filtered=all.filter(row=>(!q||[meta(row.itemId).title,row.itemId].some(s=>s.toLowerCase().includes(q)))
+      &&(side.value==="all"||row[side.value+"Summary"])&&(!watchOnly.checked||watched.has(row.itemId))).map(row=>{const values=sparkCache.get(row.itemId)?.values||[];return {...row,recentChange:values.length>1?priceChange(values.at(-1),values[0]):null};});
+    const rows=sortMarketRows(filtered,sorting,id=>meta(id).title);
+    const waiting=sorting.key==="recent"?rows.filter(row=>!sparkCache.has(row.itemId)||Date.now()-sparkCache.get(row.itemId).at>300000).length:0;
+    const sortMessage="Sorted by "+sortLabels[sorting.key]+", "+(sorting.direction==="asc"?(sorting.key==="name"?"A–Z":"lowest first"):(sorting.key==="name"?"Z–A":"highest first"))+". Missing values stay last."+(sorting.key==="recent"?" Recent prices sort by percentage change across the recorded samples.":"")+(waiting?(Date.now()<sparkRetry?" Some recent-price data could not be refreshed.":" Loading recent prices for all matching items ("+(rows.length-waiting)+" / "+rows.length+")."):"");
+    if(sortStatus.textContent!==sortMessage)sortStatus.textContent=sortMessage;
     results.replaceChildren(element("p",{class:"bazaar-help"},`${number.format(rows.length)} matching items · coins per item · ▲/▼ in recent prices compares the first and last available samples; % vs average compares the current lowest sell order with recorded 30-day observations.`));
     if (!rows.length) {results.append(element("p",{},market.items.length?"No open market listings match your search and filter.":"There are no open market listings in the latest public response."));return;}
     const cells=rows.slice(0,shown).map(row=>{
@@ -95,12 +112,13 @@ export function renderBazaar({main, element, crumbs, footer, byId, guide, entryL
       const mini=sparkline(values,"Recent recorded prices: "+percent(movement)+" across "+values.length+" samples");
       return [element("div",{class:"market-item-cell"},watch,button),coins(row.sellSummary?.bestPricePerUnit),coins(row.buySummary?.bestPricePerUnit),element("div",{class:"market-spark-cell"},...(mini?[mini,trendCell(movement)]:["—"])),trendCell(row.change),coins(row.history?.avg30d),coins(row.history?.low24h),coins(row.history?.low7d),element("span",{},(row.sellSummary?number.format(row.sellSummary.quantity):"—")+" / "+(row.buySummary?number.format(row.buySummary.quantity):"—"))];
     });
-    results.append(table(["Item","Lowest sell","Highest buy","Recent prices","vs 30d avg","30d avg","24h low","7d low","For sale / wanted"],cells,"Live market items"));
-    loadSparks(rows.slice(0,shown).map(row=>row.itemId));
+    results.append(table(["name","sell","buy","recent","change","average","low24h","low7d"].map(key=>({key})).concat({keys:["sellQuantity","buyQuantity"]}),cells,"Live market items"));
+    loadSparks((sorting.key==="recent"?rows:rows.slice(0,shown)).map(row=>row.itemId));
     if (rows.length>shown) {
       const more=element("button",{class:"button bazaar-more",type:"button"},"Show more items");
       more.addEventListener("click",()=>{shown+=30;drawList();});results.append(more);
     }
+    if(focusedHeader)results.querySelector('[data-market-sort="'+focusedHeader+'"]')?.focus({preventScroll:true});
   }
   async function readHistory(params,signal){
     const url=new URL(historyApi);url.search=new URLSearchParams(params);const r=await fetch(url,{signal:AbortSignal.any([signal,AbortSignal.timeout(12_000)]),cache:"no-store"});const body=await r.json();if(!r.ok)throw Error(body.error||"Historical prices are temporarily unavailable.");return body;
@@ -190,7 +208,8 @@ export function renderBazaar({main, element, crumbs, footer, byId, guide, entryL
   }
   function update() {if(!disposed&&!document.hidden){loadMarket();if(Date.now()-historyAttempt>=300000)loadHistory();if(selected&&!detailController)select(selected);}}
   refresh.addEventListener("click",()=>{historyAttempt=0;sparkRetry=0;update();});
-  for(const control of [search,side,sort,allItems,watchOnly])control.addEventListener(control===search?"input":"change",()=>{shown=30;drawList();});
+  sort.addEventListener("change",()=>{if(presets[sort.value]){sorting={...presets[sort.value]};syncSortMenu();}shown=30;drawList();});
+  for(const control of [search,side,allItems,watchOnly])control.addEventListener(control===search?"input":"change",()=>{shown=30;drawList();});
   chartRange.addEventListener("change",loadChart);
   const resume=()=>{if(!document.hidden)update();};document.addEventListener("visibilitychange",resume);
   const timer=setInterval(update,30_000);loadMarket();loadHistory();if(selected)select(selected);

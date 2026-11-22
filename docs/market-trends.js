@@ -1,4 +1,20 @@
 export const priceChange=(current,baseline)=>Number.isFinite(current)&&current>0&&Number.isFinite(baseline)&&baseline>0?(current-baseline)/baseline*100:null;
+export const marketSortDefaults={name:'asc',sell:'asc',buy:'desc',recent:'desc',change:'desc',average:'asc',low24h:'asc',low7d:'asc',sellQuantity:'desc',buyQuantity:'desc'};
+export function nextMarketSort(current,key){
+  if(!Object.hasOwn(marketSortDefaults,key))throw Error('Unknown market column');
+  return {key,direction:current.key===key?(current.direction==='asc'?'desc':'asc'):marketSortDefaults[key]};
+}
+export function sortMarketRows(rows,sort,nameOf){
+  const collator=new Intl.Collator('en',{numeric:true,sensitivity:'base'}),direction=sort.direction==='desc'?-1:1;
+  const value=row=>({sell:row.sellSummary?.bestPricePerUnit,buy:row.buySummary?.bestPricePerUnit,recent:row.recentChange,change:row.change,average:row.history?.avg30d,low24h:row.history?.low24h,low7d:row.history?.low7d,sellQuantity:row.sellSummary?.quantity,buyQuantity:row.buySummary?.quantity})[sort.key];
+  const byName=(a,b)=>collator.compare(nameOf(a.itemId),nameOf(b.itemId))||a.itemId.localeCompare(b.itemId);
+  return [...rows].sort((a,b)=>{
+    if(sort.key==='name')return direction*byName(a,b);
+    const av=value(a),bv=value(b),am=!Number.isFinite(av),bm=!Number.isFinite(bv);
+    if(am!==bm)return am?1:-1;
+    return (!am?direction*(av-bv):0)||byName(a,b);
+  });
+}
 export function chartGeometry(points,width=720,height=230,padding=30){
   if(!points.length)return null;
   const min=Math.min(...points.map(p=>p.price)),max=Math.max(...points.map(p=>p.price));

@@ -326,6 +326,10 @@ tr:last-child td { border-bottom: 0; }
 .bazaar-results .table-wrap { max-width: 100%; }
 .bazaar-results table { min-width: 1060px; font-size: 13px; }
 .bazaar-results th { white-space: nowrap; }
+.market-header-button { display: inline-flex; align-items: center; gap: 6px; padding: 4px 0; border: 0; background: transparent; color: inherit; font: inherit; font-weight: 700; text-align: left; cursor: pointer; }
+.market-header-button:hover, .market-header-button[data-active-sort="true"] { color: var(--mint); }
+.market-header-button:focus-visible { outline: 2px solid var(--mint); outline-offset: 4px; border-radius: 2px; }
+.market-header-button > span { font-size: 11px; }
 .market-watch-panel:empty { display: none; }
 .market-watch-panel { margin: 24px 0; }
 .market-watch-cards { display: flex; flex-wrap: wrap; gap: 10px; }
