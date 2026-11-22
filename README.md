@@ -174,7 +174,11 @@ settings, cleanup and the repaired Corrupted Druid / Druid Warrior icon links.
 
 The Compendium's `#/bazaar` page combines the trading guide with a searchable,
 read-only public market. `docs/bazaar.js` filters and sorts item summaries, then
-loads both order books and recent trades for a selected item. Item names and
+loads both order books and recent trades for a selected item. Price sparklines,
+deviation from the recorded 30-day average, recorded lows, and an interactive
+timestamp-scaled chart supplement current orders. Watchlists store only item IDs
+in the reader's browser; no account, notification subscription or trade is created.
+Item names and
 icons use the wiki catalog; item detail links preserve established wiki routes.
 The existing `#/entry/bazaar` guide remains available and links to the market.
 Edit its explanation in `docs/guides.js`. Verified client constants and source
@@ -190,6 +194,21 @@ visible and cancels its polling and pending requests when readers leave.
 Errors retain a clearly labeled last successful snapshot instead of reporting
 an empty market. Run `node scripts/check-bazaar.mjs` to verify this API.
 The existing local preview command also serves the public Bazaar endpoint.
+
+`/bazaar-history.json` relays attributed public Microwiki price observations,
+independently from the official live listings. No query returns normalized item
+averages and lows; `?item=ITEM_ID&range=7d` returns timestamped prices; `?ids=A,B`
+returns at most 30 requested sparklines. Supported chart ranges are 24h, 7d, 1m,
+3m, 6m, 12m and all. Requests are fixed to the known public source, omit account
+cookies, strip seller/account fields, and cache for five minutes. Failed history
+checks retain a warning or blank state and do not erase working live orders.
+Historical listing observations are distinct from completed trades and may cover
+less than the selected window. Prices from closed historical listings never
+become current offers. `docs/market-trends.js` contains chart geometry and market
+comparisons. Run `node scripts/check-market-trends.mjs` for normalization,
+timestamp spacing, missing data, request bounds, cache and failure behavior.
+Cloudflare Pages automatically deploys `api-gateway` from the main branch with
+its existing LIVE_DROPS binding. It bundles the history module with `_worker.js`.
 
 The shared visual walkthrough in `docs/bazaar-walkthrough.js` appears on both the
 market page and the existing guide. Its seven original in-game screenshots are

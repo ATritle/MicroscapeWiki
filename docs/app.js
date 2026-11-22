@@ -1,6 +1,6 @@
 import {communityApiBase} from "./api-config.js?v=community-api-20261119";
-import { guides } from "./guides.js?v=xp-matches-20261120";
-import {renderBazaar} from "./bazaar.js?v=seo-20261120";
+import { guides } from "./guides.js?v=market-20261122";
+import {renderBazaar} from "./bazaar.js?v=market-20261122";
 import {renderBazaarWalkthrough} from "./bazaar-walkthrough.js?v=bazaar-visual-20261120";
 import { tutorials } from "./tutorials.js?v=release-20261119";
 import { buildPetEntries } from "./pets.js?v=release-20261119";
@@ -21,7 +21,7 @@ const groups = {
   shops: { title: "Shops & vendors", icon: "¤", blurb: "Find shopkeepers, locations, exact stock and prices, NPC trades, salon services and dungeon coin exchanges." },
   abilities: { title: "Abilities", icon: "ϟ", blurb: "Equipment requirements and limit break costs." },
   pets: { title: "Pets", icon: "✿", blurb: "Companions, pet maps, eligible tasks and drop odds." },
-  bazaar: { title: "Bazaar", icon: "¤", blurb: "Live buy/sell orders, market prices and the trading guide." },
+  bazaar: { title: "Bazaar", icon: "¤", blurb: "Live buy/sell orders, recorded price trends, interactive market charts and the trading guide." },
   reference: { title: "Game mechanics", icon: "◈", blurb: "Pet maps, titles, healing and equipment bonuses." }
 };
 

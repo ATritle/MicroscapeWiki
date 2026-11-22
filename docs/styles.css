@@ -309,6 +309,42 @@ tr:last-child td { border-bottom: 0; }
 .bazaar-controls select { flex: 0 1 auto; max-width: 100%; }
 .bazaar-status, .bazaar-help { color: var(--muted); font-size: 13px; }
 .bazaar-warning { color: #f2c183; }
+.market-overview { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; margin: 20px 0; }
+.market-overview > div, .market-item-statistics > div { display: grid; gap: 5px; padding: 15px; border: 1px solid var(--line); background: var(--panel); border-radius: 9px; }
+.market-overview strong { color: var(--mint); font-size: 28px; line-height: 1.2; }
+.market-overview span, .market-item-statistics small { font-size: 12px; color: var(--muted); }
+.market-filter-options { display: flex; flex-wrap: wrap; gap: 12px 22px; margin-bottom: 12px; }
+.market-filter-options label { display: flex; gap: 8px; align-items: center; font-size: 13px; color: var(--muted); }
+.market-up { color: #7cdeb4; }
+.market-down { color: #f19b9b; }
+.market-flat { color: var(--muted); }
+.market-item-cell { display: flex; gap: 8px; align-items: center; }
+.market-watch-button { flex-shrink: 0; border: 0; padding: 4px; font: inherit; font-size: 23px; background: transparent; color: var(--muted); cursor: pointer; }
+.market-watch-button[aria-pressed="true"] { color: #efca83; }
+.market-spark-cell { display: grid; min-width: 105px; gap: 2px; font-size: 12px; }
+.market-spark { display: block; width: 105px; height: 32px; }
+.bazaar-results .table-wrap { max-width: 100%; }
+.bazaar-results table { min-width: 1060px; font-size: 13px; }
+.bazaar-results th { white-space: nowrap; }
+.market-watch-panel:empty { display: none; }
+.market-watch-panel { margin: 24px 0; }
+.market-watch-cards { display: flex; flex-wrap: wrap; gap: 10px; }
+.market-watch-card { display: flex; gap: 10px; align-items: center; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); color: var(--mint); font: inherit; font-size: 13px; text-align: left; cursor: pointer; padding: 12px; }
+.market-watch-card small { display: block; margin-top: 3px; color: var(--muted); font-size: 12px; }
+.market-watch-card img { width: 28px; height: 28px; image-rendering: pixelated; object-fit: contain; }
+.market-chart-panel { margin: 22px 0 30px; border: 1px solid var(--line); border-radius: 10px; padding: 18px; background: var(--bg); }
+.market-chart-heading { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; }
+.market-chart-heading h3 { margin: 0; }
+.market-chart-heading select { border: 1px solid var(--line); border-radius: 6px; padding: 8px 10px; background: var(--panel); color: var(--text); font: inherit; }
+.market-item-statistics { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 8px; margin-bottom: 14px; }
+.market-item-statistics > div { padding: 10px; }
+.market-item-statistics strong { color: var(--mint); font-size: 17px; }
+.market-price-chart { display: block; width: 100%; color: var(--mint); touch-action: pan-y; }
+.market-chart-grid { stroke: var(--line); stroke-width: 1; stroke-dasharray: 3 5; }
+.market-chart-axis { fill: var(--muted); font-size: 11px; }
+.market-chart-cursor { fill: var(--mint); stroke: var(--bg); stroke-width: 2; }
+.market-chart-readout { font-size: 14px; color: var(--mint); margin: 5px 0; font-variant-numeric: tabular-nums; }
+@media (max-width: 720px) { .market-overview { gap: 7px; } .market-overview > div { padding: 12px; } .market-overview strong { font-size: 23px; } .market-item-statistics { grid-template-columns: repeat(2,minmax(0,1fr)); } .market-chart-panel { padding: 12px; } .market-chart-axis { font-size: 22px; } }
 .bazaar-item-button { display: flex; align-items: center; gap: 10px; padding: 0; border: 0; background: transparent; color: var(--mint); font: inherit; text-align: left; cursor: pointer; min-width: 145px; }
 .bazaar-item-button:hover, .bazaar-item-button[aria-pressed="true"] { text-decoration: underline; }
 .bazaar-item-button img, .bazaar-item-heading > img { width: 32px; height: 32px; object-fit: contain; image-rendering: pixelated; flex-shrink: 0; }

@@ -24,8 +24,8 @@ http.createServer(async (request, response) => {
   const url = new URL(request.url, "http://127.0.0.1:" + port);
   response.setHeader("Cache-Control", "no-store");
   response.setHeader("X-Content-Type-Options", "nosniff");
-  if (url.pathname === "/api/bazaar.json") {
-    const result = await gateway.fetch(new Request("https://microscape-wiki-api.pages.dev/bazaar.json" + url.search), {});
+  if (["/api/bazaar.json","/api/bazaar-history.json"].includes(url.pathname)) {
+    const result = await gateway.fetch(new Request("https://microscape-wiki-api.pages.dev/"+url.pathname.split("/").at(-1) + url.search), {});
     response.writeHead(result.status, {"Content-Type":"application/json; charset=utf-8"});
     response.end(await result.text());
     return;
