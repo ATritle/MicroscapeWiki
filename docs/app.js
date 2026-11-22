@@ -550,6 +550,12 @@ function renderList(category, query) {
     const data = index.get(entry.id);
     return tokens.every(token => data.full.includes(token));
   });
+  if (category === "pets") {
+    const companionType = entry => new Map(entry.facts || []).get("Skill") || "Other";
+    const archived = entry => entry.group === "Archived beta companions";
+    matching.sort((a,b) => Number(archived(a)) - Number(archived(b))
+      || companionType(a).localeCompare(companionType(b)) || a.title.localeCompare(b.title));
+  }
   if (isSearch && tokens.length) {
     const phrase = tokens.join(" ");
     const score = entry => {
@@ -572,7 +578,8 @@ function renderList(category, query) {
   const more = element("button", {class:"button more", type:"button"}, "Show more");
   function update() {
     const filtered = matching.filter(entry => !filter || (isSearch ? entry.category : entry.group) === filter);
-    count.textContent = number.format(filtered.length) + (filtered.length === 1 ? " entry" : " entries") + (isSearch && query ? " for “" + query + "”" : "");
+    count.textContent = number.format(filtered.length) + (filtered.length === 1 ? " entry" : " entries") + (isSearch && query ? " for “" + query + "”" : "")
+      + (category === "pets" ? " · Sorted by companion type, then name" : "");
     grid.replaceChildren(...filtered.slice(0,limit).map(entry => {
       const thumbnail = entryThumbnail(entry);
       const spriteFoes = tutorialSpriteFoes(entry);
