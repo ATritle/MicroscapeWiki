@@ -523,6 +523,25 @@ function renderLiveDrops() {
   });
 }
 
+function entryCardDescription(entry) {
+  const summary = element("small", {}, entry.summary || entry.group || groups[entry.category].title);
+  if (entry.category !== "pets") return [summary];
+  const facts = new Map(entry.facts || []);
+  const mapTrade = facts.get("Vendor map option");
+  if (!mapTrade) return facts.get("Pet Map") === "None required"
+    ? [summary, element("small", {class:"pet-map-cost"}, "0 Audience Favor · No map exchange needed")]
+    : [summary];
+  return [
+    element("small", {}, facts.get("Skill") + " companion"),
+    element("small", {class:"pet-map-trade"}, mapTrade),
+    element("small", {class:"pet-map-cost"}, facts.get("Cost")),
+    element("small", {class:"pet-map-result"}, "Exchange for " + facts.get("Pet Map")),
+    ...(facts.get("Membership to obtain") === "Required"
+      ? [element("small", {}, "Adventurer’s Guild membership required")]
+      : [])
+  ];
+}
+
 function renderList(category, query) {
   const name = category ? groups[category].title : "Search the wiki";
   const isSearch = !category;
@@ -563,8 +582,7 @@ function renderList(category, query) {
           ...spriteFoes.map(foe => renderSpriteFrame(foe.sprites[0])))] : []),
         element("span", {class:"entry-card-body"},
           ...(shopSprite ? [renderSpriteFrame(shopSprite)] : thumbnail ? [entryImage(thumbnail, "", true)] : []),
-          element("span", {}, element("strong", {}, entry.title),
-            element("small", {}, entry.summary || entry.group || groups[entry.category].title))),
+          element("span", {}, element("strong", {}, entry.title), ...entryCardDescription(entry))),
         glyph("→", "arrow")
       );
     }));
@@ -597,7 +615,13 @@ function renderList(category, query) {
     main.append(map.node,element("h2",{},"Browse all locations"));
     disposeWorldMap=map.dispose;
   }
-  if (category === "pets" && byId.has("pets")) main.append(entryLink("pets", null, "button"));
+  if (category === "pets") {
+    if (byId.has("pets")) main.append(entryLink("pets", null, "button"));
+    main.append(element("p", {class:"notice pet-map-explainer"},
+      "For mapped pets, visit ", entryLink("vendor-mork", "Mork"), " or ", entryLink("vendor-otis", "Otis"), " at ", entryLink("fellroot-swamp-hut"),
+      ". First select the named map trade shown below and exchange ", entryLink("item-audience-favor", "Audience Favor"),
+      " to receive the pet’s Pet Map. Then carry that Pet Map while completing eligible tasks for a chance to find the pet. Buying a map does not award the pet."));
+  }
   if (category === "shops") main.append(entryLink("vendor", "How shop prices and trades work", "button"));
   if (referenceLoadFailed && category !== "guides" && category !== "tutorials") main.append(element("p", {class:"notice"}, "The reference catalog could not load. Refresh the page to retry."));
   if (filterBar.children.length) main.append(filterBar);

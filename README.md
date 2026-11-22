@@ -47,6 +47,7 @@ for the comparison and evidence.
 - Edit `docs/reference.json` for catalog entries. An entry can include a summary, facts and tables. Keep existing IDs stable so saved links keep working. Add the patch date and link to the evidence when revising a beta-era value.
 - Location entries use `mapImage` for the official map preview, with the image URL and its original width and height. Keep entrance requirements and dungeon chamber routes with the travel directions.
 - Release pet profiles, map prices, eligible tasks, odds and sprites are stored directly in `docs/reference.json`. `docs/pets.js` retains the fallback generator for older beta catalogs.
+- Pet directory tiles read `Vendor map option`, `Cost`, `Pet Map` and membership facts from those profiles. They showcase the Mork/Otis trade name and Audience Favor price, then identify the Pet Map received. The vendor map name is a trade option, not a second inventory item. No-map catches and archived beta pets retain distinct acquisition information.
 - Edit `docs/styles.css` for the visual theme. The original pixel-art village banner lives in `docs/assets`.
 
 The November 19 launch comparison and verification are in `audits/2026-11-19-release`.

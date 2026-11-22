@@ -166,6 +166,9 @@ h3 { margin-bottom: 6px; font-size: 17px; }
 .entry-card strong, .entry-card small { display: block; }
 .entry-card small { margin-top: 2px; font-size: 13px; color: var(--muted); }
 .entry-card-body { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.entry-card small.pet-map-trade { margin-top: 6px; color: var(--text); font-weight: 600; }
+.entry-card small.pet-map-cost { color: var(--mint); font-weight: 600; }
+.pet-map-explainer { display: block; max-width: 92ch; }
 .entry-card.mzdunk-stream-card { border-color: #8d485f; background: #291e31; }
 .entry-card.mzdunk-stream-card:hover { border-color: #ba5772; background: #372539; }
 .mzdunk-stream-card + .actions { margin-top: 14px; }
