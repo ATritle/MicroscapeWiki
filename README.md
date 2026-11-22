@@ -195,20 +195,38 @@ Errors retain a clearly labeled last successful snapshot instead of reporting
 an empty market. Run `node scripts/check-bazaar.mjs` to verify this API.
 The existing local preview command also serves the public Bazaar endpoint.
 
-`/bazaar-history.json` relays attributed public Microwiki price observations,
-independently from the official live listings. No query returns normalized item
-averages and lows; `?item=ITEM_ID&range=7d` returns timestamped prices; `?ids=A,B`
-returns at most 30 requested sparklines. Supported chart ranges are 24h, 7d, 1m,
-3m, 6m, 12m and all. Requests are fixed to the known public source, omit account
-cookies, strip seller/account fields, and cache for five minutes. Failed history
-checks retain a warning or blank state and do not erase working live orders.
-Historical listing observations are distinct from completed trades and may cover
-less than the selected window. Prices from closed historical listings never
-become current offers. `docs/market-trends.js` contains chart geometry and market
-comparisons. Run `node scripts/check-market-trends.mjs` for normalization,
-timestamp spacing, missing data, request bounds, cache and failure behavior.
-Cloudflare Pages automatically deploys `api-gateway` from the main branch with
-its existing LIVE_DROPS binding. It bundles the history module with `_worker.js`.
+`/bazaar-history.json` uses our private `microscape-market-history` Worker through
+the Pages `MARKET_HISTORY` service binding. The collector in
+`workers/market-history.mjs` polls only the official public
+`bazaar.getAllItemSummaries` endpoint on `*/15 * * * *` (UTC). The dedicated D1
+`MARKET_DB` stores per-item asking/bidding prices and total quantities, with no
+player, account or cookie data. The SQLite schema initializes automatically.
+No other wiki supplies or backfills our history. A first read can bootstrap the
+empty database once; after that only cron advances collection. `lastScheduledAt`
+and `lastPoll` report real scheduled activity and successful collection separately.
+Duplicate events in one 15-minute bucket do not double-count samples or averages.
+
+Raw samples retain 14 days. Daily rollups retain 400 days; lifetime lows and the
+collection start date persist beyond that. Averages are weighted by observed
+sample counts, not traded volume; 7/30-day summaries use UTC calendar days. The
+24-hour low uses the precise trailing time window. Failed upstream reads leave
+stored history intact, and a delay beyond three sampling intervals is flagged.
+Cleanup runs daily. The schema uses primary-key-only WITHOUT ROWID tables to
+limit indexed writes. Check D1 usage as market coverage/traffic grows; no paid plan
+is enabled by this setup. Future CLI deploys must use
+`wrangler deploy --config workers/market-history.wrangler.toml` so the cron, private
+endpoint setting and D1 binding are preserved.
+
+The history API provides summaries, `?item=ITEM_ID&range=7d` charts, and
+`?ids=A,B` sparklines for at most 30 IDs. 24h/7d charts show sampled asking prices;
+1m/3m/6m/12m/all show daily averages. It caches for five minutes under a new cache
+namespace, never reusing old third-party history. Missing data is not zero and
+historical prices never become current orders. Run
+`node scripts/check-own-market-history.mjs` for actual SQLite collection,
+idempotency, failure, exact window and retention tests, and
+`node scripts/check-market-trends.mjs` for service binding/cache/UI math checks.
+Cloudflare Pages automatically deploys `api-gateway` from main; the separate
+collector Worker is deployed with its own configuration. LIVE_DROPS is unchanged.
 
 The shared visual walkthrough in `docs/bazaar-walkthrough.js` appears on both the
 market page and the existing guide. Its seven original in-game screenshots are

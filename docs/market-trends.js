@@ -20,10 +20,10 @@ export function sparkline(values,label){
   const title=svgNode('title');title.textContent=label;
   return svgNode('svg',{viewBox:'0 0 100 32',class:'market-spark '+(up?'market-up':down?'market-down':'market-flat'),role:'img','aria-label':label},[title,svgNode('path',{d:g.path,fill:'none',stroke:'currentColor','stroke-width':2,'vector-effect':'non-scaling-stroke'})]);
 }
-export function priceChart(points,e){
+export function priceChart(points,e,resolution="observations"){
   if(!points.length)return e('p',{class:'bazaar-help'},'No recorded prices are available for this period. This does not mean the item has no live orders.');
   const g=chartGeometry(points),format=n=>new Intl.NumberFormat('en',{maximumFractionDigits:2}).format(n),date=at=>new Date(at).toLocaleString([],{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'});
-  const label=`Recorded market prices: ${points.length} observations, ${format(g.min)} to ${format(g.max)} coins. ${date(g.first)} to ${date(g.last)}.`;
+  const label=`Recorded lowest sell prices (${resolution}): ${points.length} ${points.length===1?'observation':'observations'}, ${format(g.min)} to ${format(g.max)} coins. ${date(g.first)} to ${date(g.last)}.`;
   const title=svgNode('title');title.textContent=label;
   const children=[title];
   for(let i=0;i<4;i++){
@@ -31,11 +31,12 @@ export function priceChart(points,e){
     children.push(svgNode('line',{x1:30,x2:690,y1:y,y2:y,class:'market-chart-grid'}),text);
   }
   children.push(svgNode('path',{d:g.path,fill:'none',stroke:'currentColor','stroke-width':2.5,'vector-effect':'non-scaling-stroke'}));
+  for(const [x,at,anchor] of [[30,g.first,'start'],[690,g.last,'end']]){const text=svgNode('text',{x,y:224,'text-anchor':anchor,class:'market-chart-axis'});text.textContent=date(at);children.push(text);}
   const cursor=svgNode('circle',{cx:g.coords.at(-1).x,cy:g.coords.at(-1).y,r:4.5,class:'market-chart-cursor'});children.push(cursor);
   const svg=svgNode('svg',{viewBox:'0 0 720 230',class:'market-price-chart',role:'img','aria-label':label,tabindex:0},children);
   const readout=e('p',{class:'market-chart-readout','aria-live':'polite'});let index=points.length-1;
-  const show=i=>{index=Math.max(0,Math.min(points.length-1,i));cursor.setAttribute('cx',g.coords[index].x);cursor.setAttribute('cy',g.coords[index].y);readout.textContent=date(points[index].at)+' · '+format(points[index].price)+' coins';};show(index);
+  const show=i=>{index=Math.max(0,Math.min(points.length-1,i));cursor.setAttribute('cx',g.coords[index].x);cursor.setAttribute('cy',g.coords[index].y);readout.textContent=date(points[index].at)+' · '+format(points[index].price)+(points[index].price===1?' coin':' coins');};show(index);
   svg.addEventListener('pointermove',event=>{const box=svg.getBoundingClientRect(),at=g.first+Math.max(0,Math.min(1,((event.clientX-box.left)/box.width*720-30)/660))*(g.last-g.first);let best=0;for(let i=1;i<points.length;i++)if(Math.abs(points[i].at-at)<Math.abs(points[best].at-at))best=i;show(best);});
   svg.addEventListener('keydown',event=>{if(['ArrowLeft','ArrowRight','Home','End'].includes(event.key)){event.preventDefault();show(event.key==='Home'?0:event.key==='End'?points.length-1:index+(event.key==='ArrowLeft'?-1:1));}});
-  return e('div',{class:'market-chart'},svg,readout,e('p',{class:'bazaar-help'},label+' Hover or touch the chart to inspect a price; keyboard users can use the arrow keys.'));
+  return e('div',{class:'market-chart'},svg,readout,e('p',{class:'bazaar-help'},label+' Lines join sampled observations; prices between samples are not known. Hover or touch the chart to inspect a price; keyboard users can use the arrow keys.'));
 }

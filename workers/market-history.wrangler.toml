@@ -1,0 +1,12 @@
+name = "microscape-market-history"
+main = "market-history.mjs"
+compatibility_date = "2026-11-22"
+workers_dev = false
+
+[triggers]
+crons = ["*/15 * * * *"]
+
+[[d1_databases]]
+binding = "MARKET_DB"
+database_name = "microscape-market-history"
+database_id = "ce9d3e15-b873-4906-8206-0aa10556bb52"

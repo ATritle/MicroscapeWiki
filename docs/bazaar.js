@@ -1,6 +1,6 @@
 import {communityApiBase} from "./api-config.js?v=community-api-20261119";
 import {renderBazaarWalkthrough} from "./bazaar-walkthrough.js?v=bazaar-visual-20261120";
-import {priceChange,marketRows,sparkline,priceChart} from "./market-trends.js?v=market-20261122";
+import {priceChange,marketRows,sparkline,priceChart} from "./market-trends.js?v=own-history-20261122";
 const number = new Intl.NumberFormat("en");
 const fallbackName = id => id.replace(/([a-z])([A-Z])/g,"$1 $2").replace(/^./,s=>s.toUpperCase());
 const stamp = time => new Date(time).toLocaleString([], {month:"short",day:"numeric",hour:"numeric",minute:"2-digit",second:"2-digit"});
@@ -37,7 +37,7 @@ export function renderBazaar({main, element, crumbs, footer, byId, guide, entryL
   const status=element("p",{class:"bazaar-status",role:"status"},"Loading current market…");
   const results=element("div",{class:"bazaar-results"});
   const historyStatus=element("p",{class:"bazaar-help",role:"status"},"Loading historical observations…"),overview=element("div",{class:"market-overview"}),watchPanel=element("div",{class:"market-watch-panel"});
-  const chartRange=element("select",{"aria-label":"Price chart period"},...[['24h','24 hours'],['7d','7 days'],['1m','30 days'],['3m','3 months'],['6m','6 months'],['12m','12 months'],['all','All recorded history']].map(([value,title])=>element("option",{value,...(value==="7d"?{selected:""}:{})},title)));
+  const chartRange=element("select",{"aria-label":"Price chart period"},...[['24h','24 hours'],['7d','7 days'],['1m','30 days'],['3m','3 months'],['6m','6 months'],['12m','12 months'],['all','All retained history']].map(([value,title])=>element("option",{value,...(value==="7d"?{selected:""}:{})},title)));
   const chartHost=element("section",{class:"market-chart-panel","aria-label":"Historical price chart"});
   const chartCache=new Map();
   const detail=element("section",{class:"bazaar-detail","aria-label":"Selected item market"},
@@ -59,7 +59,7 @@ export function renderBazaar({main, element, crumbs, footer, byId, guide, entryL
       element("div",{class:"bazaar-controls"},search,side,sort,refresh),
       element("div",{class:"market-filter-options"},element("label",{for:"market-unlisted"},allItems,"Include items with history but no open orders"),element("label",{for:"market-watched"},watchOnly,"Watchlist only")),
       status,overview,historyStatus,
-      element("p",{class:"bazaar-help market-source"},"Live orders: Microscape. Price history: ",element("a",{href:"https://microwiki.mhmm.pl/bazaar",target:"_blank",rel:"noopener noreferrer"},"Microwiki")," (refreshes every 5 minutes). Historical windows use available observations; they may cover less than the full period. Recorded listing prices are separate from completed trades."),
+      element("p",{class:"bazaar-help market-source"},"Our own price history, collected directly from ",element("a",{href:"https://microscape.cc/play/",target:"_blank",rel:"noopener noreferrer"},"Microscape")," every 15 minutes. This view checks for new history every 5 minutes. History starts on the displayed collection date; no earlier prices have been imported. The 7/30-day summaries use UTC calendar days and may cover less than the full period. Recorded lowest sell orders are separate from completed trades."),
       watchPanel,results),detail,guideSection);
   main.append(article,footer());
 
@@ -107,7 +107,7 @@ export function renderBazaar({main, element, crumbs, footer, byId, guide, entryL
   }
   async function loadHistory(){
     if(historyController)return;historyAttempt=Date.now();const controller=new AbortController();historyController=controller;
-    try{const snapshot=await readHistory({},controller.signal);if(disposed)return;if(!Array.isArray(snapshot.items)||!Number.isFinite(snapshot.lastPoll))throw Error("Historical prices returned an unreadable response.");history=snapshot;historyStatus.className="bazaar-help";historyStatus.textContent="History source last polled "+stamp(history.lastPoll)+" · no history is displayed as —, never as zero.";drawList();if(detailSnapshot)drawDetails(detailSnapshot);}
+    try{const snapshot=await readHistory({},controller.signal);if(disposed)return;if(!Array.isArray(snapshot.items)||!Number.isFinite(snapshot.lastPoll)||!Number.isFinite(snapshot.collectionStartedAt))throw Error("Historical prices returned an unreadable response.");history=snapshot;historyStatus.className="bazaar-help"+(snapshot.stale?" bazaar-warning":"");historyStatus.textContent=(snapshot.stale?"Collection is delayed. ":"")+"Our history began "+stamp(history.collectionStartedAt)+" · Last successful sample "+stamp(history.lastPoll)+" · Missing prices are —, not zero.";drawList();if(detailSnapshot)drawDetails(detailSnapshot);}
     catch(error){if(disposed||error.name==="AbortError")return;historyStatus.className="bazaar-help bazaar-warning";historyStatus.textContent="Historical prices unavailable. "+(history?"Showing the last history check from "+stamp(history.checkedAt)+". ":"")+"Live orders continue independently.";}
     finally{if(historyController===controller)historyController=null;}
   }
@@ -127,10 +127,10 @@ export function renderBazaar({main, element, crumbs, footer, byId, guide, entryL
       const metrics=[["30d observed average",stats.avg30d],["24h recorded low",stats.low24h],["7d recorded low",stats.low7d],["All-time recorded low",stats.allTimeLow]];
       body.append(element("div",{class:"market-item-statistics"},...metrics.map(([label,value])=>element("div",{},element("small",{},label),element("strong",{},coins(value))))));
     }
-    const chart=element("div",{},previous?priceChart(previous.points,element):element("p",{class:"bazaar-help",role:"status"},"Loading recorded prices…"));body.append(chart);
+    const chart=element("div",{},previous?priceChart(previous.points,element,previous.resolution):element("p",{class:"bazaar-help",role:"status"},"Loading recorded prices…"));body.append(chart);
     if(previous&&Date.now()-previous.checkedAt<300000){chartController=null;return;}
-    try{const data=await readHistory({item:id,range},controller.signal);if(disposed||id!==selected||range!==chartRange.value)return;if(!Array.isArray(data.points)||data.itemId!==id)throw Error("Historical prices returned an unreadable chart.");chartCache.set(key,data);chart.replaceChildren(priceChart(data.points,element));}
-    catch(error){if(disposed||error.name==="AbortError"||id!==selected||range!==chartRange.value)return;chart.replaceChildren(...(previous?[priceChart(previous.points,element)]:[]),element("p",{class:"bazaar-warning"},previous?"Could not refresh this chart. Showing the previous historical snapshot.":"Price history is unavailable. Live orders and completed trades are shown separately below."));}
+    try{const data=await readHistory({item:id,range},controller.signal);if(disposed||id!==selected||range!==chartRange.value)return;if(!Array.isArray(data.points)||data.itemId!==id)throw Error("Historical prices returned an unreadable chart.");chartCache.set(key,data);chart.replaceChildren(priceChart(data.points,element,data.resolution));}
+    catch(error){if(disposed||error.name==="AbortError"||id!==selected||range!==chartRange.value)return;chart.replaceChildren(...(previous?[priceChart(previous.points,element,previous.resolution)]:[]),element("p",{class:"bazaar-warning"},previous?"Could not refresh this chart. Showing the previous historical snapshot.":"Price history is unavailable. Live orders and completed trades are shown separately below."));}
     finally{if(chartController===controller)chartController=null;}
   }
   async function read(item,signal) {

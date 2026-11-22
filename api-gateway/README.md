@@ -10,8 +10,10 @@ trades. Market responses cache for 30 seconds. It never forwards account cookies
 requests private order history, or exposes trade mutations. The GitHub backup feed
 URL is configured privately as the relay Worker's `DROPS_BACKUP_URL` variable.
 
-`/bazaar-history.json` independently relays the publicly available Microwiki
-historical price observations, credited on the wiki. It supports a summary,
-bounded per-item charts, or sparklines for up to 30 IDs; only market price fields
-are returned. No seller data or browser cookies are forwarded. History caches
-for five minutes; current official orders remain on the existing 30-second feed.
+`/bazaar-history.json` uses the `MARKET_HISTORY` service binding to the private
+`microscape-market-history` Worker. Its scheduled collector stores observations
+directly from the official game in the dedicated MARKET_DB D1 database. No other
+wiki's history is requested. It supports a summary, bounded charts, or up to 30
+sparklines. The versioned cache key prevents old third-party cache responses from
+surviving the cutover. History caches for five minutes; current official orders
+remain on the existing 30-second feed. No account data is collected.

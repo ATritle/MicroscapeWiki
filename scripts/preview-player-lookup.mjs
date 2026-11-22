@@ -25,7 +25,8 @@ http.createServer(async (request, response) => {
   response.setHeader("Cache-Control", "no-store");
   response.setHeader("X-Content-Type-Options", "nosniff");
   if (["/api/bazaar.json","/api/bazaar-history.json"].includes(url.pathname)) {
-    const result = await gateway.fetch(new Request("https://microscape-wiki-api.pages.dev/"+url.pathname.split("/").at(-1) + url.search), {});
+    const remote="https://microscape-wiki-api.pages.dev/"+url.pathname.split("/").at(-1) + url.search;
+    const result = url.pathname==="/api/bazaar-history.json"?await fetch(remote):await gateway.fetch(new Request(remote), {});
     response.writeHead(result.status, {"Content-Type":"application/json; charset=utf-8"});
     response.end(await result.text());
     return;

@@ -83,7 +83,7 @@ export default {
     if (origin && !origins.has(origin)) return new Response("Origin not allowed", {status:403});
     try {
       if (["/bazaar.json","/bazaar-history.json"].includes(url.pathname)) {
-        const response = await (url.pathname==="/bazaar.json"?bazaarResponse(url, context):marketHistoryResponse(url,context));
+        const response = await (url.pathname==="/bazaar.json"?bazaarResponse(url, context):marketHistoryResponse(url,context,env));
         const result = new Response(response.body, response);
         result.headers.set("Access-Control-Allow-Origin", origin || "https://microscapewiki.com");
         result.headers.append("Vary", "Origin");

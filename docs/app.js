@@ -1,6 +1,6 @@
 import {communityApiBase} from "./api-config.js?v=community-api-20261119";
-import { guides } from "./guides.js?v=market-20261122";
-import {renderBazaar} from "./bazaar.js?v=market-20261122";
+import { guides } from "./guides.js?v=own-history-20261122";
+import {renderBazaar} from "./bazaar.js?v=own-history-20261122";
 import {renderBazaarWalkthrough} from "./bazaar-walkthrough.js?v=bazaar-visual-20261120";
 import { tutorials } from "./tutorials.js?v=release-20261119";
 import { buildPetEntries } from "./pets.js?v=release-20261119";
