@@ -16,6 +16,8 @@ try{
   const count=calls.length;await collectMarket(env,{now:t+1000,scheduledAt:t});assert.equal(calls.length,count,"Same-bucket duplicate events must not refetch or double-count");
   ask=20;await collectMarket(env,{now:t+SAMPLE_MS,scheduledAt:t+SAMPLE_MS});
   let summary=await readMarketHistory(env,url(""),t+SAMPLE_MS);assert.equal(summary.items[0].avg30d,15);assert.equal(summary.items[0].low24h,10);assert.equal(summary.items[0].observations30d,2);assert.equal(summary.lastScheduledAt,t+SAMPLE_MS);
+  await collectMarket(env,{now:t,scheduledAt:t});assert.equal((await readMarketHistory(env,url(""),t+SAMPLE_MS)).lastScheduledAt,t+SAMPLE_MS,"Late/retried events must not regress collection timestamps");
+  assert.equal(JSON.parse(sqlite.prepare("SELECT value FROM market_meta WHERE key='summary_cache'").get().value).at,t+SAMPLE_MS,"Summaries are computed once per collection, not per visitor");
   let chart=await readMarketHistory(env,url("?item=ore&range=7d"),t+SAMPLE_MS);assert.deepEqual(chart.points.map(p=>p.price),[10,20]);assert.equal(chart.resolution,"15-minute samples");
   const sparks=await readMarketHistory(env,url("?ids=ore,missing"),t+SAMPLE_MS);assert.deepEqual(sparks.series,{missing:[],ore:[10,20]});
   ask=null;await collectMarket(env,{now:t+2*SAMPLE_MS});summary=await readMarketHistory(env,url(""),t+2*SAMPLE_MS);assert.equal(summary.items[0].lastPrice,20);assert.equal(summary.items[0].avg30d,15,"Missing asks must not count as zero");

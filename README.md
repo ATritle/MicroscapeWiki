@@ -212,7 +212,10 @@ sample counts, not traded volume; 7/30-day summaries use UTC calendar days. The
 24-hour low uses the precise trailing time window. Failed upstream reads leave
 stored history intact, and a delay beyond three sampling intervals is flagged.
 Cleanup runs daily. The schema uses primary-key-only WITHOUT ROWID tables to
-limit indexed writes. Check D1 usage as market coverage/traffic grows; no paid plan
+limit indexed writes. Summaries are materialized once per collection, so visitors
+read a small stored result instead of rescanning 24-hour/30-day windows. Lows and
+averages are as of the last successful sample. Late events cannot regress metadata.
+Check D1 usage as market coverage/traffic grows; no paid plan
 is enabled by this setup. Future CLI deploys must use
 `wrangler deploy --config workers/market-history.wrangler.toml` so the cron, private
 endpoint setting and D1 binding are preserved.

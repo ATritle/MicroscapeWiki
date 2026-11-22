@@ -34,9 +34,9 @@ export function normalizeSummaries(data){
 export async function collectMarket(env,{now=Date.now(),scheduledAt=null}={}){
   const db=env.MARKET_DB;await ensureSchema(db);
   const bucket=Math.floor(now/SAMPLE_MS)*SAMPLE_MS,day=midnight(now);
-  const meta=Object.fromEntries((await rows(db.prepare("SELECT key,value FROM market_meta"))).map(r=>[r.key,r.value]));
+  const meta=Object.fromEntries((await rows(db.prepare("SELECT key,value FROM market_meta WHERE key!='summary_cache'"))).map(r=>[r.key,r.value]));
   if(Number(meta.last_bucket)>=bucket){
-    if(scheduledAt!==null)await stmt(db,"INSERT INTO market_meta VALUES('last_scheduled_at',?) ON CONFLICT(key) DO UPDATE SET value=excluded.value",String(scheduledAt)).run();
+    if(scheduledAt!==null)await stmt(db,"INSERT INTO market_meta VALUES('last_scheduled_at',?) ON CONFLICT(key) DO UPDATE SET value=excluded.value WHERE CAST(excluded.value AS INTEGER)>CAST(market_meta.value AS INTEGER)",String(scheduledAt)).run();
     return {collected:false,at:Number(meta.last_success_at)};
   }
   const response=await fetch(source,{signal:AbortSignal.timeout(10_000),cache:"no-store",headers:{Accept:"application/json"}});
@@ -56,7 +56,7 @@ export async function collectMarket(env,{now=Date.now(),scheduledAt=null}={}){
       WHERE excluded.last_bucket>market_daily.last_bucket`,day,item.id,item.ask,item.ask,item.ask,now,now,bucket));
   }
   statements.push(stmt(db,"INSERT OR IGNORE INTO market_meta VALUES('started_at',?)",String(now)));
-  for(const [key,value] of Object.entries({last_bucket:bucket,last_success_at:now,...(scheduledAt!==null?{last_scheduled_at:scheduledAt}:{})}))statements.push(stmt(db,"INSERT INTO market_meta VALUES(?,?) ON CONFLICT(key) DO UPDATE SET value=excluded.value",key,String(value)));
+  for(const [key,value] of Object.entries({last_bucket:bucket,last_success_at:now,...(scheduledAt!==null?{last_scheduled_at:scheduledAt}:{})}))statements.push(stmt(db,"INSERT INTO market_meta VALUES(?,?) ON CONFLICT(key) DO UPDATE SET value=excluded.value WHERE CAST(excluded.value AS INTEGER)>CAST(market_meta.value AS INTEGER)",key,String(value)));
   // One daily scan keeps retention bounded without adding a write-heavy time
   // index. Query charts use the (item_id,bucket) primary key directly.
   if(Number(meta.cleanup_day)!==day){
@@ -65,6 +65,7 @@ export async function collectMarket(env,{now=Date.now(),scheduledAt=null}={}){
     statements.push(stmt(db,"INSERT INTO market_meta VALUES('cleanup_day',?) ON CONFLICT(key) DO UPDATE SET value=excluded.value",String(day)));
   }
   await db.batch(statements);
+  await storeSummary(db,now);
   return {collected:true,at:now,itemCount:sample.length};
 }
 export function parseHistoryQuery(url){
@@ -77,10 +78,10 @@ export function parseHistoryQuery(url){
 }
 export async function readMarketHistory(env,url,now=Date.now()){
   const query=parseHistoryQuery(url),db=env.MARKET_DB;await ensureSchema(db);
-  let meta=Object.fromEntries((await rows(db.prepare("SELECT key,value FROM market_meta"))).map(r=>[r.key,r.value]));
+  let meta=Object.fromEntries((await rows(db.prepare("SELECT key,value FROM market_meta WHERE key!='summary_cache'"))).map(r=>[r.key,r.value]));
   // Bootstrap the empty database once. Subsequent reads never hide a failed
   // schedule by silently polling the game; lastScheduledAt proves cron activity.
-  if(!meta.started_at){await collectMarket(env,{now});meta=Object.fromEntries((await rows(db.prepare("SELECT key,value FROM market_meta"))).map(r=>[r.key,r.value]));}
+  if(!meta.started_at){await collectMarket(env,{now});meta=Object.fromEntries((await rows(db.prepare("SELECT key,value FROM market_meta WHERE key!='summary_cache'"))).map(r=>[r.key,r.value]));}
   const base={checkedAt:now,source:"MzDunk's Community Wiki",sourceUrl:"https://microscape.cc/play/",collectionStartedAt:Number(meta.started_at),lastPoll:Number(meta.last_success_at),lastScheduledAt:meta.last_scheduled_at?Number(meta.last_scheduled_at):null,
     samplingMinutes:SAMPLE_MS/60000,rawRetentionDays:RAW_DAYS,dailyRetentionDays:DAILY_DAYS,stale:now-Number(meta.last_success_at)>SAMPLE_MS*3};
   if(query.ids){
@@ -93,7 +94,12 @@ export async function readMarketHistory(env,url,now=Date.now()){
       :await rows(stmt(db,"SELECT last_at AS at,ask_sum/ask_count AS price FROM market_daily WHERE item_id=? AND day>=? ORDER BY day",query.item,cutoff));
     return {...base,itemId:query.item,range:query.range,resolution:raw?"15-minute samples":"daily averages",points};
   }
-  const day=midnight(now),cut7=day-6*DAY,cut30=day-29*DAY,cut24=now-DAY;
+  const cached=(await rows(db.prepare("SELECT value FROM market_meta WHERE key='summary_cache'")))[0];
+  const summary=cached?JSON.parse(cached.value):null;
+  return {...base,updatedAt:base.lastPoll,items:summary?.at===base.lastPoll?summary.items:(await storeSummary(db,base.lastPoll)).items};
+}
+async function storeSummary(db,at){
+  const day=midnight(at),cut7=day-6*DAY,cut30=day-29*DAY,cut24=at-DAY;
   const [items,stats,lows]=await db.batch([
     db.prepare("SELECT * FROM market_items ORDER BY item_id"),
     stmt(db,`SELECT item_id,SUM(ask_sum)*1.0/SUM(ask_count) AS avg30d,MIN(low) AS low30d,SUM(ask_count) AS observations30d,
@@ -102,7 +108,9 @@ export async function readMarketHistory(env,url,now=Date.now()){
     stmt(db,`SELECT i.item_id,(SELECT MIN(s.ask) FROM market_samples s WHERE s.item_id=i.item_id AND s.bucket>=? AND s.at>=?) AS low24h FROM market_items i`,Math.floor(cut24/SAMPLE_MS)*SAMPLE_MS,cut24)
   ]);
   const byId=new Map(stats.results.map(r=>[r.item_id,r])),lowById=new Map(lows.results.map(r=>[r.item_id,r.low24h]));
-  return {...base,updatedAt:base.lastPoll,items:items.results.map(row=>{const stat=byId.get(row.item_id);return {itemId:row.item_id,lastPrice:row.last_ask,lastAt:row.last_ask_at,firstObservedAt:row.first_at,avg30d:stat?.avg30d??null,avg7d:stat?.avg7d??null,low24h:lowById.get(row.item_id)??null,low7d:stat?.low7d??null,low30d:stat?.low30d??null,allTimeLow:row.all_time_low,observations30d:stat?.observations30d??0};})};
+  const summary={at,items:items.results.map(row=>{const stat=byId.get(row.item_id);return {itemId:row.item_id,lastPrice:row.last_ask,lastAt:row.last_ask_at,firstObservedAt:row.first_at,avg30d:stat?.avg30d??null,avg7d:stat?.avg7d??null,low24h:lowById.get(row.item_id)??null,low7d:stat?.low7d??null,low30d:stat?.low30d??null,allTimeLow:row.all_time_low,observations30d:stat?.observations30d??0};})};
+  await stmt(db,"INSERT INTO market_meta VALUES('summary_cache',?) ON CONFLICT(key) DO UPDATE SET value=excluded.value",JSON.stringify(summary)).run();
+  return summary;
 }
 export default {
   async fetch(request,env){
