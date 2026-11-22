@@ -85,9 +85,21 @@ Nothing is saved to browser storage or sent back to the game.
 `docs/loadout-comparison.js` filters gear by slot, checks base-level requirements,
 handles two-handed weapons/shields, renders both appearances with existing game
 layers, and uses the shared combat model. Boss/special encounters and unusable
-sets do not receive usable rate estimates. Potions, learned abilities, gear ability
-effects, supplies, eating and banking are excluded from rate estimates; ability
-lists are reference and planning notes. Run `node scripts/check-loadout-comparison.mjs`.
+sets do not receive usable rate estimates. Each side has independent ability levels,
+learned abilities, potion assumptions and spell upgrades. `docs/loadout-effects.js`
+models supported stat, damage, XP and quick-attack effects, including finite enemy
+HP and overkill. Defensive effects change incoming melee damage without inventing
+survival downtime. The public profile does not expose ability levels or active
+buffs: equipped abilities default to level 1, prayers off, temporary buff uptime
+to 0%, and learned abilities to their permanent unlock. Potions assume maintained
+boosts; super-potion rounding and same-skill stacking are labeled assumptions with
+manual overrides. Focus requires an entered cast interval for hourly estimates.
+Unsupported stateful effects are listed beside the result. Supplies, eating,
+deaths, banking and group combat are excluded; four combat XP baselines remain
+unverified. Evidence and assumptions are in
+`docs/assets/game-data/loadout-effects-2026-11-21.json`.
+Run `node scripts/check-loadout-comparison.mjs` and
+`node scripts/check-loadout-effects.mjs` (baseline equivalence and effect cases).
 Rebuild `docs/loadout-reference.json` using
 `node scripts/build-loadout-reference.mjs GAME_DATA_JSON` after a game-data update.
 

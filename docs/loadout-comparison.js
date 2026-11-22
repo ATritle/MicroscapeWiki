@@ -1,4 +1,6 @@
-import {equipmentBonuses,compareCombat,COMBAT_XP_RATES} from "./combat-comparison.js?v=vendors-20261120";
+import {equipmentBonuses,COMBAT_XP_RATES} from "./combat-comparison.js?v=vendors-20261120";
+import {compareWithEffects,resolveLoadoutEffects} from "./loadout-effects.js?v=effects-20261121";
+import {createEffectControls} from "./loadout-effect-controls.js?v=effects-20261121";
 
 export const loadoutSlots=[["head","Head"],["cape","Cape"],["amulet","Amulet"],["weapon","Weapon"],["shield","Shield"],["body","Body"],["hands","Hands"],["feet","Feet"],["ring","Ring"],["tool","Tool"],["food","Food"],["ammo","Ammunition"],["pet","Pet"],["potion1","Potion 1"],["potion2","Potion 2"],["potion3","Potion 3"]];
 const nameOf=id=>String(id||"").replace(/([a-z])([A-Z])/g,"$1 $2").replace(/^./,s=>s.toUpperCase());
@@ -27,10 +29,13 @@ export function loadoutSkill(equipment,items,choice="auto") {
   const tags=items[equipment.weapon]?.tags||[];
   return tags.includes("bow")?"ranged":tags.includes("staff")?"evilMagic":"attack";
 }
-export function modelLoadout({equipment,levels,catalog,foe,choice="auto",spellId,prepSeconds=6,includeZero=false}) {
-  const bonuses=equipmentBonuses(equipment,catalog.items),skill=loadoutSkill(equipment,catalog.items,choice);
+export function modelLoadout({equipment,levels,catalog,foe,choice="auto",spellId,prepSeconds=6,includeZero=false,effectsReference={abilities:[],potions:{}},effectSettings={}}) {
+  if(!Number.isFinite(prepSeconds)||prepSeconds<0||prepSeconds>3600)throw Error("Use a delay from 0 to 3,600 seconds.");
+  const skill=loadoutSkill(equipment,catalog.items,choice);
   const issues=loadoutRequirements(equipment,levels,catalog.items),notes=[];
   const spell=catalog.spells.find(s=>s.id===spellId),weapon=catalog.items[equipment.weapon];
+  const effects=resolveLoadoutEffects({equipment,levels,items:catalog.items,reference:effectsReference,settings:effectSettings,skill,spell});
+  const bonuses=effects.bonuses;
   if(!COMBAT_XP_RATES[skill])throw Error("Choose a combat training skill.");
   if(skill==="ranged"&&!weapon?.tags?.includes("bow"))issues.push("Ranged training needs a bow");
   if(["attack","strength","defense"].includes(skill)&&weapon?.tags?.includes("bow"))issues.push("A bow cannot use this training style");
@@ -39,12 +44,12 @@ export function modelLoadout({equipment,levels,catalog,foe,choice="auto",spellId
   if(skill==="evilMagic")notes.push("Spell unlocks and rune supplies must be checked in-game.");
   if(foe?.requiredItem)notes.push("Encounter item required: "+(catalog.items[foe.requiredItem]?.name||nameOf(foe.requiredItem))+". Inventory is not public.");
   let reason=issues.length?"Requirements are not met; combat estimates are unavailable.":foe?.special?"Boss or special encounter: this basic solo model cannot estimate a fight.":foe?.safeSpot&&!["ranged","evilMagic"].includes(skill)?"This safe spot requires Ranged or Evil Magic.":null;
-  if(!foe)return {bonuses,skill,issues,notes,reason:"Select an enemy",row:null};
-  const row=reason?null:compareCombat(levels,bonuses,[foe],{skill,spellMaxHit:spell?.maxHit,prepSeconds,includeZero})[0];
-  return {bonuses,skill,issues,notes,reason,row};
+  if(!foe)return {bonuses,effects,skill,issues,notes,reason:"Select an enemy",row:null};
+  const modeled=reason?{row:null,effects}:compareWithEffects({equipment,levels,catalog,foe,skill,spell,reference:effectsReference,settings:effectSettings,prepSeconds,includeZero});
+  return {bonuses,effects:modeled.effects,skill,issues,notes:[...notes,...modeled.effects.notes],reason,row:modeled.row};
 }
 
-export function renderLoadoutComparison({e,player,levels,catalog,appearance,abilities,byId,entryUrl,paintPlayer,renderSpriteFrame,checkedAt,refreshProfile}) {
+export function renderLoadoutComparison({e,player,levels,catalog,appearance,abilities,effectsReference,byId,entryUrl,paintPlayer,renderSpriteFrame,checkedAt,refreshProfile}) {
   const baseline={...player.equipment};let test={...baseline},disposed=false,previewVersion=0,stopCurrent,stopTest,pickerSlot,pickerReturn,shown=60;
   const fmt=(n,digits=1)=>Number.isFinite(n)?new Intl.NumberFormat("en",{maximumFractionDigits:digits}).format(n):"Unavailable";
   const itemName=id=>catalog.items[id]?.name||nameOf(id)||"Not equipped";
@@ -66,13 +71,13 @@ export function renderLoadoutComparison({e,player,levels,catalog,appearance,abil
     const summary=e("p",{class:"loadout-bonus-summary"}),grants=e("div",{class:"loadout-granted"});
     const card=e("section",{class:"loadout-card "+(key==="test"?"loadout-card-test":"")},e("div",{class:"player-panel-heading"},e("h3",{},key==="current"?"Current gear":"Test loadout"),e("span",{},key==="current"?"Profile snapshot":"Editable")),
       e("div",{class:"player-sprite-stage loadout-sprite-stage"},canvas),artNote,summary,gear,
-      e("details",{class:"loadout-abilities"},e("summary",{},"Gear-granted abilities"),e("p",{class:"world-map-help"},"Availability comes from equipped items. Ability level, unlocks and effects are not included in estimates."),grants));
+      e("details",{class:"loadout-abilities"},e("summary",{"aria-label":(key==="current"?"Current":"Test")+" abilities and potion effects"},"Abilities and potion effects"),grants));
     side[key]={card,canvas,artNote,gear,summary,grants};
   }
   root.append(e("div",{class:"loadout-columns"},side.current.card,side.test.card));
   const warnings=e("div",{class:"loadout-requirements",role:"status"}),statRows=e("tbody");
-  root.append(warnings,e("section",{class:"player-panel loadout-stats"},e("h3",{},"Stat comparison"),e("p",{class:"player-panel-caption"},"Base level plus flat equipment bonuses. These totals are not percentage damage increases. Potions and ability effects are excluded."),
-    e("div",{class:"table-wrap"},e("table",{},e("thead",{},e("tr",{},...["Skill / stat","Base","Current gear","Test gear","Change"].map(t=>e("th",{scope:"col"},t)))),statRows))));
+  root.append(warnings,e("section",{class:"player-panel loadout-stats"},e("h3",{},"Stat comparison"),e("p",{class:"player-panel-caption"},"Base levels plus gear, selected potions and ability bonuses. Temporary stat bonuses are averaged over your entered uptime. Requirements still use trained base levels."),
+    e("div",{class:"table-wrap"},e("table",{},e("thead",{},e("tr",{},...["Skill / stat","Base","Current total","Test total","Change"].map(t=>e("th",{scope:"col"},t)))),statRows))));
   const foeSelect=e("select",{id:"loadout-enemy"},...catalog.activities.filter(a=>a.skill==="attack").sort((a,b)=>Number(a.otherActivity)-Number(b.otherActivity)||a.sortLevel-b.sortLevel).map(a=>e("option",{value:a.mob},a.name+" · Lv "+a.combatLevel)));
   foeSelect.value=catalog.foes.mouse?"mouse":foeSelect.options[0]?.value;
   const prep=e("input",{id:"loadout-preparation",type:"number",min:"0",max:"3600",step:"any",value:"6"});
@@ -91,14 +96,15 @@ export function renderLoadoutComparison({e,player,levels,catalog,appearance,abil
     e("div",{class:"loadout-combat-controls"},e("label",{for:"loadout-enemy"},"Enemy",foeSelect),...styleControls),
     e("details",{},e("summary",{},"Timing assumptions"),e("div",{class:"loadout-timing"},e("label",{for:"loadout-preparation"},"Seconds between fights",prep),e("label",{class:"loadout-checkbox",for:"loadout-zero"},zero,"Include zero-damage rolls"))),combatOutput,
     e("details",{class:"loadout-method"},e("summary",{},"How these estimates work"),
-      e("p",{},"Hit chance and maximum hits use the public client formulas. Kill cycles assume uniform damage rolls, a full weapon interval per swing and the selected delay between full-health enemies. Eating, deaths, banking, queues, buffs, learned abilities and extra attacks are excluded. Dodge represents melee defense only."),
-      e("p",{},"Attack uses an observed baseline of 4 XP per damage. Strength, Defense, Ranged and Evil Magic assume that rate and remain unverified. These are solo training estimates, not boss simulations. Gear-granted and manually listed abilities do not change these estimates."),
+      e("p",{},"Hit chance, max hits, ability power and spell limit breaks follow the public client formulas. The finite-HP model tracks damage rolls, overkill, max-hit XP rewards and eligible extra attacks. It assumes uniform damage and independent procs; transformed damage is rounded down. Steady Aim is modeled on landed shots, and Enlightened on max primary rolls. Extra melee swings do not recursively trigger a new burst; Rapid Fire can chain."),
+      e("p",{},"Bonus and quick attacks use the entered delay (default 2s, unverified). Same-skill potions use the strongest boost; super-potion rounding and XP stacking can be overridden. Temporary buffs use entered uptime shares. Focus needs an entered cast interval because its description does not give a number. Omitted effects are listed beside the result."),
+      e("p",{},"Attack uses an observed baseline of 4 XP per damage. Strength, Defense, Ranged and Evil Magic assume that rate and remain unverified. Rates assume maintained potions and required runes/arrows. Eating, deaths, banking, queues and group combat are excluded. Defense effects reduce expected incoming melee damage, but do not improve XP through eating or survival downtime. These are solo training estimates, not boss simulations."),
+      e("a",{href:"./assets/game-data/loadout-effects-2026-11-21.json"},"Ability and potion model evidence"),e("br"),
       e("a",{href:"./assets/game-data/combat-xp-2026-11-20.json"},"Combat XP evidence"))));
-  const learned=new Set(),learnedList=e("div",{class:"loadout-learned-list"}),learnedSelect=e("select",{id:"loadout-learned"},e("option",{value:""},"Choose an ability…"),...abilities.map(a=>e("option",{value:a.id},a.name)).sort((a,b)=>a.textContent.localeCompare(b.textContent)));
-  const addLearned=e("button",{type:"button",class:"button"},"Add ability");
-  addLearned.addEventListener("click",()=>{if(learnedSelect.value)learned.add(learnedSelect.value);renderLearned();});
-  function renderLearned(){learnedList.replaceChildren(...[...learned].map(id=>{const a=abilities.find(a=>a.id===id),remove=e("button",{type:"button","aria-label":"Remove "+a.name},"Remove");remove.addEventListener("click",()=>{learned.delete(id);renderLearned();});return e("div",{},link(a.name,a.wikiId),remove);}));}
-  root.append(e("details",{class:"player-panel loadout-learned"},e("summary",{},"Learned abilities · optional planning notes"),e("p",{class:"player-panel-caption"},"The public profile does not provide learned abilities or their levels. Add any you want listed with this plan. They are notes only and do not change the calculated stats or rates."),e("div",{class:"loadout-actions"},e("label",{for:"loadout-learned"},"Learned ability",learnedSelect),addLearned),learnedList));
+  const effectControls={};
+  for(const key of ["current","test"]){effectControls[key]=createEffectControls({e,key,getEquipment:()=>key==="current"?baseline:test,levels,reference:effectsReference,catalog,link,onChange:refreshEffects});side[key].grants.append(effectControls[key].node);}
+  const copyEffects=e("button",{type:"button",class:"button"},"Copy current effect settings to test");copyEffects.addEventListener("click",()=>{try{effectControls.test.copyFrom(effectControls.current);refreshEffects();}catch(error){showEffectError(error);}});
+  root.insertBefore(e("div",{class:"loadout-actions"},copyEffects,e("span",{class:"world-map-help"},"Open Abilities and potion effects under each loadout to configure bonuses.")),root.querySelector(".loadout-columns"));
   const pickerSearch=e("input",{type:"search",id:"loadout-item-search",placeholder:"Search equipment…",autocomplete:"off"}),pickerList=e("div",{class:"loadout-picker-results"}),pickerTitle=e("h3",{id:"loadout-picker-title"}),onlyReady=e("input",{type:"checkbox",id:"loadout-ready-only"});
   const close=e("button",{type:"button",class:"button"},"Close"),more=e("button",{type:"button",class:"button"},"Show more items");
   const picker=e("dialog",{class:"loadout-picker","aria-labelledby":"loadout-picker-title"},e("div",{class:"player-panel-heading"},pickerTitle,close),e("label",{for:"loadout-item-search"},"Find equipment",pickerSearch),e("label",{class:"loadout-checkbox",for:"loadout-ready-only"},onlyReady,"Only show items whose level requirements I meet"),pickerList,more);
@@ -125,8 +131,7 @@ export function renderLoadoutComparison({e,player,levels,catalog,appearance,abil
       return e("div",{class:"loadout-gear-row"+(test[slot]!==baseline[slot]?" is-changed":"")},icon(id),e("div",{},e("small",{},label),link(id?itemName(id):"Not equipped",catalog.items[id]?.wikiId)),...(button?[button]:[]));
     }));
     const b=equipmentBonuses(equipment,catalog.items);side[key].summary.textContent=["attack","strength","defense","ranged","evilMagic"].filter(id=>b[id]).map(id=>skillName(id)+" "+(b[id]>=0?"+":"")+b[id]).join(" · ")||"No flat combat bonuses";
-    const granted=abilities.filter(a=>Object.values(equipment).includes(a.onItem));
-    side[key].grants.replaceChildren(...(granted.length?granted.map(a=>e("p",{},link(a.name,a.wikiId),e("small",{},itemName(a.onItem)+" · "+a.summary))):[e("p",{},"No equipment-granted abilities listed.")]));
+    effectControls[key].sync();
   }
   function paint(key,equipment){
     if(key==="test")stopTest?.();else stopCurrent?.();const version=key==="test"?++previewVersion:0;
@@ -140,42 +145,54 @@ export function renderLoadoutComparison({e,player,levels,catalog,appearance,abil
     }).catch(()=>{if(!disposed){side[key].artNote.hidden=false;side[key].artNote.textContent="Appearance artwork could not be loaded.";}});
   }
   function renderStats(){
-    const a=equipmentBonuses(baseline,catalog.items),b=equipmentBonuses(test,catalog.items);
+    const forSide=key=>resolveLoadoutEffects({equipment:key==="current"?baseline:test,levels,items:catalog.items,reference:effectsReference,settings:effectControls[key].read(),skill:loadoutSkill(key==="current"?baseline:test,catalog.items,choices[key].value),spell:catalog.spells.find(s=>s.id===spells[key].value)});
+    const ae=forSide("current"),be=forSide("test"),a=ae.bonuses,b=be.bonuses;
     const statIds=[...catalog.skills.map(s=>s.id),...new Set([...Object.keys(a),...Object.keys(b)].filter(id=>!catalog.skills.some(s=>s.id===id)&&id!=="attackCooldown"))];
     statRows.replaceChildren(...statIds.filter(id=>a[id]||b[id]).map(id=>{
       const isSkill=catalog.skills.some(s=>s.id===id),base=isSkill?(levels[id]||1):0,av=a[id]||0,bv=b[id]||0,delta=bv-av;
       const label={autoEat:"Auto-eat threshold (points)",eatRecovery:"Food healing (HP)",abilitySlots:"Extra ability slots"}[id]||skillName(id);
-      return e("tr",{},e("th",{scope:"row"},label),e("td",{},isSkill?fmt(base):"—"),e("td",{},(av>=0?"+":"")+fmt(av)+(isSkill?" → "+fmt(base+av):"")),e("td",{},(bv>=0?"+":"")+fmt(bv)+(isSkill?" → "+fmt(base+bv):"")),e("td",{class:delta>0?"loadout-gain":delta<0?"loadout-loss":""},(delta>0?"+":"")+fmt(delta)));
+      const cell=(total,effects)=>e("td",{},e("strong",{},isSkill?fmt(base+total):(total>0?"+":"")+fmt(total)),e("small",{class:"loadout-stat-breakdown"},"Gear "+fmt(effects.gear[id]||0)+" · Potion "+fmt(effects.potions[id]||0)+" · Ability "+fmt(total-(effects.gear[id]||0)-(effects.potions[id]||0))));
+      return e("tr",{},e("th",{scope:"row"},label),e("td",{},isSkill?fmt(base):"—"),cell(av,ae),cell(bv,be),e("td",{class:delta>0?"loadout-gain":delta<0?"loadout-loss":""},(delta>0?"+":"")+fmt(delta)));
     }));
-    if(!statRows.children.length)statRows.append(e("tr",{},e("td",{colspan:"5"},"Neither set has flat equipment bonuses. Base skill levels are unchanged.")));
+    const specialLabels={dragonBreathReduction:"Dragon breath reduction (%)",fallDamageReduction:"Fall damage reduction (%)",extraLootSpaces:"Extra loot spaces",regenerationMultiplier:"Health regeneration multiplier",spiritRuneSaving:"Prayer spirit-rune saving chance (%)"};
+    for(const id of new Set([...Object.keys(ae.special),...Object.keys(be.special)])){
+      const av=ae.special[id]??(id==="regenerationMultiplier"?1:0),bv=be.special[id]??(id==="regenerationMultiplier"?1:0);
+      statRows.append(e("tr",{},e("th",{scope:"row"},specialLabels[id]),e("td",{},"—"),e("td",{},fmt(av)),e("td",{},fmt(bv)),e("td",{},(bv-av>0?"+":"")+fmt(bv-av))));
+    }
+    if(!statRows.children.length)statRows.append(e("tr",{},e("td",{colspan:"5"},"Neither set has flat bonuses. Base skill levels are unchanged.")));
     const issues=loadoutRequirements(test,levels,catalog.items);warnings.replaceChildren(...(issues.length?[e("h3",{},"Test loadout requirements"),e("ul",{},...issues.map(t=>e("li",{},t)))]:[]));
     const count=loadoutSlots.filter(([slot])=>test[slot]!==baseline[slot]).length;
-    changed.textContent=count?count+" equipment "+(count===1?"slot changed":"slots changed")+" · "+(issues.length?"Requirements not met":"Level requirements met"):"Both loadouts match your current equipment.";
+    changed.textContent=count?count+" equipment "+(count===1?"slot changed":"slots changed")+" · "+(issues.length?"Requirements not met":"Level requirements met"):"Equipment matches the reported profile; effect assumptions can differ.";
   }
   function renderCombat(){
     const foe=catalog.foes[foeSelect.value],configs={current:baseline,test},models={};
     if(prep.value.trim()===""||!prep.validity.valid){combatOutput.replaceChildren(e("p",{class:"comparison-warning"},"Enter a valid delay from 0 to 3,600 seconds."));return;}
     for(const key of ["current","test"]){
       const skill=loadoutSkill(configs[key],catalog.items,choices[key].value);side[key].spellWrap.hidden=skill!=="evilMagic";
-      models[key]=modelLoadout({equipment:configs[key],levels,catalog,foe,choice:choices[key].value,spellId:spells[key].value,prepSeconds:Number(prep.value),includeZero:zero.checked});
+      effectControls[key].setSpell(catalog.spells.find(s=>s.id===spells[key].value));
+      models[key]=modelLoadout({equipment:configs[key],levels,catalog,foe,choice:choices[key].value,spellId:spells[key].value,prepSeconds:Number(prep.value),includeZero:zero.checked,effectsReference,effectSettings:effectControls[key].read()});
     }
     const headers=["Metric","Current gear","Test loadout","Change"],rows=[];
     const metric=(title,read,unit="",percent=false,lowerBetter=false)=>{
-      const a=models.current,b=models.test,av=a.reason?null:read(a.row),bv=b.reason?null:read(b.row);
+      const a=models.current,b=models.test,aRaw=a.reason?null:read(a.row),bRaw=b.reason?null:read(b.row),av=Number.isFinite(aRaw)?aRaw:null,bv=Number.isFinite(bRaw)?bRaw:null;
       const show=v=>v===null?"Not modeled":fmt(percent?v*100:v)+unit;
-      const delta=av!==null&&bv!==null?bv-av:null,relative=delta!==null&&av!==0?delta/Math.abs(av)*100:null;
+      const rawDelta=av!==null&&bv!==null?bv-av:null,delta=rawDelta!==null&&Math.abs(rawDelta)<1e-7?0:rawDelta,relative=delta!==null&&av!==0?delta/Math.abs(av)*100:null;
       const color=delta===null||delta===0?"":(lowerBetter?delta<0:delta>0)?"loadout-gain":"loadout-loss";
       rows.push(e("tr",{},e("th",{scope:"row"},title),e("td",{},show(av)),e("td",{},show(bv)),e("td",{class:color},delta===null?"—":(delta>0?"+":"")+fmt(percent?delta*100:delta)+(percent?" percentage points":unit)+(relative!==null&&!percent?" ("+(relative>0?"+":"")+fmt(relative)+"%)":""))));
     };
-    metric("Hit chance",r=>r.hitChance,"%",true);metric("Maximum hit",r=>r.maxHit);metric("Attack interval",r=>r.attackSeconds,"s",false,true);metric("Melee dodge chance",r=>r.dodgeChance,"%",true);metric("Estimated kill cycle",r=>r.cycleSeconds,"s",false,true);metric("Estimated damage/hour",r=>r.damagePerHour);metric("Estimated XP/hour",r=>r.xpPerHour);
+    metric("Hit chance",r=>r.hitChance,"%",true);metric("Maximum hit (highest buff state)",r=>r.maxHit);metric("Average attack interval",r=>r.attackSeconds,"s",false,true);metric("Melee dodge chance",r=>r.dodgeChance,"%",true);metric("Expected incoming melee damage/hour",r=>r.incomingDamagePerHour,"",false,true);metric("Estimated kill cycle",r=>r.cycleSeconds,"s",false,true);metric("Estimated damage/hour",r=>r.damagePerHour);metric("Estimated XP/hour",r=>r.xpPerHour);
     combatOutput.replaceChildren(e("p",{class:"loadout-combat-context"},link(foe.name,foe.wikiId)," · "+foe.hp+" HP · Current: "+skillName(models.current.skill)+" · Test: "+skillName(models.test.skill)),
       e("div",{class:"table-wrap"},e("table",{},e("thead",{},e("tr",{},...headers.map(t=>e("th",{scope:"col"},t)))),e("tbody",{},...rows))),
-      ...["current","test"].flatMap(key=>{const m=models[key];return [...(m.reason?[e("p",{class:"comparison-warning"},(key==="current"?"Current gear: ":"Test loadout: ")+m.reason+" "+m.issues.join("; "))]:[]),...m.notes.map(t=>e("p",{class:"world-map-help"},t))];}),
-      e("p",{class:"world-map-help"},"XP baseline: Current "+COMBAT_XP_RATES[models.current.skill].status+" · Test "+COMBAT_XP_RATES[models.test.skill].status+". "+(models.current.skill!==models.test.skill?"These rates train different skills. ":"")+"Food, abilities and potion effects are not included."));
+      ...["current","test"].flatMap(key=>{const m=models[key],name=key==="current"?"Current gear":"Test loadout";return [...(m.reason?[e("p",{class:"comparison-warning"},name+": "+m.reason+" "+m.issues.join("; "))]:[]),
+        ...(m.effects.omitted.length?[e("div",{class:"loadout-effect-omitted"},e("strong",{},name+" · partial effect estimate"),e("ul",{},...m.effects.omitted.map(t=>e("li",{},t))))]:[]),
+        ...(m.effects.applied.length?[e("p",{class:"world-map-help"},name+" configured effects (where applicable): "+m.effects.applied.join("; "))]:[]),...m.notes.map(t=>e("p",{class:"world-map-help"},name+": "+t))];}),
+      e("p",{class:"world-map-help"},"XP baseline: Current "+COMBAT_XP_RATES[models.current.skill].status+" · Test "+COMBAT_XP_RATES[models.test.skill].status+". "+(models.current.skill!==models.test.skill?"These rates train different skills. ":"")+"Configured effects are included where supported. Eating, banking and survival downtime are excluded."));
   }
-  function renderTest(){renderGear("test",test);paint("test",test);renderStats();renderCombat();}
-  reset.addEventListener("click",()=>{test={...baseline};choices.test.value="auto";renderTest();});
-  for(const control of [foeSelect,prep,zero,...Object.values(choices),...Object.values(spells)])control.addEventListener("input",renderCombat);
+  function showEffectError(error){statRows.replaceChildren(e("tr",{},e("td",{colspan:"5"},"Enter valid ability and potion assumptions to compare totals.")));combatOutput.replaceChildren(e("p",{class:"comparison-warning",role:"status"},error.message));}
+  function refreshEffects(){try{renderStats();renderCombat();}catch(error){showEffectError(error);}}
+  function renderTest(){renderGear("test",test);paint("test",test);refreshEffects();}
+  reset.addEventListener("click",()=>{try{effectControls.test.copyFrom(effectControls.current);test={...baseline};choices.test.value=choices.current.value;spells.test.value=spells.current.value;renderTest();}catch(error){showEffectError(error);}});
+  for(const control of [foeSelect,prep,zero,...Object.values(choices),...Object.values(spells)])control.addEventListener("input",refreshEffects);
   renderGear("current",baseline);paint("current",baseline);renderTest();
   return {node:root,dispose(){disposed=true;previewVersion++;stopCurrent?.();stopTest?.();if(picker.open)picker.close();}};
 }

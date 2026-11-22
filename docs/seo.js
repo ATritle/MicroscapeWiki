@@ -40,7 +40,7 @@ export function pageMetadata(route, byId, groups) {
     "live-drops":["Live Twitch Drops", "Find active Microscape Audience Favor festivals, Dungeon Key drops and Twitch channels offering 1.3× Energy."],
     "player-lookup":["Player Lookup", "Look up a Microscape player’s public skills, stats and equipped gear."],
     "activity-comparison":["Activity Comparison", "Compare Microscape training activities using your player’s levels and gear, with estimated XP per hour, hit chances and requirements."],
-    "gear-comparison":["Gear and Loadout Comparison", "Compare a Microscape player’s current equipment with a test loadout, preview gear, check requirements and estimate combat performance."],
+    "gear-comparison":["Gear and Loadout Comparison", "Compare a Microscape player’s equipment, abilities and potions. Preview gear, check requirements and estimate stats and combat XP per hour."],
     bazaar:["Live Bazaar", "Search Microscape Bazaar buy and sell orders, prices and trading guides."],
     search:["Search the Wiki", "Search Microscape guides, items, skills, pets, foes and locations."]
   };

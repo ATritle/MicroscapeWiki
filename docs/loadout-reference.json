@@ -9,6 +9,10 @@
       "requirements": {},
       "permanentUnlockLevel": 20,
       "type": "scaling",
+      "category": "gathering",
+      "maxPower": 10,
+      "investmentTier": 6,
+      "description": "$curr% chance ($min-$max) to catch a magic carp instead of your usual catch",
       "summary": "You can catch a Magic Carp in place of your usual catch."
     },
     {
@@ -19,6 +23,10 @@
       "requirements": {},
       "permanentUnlockLevel": 20,
       "type": "scaling",
+      "category": "rangedCombat",
+      "maxPower": 100,
+      "investmentTier": 4000,
+      "description": "$curr% chance ($min-$max) to gain 10% more experience by sacrificing an additional arrow.",
       "summary": "Can spend one extra arrow for 10% more experience."
     },
     {
@@ -29,6 +37,10 @@
       "requirements": {},
       "permanentUnlockLevel": 10,
       "type": "scaling",
+      "category": "processing",
+      "maxPower": 50,
+      "investmentTier": 100,
+      "description": "$curr% chance ($min-$max) to double experience from cooking bread",
       "summary": "Baking bread can award double XP."
     },
     {
@@ -39,6 +51,10 @@
       "requirements": {},
       "permanentUnlockLevel": 45,
       "type": "scaling",
+      "category": "meleeCombat",
+      "maxPower": 20,
+      "investmentTier": 4000,
+      "description": "$curr% chance ($min-$max) when hit to gain Berserk: +12 strength and -4 attack for your next 4 swings.",
       "summary": "Taking a hit can grant +12 Strength and −4 Attack for your next four swings."
     },
     {
@@ -49,6 +65,10 @@
       "requirements": {},
       "permanentUnlockLevel": 30,
       "type": "scaling",
+      "category": "utility",
+      "maxPower": 20,
+      "investmentTier": 2,
+      "description": "Chance to gain double the experience from skilling activities, equal to $curr% ($min-$max) minus your double up chance.",
       "summary": "Skilling can award double XP. The chance is the ability’s power minus your double up chance."
     },
     {
@@ -59,6 +79,10 @@
       "requirements": {},
       "permanentUnlockLevel": 79,
       "type": "scaling",
+      "category": "magicCombat",
+      "maxPower": 25,
+      "investmentTier": 4,
+      "description": "Upon casting a blood rune spell, $curr% ($min-$max) chance to take 5 damage and build up a protective ward that absorbs up to 30 damage and lasts 30s.",
       "summary": "Casting a Blood Rune spell can cost 5 HP and create a ward that absorbs up to 30 damage for 30 seconds."
     },
     {
@@ -69,6 +93,10 @@
       "requirements": {},
       "permanentUnlockLevel": 60,
       "type": "scaling",
+      "category": "meleeCombat",
+      "maxPower": 40,
+      "investmentTier": 4,
+      "description": "When swinging at a target below 25% HP, $curr% chance ($min-$max) to swing 3 times.",
       "summary": "A swing can hit three times against a target below 25% HP."
     },
     {
@@ -79,6 +107,10 @@
       "requirements": {},
       "permanentUnlockLevel": 70,
       "type": "scaling",
+      "category": "gathering",
+      "maxPower": 30,
+      "investmentTier": 10000,
+      "description": "$curr% chance ($min-$max) to catch double the fish and gain double fishing experience",
       "summary": "A catch can award twice the fish and Fishing XP."
     },
     {
@@ -89,6 +121,9 @@
       "requirements": {},
       "permanentUnlockLevel": 15,
       "type": "static",
+      "category": "prayer",
+      "investmentTier": 300,
+      "description": "A prayer that increases your strength by 10. Consumes one spirit rune per attack.",
       "summary": "Adds 10 Strength. Uses one Spirit Rune on each melee attack."
     },
     {
@@ -99,6 +134,10 @@
       "requirements": {},
       "permanentUnlockLevel": 40,
       "type": "scaling",
+      "category": "magicCombat",
+      "maxPower": 25,
+      "investmentTier": 4,
+      "description": "Upon casting a chaos rune spell, $curr% ($min-$max) chance to spend a mind rune instead of the chaos rune.",
       "summary": "Casting a spell that uses a Chaos Rune can spend a Mind Rune in its place."
     },
     {
@@ -109,6 +148,9 @@
       "requirements": {},
       "permanentUnlockLevel": 15,
       "type": "static",
+      "category": "prayer",
+      "investmentTier": 300,
+      "description": "A prayer that increases your attack by 10. Consumes one spirit rune per attack.",
       "summary": "Adds 10 Attack. Uses one Spirit Rune on each melee attack."
     },
     {
@@ -119,6 +161,9 @@
       "requirements": {},
       "permanentUnlockLevel": 3,
       "type": "static",
+      "category": "utility",
+      "investmentTier": 0,
+      "description": "Lightly burns you once in a while.",
       "summary": "Scales occasionally deals a small amount of fire damage to its owner."
     },
     {
@@ -131,6 +176,10 @@
       },
       "permanentUnlockLevel": 40,
       "type": "scaling",
+      "category": "processing",
+      "maxPower": 0,
+      "investmentTier": 6,
+      "description": "Chance to use one less coal per ore smelted or superheated. Your chance is ( 10 + Firemaking level + Ability level )%",
       "summary": "Smelting or superheating can use one fewer Coal Ore. The chance in percent is 10 + Firemaking level + ability level."
     },
     {
@@ -141,6 +190,10 @@
       "requirements": {},
       "permanentUnlockLevel": 20,
       "type": "scaling",
+      "category": "magicCombat",
+      "maxPower": 100,
+      "investmentTier": 360,
+      "description": "$curr% chance ($min-$max) to save 2 air runes when casting spells or performing activities",
       "summary": "Casting spells or performing activities can save two Air Runes."
     },
     {
@@ -151,6 +204,10 @@
       "requirements": {},
       "permanentUnlockLevel": 20,
       "type": "scaling",
+      "category": "magicCombat",
+      "maxPower": 100,
+      "investmentTier": 480,
+      "description": "$curr% chance ($min-$max) to save 2 fire runes when casting spells or performing activities",
       "summary": "Casting spells or performing activities can save two Fire Runes."
     },
     {
@@ -161,6 +218,10 @@
       "requirements": {},
       "permanentUnlockLevel": 50,
       "type": "scaling",
+      "category": "meleeCombat",
+      "maxPower": 15,
+      "investmentTier": 8,
+      "description": "$curr% chance ($min-$max) on swing to gain +100 strength for 24s.",
       "summary": "A swing can grant +100 Strength for 24 seconds."
     },
     {
@@ -171,6 +232,9 @@
       "requirements": {},
       "permanentUnlockLevel": 35,
       "type": "static",
+      "category": "meleeCombat",
+      "investmentTier": 10,
+      "description": "Doubles your physical damage and delay with two handed weapons.",
       "summary": "Doubles both physical damage and the time between swings with a two-handed weapon."
     },
     {
@@ -181,6 +245,10 @@
       "requirements": {},
       "permanentUnlockLevel": 60,
       "type": "scaling",
+      "category": "magicCombat",
+      "maxPower": 75,
+      "investmentTier": 10,
+      "description": "$curr% chance ($min-$max), when a spell would hit for 1, to deal your max hit instead.",
       "summary": "A spell roll of 1 damage can become a maximum-damage hit."
     },
     {
@@ -191,6 +259,10 @@
       "requirements": {},
       "permanentUnlockLevel": 50,
       "type": "scaling",
+      "category": "magicCombat",
+      "maxPower": 75,
+      "investmentTier": 6,
+      "description": "Lets you perform the Dark Ritual at the Totem of Zem. $curr% ($min-$max) chance to not consume the cut diamond.",
       "summary": "Lets you perform the Dark Ritual at the Totem of Zem and gives you a chance to keep the Cut Diamond."
     },
     {
@@ -201,6 +273,10 @@
       "requirements": {},
       "permanentUnlockLevel": 60,
       "type": "scaling",
+      "category": "generalCombat",
+      "maxPower": 25,
+      "investmentTier": 2,
+      "description": "$curr% chance ($min-$max) on a melee swing to spit a fireball at your target for up to 10 fire damage.",
       "summary": "A melee swing can launch a fireball that deals up to 10 fire damage."
     },
     {
@@ -211,6 +287,10 @@
       "requirements": {},
       "permanentUnlockLevel": 50,
       "type": "scaling",
+      "category": "generalCombat",
+      "maxPower": 10,
+      "investmentTier": 20,
+      "description": "$curr% chance ($min-$max) to make your foe skip its attack.",
       "summary": "Can cause your enemy to skip an attack."
     },
     {
@@ -221,6 +301,10 @@
       "requirements": {},
       "permanentUnlockLevel": 30,
       "type": "scaling",
+      "category": "processing",
+      "maxPower": 10,
+      "investmentTier": 30,
+      "description": "$curr% chance ($min-$max) to make a chunk of dross when forging an item",
       "summary": "Forging can create one piece of Dross."
     },
     {
@@ -231,6 +315,10 @@
       "requirements": {},
       "permanentUnlockLevel": 18,
       "type": "scaling",
+      "category": "magicCombat",
+      "maxPower": 25,
+      "investmentTier": 4,
+      "description": "Upon casting a mind rune spell, $curr% ($min-$max) chance to gain Empowered Mind for 22s: +2 Wind Strike and Fire Strike max damage.",
       "summary": "Casting a spell that uses a Mind Rune can raise the maximum damage of Wind Strike and Fire Strike by 2 for 22 seconds."
     },
     {
@@ -241,6 +329,10 @@
       "requirements": {},
       "permanentUnlockLevel": 60,
       "type": "scaling",
+      "category": "generalCombat",
+      "maxPower": 100,
+      "investmentTier": 2400,
+      "description": "$curr% chance ($min-$max) when hitting your max hit to double the experience gained.",
       "summary": "A maximum-damage hit can award double experience."
     },
     {
@@ -251,6 +343,10 @@
       "requirements": {},
       "permanentUnlockLevel": 75,
       "type": "scaling",
+      "category": "meleeCombat",
+      "maxPower": 40,
+      "investmentTier": 0,
+      "description": "$curr% chance ($min-$max) on a melee swing to deal the damage above 10 as fire to all enemies within 20 paces and to yourself.",
       "summary": "A melee swing can apply the part of its damage above 10 as fire damage to you and all enemies within 20 paces."
     },
     {
@@ -261,6 +357,10 @@
       "requirements": {},
       "permanentUnlockLevel": 40,
       "type": "scaling",
+      "category": "meleeCombat",
+      "maxPower": 20,
+      "investmentTier": 560,
+      "description": "$curr% chance ($min-$max) when obtaining a spirit rune while meleeing to gain Fanaticism, making your next two swings quick. Consumes a blood rune.",
       "summary": "Gaining a Spirit Rune in melee can speed up your next two swings. The effect uses a Blood Rune."
     },
     {
@@ -273,6 +373,9 @@
       },
       "permanentUnlockLevel": 60,
       "type": "static",
+      "category": "evilMagic",
+      "investmentTier": 10000,
+      "description": "A spell that deals up to $maxHit fire damage. Casting requires five fire runes, three air runes, and a death rune.",
       "summary": "An offensive spell that deals fire damage."
     },
     {
@@ -285,6 +388,9 @@
       },
       "permanentUnlockLevel": 50,
       "type": "static",
+      "category": "evilMagic",
+      "investmentTier": 16000,
+      "description": "A spell that deals up to $maxHit fire damage. Casting requires four fire runes, two air runes, and a chaos rune.",
       "summary": "An offensive spell that deals fire damage."
     },
     {
@@ -297,6 +403,9 @@
       },
       "permanentUnlockLevel": 40,
       "type": "static",
+      "category": "evilMagic",
+      "investmentTier": 13000,
+      "description": "A spell that deals up to $maxHit fire damage. Casting requires three fire runes and a mind rune.",
       "summary": "An offensive spell that deals fire damage."
     },
     {
@@ -309,6 +418,9 @@
       },
       "permanentUnlockLevel": 65,
       "type": "static",
+      "category": "evilMagic",
+      "investmentTier": 0,
+      "description": "A spell that deals up to $maxHit fire damage. Casting requires eight fire runes, five air runes, and a blood rune.",
       "summary": "An offensive spell that deals fire damage."
     },
     {
@@ -321,6 +433,10 @@
       },
       "permanentUnlockLevel": 30,
       "type": "scaling",
+      "category": "processing",
+      "maxPower": 30,
+      "investmentTier": 300,
+      "description": "$curr% chance ($min-$max) to burn 2-8 logs at once, granting experience for each, but less ash",
       "summary": "A burn can consume 2–8 logs in one action. You get XP for each log and less ash."
     },
     {
@@ -331,6 +447,10 @@
       "requirements": {},
       "permanentUnlockLevel": 30,
       "type": "scaling",
+      "category": "processing",
+      "maxPower": 20,
+      "investmentTier": 6,
+      "description": "$curr% chance ($min-$max) to double experience from fletching",
       "summary": "Fletching can award double XP."
     },
     {
@@ -341,6 +461,9 @@
       "requirements": {},
       "permanentUnlockLevel": 50,
       "type": "static",
+      "category": "magicCombat",
+      "investmentTier": 6,
+      "description": "Your spells cast slower but each one hits for 20% more damage.",
       "summary": "Spells take longer to cast and deal 20% more damage."
     },
     {
@@ -353,6 +476,10 @@
       },
       "permanentUnlockLevel": 75,
       "type": "scaling",
+      "category": "magicCombat",
+      "maxPower": 25,
+      "investmentTier": 2,
+      "description": "$curr% chance ($min-$max) for your spell to deal 50% more damage but also strike you for the full amount, though never enough to kill.",
       "summary": "A spell can deal 50% more damage. It also hits you for the full amount, up to the point that leaves you alive."
     },
     {
@@ -363,6 +490,10 @@
       "requirements": {},
       "permanentUnlockLevel": 30,
       "type": "scaling",
+      "category": "processing",
+      "maxPower": 100,
+      "investmentTier": 50,
+      "description": "$curr% chance ($min-$max) to triple experience from cutting gems",
       "summary": "Cutting gems can award triple XP."
     },
     {
@@ -373,6 +504,9 @@
       "requirements": {},
       "permanentUnlockLevel": 20,
       "type": "static",
+      "category": "utility",
+      "investmentTier": 10,
+      "description": "Increases loot bag capacity by 3.",
       "summary": "Adds three spaces to your loot bag."
     },
     {
@@ -383,6 +517,10 @@
       "requirements": {},
       "permanentUnlockLevel": 25,
       "type": "scaling",
+      "category": "rangedCombat",
+      "maxPower": 75,
+      "investmentTier": 5000,
+      "description": "$curr% chance ($min-$max) to deal 2 damage instead of missing.",
       "summary": "A ranged miss can deal 2 damage instead."
     },
     {
@@ -393,6 +531,10 @@
       "requirements": {},
       "permanentUnlockLevel": 20,
       "type": "scaling",
+      "category": "gathering",
+      "maxPower": 100,
+      "investmentTier": 6,
+      "description": "$curr% chance ($min-$max) to double the yield when picking grain or flax",
       "summary": "Harvesting grain or flax can produce twice the usual yield."
     },
     {
@@ -403,6 +545,10 @@
       "requirements": {},
       "permanentUnlockLevel": 40,
       "type": "scaling",
+      "category": "rangedCombat",
+      "maxPower": 60,
+      "investmentTier": 10000,
+      "description": "$curr% chance ($min-$max) to cast Fire Strike as you shoot. Requires appropriate runes.",
       "summary": "A shot can cast Fire Strike when you have the runes for it."
     },
     {
@@ -413,6 +559,10 @@
       "requirements": {},
       "permanentUnlockLevel": 40,
       "type": "scaling",
+      "category": "magicCombat",
+      "maxPower": 100,
+      "investmentTier": 6,
+      "description": "Curses you when landing a spell for damage ending in 4, causing your next spell to hit for only 1 damage. $curr% ($min-$max) chance.",
       "summary": "Spell damage ending in 4 can curse you, causing your next spell to deal 1 damage."
     },
     {
@@ -423,6 +573,10 @@
       "requirements": {},
       "permanentUnlockLevel": 60,
       "type": "scaling",
+      "category": "generalCombat",
+      "maxPower": 80,
+      "investmentTier": 1,
+      "description": "Stores $curr% ($min-$max) of the fire damage you take (for 60s, refreshing) and unleashes it as a fireball at the next enemy to land a melee hit on you. Requires a shield equipped.",
       "summary": "With a shield equipped, stores a share of fire damage you take for 60 seconds. The next enemy to hit you in melee takes the stored damage as a fireball. Taking more fire damage refreshes the duration."
     },
     {
@@ -433,6 +587,10 @@
       "requirements": {},
       "permanentUnlockLevel": 30,
       "type": "scaling",
+      "category": "gathering",
+      "maxPower": 100,
+      "investmentTier": 1000,
+      "description": "Mining double ups have a $curr% chance ($min-$max) to build 2-6 hunger, stinging you for 1-3 damage. At 10 hunger, your next mining double up triggers twice and eats your equipped meat pie.",
       "summary": "A Mining double up can add 2–6 Hunger and deal 1–3 damage to you. At 10 Hunger, the next Mining double up triggers twice and consumes your equipped Meat Pie."
     },
     {
@@ -445,6 +603,10 @@
       },
       "permanentUnlockLevel": 35,
       "type": "scaling",
+      "category": "gathering",
+      "maxPower": 15,
+      "investmentTier": 6,
+      "description": "$curr% chance ($min-$max) to also mine a piece of coal when mining any ore underground",
       "summary": "Mining ore underground can also yield Coal Ore."
     },
     {
@@ -455,6 +617,10 @@
       "requirements": {},
       "permanentUnlockLevel": 30,
       "type": "scaling",
+      "category": "gathering",
+      "maxPower": 50,
+      "investmentTier": 200,
+      "description": "$curr% chance ($min-$max) to keep your feather, shrimp or frog bait when fishing",
       "summary": "A fishing action can preserve the Feather, Raw Shrimp, or Raw Frog it uses as bait."
     },
     {
@@ -465,6 +631,10 @@
       "requirements": {},
       "permanentUnlockLevel": 20,
       "type": "scaling",
+      "category": "gathering",
+      "maxPower": 100,
+      "investmentTier": 200,
+      "description": "$curr% chance ($min-$max) when mining copper or tin, to mine whichever one you have the least of",
       "summary": "Mining copper or tin can yield whichever of those two ores you have less of."
     },
     {
@@ -475,6 +645,10 @@
       "requirements": {},
       "permanentUnlockLevel": 35,
       "type": "scaling",
+      "category": "generalCombat",
+      "maxPower": 50,
+      "investmentTier": 6,
+      "description": "$curr% chance ($min-$max) to reflect fire spell damage back at the caster.",
       "summary": "Can send damage from a fire spell back to its caster."
     },
     {
@@ -487,6 +661,10 @@
       },
       "permanentUnlockLevel": 30,
       "type": "scaling",
+      "category": "gathering",
+      "maxPower": 100,
+      "investmentTier": 250,
+      "description": "$curr% chance ($min-$max) to gain 6 crafting experience when mining clay",
       "summary": "Mining clay can award 6 Crafting XP."
     },
     {
@@ -497,6 +675,9 @@
       "requirements": {},
       "permanentUnlockLevel": 60,
       "type": "static",
+      "category": "prayer",
+      "investmentTier": 4000,
+      "description": "A prayer with a 60% chance to make enemies skip their turn. Consumes a sacred rune per skipped attack.",
       "summary": "Has a 60% chance to skip an enemy attack. A skipped attack uses one Sacred Rune."
     },
     {
@@ -507,6 +688,10 @@
       "requirements": {},
       "permanentUnlockLevel": 50,
       "type": "scaling",
+      "category": "generalCombat",
+      "maxPower": 10,
+      "investmentTier": 100,
+      "description": "$curr% chance ($min-$max) of parrying enemy melee attacks while wielding any staff, or a two handed melee weapon.",
       "summary": "A staff or two-handed melee weapon can parry enemy melee attacks."
     },
     {
@@ -517,6 +702,9 @@
       "requirements": {},
       "permanentUnlockLevel": 30,
       "type": "static",
+      "category": "utility",
+      "investmentTier": 4,
+      "description": "Every two minutes, tosses 2-10 of your coins to another player in your zone.",
       "summary": "Every two minutes the cape gives another player in your zone 2–10 of your coins."
     },
     {
@@ -527,6 +715,10 @@
       "requirements": {},
       "permanentUnlockLevel": 45,
       "type": "scaling",
+      "category": "generalCombat",
+      "maxPower": 100,
+      "investmentTier": 334,
+      "description": "$curr% chance ($min-$max) to gain a spirit rune when taking 10 or more damage.",
       "summary": "Taking at least 10 damage can grant a Spirit Rune."
     },
     {
@@ -539,6 +731,10 @@
       },
       "permanentUnlockLevel": 30,
       "type": "scaling",
+      "category": "gathering",
+      "maxPower": 20,
+      "investmentTier": 100,
+      "description": "$curr% chance ($min-$max) to obtain a feather when fishing",
       "summary": "Fishing can yield an extra Feather."
     },
     {
@@ -549,6 +745,10 @@
       "requirements": {},
       "permanentUnlockLevel": 60,
       "type": "scaling",
+      "category": "generalCombat",
+      "maxPower": 15,
+      "investmentTier": 6,
+      "description": "$curr% chance ($min-$max) for your active prayers to also trigger on allies fighting the same monster.",
       "summary": "Your active prayers can also affect allies attacking the same enemy."
     },
     {
@@ -559,6 +759,10 @@
       "requirements": {},
       "permanentUnlockLevel": 50,
       "type": "scaling",
+      "category": "gathering",
+      "maxPower": 100,
+      "investmentTier": 20,
+      "description": "$curr% chance ($min-$max) of destroying the iron you just mined, gaining 50% more experience",
       "summary": "An Iron Ore you mine can be destroyed to award 50% more XP."
     },
     {
@@ -569,6 +773,10 @@
       "requirements": {},
       "permanentUnlockLevel": 60,
       "type": "scaling",
+      "category": "generalCombat",
+      "maxPower": 80,
+      "investmentTier": 10,
+      "description": "Reduces damage from dragon's fire breath by $curr% ($min-$max)",
       "summary": "Reduces incoming damage from dragon breath by a percentage that rises with ability level."
     },
     {
@@ -579,6 +787,10 @@
       "requirements": {},
       "permanentUnlockLevel": 50,
       "type": "scaling",
+      "category": "processing",
+      "maxPower": 100,
+      "investmentTier": 8,
+      "description": "Consume a chunk of dross when forging an item of steel or better to gain a stack of Quenched, reducing the coal required to smelt that metal's bar by $curr% ($min-$max)",
       "summary": "Forging steel or better gear can use Dross for a Quenched stack. It reduces the coal needed to smelt a bar of that metal."
     },
     {
@@ -589,6 +801,10 @@
       "requirements": {},
       "permanentUnlockLevel": 25,
       "type": "scaling",
+      "category": "magicCombat",
+      "maxPower": 100,
+      "investmentTier": 14,
+      "description": "$curr% chance ($min-$max) to cast your first spell quickly.",
       "summary": "Can speed up the first spell you cast."
     },
     {
@@ -599,6 +815,10 @@
       "requirements": {},
       "permanentUnlockLevel": 40,
       "type": "scaling",
+      "category": "rangedCombat",
+      "maxPower": 20,
+      "investmentTier": 10000,
+      "description": "$curr% chance ($min-$max) to shoot again. Can trigger itself.",
       "summary": "Can fire an extra shot, and that shot can trigger Rapid Fire again."
     },
     {
@@ -609,6 +829,9 @@
       "requirements": {},
       "permanentUnlockLevel": 50,
       "type": "static",
+      "category": "prayer",
+      "investmentTier": 1000,
+      "description": "A prayer that triples your health regeneration speed. Consumes one spirit rune per regeneration event.",
       "summary": "Triples health regeneration speed. Each regeneration event uses one Spirit Rune."
     },
     {
@@ -621,6 +844,10 @@
       },
       "permanentUnlockLevel": 35,
       "type": "scaling",
+      "category": "gathering",
+      "maxPower": 25,
+      "investmentTier": 18,
+      "description": "$curr% chance ($min-$max) to find gold ore when cutting yew or magic trees.",
       "summary": "Chopping a yew or magic tree can yield Gold Ore."
     },
     {
@@ -631,6 +858,10 @@
       "requirements": {},
       "permanentUnlockLevel": 40,
       "type": "scaling",
+      "category": "generalCombat",
+      "maxPower": 10,
+      "investmentTier": 4,
+      "description": "$curr% chance ($min-$max) for an enemy swing to bounce off you.",
       "summary": "An enemy swing can bounce off you."
     },
     {
@@ -641,6 +872,10 @@
       "requirements": {},
       "permanentUnlockLevel": 20,
       "type": "scaling",
+      "category": "generalCombat",
+      "maxPower": 6,
+      "investmentTier": 20,
+      "description": "$curr% chance ($min-$max) to gain a spirit rune when dealing damage.",
       "summary": "Dealing damage can grant a Spirit Rune."
     },
     {
@@ -651,6 +886,10 @@
       "requirements": {},
       "permanentUnlockLevel": 60,
       "type": "scaling",
+      "category": "meleeCombat",
+      "maxPower": 30,
+      "investmentTier": 334,
+      "description": "When using a progrite weapon, $curr% chance ($min-$max) to swing twice at demons.",
       "summary": "A Progrite weapon can swing twice against a demon."
     },
     {
@@ -663,6 +902,10 @@
       },
       "permanentUnlockLevel": 25,
       "type": "scaling",
+      "category": "processing",
+      "maxPower": 20,
+      "investmentTier": 22,
+      "description": "When cooking on a fire, 20% chance to burn food, but $curr% bonus cooking XP ($min-$max). Burning still grants XP.",
       "summary": "Cooking at a fire grants a level-dependent XP bonus and adds a 20% chance to burn the food. A burned action still awards XP."
     },
     {
@@ -673,6 +916,10 @@
       "requirements": {},
       "permanentUnlockLevel": 50,
       "type": "scaling",
+      "category": "generalCombat",
+      "maxPower": 100,
+      "investmentTier": 6,
+      "description": "$curr% chance ($min-$max) to gain a blood rune when slaying an enemy with more than 100 maximum HP.",
       "summary": "Killing an enemy with more than 100 maximum HP can grant a Blood Rune."
     },
     {
@@ -683,6 +930,10 @@
       "requirements": {},
       "permanentUnlockLevel": 50,
       "type": "scaling",
+      "category": "meleeCombat",
+      "maxPower": 50,
+      "investmentTier": 8,
+      "description": "$curr% chance ($min-$max) to steal 1 HP when swinging for more than 5 damage and the enemy is not at full health.",
       "summary": "A swing that deals more than 5 damage can steal 1 HP from a target that is below full health."
     },
     {
@@ -693,6 +944,10 @@
       "requirements": {},
       "permanentUnlockLevel": 40,
       "type": "scaling",
+      "category": "generalCombat",
+      "maxPower": 100,
+      "investmentTier": 14,
+      "description": "$curr% chance ($min-$max) to heal 1 HP when taking 4 or more damage.",
       "summary": "Taking at least 4 damage can heal you for 1 HP."
     },
     {
@@ -703,6 +958,10 @@
       "requirements": {},
       "permanentUnlockLevel": 45,
       "type": "scaling",
+      "category": "rangedCombat",
+      "maxPower": 100,
+      "investmentTier": 66,
+      "description": "$curr% chance ($min-$max) for arrows to return to you when fighting from safe spots.",
       "summary": "Arrows can return to you when you fight from a safe spot."
     },
     {
@@ -713,6 +972,9 @@
       "requirements": {},
       "permanentUnlockLevel": 10,
       "type": "static",
+      "category": "utility",
+      "investmentTier": 6,
+      "description": "Increases loot bag capacity by 2.",
       "summary": "Adds two spaces to your loot bag."
     },
     {
@@ -725,6 +987,10 @@
       },
       "permanentUnlockLevel": 30,
       "type": "scaling",
+      "category": "gathering",
+      "maxPower": 100,
+      "investmentTier": 100,
+      "description": "$curr% chance ($min-$max) to gain 6 crafting experience when shearing sheep",
       "summary": "Shearing sheep can award 6 Crafting XP."
     },
     {
@@ -735,6 +1001,10 @@
       "requirements": {},
       "permanentUnlockLevel": 40,
       "type": "scaling",
+      "category": "generalCombat",
+      "maxPower": 70,
+      "investmentTier": 10000,
+      "description": "$curr% chance ($min-$max) to cap incoming damage to a maximum of 30% of your maximum HP with a shield equipped",
       "summary": "With a shield equipped, an incoming hit can be capped at 30% of your maximum HP."
     },
     {
@@ -745,6 +1015,10 @@
       "requirements": {},
       "permanentUnlockLevel": 30,
       "type": "scaling",
+      "category": "rangedCombat",
+      "maxPower": 50,
+      "investmentTier": 6000,
+      "description": "$curr% chance ($min-$max) to deal maximum damage if the enemy is at full HP.",
       "summary": "A shot can deal maximum damage when the target is at full health."
     },
     {
@@ -755,6 +1029,9 @@
       "requirements": {},
       "permanentUnlockLevel": 20,
       "type": "static",
+      "category": "utility",
+      "investmentTier": 2,
+      "description": "Reduces fall damage by 75%.",
       "summary": "Cuts fall damage by 75%."
     },
     {
@@ -765,6 +1042,10 @@
       "requirements": {},
       "permanentUnlockLevel": 64,
       "type": "scaling",
+      "category": "magicCombat",
+      "maxPower": 25,
+      "investmentTier": 4,
+      "description": "Upon killing an enemy with a death rune spell, $curr% ($min-$max) chance to gain your overkill damage as mind runes.",
       "summary": "Killing an enemy with a Death Rune spell can award one Mind Rune per point of overkill damage."
     },
     {
@@ -775,6 +1056,10 @@
       "requirements": {},
       "permanentUnlockLevel": 30,
       "type": "scaling",
+      "category": "gathering",
+      "maxPower": 100,
+      "investmentTier": 1200,
+      "description": "Woodcutting double ups have a $curr% chance ($min-$max) to build 2-6 hunger, stinging you for 1-3 damage. At 10 hunger, your next woodcutting double up triggers twice and eats your equipped apple pie.",
       "summary": "A Woodcutting double up can add 2–6 Hunger and deal 1–3 damage to you. At 10 Hunger, the next Woodcutting double up triggers twice and consumes your equipped Apple Pie."
     },
     {
@@ -785,6 +1070,10 @@
       "requirements": {},
       "permanentUnlockLevel": 60,
       "type": "scaling",
+      "category": "magicCombat",
+      "maxPower": 75,
+      "investmentTier": 16,
+      "description": "$curr% chance ($min-$max) when a spell hits for its max damage or more, to cast your next spell quickly.",
       "summary": "A spell that deals at least its maximum damage can speed up the next cast."
     },
     {
@@ -795,6 +1084,10 @@
       "requirements": {},
       "permanentUnlockLevel": 10,
       "type": "scaling",
+      "category": "rangedCombat",
+      "maxPower": 75,
+      "investmentTier": 1500,
+      "description": "$curr% chance ($min-$max) to deal 1 additional ranged damage.",
       "summary": "A ranged hit can deal 1 extra damage."
     },
     {
@@ -805,6 +1098,10 @@
       "requirements": {},
       "permanentUnlockLevel": 50,
       "type": "scaling",
+      "category": "generalCombat",
+      "maxPower": 70,
+      "investmentTier": 1000,
+      "description": "$curr% chance ($min-$max) to reduce incoming damage by 1",
       "summary": "Can reduce incoming damage by 1."
     },
     {
@@ -815,6 +1112,10 @@
       "requirements": {},
       "permanentUnlockLevel": 30,
       "type": "scaling",
+      "category": "gathering",
+      "maxPower": 100,
+      "investmentTier": 800,
+      "description": "Fishing double ups have a $curr% chance ($min-$max) to build 2-6 hunger, stinging you for 1-3 damage. At 10 hunger, your next fishing double up triggers twice and eats your equipped redberry pie.",
       "summary": "A Fishing double up can add 2–6 Hunger and deal 1–3 damage to you. At 10 Hunger, the next Fishing double up triggers twice and consumes your equipped Redberry Pie."
     },
     {
@@ -825,6 +1126,10 @@
       "requirements": {},
       "permanentUnlockLevel": 30,
       "type": "scaling",
+      "category": "utility",
+      "maxPower": 25,
+      "investmentTier": 10,
+      "description": "$curr% chance ($min-$max) to travel quickly to your destination.",
       "summary": "Travel can finish faster."
     },
     {
@@ -837,6 +1142,10 @@
       },
       "permanentUnlockLevel": 60,
       "type": "scaling",
+      "category": "utility",
+      "maxPower": 60,
+      "investmentTier": 16,
+      "description": "Telegrab the loot when killing an enemy from a safe spot. Requires a Law Rune. $curr% chance (1-60) of not spending the rune",
       "summary": "Retrieves loot from a kill made at a safe spot. You need a Law Rune and have a level-dependent chance to keep it."
     },
     {
@@ -847,6 +1156,9 @@
       "requirements": {},
       "permanentUnlockLevel": 10,
       "type": "static",
+      "category": "prayer",
+      "investmentTier": 100,
+      "description": "A prayer that increases your defense by 10. Consumes one spirit rune per enemy attack.",
       "summary": "Adds 10 Defense. Uses one Spirit Rune on each enemy attack."
     },
     {
@@ -857,6 +1169,10 @@
       "requirements": {},
       "permanentUnlockLevel": 40,
       "type": "scaling",
+      "category": "generalCombat",
+      "maxPower": 10,
+      "investmentTier": 4,
+      "description": "$curr% chance ($min-$max) to block a killing blow aimed at an ally fighting with you.",
       "summary": "Can block a finishing blow aimed at an ally fighting alongside you."
     },
     {
@@ -867,6 +1183,10 @@
       "requirements": {},
       "permanentUnlockLevel": 30,
       "type": "scaling",
+      "category": "gathering",
+      "maxPower": 5,
+      "investmentTier": 500,
+      "description": "$curr% chance ($min-$max) of getting an additional, random log type when chopping trees",
       "summary": "Chopping trees can produce one extra log of a random type."
     },
     {
@@ -877,6 +1197,10 @@
       "requirements": {},
       "permanentUnlockLevel": 15,
       "type": "scaling",
+      "category": "rangedCombat",
+      "maxPower": 30,
+      "investmentTier": 3000,
+      "description": "$curr% reduced chance ($min-$max) for your arrows to break.",
       "summary": "Reduces the chance that your arrows break."
     },
     {
@@ -889,6 +1213,9 @@
       },
       "permanentUnlockLevel": 30,
       "type": "static",
+      "category": "evilMagic",
+      "investmentTier": 8000,
+      "description": "A spell that deals up to $maxHit air damage. Casting requires three air runes and a death rune.",
       "summary": "An offensive spell that deals air damage."
     },
     {
@@ -901,6 +1228,9 @@
       },
       "permanentUnlockLevel": 30,
       "type": "static",
+      "category": "evilMagic",
+      "investmentTier": 14000,
+      "description": "A spell that deals up to $maxHit air damage. Casting requires two air runes and a chaos rune.",
       "summary": "An offensive spell that deals air damage."
     },
     {
@@ -913,6 +1243,9 @@
       },
       "permanentUnlockLevel": 20,
       "type": "static",
+      "category": "evilMagic",
+      "investmentTier": 10000,
+      "description": "A spell that deals up to $maxHit air damage. Casting requires an air rune and a mind rune.",
       "summary": "An offensive spell that deals air damage."
     },
     {
@@ -925,7 +1258,172 @@
       },
       "permanentUnlockLevel": 65,
       "type": "static",
+      "category": "evilMagic",
+      "investmentTier": 0,
+      "description": "A spell that deals up to $maxHit air damage. Casting requires seven air runes and a blood rune.",
       "summary": "An offensive spell that deals air damage."
     }
-  ]
+  ],
+  "potions": {
+    "attackPotion": {
+      "skill": "attack",
+      "type": "regular",
+      "description": "Boosts your attack by +5 for sixty minutes."
+    },
+    "cookingPotion": {
+      "skill": "cooking",
+      "type": "regular",
+      "description": "Boosts your cooking by +5 for sixty minutes."
+    },
+    "craftingPotion": {
+      "skill": "crafting",
+      "type": "regular",
+      "description": "Boosts your crafting by +5 for sixty minutes."
+    },
+    "defensePotion": {
+      "skill": "defense",
+      "type": "regular",
+      "description": "Boosts your defense by +5 for sixty minutes."
+    },
+    "evilMagicPotion": {
+      "skill": "evilMagic",
+      "type": "regular",
+      "description": "Boosts your evil magic by +5 for sixty minutes."
+    },
+    "firemakingPotion": {
+      "skill": "firemaking",
+      "type": "regular",
+      "description": "Boosts your firemaking by +5 for sixty minutes."
+    },
+    "fishingPotion": {
+      "skill": "fishing",
+      "type": "regular",
+      "description": "Boosts your fishing by +5 for sixty minutes."
+    },
+    "fletchingPotion": {
+      "skill": "fletching",
+      "type": "regular",
+      "description": "Boosts your fletching by +5 for sixty minutes."
+    },
+    "goodMagicPotion": {
+      "skill": "goodMagic",
+      "type": "regular",
+      "description": "Boosts your good magic by +5 for sixty minutes."
+    },
+    "herblawPotion": {
+      "skill": "herblaw",
+      "type": "regular",
+      "description": "Boosts your herblaw by +5 for sixty minutes."
+    },
+    "miningPotion": {
+      "skill": "mining",
+      "type": "regular",
+      "description": "Boosts your mining by +5 for sixty minutes."
+    },
+    "pietyPotion": {
+      "skill": "piety",
+      "type": "regular",
+      "description": "Boosts your piety by +5 for sixty minutes."
+    },
+    "rangedPotion": {
+      "skill": "ranged",
+      "type": "regular",
+      "description": "Boosts your ranged by +5 for sixty minutes."
+    },
+    "smithingPotion": {
+      "skill": "smithing",
+      "type": "regular",
+      "description": "Boosts your smithing by +5 for sixty minutes."
+    },
+    "strengthPotion": {
+      "skill": "strength",
+      "type": "regular",
+      "description": "Boosts your strength by +5 for sixty minutes."
+    },
+    "superAttackPotion": {
+      "skill": "attack",
+      "type": "super",
+      "description": "Boosts your attack by 15% + 3 for sixty minutes."
+    },
+    "superCookingPotion": {
+      "skill": "cooking",
+      "type": "super",
+      "description": "Boosts your cooking by 15% + 3 for sixty minutes."
+    },
+    "superCraftingPotion": {
+      "skill": "crafting",
+      "type": "super",
+      "description": "Boosts your crafting by 15% + 3 for sixty minutes."
+    },
+    "superDefensePotion": {
+      "skill": "defense",
+      "type": "super",
+      "description": "Boosts your defense by 15% + 3 for sixty minutes."
+    },
+    "superEvilMagicPotion": {
+      "skill": "evilMagic",
+      "type": "super",
+      "description": "Boosts your evil magic by 15% + 3 for sixty minutes."
+    },
+    "superFiremakingPotion": {
+      "skill": "firemaking",
+      "type": "super",
+      "description": "Boosts your firemaking by 15% + 3 for sixty minutes."
+    },
+    "superFishingPotion": {
+      "skill": "fishing",
+      "type": "super",
+      "description": "Boosts your fishing by 15% + 3 for sixty minutes."
+    },
+    "superFletchingPotion": {
+      "skill": "fletching",
+      "type": "super",
+      "description": "Boosts your fletching by 15% + 3 for sixty minutes."
+    },
+    "superGoodMagicPotion": {
+      "skill": "goodMagic",
+      "type": "super",
+      "description": "Boosts your good magic by 15% + 3 for sixty minutes."
+    },
+    "superHerblawPotion": {
+      "skill": "herblaw",
+      "type": "super",
+      "description": "Boosts your herblaw by 15% + 3 for sixty minutes."
+    },
+    "superMiningPotion": {
+      "skill": "mining",
+      "type": "super",
+      "description": "Boosts your mining by 15% + 3 for sixty minutes."
+    },
+    "superPietyPotion": {
+      "skill": "piety",
+      "type": "super",
+      "description": "Boosts your piety by 15% + 3 for sixty minutes."
+    },
+    "superRangedPotion": {
+      "skill": "ranged",
+      "type": "super",
+      "description": "Boosts your ranged by 15% + 3 for sixty minutes."
+    },
+    "superSmithingPotion": {
+      "skill": "smithing",
+      "type": "super",
+      "description": "Boosts your smithing by 15% + 3 for sixty minutes."
+    },
+    "superStrengthPotion": {
+      "skill": "strength",
+      "type": "super",
+      "description": "Boosts your strength by 15% + 3 for sixty minutes."
+    },
+    "superWoodcuttingPotion": {
+      "skill": "woodcutting",
+      "type": "super",
+      "description": "Boosts your woodcutting by 15% + 3 for sixty minutes."
+    },
+    "woodcuttingPotion": {
+      "skill": "woodcutting",
+      "type": "regular",
+      "description": "Boosts your woodcutting by +5 for sixty minutes."
+    }
+  }
 }

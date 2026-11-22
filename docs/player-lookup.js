@@ -1,7 +1,7 @@
 import {communityApiBase} from "./api-config.js?v=community-api-20261119";
 import {readActivityCatalog, renderActivityComparison} from "./activity-comparison.js?v=vendors-20261120";
 import {attachHoverPreview,previewMotion,sampleMotion,weaponMotionType} from "./sprite-animation.js?v=sprites-20261121b";
-import {renderLoadoutComparison} from "./loadout-comparison.js?v=loadouts-20261121";
+import {renderLoadoutComparison} from "./loadout-comparison.js?v=effects-20261121";
 const apiUrl = ["localhost", "127.0.0.1"].includes(window.location.hostname)
   ? new URL("/api/player.json", window.location.origin)
   : new URL("player.json", communityApiBase);
@@ -17,7 +17,7 @@ let referenceRequest;
 let loadoutReferenceRequest;
 const recentProfiles=new Map();
 function readLoadoutReference(){
-  loadoutReferenceRequest ||= fetch(new URL("./loadout-reference.json?v=loadouts-20261121",import.meta.url)).then(r=>{if(!r.ok)throw Error("Could not load equipment abilities.");return r.json();}).catch(error=>{loadoutReferenceRequest=null;throw error;});
+  loadoutReferenceRequest ||= fetch(new URL("./loadout-reference.json?v=effects-20261121",import.meta.url)).then(r=>{if(!r.ok)throw Error("Could not load equipment abilities.");return r.json();}).catch(error=>{loadoutReferenceRequest=null;throw error;});
   return loadoutReferenceRequest;
 }
 function readReference() {
@@ -171,7 +171,7 @@ export function renderPlayerLookup({main, element:e, crumbs, footer, byId, entry
   empty.querySelector("button").addEventListener("click", () => {input.value = "User12345"; lookup(input.value);});
   results.append(empty);
   main.append(e("article", {class:"player-lookup-page"}, crumbs(null, pageName), heading,
-    e("p", {class:"intro"}, loadoutOnly ? "Try equipment upgrades using a player’s base levels and current gear. Compare stats, requirements and estimated combat performance." : comparisonOnly ? "Find the better training option for your current levels and gear. Compare two activities in the same skill." : "An adventurer’s skills and gear. Look up a player to see their public game profile."),
+    e("p", {class:"intro"}, loadoutOnly ? "Try equipment, abilities and potions using a player’s base levels and current gear. Compare stats, requirements and estimated XP per hour." : comparisonOnly ? "Find the better training option for your current levels and gear. Compare two activities in the same skill." : "An adventurer’s skills and gear. Look up a player to see their public game profile."),
     form, status, results), footer());
 
   function clearSuggestions() {
@@ -234,7 +234,7 @@ export function renderPlayerLookup({main, element:e, crumbs, footer, byId, entry
     disposeLoadout?.();disposeLoadout=null;
     const {player} = snapshot, stats = playerStats(player.exp);
     if(loadoutOnly){
-      const tool=renderLoadoutComparison({e,player,levels:stats.levels,catalog,appearance:data,abilities:loadoutData.abilities,byId,entryUrl,paintPlayer,renderSpriteFrame,checkedAt:snapshot.checkedAt,refreshProfile:()=>lookup(currentName,true)});
+      const tool=renderLoadoutComparison({e,player,levels:stats.levels,catalog,appearance:data,abilities:loadoutData.abilities,effectsReference:loadoutData,byId,entryUrl,paintPlayer,renderSpriteFrame,checkedAt:snapshot.checkedAt,refreshProfile:()=>lookup(currentName,true)});
       results.replaceChildren(tool.node);disposeLoadout=tool.dispose;return;
     }
     const skillScrollTop = results.querySelector(".player-skills-grid")?.scrollTop || 0;

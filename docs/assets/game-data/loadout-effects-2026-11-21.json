@@ -1,0 +1,36 @@
+{
+  "checked": "2026-11-21",
+  "client": "https://microscape.cc/play/assets/index-BsSHHy-E.js",
+  "sha256": "228bbcdac7deb74e394e283dc124611450abc4dd7f9d7ba98fb141846f649878",
+  "verifiedClientRules": {
+    "abilityPower": "round(1 + (min(abilityLevel, permanentUnlockLevel) - 1) / (permanentUnlockLevel - 1) * (maxPower - 1)) [E_]",
+    "statBonuses": "hf sums active stat-effect boosts; Bf sums item bonuses; LX/RX add prayer and potion bonuses to combat checks",
+    "prayers": {
+      "clarityOfThought": {
+        "attack": 10
+      },
+      "burstOfStrength": {
+        "strength": 10
+      },
+      "thickSkin": {
+        "defense": 10
+      }
+    },
+    "spellLimitBreaks": "c_ = listed max hit + number of invested limit breaks (0..2) + 2 for active Empowered Mind on Wind Strike / Fire Strike",
+    "prayerRuneSaving": "b_ = effective Piety / 99 * 50 percent",
+    "potionDescriptions": "32 public item definitions: regular +5, super 15% +3, for 60 minutes"
+  },
+  "modelAssumptions": [
+    "Super potion: floor(0.15 * trained base level) +3; exact rounding is not present in the public client. An in-game boost override is provided.",
+    "Same-skill potions use the strongest selected boost, not a sum; override with the actual buff total if different.",
+    "Uniform independent primary damage rolls; optional zero roll; overkill awards no extra modeled XP.",
+    "Damage transformations round down. Steady Aim rolls on landed primary shots; Enlightened uses max primary rolls.",
+    "Finite melee bonus bursts do not recursively start another burst; Rapid Fire explicitly chains. Bonus/quick attack spacing is user-adjustable (default 2 seconds, not server verified).",
+    "Focus applies its 20 percent spell damage bonus, but hourly rates are withheld until its unlisted slower cast interval is entered.",
+    "XP bonuses stack additively by default; a multiplicative option is available because server ordering is not public.",
+    "Temporary Berserk/Crusader/Empowered Mind uptimes are manual, time-weighted independent scenarios, not predicted proc uptimes.",
+    "Defensive effects change expected incoming melee damage only. Eating, deaths, banking and group combat are excluded, so defensive bonuses do not artificially increase XP/hour.",
+    "Unknown stateful offensive effects are explicitly listed as omitted.",
+    "Attack baseline 4 XP/damage was observed November 20; other combat styles continue to use that unverified baseline."
+  ]
+}

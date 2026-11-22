@@ -5,9 +5,9 @@ import {renderBazaarWalkthrough} from "./bazaar-walkthrough.js?v=bazaar-visual-2
 import { tutorials } from "./tutorials.js?v=release-20261119";
 import { buildPetEntries } from "./pets.js?v=release-20261119";
 import { itemIcons, itemIconGroups } from "./item-icons.js?v=release-20261119";
-import { renderPlayerLookup } from "./player-lookup.js?v=loadouts-20261121";
-import {publicUrl, legacyRoute, pageMetadata, updateMetadata} from "./seo.js?v=share-cards-20261121";
-import {lookupXpPlayer, lookupXpSuggestions, xpPlayerProgress, xpSkills} from "./xp-player.js?v=loadouts-20261121";
+import { renderPlayerLookup } from "./player-lookup.js?v=effects-20261121";
+import {publicUrl, legacyRoute, pageMetadata, updateMetadata} from "./seo.js?v=effects-20261121";
+import {lookupXpPlayer, lookupXpSuggestions, xpPlayerProgress, xpSkills} from "./xp-player.js?v=effects-20261121";
 import {spriteMotion,prepareSpriteFrame,stopSpritePreviews} from "./sprite-animation.js?v=sprites-20261121b";
 import {renderWorldMap} from "./world-map.js?v=map-food-search-20261121";
 

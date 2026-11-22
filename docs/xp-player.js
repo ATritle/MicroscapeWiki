@@ -1,5 +1,5 @@
 import {communityApiBase} from "./api-config.js?v=community-api-20261119";
-import {skillLevel} from "./player-lookup.js?v=loadouts-20261121";
+import {skillLevel} from "./player-lookup.js?v=effects-20261121";
 
 export const xpSkills = ["attack", "strength", "defense", "evilMagic", "ranged", "piety",
   "woodcutting", "firemaking", "fishing", "cooking", "mining", "smithing", "crafting", "goodMagic", "fletching", "herblaw"];

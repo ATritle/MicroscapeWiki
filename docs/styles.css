@@ -399,6 +399,22 @@ tr:last-child td { border-bottom: 0; }
 .loadout-columns { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 18px; }
 .loadout-card { min-width: 0; border: 1px solid var(--line); border-radius: 12px; background: var(--panel); padding: 16px; }
 .loadout-card-test { border-color: #477668; }
+.loadout-effect-controls h4 { margin: 20px 0 10px; font-size: 16px; }
+.loadout-effect-controls label { display: grid; gap: 6px; margin: 10px 0; font-size: 14px; }
+.loadout-effect-controls input[type="number"] { width: 100%; min-width: 0; padding: 8px 10px; border: 1px solid var(--line); border-radius: 7px; background: var(--bg); color: var(--text); font: inherit; font-size: 14px; }
+.loadout-effect-controls small { display: block; color: var(--muted); font-size: 13px; line-height: 1.5; }
+.loadout-effect-ability, .loadout-potion-effect { margin: 10px 0; padding: 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); }
+.loadout-effect-title { display: flex; gap: 10px; justify-content: space-between; align-items: center; }
+.loadout-effect-title label { margin: 0; font-weight: 700; }
+.loadout-effect-title a { font-size: 13px; }
+.loadout-effect-ability p { margin: 7px 0; font-size: 14px; }
+.loadout-ability-power { display: block; color: var(--mint); font-size: 14px; margin-top: 5px; }
+.loadout-effect-controls .button { padding: 7px 10px; font-size: 14px; }
+.loadout-effect-controls .loadout-actions { display: grid; align-items: start; }
+.loadout-effects-advanced { margin-top: 18px; padding-top: 12px; border-top: 1px solid var(--line); }
+.loadout-effect-omitted { padding: 13px 16px; margin: 15px 0; border: 1px solid #785e35; border-radius: 8px; background: #34291a; color: #f3ce93; font-size: 14px; }
+.loadout-effect-omitted ul { margin-bottom: 0; }
+.loadout-stat-breakdown { display: block; margin-top: 4px; color: var(--muted); font-size: 12px; line-height: 1.4; }
 .loadout-card h3 { margin: 0; }
 .loadout-card .player-panel-heading > span { font-size: 13px; }
 .loadout-sprite-stage { height: 165px; margin: 12px 0; }
