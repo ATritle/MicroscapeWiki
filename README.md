@@ -252,6 +252,23 @@ arithmetic consistent with those static images; market prices and times change.
 
 Run `./scripts/register-drops-backup.ps1` in PowerShell 7 to register the optional **Microscape Wiki Live Drops Backup** task. Pass `-Replace` to update the existing task. It runs every 15 minutes while its user is signed in and the PC is awake, and publishes to `live-data` using the existing GitHub sign-in when the snapshot is at least 10 minutes old. Check `last-run.log` in the task’s state directory for the latest result. To stop the backup, disable the named task in Task Scheduler.
 
+## Site analytics
+
+`docs/analytics.js` connects the separate Microscape Wiki GA4 property using the
+public Measurement ID `G-90EN0H2GM4`. It loads Google's tag once on the production
+domains and records one page view per canonical route after rendering. Automatic
+history page views are disabled in the web stream to prevent double counting;
+site-search and form-interaction measurement are also disabled. Scroll, outbound
+click, video and file-download enhanced measurements remain enabled.
+
+Page-view locations exclude query strings/fragments; initial referrers retain
+only their origin and subsequent referrers use the preceding canonical route.
+No player/profile payloads or user IDs are passed to Analytics. Google signals
+and advertising personalization are off. Prerendering, localhost previews, DNT
+and GPC produce no tag or events. `node scripts/check-analytics.mjs` verifies
+route counting, navigation, redaction and these guards. The About page discloses
+analytics. Removing the import/call in `docs/app.js` disables this integration.
+
 ## Future additions
 
 - **Optional Twitch sign-in — deferred at the community owner's request (November 22, 2026).** Revisit alongside saved player usernames, saved gear/ability/potion loadouts, and Bazaar watchlists that sync between devices. Keep wiki browsing and the existing public lookup/comparison tools available without signing in. No login implementation or new access permissions are authorized by this backlog entry.

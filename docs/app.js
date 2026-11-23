@@ -1,5 +1,6 @@
 import {communityApiBase} from "./api-config.js?v=community-api-20261119";
-import { guides } from "./guides.js?v=own-history-20261122";
+import {trackPageView} from "./analytics.js?v=ga4-20261123";
+import { guides } from "./guides.js?v=ga4-20261123";
 import {renderBazaar} from "./bazaar.js?v=market-sorting-20261122";
 import {renderBazaarWalkthrough} from "./bazaar-walkthrough.js?v=bazaar-visual-20261120";
 import { tutorials } from "./tutorials.js?v=release-20261119";
@@ -1032,7 +1033,8 @@ function render({focus = false} = {}) {
   const currentCategory = bazaar || entry?.id === "bazaar" ? "bazaar" : entry?.id === "pets" ? "pets" : entry?.category || category;
   renderNav(currentCategory, entry?.id, home, liveDrops, playerLookup, activityComparison,gearComparison);
   searchInput.value = view === "search" ? query : "";
-  updateMetadata(document, pageMetadata(route, byId, groups));
+  const metadata = pageMetadata(route, byId, groups);
+  updateMetadata(document, metadata);
   if (home) renderHome();
   else if (liveDrops) renderLiveDrops();
   else if (bazaar) disposeBazaar = renderBazaar({main, element, crumbs, footer, byId, guide:byId.get("bazaar"), entryLink,
@@ -1047,6 +1049,7 @@ function render({focus = false} = {}) {
     element("p", {class:"intro"}, referenceLoadFailed ? "The reference catalog could not load." : "This entry could not be found."),
     link("Return to the wiki", "#/", "button"), footer());
   updateLiveDrops();
+  trackPageView(metadata);
   if (focus) main.focus({preventScroll:true});
 }
 
