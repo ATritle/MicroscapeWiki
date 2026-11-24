@@ -16,6 +16,9 @@ for(const pet of pets) {
   for(let t=0;t<12000;t+=73)assert(frames.includes(petPose(profile,t).frame));
 }
 const beatrix=spriteMotion(pets.find(e=>e.id==="pet-beatrix").sprites[0]);
+const lobster=reference.find(e=>e.category==="items"&&e.id==="blue-lobster").sprites[0];
+assert(lobster.layers[0].startsWith("./assets/equipment/"),"Preserve the equipped companion's original sprite locally");
+assert.equal(spriteMotion(lobster).kind,"pet","Local artwork must retain its in-game animation profile");
 assert.equal(petPose(beatrix,0).frame,0);
 assert.equal(petPose(beatrix,350).frame,1);
 assert.equal(petPose(beatrix,550).frame,2);

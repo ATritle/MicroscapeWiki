@@ -1,7 +1,7 @@
 import {communityApiBase} from "./api-config.js?v=community-api-20261119";
 import {readPlayerRanks} from "./leaderboards.js?v=ranked-communities-20261124";
-import {readActivityCatalog, renderActivityComparison} from "./activity-comparison.js?v=vendors-20261120";
-import {attachHoverPreview,previewMotion,sampleMotion,weaponMotionType} from "./sprite-animation.js?v=sprites-20261121b";
+import {readActivityCatalog, renderActivityComparison} from "./activity-comparison.js?v=equipment-20261124";
+import {attachHoverPreview,previewMotion,sampleMotion,weaponMotionType} from "./sprite-animation.js?v=equipment-20261124";
 import {renderLoadoutComparison} from "./loadout-comparison.js?v=hypothetical-20261121";
 const apiUrl = ["localhost", "127.0.0.1"].includes(window.location.hostname)
   ? new URL("/api/player.json", window.location.origin)
@@ -22,7 +22,7 @@ function readLoadoutReference(){
   return loadoutReferenceRequest;
 }
 function readReference() {
-  referenceRequest ||= fetch(new URL("./player-reference.json?v=release-20261119", import.meta.url)).then(response => {
+  referenceRequest ||= fetch(new URL("./player-reference.json?v=equipment-20261124", import.meta.url)).then(response => {
     if (!response.ok) throw Error("Could not load the player reference artwork.");
     return response.json();
   }).catch(error => {referenceRequest = null; throw error;});

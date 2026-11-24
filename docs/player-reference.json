@@ -1267,7 +1267,7 @@
     "adamantArmor": {
       "name": "adamant armor",
       "slot": "body",
-      "icon": "https://microscape.cc/play/assets/adamantArmor-HhcgjWbD.png",
+      "icon": "./assets/equipment/adamantArmor-HhcgjWbD.png",
       "wikiId": "adamant-armor",
       "bonuses": {
         "autoEat": 3,
@@ -1277,7 +1277,7 @@
     "adamantArrows": {
       "name": "adamant arrows",
       "slot": "ammo",
-      "icon": "https://microscape.cc/play/assets/adamantArrows-CXXEmdwy.png",
+      "icon": "./assets/equipment/adamantArrows-CXXEmdwy.png",
       "wikiId": "adamant-arrows",
       "bonuses": {
         "ranged": 7
@@ -1291,7 +1291,7 @@
     "adamantDagger": {
       "name": "adamant dagger",
       "slot": "weapon",
-      "icon": "https://microscape.cc/play/assets/adamantDagger-Y05oHXJD.png",
+      "icon": "./assets/equipment/adamantDagger-Y05oHXJD.png",
       "wikiId": "adamant-dagger",
       "bonuses": {
         "attack": 10,
@@ -1302,7 +1302,7 @@
     "adamantMedHelm": {
       "name": "adamant med helm",
       "slot": "head",
-      "icon": "https://microscape.cc/play/assets/adamantMedHelm-D1gHtcyO.png",
+      "icon": "./assets/equipment/adamantMedHelm-D1gHtcyO.png",
       "wikiId": "adamant-med-helm",
       "bonuses": {
         "autoEat": 3,
@@ -1312,7 +1312,7 @@
     "adamantScimitar": {
       "name": "adamant scimitar",
       "slot": "weapon",
-      "icon": "https://microscape.cc/play/assets/adamantScimitar-DU0z7fzo.png",
+      "icon": "./assets/equipment/adamantScimitar-DU0z7fzo.png",
       "wikiId": "adamant-scimitar",
       "bonuses": {
         "attack": 10,
@@ -1323,7 +1323,7 @@
     "adamantSqShield": {
       "name": "adamant sq shield",
       "slot": "shield",
-      "icon": "https://microscape.cc/play/assets/adamantSqShield-DZGzyjOF.png",
+      "icon": "./assets/equipment/adamantSqShield-DZGzyjOF.png",
       "wikiId": "adamant-sq-shield",
       "bonuses": {
         "autoEat": 3,
@@ -1343,7 +1343,7 @@
     "airBattlestaff": {
       "name": "air battlestaff",
       "slot": "weapon",
-      "icon": "https://microscape.cc/play/assets/airBattlestaff-AKL5-LEh.png",
+      "icon": "./assets/equipment/airBattlestaff-AKL5-LEh.png",
       "wikiId": "air-battlestaff",
       "bonuses": {
         "attack": 5,
@@ -1365,7 +1365,7 @@
     "airStaff": {
       "name": "air staff",
       "slot": "weapon",
-      "icon": "https://microscape.cc/play/assets/airStaff-Cg0kxLPc.png",
+      "icon": "./assets/equipment/airStaff-Cg0kxLPc.png",
       "wikiId": "air-staff",
       "bonuses": {
         "attack": 3,
@@ -1433,7 +1433,7 @@
     "applePie": {
       "name": "apple pie",
       "slot": "food",
-      "icon": "https://microscape.cc/play/assets/applePie-CwUo85qp.png",
+      "icon": "./assets/equipment/applePie-CwUo85qp.png",
       "wikiId": "apple-pie",
       "bonuses": {
         "eatRecovery": 14,
@@ -1448,13 +1448,13 @@
     "arrows": {
       "name": "bronze arrows",
       "slot": "ammo",
-      "icon": "https://microscape.cc/play/assets/arrows-D5mdaUrg.png",
+      "icon": "./assets/equipment/arrows-D5mdaUrg.png",
       "wikiId": "bronze-arrows"
     },
     "ashGloves": {
       "name": "ash gloves",
       "slot": "hands",
-      "icon": "https://microscape.cc/play/assets/ashGloves-B84gh_MC.png",
+      "icon": "./assets/equipment/ashGloves-B84gh_MC.png",
       "wikiId": "ash-gloves",
       "bonuses": {
         "defense": 1,
@@ -1469,7 +1469,7 @@
     "attackPotion": {
       "name": "attack potion",
       "slot": "potion1",
-      "icon": "https://microscape.cc/play/assets/attackPotion-N-MeWDLj.png",
+      "icon": "./assets/equipment/attackPotion-N-MeWDLj.png",
       "wikiId": "attack-potion"
     },
     "audienceFavor": {
@@ -1485,7 +1485,7 @@
     "battlestaff": {
       "name": "battlestaff",
       "slot": "weapon",
-      "icon": "https://microscape.cc/play/assets/battlestaff-CCzkb5Dp.png",
+      "icon": "./assets/equipment/battlestaff-CCzkb5Dp.png",
       "wikiId": "battlestaff",
       "bonuses": {
         "attack": 5,
@@ -1513,7 +1513,7 @@
     "black2hSword": {
       "name": "black 2h sword",
       "slot": "weapon",
-      "icon": "https://microscape.cc/play/assets/black2hSword-BPjND95S.png",
+      "icon": "./assets/equipment/black2hSword-BPjND95S.png",
       "wikiId": "black-2h-sword",
       "bonuses": {
         "attack": 9,
@@ -1524,7 +1524,7 @@
     "blackArmor": {
       "name": "black armor",
       "slot": "body",
-      "icon": "https://microscape.cc/play/assets/blackArmor-Cdg4sHu4.png",
+      "icon": "./assets/equipment/blackArmor-Cdg4sHu4.png",
       "wikiId": "black-armor",
       "bonuses": {
         "defense": 7
@@ -1533,7 +1533,7 @@
     "blackFullHelm": {
       "name": "black full helm",
       "slot": "head",
-      "icon": "https://microscape.cc/play/assets/blackFullHelm-Cm_uG1hE.png",
+      "icon": "./assets/equipment/blackFullHelm-Cm_uG1hE.png",
       "wikiId": "black-full-helm",
       "bonuses": {
         "defense": 5
@@ -1542,7 +1542,7 @@
     "blessedGreaves": {
       "name": "blessed greaves",
       "slot": "feet",
-      "icon": "https://microscape.cc/play/assets/blessedGreaves-nedSgLWn.png",
+      "icon": "./assets/equipment/blessedGreaves-nedSgLWn.png",
       "wikiId": "blessed-greaves",
       "bonuses": {
         "defense": 2,
@@ -1552,7 +1552,7 @@
     "blinkBone": {
       "name": "blink bone",
       "slot": "weapon",
-      "icon": "https://microscape.cc/play/assets/blinkBone-BDHJictl.png",
+      "icon": "./assets/equipment/blinkBone-BDHJictl.png",
       "wikiId": "blink-bone",
       "bonuses": {
         "attack": 2,
@@ -1568,7 +1568,7 @@
     "bloodShard": {
       "name": "Blood Shard",
       "slot": "tool",
-      "icon": "https://microscape.cc/play/assets/bloodShard-CNT0Om-q.png",
+      "icon": "./assets/equipment/bloodShard-CNT0Om-q.png",
       "wikiId": "blood-shard"
     },
     "bloodiedCoin": {
@@ -1584,13 +1584,13 @@
     "bluePartyHat": {
       "name": "party hat",
       "slot": "head",
-      "icon": "https://microscape.cc/play/assets/bluePartyHat-CrpDHRS1.png",
+      "icon": "./assets/equipment/bluePartyHat-CrpDHRS1.png",
       "wikiId": "blue-party-hat"
     },
     "bluegoldAxe": {
       "name": "bluegold axe",
       "slot": "weapon",
-      "icon": "https://microscape.cc/play/assets/bluegoldAxe-DuRtabgx.png",
+      "icon": "./assets/equipment/bluegoldAxe-DuRtabgx.png",
       "wikiId": "bluegold-axe",
       "bonuses": {
         "attack": 2,
@@ -1612,7 +1612,7 @@
     "bread": {
       "name": "bread",
       "slot": "food",
-      "icon": "https://microscape.cc/play/assets/bread-DPyYWkuP.png",
+      "icon": "./assets/equipment/bread-DPyYWkuP.png",
       "wikiId": "bread",
       "bonuses": {
         "eatRecovery": 5
@@ -1631,7 +1631,7 @@
     "bronzeArmor": {
       "name": "bronze armor",
       "slot": "body",
-      "icon": "https://microscape.cc/play/assets/bronzeArmor-DD8QsUai.png",
+      "icon": "./assets/equipment/bronzeArmor-DD8QsUai.png",
       "wikiId": "bronze-armor",
       "bonuses": {
         "defense": 2
@@ -1650,7 +1650,7 @@
     "bronzeDagger": {
       "name": "bronze dagger",
       "slot": "weapon",
-      "icon": "https://microscape.cc/play/assets/bronzeDagger-BRawhyPM.png",
+      "icon": "./assets/equipment/bronzeDagger-BRawhyPM.png",
       "wikiId": "bronze-dagger",
       "bonuses": {
         "attack": 2,
@@ -1661,7 +1661,7 @@
     "bronzeFullHelm": {
       "name": "bronze full helm",
       "slot": "head",
-      "icon": "https://microscape.cc/play/assets/bronzeFullHelm-C3R_aMNu.png",
+      "icon": "./assets/equipment/bronzeFullHelm-C3R_aMNu.png",
       "wikiId": "bronze-full-helm",
       "bonuses": {
         "defense": 2
@@ -1670,7 +1670,7 @@
     "bronzeMedHelm": {
       "name": "bronze med helm",
       "slot": "head",
-      "icon": "https://microscape.cc/play/assets/bronzeMedHelm-coo_Z5Dp.png",
+      "icon": "./assets/equipment/bronzeMedHelm-coo_Z5Dp.png",
       "wikiId": "bronze-med-helm",
       "bonuses": {
         "defense": 1
@@ -1679,7 +1679,7 @@
     "bronzeScimitar": {
       "name": "bronze scimitar",
       "slot": "weapon",
-      "icon": "https://microscape.cc/play/assets/bronzeScimitar-B1FLJqcy.png",
+      "icon": "./assets/equipment/bronzeScimitar-B1FLJqcy.png",
       "wikiId": "bronze-scimitar",
       "bonuses": {
         "attack": 2,
@@ -1690,7 +1690,7 @@
     "bronzeSqShield": {
       "name": "bronze sq shield",
       "slot": "shield",
-      "icon": "https://microscape.cc/play/assets/bronzeSqShield-C_sx5NpC.png",
+      "icon": "./assets/equipment/bronzeSqShield-C_sx5NpC.png",
       "wikiId": "bronze-sq-shield",
       "bonuses": {
         "defense": 2
@@ -1704,7 +1704,7 @@
     "candyCane": {
       "name": "candy cane",
       "slot": "weapon",
-      "icon": "https://microscape.cc/play/assets/candyCane-7Z-TYzzq.png",
+      "icon": "./assets/equipment/candyCane-7Z-TYzzq.png",
       "wikiId": "candy-cane",
       "bonuses": {
         "strength": 1
@@ -1718,13 +1718,13 @@
     "chaosShard": {
       "name": "Chaos Shard",
       "slot": "tool",
-      "icon": "https://microscape.cc/play/assets/chaosShard-Cfr7NKSc.png",
+      "icon": "./assets/equipment/chaosShard-Cfr7NKSc.png",
       "wikiId": "chaos-shard"
     },
     "chefsHat": {
       "name": "chef's hat",
       "slot": "head",
-      "icon": "https://microscape.cc/play/assets/chefsHat-Cc6z3Wy1.png",
+      "icon": "./assets/equipment/chefsHat-Cc6z3Wy1.png",
       "wikiId": "chefs-hat",
       "bonuses": {
         "cooking": 1,
@@ -1749,7 +1749,7 @@
     "clothesAdventurer": {
       "name": "adventurer's clothes",
       "slot": "body",
-      "icon": "https://microscape.cc/play/assets/clothesAdventurer-BgVlAhYw.png",
+      "icon": "./assets/equipment/clothesAdventurer-BgVlAhYw.png",
       "wikiId": "adventurers-clothes",
       "bonuses": {
         "defense": 1
@@ -1758,7 +1758,7 @@
     "clothesApron": {
       "name": "apron",
       "slot": "body",
-      "icon": "https://microscape.cc/play/assets/clothesApron-DahXyts9.png",
+      "icon": "./assets/equipment/clothesApron-DahXyts9.png",
       "wikiId": "apron",
       "bonuses": {
         "defense": 1
@@ -1767,7 +1767,7 @@
     "clothesDapper": {
       "name": "dapper outfit",
       "slot": "body",
-      "icon": "https://microscape.cc/play/assets/clothesDapper-Dng0gTMA.png",
+      "icon": "./assets/equipment/clothesDapper-Dng0gTMA.png",
       "wikiId": "dapper-outfit",
       "bonuses": {
         "defense": 1
@@ -1776,7 +1776,7 @@
     "clothesDesert": {
       "name": "desert robes",
       "slot": "body",
-      "icon": "https://microscape.cc/play/assets/clothesDesert-Cq4TecCK.png",
+      "icon": "./assets/equipment/clothesDesert-Cq4TecCK.png",
       "wikiId": "desert-robes",
       "bonuses": {
         "defense": 1
@@ -1785,7 +1785,7 @@
     "clothesJulian": {
       "name": "\"the julian\"",
       "slot": "body",
-      "icon": "https://microscape.cc/play/assets/clothesJulian-GnwhFvr8.png",
+      "icon": "./assets/equipment/clothesJulian-GnwhFvr8.png",
       "wikiId": "the-julian",
       "bonuses": {
         "defense": 1
@@ -1794,7 +1794,7 @@
     "clothesRoyal": {
       "name": "royal attire",
       "slot": "body",
-      "icon": "https://microscape.cc/play/assets/clothesRoyal-DT00ECFT.png",
+      "icon": "./assets/equipment/clothesRoyal-DT00ECFT.png",
       "wikiId": "royal-attire",
       "bonuses": {
         "defense": 1
@@ -1803,7 +1803,7 @@
     "clothesScout": {
       "name": "scout uniform",
       "slot": "body",
-      "icon": "https://microscape.cc/play/assets/clothesScout-atPk-Tpq.png",
+      "icon": "./assets/equipment/clothesScout-atPk-Tpq.png",
       "wikiId": "scout-uniform",
       "bonuses": {
         "defense": 1
@@ -1812,7 +1812,7 @@
     "clothesSummer": {
       "name": "summer outfit",
       "slot": "body",
-      "icon": "https://microscape.cc/play/assets/clothesSummer-D8JPUY0_.png",
+      "icon": "./assets/equipment/clothesSummer-D8JPUY0_.png",
       "wikiId": "summer-outfit",
       "bonuses": {
         "defense": 1
@@ -1841,13 +1841,13 @@
     "consolationHat": {
       "name": "consolation hat",
       "slot": "head",
-      "icon": "https://microscape.cc/play/assets/consolationHat-CUclKhuc.png",
+      "icon": "./assets/equipment/consolationHat-CUclKhuc.png",
       "wikiId": "consolation-hat"
     },
     "cookedChicken": {
       "name": "chicken",
       "slot": "food",
-      "icon": "https://microscape.cc/play/assets/cookedChicken-DKYVN_3W.png",
+      "icon": "./assets/equipment/cookedChicken-DKYVN_3W.png",
       "wikiId": "items-chicken",
       "bonuses": {
         "eatRecovery": 3
@@ -1856,7 +1856,7 @@
     "cookedFrog": {
       "name": "frog on a stick",
       "slot": "food",
-      "icon": "https://microscape.cc/play/assets/cookedFrog-CnLMgoeR.png",
+      "icon": "./assets/equipment/cookedFrog-CnLMgoeR.png",
       "wikiId": "frog-on-a-stick",
       "bonuses": {
         "eatRecovery": 3
@@ -1865,7 +1865,7 @@
     "cookedLobster": {
       "name": "lobster",
       "slot": "food",
-      "icon": "https://microscape.cc/play/assets/cookedLobster-OcY79W29.png",
+      "icon": "./assets/equipment/cookedLobster-OcY79W29.png",
       "wikiId": "lobster",
       "bonuses": {
         "eatRecovery": 12
@@ -1874,7 +1874,7 @@
     "cookedMantaRay": {
       "name": "manta ray",
       "slot": "food",
-      "icon": "https://microscape.cc/play/assets/cookedMantaRay-CAUNP9Gp.png",
+      "icon": "./assets/equipment/cookedMantaRay-CAUNP9Gp.png",
       "wikiId": "manta-ray",
       "bonuses": {
         "eatRecovery": 22
@@ -1883,7 +1883,7 @@
     "cookedMeat": {
       "name": "meat",
       "slot": "food",
-      "icon": "https://microscape.cc/play/assets/cookedMeat-C9KOsWSS.png",
+      "icon": "./assets/equipment/cookedMeat-C9KOsWSS.png",
       "wikiId": "meat",
       "bonuses": {
         "eatRecovery": 3
@@ -1892,7 +1892,7 @@
     "cookedPyreshell": {
       "name": "braised pyreshell",
       "slot": "food",
-      "icon": "https://microscape.cc/play/assets/cookedPyreshell-DFwM3Ojo.png",
+      "icon": "./assets/equipment/cookedPyreshell-DFwM3Ojo.png",
       "wikiId": "braised-pyreshell",
       "bonuses": {
         "defense": 2,
@@ -1902,7 +1902,7 @@
     "cookedSalmon": {
       "name": "salmon",
       "slot": "food",
-      "icon": "https://microscape.cc/play/assets/cookedSalmon-DDHUyTPF.png",
+      "icon": "./assets/equipment/cookedSalmon-DDHUyTPF.png",
       "wikiId": "salmon",
       "bonuses": {
         "eatRecovery": 9
@@ -1911,7 +1911,7 @@
     "cookedSardine": {
       "name": "sardine",
       "slot": "food",
-      "icon": "https://microscape.cc/play/assets/cookedSardine-DSKPlBN5.png",
+      "icon": "./assets/equipment/cookedSardine-DSKPlBN5.png",
       "wikiId": "sardine",
       "bonuses": {
         "eatRecovery": 4
@@ -1920,7 +1920,7 @@
     "cookedShark": {
       "name": "shark",
       "slot": "food",
-      "icon": "https://microscape.cc/play/assets/cookedShark-DmGiKXy2.png",
+      "icon": "./assets/equipment/cookedShark-DmGiKXy2.png",
       "wikiId": "shark",
       "bonuses": {
         "eatRecovery": 20
@@ -1929,7 +1929,7 @@
     "cookedShrimp": {
       "name": "shrimp",
       "slot": "food",
-      "icon": "https://microscape.cc/play/assets/cookedShrimp-CfKiLXDl.png",
+      "icon": "./assets/equipment/cookedShrimp-CfKiLXDl.png",
       "wikiId": "shrimp",
       "bonuses": {
         "eatRecovery": 3
@@ -1938,7 +1938,7 @@
     "cookedSwordfish": {
       "name": "swordfish",
       "slot": "food",
-      "icon": "https://microscape.cc/play/assets/cookedSwordfish-BofeZvV9.png",
+      "icon": "./assets/equipment/cookedSwordfish-BofeZvV9.png",
       "wikiId": "swordfish",
       "bonuses": {
         "eatRecovery": 14
@@ -1947,7 +1947,7 @@
     "cookedTrout": {
       "name": "trout",
       "slot": "food",
-      "icon": "https://microscape.cc/play/assets/cookedTrout-DxzoUuUk.png",
+      "icon": "./assets/equipment/cookedTrout-DxzoUuUk.png",
       "wikiId": "trout",
       "bonuses": {
         "eatRecovery": 7
@@ -1961,7 +1961,7 @@
     "cookingPotion": {
       "name": "cooking potion",
       "slot": "potion1",
-      "icon": "https://microscape.cc/play/assets/cookingPotion-DqXwhjeN.png",
+      "icon": "./assets/equipment/cookingPotion-DqXwhjeN.png",
       "wikiId": "cooking-potion"
     },
     "copperOre": {
@@ -1982,13 +1982,13 @@
     "craftingPotion": {
       "name": "crafting potion",
       "slot": "potion1",
-      "icon": "https://microscape.cc/play/assets/craftingPotion-Cpc16MI3.png",
+      "icon": "./assets/equipment/craftingPotion-Cpc16MI3.png",
       "wikiId": "crafting-potion"
     },
     "cursedTalisman": {
       "name": "cursed talisman",
       "slot": "amulet",
-      "icon": "https://microscape.cc/play/assets/cursedTalisman-BI1BHUka.png",
+      "icon": "./assets/equipment/cursedTalisman-BI1BHUka.png",
       "wikiId": "cursed-talisman",
       "bonuses": {
         "evilMagic": 5
@@ -2022,7 +2022,7 @@
     "darkWizardsRobe": {
       "name": "dark wizard's robe",
       "slot": "body",
-      "icon": "https://microscape.cc/play/assets/darkWizardsRobe-CU-5I5Le.png",
+      "icon": "./assets/equipment/darkWizardsRobe-CU-5I5Le.png",
       "wikiId": "dark-wizards-robes",
       "bonuses": {
         "autoEat": 6,
@@ -2038,13 +2038,13 @@
     "deathShard": {
       "name": "Death Shard",
       "slot": "tool",
-      "icon": "https://microscape.cc/play/assets/deathShard-jPW_pKSj.png",
+      "icon": "./assets/equipment/deathShard-jPW_pKSj.png",
       "wikiId": "death-shard"
     },
     "defensePotion": {
       "name": "defense potion",
       "slot": "potion1",
-      "icon": "https://microscape.cc/play/assets/defensePotion-DkVrbUzO.png",
+      "icon": "./assets/equipment/defensePotion-DkVrbUzO.png",
       "wikiId": "defense-potion"
     },
     "diamondAmulet": {
@@ -2086,7 +2086,7 @@
     "dragonHelm": {
       "name": "dragon helm",
       "slot": "head",
-      "icon": "https://microscape.cc/play/assets/dragonHelm-Dz-zdlqj.png",
+      "icon": "./assets/equipment/dragonHelm-Dz-zdlqj.png",
       "wikiId": "dragon-helm",
       "bonuses": {
         "autoEat": 10,
@@ -2096,7 +2096,7 @@
     "dragonShield": {
       "name": "dragon shield",
       "slot": "shield",
-      "icon": "https://microscape.cc/play/assets/dragonShield-BrZoBVvb.png",
+      "icon": "./assets/equipment/dragonShield-BrZoBVvb.png",
       "wikiId": "dragon-shield",
       "bonuses": {
         "autoEat": 10,
@@ -2116,7 +2116,7 @@
     "dragonSword": {
       "name": "dragon sword",
       "slot": "weapon",
-      "icon": "https://microscape.cc/play/assets/dragonSword-q1XYRJ4-.png",
+      "icon": "./assets/equipment/dragonSword-q1XYRJ4-.png",
       "wikiId": "dragon-sword",
       "bonuses": {
         "attack": 21,
@@ -2168,7 +2168,7 @@
     "elperHat": {
       "name": "elper's hat",
       "slot": "head",
-      "icon": "https://microscape.cc/play/assets/elperHat-BYd-qgn5.png",
+      "icon": "./assets/equipment/elperHat-BYd-qgn5.png",
       "wikiId": "elpers-hat",
       "bonuses": {
         "defense": 1
@@ -2205,13 +2205,13 @@
     "evilMagicPotion": {
       "name": "evil magic potion",
       "slot": "potion1",
-      "icon": "https://microscape.cc/play/assets/evilMagicPotion-vVK7pWFj.png",
+      "icon": "./assets/equipment/evilMagicPotion-vVK7pWFj.png",
       "wikiId": "evil-magic-potion"
     },
     "explorersHat": {
       "name": "explorer's hat",
       "slot": "head",
-      "icon": "https://microscape.cc/play/assets/explorersHat-CpciqM65.png",
+      "icon": "./assets/equipment/explorersHat-CpciqM65.png",
       "wikiId": "explorers-hat",
       "bonuses": {
         "defense": 1
@@ -2235,7 +2235,7 @@
     "featheredCap": {
       "name": "feathered cap",
       "slot": "head",
-      "icon": "https://microscape.cc/play/assets/featheredCap-XrLwD2nf.png",
+      "icon": "./assets/equipment/featheredCap-XrLwD2nf.png",
       "wikiId": "feathered-cap",
       "bonuses": {
         "defense": 1
@@ -2254,7 +2254,7 @@
     "fireBattlestaff": {
       "name": "fire battlestaff",
       "slot": "weapon",
-      "icon": "https://microscape.cc/play/assets/fireBattlestaff-WFrE9hzN.png",
+      "icon": "./assets/equipment/fireBattlestaff-WFrE9hzN.png",
       "wikiId": "fire-battlestaff",
       "bonuses": {
         "attack": 5,
@@ -2281,7 +2281,7 @@
     "fireStaff": {
       "name": "fire staff",
       "slot": "weapon",
-      "icon": "https://microscape.cc/play/assets/fireStaff-MYtZj2O0.png",
+      "icon": "./assets/equipment/fireStaff-MYtZj2O0.png",
       "wikiId": "fire-staff",
       "bonuses": {
         "attack": 3,
@@ -2293,19 +2293,19 @@
     "firemakingPotion": {
       "name": "firemaking potion",
       "slot": "potion1",
-      "icon": "https://microscape.cc/play/assets/firemakingPotion-BvOHiNDv.png",
+      "icon": "./assets/equipment/firemakingPotion-BvOHiNDv.png",
       "wikiId": "firemaking-potion"
     },
     "fishingPotion": {
       "name": "fishing potion",
       "slot": "potion1",
-      "icon": "https://microscape.cc/play/assets/fishingPotion-a4WPEbql.png",
+      "icon": "./assets/equipment/fishingPotion-a4WPEbql.png",
       "wikiId": "fishing-potion"
     },
     "fishingRod": {
       "name": "fishing rod",
       "slot": "weapon",
-      "icon": "https://microscape.cc/play/assets/fishingRod-BA_jcE_n.png",
+      "icon": "./assets/equipment/fishingRod-BA_jcE_n.png",
       "wikiId": "fishing-rod",
       "bonuses": {
         "attack": -3,
@@ -2322,7 +2322,7 @@
     "fletchersCloak": {
       "name": "fletcher's cloak",
       "slot": "cape",
-      "icon": "https://microscape.cc/play/assets/fletchersCloak-CnmEPgj8.png",
+      "icon": "./assets/equipment/fletchersCloak-CnmEPgj8.png",
       "wikiId": "fletchers-cloak",
       "bonuses": {
         "fletching": 3
@@ -2331,7 +2331,7 @@
     "fletchingPotion": {
       "name": "fletching potion",
       "slot": "potion1",
-      "icon": "https://microscape.cc/play/assets/fletchingPotion-BIwLXgaS.png",
+      "icon": "./assets/equipment/fletchingPotion-BIwLXgaS.png",
       "wikiId": "fletching-potion"
     },
     "flourPot": {
@@ -2347,7 +2347,7 @@
     "foolsHat": {
       "name": "fool's hat",
       "slot": "head",
-      "icon": "https://microscape.cc/play/assets/foolsHat-Bm1dIse7.png",
+      "icon": "./assets/equipment/foolsHat-Bm1dIse7.png",
       "wikiId": "fools-hat",
       "bonuses": {
         "defense": -3
@@ -2356,7 +2356,7 @@
     "foolsHatUnusual": {
       "name": "unusual fool's hat",
       "slot": "head",
-      "icon": "https://microscape.cc/play/assets/foolsHatUnusual-8DIkV_Vv.png",
+      "icon": "./assets/equipment/foolsHatUnusual-8DIkV_Vv.png",
       "wikiId": "unusual-fools-hat",
       "bonuses": {
         "defense": -5
@@ -2365,7 +2365,7 @@
     "foxHat": {
       "name": "fox hat",
       "slot": "head",
-      "icon": "https://microscape.cc/play/assets/foxHat-CsT2xiOL.png",
+      "icon": "./assets/equipment/foxHat-CsT2xiOL.png",
       "wikiId": "fox-hat",
       "bonuses": {
         "defense": 2
@@ -2389,7 +2389,7 @@
     "gardenersGloves": {
       "name": "gardener's gloves",
       "slot": "hands",
-      "icon": "https://microscape.cc/play/assets/gardenersGloves-CcHJzLnB.png",
+      "icon": "./assets/equipment/gardenersGloves-CcHJzLnB.png",
       "wikiId": "gardeners-gloves",
       "bonuses": {
         "defense": 1,
@@ -2430,7 +2430,7 @@
     "goldenRod": {
       "name": "golden rod",
       "slot": "weapon",
-      "icon": "https://microscape.cc/play/assets/goldenRod-YwvVn8Sa.png",
+      "icon": "./assets/equipment/goldenRod-YwvVn8Sa.png",
       "wikiId": "golden-rod",
       "bonuses": {
         "attack": -2,
@@ -2442,7 +2442,7 @@
     "goodMagicPotion": {
       "name": "good magic potion",
       "slot": "potion1",
-      "icon": "https://microscape.cc/play/assets/goodMagicPotion-BxJWmAw6.png",
+      "icon": "./assets/equipment/goodMagicPotion-BxJWmAw6.png",
       "wikiId": "good-magic-potion"
     },
     "grain": {
@@ -2453,13 +2453,13 @@
     "greenPartyHat": {
       "name": "party hat",
       "slot": "head",
-      "icon": "https://microscape.cc/play/assets/greenPartyHat-CM_tNLxC.png",
+      "icon": "./assets/equipment/bluePartyHat-CrpDHRS1.png",
       "wikiId": "blue-party-hat"
     },
     "hammer": {
       "name": "hammer",
       "slot": "tool",
-      "icon": "https://microscape.cc/play/assets/hammer-CpeS4UmM.png",
+      "icon": "./assets/equipment/hammer-CpeS4UmM.png",
       "wikiId": "bronze-hammer",
       "bonuses": {
         "smithing": 3
@@ -2488,7 +2488,7 @@
     "heatGloves": {
       "name": "heat gloves",
       "slot": "hands",
-      "icon": "https://microscape.cc/play/assets/heatGloves-BiuwPLIz.png",
+      "icon": "./assets/equipment/heatGloves-BiuwPLIz.png",
       "wikiId": "heat-gloves",
       "bonuses": {
         "defense": 1,
@@ -2498,7 +2498,7 @@
     "hellforgedHammer": {
       "name": "hellforged hammer",
       "slot": "tool",
-      "icon": "https://microscape.cc/play/assets/hellforgedHammer-4GCRa2C_.png",
+      "icon": "./assets/equipment/hellforgedHammer-4GCRa2C_.png",
       "wikiId": "mithril-hammer",
       "bonuses": {
         "smithing": 8
@@ -2507,7 +2507,7 @@
     "herblawPotion": {
       "name": "herblaw potion",
       "slot": "potion1",
-      "icon": "https://microscape.cc/play/assets/herblawPotion-D9d9unhw.png",
+      "icon": "./assets/equipment/herblawPotion-D9d9unhw.png",
       "wikiId": "herblaw-potion"
     },
     "holyAmulet": {
@@ -2538,13 +2538,13 @@
     "ironShears": {
       "name": "iron shears",
       "slot": "tool",
-      "icon": "https://microscape.cc/play/assets/ironShears-kQV-P0BN.png",
+      "icon": "./assets/equipment/ironShears-kQV-P0BN.png",
       "wikiId": "iron-shears"
     },
     "ironbreakerPickaxe": {
       "name": "ironbreaker pickaxe",
       "slot": "weapon",
-      "icon": "https://microscape.cc/play/assets/ironbreakerPickaxe-DaCXlc9h.png",
+      "icon": "./assets/equipment/ironbreakerPickaxe-DaCXlc9h.png",
       "wikiId": "iron-pickaxe",
       "bonuses": {
         "attack": 2,
@@ -2556,7 +2556,7 @@
     "iskarnsGrip": {
       "name": "Iskarn's Grip",
       "slot": "weapon",
-      "icon": "https://microscape.cc/play/assets/iskarnsGrip-DVsY6vqA.png",
+      "icon": "./assets/equipment/iskarnsGrip-DVsY6vqA.png",
       "wikiId": "iskarns-grip",
       "bonuses": {
         "attack": 8,
@@ -2568,7 +2568,7 @@
     "jackoLantern": {
       "name": "jack-o'-lantern",
       "slot": "shield",
-      "icon": "https://microscape.cc/play/assets/jackoLantern-CAMTEvQ1.png",
+      "icon": "./assets/equipment/jackoLantern-CAMTEvQ1.png",
       "wikiId": "jack-o-lantern",
       "bonuses": {
         "defense": 1
@@ -2577,7 +2577,7 @@
     "khopeshOfBa": {
       "name": "Khopesh of Ba",
       "slot": "weapon",
-      "icon": "https://microscape.cc/play/assets/khopeshOfBa-zP3OFINI.png",
+      "icon": "./assets/equipment/khopeshOfBa-zP3OFINI.png",
       "wikiId": "khopesh-of-ba",
       "bonuses": {
         "attack": 12,
@@ -2593,7 +2593,7 @@
     "ladle": {
       "name": "ladle",
       "slot": "tool",
-      "icon": "https://microscape.cc/play/assets/ladle-BB5-CLBw.png",
+      "icon": "./assets/equipment/ladle-BB5-CLBw.png",
       "wikiId": "bronze-ladle",
       "bonuses": {
         "cooking": 3
@@ -2612,7 +2612,7 @@
     "lavaRod": {
       "name": "lava rod",
       "slot": "weapon",
-      "icon": "https://microscape.cc/play/assets/lavaRod-B30JPE9Q.png",
+      "icon": "./assets/equipment/lavaRod-B30JPE9Q.png",
       "wikiId": "lava-rod",
       "bonuses": {
         "attack": -2,
@@ -2638,7 +2638,7 @@
     "leatherArmor": {
       "name": "leather armor",
       "slot": "body",
-      "icon": "https://microscape.cc/play/assets/leatherArmor-Zs-u521g.png",
+      "icon": "./assets/equipment/leatherArmor-Zs-u521g.png",
       "wikiId": "leather-armor",
       "bonuses": {
         "defense": 2
@@ -2647,7 +2647,7 @@
     "leatherBoots": {
       "name": "leather boots",
       "slot": "feet",
-      "icon": "https://microscape.cc/play/assets/leatherBoots-BP44j5gn.png",
+      "icon": "./assets/equipment/leatherBoots-BP44j5gn.png",
       "wikiId": "leather-boots",
       "bonuses": {
         "defense": 1
@@ -2656,7 +2656,7 @@
     "leatherGloves": {
       "name": "leather gloves",
       "slot": "hands",
-      "icon": "https://microscape.cc/play/assets/leatherGloves-BTygcDjs.png",
+      "icon": "./assets/equipment/leatherGloves-BTygcDjs.png",
       "wikiId": "leather-gloves",
       "bonuses": {
         "defense": 1
@@ -2670,7 +2670,7 @@
     "loggingAxe": {
       "name": "logging axe",
       "slot": "weapon",
-      "icon": "https://microscape.cc/play/assets/loggingAxe-kZXwEHLV.png",
+      "icon": "./assets/equipment/loggingAxe-kZXwEHLV.png",
       "wikiId": "bronze-axe",
       "bonuses": {
         "attack": 2,
@@ -2701,7 +2701,7 @@
     "magicBow": {
       "name": "magic bow",
       "slot": "weapon",
-      "icon": "https://microscape.cc/play/assets/magicBow-DcKTbnOW.png",
+      "icon": "./assets/equipment/magicBow-DcKTbnOW.png",
       "wikiId": "magic-bow",
       "bonuses": {
         "attackCooldown": 3,
@@ -2726,7 +2726,7 @@
     "magicStaff": {
       "name": "magic staff",
       "slot": "weapon",
-      "icon": "https://microscape.cc/play/assets/magicStaff-S9u-lmNN.png",
+      "icon": "./assets/equipment/magicStaff-S9u-lmNN.png",
       "wikiId": "magic-staff",
       "bonuses": {
         "attack": 2,
@@ -2743,7 +2743,7 @@
     "magmaMirror": {
       "name": "Magma Mirror",
       "slot": "shield",
-      "icon": "https://microscape.cc/play/assets/magmaMirror-DbIlKbSE.png",
+      "icon": "./assets/equipment/magmaMirror-DbIlKbSE.png",
       "wikiId": "magma-mirror",
       "bonuses": {
         "defense": 8,
@@ -2753,7 +2753,7 @@
     "mapleBow": {
       "name": "maple bow",
       "slot": "weapon",
-      "icon": "https://microscape.cc/play/assets/mapleBow-CbLq0CQy.png",
+      "icon": "./assets/equipment/mapleBow-CbLq0CQy.png",
       "wikiId": "maple-bow",
       "bonuses": {
         "attackCooldown": 3,
@@ -2778,7 +2778,7 @@
     "meatPie": {
       "name": "meat pie",
       "slot": "food",
-      "icon": "https://microscape.cc/play/assets/meatPie-DeHqUJX4.png",
+      "icon": "./assets/equipment/meatPie-DeHqUJX4.png",
       "wikiId": "meat-pie",
       "bonuses": {
         "eatRecovery": 12,
@@ -2793,19 +2793,19 @@
     "mindShard": {
       "name": "Mind Shard",
       "slot": "tool",
-      "icon": "https://microscape.cc/play/assets/mindShard-CSeC9sna.png",
+      "icon": "./assets/equipment/mindShard-CSeC9sna.png",
       "wikiId": "mind-shard"
     },
     "miningPotion": {
       "name": "mining potion",
       "slot": "potion1",
-      "icon": "https://microscape.cc/play/assets/miningPotion-DzkbwiR9.png",
+      "icon": "./assets/equipment/miningPotion-DzkbwiR9.png",
       "wikiId": "mining-potion"
     },
     "mithrilArmor": {
       "name": "mithril armor",
       "slot": "body",
-      "icon": "https://microscape.cc/play/assets/mithrilArmor-B_kcB23h.png",
+      "icon": "./assets/equipment/mithrilArmor-B_kcB23h.png",
       "wikiId": "mithril-armor",
       "bonuses": {
         "defense": 8
@@ -2814,7 +2814,7 @@
     "mithrilArrows": {
       "name": "mithril arrows",
       "slot": "ammo",
-      "icon": "https://microscape.cc/play/assets/mithrilArrows-C_FVOvDL.png",
+      "icon": "./assets/equipment/mithrilArrows-C_FVOvDL.png",
       "wikiId": "mithril-arrows",
       "bonuses": {
         "ranged": 5
@@ -2833,7 +2833,7 @@
     "mithrilDagger": {
       "name": "mithril dagger",
       "slot": "weapon",
-      "icon": "https://microscape.cc/play/assets/mithrilDagger-BCVIBxVF.png",
+      "icon": "./assets/equipment/mithrilDagger-BCVIBxVF.png",
       "wikiId": "mithril-dagger",
       "bonuses": {
         "attack": 7,
@@ -2844,7 +2844,7 @@
     "mithrilMedHelm": {
       "name": "mithril med helm",
       "slot": "head",
-      "icon": "https://microscape.cc/play/assets/mithrilMedHelm-B-5HM6Ap.png",
+      "icon": "./assets/equipment/mithrilMedHelm-B-5HM6Ap.png",
       "wikiId": "mithril-med-helm",
       "bonuses": {
         "defense": 4
@@ -2858,7 +2858,7 @@
     "mithrilScimitar": {
       "name": "mithril scimitar",
       "slot": "weapon",
-      "icon": "https://microscape.cc/play/assets/mithrilScimitar-BkVOzG9t.png",
+      "icon": "./assets/equipment/mithrilScimitar-BkVOzG9t.png",
       "wikiId": "mithril-scimitar",
       "bonuses": {
         "attack": 7,
@@ -2869,7 +2869,7 @@
     "mithrilSqShield": {
       "name": "mithril sq shield",
       "slot": "shield",
-      "icon": "https://microscape.cc/play/assets/mithrilSqShield-CUmjfTmb.png",
+      "icon": "./assets/equipment/mithrilSqShield-CUmjfTmb.png",
       "wikiId": "mithril-sq-shield",
       "bonuses": {
         "defense": 8
@@ -2888,7 +2888,7 @@
     "monkRobe": {
       "name": "monk's robe",
       "slot": "body",
-      "icon": "https://microscape.cc/play/assets/monkRobe-B9lcBGf4.png",
+      "icon": "./assets/equipment/monkRobe-B9lcBGf4.png",
       "wikiId": "monks-robe",
       "bonuses": {
         "defense": 3,
@@ -2898,7 +2898,7 @@
     "mothLantern": {
       "name": "moth lantern",
       "slot": "shield",
-      "icon": "https://microscape.cc/play/assets/mothLantern-B1GSau1b.png",
+      "icon": "./assets/equipment/mothLantern-B1GSau1b.png",
       "wikiId": "moth-lantern",
       "bonuses": {
         "attack": 1,
@@ -2918,7 +2918,7 @@
     "oakBow": {
       "name": "oak bow",
       "slot": "weapon",
-      "icon": "https://microscape.cc/play/assets/oakBow-Pu_QEhEE.png",
+      "icon": "./assets/equipment/oakBow-Pu_QEhEE.png",
       "wikiId": "oak-bow",
       "bonuses": {
         "attackCooldown": 3,
@@ -2938,7 +2938,7 @@
     "oldRod": {
       "name": "old rod",
       "slot": "weapon",
-      "icon": "https://microscape.cc/play/assets/oldRod-BIdK30zO.png",
+      "icon": "./assets/equipment/oldRod-BIdK30zO.png",
       "wikiId": "old-rod",
       "bonuses": {
         "attack": -2,
@@ -2950,7 +2950,7 @@
     "onyxCape": {
       "name": "onyx cape",
       "slot": "cape",
-      "icon": "https://microscape.cc/play/assets/onyxCape-BuqDfK6m.png",
+      "icon": "./assets/equipment/onyxCape-BuqDfK6m.png",
       "wikiId": "onyx-cape",
       "bonuses": {
         "attack": 3,
@@ -3356,7 +3356,7 @@
     "pickaxe": {
       "name": "pickaxe",
       "slot": "weapon",
-      "icon": "https://microscape.cc/play/assets/pickaxe-BqkPwGpj.png",
+      "icon": "./assets/equipment/pickaxe-BqkPwGpj.png",
       "wikiId": "bronze-pickaxe",
       "bonuses": {
         "attack": 2,
@@ -3373,7 +3373,7 @@
     "pietyPotion": {
       "name": "piety potion",
       "slot": "potion1",
-      "icon": "https://microscape.cc/play/assets/pietyPotion-C-EmwEWC.png",
+      "icon": "./assets/equipment/pietyPotion-C-EmwEWC.png",
       "wikiId": "piety-potion"
     },
     "pot": {
@@ -3384,7 +3384,7 @@
     "priestRobe": {
       "name": "priest robe",
       "slot": "body",
-      "icon": "https://microscape.cc/play/assets/darkWizardsRobe-CU-5I5Le.png",
+      "icon": "./assets/equipment/darkWizardsRobe-CU-5I5Le.png",
       "wikiId": "priest-robe",
       "bonuses": {
         "defense": 1,
@@ -3394,7 +3394,7 @@
     "progrite2hSword": {
       "name": "progrite 2h sword",
       "slot": "weapon",
-      "icon": "https://microscape.cc/play/assets/progrite2hSword-aJJR8UoQ.png",
+      "icon": "./assets/equipment/progrite2hSword-aJJR8UoQ.png",
       "wikiId": "progrite-2h-sword",
       "bonuses": {
         "abilitySlots": 1,
@@ -3406,7 +3406,7 @@
     "progriteArmor": {
       "name": "progrite armor",
       "slot": "body",
-      "icon": "https://microscape.cc/play/assets/progriteArmor-Cgg7_G3u.png",
+      "icon": "./assets/equipment/progriteArmor-Cgg7_G3u.png",
       "wikiId": "progrite-armor",
       "bonuses": {
         "abilitySlots": 1,
@@ -3417,7 +3417,7 @@
     "progriteArrows": {
       "name": "progrite arrows",
       "slot": "ammo",
-      "icon": "https://microscape.cc/play/assets/progriteArrows-ytXK4-Ah.png",
+      "icon": "./assets/equipment/progriteArrows-ytXK4-Ah.png",
       "wikiId": "progrite-arrows",
       "bonuses": {
         "ranged": 9
@@ -3436,7 +3436,7 @@
     "progriteDagger": {
       "name": "progrite dagger",
       "slot": "weapon",
-      "icon": "https://microscape.cc/play/assets/progriteDagger-DmmPNsgA.png",
+      "icon": "./assets/equipment/progriteDagger-DmmPNsgA.png",
       "wikiId": "progrite-dagger",
       "bonuses": {
         "attack": 12,
@@ -3447,7 +3447,7 @@
     "progriteFullHelm": {
       "name": "progrite full helm",
       "slot": "head",
-      "icon": "https://microscape.cc/play/assets/progriteFullHelm-htRSi6Jy.png",
+      "icon": "./assets/equipment/progriteFullHelm-htRSi6Jy.png",
       "wikiId": "progrite-full-helm",
       "bonuses": {
         "autoEat": 6,
@@ -3457,7 +3457,7 @@
     "progriteMedHelm": {
       "name": "progrite med helm",
       "slot": "head",
-      "icon": "https://microscape.cc/play/assets/progriteMedHelm-wXt6Njj-.png",
+      "icon": "./assets/equipment/progriteMedHelm-wXt6Njj-.png",
       "wikiId": "progrite-med-helm",
       "bonuses": {
         "autoEat": 6,
@@ -3472,7 +3472,7 @@
     "progriteScimitar": {
       "name": "progrite scimitar",
       "slot": "weapon",
-      "icon": "https://microscape.cc/play/assets/progriteScimitar-BZ9iwEbK.png",
+      "icon": "./assets/equipment/progriteScimitar-BZ9iwEbK.png",
       "wikiId": "progrite-scimitar",
       "bonuses": {
         "attack": 12,
@@ -3483,7 +3483,7 @@
     "progriteSqShield": {
       "name": "progrite sq shield",
       "slot": "shield",
-      "icon": "https://microscape.cc/play/assets/progriteSqShield-CrtfPv9V.png",
+      "icon": "./assets/equipment/progriteSqShield-CrtfPv9V.png",
       "wikiId": "progrite-sq-shield",
       "bonuses": {
         "autoEat": 6,
@@ -3493,13 +3493,13 @@
     "purplePartyHat": {
       "name": "party hat",
       "slot": "head",
-      "icon": "https://microscape.cc/play/assets/purplePartyHat-DpdqAtOg.png",
+      "icon": "./assets/equipment/bluePartyHat-CrpDHRS1.png",
       "wikiId": "blue-party-hat"
     },
     "pyreshellShield": {
       "name": "pyreshell shield",
       "slot": "shield",
-      "icon": "https://microscape.cc/play/assets/pyreshellShield-C62znj_4.png",
+      "icon": "./assets/equipment/pyreshellShield-C62znj_4.png",
       "wikiId": "pyreshell-shield",
       "bonuses": {
         "defense": 9
@@ -3508,7 +3508,7 @@
     "rangedPotion": {
       "name": "ranged potion",
       "slot": "potion1",
-      "icon": "https://microscape.cc/play/assets/rangedPotion-Bm9bpg9Y.png",
+      "icon": "./assets/equipment/rangedPotion-Bm9bpg9Y.png",
       "wikiId": "ranged-potion"
     },
     "rawChicken": {
@@ -3574,7 +3574,7 @@
     "redPartyHat": {
       "name": "party hat",
       "slot": "head",
-      "icon": "https://microscape.cc/play/assets/redPartyHat-C3X7DASi.png",
+      "icon": "./assets/equipment/bluePartyHat-CrpDHRS1.png",
       "wikiId": "blue-party-hat"
     },
     "redberries": {
@@ -3585,7 +3585,7 @@
     "redberryPie": {
       "name": "redberry pie",
       "slot": "food",
-      "icon": "https://microscape.cc/play/assets/redberryPie-BIX28z1d.png",
+      "icon": "./assets/equipment/redberryPie-BIX28z1d.png",
       "wikiId": "redberry-pie",
       "bonuses": {
         "eatRecovery": 10,
@@ -3613,7 +3613,7 @@
     "royalCape": {
       "name": "royal cape",
       "slot": "cape",
-      "icon": "https://microscape.cc/play/assets/royalCape-Clm0rroX.png",
+      "icon": "./assets/equipment/royalCape-Clm0rroX.png",
       "wikiId": "royal-cape",
       "bonuses": {
         "defense": -10
@@ -3622,7 +3622,7 @@
     "rubberBoots": {
       "name": "rubber boots",
       "slot": "feet",
-      "icon": "https://microscape.cc/play/assets/rubberBoots-BnL1ZF3d.png",
+      "icon": "./assets/equipment/rubberBoots-BnL1ZF3d.png",
       "wikiId": "rubber-boots",
       "bonuses": {
         "defense": 2
@@ -3647,7 +3647,7 @@
     "saltedMitts": {
       "name": "salted mitts",
       "slot": "hands",
-      "icon": "https://microscape.cc/play/assets/saltedMitts-DIraNmoR.png",
+      "icon": "./assets/equipment/saltedMitts-DIraNmoR.png",
       "wikiId": "salted-mitts",
       "bonuses": {
         "cooking": 1,
@@ -3662,7 +3662,7 @@
     "sanglewoodStaff": {
       "name": "Sanglewood Staff",
       "slot": "weapon",
-      "icon": "https://microscape.cc/play/assets/sanglewoodStaff-BeiRdQjk.png",
+      "icon": "./assets/equipment/sanglewoodStaff-BeiRdQjk.png",
       "wikiId": "sanglewood-staff",
       "bonuses": {
         "attack": 8,
@@ -3674,7 +3674,7 @@
     "sanguineBoots": {
       "name": "sanguine boots",
       "slot": "feet",
-      "icon": "https://microscape.cc/play/assets/sanguineBoots-B8-5R8Dw.png",
+      "icon": "./assets/equipment/sanguineBoots-B8-5R8Dw.png",
       "wikiId": "sanguine-boots",
       "bonuses": {
         "autoEat": 8,
@@ -3684,7 +3684,7 @@
     "santaHat": {
       "name": "santa hat",
       "slot": "head",
-      "icon": "https://microscape.cc/play/assets/santaHat-DuVMV0SY.png",
+      "icon": "./assets/equipment/santaHat-DuVMV0SY.png",
       "wikiId": "santa-hat",
       "bonuses": {
         "defense": 1
@@ -3699,13 +3699,13 @@
     "scarabCache": {
       "name": "scarab cache",
       "slot": "tool",
-      "icon": "https://microscape.cc/play/assets/scarabCache-CGO6RzHu.png",
+      "icon": "./assets/equipment/scarabCache-CGO6RzHu.png",
       "wikiId": "scarab-cache"
     },
     "scarabSatchel": {
       "name": "scarab satchel",
       "slot": "tool",
-      "icon": "https://microscape.cc/play/assets/scarabSatchel-BeOiAWca.png",
+      "icon": "./assets/equipment/scarabSatchel-BeOiAWca.png",
       "wikiId": "scarab-satchel"
     },
     "scorchedCoin": {
@@ -3721,7 +3721,7 @@
     "serpentQuiver": {
       "name": "serpent quiver",
       "slot": "tool",
-      "icon": "https://microscape.cc/play/assets/serpentQuiver-CKMj5ZKV.png",
+      "icon": "./assets/equipment/serpentQuiver-CKMj5ZKV.png",
       "wikiId": "serpent-quiver"
     },
     "serpentleaf": {
@@ -3732,7 +3732,7 @@
     "shellOfKa": {
       "name": "Shell of Ka",
       "slot": "shield",
-      "icon": "https://microscape.cc/play/assets/shellOfKa-BVEqDGD9.png",
+      "icon": "./assets/equipment/shellOfKa-BVEqDGD9.png",
       "wikiId": "shell-of-ka",
       "bonuses": {
         "defense": 11
@@ -3741,7 +3741,7 @@
     "shortbow": {
       "name": "bow",
       "slot": "weapon",
-      "icon": "https://microscape.cc/play/assets/shortbow-Dp37V_Tl.png",
+      "icon": "./assets/equipment/shortbow-Dp37V_Tl.png",
       "wikiId": "bow",
       "bonuses": {
         "attackCooldown": 3
@@ -3755,7 +3755,7 @@
     "shovel": {
       "name": "shovel",
       "slot": "tool",
-      "icon": "https://microscape.cc/play/assets/shovel-BWxWRNdn.png",
+      "icon": "./assets/equipment/shovel-BWxWRNdn.png",
       "wikiId": "steel-shovel"
     },
     "shovelHead": {
@@ -3806,7 +3806,7 @@
     "skullShield": {
       "name": "skull shield",
       "slot": "shield",
-      "icon": "https://microscape.cc/play/assets/skullShield-TYCw0J4S.png",
+      "icon": "./assets/equipment/skullShield-TYCw0J4S.png",
       "wikiId": "skull-shield",
       "bonuses": {
         "autoEat": 8,
@@ -3817,7 +3817,7 @@
     "slimeTorso": {
       "name": "slime torso",
       "slot": "body",
-      "icon": "https://microscape.cc/play/assets/slimeTorso-aaLKPnyt.png",
+      "icon": "./assets/equipment/slimeTorso-aaLKPnyt.png",
       "wikiId": "slime-torso",
       "bonuses": {
         "defense": 6
@@ -3831,7 +3831,7 @@
     "smithingPotion": {
       "name": "smithing potion",
       "slot": "potion1",
-      "icon": "https://microscape.cc/play/assets/smithingPotion-oHElUHzY.png",
+      "icon": "./assets/equipment/smithingPotion-oHElUHzY.png",
       "wikiId": "smithing-potion"
     },
     "snailShell": {
@@ -3877,7 +3877,7 @@
     "staff": {
       "name": "staff",
       "slot": "weapon",
-      "icon": "https://microscape.cc/play/assets/staff-DviihIii.png",
+      "icon": "./assets/equipment/staff-DviihIii.png",
       "wikiId": "staff",
       "bonuses": {
         "attack": 1,
@@ -3889,7 +3889,7 @@
     "steelArmor": {
       "name": "steel armor",
       "slot": "body",
-      "icon": "https://microscape.cc/play/assets/steelArmor-gplW8RyQ.png",
+      "icon": "./assets/equipment/steelArmor-gplW8RyQ.png",
       "wikiId": "steel-armor",
       "bonuses": {
         "defense": 6
@@ -3898,7 +3898,7 @@
     "steelArrows": {
       "name": "steel arrows",
       "slot": "ammo",
-      "icon": "https://microscape.cc/play/assets/steelArrows-CZDNQcux.png",
+      "icon": "./assets/equipment/steelArrows-CZDNQcux.png",
       "wikiId": "steel-arrows",
       "bonuses": {
         "ranged": 3
@@ -3917,7 +3917,7 @@
     "steelDagger": {
       "name": "steel dagger",
       "slot": "weapon",
-      "icon": "https://microscape.cc/play/assets/steelDagger-DKFLkGaF.png",
+      "icon": "./assets/equipment/steelDagger-DKFLkGaF.png",
       "wikiId": "steel-dagger",
       "bonuses": {
         "attack": 5,
@@ -3928,7 +3928,7 @@
     "steelFullHelm": {
       "name": "steel full helm",
       "slot": "head",
-      "icon": "https://microscape.cc/play/assets/steelFullHelm-CqdVmdWj.png",
+      "icon": "./assets/equipment/steelFullHelm-CqdVmdWj.png",
       "wikiId": "steel-full-helm",
       "bonuses": {
         "defense": 4
@@ -3937,7 +3937,7 @@
     "steelMedHelm": {
       "name": "steel med helm",
       "slot": "head",
-      "icon": "https://microscape.cc/play/assets/steelMedHelm-BTwwV0rG.png",
+      "icon": "./assets/equipment/steelMedHelm-BTwwV0rG.png",
       "wikiId": "steel-med-helm",
       "bonuses": {
         "defense": 3
@@ -3946,7 +3946,7 @@
     "steelScimitar": {
       "name": "steel scimitar",
       "slot": "weapon",
-      "icon": "https://microscape.cc/play/assets/steelScimitar-BXx4fsQQ.png",
+      "icon": "./assets/equipment/steelScimitar-BXx4fsQQ.png",
       "wikiId": "steel-scimitar",
       "bonuses": {
         "attack": 5,
@@ -3957,7 +3957,7 @@
     "steelSqShield": {
       "name": "steel sq shield",
       "slot": "shield",
-      "icon": "https://microscape.cc/play/assets/steelSqShield-Cc_XzfiC.png",
+      "icon": "./assets/equipment/steelSqShield-Cc_XzfiC.png",
       "wikiId": "steel-sq-shield",
       "bonuses": {
         "defense": 6
@@ -3966,109 +3966,109 @@
     "strengthPotion": {
       "name": "strength potion",
       "slot": "potion1",
-      "icon": "https://microscape.cc/play/assets/strengthPotion-DHe2ob1X.png",
+      "icon": "./assets/equipment/strengthPotion-DHe2ob1X.png",
       "wikiId": "strength-potion"
     },
     "superAttackPotion": {
       "name": "super attack potion",
       "slot": "potion1",
-      "icon": "https://microscape.cc/play/assets/superAttackPotion-Dv-mgOA9.png",
+      "icon": "./assets/equipment/superAttackPotion-Dv-mgOA9.png",
       "wikiId": "super-attack-potion"
     },
     "superCookingPotion": {
       "name": "super cooking potion",
       "slot": "potion1",
-      "icon": "https://microscape.cc/play/assets/superCookingPotion-CZIi7zn3.png",
+      "icon": "./assets/equipment/superCookingPotion-CZIi7zn3.png",
       "wikiId": "super-cooking-potion"
     },
     "superCraftingPotion": {
       "name": "super crafting potion",
       "slot": "potion1",
-      "icon": "https://microscape.cc/play/assets/superCraftingPotion-Bzh4sztw.png",
+      "icon": "./assets/equipment/superCraftingPotion-Bzh4sztw.png",
       "wikiId": "super-crafting-potion"
     },
     "superDefensePotion": {
       "name": "super defense potion",
       "slot": "potion1",
-      "icon": "https://microscape.cc/play/assets/superDefensePotion-CLtZJVT7.png",
+      "icon": "./assets/equipment/superDefensePotion-CLtZJVT7.png",
       "wikiId": "super-defense-potion"
     },
     "superEvilMagicPotion": {
       "name": "super evil magic potion",
       "slot": "potion1",
-      "icon": "https://microscape.cc/play/assets/superEvilMagicPotion-CBOr5TE2.png",
+      "icon": "./assets/equipment/superEvilMagicPotion-CBOr5TE2.png",
       "wikiId": "super-evil-magic-potion"
     },
     "superFiremakingPotion": {
       "name": "super firemaking potion",
       "slot": "potion1",
-      "icon": "https://microscape.cc/play/assets/superFiremakingPotion-OyjnO5es.png",
+      "icon": "./assets/equipment/superFiremakingPotion-OyjnO5es.png",
       "wikiId": "super-firemaking-potion"
     },
     "superFishingPotion": {
       "name": "super fishing potion",
       "slot": "potion1",
-      "icon": "https://microscape.cc/play/assets/superFishingPotion-DBvWmZ4x.png",
+      "icon": "./assets/equipment/superFishingPotion-DBvWmZ4x.png",
       "wikiId": "super-fishing-potion"
     },
     "superFletchingPotion": {
       "name": "super fletching potion",
       "slot": "potion1",
-      "icon": "https://microscape.cc/play/assets/superFletchingPotion-DeOtW4X4.png",
+      "icon": "./assets/equipment/superFletchingPotion-DeOtW4X4.png",
       "wikiId": "super-fletching-potion"
     },
     "superGoodMagicPotion": {
       "name": "super good magic potion",
       "slot": "potion1",
-      "icon": "https://microscape.cc/play/assets/superGoodMagicPotion-XZ3Gl80G.png",
+      "icon": "./assets/equipment/superGoodMagicPotion-XZ3Gl80G.png",
       "wikiId": "super-good-magic-potion"
     },
     "superHerblawPotion": {
       "name": "super herblaw potion",
       "slot": "potion1",
-      "icon": "https://microscape.cc/play/assets/superHerblawPotion-D_qw-bWH.png",
+      "icon": "./assets/equipment/superHerblawPotion-D_qw-bWH.png",
       "wikiId": "super-herblaw-potion"
     },
     "superMiningPotion": {
       "name": "super mining potion",
       "slot": "potion1",
-      "icon": "https://microscape.cc/play/assets/superMiningPotion-Fv4KmZRF.png",
+      "icon": "./assets/equipment/superMiningPotion-Fv4KmZRF.png",
       "wikiId": "super-mining-potion"
     },
     "superPietyPotion": {
       "name": "super piety potion",
       "slot": "potion1",
-      "icon": "https://microscape.cc/play/assets/superPietyPotion-BNh2jZXJ.png",
+      "icon": "./assets/equipment/superPietyPotion-BNh2jZXJ.png",
       "wikiId": "super-piety-potion"
     },
     "superRangedPotion": {
       "name": "super ranged potion",
       "slot": "potion1",
-      "icon": "https://microscape.cc/play/assets/superRangedPotion-C3YTglN2.png",
+      "icon": "./assets/equipment/superRangedPotion-C3YTglN2.png",
       "wikiId": "super-ranged-potion"
     },
     "superSmithingPotion": {
       "name": "super smithing potion",
       "slot": "potion1",
-      "icon": "https://microscape.cc/play/assets/superSmithingPotion-V9dsR_V4.png",
+      "icon": "./assets/equipment/superSmithingPotion-V9dsR_V4.png",
       "wikiId": "super-smithing-potion"
     },
     "superStrengthPotion": {
       "name": "super strength potion",
       "slot": "potion1",
-      "icon": "https://microscape.cc/play/assets/superStrengthPotion-BVzTwyNp.png",
+      "icon": "./assets/equipment/superStrengthPotion-BVzTwyNp.png",
       "wikiId": "super-strength-potion"
     },
     "superWoodcuttingPotion": {
       "name": "super woodcutting potion",
       "slot": "potion1",
-      "icon": "https://microscape.cc/play/assets/superWoodcuttingPotion-B5W12JO_.png",
+      "icon": "./assets/equipment/superWoodcuttingPotion-B5W12JO_.png",
       "wikiId": "super-woodcutting-potion"
     },
     "telekineticGloves": {
       "name": "telekinetic gloves",
       "slot": "hands",
-      "icon": "https://microscape.cc/play/assets/telekineticGloves-DGlcCUGF.png",
+      "icon": "./assets/equipment/telekineticGloves-DGlcCUGF.png",
       "wikiId": "telekinetic-gloves",
       "bonuses": {
         "defense": 1,
@@ -4107,7 +4107,7 @@
     "torchOfPyrax": {
       "name": "Torch of Pyrax",
       "slot": "weapon",
-      "icon": "https://microscape.cc/play/assets/torchOfPyrax-CInuw3CB.png",
+      "icon": "./assets/equipment/torchOfPyrax-CInuw3CB.png",
       "wikiId": "torch-of-pyrax",
       "bonuses": {
         "attack": 8,
@@ -4119,7 +4119,7 @@
     "trainingFishingRod": {
       "name": "training fishing rod",
       "slot": "weapon",
-      "icon": "https://microscape.cc/play/assets/trainingFishingRod-B3KS4sC1.png",
+      "icon": "./assets/equipment/trainingFishingRod-B3KS4sC1.png",
       "wikiId": "training-fishing-rod",
       "bonuses": {
         "attackCooldown": 4,
@@ -4129,7 +4129,7 @@
     "trainingPickaxe": {
       "name": "training pickaxe",
       "slot": "weapon",
-      "icon": "https://microscape.cc/play/assets/trainingPickaxe-COFKrNU1.png",
+      "icon": "./assets/equipment/trainingPickaxe-COFKrNU1.png",
       "wikiId": "training-pickaxe",
       "bonuses": {
         "attackCooldown": 4,
@@ -4264,7 +4264,7 @@
     "vulcanus": {
       "name": "Vulcanus",
       "slot": "weapon",
-      "icon": "https://microscape.cc/play/assets/vulcanus-D50uKXbX.png",
+      "icon": "./assets/equipment/vulcanus-D50uKXbX.png",
       "wikiId": "vulcanus",
       "bonuses": {
         "attack": 30,
@@ -4286,7 +4286,7 @@
     "whitePartyHat": {
       "name": "party hat",
       "slot": "head",
-      "icon": "https://microscape.cc/play/assets/whitePartyHat-BAIZoCpM.png",
+      "icon": "./assets/equipment/bluePartyHat-CrpDHRS1.png",
       "wikiId": "blue-party-hat"
     },
     "wickedwort": {
@@ -4297,7 +4297,7 @@
     "willowBow": {
       "name": "willow bow",
       "slot": "weapon",
-      "icon": "https://microscape.cc/play/assets/willowBow-CrESfGIh.png",
+      "icon": "./assets/equipment/willowBow-CrESfGIh.png",
       "wikiId": "willow-bow",
       "bonuses": {
         "attackCooldown": 3,
@@ -4317,7 +4317,7 @@
     "wizardsHatBlue": {
       "name": "wizard's hat",
       "slot": "head",
-      "icon": "https://microscape.cc/play/assets/wizardsHatBlue-CFvEdvAG.png",
+      "icon": "./assets/equipment/wizardsHatBlue-CFvEdvAG.png",
       "wikiId": "wizards-hat",
       "bonuses": {
         "defense": 1,
@@ -4327,7 +4327,7 @@
     "wizardsHatDark": {
       "name": "dark wizard's hat",
       "slot": "head",
-      "icon": "https://microscape.cc/play/assets/wizardsHatDark-D5hHLZPo.png",
+      "icon": "./assets/equipment/wizardsHatDark-D5hHLZPo.png",
       "wikiId": "dark-wizards-hat",
       "bonuses": {
         "defense": 1,
@@ -4337,7 +4337,7 @@
     "wizardsRobe": {
       "name": "wizard's robe",
       "slot": "body",
-      "icon": "https://microscape.cc/play/assets/wizardsRobe-BZuluA-T.png",
+      "icon": "./assets/equipment/wizardsRobe-BZuluA-T.png",
       "wikiId": "wizards-robes",
       "bonuses": {
         "autoEat": 6,
@@ -4348,7 +4348,7 @@
     "woodcuttingPotion": {
       "name": "woodcutting potion",
       "slot": "potion1",
-      "icon": "https://microscape.cc/play/assets/woodcuttingPotion-CoZx7Rwa.png",
+      "icon": "./assets/equipment/woodcuttingPotion-CoZx7Rwa.png",
       "wikiId": "woodcutting-potion"
     },
     "wool": {
@@ -4359,13 +4359,13 @@
     "yellowPartyHat": {
       "name": "party hat",
       "slot": "head",
-      "icon": "https://microscape.cc/play/assets/yellowPartyHat-CBv7_W3l.png",
+      "icon": "./assets/equipment/bluePartyHat-CrpDHRS1.png",
       "wikiId": "blue-party-hat"
     },
     "yewBow": {
       "name": "yew bow",
       "slot": "weapon",
-      "icon": "https://microscape.cc/play/assets/yewBow-Bjzn7I-s.png",
+      "icon": "./assets/equipment/yewBow-Bjzn7I-s.png",
       "wikiId": "yew-bow",
       "bonuses": {
         "attackCooldown": 3,
@@ -4385,199 +4385,199 @@
     "boldBrown": {
       "name": "brown \"bold\" hair",
       "slot": "hair",
-      "icon": "https://microscape.cc/play/assets/boldBrown-yUzvVgRS.png",
+      "icon": "./assets/equipment/boldBrown-yUzvVgRS.png",
       "wikiId": "brown-bold-hair"
     },
     "bubbleBlack": {
       "name": "black bubble hair",
       "slot": "hair",
-      "icon": "https://microscape.cc/play/assets/bubbleBlack-CPe_muYJ.png",
+      "icon": "./assets/equipment/bubbleBlack-CPe_muYJ.png",
       "wikiId": "black-bubble-hair"
     },
     "longBlack": {
       "name": "black long hair",
       "slot": "hair",
-      "icon": "https://microscape.cc/play/assets/longBlack-DDm8GdDH.png",
+      "icon": "./assets/equipment/longBlack-DDm8GdDH.png",
       "wikiId": "black-long-hair"
     },
     "longBlond": {
       "name": "blond long hair",
       "slot": "hair",
-      "icon": "https://microscape.cc/play/assets/longBlond-CbRKcPJB.png",
+      "icon": "./assets/equipment/longBlond-CbRKcPJB.png",
       "wikiId": "blond-long-hair"
     },
     "longBrown": {
       "name": "brown long hair",
       "slot": "hair",
-      "icon": "https://microscape.cc/play/assets/longBrown-BEctbBp0.png",
+      "icon": "./assets/equipment/longBrown-BEctbBp0.png",
       "wikiId": "brown-long-hair"
     },
     "longCerulean": {
       "name": "cerulean long hair",
       "slot": "hair",
-      "icon": "https://microscape.cc/play/assets/longCerulean-DTuW0xTs.png",
+      "icon": "./assets/equipment/longCerulean-DTuW0xTs.png",
       "wikiId": "cerulean-long-hair"
     },
     "longPeach": {
       "name": "peach long hair",
       "slot": "hair",
-      "icon": "https://microscape.cc/play/assets/longPeach-D2CaWaIy.png",
+      "icon": "./assets/equipment/longPeach-D2CaWaIy.png",
       "wikiId": "peach-long-hair"
     },
     "lushBlack": {
       "name": "black lush hair",
       "slot": "hair",
-      "icon": "https://microscape.cc/play/assets/lushBlack-CqkV59uq.png",
+      "icon": "./assets/equipment/lushBlack-CqkV59uq.png",
       "wikiId": "black-lush-hair"
     },
     "mediumBlack": {
       "name": "black medium hair",
       "slot": "hair",
-      "icon": "https://microscape.cc/play/assets/mediumBlack-BnvgKUX5.png",
+      "icon": "./assets/equipment/mediumBlack-BnvgKUX5.png",
       "wikiId": "black-medium-hair"
     },
     "mediumBlond": {
       "name": "blond medium hair",
       "slot": "hair",
-      "icon": "https://microscape.cc/play/assets/mediumBlond-OX51x2Wn.png",
+      "icon": "./assets/equipment/mediumBlond-OX51x2Wn.png",
       "wikiId": "blond-medium-hair"
     },
     "mediumBrown": {
       "name": "brown medium hair",
       "slot": "hair",
-      "icon": "https://microscape.cc/play/assets/mediumBrown-BQD_t_GZ.png",
+      "icon": "./assets/equipment/mediumBrown-BQD_t_GZ.png",
       "wikiId": "brown-medium-hair"
     },
     "mediumCerulean": {
       "name": "cerulean medium hair",
       "slot": "hair",
-      "icon": "https://microscape.cc/play/assets/mediumCerulean-kmcW2jYf.png",
+      "icon": "./assets/equipment/mediumCerulean-kmcW2jYf.png",
       "wikiId": "cerulean-medium-hair"
     },
     "mediumPeach": {
       "name": "peach medium hair",
       "slot": "hair",
-      "icon": "https://microscape.cc/play/assets/mediumPeach-0cTma0aj.png",
+      "icon": "./assets/equipment/mediumPeach-0cTma0aj.png",
       "wikiId": "peach-medium-hair"
     },
     "pompBlack": {
       "name": "black pomp hair",
       "slot": "hair",
-      "icon": "https://microscape.cc/play/assets/pompBlack-C2TG12JT.png",
+      "icon": "./assets/equipment/pompBlack-C2TG12JT.png",
       "wikiId": "black-pomp-hair"
     },
     "pompBlond": {
       "name": "blond pomp hair",
       "slot": "hair",
-      "icon": "https://microscape.cc/play/assets/pompBlond-Bhf5Ywaw.png",
+      "icon": "./assets/equipment/pompBlond-Bhf5Ywaw.png",
       "wikiId": "blond-pomp-hair"
     },
     "pompBrown": {
       "name": "brown pomp hair",
       "slot": "hair",
-      "icon": "https://microscape.cc/play/assets/pompBrown-DP55vdmQ.png",
+      "icon": "./assets/equipment/pompBrown-DP55vdmQ.png",
       "wikiId": "brown-pomp-hair"
     },
     "pompCerulean": {
       "name": "cerulean pomp hair",
       "slot": "hair",
-      "icon": "https://microscape.cc/play/assets/pompCerulean-ARiGFE2e.png",
+      "icon": "./assets/equipment/pompCerulean-ARiGFE2e.png",
       "wikiId": "cerulean-pomp-hair"
     },
     "pompPeach": {
       "name": "peach pomp hair",
       "slot": "hair",
-      "icon": "https://microscape.cc/play/assets/pompPeach-pVcu7ZV4.png",
+      "icon": "./assets/equipment/pompPeach-pVcu7ZV4.png",
       "wikiId": "peach-pomp-hair"
     },
     "ponytailBlack": {
       "name": "black ponytail",
       "slot": "hair",
-      "icon": "https://microscape.cc/play/assets/ponytailBlack-C226QWp8.png",
+      "icon": "./assets/equipment/ponytailBlack-C226QWp8.png",
       "wikiId": "black-ponytail"
     },
     "ponytailBlond": {
       "name": "blond ponytail",
       "slot": "hair",
-      "icon": "https://microscape.cc/play/assets/ponytailBlond-DZYDe_Sl.png",
+      "icon": "./assets/equipment/ponytailBlond-DZYDe_Sl.png",
       "wikiId": "blond-ponytail"
     },
     "ponytailBrown": {
       "name": "brown ponytail",
       "slot": "hair",
-      "icon": "https://microscape.cc/play/assets/ponytailBrown-5G3-Vqtr.png",
+      "icon": "./assets/equipment/ponytailBrown-5G3-Vqtr.png",
       "wikiId": "brown-ponytail"
     },
     "ponytailCerulean": {
       "name": "cerulean ponytail",
       "slot": "hair",
-      "icon": "https://microscape.cc/play/assets/ponytailCerulean-jqddn8x1.png",
+      "icon": "./assets/equipment/ponytailCerulean-jqddn8x1.png",
       "wikiId": "cerulean-ponytail"
     },
     "ponytailPeach": {
       "name": "peach ponytail",
       "slot": "hair",
-      "icon": "https://microscape.cc/play/assets/ponytailPeach-5iMKfApe.png",
+      "icon": "./assets/equipment/ponytailPeach-5iMKfApe.png",
       "wikiId": "peach-ponytail"
     },
     "shortBlack": {
       "name": "black short hair",
       "slot": "hair",
-      "icon": "https://microscape.cc/play/assets/shortBlack-D_EGKllc.png",
+      "icon": "./assets/equipment/shortBlack-D_EGKllc.png",
       "wikiId": "black-short-hair"
     },
     "shortBlond": {
       "name": "blond short hair",
       "slot": "hair",
-      "icon": "https://microscape.cc/play/assets/shortBlond-DQUvcfz5.png",
+      "icon": "./assets/equipment/shortBlond-DQUvcfz5.png",
       "wikiId": "blond-short-hair"
     },
     "shortBrown": {
       "name": "brown short hair",
       "slot": "hair",
-      "icon": "https://microscape.cc/play/assets/shortBrown-7W-uHpuI.png",
+      "icon": "./assets/equipment/shortBrown-7W-uHpuI.png",
       "wikiId": "brown-short-hair"
     },
     "shortCerulean": {
       "name": "cerulean short hair",
       "slot": "hair",
-      "icon": "https://microscape.cc/play/assets/shortCerulean-BJUJXvA9.png",
+      "icon": "./assets/equipment/shortCerulean-BJUJXvA9.png",
       "wikiId": "cerulean-short-hair"
     },
     "shortPeach": {
       "name": "peach short hair",
       "slot": "hair",
-      "icon": "https://microscape.cc/play/assets/shortPeach-Bd6Vz8sU.png",
+      "icon": "./assets/equipment/shortPeach-Bd6Vz8sU.png",
       "wikiId": "peach-short-hair"
     },
     "skin1": {
       "name": "human 1",
       "slot": "skin",
-      "icon": "https://microscape.cc/play/assets/skin1-CpczYU8w.png",
+      "icon": "./assets/equipment/skin1-CpczYU8w.png",
       "wikiId": "human-1"
     },
     "skin2": {
       "name": "human 2",
       "slot": "skin",
-      "icon": "https://microscape.cc/play/assets/skin2-VrJYhQID.png",
+      "icon": "./assets/equipment/skin2-VrJYhQID.png",
       "wikiId": "human-2"
     },
     "skin3": {
       "name": "human 3",
       "slot": "skin",
-      "icon": "https://microscape.cc/play/assets/skin3-yO41FbJy.png",
+      "icon": "./assets/equipment/skin3-yO41FbJy.png",
       "wikiId": "human-3"
     },
     "skin4": {
       "name": "human 4",
       "slot": "skin",
-      "icon": "https://microscape.cc/play/assets/skin4-qT8HXSz1.png",
+      "icon": "./assets/equipment/skin4-qT8HXSz1.png",
       "wikiId": "human-4"
     },
     "theJohnny": {
       "name": "\"the johnny\"",
       "slot": "hair",
-      "icon": "https://microscape.cc/play/assets/theJohnny-CwjrDXjL.png",
+      "icon": "./assets/equipment/theJohnny-CwjrDXjL.png",
       "wikiId": "the-johnny"
     }
   },

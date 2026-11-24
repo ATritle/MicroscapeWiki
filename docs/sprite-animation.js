@@ -3,7 +3,7 @@ import {spriteMotionData as data} from "./sprite-motion-data.js?v=sprites-202611
 const active = new Set();
 export function stopSpritePreviews() {for(const stop of [...active])stop();}
 export function spriteMotion(sprite,foeId) {
-  const profile = data.bySource[sprite.layers?.[0]];
+  const profile = data.bySource[sprite.animationSource || sprite.layers?.[0]];
   if (profile?.kind === "pet") return profile;
   return data.foes[foeId] || profile;
 }

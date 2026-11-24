@@ -6,11 +6,11 @@ import {renderBazaar} from "./bazaar.js?v=market-sorting-20261122";
 import {renderBazaarWalkthrough} from "./bazaar-walkthrough.js?v=bazaar-visual-20261120";
 import { tutorials } from "./tutorials.js?v=release-20261119";
 import { buildPetEntries } from "./pets.js?v=release-20261119";
-import { itemIcons, itemIconGroups } from "./item-icons.js?v=rings-20261124";
-import { renderPlayerLookup } from "./player-lookup.js?v=ranked-communities-20261124";
+import { itemIcons, itemIconGroups } from "./item-icons.js?v=equipment-20261124";
+import { renderPlayerLookup } from "./player-lookup.js?v=equipment-20261124";
 import {publicUrl, legacyRoute, pageMetadata, updateMetadata} from "./seo.js?v=rankings-20261124";
 import {lookupXpPlayer, lookupXpSuggestions, xpPlayerProgress, xpSkills} from "./xp-player.js?v=hypothetical-20261121";
-import {spriteMotion,prepareSpriteFrame,stopSpritePreviews} from "./sprite-animation.js?v=sprites-20261121b";
+import {spriteMotion,prepareSpriteFrame,stopSpritePreviews} from "./sprite-animation.js?v=equipment-20261124";
 import {renderWorldMap} from "./world-map.js?v=map-food-search-20261121";
 
 const groups = {

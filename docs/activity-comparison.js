@@ -2,7 +2,7 @@ import {compareCombat, equipmentBonuses} from "./combat-comparison.js?v=vendors-
 
 let catalogRequest;
 export function readActivityCatalog() {
-  catalogRequest ||= fetch(new URL("./activity-catalog.json?v=activity-order-20261120", import.meta.url)).then(async response => {
+  catalogRequest ||= fetch(new URL("./activity-catalog.json?v=equipment-20261124", import.meta.url)).then(async response => {
     if (!response.ok) throw Error("The activity catalog could not load. Please try again.");
     const data = await response.json();
     if (data.schemaVersion !== 1 || !Array.isArray(data.activities)) throw Error("The activity catalog is incomplete.");
