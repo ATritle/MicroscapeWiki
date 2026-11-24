@@ -23,7 +23,7 @@ export function renderLeaderboards({main,element:e,crumbs,footer,initialParams="
   if(!skills.has(currentSkill))currentSkill="all";
   let communities=[],disposed=false,controller,communityController,lastSnapshot;
   let revealSelection=player!=="0",revealFrame;
-  const communitySearch=e("input",{type:"search",placeholder:"Search Twitch communities…","aria-label":"Find a Twitch community"});
+  const communitySearch=e("input",{type:"search",placeholder:"Search ranked communities…","aria-label":"Find a Twitch community"});
   const communitySelect=e("select",{"aria-label":"Twitch community"},e("option",{value:"all"},"All communities · Global"));
   const communityStatus=e("p",{class:"leaderboard-help",role:"status"},"Loading the community directory…");
   const skillSelect=e("select",{"aria-label":"Rank by skill"},...leaderboardSkills.map(([id,name])=>e("option",{value:id,...(id===currentSkill?{selected:""}:{})},name)));
@@ -31,7 +31,7 @@ export function renderLeaderboards({main,element:e,crumbs,footer,initialParams="
   const status=e("p",{class:"leaderboard-status",role:"status","aria-live":"polite"},"Loading official rankings…");
   const results=e("div",{class:"leaderboard-results","aria-busy":"true"});
   main.append(e("article",{class:"leaderboards-page"},crumbs(null,"Leaderboards"),e("h1",{},"Leaderboards"),
-    e("p",{class:"intro"},"Compare Microscape’s overall and skill rankings, globally or within any listed Twitch community."),
+    e("p",{class:"intro"},"Compare Microscape’s overall and skill rankings, globally or within a Twitch community with ranked players."),
     e("div",{class:"leaderboard-controls"},e("label",{},"Find a community",communitySearch),e("label",{},"Twitch community",communitySelect),e("label",{},"Rank by",skillSelect),refresh),
     communityStatus,status,results,
     e("p",{class:"leaderboard-help"},"Ranks and levels come directly from the game for the selected community and skill. Overall means total skill levels. The game returns a leading list (up to 200 entries), and may add a selected player’s row. Missing ranks are not treated as zero. This is not a complete player directory."),
@@ -43,7 +43,7 @@ export function renderLeaderboards({main,element:e,crumbs,footer,initialParams="
     const options=selected&&!matches.some(c=>c.id===selected.id)?[selected,...matches]:matches;
     communitySelect.replaceChildren(e("option",{value:"all"},"All communities · Global"),...options.map(c=>e("option",{value:c.id,...(c.id===currentCommunity?{selected:""}:{})},c.name)));
     if(currentCommunity!=="all"&&!selected)communitySelect.append(e("option",{value:currentCommunity,selected:""},"Community "+currentCommunity));
-    communityStatus.textContent=number.format(matches.length)+" matching communities · "+number.format(communities.length)+" in the game directory";
+    communityStatus.textContent=number.format(matches.length)+" matching ranked communities · "+number.format(communities.length)+" communities with rankings";
   }
   function syncUrl() {
     const q=new URLSearchParams();if(currentCommunity!=="all")q.set("community",currentCommunity);if(currentSkill!=="all")q.set("skill",currentSkill);if(player!=="0")q.set("player",player);
@@ -74,7 +74,13 @@ export function renderLeaderboards({main,element:e,crumbs,footer,initialParams="
   }
   async function loadCommunities() {
     communityController=new AbortController();
-    try { const data=await read("communities.json",{},communityController.signal);if(disposed)return;if(!Array.isArray(data.communities))throw Error("The community directory could not be read.");communities=data.communities;fillCommunities();if(lastSnapshot)draw(lastSnapshot); }
+    try {
+      const data=await read("communities.json",{},communityController.signal);if(disposed)return;if(!Array.isArray(data.communities))throw Error("The community directory could not be read.");
+      communities=data.communities;
+      if(currentCommunity!=="all"&&!communities.some(c=>c.id===currentCommunity)) {
+        currentCommunity="all";lastSnapshot=null;syncUrl();fillCommunities();load();
+      } else {fillCommunities();if(lastSnapshot)draw(lastSnapshot);}
+    }
     catch(error) { if(disposed||error.name==="AbortError")return;communityStatus.textContent="Community directory unavailable. Global rankings and the current selection still work. Refresh to retry."; }
     finally {communityController=null;}
   }
@@ -95,7 +101,7 @@ export function renderLeaderboards({main,element:e,crumbs,footer,initialParams="
   communitySearch.addEventListener("input",fillCommunities);
   communitySelect.addEventListener("change",()=>{currentCommunity=communitySelect.value;syncUrl();load();});
   skillSelect.addEventListener("change",()=>{currentSkill=skillSelect.value;syncUrl();load();});
-  refresh.addEventListener("click",()=>{if(!communities.length&&!communityController)loadCommunities();load();});
+  refresh.addEventListener("click",()=>{if(!communityController)loadCommunities();load();});
   const resume=()=>{if(!document.hidden)load();};
   let timer;if(!globalThis.__WIKI_PRERENDER__){if(currentCommunity!=="all")fillCommunities();loadCommunities();load();timer=setInterval(resume,60_000);document.addEventListener("visibilitychange",resume);}
   return ()=>{disposed=true;controller?.abort();communityController?.abort();if(revealFrame!=null)cancelAnimationFrame(revealFrame);clearInterval(timer);document.removeEventListener("visibilitychange",resume);};

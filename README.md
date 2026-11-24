@@ -255,7 +255,7 @@ Run `./scripts/register-drops-backup.ps1` in PowerShell 7 to register the option
 ## Leaderboards and player ranks
 
 `/leaderboards/` appears under Explore. `docs/leaderboards.js` provides a
-searchable selector for the game's full Twitch community directory, global or
+searchable selector for the game's ranked Twitch community directory, global or
 community scope, total-level ranking, and all 16 skills in game order. Each
 player links to Player Lookup. The profile adds an independent Overall rank
 request; ranking errors do not hide the profile, equipment or skills. Its rank
@@ -263,7 +263,7 @@ link opens the leaderboard with that player selected and highlighted.
 The selected row is centered and focused once after it loads. Every cell in the
 row is highlighted; routine ranking refreshes do not repeat the scroll.
 
-The neutral API gateway reads the official public `communities`, `leaderboard`
+The neutral API gateway reads the official public `communities-with-highscores`, `leaderboard`
 and `user-ranks` procedures through `api-gateway/leaderboards.js`. Public routes
 are `/communities.json`, `/leaderboard.json?community=all&skill=all`, and
 `/player-ranks.json?id=TWITCH_ID`. An optional `player=TWITCH_ID` on the board
@@ -273,7 +273,11 @@ The game normally returns the leading 200 rows, adding the selected player
 when available; rank gaps and missing player ranks are preserved. Overall is
 the game's total-skill-level ranking, not a locally calculated XP ordering.
 
-Community lists cache for five minutes; boards and ranks cache for one minute.
+Community lists cache for five minutes in a namespace separate from the former
+unfiltered directory; boards and ranks cache for one minute. Communities without
+ranking entries are excluded using the game's own high-score directory. Old
+links to excluded communities fall back to the global board. Manual Refresh
+also reloads the ranked-community choices.
 Filters and player context use separate cache keys. Queries are allowlisted,
 public fields are normalized, and failures are not cached as empty data. No
 cookies, credentials, sockets or character actions are used. The page polls

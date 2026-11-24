@@ -26,7 +26,7 @@ async function read(procedure,input) {
 export async function fetchRankings(url) {
   const q=parameters(url),checkedAt=Date.now();
   if(q.kind==="communities.json") {
-    const rows=await read("communities");
+    const rows=await read("communities-with-highscores");
     if(!Array.isArray(rows)||rows.length>20_000)throw new RankingsError("The game returned an unreadable community directory.");
     const communities=rows.map(row=>{
       if(!idPattern.test(row?.twitchId)||!validName(row.displayName))throw new RankingsError("The game returned an unreadable community.");
@@ -52,7 +52,7 @@ export async function fetchRankings(url) {
   return {checkedAt,source:"Microscape",communityId:q.community,skillId:q.skill,playerId:q.player,ranking};
 }
 export async function rankingsResponse(url,context) {
-  const q=parameters(url),key=new URL("/.cache/rankings-v1/"+q.kind,url.origin);
+  const q=parameters(url),key=new URL("/.cache/"+(q.kind==="communities.json"?"ranked-communities-v2/":"rankings-v1/")+q.kind,url.origin);
   if(q.kind!=="communities.json") { key.searchParams.set("community",q.community);key.searchParams.set("player",q.player);if(q.kind==="leaderboard.json")key.searchParams.set("skill",q.skill); }
   const cache=globalThis.caches?.default,cached=await cache?.match(new Request(key));if(cached)return cached;
   const data=await fetchRankings(url),response=Response.json(data,{headers:{"Cache-Control":"public, max-age="+(q.kind==="communities.json"?300:60),"X-Content-Type-Options":"nosniff"}});
