@@ -3,6 +3,18 @@ import {cleanPlan,encodePlan,MAX_STEPS,MAX_ACTIONS} from './queue-model.js?v=que
 import {loadoutSlots,slotAccepts,changeLoadout} from './loadout-comparison.js?v=queue-gear-20261124';
 const kinds=new Set(['actions','level','items-gte','items-lte','indefinite']);
 const draftKey='microscape-wiki-membership-queue-draft-v1',saveKey='microscape-wiki-membership-queue-saves-v1';
+export function queuePlayerEquipment(player,catalog){
+  if(!player?.equipment||typeof player.equipment!=='object'||Array.isArray(player.equipment))throw Error('Equipped gear is not available in this public profile. Try again or confirm owned items manually.');
+  return Object.fromEntries(loadoutSlots.flatMap(([slot])=>{
+    const id=player.equipment[slot];
+    return typeof id==='string'&&Object.hasOwn(catalog.items,id)&&slotAccepts(slot,catalog.items[id])?[[slot,id]]:[];
+  }));
+}
+export function queueAvailableItems(equipment,confirmed,catalog){
+  return new Set([...Object.values(equipment),...confirmed].filter(id=>Object.hasOwn(catalog.items,id)&&loadoutSlots.some(([slot])=>slotAccepts(slot,catalog.items[id]))));
+}
+export function missingQueueEquipment(equipment,available){return [...new Set(Object.values(equipment||{}))].filter(id=>!available.has(id));}
+export function queueGearChoices(slot,available,catalog){return Object.entries(catalog.items).filter(([id,item])=>available.has(id)&&slotAccepts(slot,item)).sort((a,b)=>a[1].name.localeCompare(b[1].name));}
 export function cleanMembershipQueue(input,catalog){
   if(!input||input.version!==1||!Array.isArray(input.steps)||input.steps.length>MAX_STEPS)throw Error('Choose a queue with no more than 20 steps.');
   const steps=input.steps.map((s,i)=>{
@@ -50,14 +62,67 @@ export function renderMembershipQueue({e,byId,entryUrl}){
     e('p',{class:'membership-manual'},'Wiki setup only. Add these steps manually in-game; this page does not run or update your character.'));
   const loading=e('p',{role:'status'},'Loading the queue builder…');node.append(loading);
   if(globalThis.__WIKI_PRERENDER__){loading.textContent='Example: fish for Shrimp until you hold 100 Raw Shrimp → equip a custom Melee loadout → train Attack on Cows for 20 kills.';return {node,dispose(){}};}
-  let disposed=false;
-  fetch(new URL('./queue-catalog.json?v=queue-types-20261124',import.meta.url)).then(r=>{if(!r.ok)throw Error('The queue builder could not load. Refresh to try again.');return r.json();}).then(c=>{
+  let disposed=false,profileRequest,suggestionRequest,suggestionTimer;
+  fetch(new URL('./queue-catalog.json?v=queue-types-20261124',import.meta.url)).then(r=>{if(!r.ok)throw Error('The queue builder could not load. Refresh to try again.');return r.json();}).then(async c=>{
+    const {lookupXpPlayer,lookupXpSuggestions}=await import('./xp-player.js?v=hypothetical-20261121');
     if(disposed)return;loading.remove();let queue=exampleMembershipQueue(c),saved=[],undo=[],editing=null,mode='activity';
+    let profileEquipment={},profileName='',confirmedItems=new Set(),loadoutEditor;
+    const availableItems=()=>queueAvailableItems(profileEquipment,confirmedItems,c);
     const status=e('p',{class:'queue-status',role:'status'}),error=e('p',{class:'queue-error',role:'alert'});error.hidden=true;
     const fail=message=>{error.textContent=message;error.hidden=!message;};
     const button=(label,fn,attrs={})=>{const b=e('button',{type:'button',class:'button',...attrs},label);b.addEventListener('click',fn);return b;};
     const image=(src,size=36)=>src?e('img',{src,alt:'',width:size,height:size,loading:'lazy',referrerpolicy:'no-referrer'}):e('span',{});
     const skillName=id=>c.skills.find(s=>s.id===id)?.name||id,itemName=id=>c.items[id]?.name||id,activity=id=>c.activities.find(a=>a.id===id);
+    const itemLink=id=>byId.has(c.items[id]?.wikiId)?e('a',{href:entryUrl(c.items[id].wikiId)},itemName(id)):e('span',{},itemName(id));
+    const profileInput=e('input',{type:'text',placeholder:'e.g. User12345',autocomplete:'off',maxlength:25,'aria-label':'Queue player username'}),lookupButton=e('button',{type:'submit',class:'button'},'Load equipped gear');
+    const profileStatus=e('p',{class:'queue-help',role:'status'}),suggestions=e('div',{class:'queue-suggestions','aria-label':'Matching queue player names'});
+    const profileForm=e('form',{class:'queue-profile-form'},e('label',{},'Player username',profileInput),lookupButton);
+    const ownedSearch=e('input',{type:'search',placeholder:'Search equipment you own…','aria-label':'Find owned equipment'}),ownedSelect=e('select',{'aria-label':'Owned equipment to add'}),ownedList=e('ul',{class:'membership-owned-items'}),ownedSummary=e('summary',{},'Available equipment: 0 items');
+    const ownedPicker=e('details',{class:'membership-owned-picker'},e('summary',{},'Add other equipment you own'),
+      e('p',{class:'queue-help'},'Inventory is not public. Add an item here only if you own it. This confirms the item type, not how many copies, arrows, food or potion charges you have.'),
+      e('label',{},'Find an owned item',ownedSearch),e('div',{class:'queue-saved-bar'},e('label',{},'Owned item',ownedSelect),button('Confirm I own this item',()=>{
+        if(!ownedSelect.value)return;confirmedItems.add(ownedSelect.value);refreshAvailability();
+      })));
+    const availablePanel=e('details',{class:'membership-owned-panel'},ownedSummary,ownedList);
+    const profilePanel=e('section',{class:'membership-profile','aria-labelledby':'queue-player-heading'},e('h3',{id:'queue-player-heading'},'Player & available equipment'),
+      e('p',{class:'queue-help'},'Load current equipped gear as your starting point. Gear choices are limited to equipped items plus equipment you confirm you own. The game does not publish full inventories. Look up again and reconfirm additional items after reloading this page.'),profileForm,suggestions,profileStatus,ownedPicker,availablePanel);
+    const equipmentChoices=Object.entries(c.items).filter(([,item])=>loadoutSlots.some(([slot])=>slotAccepts(slot,item))&&byId.has(item.wikiId)&&byId.get(item.wikiId)?.availabilityStatus!=='absent-current-build').sort((a,b)=>a[1].name.localeCompare(b[1].name));
+    function drawOwnedChoices(){const query=ownedSearch.value.trim().toLowerCase(),available=availableItems(),choices=equipmentChoices.filter(([id,item])=>!available.has(id)&&(!query||item.name.toLowerCase().includes(query)));
+      ownedSelect.replaceChildren(...(choices.length?choices.map(([id,item])=>e('option',{value:id},item.name)):[e('option',{value:''},'No matching equipment')]));
+    }
+    function refreshAvailability(){
+      const available=availableItems(),equipped=new Set(Object.values(profileEquipment));
+      ownedSummary.textContent='Available equipment: '+available.size+' item types';
+      ownedList.replaceChildren(...[...available].sort((a,b)=>itemName(a).localeCompare(itemName(b))).map(id=>e('li',{},image(c.items[id].icon,24),itemLink(id),
+        equipped.has(id)?e('small',{},'Equipped'):button('Remove',()=>{confirmedItems.delete(id);refreshAvailability();},{'aria-label':'Remove owned '+itemName(id)}))));
+      if(!available.size)ownedList.append(e('li',{},'No available gear loaded. Look up a player or confirm an owned item above.'));
+      drawOwnedChoices();loadoutEditor?.refresh();drawQueue();
+    }
+    ownedSearch.addEventListener('input',drawOwnedChoices);
+    function abortLookup(){profileRequest?.abort();profileRequest=null;lookupButton.disabled=false;}
+    profileInput.addEventListener('input',()=>{
+      abortLookup();clearTimeout(suggestionTimer);suggestionRequest?.abort();suggestions.replaceChildren();
+      profileStatus.textContent=profileName?'Still using '+profileName+'’s gear. Load equipped gear to switch or refresh.':'';
+      const query=profileInput.value.trim();if(query.length<2)return;
+      suggestionTimer=setTimeout(async()=>{const request=new AbortController();suggestionRequest=request;try{
+        const names=await lookupXpSuggestions(query,{signal:request.signal});if(disposed||request.signal.aborted||suggestionRequest!==request||profileInput.value.trim()!==query)return;
+        suggestions.replaceChildren(...names.map(n=>button(n,()=>{profileInput.value=n;suggestions.replaceChildren();profileForm.requestSubmit();})));
+      }catch{}},300);
+    });
+    profileForm.addEventListener('submit',async event=>{
+      event.preventDefault();clearTimeout(suggestionTimer);suggestionRequest?.abort();suggestions.replaceChildren();abortLookup();
+      const request=new AbortController(),query=profileInput.value.trim();profileRequest=request;lookupButton.disabled=true;profileStatus.textContent='Reading the public equipped gear…';
+      try{
+        const snapshot=await lookupXpPlayer(query,{signal:request.signal});if(disposed||request.signal.aborted||profileRequest!==request)return;
+        const equipment=queuePlayerEquipment(snapshot.player,c);
+        if(profileName.toLowerCase()!==snapshot.player.name.toLowerCase())confirmedItems=new Set();
+        profileEquipment=equipment;profileName=snapshot.player.name;profileInput.value=profileName;
+        refreshAvailability();loadoutEditor?.apply(profileEquipment);
+        profileStatus.textContent='Loaded '+profileName+'’s equipped gear ('+new Date(snapshot.checkedAt).toLocaleTimeString()+'). '+(Object.keys(equipment).length?'The loadout editor starts with this gear.':'No supported equipment is currently equipped.')+' Saved queue steps stay unchanged until you save edits.';
+      }catch(err){if(!disposed&&!request.signal.aborted&&profileRequest===request)profileStatus.textContent=err.message+(profileName?' Still using '+profileName+'’s previous gear.':'');}
+      finally{if(!disposed&&profileRequest===request)lookupButton.disabled=false;}
+    });
+    profilePanel.append(button('Clear player and available items',()=>{abortLookup();clearTimeout(suggestionTimer);suggestionRequest?.abort();suggestions.replaceChildren();profileName='';profileEquipment={};confirmedItems=new Set();profileInput.value='';profileStatus.textContent='Player and available items cleared. Saved queue steps are unchanged.';refreshAvailability();}));
     function read(key){try{const raw=localStorage.getItem(key);return raw?JSON.parse(raw):null;}catch{return null;}}
     try{
       const shared=new URLSearchParams(location.hash.slice(1)).get('queue'),draft=read(draftKey);
@@ -82,11 +147,16 @@ export function renderMembershipQueue({e,byId,entryUrl}){
       if(s.type==='loadout')return (i+1)+'. '+(s.legacySlot?'Earlier saved loadout '+s.legacySlot+' (“'+s.name+'”): edit this step to configure its equipment.':
         'Configure “'+s.name+'”: '+loadoutSlots.map(([slot,label])=>label+': '+(s.equipment[slot]?itemName(s.equipment[slot]):'Empty')).join('; ')+'. Save this setup in an in-game Equipment loadout and select it for this queue step. Continue to the next step.');
       const a=activity(s.activityId),where=a.locations?.find(l=>l.wikiId===s.location)?.name;return (i+1)+'. '+skillName(a.skill)+' / '+a.name+(where?' at '+where:'')+'. Stop: '+stopText(s)+'.';
-    }),'Custom wiki loadouts must be recreated and saved in-game before selecting them in the game’s queue. Empty slots mean unequip; ownership and level requirements are not checked.'].join('\n');}
+    }),'Custom wiki loadouts must be recreated and saved in-game before selecting them in the game’s queue. Empty slots mean unequip. Availability uses equipped gear and manually confirmed items; item quantities and level requirements are not checked.'].join('\n');}
+    function loadoutIssue(s){
+      if(s.legacySlot)return 'Edit the earlier saved-loadout reference to configure its gear.';
+      const missing=missingQueueEquipment(s.equipment,availableItems());
+      return missing.length?'Not in your available items: '+missing.map(itemName).join(', ')+'. Load your gear, confirm owned items, or replace these selections.':'';
+    }
     const toolbar=e('div',{class:'queue-toolbar'},e('label',{},'Queue name',name),e('div',{class:'queue-toolbar-actions'},
       button('Save queue',()=>{queue.name=name.value.trim()||'My activity queue';name.value=queue.name;const i=saved.findIndex(q=>q.name===queue.name),q=cleanMembershipQueue(queue,c);if(i>=0)saved[i]=q;else saved.unshift(q);saved=saved.slice(0,30);try{localStorage.setItem(saveKey,JSON.stringify(saved));persist();drawSaves();status.textContent='Saved “'+queue.name+'” on this device.';}catch{fail('Could not save this queue. Copy a share link instead.');}}),
       button('Share queue',()=>{try{copy(new URL(location.pathname,location.origin).href+'#queue='+encodePlan(cleanMembershipQueue(queue,c)),'Queue link copied.');}catch(err){fail(err.message);}}),
-      button('Copy in-game setup',()=>copy(setupText(),'Manual queue setup copied.')),
+      button('Copy in-game setup',()=>{const issues=queue.steps.flatMap((s,i)=>s.type==='loadout'&&loadoutIssue(s)?['Step '+(i+1)+': '+loadoutIssue(s)]:[]);if(issues.length){fail(issues.join(' '));return;}copy(setupText(),'Manual queue setup copied.');}),
       button('New queue',()=>{change(()=>{queue={version:1,name:'My activity queue',steps:[]};editing=null;});name.value=queue.name;drawEditor();})));
     const savedBar=e('div',{class:'queue-saved-bar'},e('label',{},'Saved queues on this device',savedSelect),button('Load queue',()=>{if(savedSelect.value==='')return;change(()=>{queue=cleanMembershipQueue(saved[Number(savedSelect.value)],c);editing=null;});name.value=queue.name;drawEditor();}),
       button('Load shrimp example',()=>{change(()=>{queue=exampleMembershipQueue(c);editing=null;});name.value=queue.name;drawEditor();}));drawSaves();
@@ -97,23 +167,25 @@ export function renderMembershipQueue({e,byId,entryUrl}){
     const editor=e('section',{class:'membership-editor'},e('h3',{},'Choose a step type'),e('div',{class:'membership-types'},typeActivity,typeLoadout));
     const fields=e('div',{class:'membership-fields'});editor.append(fields);
     function drawEditor(step){
-      fields.replaceChildren();typeActivity.setAttribute('aria-pressed',String(mode==='activity'));typeLoadout.setAttribute('aria-pressed',String(mode==='loadout'));
+      loadoutEditor=null;fields.replaceChildren();typeActivity.setAttribute('aria-pressed',String(mode==='activity'));typeLoadout.setAttribute('aria-pressed',String(mode==='loadout'));
       const form=e('form',{}),submit=e('button',{type:'submit',class:'button primary'},editing===null?'Add step':'Save queue step');submit.disabled=editing===null&&queue.steps.length>=MAX_STEPS;
       if(mode==='loadout'){
-        let equipment={...step?.equipment};
+        let equipment={...(step?.equipment??profileEquipment)};
         const title=e('input',{value:step?.name||'Melee',maxlength:60,placeholder:'e.g. Melee','aria-label':'Custom loadout name'}),gear=e('div',{class:'membership-gear-grid'}),gearStatus=e('p',{class:'queue-help',role:'status'});
         function drawGear(){gear.replaceChildren(...loadoutSlots.map(([slot,label])=>{
-          const id=equipment[slot],selected=c.items[id],choices=Object.entries(c.items).filter(([,item])=>slotAccepts(slot,item)&&byId.has(item.wikiId)&&byId.get(item.wikiId)?.availabilityStatus!=='absent-current-build').sort((a,b)=>a[1].name.localeCompare(b[1].name));
-          if(id&&!choices.some(([key])=>key===id))choices.unshift([id,selected]);
-          const picker=e('select',{'aria-label':'Loadout '+label},e('option',{value:''},'Empty / unequip'),...choices.map(([key,item])=>e('option',{value:key},item.name)));picker.value=id||'';
+          const id=equipment[slot],selected=c.items[id],available=availableItems(),choices=queueGearChoices(slot,available,c);
+          const unavailable=id&&!choices.some(([key])=>key===id);
+          const picker=e('select',{'aria-label':'Loadout '+label},e('option',{value:''},'Empty / unequip'),...(unavailable?[e('option',{value:id,disabled:''},'Unavailable: '+selected.name)]:[]),...choices.map(([key,item])=>e('option',{value:key},item.name)));picker.value=id||'';
           picker.addEventListener('change',()=>{const before={...equipment};equipment=changeLoadout(equipment,slot,picker.value,c.items);const removed=Object.keys(before).filter(key=>key!==slot&&!equipment[key]);gearStatus.textContent=removed.length?'Cleared '+removed.map(key=>loadoutSlots.find(([s])=>s===key)[1]).join(', ')+' to keep the weapon and shield compatible.':'';drawGear();});
           const requirements=Object.entries(selected?.requirements||{}).map(([skill,level])=>skillName(skill)+' '+level).join(' · ');
-          return e('div',{class:'membership-gear-slot'},selected?image(selected.icon,32):e('span',{class:'membership-empty-icon','aria-hidden':'true'},'◇'),e('label',{},label,picker),...(selected?[e('div',{class:'membership-gear-info'},e('a',{href:entryUrl(selected.wikiId)},selected.name),...(requirements?[e('small',{},'Requires '+requirements)]:[]))]:[]));
+          return e('div',{class:'membership-gear-slot'+(unavailable?' is-unavailable':'')},selected?image(selected.icon,32):e('span',{class:'membership-empty-icon','aria-hidden':'true'},'◇'),e('label',{},label,picker),...(selected?[e('div',{class:'membership-gear-info'},itemLink(id),...(unavailable?[e('small',{class:'queue-warning'},'Not in available items')]:[]),...(requirements?[e('small',{},'Requires '+requirements)]:[]))]:[]));
         }));}
-        form.append(e('label',{},'Loadout name',title),e('p',{class:'queue-help'},'Choose the exact equipment for this step. Empty slots mean unequip, not keep previous gear. This is a complete setup; item ownership and player level requirements are not checked.'),
+        form.append(e('label',{},'Loadout name',title),e('p',{class:'queue-help'},'Choose from the equipped gear and additional owned items listed above. Empty slots mean unequip, not keep previous gear. Item quantities and player level requirements are not checked.'),
+          button('Use current equipped gear',()=>{if(!profileName){gearStatus.textContent='Look up a player above first.';return;}loadoutEditor.apply(profileEquipment);gearStatus.textContent='Editor filled with '+profileName+'’s current equipped gear. Save this step to keep the changes.';}),
           ...(step?.legacySlot?[e('p',{class:'queue-warning'},'This older queue referenced saved loadout '+step.legacySlot+'. Its gear was never available to the wiki. Choose the equipment below to replace that reference.')]:[]),gear,gearStatus,
           e('p',{class:'queue-help'},'When entering this queue manually, recreate and save this gear setup on Microscape’s Equipment screen, then select that saved loadout in the game’s queue.'));
-        drawGear();form.addEventListener('submit',event=>{event.preventDefault();commit({type:'loadout',name:title.value,equipment});});
+        loadoutEditor={refresh(){drawGear();const issue=loadoutIssue({equipment});gearStatus.textContent=issue;gearStatus.setAttribute('role',issue?'alert':'status');},apply(value){equipment={...value};gearStatus.textContent='';gearStatus.setAttribute('role','status');drawGear();}};
+        drawGear();form.addEventListener('submit',event=>{event.preventDefault();const candidate={type:'loadout',name:title.value,equipment},issue=loadoutIssue(candidate);if(issue){gearStatus.textContent=issue;gearStatus.setAttribute('role','alert');return;}commit(candidate);});
       }else{
         const skill=e('select',{'aria-label':'Queue activity skill'},...c.skills.map(s=>e('option',{value:s.id},s.name))),choice=e('select',{'aria-label':'Queue activity'}),where=e('select',{'aria-label':'Queue activity location'}),goal=e('select',{'aria-label':'Queue activity stopping condition'}),value=e('input',{type:'number',min:1,max:MAX_ACTIONS,value:step?.value??100,'aria-label':'Queue activity target'}),item=e('select',{'aria-label':'Queue inventory item'}),preview=e('div',{class:'membership-activity-preview'});
         skill.value=step?activity(step.activityId).skill:'fishing';
@@ -138,7 +210,7 @@ export function renderMembershipQueue({e,byId,entryUrl}){
       }
       form.append(submit);if(editing!==null)form.append(button('Cancel edit',()=>{editing=null;drawEditor();}));fields.append(form);
     }
-    function commit(step){try{const candidate={...queue,steps:editing===null?[...queue.steps,step]:queue.steps.map((s,i)=>i===editing?step:s)};cleanMembershipQueue(candidate,c);change(()=>{queue=candidate;editing=null;});drawEditor();}catch(err){fail(err.message);}}
+    function commit(step){try{if(step.type==='loadout'&&loadoutIssue(step))throw Error(loadoutIssue(step));const candidate={...queue,steps:editing===null?[...queue.steps,step]:queue.steps.map((s,i)=>i===editing?step:s)};cleanMembershipQueue(candidate,c);change(()=>{queue=candidate;editing=null;});drawEditor();}catch(err){fail(err.message);}}
     const count=e('span',{class:'queue-count'}),list=e('ol',{class:'membership-steps'}),undoButton=button('Undo',()=>{if(!undo.length)return;queue=cleanMembershipQueue(JSON.parse(undo.pop()),c);editing=null;name.value=queue.name;persist();drawQueue();drawEditor();});
     const sequence=e('section',{'aria-label':'Activity queue sequence',class:'membership-sequence'},e('div',{class:'queue-heading'},e('h3',{},'Queue sequence'),count,undoButton),list);
     function drawQueue(){count.textContent=queue.steps.length+' / '+MAX_STEPS+' steps';undoButton.disabled=!undo.length;let waits=false;
@@ -151,8 +223,9 @@ export function renderMembershipQueue({e,byId,entryUrl}){
           e('div',{class:'membership-step-heading'},e('span',{class:'membership-step-number'},i+1),isLoadout?e('span',{class:'membership-loadout-icon','aria-hidden':'true'},'◇'):image(a.icon,40),
             e('div',{},e('span',{class:'membership-kind'},isLoadout?'CUSTOM LOADOUT CHANGE':'ACTIVITY'),e('h4',{},text),e('p',{class:'membership-stop'},trigger))),
           ...(where?[e('p',{class:'queue-help'},'Location: ',e('a',{href:entryUrl(where.wikiId)},where.name))]:[]),
-          ...(blocked?[e('p',{class:'queue-warning'},'This step waits behind an activity set to run until stopped manually.')]:[]));
-        if(isLoadout&&s.equipment){const chosen=loadoutSlots.filter(([slot])=>s.equipment[slot]);card.append(chosen.length?e('ul',{class:'membership-equipped-items'},...chosen.map(([slot,label])=>{const item=c.items[s.equipment[slot]];return e('li',{},image(item.icon,25),e('span',{},e('small',{},label),e('a',{href:entryUrl(item.wikiId)},item.name)));})):e('p',{class:'queue-help'},'All equipment slots empty.'));}
+          ...(blocked?[e('p',{class:'queue-warning'},'This step waits behind an activity set to run until stopped manually.')]:[]),
+          ...(isLoadout&&loadoutIssue(s)?[e('p',{class:'queue-warning'},loadoutIssue(s))]:[]));
+        if(isLoadout&&s.equipment){const chosen=loadoutSlots.filter(([slot])=>s.equipment[slot]);card.append(chosen.length?e('ul',{class:'membership-equipped-items'},...chosen.map(([slot,label])=>{const item=c.items[s.equipment[slot]];return e('li',{},image(item.icon,25),e('span',{},e('small',{},label),itemLink(s.equipment[slot])));})):e('p',{class:'queue-help'},'All equipment slots empty.'));}
         const move=to=>{change(()=>{const [s]=queue.steps.splice(i,1);queue.steps.splice(to,0,s);editing=null;});drawEditor();};
         const controls=e('div',{class:'queue-row-actions'},button('Edit',()=>{editing=i;mode=s.type==='loadout'?'loadout':'activity';drawEditor(s);fields.scrollIntoView({block:'center'});},{'aria-label':'Edit queue step '+(i+1)}),
           button('Up',()=>move(i-1),{'aria-label':'Move queue step '+(i+1)+' up'}),button('Down',()=>move(i+1),{'aria-label':'Move queue step '+(i+1)+' down'}),
@@ -163,8 +236,8 @@ export function renderMembershipQueue({e,byId,entryUrl}){
       }));
       if(!queue.steps.length)list.append(e('li',{class:'queue-empty'},'No steps yet. Choose an activity or a custom loadout change below.'));
     }
-    node.append(error,toolbar,savedBar,status,copyOutput,sequence,editor,compare,e('p',{class:'queue-help'},'To run the sequence: enter these steps in Microscape’s Activity Queue, check your saved loadouts and supplies, then use Start Queue inside the game.'));
-    drawQueue();drawEditor();
+    node.append(error,profilePanel,toolbar,savedBar,status,copyOutput,sequence,editor,compare,e('p',{class:'queue-help'},'To run the sequence: enter these steps in Microscape’s Activity Queue, check your saved loadouts and supplies, then use Start Queue inside the game.'));
+    drawEditor();refreshAvailability();
   }).catch(err=>{if(!disposed){loading.textContent=err.message;loading.setAttribute('role','alert');}});
-  return {node,dispose(){disposed=true;}};
+  return {node,dispose(){disposed=true;clearTimeout(suggestionTimer);profileRequest?.abort();suggestionRequest?.abort();}};
 }

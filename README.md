@@ -330,6 +330,19 @@ with a prompt to configure them, since their gear was never known. The player
 recreates and saves each setup in-game before selecting it in the game's queue.
 Old `#plan=` links on this guide offer a link to Activity Planner instead.
 
+The beta queue reuses the public username lookup/suggestions to seed new
+loadouts with current equipped items. The public character response has no
+inventory field (rechecked November 24). Gear choices are restricted to equipped
+items plus extra items the reader manually confirms owning. Availability stays
+in memory for the visit; no username, inventory claim or lookup snapshot enters
+saved/shared queues. Refreshing or changing players requires new confirmation;
+refreshing the same player retains manual confirmations for that visit. Saved
+queue gear never establishes ownership. Unavailable saved selections remain
+visible but disabled and flagged; committing a loadout or copying the manual
+setup is blocked until they are replaced or confirmed. Quantities/charges and
+level requirements are not checked. Requests/timers are canceled on name changes
+and navigation; late responses cannot overwrite a newer lookup.
+
 `node scripts/check-queue-planner.mjs` checks material chains, sequential targets,
 combat, invalid imports, sharing and the step limit. `node scripts/check-membership-queue.mjs`
 checks mixed activity/loadout steps, stopping rules, saved slots and share validation.

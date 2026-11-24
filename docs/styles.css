@@ -670,6 +670,17 @@ a.player-gear-slot:hover { border-color: #568d76; background: #192e38; }
 .membership-gear-slot select { min-width: 0; font-size: 13px; }
 .membership-gear-info { grid-column: 2; font-size: 13px; }
 .membership-gear-info small { display: block; color: #a9becd; margin-top: 4px; }
+.membership-gear-slot.is-unavailable { border-color: #8a6338; }
+.membership-profile { padding: 18px; border: 1px solid #35534f; border-radius: 10px; background: #122b29; margin: 20px 0; }
+.membership-profile h3 { margin-bottom: 10px; }
+.membership-profile > .button { margin-top: 14px; }
+.membership-owned-picker, .membership-owned-panel { margin: 16px 0 8px; font-size: 14px; }
+.membership-owned-picker summary, .membership-owned-panel summary { cursor: pointer; color: var(--mint); }
+.membership-owned-picker > label { margin-top: 14px; }
+.membership-owned-items { list-style: none; padding: 0; max-height: 230px; overflow: auto; }
+.membership-owned-items li { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid #2d4b48; }
+.membership-owned-items a { flex: 1; }
+.membership-owned-items small { color: #a1ceba; }
 .membership-empty-icon { color: #739e93; text-align: center; font-size: 28px; }
 .membership-equipped-items { display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%,200px),1fr)); gap: 9px; list-style: none; margin: 15px 0; padding: 0; }
 .membership-equipped-items li { display: flex; gap: 9px; align-items: center; font-size: 13px; min-width: 0; }
