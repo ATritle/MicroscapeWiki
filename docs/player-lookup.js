@@ -249,7 +249,6 @@ export function renderPlayerLookup({main, element:e, crumbs, footer, byId, entry
     const pet = data.pets[player.equipment.pet];
     if (pet?.sprite) artStage.firstChild.append(e("span", {class:"player-pet", role:"img", "aria-label":pet.name}, renderSpriteFrame(pet.sprite)));
     const metric = (label, value) => e("div", {}, e("dt", {}, label), e("dd", {}, value));
-    const health = liveStatusAvailable && player.hp !== null && player.maxHp > 0 ? Math.max(0, Math.min(100, player.hp / player.maxHp * 100)) : null;
     const overallRank = e("a", {class:"player-overall-rank",href:"/leaderboards/?"+new URLSearchParams({player:player.id}),"aria-live":"polite",title:"Official global ranking by total skill levels"}, "Checking…");
     const hero = e("section", {class:"player-profile-hero", "aria-label":player.name + " profile"},
       artStage, e("div", {class:"player-profile-identity"},
@@ -258,12 +257,7 @@ export function renderPlayerLookup({main, element:e, crumbs, footer, byId, entry
           ...(player.isMember ? [e("span", {class:"player-member-badge"}, "❖ Member")] : [])),
         e("dl", {class:"player-headline-stats"},
           metric("Combat level", String(stats.combatLevel)), metric("Total level", format.format(stats.totalLevel)),
-          metric("Total XP", format.format(stats.totalXp)), ...(!planning ? [metric("Overall rank", overallRank)] : [])),
-        e("div", {class:"player-health"},
-          e("div", {}, e("span", {}, "Hitpoints"), e("strong", {}, health === null ? "Not publicly available" : player.hp + " / " + player.maxHp)),
-          ...(health === null ? [] : [e("span", {class:"player-health-track", role:"meter",
-            "aria-label":"Hitpoints", "aria-valuemin":"0", "aria-valuemax":String(player.maxHp), "aria-valuenow":String(player.hp)},
-            e("span", {style:"width:" + health + "%"}))]))
+          metric("Total XP", format.format(stats.totalXp)), ...(!planning ? [metric("Overall rank", overallRank)] : []))
       )
     );
     const location = liveStatusAvailable ? data.locations[player.location] : null;
