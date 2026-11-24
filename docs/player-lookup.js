@@ -1,5 +1,5 @@
 import {communityApiBase} from "./api-config.js?v=community-api-20261119";
-import {readPlayerRanks} from "./leaderboards.js?v=rankings-20261124";
+import {readPlayerRanks} from "./leaderboards.js?v=rank-scroll-20261124";
 import {readActivityCatalog, renderActivityComparison} from "./activity-comparison.js?v=vendors-20261120";
 import {attachHoverPreview,previewMotion,sampleMotion,weaponMotionType} from "./sprite-animation.js?v=sprites-20261121b";
 import {renderLoadoutComparison} from "./loadout-comparison.js?v=hypothetical-20261121";

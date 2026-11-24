@@ -260,6 +260,8 @@ community scope, total-level ranking, and all 16 skills in game order. Each
 player links to Player Lookup. The profile adds an independent Overall rank
 request; ranking errors do not hide the profile, equipment or skills. Its rank
 link opens the leaderboard with that player selected and highlighted.
+The selected row is centered and focused once after it loads. Every cell in the
+row is highlighted; routine ranking refreshes do not repeat the scroll.
 
 The neutral API gateway reads the official public `communities`, `leaderboard`
 and `user-ranks` procedures through `api-gateway/leaderboards.js`. Public routes

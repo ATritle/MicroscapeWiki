@@ -22,6 +22,7 @@ export function renderLeaderboards({main,element:e,crumbs,footer,initialParams="
   if(currentCommunity!=="all"&&!numericId.test(currentCommunity))currentCommunity="all";
   if(!skills.has(currentSkill))currentSkill="all";
   let communities=[],disposed=false,controller,communityController,lastSnapshot;
+  let revealSelection=player!=="0",revealFrame;
   const communitySearch=e("input",{type:"search",placeholder:"Search Twitch communities…","aria-label":"Find a Twitch community"});
   const communitySelect=e("select",{"aria-label":"Twitch community"},e("option",{value:"all"},"All communities · Global"));
   const communityStatus=e("p",{class:"leaderboard-help",role:"status"},"Loading the community directory…");
@@ -56,9 +57,20 @@ export function renderLeaderboards({main,element:e,crumbs,footer,initialParams="
     if(selected)caption.append(e("span",{class:"leaderboard-selected-label"},"Selected: "+selected.name+" · #"+number.format(selected.rank)));
     if(!snapshot.ranking.length){results.replaceChildren(heading,e("p",{},"No rankings were returned for this community and skill."));return;}
     const table=e("table",{},e("thead",{},e("tr",{},...["Rank","Player",snapshot.skillId==="all"?"Total level":"Skill level"].map(label=>e("th",{scope:"col"},label)))),
-      e("tbody",{},...snapshot.ranking.map(row=>e("tr",{...(row.id===player?{class:"leaderboard-selected"}:{})},e("td",{},"#"+number.format(row.rank)),
+      e("tbody",{},...snapshot.ranking.map(row=>e("tr",{...(row.id===player?{class:"leaderboard-selected",tabindex:"-1"}:{})},e("td",{},"#"+number.format(row.rank)),
         e("td",{},e("a",{href:"/player-lookup/?"+new URLSearchParams({name:row.name})},row.name),...(row.id===player?[e("span",{class:"leaderboard-selected-label"},"Selected player")]:[])),e("td",{},number.format(row.level))))));
     results.replaceChildren(heading,caption,e("div",{class:"table-wrap",tabindex:"0",role:"region","aria-label":"Player rankings"},table));
+    if(revealSelection&&selected&&!globalThis.__WIKI_PRERENDER__) {
+      cancelAnimationFrame(revealFrame);
+      revealFrame=requestAnimationFrame(()=>{
+        revealFrame=null;
+        const row=results.querySelector(".leaderboard-selected");
+        if(disposed||!row?.isConnected)return;
+        row.focus({preventScroll:true});
+        row.scrollIntoView({block:"center",inline:"nearest",behavior:"instant"});
+        revealSelection=false;
+      });
+    }
   }
   async function loadCommunities() {
     communityController=new AbortController();
@@ -86,5 +98,5 @@ export function renderLeaderboards({main,element:e,crumbs,footer,initialParams="
   refresh.addEventListener("click",()=>{if(!communities.length&&!communityController)loadCommunities();load();});
   const resume=()=>{if(!document.hidden)load();};
   let timer;if(!globalThis.__WIKI_PRERENDER__){if(currentCommunity!=="all")fillCommunities();loadCommunities();load();timer=setInterval(resume,60_000);document.addEventListener("visibilitychange",resume);}
-  return ()=>{disposed=true;controller?.abort();communityController?.abort();clearInterval(timer);document.removeEventListener("visibilitychange",resume);};
+  return ()=>{disposed=true;controller?.abort();communityController?.abort();if(revealFrame!=null)cancelAnimationFrame(revealFrame);clearInterval(timer);document.removeEventListener("visibilitychange",resume);};
 }
