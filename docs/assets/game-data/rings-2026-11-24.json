@@ -1,0 +1,108 @@
+{
+  "capturedAt": "2026-11-24T16:40:47.739Z",
+  "officialGame": "https://microscape.cc/play/",
+  "clientBuild": "https://microscape.cc/play/assets/index-BsSHHy-E.js",
+  "clientSha256": "228bbcdac7deb74e394e283dc124611450abc4dd7f9d7ba98fb141846f649878",
+  "scope": "Public client ring definitions, associated abilities and original icons. No signed-in connection or character actions.",
+  "mechanics": {
+    "normalAutoEatThresholdPercent": 35,
+    "maximumAutoEatThresholdPercent": 90
+  },
+  "definitions": {
+    "items": {
+      "ringOfGluttony": {
+        "bonuses": {
+          "attack": -5,
+          "autoEat": 25,
+          "evilMagic": -5,
+          "ranged": -5,
+          "strength": -5
+        },
+        "category": "equipment",
+        "description": "It hungers, and so do you.",
+        "id": "ringOfGluttony",
+        "name": "ring of gluttony",
+        "requirements": {
+          "cooking": 2
+        },
+        "slot": "ring",
+        "value": 980
+      },
+      "titaniumRing": {
+        "bonuses": {
+          "defense": 2
+        },
+        "category": "equipment",
+        "description": "A rare ring forged from an unknown metal.",
+        "id": "titaniumRing",
+        "name": "titanium ring",
+        "slot": "ring",
+        "value": 500
+      },
+      "weddingBand": {
+        "category": "equipment",
+        "description": "Finders keepers",
+        "id": "weddingBand",
+        "name": "wedding band",
+        "slot": "ring",
+        "value": 1800
+      }
+    },
+    "abilities": {
+      "tilDeathDoUsPart": {
+        "category": "generalCombat",
+        "description": "$curr% chance ($min-$max) to block a killing blow aimed at an ally fighting with you.",
+        "iconMapping": "fromItem",
+        "id": "tilDeathDoUsPart",
+        "investmentTier": 4,
+        "maxPower": 10,
+        "name": "Til Death Do Us Part",
+        "onItem": "weddingBand",
+        "permanentUnlockLevel": 40,
+        "type": "scaling"
+      }
+    },
+    "activities": {
+      "piety/rusty-chest-wedding-band": {
+        "customActionText": "Trading rusty coins",
+        "customPrepText": "Counting coins",
+        "duration": 2,
+        "entity": "rusty-chest",
+        "exp": 0,
+        "icon": "weddingBand",
+        "id": "rusty-chest-wedding-band",
+        "inventoryChanges": {
+          "rustyCoin": -256,
+          "weddingBand": 1
+        },
+        "level": 1,
+        "name": "Search for rings",
+        "notInGuidebook": true,
+        "singleExecution": true
+      }
+    }
+  },
+  "images": {
+    "ringOfGluttony": {
+      "src": "./assets/rings/ring-of-gluttony.png",
+      "originalUrl": "https://microscape.cc/play/assets/ringOfGluttony-Dpe6kLnO.png",
+      "sha256": "f3adae1bc93605b3ca9ad9d7451f664f78ad68cd8f37d72a5b98eb55420f0a9c",
+      "width": 32,
+      "height": 32
+    },
+    "titaniumRing": {
+      "src": "./assets/rings/titanium-ring.png",
+      "originalUrl": "https://microscape.cc/play/assets/ringOfGluttony-Dpe6kLnO.png",
+      "sha256": "f3adae1bc93605b3ca9ad9d7451f664f78ad68cd8f37d72a5b98eb55420f0a9c",
+      "width": 32,
+      "height": 32
+    },
+    "weddingBand": {
+      "src": "./assets/rings/wedding-band.png",
+      "originalUrl": "https://microscape.cc/play/assets/weddingBand-Bhf6S3OJ.png",
+      "sha256": "8afbed1e551c206864538aeb6e10d6acc7192fb19a899225e583ac8ce9a6614c",
+      "width": 32,
+      "height": 32
+    }
+  }
+}

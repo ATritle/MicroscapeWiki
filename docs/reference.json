@@ -85747,7 +85747,7 @@
     "title": "Ring Of Gluttony",
     "category": "items",
     "group": "Equipment",
-    "statsDate": "2026-11-19",
+    "statsDate": "2026-11-24",
     "facts": [
       [
         "In-game name",
@@ -85784,9 +85784,52 @@
       [
         "Strength",
         "-5"
+      ],
+      [
+        "Direct stat bonuses",
+        "+25 percentage points to auto-eat threshold · −5 Attack · −5 Strength · −5 Ranged · −5 Evil Magic"
+      ],
+      [
+        "Ability access",
+        "None from this item"
       ]
     ],
     "tables": [
+      {
+        "title": "Equipped bonuses",
+        "columns": [
+          "Stat",
+          "Bonus",
+          "What it does"
+        ],
+        "rows": [
+          [
+            "Auto-eat HP threshold",
+            "+25 percentage points",
+            "Raises the normal 35% auto-eat threshold to 60% with no other bonuses. The total threshold is capped at 90%."
+          ],
+          [
+            "Attack",
+            "−5 equipment points",
+            "Lowers melee accuracy."
+          ],
+          [
+            "Strength",
+            "−5 equipment points",
+            "Lowers effective Strength in the maximum-hit calculation; this is not a flat loss of 5 damage per hit."
+          ],
+          [
+            "Ranged",
+            "−5 equipment points",
+            "Lowers ranged accuracy and effective Ranged in the maximum-hit calculation."
+          ],
+          [
+            "Evil Magic",
+            "−5 equipment points",
+            "Lowers magic accuracy; it does not subtract 5 from a spell’s base damage."
+          ]
+        ]
+      },
       {
         "title": "Combat drops",
         "columns": [
@@ -85831,6 +85874,10 @@
     ],
     "sources": [
       [
+        "Public game ring data and original icons · November 24, 2026",
+        "./assets/game-data/rings-2026-11-24.json"
+      ],
+      [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
       ],
@@ -85845,13 +85892,21 @@
     ],
     "gameId": "ringOfGluttony",
     "portrait": {
-      "src": "https://microscape.cc/play/assets/ringOfGluttony-Dpe6kLnO.png",
+      "src": "./assets/rings/ring-of-gluttony.png",
       "source": "https://microscape.cc/play/"
     },
-    "artwork": "https://microscape.cc/play/assets/ringOfGluttony-Dpe6kLnO.png",
-    "summary": "Ring Of Gluttony · Equipment.",
+    "artwork": "./assets/rings/ring-of-gluttony.png",
+    "summary": "+25 percentage points to auto-eat threshold; −5 Attack, Strength, Ranged and Evil Magic. No attached ability.",
     "availabilityStatus": "documented-source",
-    "sections": []
+    "sections": [
+      [
+        "When equipped",
+        "Equipping Ring of Gluttony raises your auto-eat HP threshold by 25 percentage points, but applies −5 to Attack, Strength, Ranged and Evil Magic equipment bonuses. With no other auto-eat bonuses, the normal 35% threshold becomes 60%, so your character eats sooner. It does not increase food healing or provide an ability. Requires trained Cooking level 2."
+      ]
+    ],
+    "aliases": [
+      "rings"
+    ]
   },
   {
     "id": "royal-attire",
@@ -104998,7 +105053,7 @@
     "sourceDate": "2026-09-27",
     "sourceTitle": "Items",
     "sourceUrl": "https://microscape.miraheze.org/wiki/Items",
-    "statsDate": "2026-11-19",
+    "statsDate": "2026-11-24",
     "facts": [
       [
         "In-game name",
@@ -105019,9 +105074,32 @@
       [
         "Defense",
         "+2"
+      ],
+      [
+        "Direct stat bonuses",
+        "+2 Defense"
+      ],
+      [
+        "Ability access",
+        "None from this item"
       ]
     ],
     "tables": [
+      {
+        "title": "Equipped bonuses",
+        "columns": [
+          "Stat",
+          "Bonus",
+          "What it does"
+        ],
+        "rows": [
+          [
+            "Defense",
+            "+2 equipment points",
+            "Adds to Defense when calculating enemy hit chance. This is not a fixed 2% damage reduction."
+          ]
+        ]
+      },
       {
         "title": "Combat drops",
         "columns": [
@@ -105046,6 +105124,10 @@
       "crocodile"
     ],
     "sources": [
+      [
+        "Public game ring data and original icons · November 24, 2026",
+        "./assets/game-data/rings-2026-11-24.json"
+      ],
       [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
@@ -105077,13 +105159,21 @@
     ],
     "gameId": "titaniumRing",
     "portrait": {
-      "src": "https://microscape.cc/play/assets/ringOfGluttony-Dpe6kLnO.png",
+      "src": "./assets/rings/titanium-ring.png",
       "source": "https://microscape.cc/play/"
     },
-    "artwork": "https://microscape.cc/play/assets/ringOfGluttony-Dpe6kLnO.png",
-    "summary": "Titanium Ring · Equipment.",
+    "artwork": "./assets/rings/titanium-ring.png",
+    "summary": "+2 Defense. No attached ability.",
     "availabilityStatus": "documented-source",
-    "sections": []
+    "sections": [
+      [
+        "When equipped",
+        "Equipping Titanium Ring adds 2 Defense equipment points when the game calculates enemy hit chance. It does not provide a fixed 2% damage reduction or increase your trained Defense level. No ability is attached to this ring, and it has no equip-level requirement."
+      ]
+    ],
+    "aliases": [
+      "rings"
+    ]
   },
   {
     "id": "titles",
@@ -110946,7 +111036,7 @@
     "title": "Wedding Band",
     "category": "items",
     "group": "Equipment",
-    "statsDate": "2026-11-19",
+    "statsDate": "2026-11-24",
     "facts": [
       [
         "In-game name",
@@ -110965,11 +111055,52 @@
         "1800 coins"
       ],
       [
-        "Grants",
+        "Direct stat bonuses",
+        "None — no direct equipment stat bonus"
+      ],
+      [
+        "Ability access",
         "Til Death Do Us Part"
       ]
     ],
     "tables": [
+      {
+        "title": "Equipped bonuses",
+        "columns": [
+          "Stat",
+          "Bonus",
+          "What it does"
+        ],
+        "rows": [
+          [
+            "Direct equipment stats",
+            "None",
+            "Provides access to Til Death Do Us Part instead; enable the ability to use its effect."
+          ]
+        ]
+      },
+      {
+        "title": "Ability effects",
+        "description": "Equip the ring and enable the ability in the game’s Abilities panel. The effect depends on your ability level. Once permanently unlocked at the listed ability level, it can be used without the ring.",
+        "columns": [
+          "Ability",
+          "Effect when enabled",
+          "Permanent unlock"
+        ],
+        "rows": [
+          [
+            "Til Death Do Us Part",
+            "Chance to block a killing blow aimed at an ally fighting with you. Chance scales with the ability level, up to 10%.",
+            "Ability level 40"
+          ]
+        ],
+        "links": [
+          [
+            "Til Death Do Us Part",
+            "til-death-do-us-part"
+          ]
+        ]
+      },
       {
         "title": "Activities and recipes",
         "columns": [
@@ -111027,6 +111158,10 @@
     ],
     "sources": [
       [
+        "Public game ring data and original icons · November 24, 2026",
+        "./assets/game-data/rings-2026-11-24.json"
+      ],
+      [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
       ],
@@ -111041,13 +111176,21 @@
     ],
     "gameId": "weddingBand",
     "portrait": {
-      "src": "https://microscape.cc/play/assets/weddingBand-Bhf6S3OJ.png",
+      "src": "./assets/rings/wedding-band.png",
       "source": "https://microscape.cc/play/"
     },
-    "artwork": "https://microscape.cc/play/assets/weddingBand-Bhf6S3OJ.png",
-    "summary": "Wedding Band · Equipment.",
+    "artwork": "./assets/rings/wedding-band.png",
+    "summary": "No direct stat bonuses. Ability access: Til Death Do Us Part, which can block a killing blow aimed at an ally.",
     "availabilityStatus": "documented-source",
-    "sections": []
+    "sections": [
+      [
+        "When equipped",
+        "Equipping Wedding Band adds no direct equipment stat bonus. It provides access to Til Death Do Us Part: when enabled, the ability can block a killing blow aimed at an ally fighting with you. Its chance scales with the ability level, up to 10%. This is an ability effect, separate from your equipment stats. The ring has no equip-level requirement."
+      ]
+    ],
+    "aliases": [
+      "rings"
+    ]
   },
   {
     "id": "white-party-hat",

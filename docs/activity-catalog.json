@@ -15209,7 +15209,7 @@
         "strength": -5
       },
       "tags": [],
-      "icon": "https://microscape.cc/play/assets/ringOfGluttony-Dpe6kLnO.png",
+      "icon": "./assets/rings/ring-of-gluttony.png",
       "wikiId": "ring-of-gluttony",
       "requirements": {
         "cooking": 2
@@ -15945,7 +15945,7 @@
         "defense": 2
       },
       "tags": [],
-      "icon": "https://microscape.cc/play/assets/ringOfGluttony-Dpe6kLnO.png",
+      "icon": "./assets/rings/titanium-ring.png",
       "wikiId": "titanium-ring",
       "requirements": {}
     },
@@ -16153,7 +16153,7 @@
       "slot": "ring",
       "bonuses": {},
       "tags": [],
-      "icon": "https://microscape.cc/play/assets/weddingBand-Bhf6S3OJ.png",
+      "icon": "./assets/rings/wedding-band.png",
       "wikiId": "wedding-band",
       "requirements": {}
     },

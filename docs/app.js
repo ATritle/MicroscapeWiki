@@ -6,7 +6,7 @@ import {renderBazaar} from "./bazaar.js?v=market-sorting-20261122";
 import {renderBazaarWalkthrough} from "./bazaar-walkthrough.js?v=bazaar-visual-20261120";
 import { tutorials } from "./tutorials.js?v=release-20261119";
 import { buildPetEntries } from "./pets.js?v=release-20261119";
-import { itemIcons, itemIconGroups } from "./item-icons.js?v=amulets-20261124";
+import { itemIcons, itemIconGroups } from "./item-icons.js?v=rings-20261124";
 import { renderPlayerLookup } from "./player-lookup.js?v=ranked-communities-20261124";
 import {publicUrl, legacyRoute, pageMetadata, updateMetadata} from "./seo.js?v=rankings-20261124";
 import {lookupXpPlayer, lookupXpSuggestions, xpPlayerProgress, xpSkills} from "./xp-player.js?v=hypothetical-20261121";
@@ -566,7 +566,7 @@ function renderList(category, query) {
       const title = index.get(entry.id).title;
       if (title === phrase) return 0;
       if (title.startsWith(phrase)) return 1;
-      if (title.includes(phrase)) return 2;
+      if (title.includes(phrase) || entry.aliases?.some(alias => normalize(alias) === phrase)) return 2;
       return 3;
     };
     matching.sort((a, b) => score(a) - score(b) || a.title.localeCompare(b.title));
