@@ -1,0 +1,859 @@
+{
+  "capturedAt": "2026-11-24T16:28:36.459Z",
+  "officialGame": "https://microscape.cc/play/",
+  "clientBuild": "https://microscape.cc/play/assets/index-BsSHHy-E.js",
+  "clientSha256": "228bbcdac7deb74e394e283dc124611450abc4dd7f9d7ba98fb141846f649878",
+  "scope": "Public client amulet definitions, their abilities and recipes. Original game icons are served locally; legacy unstrung artwork is preserved from the November 19 archive.",
+  "definitions": {
+    "items": {
+      "amuletOfMagic": {
+        "bonuses": {
+          "evilMagic": 3
+        },
+        "category": "equipment",
+        "id": "amuletOfMagic",
+        "name": "amulet of magic",
+        "slot": "amulet",
+        "value": 71
+      },
+      "amuletOfPower": {
+        "bonuses": {
+          "attack": 2,
+          "autoEat": 2,
+          "defense": 2,
+          "evilMagic": 2,
+          "ranged": 2,
+          "strength": 2
+        },
+        "category": "equipment",
+        "id": "amuletOfPower",
+        "name": "amulet of power",
+        "slot": "amulet",
+        "value": 388
+      },
+      "amuletOfProgress": {
+        "bonuses": {
+          "cooking": 2,
+          "crafting": 2,
+          "firemaking": 2,
+          "fletching": 2,
+          "goodMagic": 2,
+          "herblaw": 2,
+          "smithing": 2
+        },
+        "category": "equipment",
+        "id": "amuletOfProgress",
+        "name": "amulet of progress",
+        "slot": "amulet",
+        "value": 900
+      },
+      "amuletOfProtection": {
+        "bonuses": {
+          "defense": 5
+        },
+        "category": "equipment",
+        "id": "amuletOfProtection",
+        "name": "amulet of protection",
+        "slot": "amulet",
+        "value": 120
+      },
+      "amuletOfStrength": {
+        "bonuses": {
+          "strength": 3
+        },
+        "category": "equipment",
+        "id": "amuletOfStrength",
+        "name": "amulet of strength",
+        "slot": "amulet",
+        "value": 217
+      },
+      "diamondAmulet": {
+        "category": "equipment",
+        "id": "diamondAmulet",
+        "name": "diamond amulet",
+        "slot": "amulet",
+        "value": 351
+      },
+      "dimEvilAmulet": {
+        "category": "equipment",
+        "id": "dimEvilAmulet",
+        "name": "dim evil amulet",
+        "slot": "amulet",
+        "value": 14
+      },
+      "dimHolyAmulet": {
+        "bonuses": {
+          "defense": 1
+        },
+        "category": "equipment",
+        "id": "dimHolyAmulet",
+        "name": "dim holy amulet",
+        "slot": "amulet",
+        "value": 14
+      },
+      "dragonstoneAmulet": {
+        "category": "equipment",
+        "id": "dragonstoneAmulet",
+        "name": "dragonstone amulet",
+        "slot": "amulet",
+        "value": 776
+      },
+      "emeraldAmulet": {
+        "category": "equipment",
+        "id": "emeraldAmulet",
+        "name": "emerald amulet",
+        "slot": "amulet",
+        "value": 105
+      },
+      "evilAmulet": {
+        "bonuses": {
+          "attack": 1,
+          "defense": 1,
+          "piety": 2,
+          "strength": 1
+        },
+        "category": "equipment",
+        "id": "evilAmulet",
+        "name": "evil amulet",
+        "requirements": {
+          "piety": 43
+        },
+        "slot": "amulet",
+        "value": 26
+      },
+      "goldAmulet": {
+        "category": "equipment",
+        "id": "goldAmulet",
+        "name": "gold amulet",
+        "slot": "amulet",
+        "value": 14
+      },
+      "holyAmulet": {
+        "bonuses": {
+          "defense": 2,
+          "piety": 3
+        },
+        "category": "equipment",
+        "id": "holyAmulet",
+        "name": "holy amulet",
+        "requirements": {
+          "piety": 22
+        },
+        "slot": "amulet",
+        "value": 17
+      },
+      "rubyAmulet": {
+        "category": "equipment",
+        "id": "rubyAmulet",
+        "name": "ruby amulet",
+        "slot": "amulet",
+        "value": 188
+      },
+      "sapphireAmulet": {
+        "category": "equipment",
+        "id": "sapphireAmulet",
+        "name": "sapphire amulet",
+        "slot": "amulet",
+        "value": 62
+      }
+    },
+    "abilities": {
+      "berserk": {
+        "category": "meleeCombat",
+        "description": "$curr% chance ($min-$max) when hit to gain Berserk: +12 strength and -4 attack for your next 4 swings.",
+        "id": "berserk",
+        "investmentTier": 4000,
+        "maxPower": 20,
+        "name": "Berserk",
+        "onItem": "amuletOfStrength",
+        "permanentUnlockLevel": 45,
+        "type": "scaling"
+      },
+      "bleedingEdge": {
+        "category": "utility",
+        "description": "Chance to gain double the experience from skilling activities, equal to $curr% ($min-$max) minus your double up chance.",
+        "iconMapping": "fromItem",
+        "id": "bleedingEdge",
+        "investmentTier": 2,
+        "lore": "The fastest learning happens in that narrow zone between comfort and panic.",
+        "maxPower": 20,
+        "name": "Bleeding Edge",
+        "onItem": "amuletOfProgress",
+        "permanentUnlockLevel": 30,
+        "type": "scaling"
+      },
+      "conserveAir": {
+        "category": "magicCombat",
+        "description": "$curr% chance ($min-$max) to save 2 air runes when casting spells or performing activities",
+        "id": "conserveAir",
+        "investmentTier": 360,
+        "maxPower": 100,
+        "name": "Conserve Air",
+        "onItem": "amuletOfMagic",
+        "permanentUnlockLevel": 20,
+        "type": "scaling"
+      },
+      "conserveFire": {
+        "category": "magicCombat",
+        "description": "$curr% chance ($min-$max) to save 2 fire runes when casting spells or performing activities",
+        "id": "conserveFire",
+        "investmentTier": 480,
+        "maxPower": 100,
+        "name": "Conserve Fire",
+        "onItem": "amuletOfMagic",
+        "permanentUnlockLevel": 20,
+        "type": "scaling"
+      },
+      "enlightened": {
+        "category": "generalCombat",
+        "description": "$curr% chance ($min-$max) when hitting your max hit to double the experience gained.",
+        "id": "enlightened",
+        "investmentTier": 2400,
+        "maxPower": 100,
+        "name": "Enlightened",
+        "onItem": "amuletOfPower",
+        "permanentUnlockLevel": 60,
+        "type": "scaling"
+      },
+      "gemcraft": {
+        "category": "processing",
+        "description": "$curr% chance ($min-$max) to triple experience from cutting gems",
+        "id": "gemcraft",
+        "investmentTier": 50,
+        "maxPower": 100,
+        "name": "Gemcraft",
+        "onItem": "diamondAmulet",
+        "permanentUnlockLevel": 30,
+        "type": "scaling"
+      },
+      "paralyzeMonster": {
+        "category": "prayer",
+        "combatSpending": "whenMobAttacks",
+        "description": "A prayer with a 60% chance to make enemies skip their turn. Consumes a sacred rune per skipped attack.",
+        "id": "paralyzeMonster",
+        "investmentTier": 4000,
+        "name": "Paralyze Monster",
+        "onItem": "evilAmulet",
+        "permanentUnlockLevel": 60,
+        "requiredItems": {
+          "sacredRune": -1
+        },
+        "type": "static"
+      },
+      "rapidHeal": {
+        "category": "prayer",
+        "combatSpending": "always",
+        "description": "A prayer that triples your health regeneration speed. Consumes one spirit rune per regeneration event.",
+        "id": "rapidHeal",
+        "investmentTier": 1000,
+        "name": "Rapid Heal",
+        "onItem": "holyAmulet",
+        "permanentUnlockLevel": 50,
+        "requiredItems": {
+          "spiritRune": -1
+        },
+        "type": "static"
+      },
+      "stoneskin": {
+        "category": "generalCombat",
+        "description": "$curr% chance ($min-$max) to reduce incoming damage by 1",
+        "id": "stoneskin",
+        "investmentTier": 1000,
+        "maxPower": 70,
+        "name": "Stoneskin",
+        "onItem": "amuletOfProtection",
+        "permanentUnlockLevel": 50,
+        "type": "scaling"
+      }
+    },
+    "activities": {
+      "crafting/bless-holy-amulet": {
+        "customActionText": "Having Brother Alep bless the amulet for a small donation",
+        "duration": 3,
+        "entity": "brother-alep",
+        "exp": 0,
+        "id": "bless-holy-amulet",
+        "inventoryChanges": {
+          "coins": -20,
+          "dimHolyAmulet": -1,
+          "holyAmulet": 1
+        },
+        "level": 18,
+        "name": "bless holy amulet"
+      },
+      "crafting/craft-diamond-amulet": {
+        "duration": 10,
+        "entity": "furnace",
+        "exp": 540,
+        "id": "craft-diamond-amulet",
+        "inventoryChanges": {
+          "ballOfWool": -1,
+          "cutDiamond": -1,
+          "diamondAmulet": 1,
+          "goldBar": -1,
+          "petSandy": 0.000012836031253168895,
+          "petScoop": 0.000006418015626584448,
+          "petStitch": 0.000008557354168779263
+        },
+        "level": 70,
+        "name": "diamond amulet"
+      },
+      "crafting/craft-dragonstone-amulet": {
+        "duration": 10801,
+        "entity": "furnace",
+        "exp": 1006113,
+        "id": "craft-dragonstone-amulet",
+        "inventoryChanges": {
+          "ballOfWool": -1,
+          "cutDragonstone": -1,
+          "dragonstoneAmulet": 1,
+          "goldBar": -1,
+          "petSandy": 0.013864197356547724,
+          "petScoop": 0.006932098678273862,
+          "petStitch": 0.009242798237698482
+        },
+        "isOthered": true,
+        "level": 80,
+        "name": "dragonstone amulet",
+        "singleExecution": true
+      },
+      "crafting/craft-emerald-amulet": {
+        "duration": 10,
+        "entity": "furnace",
+        "exp": 276,
+        "id": "craft-emerald-amulet",
+        "inventoryChanges": {
+          "ballOfWool": -1,
+          "cutEmerald": -1,
+          "emeraldAmulet": 1,
+          "goldBar": -1,
+          "petSandy": 0.000012836031253168895,
+          "petScoop": 0.000006418015626584448,
+          "petStitch": 0.000008557354168779263
+        },
+        "level": 30,
+        "name": "emerald amulet"
+      },
+      "crafting/craft-evil-amulet": {
+        "duration": 6,
+        "entity": "furnace",
+        "exp": 100,
+        "id": "craft-evil-amulet",
+        "inventoryChanges": {
+          "ballOfWool": -1,
+          "dimEvilAmulet": 1,
+          "petSandy": 0.000007701618751901337,
+          "petScoop": 0.0000038508093759506686,
+          "petStitch": 0.000005134412501267558,
+          "silverBar": -1
+        },
+        "level": 17,
+        "name": "dim evil amulet"
+      },
+      "crafting/craft-gold-amulet": {
+        "duration": 6,
+        "entity": "furnace",
+        "exp": 49,
+        "id": "craft-gold-amulet",
+        "inventoryChanges": {
+          "ballOfWool": -1,
+          "goldAmulet": 1,
+          "goldBar": -1,
+          "petSandy": 0.000007701618751901337,
+          "petScoop": 0.0000038508093759506686,
+          "petStitch": 0.000005134412501267558
+        },
+        "level": 8,
+        "name": "gold amulet"
+      },
+      "crafting/craft-holy-amulet": {
+        "duration": 6,
+        "entity": "furnace",
+        "exp": 96,
+        "id": "craft-holy-amulet",
+        "inventoryChanges": {
+          "ballOfWool": -1,
+          "dimHolyAmulet": 1,
+          "petSandy": 0.000007701618751901337,
+          "petScoop": 0.0000038508093759506686,
+          "petStitch": 0.000005134412501267558,
+          "silverBar": -1
+        },
+        "level": 16,
+        "name": "dim holy amulet"
+      },
+      "crafting/craft-ruby-amulet": {
+        "duration": 10,
+        "entity": "furnace",
+        "exp": 414,
+        "id": "craft-ruby-amulet",
+        "inventoryChanges": {
+          "ballOfWool": -1,
+          "cutRuby": -1,
+          "goldBar": -1,
+          "petSandy": 0.000012836031253168895,
+          "petScoop": 0.000006418015626584448,
+          "petStitch": 0.000008557354168779263,
+          "rubyAmulet": 1
+        },
+        "level": 50,
+        "name": "ruby amulet"
+      },
+      "crafting/craft-sapphire-amulet": {
+        "duration": 10,
+        "entity": "furnace",
+        "exp": 264,
+        "id": "craft-sapphire-amulet",
+        "inventoryChanges": {
+          "ballOfWool": -1,
+          "cutSapphire": -1,
+          "goldBar": -1,
+          "petSandy": 0.000012836031253168895,
+          "petScoop": 0.000006418015626584448,
+          "petStitch": 0.000008557354168779263,
+          "sapphireAmulet": 1
+        },
+        "level": 24,
+        "name": "sapphire amulet"
+      },
+      "crafting/curse-evil-amulet": {
+        "customActionText": "Imbuing the amulet with dark power",
+        "duration": 3,
+        "entity": "totem-of-zem",
+        "exp": 0,
+        "id": "curse-evil-amulet",
+        "inventoryChanges": {
+          "coins": -10,
+          "dimEvilAmulet": -1,
+          "evilAmulet": 1
+        },
+        "level": 18,
+        "name": "curse evil amulet"
+      },
+      "goodMagic/enchant-diamond-amulet": {
+        "duration": 16,
+        "entity": "processing-spot",
+        "exp": 200,
+        "id": "enchant-diamond-amulet",
+        "inventoryChanges": {
+          "airRune": -10,
+          "amuletOfPower": 1,
+          "cosmicRune": -1,
+          "diamondAmulet": -1,
+          "petMerlin": 0.000013691766670046821,
+          "petRiddle": 0.000010268825002535116,
+          "petScribble": 0.000020537650005070232
+        },
+        "level": 57,
+        "name": "enchant amulet 4"
+      },
+      "goodMagic/enchant-dragonstone-amulet": {
+        "duration": 10801,
+        "entity": "processing-spot",
+        "exp": 293652,
+        "id": "enchant-dragonstone-amulet",
+        "inventoryChanges": {
+          "airRune": -15,
+          "amuletOfProgress": 1,
+          "cosmicRune": -1,
+          "dragonstoneAmulet": -1,
+          "petMerlin": 0.009242798237698482,
+          "petRiddle": 0.006932098678273862,
+          "petScribble": 0.013864197356547724
+        },
+        "isOthered": true,
+        "level": 68,
+        "name": "enchant amulet 5",
+        "singleExecution": true
+      },
+      "goodMagic/enchant-emerald-amulet": {
+        "duration": 11,
+        "entity": "processing-spot",
+        "exp": 55,
+        "id": "enchant-emerald-amulet",
+        "inventoryChanges": {
+          "airRune": -3,
+          "amuletOfProtection": 1,
+          "cosmicRune": -1,
+          "emeraldAmulet": -1,
+          "petMerlin": 0.00000941308958565719,
+          "petRiddle": 0.000007059817189242893,
+          "petScribble": 0.000014119634378485786
+        },
+        "level": 20,
+        "name": "enchant amulet 2"
+      },
+      "goodMagic/enchant-ruby-amulet": {
+        "duration": 13,
+        "entity": "processing-spot",
+        "exp": 150,
+        "id": "enchant-ruby-amulet",
+        "inventoryChanges": {
+          "amuletOfStrength": 1,
+          "cosmicRune": -1,
+          "fireRune": -5,
+          "petMerlin": 0.000011124560419413042,
+          "petRiddle": 0.000008343420314559781,
+          "petScribble": 0.000016686840629119563,
+          "rubyAmulet": -1
+        },
+        "level": 49,
+        "name": "enchant amulet 3"
+      },
+      "goodMagic/enchant-sapphire-amulet": {
+        "duration": 9,
+        "entity": "processing-spot",
+        "exp": 35,
+        "id": "enchant-sapphire-amulet",
+        "inventoryChanges": {
+          "airRune": -1,
+          "amuletOfMagic": 1,
+          "cosmicRune": -1,
+          "petMerlin": 0.000007701618751901337,
+          "petRiddle": 0.000005776214063926003,
+          "petScribble": 0.000011552428127852007,
+          "sapphireAmulet": -1
+        },
+        "level": 10,
+        "name": "enchant amulet 1"
+      },
+      "piety/chest-al-la-del": {
+        "customActionText": "Opening the temple chest",
+        "customPrepText": "Arranging the sigils",
+        "duration": 6,
+        "entity": "temple-chest",
+        "exp": 0,
+        "icon": "templeChest",
+        "id": "chest-al-la-del",
+        "inventoryChanges": {
+          "coins": 180,
+          "goldAmulet": 0.0625,
+          "leatherArmor": 0.2,
+          "mithrilOre": 14,
+          "natureRune": 14,
+          "oakBow": 0.16666666666666666,
+          "scarabSatchel": 0.03125,
+          "sigilAl": -1,
+          "sigilDel": -1,
+          "sigilLa": -1,
+          "uncutEmerald": 0.16666666666666666
+        },
+        "level": 1,
+        "name": "\"Al La Del\"",
+        "notInGuidebook": true
+      },
+      "piety/chest-di-la-mar-del": {
+        "customActionText": "Opening the temple chest",
+        "customPrepText": "Arranging the sigils",
+        "duration": 6,
+        "entity": "temple-chest",
+        "exp": 0,
+        "icon": "templeChest",
+        "id": "chest-di-la-mar-del",
+        "inventoryChanges": {
+          "bluegoldAxe": 0.07142857142857142,
+          "coins": 680,
+          "goldOre": 40,
+          "saltedMitts": 0.07142857142857142,
+          "sapphireAmulet": 0.16666666666666666,
+          "sigilDel": -1,
+          "sigilDi": -1,
+          "sigilLa": -1,
+          "sigilMar": -1,
+          "uncutRuby": 0.125,
+          "willowBow": 0.2,
+          "yewLogs": 40
+        },
+        "level": 1,
+        "name": "\"Di La Mar Del\"",
+        "notInGuidebook": true
+      },
+      "piety/chest-mar-del-del": {
+        "customActionText": "Opening the temple chest",
+        "customPrepText": "Arranging the sigils",
+        "duration": 6,
+        "entity": "temple-chest",
+        "exp": 0,
+        "icon": "templeChest",
+        "id": "chest-mar-del-del",
+        "inventoryChanges": {
+          "adamantiteOre": 3,
+          "battlestaff": 0.16666666666666666,
+          "coins": 560,
+          "emeraldAmulet": 0.16666666666666666,
+          "lawRune": 35,
+          "mapleBow": 0.2,
+          "shellOfKa": 0.0625,
+          "sigilDel": -2,
+          "sigilMar": -1,
+          "uncutDiamond": 0.1
+        },
+        "level": 1,
+        "name": "\"Mar Del Del\"",
+        "notInGuidebook": true
+      },
+      "piety/chest-mar-ner": {
+        "customActionText": "Opening the temple chest",
+        "customPrepText": "Arranging the sigils",
+        "duration": 6,
+        "entity": "temple-chest",
+        "exp": 0,
+        "icon": "templeChest",
+        "id": "chest-mar-ner",
+        "inventoryChanges": {
+          "coins": 2860,
+          "deathRune": 60,
+          "fireBattlestaff": 0.1,
+          "goldenRod": 0.16666666666666666,
+          "khopeshOfBa": 0.0625,
+          "progriteBar": 1,
+          "rubyAmulet": 0.16666666666666666,
+          "scarabCache": 0.05,
+          "sigilMar": -1,
+          "sigilNer": -1,
+          "yewBow": 0.2
+        },
+        "level": 1,
+        "name": "\"Mar Ner\"",
+        "notInGuidebook": true
+      }
+    }
+  },
+  "images": {
+    "amuletOfMagic": {
+      "src": "./assets/amulets/amulet-of-magic.png",
+      "originalUrl": "https://microscape.cc/play/assets/amuletOfMagic-C-7k74OY.png",
+      "archived": false,
+      "sha256": "84a676ae7be8314a98f8703a0d0ed65f4ab6fa58c85c8ce6785d74d8f14a1cee",
+      "width": 32,
+      "height": 32
+    },
+    "amuletOfPower": {
+      "src": "./assets/amulets/amulet-of-power.png",
+      "originalUrl": "https://microscape.cc/play/assets/amuletOfPower-BAAJlbMy.png",
+      "archived": false,
+      "sha256": "c750d471285573dda2d8ac7d7584839671c42d70a4cb9d552337d52a560d1dea",
+      "width": 32,
+      "height": 32
+    },
+    "amuletOfProgress": {
+      "src": "./assets/amulets/amulet-of-progress.png",
+      "originalUrl": "https://microscape.cc/play/assets/amuletOfProgress-Ctd0NFSD.png",
+      "archived": false,
+      "sha256": "5aa5361b2112fdfde183c6aa4250bfd4f09fb8058924bcc145dee0f1a5c7284d",
+      "width": 32,
+      "height": 32
+    },
+    "amuletOfProtection": {
+      "src": "./assets/amulets/amulet-of-protection.png",
+      "originalUrl": "https://microscape.cc/play/assets/amuletOfProtection-CMLwounm.png",
+      "archived": false,
+      "sha256": "b67c449cef1b38e24298f0553fad4dd2a47802dc206175daefc0440af7aba232",
+      "width": 32,
+      "height": 32
+    },
+    "amuletOfStrength": {
+      "src": "./assets/amulets/amulet-of-strength.png",
+      "originalUrl": "https://microscape.cc/play/assets/amuletOfStrength-CD9RynJh.png",
+      "archived": false,
+      "sha256": "02233a0a5f38d5340141c4fd5ba1ac6ea46515c33d8a1a336b606a27bf4c655c",
+      "width": 32,
+      "height": 32
+    },
+    "diamondAmulet": {
+      "src": "./assets/amulets/diamond-amulet.png",
+      "originalUrl": "https://microscape.cc/play/assets/amuletOfPower-BAAJlbMy.png",
+      "archived": false,
+      "sha256": "c750d471285573dda2d8ac7d7584839671c42d70a4cb9d552337d52a560d1dea",
+      "width": 32,
+      "height": 32
+    },
+    "dimEvilAmulet": {
+      "src": "./assets/amulets/dim-evil-amulet.png",
+      "originalUrl": "https://microscape.cc/play/assets/dimEvilAmulet-CU3TpfzJ.png",
+      "archived": false,
+      "sha256": "7969a6c9ee20390a6122fa339f32ff1930280b62ebaddbd9dd2b12662af57d8d",
+      "width": 32,
+      "height": 32
+    },
+    "dimHolyAmulet": {
+      "src": "./assets/amulets/dim-holy-amulet.png",
+      "originalUrl": "https://microscape.cc/play/assets/dimHolyAmulet-DB2mL_eS.png",
+      "archived": false,
+      "sha256": "4be833c329e062dafc45f94cfc8c270db76479e0ecc41d75d32e2f686026fecd",
+      "width": 32,
+      "height": 32
+    },
+    "dragonstoneAmulet": {
+      "src": "./assets/amulets/dragonstone-amulet.png",
+      "originalUrl": "https://microscape.cc/play/assets/amuletOfProgress-Ctd0NFSD.png",
+      "archived": false,
+      "sha256": "5aa5361b2112fdfde183c6aa4250bfd4f09fb8058924bcc145dee0f1a5c7284d",
+      "width": 32,
+      "height": 32
+    },
+    "emeraldAmulet": {
+      "src": "./assets/amulets/emerald-amulet.png",
+      "originalUrl": "https://microscape.cc/play/assets/amuletOfProtection-CMLwounm.png",
+      "archived": false,
+      "sha256": "b67c449cef1b38e24298f0553fad4dd2a47802dc206175daefc0440af7aba232",
+      "width": 32,
+      "height": 32
+    },
+    "evilAmulet": {
+      "src": "./assets/amulets/evil-amulet.png",
+      "originalUrl": "https://microscape.cc/play/assets/evilAmulet-CfbxHlM5.png",
+      "archived": false,
+      "sha256": "917885ec11f4a8a67422937840c36857e26d65973a9ef162144ffff99be90a98",
+      "width": 32,
+      "height": 32
+    },
+    "goldAmulet": {
+      "src": "./assets/amulets/gold-amulet.png",
+      "originalUrl": "https://microscape.cc/play/assets/goldAmulet-DNsy3tX1.png",
+      "archived": false,
+      "sha256": "d7e475983ff4735fb0c9815a024423bb0eec3c07db4ba9bbe627ccc57e835e9a",
+      "width": 32,
+      "height": 32
+    },
+    "holyAmulet": {
+      "src": "./assets/amulets/holy-amulet.png",
+      "originalUrl": "https://microscape.cc/play/assets/holyAmulet-BKO_Vjrs.png",
+      "archived": false,
+      "sha256": "6573ec0eff6962e1ba69416bd21fef3e48cb926f69ba4ce286b24909a2a8fa9d",
+      "width": 32,
+      "height": 32
+    },
+    "rubyAmulet": {
+      "src": "./assets/amulets/ruby-amulet.png",
+      "originalUrl": "https://microscape.cc/play/assets/amuletOfStrength-CD9RynJh.png",
+      "archived": false,
+      "sha256": "02233a0a5f38d5340141c4fd5ba1ac6ea46515c33d8a1a336b606a27bf4c655c",
+      "width": 32,
+      "height": 32
+    },
+    "sapphireAmulet": {
+      "src": "./assets/amulets/sapphire-amulet.png",
+      "originalUrl": "https://microscape.cc/play/assets/amuletOfMagic-C-7k74OY.png",
+      "archived": false,
+      "sha256": "84a676ae7be8314a98f8703a0d0ed65f4ab6fa58c85c8ce6785d74d8f14a1cee",
+      "width": 32,
+      "height": 32
+    },
+    "unstrungDiamondAmulet": {
+      "src": "./assets/amulets/unstrung-diamond-amulet.png",
+      "originalUrl": "https://microscape.cc/play/assets/unstrungDiamondAmulet--S1Np2YK.png",
+      "archived": true,
+      "sha256": "bfe62308d71e897debc1238691b61d0a9527a6302118cf7005201eb611ab7ecb",
+      "width": 32,
+      "height": 32
+    },
+    "unstrungDragonstoneAmulet": {
+      "src": "./assets/amulets/unstrung-dragonstone-amulet.png",
+      "originalUrl": "https://microscape.cc/play/assets/unstrungDragonstoneAmulet-DsKp2STH.png",
+      "archived": true,
+      "sha256": "e7a58cc15b98cddef29fdfadec0462dbc9099967b24b2d5ddd973b6eb80d0f1d",
+      "width": 32,
+      "height": 32
+    },
+    "unstrungEmeraldAmulet": {
+      "src": "./assets/amulets/unstrung-emerald-amulet.png",
+      "originalUrl": "https://microscape.cc/play/assets/unstrungEmeraldAmulet-DIHDKhQx.png",
+      "archived": true,
+      "sha256": "43245462d65015094000fc464a79d64a7f60721607242604aae0e38679d4f45a",
+      "width": 32,
+      "height": 32
+    },
+    "unstrungEvilAmulet": {
+      "src": "./assets/amulets/unstrung-evil-amulet.png",
+      "originalUrl": "https://microscape.cc/play/assets/unstrungEvilAmulet-Dvd3ACHJ.png",
+      "archived": true,
+      "sha256": "4eee5b84ea62d1f0a91304939e1485e04f7865462d28921454d00a5e1ca7ebd6",
+      "width": 32,
+      "height": 32
+    },
+    "unstrungGoldAmulet": {
+      "src": "./assets/amulets/unstrung-gold-amulet.png",
+      "originalUrl": "https://microscape.cc/play/assets/unstrungGoldAmulet-BtblasST.png",
+      "archived": true,
+      "sha256": "a6f4be89483eabc16b2b9a9b5b730e74f757f5c1aac050a5f31dcec4d84554e6",
+      "width": 32,
+      "height": 32
+    },
+    "unstrungHolyAmulet": {
+      "src": "./assets/amulets/unstrung-holy-amulet.png",
+      "originalUrl": "https://microscape.cc/play/assets/unstrungHolyAmulet-X-Z9PbsT.png",
+      "archived": true,
+      "sha256": "e329ddb7748af666ce2772af10f9f39354440dec56accf1bba78150d19de73d6",
+      "width": 32,
+      "height": 32
+    },
+    "unstrungRubyAmulet": {
+      "src": "./assets/amulets/unstrung-ruby-amulet.png",
+      "originalUrl": "https://microscape.cc/play/assets/unstrungRubyAmulet-BstLevfK.png",
+      "archived": true,
+      "sha256": "dc04811a7debe6f6df381268e2127020c2cfed27c8b31cb6464cd29a8d2a281b",
+      "width": 32,
+      "height": 32
+    },
+    "unstrungSapphireAmulet": {
+      "src": "./assets/amulets/unstrung-sapphire-amulet.png",
+      "originalUrl": "https://microscape.cc/play/assets/unstrungSapphireAmulet-CnSq6ILn.png",
+      "archived": true,
+      "sha256": "b53725cc8e8398074eea317ce882d43fd0fc98ae5133537a6e64e2b26357108a",
+      "width": 32,
+      "height": 32
+    }
+  },
+  "archivedItems": {
+    "unstrungDiamondAmulet": {
+      "category": "materials",
+      "id": "unstrungDiamondAmulet",
+      "name": "unstrung diamond amulet",
+      "value": 346
+    },
+    "unstrungDragonstoneAmulet": {
+      "category": "materials",
+      "id": "unstrungDragonstoneAmulet",
+      "name": "unstrung dragonstone amulet",
+      "value": 771
+    },
+    "unstrungEmeraldAmulet": {
+      "category": "materials",
+      "id": "unstrungEmeraldAmulet",
+      "name": "unstrung emerald amulet",
+      "value": 100
+    },
+    "unstrungEvilAmulet": {
+      "category": "materials",
+      "id": "unstrungEvilAmulet",
+      "name": "unstrung evil amulet",
+      "value": 9
+    },
+    "unstrungGoldAmulet": {
+      "category": "materials",
+      "id": "unstrungGoldAmulet",
+      "name": "unstrung gold amulet",
+      "value": 9
+    },
+    "unstrungHolyAmulet": {
+      "category": "materials",
+      "id": "unstrungHolyAmulet",
+      "name": "unstrung holy amulet",
+      "value": 9
+    },
+    "unstrungRubyAmulet": {
+      "category": "materials",
+      "id": "unstrungRubyAmulet",
+      "name": "unstrung ruby amulet",
+      "value": 183
+    },
+    "unstrungSapphireAmulet": {
+      "category": "materials",
+      "id": "unstrungSapphireAmulet",
+      "name": "unstrung sapphire amulet",
+      "value": 57
+    }
+  },
+  "archivedItemSource": "./assets/game-data/release-2026-11-19.json"
+}

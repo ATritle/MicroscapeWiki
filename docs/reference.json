@@ -3722,13 +3722,59 @@
     "sourceUrl": "https://microscape.miraheze.org/wiki/Items/Amulet_of_Magic",
     "tables": [
       {
+        "title": "Equipped bonuses",
+        "columns": [
+          "Stat",
+          "Bonus",
+          "What it does"
+        ],
+        "rows": [
+          [
+            "Evil Magic",
+            "+3 equipment points",
+            "Adds 3 Evil Magic equipment points to accuracy calculations. Hit-chance limits still apply."
+          ]
+        ]
+      },
+      {
+        "title": "Ability effects",
+        "description": "Equip and enable the ability in the game’s Abilities panel. Ability effects are separate from direct equipment stats; scaling chances depend on your ability level. Once permanently unlocked at the listed ability level, the ability can be used without this amulet.",
+        "columns": [
+          "Ability",
+          "Effect when enabled",
+          "Permanent unlock"
+        ],
+        "rows": [
+          [
+            "Conserve Air",
+            "Chance to save two Air Runes when casting spells or performing activities. Chance scales with the ability level.",
+            "Ability level 20"
+          ],
+          [
+            "Conserve Fire",
+            "Chance to save two Fire Runes when casting spells or performing activities. Chance scales with the ability level.",
+            "Ability level 20"
+          ]
+        ],
+        "links": [
+          [
+            "Conserve Air",
+            "conserve-air"
+          ],
+          [
+            "Conserve Fire",
+            "conserve-fire"
+          ]
+        ]
+      },
+      {
         "title": "Activities and recipes",
         "columns": [
           "Activity",
           "Requirements",
           "Station",
           "Materials per action",
-          "Output or odds",
+          "Output",
           "XP",
           "Base time",
           "Status"
@@ -3782,7 +3828,7 @@
       "corrupted-druid",
       "evil-magic"
     ],
-    "statsDate": "2026-11-19",
+    "statsDate": "2026-11-24",
     "facts": [
       [
         "In-game name",
@@ -3805,11 +3851,19 @@
         "+3"
       ],
       [
-        "Grants",
+        "Direct stat bonuses",
+        "+3 Evil Magic"
+      ],
+      [
+        "Ability access",
         "Conserve Air · Conserve Fire"
       ]
     ],
     "sources": [
+      [
+        "Public game amulet data and original icons · November 24, 2026",
+        "./assets/game-data/amulets-2026-11-24.json"
+      ],
       [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
@@ -3841,13 +3895,21 @@
     ],
     "gameId": "amuletOfMagic",
     "portrait": {
-      "src": "https://microscape.cc/play/assets/amuletOfMagic-C-7k74OY.png",
+      "src": "./assets/amulets/amulet-of-magic.png",
       "source": "https://microscape.cc/play/"
     },
-    "artwork": "https://microscape.cc/play/assets/amuletOfMagic-C-7k74OY.png",
-    "summary": "Amulet of Magic · Equipment.",
+    "artwork": "./assets/amulets/amulet-of-magic.png",
+    "summary": "+3 Evil Magic. Ability access: Conserve Air and Conserve Fire.",
     "availabilityStatus": "documented-source",
-    "sections": []
+    "sections": [
+      [
+        "When equipped",
+        "Equipping Amulet of Magic applies the direct bonuses listed below. These are equipment bonuses; they do not add XP, permanently raise your trained levels, or satisfy skill requirements. Any associated ability is a separate effect."
+      ]
+    ],
+    "aliases": [
+      "amulets"
+    ]
   },
   {
     "id": "amulet-of-power",
@@ -3870,7 +3932,7 @@
       "ranged",
       "evil-magic"
     ],
-    "statsDate": "2026-11-19",
+    "statsDate": "2026-11-24",
     "facts": [
       [
         "In-game name",
@@ -3913,11 +3975,77 @@
         "+2"
       ],
       [
-        "Grants",
+        "Direct stat bonuses",
+        "+2 Attack · +2 percentage points to auto-eat threshold · +2 Defense · +2 Evil Magic · +2 Ranged · +2 Strength"
+      ],
+      [
+        "Ability access",
         "Enlightened"
       ]
     ],
     "tables": [
+      {
+        "title": "Equipped bonuses",
+        "columns": [
+          "Stat",
+          "Bonus",
+          "What it does"
+        ],
+        "rows": [
+          [
+            "Attack",
+            "+2 equipment points",
+            "Adds 2 Attack equipment points to accuracy calculations. Hit-chance limits still apply."
+          ],
+          [
+            "Auto-eat HP threshold",
+            "+2 percentage points",
+            "Raises the auto-eat threshold by 2 percentage points (for example, 35% → 37% with no other bonuses)."
+          ],
+          [
+            "Defense",
+            "+2 equipment points",
+            "Adds 2 Defense equipment points when calculating enemy hit chance. It is not a fixed 2% damage reduction."
+          ],
+          [
+            "Evil Magic",
+            "+2 equipment points",
+            "Adds 2 Evil Magic equipment points to accuracy calculations. Hit-chance limits still apply."
+          ],
+          [
+            "Ranged",
+            "+2 equipment points",
+            "Adds 2 Ranged equipment points to ranged accuracy and maximum-hit calculations."
+          ],
+          [
+            "Strength",
+            "+2 equipment points",
+            "Adds 2 Strength equipment points to the maximum-hit calculation. This is not +2 damage on every hit."
+          ]
+        ]
+      },
+      {
+        "title": "Ability effects",
+        "description": "Equip and enable the ability in the game’s Abilities panel. Ability effects are separate from direct equipment stats; scaling chances depend on your ability level. Once permanently unlocked at the listed ability level, the ability can be used without this amulet.",
+        "columns": [
+          "Ability",
+          "Effect when enabled",
+          "Permanent unlock"
+        ],
+        "rows": [
+          [
+            "Enlightened",
+            "Hitting your maximum hit can award double XP. Chance scales with the ability level.",
+            "Ability level 60"
+          ]
+        ],
+        "links": [
+          [
+            "Enlightened",
+            "enlightened"
+          ]
+        ]
+      },
       {
         "title": "Activities and recipes",
         "columns": [
@@ -3925,7 +4053,7 @@
           "Requirements",
           "Station",
           "Materials per action",
-          "Output or odds",
+          "Output",
           "XP",
           "Base time",
           "Status"
@@ -3945,6 +4073,10 @@
       }
     ],
     "sources": [
+      [
+        "Public game amulet data and original icons · November 24, 2026",
+        "./assets/game-data/amulets-2026-11-24.json"
+      ],
       [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
@@ -3976,13 +4108,21 @@
     ],
     "gameId": "amuletOfPower",
     "portrait": {
-      "src": "https://microscape.cc/play/assets/amuletOfPower-BAAJlbMy.png",
+      "src": "./assets/amulets/amulet-of-power.png",
       "source": "https://microscape.cc/play/"
     },
-    "artwork": "https://microscape.cc/play/assets/amuletOfPower-BAAJlbMy.png",
-    "summary": "Amulet of Power · Equipment.",
+    "artwork": "./assets/amulets/amulet-of-power.png",
+    "summary": "+2 Attack · +2 percentage points to auto-eat threshold · +2 Defense · +2 Evil Magic · +2 Ranged · +2 Strength. Ability access: Enlightened.",
     "availabilityStatus": "documented-source",
-    "sections": []
+    "sections": [
+      [
+        "When equipped",
+        "Equipping Amulet of Power applies the direct bonuses listed below. These are equipment bonuses; they do not add XP, permanently raise your trained levels, or satisfy skill requirements. Any associated ability is a separate effect."
+      ]
+    ],
+    "aliases": [
+      "amulets"
+    ]
   },
   {
     "id": "amulet-of-progress",
@@ -4006,7 +4146,7 @@
       "fletching",
       "herblaw"
     ],
-    "statsDate": "2026-11-19",
+    "statsDate": "2026-11-24",
     "facts": [
       [
         "In-game name",
@@ -4053,11 +4193,82 @@
         "+2"
       ],
       [
-        "Grants",
+        "Direct stat bonuses",
+        "+2 Cooking · +2 Crafting · +2 Firemaking · +2 Fletching · +2 Good Magic · +2 Herblaw · +2 Smithing"
+      ],
+      [
+        "Ability access",
         "Bleeding Edge"
       ]
     ],
     "tables": [
+      {
+        "title": "Equipped bonuses",
+        "columns": [
+          "Stat",
+          "Bonus",
+          "What it does"
+        ],
+        "rows": [
+          [
+            "Cooking",
+            "+2 equipment points",
+            "Adds 2 equipment points to Cooking for its Double Up chance. Does not grant trained levels or unlock higher-level activities."
+          ],
+          [
+            "Crafting",
+            "+2 equipment points",
+            "Adds 2 equipment points to Crafting for its Double Up chance. Does not grant trained levels or unlock higher-level activities."
+          ],
+          [
+            "Firemaking",
+            "+2 equipment points",
+            "Adds 2 equipment points to Firemaking for its Double Up chance. Does not grant trained levels or unlock higher-level activities."
+          ],
+          [
+            "Fletching",
+            "+2 equipment points",
+            "Adds 2 equipment points to Fletching for its Double Up chance. Does not grant trained levels or unlock higher-level activities."
+          ],
+          [
+            "Good Magic",
+            "+2 equipment points",
+            "Adds 2 equipment points to Good Magic for its Double Up chance. Does not grant trained levels or unlock higher-level activities."
+          ],
+          [
+            "Herblaw",
+            "+2 equipment points",
+            "Adds 2 equipment points to Herblaw for its Double Up chance. Does not grant trained levels or unlock higher-level activities."
+          ],
+          [
+            "Smithing",
+            "+2 equipment points",
+            "Adds 2 equipment points to Smithing for its Double Up chance. Does not grant trained levels or unlock higher-level activities."
+          ]
+        ]
+      },
+      {
+        "title": "Ability effects",
+        "description": "Equip and enable the ability in the game’s Abilities panel. Ability effects are separate from direct equipment stats; scaling chances depend on your ability level. Once permanently unlocked at the listed ability level, the ability can be used without this amulet.",
+        "columns": [
+          "Ability",
+          "Effect when enabled",
+          "Permanent unlock"
+        ],
+        "rows": [
+          [
+            "Bleeding Edge",
+            "Chance for double skilling XP equals the ability’s power minus your Double Up chance. Power scales with the ability level.",
+            "Ability level 30"
+          ]
+        ],
+        "links": [
+          [
+            "Bleeding Edge",
+            "bleeding-edge"
+          ]
+        ]
+      },
       {
         "title": "Activities and recipes",
         "columns": [
@@ -4065,7 +4276,7 @@
           "Requirements",
           "Station",
           "Materials per action",
-          "Output or odds",
+          "Output",
           "XP",
           "Base time",
           "Status"
@@ -4085,6 +4296,10 @@
       }
     ],
     "sources": [
+      [
+        "Public game amulet data and original icons · November 24, 2026",
+        "./assets/game-data/amulets-2026-11-24.json"
+      ],
       [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
@@ -4116,17 +4331,24 @@
     ],
     "gameId": "amuletOfProgress",
     "portrait": {
-      "src": "https://microscape.cc/play/assets/amuletOfProgress-Ctd0NFSD.png",
+      "src": "./assets/amulets/amulet-of-progress.png",
       "source": "https://microscape.cc/play/"
     },
-    "artwork": "https://microscape.cc/play/assets/amuletOfProgress-Ctd0NFSD.png",
-    "summary": "Amulet of Progress · Equipment.",
+    "artwork": "./assets/amulets/amulet-of-progress.png",
+    "summary": "+2 Cooking · +2 Crafting · +2 Firemaking · +2 Fletching · +2 Good Magic · +2 Herblaw · +2 Smithing. Ability access: Bleeding Edge.",
     "availabilityStatus": "documented-source",
     "sections": [
+      [
+        "When equipped",
+        "Equipping Amulet of Progress applies the direct bonuses listed below. These are equipment bonuses; they do not add XP, permanently raise your trained levels, or satisfy skill requirements. Any associated ability is a separate effect."
+      ],
       [
         "Long release action",
         "The current direct production action is single-execution and has 10,801 action ticks: 21,610 seconds including four preparation ticks (about 6 hours). Its XP is awarded for that long action. Any deprecated legacy method listed separately should not be assumed to be a normal current recipe."
       ]
+    ],
+    "aliases": [
+      "amulets"
     ]
   },
   {
@@ -4146,7 +4368,7 @@
       "cosmic-rune",
       "defense"
     ],
-    "statsDate": "2026-11-19",
+    "statsDate": "2026-11-24",
     "facts": [
       [
         "In-game name",
@@ -4169,11 +4391,52 @@
         "+5"
       ],
       [
-        "Grants",
+        "Direct stat bonuses",
+        "+5 Defense"
+      ],
+      [
+        "Ability access",
         "Stoneskin"
       ]
     ],
     "tables": [
+      {
+        "title": "Equipped bonuses",
+        "columns": [
+          "Stat",
+          "Bonus",
+          "What it does"
+        ],
+        "rows": [
+          [
+            "Defense",
+            "+5 equipment points",
+            "Adds 5 Defense equipment points when calculating enemy hit chance. It is not a fixed 5% damage reduction."
+          ]
+        ]
+      },
+      {
+        "title": "Ability effects",
+        "description": "Equip and enable the ability in the game’s Abilities panel. Ability effects are separate from direct equipment stats; scaling chances depend on your ability level. Once permanently unlocked at the listed ability level, the ability can be used without this amulet.",
+        "columns": [
+          "Ability",
+          "Effect when enabled",
+          "Permanent unlock"
+        ],
+        "rows": [
+          [
+            "Stoneskin",
+            "Chance to reduce incoming damage by 1. Chance scales with the ability level.",
+            "Ability level 50"
+          ]
+        ],
+        "links": [
+          [
+            "Stoneskin",
+            "stoneskin"
+          ]
+        ]
+      },
       {
         "title": "Activities and recipes",
         "columns": [
@@ -4181,7 +4444,7 @@
           "Requirements",
           "Station",
           "Materials per action",
-          "Output or odds",
+          "Output",
           "XP",
           "Base time",
           "Status"
@@ -4201,6 +4464,10 @@
       }
     ],
     "sources": [
+      [
+        "Public game amulet data and original icons · November 24, 2026",
+        "./assets/game-data/amulets-2026-11-24.json"
+      ],
       [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
@@ -4232,13 +4499,21 @@
     ],
     "gameId": "amuletOfProtection",
     "portrait": {
-      "src": "https://microscape.cc/play/assets/amuletOfProtection-CMLwounm.png",
+      "src": "./assets/amulets/amulet-of-protection.png",
       "source": "https://microscape.cc/play/"
     },
-    "artwork": "https://microscape.cc/play/assets/amuletOfProtection-CMLwounm.png",
-    "summary": "Amulet of Protection · Equipment.",
+    "artwork": "./assets/amulets/amulet-of-protection.png",
+    "summary": "+5 Defense. Ability access: Stoneskin.",
     "availabilityStatus": "documented-source",
-    "sections": []
+    "sections": [
+      [
+        "When equipped",
+        "Equipping Amulet of Protection applies the direct bonuses listed below. These are equipment bonuses; they do not add XP, permanently raise your trained levels, or satisfy skill requirements. Any associated ability is a separate effect."
+      ]
+    ],
+    "aliases": [
+      "amulets"
+    ]
   },
   {
     "id": "amulet-of-strength",
@@ -4257,7 +4532,7 @@
       "cosmic-rune",
       "strength"
     ],
-    "statsDate": "2026-11-19",
+    "statsDate": "2026-11-24",
     "facts": [
       [
         "In-game name",
@@ -4280,11 +4555,52 @@
         "+3"
       ],
       [
-        "Grants",
+        "Direct stat bonuses",
+        "+3 Strength"
+      ],
+      [
+        "Ability access",
         "Berserk"
       ]
     ],
     "tables": [
+      {
+        "title": "Equipped bonuses",
+        "columns": [
+          "Stat",
+          "Bonus",
+          "What it does"
+        ],
+        "rows": [
+          [
+            "Strength",
+            "+3 equipment points",
+            "Adds 3 Strength equipment points to the maximum-hit calculation. This is not +3 damage on every hit."
+          ]
+        ]
+      },
+      {
+        "title": "Ability effects",
+        "description": "Equip and enable the ability in the game’s Abilities panel. Ability effects are separate from direct equipment stats; scaling chances depend on your ability level. Once permanently unlocked at the listed ability level, the ability can be used without this amulet.",
+        "columns": [
+          "Ability",
+          "Effect when enabled",
+          "Permanent unlock"
+        ],
+        "rows": [
+          [
+            "Berserk",
+            "Taking damage can trigger +12 Strength and −4 Attack for your next four swings. Chance scales with the ability level.",
+            "Ability level 45"
+          ]
+        ],
+        "links": [
+          [
+            "Berserk",
+            "berserk"
+          ]
+        ]
+      },
       {
         "title": "Activities and recipes",
         "columns": [
@@ -4292,7 +4608,7 @@
           "Requirements",
           "Station",
           "Materials per action",
-          "Output or odds",
+          "Output",
           "XP",
           "Base time",
           "Status"
@@ -4312,6 +4628,10 @@
       }
     ],
     "sources": [
+      [
+        "Public game amulet data and original icons · November 24, 2026",
+        "./assets/game-data/amulets-2026-11-24.json"
+      ],
       [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
@@ -4343,13 +4663,21 @@
     ],
     "gameId": "amuletOfStrength",
     "portrait": {
-      "src": "https://microscape.cc/play/assets/amuletOfStrength-CD9RynJh.png",
+      "src": "./assets/amulets/amulet-of-strength.png",
       "source": "https://microscape.cc/play/"
     },
-    "artwork": "https://microscape.cc/play/assets/amuletOfStrength-CD9RynJh.png",
-    "summary": "Amulet of Strength · Equipment.",
+    "artwork": "./assets/amulets/amulet-of-strength.png",
+    "summary": "+3 Strength. Ability access: Berserk.",
     "availabilityStatus": "documented-source",
-    "sections": []
+    "sections": [
+      [
+        "When equipped",
+        "Equipping Amulet of Strength applies the direct bonuses listed below. These are equipment bonuses; they do not add XP, permanently raise your trained levels, or satisfy skill requirements. Any associated ability is a separate effect."
+      ]
+    ],
+    "aliases": [
+      "amulets"
+    ]
   },
   {
     "id": "anglers-luck",
@@ -27416,9 +27744,10 @@
       "gold-bar",
       "diamond",
       "ball-of-wool",
-      "defense"
+      "defense",
+      "amulet-of-power"
     ],
-    "statsDate": "2026-11-19",
+    "statsDate": "2026-11-24",
     "facts": [
       [
         "In-game name",
@@ -27437,11 +27766,77 @@
         "351 coins"
       ],
       [
-        "Grants",
+        "Direct stat bonuses",
+        "None — no direct equipment stat bonus"
+      ],
+      [
+        "Ability access",
         "Gemcraft"
       ]
     ],
     "tables": [
+      {
+        "title": "Equipped bonuses",
+        "columns": [
+          "Stat",
+          "Bonus",
+          "What it does"
+        ],
+        "rows": [
+          [
+            "Direct equipment stats",
+            "None",
+            "See the separate ability effect below."
+          ]
+        ]
+      },
+      {
+        "title": "Ability effects",
+        "description": "Equip and enable the ability in the game’s Abilities panel. Ability effects are separate from direct equipment stats; scaling chances depend on your ability level. Once permanently unlocked at the listed ability level, the ability can be used without this amulet.",
+        "columns": [
+          "Ability",
+          "Effect when enabled",
+          "Permanent unlock"
+        ],
+        "rows": [
+          [
+            "Gemcraft",
+            "Cutting gems can award triple XP. Chance scales with the ability level.",
+            "Ability level 30"
+          ]
+        ],
+        "links": [
+          [
+            "Gemcraft",
+            "gemcraft"
+          ]
+        ]
+      },
+      {
+        "title": "Upgrade this amulet",
+        "columns": [
+          "Result",
+          "How to upgrade",
+          "Materials per action",
+          "Resulting direct bonuses",
+          "Resulting ability access"
+        ],
+        "rows": [
+          [
+            "Amulet of Power",
+            "Good Magic 57 · Chillin' Spot",
+            "10 × Air Rune · 1 × Cosmic Rune · 1 × Diamond Amulet",
+            "+2 Attack · +2 percentage points to auto-eat threshold · +2 Defense · +2 Evil Magic · +2 Ranged · +2 Strength",
+            "Enlightened"
+          ]
+        ],
+        "links": [
+          [
+            "Amulet of Power",
+            "amulet-of-power"
+          ]
+        ]
+      },
       {
         "title": "Activities and recipes",
         "columns": [
@@ -27449,7 +27844,7 @@
           "Requirements",
           "Station",
           "Materials per action",
-          "Output or odds",
+          "Output",
           "XP",
           "Base time",
           "Status"
@@ -27464,16 +27859,6 @@
             "540",
             "28s",
             "Active"
-          ],
-          [
-            "String Dia. Amulet",
-            "Crafting 70",
-            "Crafting Table",
-            "1 × Ball of Wool · 1 × Unstrung Diamond Amulet",
-            "1",
-            "0",
-            "12s",
-            "Deprecated; still listed"
           ]
         ]
       },
@@ -27495,6 +27880,10 @@
       }
     ],
     "sources": [
+      [
+        "Public game amulet data and original icons · November 24, 2026",
+        "./assets/game-data/amulets-2026-11-24.json"
+      ],
       [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
@@ -27526,13 +27915,21 @@
     ],
     "gameId": "diamondAmulet",
     "portrait": {
-      "src": "https://microscape.cc/play/assets/amuletOfPower-BAAJlbMy.png",
+      "src": "./assets/amulets/diamond-amulet.png",
       "source": "https://microscape.cc/play/"
     },
-    "artwork": "https://microscape.cc/play/assets/amuletOfPower-BAAJlbMy.png",
-    "summary": "Diamond Amulet · Equipment.",
+    "artwork": "./assets/amulets/diamond-amulet.png",
+    "summary": "No direct stat bonuses. Ability access: Gemcraft. Enchant into Amulet of Power.",
     "availabilityStatus": "documented-source",
-    "sections": []
+    "sections": [
+      [
+        "When equipped",
+        "Equipping Diamond Amulet adds no direct equipment stat bonus. This is confirmed by the current game definition, not missing wiki data. It still provides access to Gemcraft, described separately below."
+      ]
+    ],
+    "aliases": [
+      "amulets"
+    ]
   },
   {
     "id": "dim-evil-amulet",
@@ -27547,14 +27944,11 @@
       "crafting",
       "silver-bar",
       "ball-of-wool",
-      "defense"
+      "defense",
+      "evil-amulet"
     ],
-    "statsDate": "2026-11-19",
+    "statsDate": "2026-11-24",
     "facts": [
-      [
-        "Bonuses",
-        "None listed"
-      ],
       [
         "In-game name",
         "Dim Evil Amulet"
@@ -27570,9 +27964,57 @@
       [
         "Vendor sell value",
         "14 coins"
+      ],
+      [
+        "Direct stat bonuses",
+        "None — no direct equipment stat bonus"
+      ],
+      [
+        "Ability access",
+        "None from this item"
       ]
     ],
     "tables": [
+      {
+        "title": "Equipped bonuses",
+        "columns": [
+          "Stat",
+          "Bonus",
+          "What it does"
+        ],
+        "rows": [
+          [
+            "Direct equipment stats",
+            "None",
+            "This base amulet has no direct stat bonus."
+          ]
+        ]
+      },
+      {
+        "title": "Upgrade this amulet",
+        "columns": [
+          "Result",
+          "How to upgrade",
+          "Materials per action",
+          "Resulting direct bonuses",
+          "Resulting ability access"
+        ],
+        "rows": [
+          [
+            "Evil Amulet",
+            "Crafting 18 · Totem of Zem",
+            "10 × Coins · 1 × Dim Evil Amulet",
+            "+1 Attack · +1 Defense · +2 Piety · +1 Strength",
+            "Paralyze Monster"
+          ]
+        ],
+        "links": [
+          [
+            "Evil Amulet",
+            "evil-amulet"
+          ]
+        ]
+      },
       {
         "title": "Activities and recipes",
         "columns": [
@@ -27580,7 +28022,7 @@
           "Requirements",
           "Station",
           "Materials per action",
-          "Output or odds",
+          "Output",
           "XP",
           "Base time",
           "Status"
@@ -27595,16 +28037,6 @@
             "100",
             "20s",
             "Active"
-          ],
-          [
-            "String Evl. Amulet",
-            "Crafting 17",
-            "Crafting Table",
-            "1 × Ball of Wool · 1 × Unstrung Evil Amulet",
-            "1",
-            "0",
-            "12s",
-            "Deprecated; still listed"
           ]
         ]
       },
@@ -27626,6 +28058,10 @@
       }
     ],
     "sources": [
+      [
+        "Public game amulet data and original icons · November 24, 2026",
+        "./assets/game-data/amulets-2026-11-24.json"
+      ],
       [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
@@ -27657,13 +28093,21 @@
     ],
     "gameId": "dimEvilAmulet",
     "portrait": {
-      "src": "https://microscape.cc/play/assets/dimEvilAmulet-CU3TpfzJ.png",
+      "src": "./assets/amulets/dim-evil-amulet.png",
       "source": "https://microscape.cc/play/"
     },
-    "artwork": "https://microscape.cc/play/assets/dimEvilAmulet-CU3TpfzJ.png",
-    "summary": "Dim Evil Amulet · Equipment.",
+    "artwork": "./assets/amulets/dim-evil-amulet.png",
+    "summary": "No direct stat bonuses. Curse into Evil Amulet.",
     "availabilityStatus": "documented-source",
-    "sections": []
+    "sections": [
+      [
+        "When equipped",
+        "Equipping Dim Evil Amulet adds no direct equipment stat bonus. This is confirmed by the current game definition, not missing wiki data. Its upgraded version provides the bonuses or ability; the base item does not inherit them."
+      ]
+    ],
+    "aliases": [
+      "amulets"
+    ]
   },
   {
     "id": "dim-holy-amulet",
@@ -27678,9 +28122,10 @@
       "crafting",
       "silver-bar",
       "ball-of-wool",
-      "defense"
+      "defense",
+      "holy-amulet"
     ],
-    "statsDate": "2026-11-19",
+    "statsDate": "2026-11-24",
     "facts": [
       [
         "In-game name",
@@ -27701,9 +28146,57 @@
       [
         "Defense",
         "+1"
+      ],
+      [
+        "Direct stat bonuses",
+        "+1 Defense"
+      ],
+      [
+        "Ability access",
+        "None from this item"
       ]
     ],
     "tables": [
+      {
+        "title": "Equipped bonuses",
+        "columns": [
+          "Stat",
+          "Bonus",
+          "What it does"
+        ],
+        "rows": [
+          [
+            "Defense",
+            "+1 equipment points",
+            "Adds 1 Defense equipment points when calculating enemy hit chance. It is not a fixed 1% damage reduction."
+          ]
+        ]
+      },
+      {
+        "title": "Upgrade this amulet",
+        "columns": [
+          "Result",
+          "How to upgrade",
+          "Materials per action",
+          "Resulting direct bonuses",
+          "Resulting ability access"
+        ],
+        "rows": [
+          [
+            "Holy Amulet",
+            "Crafting 18 · Brother Alep",
+            "20 × Coins · 1 × Dim Holy Amulet",
+            "+2 Defense · +3 Piety",
+            "Rapid Heal"
+          ]
+        ],
+        "links": [
+          [
+            "Holy Amulet",
+            "holy-amulet"
+          ]
+        ]
+      },
       {
         "title": "Activities and recipes",
         "columns": [
@@ -27711,7 +28204,7 @@
           "Requirements",
           "Station",
           "Materials per action",
-          "Output or odds",
+          "Output",
           "XP",
           "Base time",
           "Status"
@@ -27726,16 +28219,6 @@
             "96",
             "20s",
             "Active"
-          ],
-          [
-            "String Hly. Amulet",
-            "Crafting 16",
-            "Crafting Table",
-            "1 × Ball of Wool · 1 × Unstrung Holy Amulet",
-            "1",
-            "0",
-            "12s",
-            "Deprecated; still listed"
           ]
         ]
       },
@@ -27757,6 +28240,10 @@
       }
     ],
     "sources": [
+      [
+        "Public game amulet data and original icons · November 24, 2026",
+        "./assets/game-data/amulets-2026-11-24.json"
+      ],
       [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
@@ -27788,13 +28275,21 @@
     ],
     "gameId": "dimHolyAmulet",
     "portrait": {
-      "src": "https://microscape.cc/play/assets/dimHolyAmulet-DB2mL_eS.png",
+      "src": "./assets/amulets/dim-holy-amulet.png",
       "source": "https://microscape.cc/play/"
     },
-    "artwork": "https://microscape.cc/play/assets/dimHolyAmulet-DB2mL_eS.png",
-    "summary": "Dim Holy Amulet · Equipment.",
+    "artwork": "./assets/amulets/dim-holy-amulet.png",
+    "summary": "+1 Defense. Bless into Holy Amulet.",
     "availabilityStatus": "documented-source",
-    "sections": []
+    "sections": [
+      [
+        "When equipped",
+        "Equipping Dim Holy Amulet applies the direct bonuses listed below. These are equipment bonuses; they do not add XP, permanently raise your trained levels, or satisfy skill requirements. Any associated ability is a separate effect."
+      ]
+    ],
+    "aliases": [
+      "amulets"
+    ]
   },
   {
     "id": "distilled-ash",
@@ -29501,14 +29996,11 @@
       "gold-bar",
       "dragonstone",
       "ball-of-wool",
-      "defense"
+      "defense",
+      "amulet-of-progress"
     ],
-    "statsDate": "2026-11-19",
+    "statsDate": "2026-11-24",
     "facts": [
-      [
-        "Bonuses",
-        "None listed"
-      ],
       [
         "In-game name",
         "Dragonstone Amulet"
@@ -29524,9 +30016,57 @@
       [
         "Vendor sell value",
         "776 coins"
+      ],
+      [
+        "Direct stat bonuses",
+        "None — no direct equipment stat bonus"
+      ],
+      [
+        "Ability access",
+        "None from this item"
       ]
     ],
     "tables": [
+      {
+        "title": "Equipped bonuses",
+        "columns": [
+          "Stat",
+          "Bonus",
+          "What it does"
+        ],
+        "rows": [
+          [
+            "Direct equipment stats",
+            "None",
+            "This base amulet has no direct stat bonus."
+          ]
+        ]
+      },
+      {
+        "title": "Upgrade this amulet",
+        "columns": [
+          "Result",
+          "How to upgrade",
+          "Materials per action",
+          "Resulting direct bonuses",
+          "Resulting ability access"
+        ],
+        "rows": [
+          [
+            "Amulet of Progress",
+            "Good Magic 68 · Chillin' Spot",
+            "15 × Air Rune · 1 × Cosmic Rune · 1 × Dragonstone Amulet",
+            "+2 Cooking · +2 Crafting · +2 Firemaking · +2 Fletching · +2 Good Magic · +2 Herblaw · +2 Smithing",
+            "Bleeding Edge"
+          ]
+        ],
+        "links": [
+          [
+            "Amulet of Progress",
+            "amulet-of-progress"
+          ]
+        ]
+      },
       {
         "title": "Activities and recipes",
         "columns": [
@@ -29534,7 +30074,7 @@
           "Requirements",
           "Station",
           "Materials per action",
-          "Output or odds",
+          "Output",
           "XP",
           "Base time",
           "Status"
@@ -29549,16 +30089,6 @@
             "1,006,113",
             "21,610s",
             "Active"
-          ],
-          [
-            "String Dgn. Amulet",
-            "Crafting 80",
-            "Crafting Table",
-            "1 × Ball of Wool · 1 × Unstrung Dragonstone Amulet",
-            "1",
-            "0",
-            "12s",
-            "Deprecated; still listed"
           ]
         ]
       },
@@ -29580,6 +30110,10 @@
       }
     ],
     "sources": [
+      [
+        "Public game amulet data and original icons · November 24, 2026",
+        "./assets/game-data/amulets-2026-11-24.json"
+      ],
       [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
@@ -29611,17 +30145,24 @@
     ],
     "gameId": "dragonstoneAmulet",
     "portrait": {
-      "src": "https://microscape.cc/play/assets/amuletOfProgress-Ctd0NFSD.png",
+      "src": "./assets/amulets/dragonstone-amulet.png",
       "source": "https://microscape.cc/play/"
     },
-    "artwork": "https://microscape.cc/play/assets/amuletOfProgress-Ctd0NFSD.png",
-    "summary": "Dragonstone Amulet · Equipment.",
+    "artwork": "./assets/amulets/dragonstone-amulet.png",
+    "summary": "No direct stat bonuses. Enchant into Amulet of Progress.",
     "availabilityStatus": "documented-source",
     "sections": [
+      [
+        "When equipped",
+        "Equipping Dragonstone Amulet adds no direct equipment stat bonus. This is confirmed by the current game definition, not missing wiki data. Its upgraded version provides the bonuses or ability; the base item does not inherit them."
+      ],
       [
         "Long release action",
         "The current direct production action is single-execution and has 10,801 action ticks: 21,610 seconds including four preparation ticks (about 6 hours). Its XP is awarded for that long action. Any deprecated legacy method listed separately should not be assumed to be a normal current recipe."
       ]
+    ],
+    "aliases": [
+      "amulets"
     ]
   },
   {
@@ -33572,13 +34113,53 @@
     "sourceUrl": "https://microscape.miraheze.org/wiki/Items/Emerald_Amulet",
     "tables": [
       {
+        "title": "Equipped bonuses",
+        "columns": [
+          "Stat",
+          "Bonus",
+          "What it does"
+        ],
+        "rows": [
+          [
+            "Direct equipment stats",
+            "None",
+            "This base amulet has no direct stat bonus."
+          ]
+        ]
+      },
+      {
+        "title": "Upgrade this amulet",
+        "columns": [
+          "Result",
+          "How to upgrade",
+          "Materials per action",
+          "Resulting direct bonuses",
+          "Resulting ability access"
+        ],
+        "rows": [
+          [
+            "Amulet of Protection",
+            "Good Magic 20 · Chillin' Spot",
+            "3 × Air Rune · 1 × Cosmic Rune · 1 × Emerald Amulet",
+            "+5 Defense",
+            "Stoneskin"
+          ]
+        ],
+        "links": [
+          [
+            "Amulet of Protection",
+            "amulet-of-protection"
+          ]
+        ]
+      },
+      {
         "title": "Activities and recipes",
         "columns": [
           "Activity",
           "Requirements",
           "Station",
           "Materials per action",
-          "Output or odds",
+          "Output",
           "XP",
           "Base time",
           "Status"
@@ -33592,26 +34173,6 @@
             "1",
             "276",
             "28s",
-            "Active"
-          ],
-          [
-            "String Em. Amulet",
-            "Crafting 30",
-            "Crafting Table",
-            "1 × Ball of Wool · 1 × Unstrung Emerald Amulet",
-            "1",
-            "0",
-            "12s",
-            "Deprecated; still listed"
-          ],
-          [
-            "\"Mar Del Del\"",
-            "Piety 1",
-            "Temple Chest",
-            "2 × \"Del\" Sigil · 1 × \"Mar\" Sigil",
-            "≈ 1 in 6",
-            "0",
-            "20s",
             "Active"
           ]
         ]
@@ -33641,14 +34202,11 @@
       "gold-bar",
       "emerald",
       "ball-of-wool",
-      "defense"
+      "defense",
+      "amulet-of-protection"
     ],
-    "statsDate": "2026-11-19",
+    "statsDate": "2026-11-24",
     "facts": [
-      [
-        "Bonuses",
-        "None listed"
-      ],
       [
         "In-game name",
         "Emerald Amulet"
@@ -33664,9 +34222,21 @@
       [
         "Vendor sell value",
         "105 coins"
+      ],
+      [
+        "Direct stat bonuses",
+        "None — no direct equipment stat bonus"
+      ],
+      [
+        "Ability access",
+        "None from this item"
       ]
     ],
     "sources": [
+      [
+        "Public game amulet data and original icons · November 24, 2026",
+        "./assets/game-data/amulets-2026-11-24.json"
+      ],
       [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
@@ -33698,13 +34268,21 @@
     ],
     "gameId": "emeraldAmulet",
     "portrait": {
-      "src": "https://microscape.cc/play/assets/amuletOfProtection-CMLwounm.png",
+      "src": "./assets/amulets/emerald-amulet.png",
       "source": "https://microscape.cc/play/"
     },
-    "artwork": "https://microscape.cc/play/assets/amuletOfProtection-CMLwounm.png",
-    "summary": "Emerald Amulet · Equipment.",
+    "artwork": "./assets/amulets/emerald-amulet.png",
+    "summary": "No direct stat bonuses. Enchant into Amulet of Protection.",
     "availabilityStatus": "documented-source",
-    "sections": []
+    "sections": [
+      [
+        "When equipped",
+        "Equipping Emerald Amulet adds no direct equipment stat bonus. This is confirmed by the current game definition, not missing wiki data. Its upgraded version provides the bonuses or ability; the base item does not inherit them."
+      ]
+    ],
+    "aliases": [
+      "amulets"
+    ]
   },
   {
     "id": "empowered-mind",
@@ -34860,7 +35438,7 @@
       "strength",
       "defense"
     ],
-    "statsDate": "2026-11-19",
+    "statsDate": "2026-11-24",
     "facts": [
       [
         "In-game name",
@@ -34895,11 +35473,67 @@
         "+1"
       ],
       [
-        "Grants",
+        "Direct stat bonuses",
+        "+1 Attack · +1 Defense · +2 Piety · +1 Strength"
+      ],
+      [
+        "Ability access",
         "Paralyze Monster"
       ]
     ],
     "tables": [
+      {
+        "title": "Equipped bonuses",
+        "columns": [
+          "Stat",
+          "Bonus",
+          "What it does"
+        ],
+        "rows": [
+          [
+            "Attack",
+            "+1 equipment points",
+            "Adds 1 Attack equipment points to accuracy calculations. Hit-chance limits still apply."
+          ],
+          [
+            "Defense",
+            "+1 equipment points",
+            "Adds 1 Defense equipment points when calculating enemy hit chance. It is not a fixed 1% damage reduction."
+          ],
+          [
+            "Piety",
+            "+2 equipment points",
+            "Adds 2 equipment points to Piety for its Double Up chance. Does not grant trained levels or unlock higher-level activities."
+          ],
+          [
+            "Strength",
+            "+1 equipment points",
+            "Adds 1 Strength equipment points to the maximum-hit calculation. This is not +1 damage on every hit."
+          ]
+        ]
+      },
+      {
+        "title": "Ability effects",
+        "description": "Equip and enable the ability in the game’s Abilities panel. Ability effects are separate from direct equipment stats; scaling chances depend on your ability level. Once permanently unlocked at the listed ability level, the ability can be used without this amulet.",
+        "columns": [
+          "Ability",
+          "Effect when enabled",
+          "Permanent unlock"
+        ],
+        "rows": [
+          [
+            "Paralyze Monster",
+            "60% chance to make an enemy skip its turn. Consumes one Sacred Rune per skipped attack.",
+            "Ability level 60"
+          ]
+        ],
+        "links": [
+          [
+            "Paralyze Monster",
+            "paralyze-monster"
+          ]
+        ]
+      },
       {
         "title": "Activities and recipes",
         "columns": [
@@ -34907,7 +35541,7 @@
           "Requirements",
           "Station",
           "Materials per action",
-          "Output or odds",
+          "Output",
           "XP",
           "Base time",
           "Status"
@@ -34927,6 +35561,10 @@
       }
     ],
     "sources": [
+      [
+        "Public game amulet data and original icons · November 24, 2026",
+        "./assets/game-data/amulets-2026-11-24.json"
+      ],
       [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
@@ -34958,13 +35596,21 @@
     ],
     "gameId": "evilAmulet",
     "portrait": {
-      "src": "https://microscape.cc/play/assets/evilAmulet-CfbxHlM5.png",
+      "src": "./assets/amulets/evil-amulet.png",
       "source": "https://microscape.cc/play/"
     },
-    "artwork": "https://microscape.cc/play/assets/evilAmulet-CfbxHlM5.png",
-    "summary": "Evil Amulet · Equipment.",
+    "artwork": "./assets/amulets/evil-amulet.png",
+    "summary": "+1 Attack · +1 Defense · +2 Piety · +1 Strength. Ability access: Paralyze Monster.",
     "availabilityStatus": "documented-source",
-    "sections": []
+    "sections": [
+      [
+        "When equipped",
+        "Equipping Evil Amulet applies the direct bonuses listed below. These are equipment bonuses; they do not add XP, permanently raise your trained levels, or satisfy skill requirements. Any associated ability is a separate effect."
+      ]
+    ],
+    "aliases": [
+      "amulets"
+    ]
   },
   {
     "id": "evil-magic",
@@ -47875,13 +48521,28 @@
     "sourceUrl": "https://microscape.miraheze.org/wiki/Items/Gold_Amulet",
     "tables": [
       {
+        "title": "Equipped bonuses",
+        "columns": [
+          "Stat",
+          "Bonus",
+          "What it does"
+        ],
+        "rows": [
+          [
+            "Direct equipment stats",
+            "None",
+            "This base amulet has no direct stat bonus."
+          ]
+        ]
+      },
+      {
         "title": "Activities and recipes",
         "columns": [
           "Activity",
           "Requirements",
           "Station",
           "Materials per action",
-          "Output or odds",
+          "Output",
           "XP",
           "Base time",
           "Status"
@@ -47894,26 +48555,6 @@
             "1 × Ball of Wool · 1 × Gold Bar",
             "1",
             "49",
-            "20s",
-            "Active"
-          ],
-          [
-            "String Gld. Amulet",
-            "Crafting 8",
-            "Crafting Table",
-            "1 × Ball of Wool · 1 × Unstrung Gold Amulet",
-            "1",
-            "0",
-            "12s",
-            "Deprecated; still listed"
-          ],
-          [
-            "\"Al La Del\"",
-            "Piety 1",
-            "Temple Chest",
-            "1 × \"Al\" Sigil · 1 × \"Del\" Sigil · 1 × \"La\" Sigil",
-            "≈ 1 in 16",
-            "0",
             "20s",
             "Active"
           ]
@@ -47955,12 +48596,8 @@
       "ball-of-wool",
       "mummy"
     ],
-    "statsDate": "2026-11-19",
+    "statsDate": "2026-11-24",
     "facts": [
-      [
-        "Bonuses",
-        "None listed"
-      ],
       [
         "In-game name",
         "Gold Amulet"
@@ -47976,9 +48613,21 @@
       [
         "Vendor sell value",
         "14 coins"
+      ],
+      [
+        "Direct stat bonuses",
+        "None — no direct equipment stat bonus"
+      ],
+      [
+        "Ability access",
+        "None from this item"
       ]
     ],
     "sources": [
+      [
+        "Public game amulet data and original icons · November 24, 2026",
+        "./assets/game-data/amulets-2026-11-24.json"
+      ],
       [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
@@ -48010,13 +48659,21 @@
     ],
     "gameId": "goldAmulet",
     "portrait": {
-      "src": "https://microscape.cc/play/assets/goldAmulet-DNsy3tX1.png",
+      "src": "./assets/amulets/gold-amulet.png",
       "source": "https://microscape.cc/play/"
     },
-    "artwork": "https://microscape.cc/play/assets/goldAmulet-DNsy3tX1.png",
-    "summary": "Gold Amulet · Equipment.",
+    "artwork": "./assets/amulets/gold-amulet.png",
+    "summary": "No direct stat bonuses.",
     "availabilityStatus": "documented-source",
-    "sections": []
+    "sections": [
+      [
+        "When equipped",
+        "Equipping Gold Amulet adds no direct equipment stat bonus. This is confirmed by the current game definition, not missing wiki data. No ability is attached to this item either. It can still be used in the activities listed below."
+      ]
+    ],
+    "aliases": [
+      "amulets"
+    ]
   },
   {
     "id": "gold-bar",
@@ -52959,7 +53616,7 @@
     "sourceDate": "2026-09-27",
     "sourceTitle": "Items",
     "sourceUrl": "https://microscape.miraheze.org/wiki/Items",
-    "statsDate": "2026-11-19",
+    "statsDate": "2026-11-24",
     "facts": [
       [
         "In-game name",
@@ -52986,11 +53643,57 @@
         "+3"
       ],
       [
-        "Grants",
+        "Direct stat bonuses",
+        "+2 Defense · +3 Piety"
+      ],
+      [
+        "Ability access",
         "Rapid Heal"
       ]
     ],
     "tables": [
+      {
+        "title": "Equipped bonuses",
+        "columns": [
+          "Stat",
+          "Bonus",
+          "What it does"
+        ],
+        "rows": [
+          [
+            "Defense",
+            "+2 equipment points",
+            "Adds 2 Defense equipment points when calculating enemy hit chance. It is not a fixed 2% damage reduction."
+          ],
+          [
+            "Piety",
+            "+3 equipment points",
+            "Adds 3 equipment points to Piety for its Double Up chance. Does not grant trained levels or unlock higher-level activities."
+          ]
+        ]
+      },
+      {
+        "title": "Ability effects",
+        "description": "Equip and enable the ability in the game’s Abilities panel. Ability effects are separate from direct equipment stats; scaling chances depend on your ability level. Once permanently unlocked at the listed ability level, the ability can be used without this amulet.",
+        "columns": [
+          "Ability",
+          "Effect when enabled",
+          "Permanent unlock"
+        ],
+        "rows": [
+          [
+            "Rapid Heal",
+            "Triples health regeneration speed. Consumes one Spirit Rune per regeneration event.",
+            "Ability level 50"
+          ]
+        ],
+        "links": [
+          [
+            "Rapid Heal",
+            "rapid-heal"
+          ]
+        ]
+      },
       {
         "title": "Activities and recipes",
         "columns": [
@@ -52998,7 +53701,7 @@
           "Requirements",
           "Station",
           "Materials per action",
-          "Output or odds",
+          "Output",
           "XP",
           "Base time",
           "Status"
@@ -53025,6 +53728,10 @@
       "dim-holy-amulet"
     ],
     "sources": [
+      [
+        "Public game amulet data and original icons · November 24, 2026",
+        "./assets/game-data/amulets-2026-11-24.json"
+      ],
       [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
@@ -53056,13 +53763,21 @@
     ],
     "gameId": "holyAmulet",
     "portrait": {
-      "src": "https://microscape.cc/play/assets/holyAmulet-BKO_Vjrs.png",
+      "src": "./assets/amulets/holy-amulet.png",
       "source": "https://microscape.cc/play/"
     },
-    "artwork": "https://microscape.cc/play/assets/holyAmulet-BKO_Vjrs.png",
-    "summary": "Holy Amulet · Equipment.",
+    "artwork": "./assets/amulets/holy-amulet.png",
+    "summary": "+2 Defense · +3 Piety. Ability access: Rapid Heal.",
     "availabilityStatus": "documented-source",
-    "sections": []
+    "sections": [
+      [
+        "When equipped",
+        "Equipping Holy Amulet applies the direct bonuses listed below. These are equipment bonuses; they do not add XP, permanently raise your trained levels, or satisfy skill requirements. Any associated ability is a separate effect."
+      ]
+    ],
+    "aliases": [
+      "amulets"
+    ]
   },
   {
     "id": "human-1",
@@ -85814,12 +86529,8 @@
     "sourceDate": "2026-09-27",
     "sourceTitle": "Items",
     "sourceUrl": "https://microscape.miraheze.org/wiki/Items",
-    "statsDate": "2026-11-19",
+    "statsDate": "2026-11-24",
     "facts": [
-      [
-        "Bonuses",
-        "None listed"
-      ],
       [
         "In-game name",
         "Ruby Amulet"
@@ -85835,9 +86546,57 @@
       [
         "Vendor sell value",
         "188 coins"
+      ],
+      [
+        "Direct stat bonuses",
+        "None — no direct equipment stat bonus"
+      ],
+      [
+        "Ability access",
+        "None from this item"
       ]
     ],
     "tables": [
+      {
+        "title": "Equipped bonuses",
+        "columns": [
+          "Stat",
+          "Bonus",
+          "What it does"
+        ],
+        "rows": [
+          [
+            "Direct equipment stats",
+            "None",
+            "This base amulet has no direct stat bonus."
+          ]
+        ]
+      },
+      {
+        "title": "Upgrade this amulet",
+        "columns": [
+          "Result",
+          "How to upgrade",
+          "Materials per action",
+          "Resulting direct bonuses",
+          "Resulting ability access"
+        ],
+        "rows": [
+          [
+            "Amulet of Strength",
+            "Good Magic 49 · Chillin' Spot",
+            "1 × Cosmic Rune · 5 × Fire Rune · 1 × Ruby Amulet",
+            "+3 Strength",
+            "Berserk"
+          ]
+        ],
+        "links": [
+          [
+            "Amulet of Strength",
+            "amulet-of-strength"
+          ]
+        ]
+      },
       {
         "title": "Activities and recipes",
         "columns": [
@@ -85845,7 +86604,7 @@
           "Requirements",
           "Station",
           "Materials per action",
-          "Output or odds",
+          "Output",
           "XP",
           "Base time",
           "Status"
@@ -85859,26 +86618,6 @@
             "1",
             "414",
             "28s",
-            "Active"
-          ],
-          [
-            "String Rby. Amulet",
-            "Crafting 50",
-            "Crafting Table",
-            "1 × Ball of Wool · 1 × Unstrung Ruby Amulet",
-            "1",
-            "0",
-            "12s",
-            "Deprecated; still listed"
-          ],
-          [
-            "\"Mar Ner\"",
-            "Piety 1",
-            "Temple Chest",
-            "1 × \"Mar\" Sigil · 1 × \"Ner\" Sigil",
-            "≈ 1 in 6",
-            "0",
-            "20s",
             "Active"
           ]
         ]
@@ -85907,9 +86646,14 @@
       "ner-sigil",
       "gold-bar",
       "ruby",
-      "ball-of-wool"
+      "ball-of-wool",
+      "amulet-of-strength"
     ],
     "sources": [
+      [
+        "Public game amulet data and original icons · November 24, 2026",
+        "./assets/game-data/amulets-2026-11-24.json"
+      ],
       [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
@@ -85941,13 +86685,21 @@
     ],
     "gameId": "rubyAmulet",
     "portrait": {
-      "src": "https://microscape.cc/play/assets/amuletOfStrength-CD9RynJh.png",
+      "src": "./assets/amulets/ruby-amulet.png",
       "source": "https://microscape.cc/play/"
     },
-    "artwork": "https://microscape.cc/play/assets/amuletOfStrength-CD9RynJh.png",
-    "summary": "Ruby Amulet · Equipment.",
+    "artwork": "./assets/amulets/ruby-amulet.png",
+    "summary": "No direct stat bonuses. Enchant into Amulet of Strength.",
     "availabilityStatus": "documented-source",
-    "sections": []
+    "sections": [
+      [
+        "When equipped",
+        "Equipping Ruby Amulet adds no direct equipment stat bonus. This is confirmed by the current game definition, not missing wiki data. Its upgraded version provides the bonuses or ability; the base item does not inherit them."
+      ]
+    ],
+    "aliases": [
+      "amulets"
+    ]
   },
   {
     "id": "rusty-coin",
@@ -88028,12 +88780,8 @@
     "sourceDate": "2026-09-27",
     "sourceTitle": "Items",
     "sourceUrl": "https://microscape.miraheze.org/wiki/Items",
-    "statsDate": "2026-11-19",
+    "statsDate": "2026-11-24",
     "facts": [
-      [
-        "Bonuses",
-        "None listed"
-      ],
       [
         "In-game name",
         "Sapphire Amulet"
@@ -88049,9 +88797,57 @@
       [
         "Vendor sell value",
         "62 coins"
+      ],
+      [
+        "Direct stat bonuses",
+        "None — no direct equipment stat bonus"
+      ],
+      [
+        "Ability access",
+        "None from this item"
       ]
     ],
     "tables": [
+      {
+        "title": "Equipped bonuses",
+        "columns": [
+          "Stat",
+          "Bonus",
+          "What it does"
+        ],
+        "rows": [
+          [
+            "Direct equipment stats",
+            "None",
+            "This base amulet has no direct stat bonus."
+          ]
+        ]
+      },
+      {
+        "title": "Upgrade this amulet",
+        "columns": [
+          "Result",
+          "How to upgrade",
+          "Materials per action",
+          "Resulting direct bonuses",
+          "Resulting ability access"
+        ],
+        "rows": [
+          [
+            "Amulet of Magic",
+            "Good Magic 10 · Chillin' Spot",
+            "1 × Air Rune · 1 × Cosmic Rune · 1 × Sapphire Amulet",
+            "+3 Evil Magic",
+            "Conserve Air · Conserve Fire"
+          ]
+        ],
+        "links": [
+          [
+            "Amulet of Magic",
+            "amulet-of-magic"
+          ]
+        ]
+      },
       {
         "title": "Activities and recipes",
         "columns": [
@@ -88059,7 +88855,7 @@
           "Requirements",
           "Station",
           "Materials per action",
-          "Output or odds",
+          "Output",
           "XP",
           "Base time",
           "Status"
@@ -88073,26 +88869,6 @@
             "1",
             "264",
             "28s",
-            "Active"
-          ],
-          [
-            "String Sph. Amulet",
-            "Crafting 24",
-            "Crafting Table",
-            "1 × Ball of Wool · 1 × Unstrung Sapphire Amulet",
-            "1",
-            "0",
-            "12s",
-            "Deprecated; still listed"
-          ],
-          [
-            "\"Di La Mar Del\"",
-            "Piety 1",
-            "Temple Chest",
-            "1 × \"Del\" Sigil · 1 × \"Di\" Sigil · 1 × \"La\" Sigil · 1 × \"Mar\" Sigil",
-            "≈ 1 in 6",
-            "0",
-            "20s",
             "Active"
           ]
         ]
@@ -88123,9 +88899,14 @@
       "del-sigil",
       "gold-bar",
       "sapphire",
-      "ball-of-wool"
+      "ball-of-wool",
+      "amulet-of-magic"
     ],
     "sources": [
+      [
+        "Public game amulet data and original icons · November 24, 2026",
+        "./assets/game-data/amulets-2026-11-24.json"
+      ],
       [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
@@ -88157,13 +88938,21 @@
     ],
     "gameId": "sapphireAmulet",
     "portrait": {
-      "src": "https://microscape.cc/play/assets/amuletOfMagic-C-7k74OY.png",
+      "src": "./assets/amulets/sapphire-amulet.png",
       "source": "https://microscape.cc/play/"
     },
-    "artwork": "https://microscape.cc/play/assets/amuletOfMagic-C-7k74OY.png",
-    "summary": "Sapphire Amulet · Equipment.",
+    "artwork": "./assets/amulets/sapphire-amulet.png",
+    "summary": "No direct stat bonuses. Enchant into Amulet of Magic.",
     "availabilityStatus": "documented-source",
-    "sections": []
+    "sections": [
+      [
+        "When equipped",
+        "Equipping Sapphire Amulet adds no direct equipment stat bonus. This is confirmed by the current game definition, not missing wiki data. Its upgraded version provides the bonuses or ability; the base item does not inherit them."
+      ]
+    ],
+    "aliases": [
+      "amulets"
+    ]
   },
   {
     "id": "sardine",
@@ -107172,7 +107961,7 @@
     "sourceDate": "2026-09-27",
     "sourceTitle": "Items",
     "sourceUrl": "https://microscape.miraheze.org/wiki/Items",
-    "statsDate": "2026-11-19",
+    "statsDate": "2026-11-24",
     "facts": [
       [
         "In-game name",
@@ -107180,20 +107969,32 @@
       ],
       [
         "Slot",
-        "Not Equipped"
+        "Not equippable (material)"
       ],
       [
         "Equip requirements",
-        "None"
+        "Cannot equip"
       ],
       [
         "Vendor sell value",
-        "346 coins"
+        "346 coins (archived November 19 value)"
+      ],
+      [
+        "Direct stat bonuses",
+        "None — cannot be equipped"
+      ],
+      [
+        "Ability access",
+        "None from this item"
+      ],
+      [
+        "Availability",
+        "Archived — absent from the November 24 client"
       ]
     ],
     "tables": [
       {
-        "title": "Historical recipe · disabled",
+        "title": "Archived November 19 recipe · disabled",
         "columns": [
           "Recipe",
           "Former requirement",
@@ -107216,31 +108017,19 @@
             "Disabled; historical"
           ]
         ]
-      },
-      {
-        "title": "Used in activities",
-        "columns": [
-          "Activity",
-          "Requirements",
-          "Amount used"
-        ],
-        "rows": [
-          [
-            "String Dia. Amulet",
-            "Crafting 70",
-            "1"
-          ]
-        ],
-        "collapsed": true
       }
     ],
-    "summary": "Legacy crafting material or equipment. Its production recipe is disabled in the November 19 release client.",
+    "summary": "Legacy unstrung material; cannot be equipped.",
     "related": [
       "diamond-amulet",
       "ball-of-wool",
       "crafting"
     ],
     "sources": [
+      [
+        "Public game amulet data and original icons · November 24, 2026",
+        "./assets/game-data/amulets-2026-11-24.json"
+      ],
       [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
@@ -107272,25 +108061,28 @@
     ],
     "sections": [
       [
+        "When equipped",
+        "This is an archived unstrung crafting material, not wearable equipment. It supplies no equipment stats or abilities. Its original icon is preserved from the November 19 game archive. The November 24 client no longer includes this item definition, its production recipe, or its stringing activity; use the current direct recipe for the wearable version."
+      ],
+      [
         "Availability",
-        "The release client keeps this item definition, but its listed production recipe is disabled. The historical recipe is preserved below and is not a current crafting instruction."
+        "The November 24 client no longer includes this item definition or its production and stringing activities. Historical recipes and sell values below preserve the November 19 archive. They are not current acquisition instructions."
       ],
       [
         "Current alternative",
-        "Current amulet recipes produce the corresponding wearable amulet directly and include a Ball of Wool among their materials. The disabled unstrung intermediate is not required by those active recipes."
-      ],
-      [
-        "Using existing stock",
-        "A disabled production recipe does not remove existing copies of an item. The client still lists the following uses for copies you already have. Rows marked deprecated carry a future-removal warning; rows marked listed are not disabled in this build."
+        "Current amulet recipes make the wearable amulet directly using a Ball of Wool. The unstrung intermediate is not required."
       ]
     ],
     "gameId": "unstrungDiamondAmulet",
     "portrait": {
-      "src": "https://microscape.cc/play/assets/unstrungDiamondAmulet--S1Np2YK.png",
+      "src": "./assets/amulets/unstrung-diamond-amulet.png",
       "source": "https://microscape.cc/play/"
     },
-    "artwork": "https://microscape.cc/play/assets/unstrungDiamondAmulet--S1Np2YK.png",
-    "availabilityStatus": "disabled-recipe"
+    "artwork": "./assets/amulets/unstrung-diamond-amulet.png",
+    "availabilityStatus": "absent-current-build",
+    "aliases": [
+      "amulets"
+    ]
   },
   {
     "id": "unstrung-dragonstone-amulet",
@@ -107301,7 +108093,7 @@
     "sourceDate": "2026-09-27",
     "sourceTitle": "Items",
     "sourceUrl": "https://microscape.miraheze.org/wiki/Items",
-    "statsDate": "2026-11-19",
+    "statsDate": "2026-11-24",
     "facts": [
       [
         "In-game name",
@@ -107309,20 +108101,32 @@
       ],
       [
         "Slot",
-        "Not Equipped"
+        "Not equippable (material)"
       ],
       [
         "Equip requirements",
-        "None"
+        "Cannot equip"
       ],
       [
         "Vendor sell value",
-        "771 coins"
+        "771 coins (archived November 19 value)"
+      ],
+      [
+        "Direct stat bonuses",
+        "None — cannot be equipped"
+      ],
+      [
+        "Ability access",
+        "None from this item"
+      ],
+      [
+        "Availability",
+        "Archived — absent from the November 24 client"
       ]
     ],
     "tables": [
       {
-        "title": "Historical recipe · disabled",
+        "title": "Archived November 19 recipe · disabled",
         "columns": [
           "Recipe",
           "Former requirement",
@@ -107345,31 +108149,19 @@
             "Disabled; historical"
           ]
         ]
-      },
-      {
-        "title": "Used in activities",
-        "columns": [
-          "Activity",
-          "Requirements",
-          "Amount used"
-        ],
-        "rows": [
-          [
-            "String Dgn. Amulet",
-            "Crafting 80",
-            "1"
-          ]
-        ],
-        "collapsed": true
       }
     ],
-    "summary": "Legacy crafting material or equipment. Its production recipe is disabled in the November 19 release client.",
+    "summary": "Legacy unstrung material; cannot be equipped.",
     "related": [
       "dragonstone-amulet",
       "ball-of-wool",
       "crafting"
     ],
     "sources": [
+      [
+        "Public game amulet data and original icons · November 24, 2026",
+        "./assets/game-data/amulets-2026-11-24.json"
+      ],
       [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
@@ -107401,25 +108193,28 @@
     ],
     "sections": [
       [
+        "When equipped",
+        "This is an archived unstrung crafting material, not wearable equipment. It supplies no equipment stats or abilities. Its original icon is preserved from the November 19 game archive. The November 24 client no longer includes this item definition, its production recipe, or its stringing activity; use the current direct recipe for the wearable version."
+      ],
+      [
         "Availability",
-        "The release client keeps this item definition, but its listed production recipe is disabled. The historical recipe is preserved below and is not a current crafting instruction."
+        "The November 24 client no longer includes this item definition or its production and stringing activities. Historical recipes and sell values below preserve the November 19 archive. They are not current acquisition instructions."
       ],
       [
         "Current alternative",
-        "Current amulet recipes produce the corresponding wearable amulet directly and include a Ball of Wool among their materials. The disabled unstrung intermediate is not required by those active recipes."
-      ],
-      [
-        "Using existing stock",
-        "A disabled production recipe does not remove existing copies of an item. The client still lists the following uses for copies you already have. Rows marked deprecated carry a future-removal warning; rows marked listed are not disabled in this build."
+        "Current amulet recipes make the wearable amulet directly using a Ball of Wool. The unstrung intermediate is not required."
       ]
     ],
     "gameId": "unstrungDragonstoneAmulet",
     "portrait": {
-      "src": "https://microscape.cc/play/assets/unstrungDragonstoneAmulet-DsKp2STH.png",
+      "src": "./assets/amulets/unstrung-dragonstone-amulet.png",
       "source": "https://microscape.cc/play/"
     },
-    "artwork": "https://microscape.cc/play/assets/unstrungDragonstoneAmulet-DsKp2STH.png",
-    "availabilityStatus": "disabled-recipe"
+    "artwork": "./assets/amulets/unstrung-dragonstone-amulet.png",
+    "availabilityStatus": "absent-current-build",
+    "aliases": [
+      "amulets"
+    ]
   },
   {
     "id": "unstrung-emerald-amulet",
@@ -107430,7 +108225,7 @@
     "sourceDate": "2026-09-27",
     "sourceTitle": "Items",
     "sourceUrl": "https://microscape.miraheze.org/wiki/Items",
-    "statsDate": "2026-11-19",
+    "statsDate": "2026-11-24",
     "facts": [
       [
         "In-game name",
@@ -107438,20 +108233,32 @@
       ],
       [
         "Slot",
-        "Not Equipped"
+        "Not equippable (material)"
       ],
       [
         "Equip requirements",
-        "None"
+        "Cannot equip"
       ],
       [
         "Vendor sell value",
-        "100 coins"
+        "100 coins (archived November 19 value)"
+      ],
+      [
+        "Direct stat bonuses",
+        "None — cannot be equipped"
+      ],
+      [
+        "Ability access",
+        "None from this item"
+      ],
+      [
+        "Availability",
+        "Archived — absent from the November 24 client"
       ]
     ],
     "tables": [
       {
-        "title": "Historical recipe · disabled",
+        "title": "Archived November 19 recipe · disabled",
         "columns": [
           "Recipe",
           "Former requirement",
@@ -107474,31 +108281,19 @@
             "Disabled; historical"
           ]
         ]
-      },
-      {
-        "title": "Used in activities",
-        "columns": [
-          "Activity",
-          "Requirements",
-          "Amount used"
-        ],
-        "rows": [
-          [
-            "String Em. Amulet",
-            "Crafting 30",
-            "1"
-          ]
-        ],
-        "collapsed": true
       }
     ],
-    "summary": "Legacy crafting material or equipment. Its production recipe is disabled in the November 19 release client.",
+    "summary": "Legacy unstrung material; cannot be equipped.",
     "related": [
       "emerald-amulet",
       "ball-of-wool",
       "crafting"
     ],
     "sources": [
+      [
+        "Public game amulet data and original icons · November 24, 2026",
+        "./assets/game-data/amulets-2026-11-24.json"
+      ],
       [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
@@ -107530,25 +108325,28 @@
     ],
     "sections": [
       [
+        "When equipped",
+        "This is an archived unstrung crafting material, not wearable equipment. It supplies no equipment stats or abilities. Its original icon is preserved from the November 19 game archive. The November 24 client no longer includes this item definition, its production recipe, or its stringing activity; use the current direct recipe for the wearable version."
+      ],
+      [
         "Availability",
-        "The release client keeps this item definition, but its listed production recipe is disabled. The historical recipe is preserved below and is not a current crafting instruction."
+        "The November 24 client no longer includes this item definition or its production and stringing activities. Historical recipes and sell values below preserve the November 19 archive. They are not current acquisition instructions."
       ],
       [
         "Current alternative",
-        "Current amulet recipes produce the corresponding wearable amulet directly and include a Ball of Wool among their materials. The disabled unstrung intermediate is not required by those active recipes."
-      ],
-      [
-        "Using existing stock",
-        "A disabled production recipe does not remove existing copies of an item. The client still lists the following uses for copies you already have. Rows marked deprecated carry a future-removal warning; rows marked listed are not disabled in this build."
+        "Current amulet recipes make the wearable amulet directly using a Ball of Wool. The unstrung intermediate is not required."
       ]
     ],
     "gameId": "unstrungEmeraldAmulet",
     "portrait": {
-      "src": "https://microscape.cc/play/assets/unstrungEmeraldAmulet-DIHDKhQx.png",
+      "src": "./assets/amulets/unstrung-emerald-amulet.png",
       "source": "https://microscape.cc/play/"
     },
-    "artwork": "https://microscape.cc/play/assets/unstrungEmeraldAmulet-DIHDKhQx.png",
-    "availabilityStatus": "disabled-recipe"
+    "artwork": "./assets/amulets/unstrung-emerald-amulet.png",
+    "availabilityStatus": "absent-current-build",
+    "aliases": [
+      "amulets"
+    ]
   },
   {
     "id": "unstrung-evil-amulet",
@@ -107559,7 +108357,7 @@
     "sourceDate": "2026-09-27",
     "sourceTitle": "Items",
     "sourceUrl": "https://microscape.miraheze.org/wiki/Items",
-    "statsDate": "2026-11-19",
+    "statsDate": "2026-11-24",
     "facts": [
       [
         "In-game name",
@@ -107567,20 +108365,32 @@
       ],
       [
         "Slot",
-        "Not Equipped"
+        "Not equippable (material)"
       ],
       [
         "Equip requirements",
-        "None"
+        "Cannot equip"
       ],
       [
         "Vendor sell value",
-        "9 coins"
+        "9 coins (archived November 19 value)"
+      ],
+      [
+        "Direct stat bonuses",
+        "None — cannot be equipped"
+      ],
+      [
+        "Ability access",
+        "None from this item"
+      ],
+      [
+        "Availability",
+        "Archived — absent from the November 24 client"
       ]
     ],
     "tables": [
       {
-        "title": "Historical recipe · disabled",
+        "title": "Archived November 19 recipe · disabled",
         "columns": [
           "Recipe",
           "Former requirement",
@@ -107603,25 +108413,9 @@
             "Disabled; historical"
           ]
         ]
-      },
-      {
-        "title": "Used in activities",
-        "columns": [
-          "Activity",
-          "Requirements",
-          "Amount used"
-        ],
-        "rows": [
-          [
-            "String Evl. Amulet",
-            "Crafting 17",
-            "1"
-          ]
-        ],
-        "collapsed": true
       }
     ],
-    "summary": "Legacy crafting material or equipment. Its production recipe is disabled in the November 19 release client.",
+    "summary": "Legacy unstrung material; cannot be equipped.",
     "related": [
       "evil-amulet",
       "ball-of-wool",
@@ -107630,6 +108424,10 @@
       "silver-bar"
     ],
     "sources": [
+      [
+        "Public game amulet data and original icons · November 24, 2026",
+        "./assets/game-data/amulets-2026-11-24.json"
+      ],
       [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
@@ -107661,25 +108459,28 @@
     ],
     "sections": [
       [
+        "When equipped",
+        "This is an archived unstrung crafting material, not wearable equipment. It supplies no equipment stats or abilities. Its original icon is preserved from the November 19 game archive. The November 24 client no longer includes this item definition, its production recipe, or its stringing activity; use the current direct recipe for the wearable version."
+      ],
+      [
         "Availability",
-        "The release client keeps this item definition, but its listed production recipe is disabled. The historical recipe is preserved below and is not a current crafting instruction."
+        "The November 24 client no longer includes this item definition or its production and stringing activities. Historical recipes and sell values below preserve the November 19 archive. They are not current acquisition instructions."
       ],
       [
         "Current alternative",
-        "The current Crafting recipe combines a Silver Bar and a Ball of Wool to make a Dim Evil Amulet directly. It can then be cursed through the corresponding NPC activity. The disabled unstrung intermediate is not needed for that direct recipe."
-      ],
-      [
-        "Using existing stock",
-        "A disabled production recipe does not remove existing copies of an item. The client still lists the following uses for copies you already have. Rows marked deprecated carry a future-removal warning; rows marked listed are not disabled in this build."
+        "Current amulet recipes make the wearable amulet directly using a Ball of Wool. The unstrung intermediate is not required."
       ]
     ],
     "gameId": "unstrungEvilAmulet",
     "portrait": {
-      "src": "https://microscape.cc/play/assets/unstrungEvilAmulet-Dvd3ACHJ.png",
+      "src": "./assets/amulets/unstrung-evil-amulet.png",
       "source": "https://microscape.cc/play/"
     },
-    "artwork": "https://microscape.cc/play/assets/unstrungEvilAmulet-Dvd3ACHJ.png",
-    "availabilityStatus": "disabled-recipe"
+    "artwork": "./assets/amulets/unstrung-evil-amulet.png",
+    "availabilityStatus": "absent-current-build",
+    "aliases": [
+      "amulets"
+    ]
   },
   {
     "id": "unstrung-gold-amulet",
@@ -107690,7 +108491,7 @@
     "sourceDate": "2026-09-27",
     "sourceTitle": "Items",
     "sourceUrl": "https://microscape.miraheze.org/wiki/Items",
-    "statsDate": "2026-11-19",
+    "statsDate": "2026-11-24",
     "facts": [
       [
         "In-game name",
@@ -107698,20 +108499,32 @@
       ],
       [
         "Slot",
-        "Not Equipped"
+        "Not equippable (material)"
       ],
       [
         "Equip requirements",
-        "None"
+        "Cannot equip"
       ],
       [
         "Vendor sell value",
-        "9 coins"
+        "9 coins (archived November 19 value)"
+      ],
+      [
+        "Direct stat bonuses",
+        "None — cannot be equipped"
+      ],
+      [
+        "Ability access",
+        "None from this item"
+      ],
+      [
+        "Availability",
+        "Archived — absent from the November 24 client"
       ]
     ],
     "tables": [
       {
-        "title": "Historical recipe · disabled",
+        "title": "Archived November 19 recipe · disabled",
         "columns": [
           "Recipe",
           "Former requirement",
@@ -107734,31 +108547,19 @@
             "Disabled; historical"
           ]
         ]
-      },
-      {
-        "title": "Used in activities",
-        "columns": [
-          "Activity",
-          "Requirements",
-          "Amount used"
-        ],
-        "rows": [
-          [
-            "String Gld. Amulet",
-            "Crafting 8",
-            "1"
-          ]
-        ],
-        "collapsed": true
       }
     ],
-    "summary": "Legacy crafting material or equipment. Its production recipe is disabled in the November 19 release client.",
+    "summary": "Legacy unstrung material; cannot be equipped.",
     "related": [
       "gold-amulet",
       "ball-of-wool",
       "crafting"
     ],
     "sources": [
+      [
+        "Public game amulet data and original icons · November 24, 2026",
+        "./assets/game-data/amulets-2026-11-24.json"
+      ],
       [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
@@ -107790,25 +108591,28 @@
     ],
     "sections": [
       [
+        "When equipped",
+        "This is an archived unstrung crafting material, not wearable equipment. It supplies no equipment stats or abilities. Its original icon is preserved from the November 19 game archive. The November 24 client no longer includes this item definition, its production recipe, or its stringing activity; use the current direct recipe for the wearable version."
+      ],
+      [
         "Availability",
-        "The release client keeps this item definition, but its listed production recipe is disabled. The historical recipe is preserved below and is not a current crafting instruction."
+        "The November 24 client no longer includes this item definition or its production and stringing activities. Historical recipes and sell values below preserve the November 19 archive. They are not current acquisition instructions."
       ],
       [
         "Current alternative",
-        "Current amulet recipes produce the corresponding wearable amulet directly and include a Ball of Wool among their materials. The disabled unstrung intermediate is not required by those active recipes."
-      ],
-      [
-        "Using existing stock",
-        "A disabled production recipe does not remove existing copies of an item. The client still lists the following uses for copies you already have. Rows marked deprecated carry a future-removal warning; rows marked listed are not disabled in this build."
+        "Current amulet recipes make the wearable amulet directly using a Ball of Wool. The unstrung intermediate is not required."
       ]
     ],
     "gameId": "unstrungGoldAmulet",
     "portrait": {
-      "src": "https://microscape.cc/play/assets/unstrungGoldAmulet-BtblasST.png",
+      "src": "./assets/amulets/unstrung-gold-amulet.png",
       "source": "https://microscape.cc/play/"
     },
-    "artwork": "https://microscape.cc/play/assets/unstrungGoldAmulet-BtblasST.png",
-    "availabilityStatus": "disabled-recipe"
+    "artwork": "./assets/amulets/unstrung-gold-amulet.png",
+    "availabilityStatus": "absent-current-build",
+    "aliases": [
+      "amulets"
+    ]
   },
   {
     "id": "unstrung-holy-amulet",
@@ -107819,7 +108623,7 @@
     "sourceDate": "2026-09-27",
     "sourceTitle": "Items",
     "sourceUrl": "https://microscape.miraheze.org/wiki/Items",
-    "statsDate": "2026-11-19",
+    "statsDate": "2026-11-24",
     "facts": [
       [
         "In-game name",
@@ -107827,20 +108631,32 @@
       ],
       [
         "Slot",
-        "Not Equipped"
+        "Not equippable (material)"
       ],
       [
         "Equip requirements",
-        "None"
+        "Cannot equip"
       ],
       [
         "Vendor sell value",
-        "9 coins"
+        "9 coins (archived November 19 value)"
+      ],
+      [
+        "Direct stat bonuses",
+        "None — cannot be equipped"
+      ],
+      [
+        "Ability access",
+        "None from this item"
+      ],
+      [
+        "Availability",
+        "Archived — absent from the November 24 client"
       ]
     ],
     "tables": [
       {
-        "title": "Historical recipe · disabled",
+        "title": "Archived November 19 recipe · disabled",
         "columns": [
           "Recipe",
           "Former requirement",
@@ -107863,25 +108679,9 @@
             "Disabled; historical"
           ]
         ]
-      },
-      {
-        "title": "Used in activities",
-        "columns": [
-          "Activity",
-          "Requirements",
-          "Amount used"
-        ],
-        "rows": [
-          [
-            "String Hly. Amulet",
-            "Crafting 16",
-            "1"
-          ]
-        ],
-        "collapsed": true
       }
     ],
-    "summary": "Legacy crafting material or equipment. Its production recipe is disabled in the November 19 release client.",
+    "summary": "Legacy unstrung material; cannot be equipped.",
     "related": [
       "holy-amulet",
       "ball-of-wool",
@@ -107890,6 +108690,10 @@
       "silver-bar"
     ],
     "sources": [
+      [
+        "Public game amulet data and original icons · November 24, 2026",
+        "./assets/game-data/amulets-2026-11-24.json"
+      ],
       [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
@@ -107921,25 +108725,28 @@
     ],
     "sections": [
       [
+        "When equipped",
+        "This is an archived unstrung crafting material, not wearable equipment. It supplies no equipment stats or abilities. Its original icon is preserved from the November 19 game archive. The November 24 client no longer includes this item definition, its production recipe, or its stringing activity; use the current direct recipe for the wearable version."
+      ],
+      [
         "Availability",
-        "The release client keeps this item definition, but its listed production recipe is disabled. The historical recipe is preserved below and is not a current crafting instruction."
+        "The November 24 client no longer includes this item definition or its production and stringing activities. Historical recipes and sell values below preserve the November 19 archive. They are not current acquisition instructions."
       ],
       [
         "Current alternative",
-        "The current Crafting recipe combines a Silver Bar and a Ball of Wool to make a Dim Holy Amulet directly. It can then be blessed through the corresponding NPC activity. The disabled unstrung intermediate is not needed for that direct recipe."
-      ],
-      [
-        "Using existing stock",
-        "A disabled production recipe does not remove existing copies of an item. The client still lists the following uses for copies you already have. Rows marked deprecated carry a future-removal warning; rows marked listed are not disabled in this build."
+        "Current amulet recipes make the wearable amulet directly using a Ball of Wool. The unstrung intermediate is not required."
       ]
     ],
     "gameId": "unstrungHolyAmulet",
     "portrait": {
-      "src": "https://microscape.cc/play/assets/unstrungHolyAmulet-X-Z9PbsT.png",
+      "src": "./assets/amulets/unstrung-holy-amulet.png",
       "source": "https://microscape.cc/play/"
     },
-    "artwork": "https://microscape.cc/play/assets/unstrungHolyAmulet-X-Z9PbsT.png",
-    "availabilityStatus": "disabled-recipe"
+    "artwork": "./assets/amulets/unstrung-holy-amulet.png",
+    "availabilityStatus": "absent-current-build",
+    "aliases": [
+      "amulets"
+    ]
   },
   {
     "id": "unstrung-ruby-amulet",
@@ -107950,7 +108757,7 @@
     "sourceDate": "2026-09-27",
     "sourceTitle": "Items",
     "sourceUrl": "https://microscape.miraheze.org/wiki/Items",
-    "statsDate": "2026-11-19",
+    "statsDate": "2026-11-24",
     "facts": [
       [
         "In-game name",
@@ -107958,20 +108765,32 @@
       ],
       [
         "Slot",
-        "Not Equipped"
+        "Not equippable (material)"
       ],
       [
         "Equip requirements",
-        "None"
+        "Cannot equip"
       ],
       [
         "Vendor sell value",
-        "183 coins"
+        "183 coins (archived November 19 value)"
+      ],
+      [
+        "Direct stat bonuses",
+        "None — cannot be equipped"
+      ],
+      [
+        "Ability access",
+        "None from this item"
+      ],
+      [
+        "Availability",
+        "Archived — absent from the November 24 client"
       ]
     ],
     "tables": [
       {
-        "title": "Historical recipe · disabled",
+        "title": "Archived November 19 recipe · disabled",
         "columns": [
           "Recipe",
           "Former requirement",
@@ -107994,31 +108813,19 @@
             "Disabled; historical"
           ]
         ]
-      },
-      {
-        "title": "Used in activities",
-        "columns": [
-          "Activity",
-          "Requirements",
-          "Amount used"
-        ],
-        "rows": [
-          [
-            "String Rby. Amulet",
-            "Crafting 50",
-            "1"
-          ]
-        ],
-        "collapsed": true
       }
     ],
-    "summary": "Legacy crafting material or equipment. Its production recipe is disabled in the November 19 release client.",
+    "summary": "Legacy unstrung material; cannot be equipped.",
     "related": [
       "ruby-amulet",
       "ball-of-wool",
       "crafting"
     ],
     "sources": [
+      [
+        "Public game amulet data and original icons · November 24, 2026",
+        "./assets/game-data/amulets-2026-11-24.json"
+      ],
       [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
@@ -108050,25 +108857,28 @@
     ],
     "sections": [
       [
+        "When equipped",
+        "This is an archived unstrung crafting material, not wearable equipment. It supplies no equipment stats or abilities. Its original icon is preserved from the November 19 game archive. The November 24 client no longer includes this item definition, its production recipe, or its stringing activity; use the current direct recipe for the wearable version."
+      ],
+      [
         "Availability",
-        "The release client keeps this item definition, but its listed production recipe is disabled. The historical recipe is preserved below and is not a current crafting instruction."
+        "The November 24 client no longer includes this item definition or its production and stringing activities. Historical recipes and sell values below preserve the November 19 archive. They are not current acquisition instructions."
       ],
       [
         "Current alternative",
-        "Current amulet recipes produce the corresponding wearable amulet directly and include a Ball of Wool among their materials. The disabled unstrung intermediate is not required by those active recipes."
-      ],
-      [
-        "Using existing stock",
-        "A disabled production recipe does not remove existing copies of an item. The client still lists the following uses for copies you already have. Rows marked deprecated carry a future-removal warning; rows marked listed are not disabled in this build."
+        "Current amulet recipes make the wearable amulet directly using a Ball of Wool. The unstrung intermediate is not required."
       ]
     ],
     "gameId": "unstrungRubyAmulet",
     "portrait": {
-      "src": "https://microscape.cc/play/assets/unstrungRubyAmulet-BstLevfK.png",
+      "src": "./assets/amulets/unstrung-ruby-amulet.png",
       "source": "https://microscape.cc/play/"
     },
-    "artwork": "https://microscape.cc/play/assets/unstrungRubyAmulet-BstLevfK.png",
-    "availabilityStatus": "disabled-recipe"
+    "artwork": "./assets/amulets/unstrung-ruby-amulet.png",
+    "availabilityStatus": "absent-current-build",
+    "aliases": [
+      "amulets"
+    ]
   },
   {
     "id": "unstrung-sapphire-amulet",
@@ -108079,7 +108889,7 @@
     "sourceDate": "2026-09-27",
     "sourceTitle": "Items",
     "sourceUrl": "https://microscape.miraheze.org/wiki/Items",
-    "statsDate": "2026-11-19",
+    "statsDate": "2026-11-24",
     "facts": [
       [
         "In-game name",
@@ -108087,20 +108897,32 @@
       ],
       [
         "Slot",
-        "Not Equipped"
+        "Not equippable (material)"
       ],
       [
         "Equip requirements",
-        "None"
+        "Cannot equip"
       ],
       [
         "Vendor sell value",
-        "57 coins"
+        "57 coins (archived November 19 value)"
+      ],
+      [
+        "Direct stat bonuses",
+        "None — cannot be equipped"
+      ],
+      [
+        "Ability access",
+        "None from this item"
+      ],
+      [
+        "Availability",
+        "Archived — absent from the November 24 client"
       ]
     ],
     "tables": [
       {
-        "title": "Historical recipe · disabled",
+        "title": "Archived November 19 recipe · disabled",
         "columns": [
           "Recipe",
           "Former requirement",
@@ -108123,31 +108945,19 @@
             "Disabled; historical"
           ]
         ]
-      },
-      {
-        "title": "Used in activities",
-        "columns": [
-          "Activity",
-          "Requirements",
-          "Amount used"
-        ],
-        "rows": [
-          [
-            "String Sph. Amulet",
-            "Crafting 24",
-            "1"
-          ]
-        ],
-        "collapsed": true
       }
     ],
-    "summary": "Legacy crafting material or equipment. Its production recipe is disabled in the November 19 release client.",
+    "summary": "Legacy unstrung material; cannot be equipped.",
     "related": [
       "sapphire-amulet",
       "ball-of-wool",
       "crafting"
     ],
     "sources": [
+      [
+        "Public game amulet data and original icons · November 24, 2026",
+        "./assets/game-data/amulets-2026-11-24.json"
+      ],
       [
         "Archived release game data · November 19, 2026",
         "./assets/game-data/release-2026-11-19.json"
@@ -108179,25 +108989,28 @@
     ],
     "sections": [
       [
+        "When equipped",
+        "This is an archived unstrung crafting material, not wearable equipment. It supplies no equipment stats or abilities. Its original icon is preserved from the November 19 game archive. The November 24 client no longer includes this item definition, its production recipe, or its stringing activity; use the current direct recipe for the wearable version."
+      ],
+      [
         "Availability",
-        "The release client keeps this item definition, but its listed production recipe is disabled. The historical recipe is preserved below and is not a current crafting instruction."
+        "The November 24 client no longer includes this item definition or its production and stringing activities. Historical recipes and sell values below preserve the November 19 archive. They are not current acquisition instructions."
       ],
       [
         "Current alternative",
-        "Current amulet recipes produce the corresponding wearable amulet directly and include a Ball of Wool among their materials. The disabled unstrung intermediate is not required by those active recipes."
-      ],
-      [
-        "Using existing stock",
-        "A disabled production recipe does not remove existing copies of an item. The client still lists the following uses for copies you already have. Rows marked deprecated carry a future-removal warning; rows marked listed are not disabled in this build."
+        "Current amulet recipes make the wearable amulet directly using a Ball of Wool. The unstrung intermediate is not required."
       ]
     ],
     "gameId": "unstrungSapphireAmulet",
     "portrait": {
-      "src": "https://microscape.cc/play/assets/unstrungSapphireAmulet-CnSq6ILn.png",
+      "src": "./assets/amulets/unstrung-sapphire-amulet.png",
       "source": "https://microscape.cc/play/"
     },
-    "artwork": "https://microscape.cc/play/assets/unstrungSapphireAmulet-CnSq6ILn.png",
-    "availabilityStatus": "disabled-recipe"
+    "artwork": "./assets/amulets/unstrung-sapphire-amulet.png",
+    "availabilityStatus": "absent-current-build",
+    "aliases": [
+      "amulets"
+    ]
   },
   {
     "id": "unusual-fools-hat",

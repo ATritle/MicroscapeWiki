@@ -6900,7 +6900,7 @@
           "amount": 1
         }
       ],
-      "icon": "https://microscape.cc/play/assets/goldAmulet-DNsy3tX1.png",
+      "icon": "./assets/amulets/gold-amulet.png",
       "wikiId": "gold-amulet",
       "entity": "Smelter",
       "locations": [
@@ -7084,7 +7084,7 @@
           "amount": 1
         }
       ],
-      "icon": "https://microscape.cc/play/assets/dimHolyAmulet-DB2mL_eS.png",
+      "icon": "./assets/amulets/dim-holy-amulet.png",
       "wikiId": "dim-holy-amulet",
       "entity": "Smelter",
       "locations": [
@@ -7128,7 +7128,7 @@
           "amount": 1
         }
       ],
-      "icon": "https://microscape.cc/play/assets/dimEvilAmulet-CU3TpfzJ.png",
+      "icon": "./assets/amulets/dim-evil-amulet.png",
       "wikiId": "dim-evil-amulet",
       "entity": "Smelter",
       "locations": [
@@ -7248,7 +7248,7 @@
           "amount": 1
         }
       ],
-      "icon": "https://microscape.cc/play/assets/amuletOfMagic-C-7k74OY.png",
+      "icon": "./assets/amulets/sapphire-amulet.png",
       "wikiId": "sapphire-amulet",
       "entity": "Smelter",
       "locations": [
@@ -7372,7 +7372,7 @@
           "amount": 1
         }
       ],
-      "icon": "https://microscape.cc/play/assets/amuletOfProtection-CMLwounm.png",
+      "icon": "./assets/amulets/emerald-amulet.png",
       "wikiId": "emerald-amulet",
       "entity": "Smelter",
       "locations": [
@@ -7584,7 +7584,7 @@
           "amount": 1
         }
       ],
-      "icon": "https://microscape.cc/play/assets/amuletOfStrength-CD9RynJh.png",
+      "icon": "./assets/amulets/ruby-amulet.png",
       "wikiId": "ruby-amulet",
       "entity": "Smelter",
       "locations": [
@@ -7812,7 +7812,7 @@
           "amount": 1
         }
       ],
-      "icon": "https://microscape.cc/play/assets/amuletOfPower-BAAJlbMy.png",
+      "icon": "./assets/amulets/diamond-amulet.png",
       "wikiId": "diamond-amulet",
       "entity": "Smelter",
       "locations": [
@@ -7860,7 +7860,7 @@
           "amount": 1
         }
       ],
-      "icon": "https://microscape.cc/play/assets/amuletOfProgress-Ctd0NFSD.png",
+      "icon": "./assets/amulets/dragonstone-amulet.png",
       "wikiId": "dragonstone-amulet",
       "entity": "Smelter",
       "locations": [
@@ -8043,7 +8043,7 @@
           "amount": 1
         }
       ],
-      "icon": "https://microscape.cc/play/assets/amuletOfMagic-C-7k74OY.png",
+      "icon": "./assets/amulets/amulet-of-magic.png",
       "wikiId": "amulet-of-magic",
       "entity": "Chillin' Spot",
       "locations": [
@@ -8083,7 +8083,7 @@
           "amount": 1
         }
       ],
-      "icon": "https://microscape.cc/play/assets/amuletOfProtection-CMLwounm.png",
+      "icon": "./assets/amulets/amulet-of-protection.png",
       "wikiId": "amulet-of-protection",
       "entity": "Chillin' Spot",
       "locations": [
@@ -8356,7 +8356,7 @@
           "amount": 1
         }
       ],
-      "icon": "https://microscape.cc/play/assets/amuletOfStrength-CD9RynJh.png",
+      "icon": "./assets/amulets/amulet-of-strength.png",
       "wikiId": "amulet-of-strength",
       "entity": "Chillin' Spot",
       "locations": [
@@ -8431,7 +8431,7 @@
           "amount": 1
         }
       ],
-      "icon": "https://microscape.cc/play/assets/amuletOfPower-BAAJlbMy.png",
+      "icon": "./assets/amulets/amulet-of-power.png",
       "wikiId": "amulet-of-power",
       "entity": "Chillin' Spot",
       "locations": [
@@ -8471,7 +8471,7 @@
           "amount": 1
         }
       ],
-      "icon": "https://microscape.cc/play/assets/amuletOfProgress-Ctd0NFSD.png",
+      "icon": "./assets/amulets/amulet-of-progress.png",
       "wikiId": "amulet-of-progress",
       "entity": "Chillin' Spot",
       "locations": [
@@ -11796,7 +11796,7 @@
         "evilMagic": 3
       },
       "tags": [],
-      "icon": "https://microscape.cc/play/assets/amuletOfMagic-C-7k74OY.png",
+      "icon": "./assets/amulets/amulet-of-magic.png",
       "wikiId": "amulet-of-magic",
       "requirements": {}
     },
@@ -11812,7 +11812,7 @@
         "strength": 2
       },
       "tags": [],
-      "icon": "https://microscape.cc/play/assets/amuletOfPower-BAAJlbMy.png",
+      "icon": "./assets/amulets/amulet-of-power.png",
       "wikiId": "amulet-of-power",
       "requirements": {}
     },
@@ -11829,7 +11829,7 @@
         "smithing": 2
       },
       "tags": [],
-      "icon": "https://microscape.cc/play/assets/amuletOfProgress-Ctd0NFSD.png",
+      "icon": "./assets/amulets/amulet-of-progress.png",
       "wikiId": "amulet-of-progress",
       "requirements": {}
     },
@@ -11840,7 +11840,7 @@
         "defense": 5
       },
       "tags": [],
-      "icon": "https://microscape.cc/play/assets/amuletOfProtection-CMLwounm.png",
+      "icon": "./assets/amulets/amulet-of-protection.png",
       "wikiId": "amulet-of-protection",
       "requirements": {}
     },
@@ -11851,7 +11851,7 @@
         "strength": 3
       },
       "tags": [],
-      "icon": "https://microscape.cc/play/assets/amuletOfStrength-CD9RynJh.png",
+      "icon": "./assets/amulets/amulet-of-strength.png",
       "wikiId": "amulet-of-strength",
       "requirements": {}
     },
@@ -12746,7 +12746,7 @@
       "slot": "amulet",
       "bonuses": {},
       "tags": [],
-      "icon": "https://microscape.cc/play/assets/amuletOfPower-BAAJlbMy.png",
+      "icon": "./assets/amulets/diamond-amulet.png",
       "wikiId": "diamond-amulet",
       "requirements": {}
     },
@@ -12755,7 +12755,7 @@
       "slot": "amulet",
       "bonuses": {},
       "tags": [],
-      "icon": "https://microscape.cc/play/assets/dimEvilAmulet-CU3TpfzJ.png",
+      "icon": "./assets/amulets/dim-evil-amulet.png",
       "wikiId": "dim-evil-amulet",
       "requirements": {}
     },
@@ -12766,7 +12766,7 @@
         "defense": 1
       },
       "tags": [],
-      "icon": "https://microscape.cc/play/assets/dimHolyAmulet-DB2mL_eS.png",
+      "icon": "./assets/amulets/dim-holy-amulet.png",
       "wikiId": "dim-holy-amulet",
       "requirements": {}
     },
@@ -12872,7 +12872,7 @@
       "slot": "amulet",
       "bonuses": {},
       "tags": [],
-      "icon": "https://microscape.cc/play/assets/amuletOfProgress-Ctd0NFSD.png",
+      "icon": "./assets/amulets/dragonstone-amulet.png",
       "wikiId": "dragonstone-amulet",
       "requirements": {}
     },
@@ -12948,7 +12948,7 @@
       "slot": "amulet",
       "bonuses": {},
       "tags": [],
-      "icon": "https://microscape.cc/play/assets/amuletOfProtection-CMLwounm.png",
+      "icon": "./assets/amulets/emerald-amulet.png",
       "wikiId": "emerald-amulet",
       "requirements": {}
     },
@@ -12970,7 +12970,7 @@
         "strength": 1
       },
       "tags": [],
-      "icon": "https://microscape.cc/play/assets/evilAmulet-CfbxHlM5.png",
+      "icon": "./assets/amulets/evil-amulet.png",
       "wikiId": "evil-amulet",
       "requirements": {
         "piety": 43
@@ -13287,7 +13287,7 @@
       "slot": "amulet",
       "bonuses": {},
       "tags": [],
-      "icon": "https://microscape.cc/play/assets/goldAmulet-DNsy3tX1.png",
+      "icon": "./assets/amulets/gold-amulet.png",
       "wikiId": "gold-amulet",
       "requirements": {}
     },
@@ -13428,7 +13428,7 @@
         "piety": 3
       },
       "tags": [],
-      "icon": "https://microscape.cc/play/assets/holyAmulet-BKO_Vjrs.png",
+      "icon": "./assets/amulets/holy-amulet.png",
       "wikiId": "holy-amulet",
       "requirements": {
         "piety": 22
@@ -15250,7 +15250,7 @@
       "slot": "amulet",
       "bonuses": {},
       "tags": [],
-      "icon": "https://microscape.cc/play/assets/amuletOfStrength-CD9RynJh.png",
+      "icon": "./assets/amulets/ruby-amulet.png",
       "wikiId": "ruby-amulet",
       "requirements": {}
     },
@@ -15340,7 +15340,7 @@
       "slot": "amulet",
       "bonuses": {},
       "tags": [],
-      "icon": "https://microscape.cc/play/assets/amuletOfMagic-C-7k74OY.png",
+      "icon": "./assets/amulets/sapphire-amulet.png",
       "wikiId": "sapphire-amulet",
       "requirements": {}
     },
