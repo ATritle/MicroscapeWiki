@@ -1,7 +1,9 @@
 import {communityApiBase} from "./api-config.js?v=community-api-20261119";
 import {trackPageView} from "./analytics.js?v=ga4-20261123";
 import {renderLeaderboards} from "./leaderboards.js?v=ranked-communities-20261124";
-import { guides } from "./guides.js?v=ga4-20261123";
+import {renderActivityPlanner} from "./queue-planner.js?v=queue-types-20261124";
+import {renderMembershipQueue} from "./membership-queue.js?v=queue-types-20261124";
+import { guides } from "./guides.js?v=queue-types-20261124";
 import {renderBazaar} from "./bazaar.js?v=market-sorting-20261122";
 import {renderBazaarWalkthrough} from "./bazaar-walkthrough.js?v=bazaar-visual-20261120";
 import { tutorials } from "./tutorials.js?v=release-20261119";
@@ -64,6 +66,7 @@ let disposeBazaar;
 let disposeCalculator;
 let disposeWorldMap;
 let disposeLeaderboards;
+let disposeQueuePlanner;
 
 const entries = [...guides, ...tutorials];
 const byId = new Map(entries.map(entry => [entry.id, entry]));
@@ -163,11 +166,13 @@ function renderNav(category, currentId, home, liveDrops, playerLookup, activityC
     ]],
     ["Compendium", topicOrder.map(id => [groups[id].title, categoryUrl(id), groups[id].icon, category === id])],
     ["Resources", [
+      ["Activity planner", entryUrl("activity-planner"), "▤", currentId === "activity-planner"],
       ["XP calculator", entryUrl("experience"), "∑", currentId === "experience"],
       ["Activity comparison", "#/activity-comparison", "⇄", activityComparison],
       ["Gear comparison", "#/gear-comparison", "◇", gearComparison],
       ["Release notes", entryUrl("release-notes"), "◷", currentId === "release-notes"],
-      ["About and sources", entryUrl("about"), "ⓘ", currentId === "about"]
+      ["About and sources", entryUrl("about"), "ⓘ", currentId === "about"],
+      ["BETA-Activity Queue", entryUrl("activity-queue"), "☷", currentId === "activity-queue"]
     ]]
   ];
   nav.replaceChildren(...sections.map(([heading, links]) => element("div", {class:"nav-group"},
@@ -948,6 +953,11 @@ function renderEntry(entry, category) {
   if (entry.id === "bazaar") article.append(link("Search live Bazaar orders →", "#/bazaar", "button"),renderBazaarWalkthrough(element,"bazaar-article-visual"),element("h2",{},"More detail and common questions"));
   if (entry.calculator) article.append(calculator(), link("Open Activity Comparison", "#/activity-comparison", "button"));
   if (entry.id === "vendor") article.append(link("Browse shops and vendors", categoryUrl("shops"), "button"));
+  if (entry.id === "activity-queue" || entry.id === "activity-planner") {
+    const planner=(entry.id === "activity-queue" ? renderMembershipQueue : renderActivityPlanner)({e:element,byId,entryUrl});
+    article.append(planner.node);
+    disposeQueuePlanner=planner.dispose;
+  }
   if (!art && !entry.mapImage) article.append(...facts);
   const tutorialSprites = tutorialSpriteFoes(entry).flatMap(foe => foe.sprites.map(sprite => ({
     ...sprite, foeId:foe.id, label:sprite.label ? `${foe.title} · ${sprite.label}` : foe.title
@@ -1033,6 +1043,8 @@ function render({focus = false} = {}) {
   disposeWorldMap = null;
   disposeLeaderboards?.();
   disposeLeaderboards = null;
+  disposeQueuePlanner?.();
+  disposeQueuePlanner = null;
   renderDropResults = null;
   main.replaceChildren();
   menu.setAttribute("aria-expanded","false");

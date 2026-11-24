@@ -90,16 +90,33 @@ export const guides = [
   },
   {
     id: "activity-queue",
-    title: "Activity queue and fallback",
-    summary: "Set a training target, arrange queue steps, and plan for interruptions.",
+    title: "Activity Queue",
+    summary: "Beta: build an ordered sequence of activities, stopping conditions and custom equipment loadouts for Microscape’s membership queue.",
     sections: [
+      ["Membership activity queue", "Microscape’s Adventurer’s Guild membership includes an Activity Queue with up to 20 steps. Add activities with their own stopping conditions and saved-loadout changes in the order you want them to happen. The wiki builder is a setup reference: you enter the steps manually in the game."],
+      ["Example: shrimp → loadout → cows", "First, add Fishing / Shrimp and stop when your inventory reaches 100 Raw Shrimp. Next, configure a Melee loadout with the weapon, armor and other equipment you want to use. Finally, add Attack / Cow and stop after 20 kills. The loadout change is its own step between the two activities, and takes effect before the Cow activity starts."],
+      ["Choose each activity’s stopping condition", "An activity can stop after a number of actions or combat kills, at a skill level, or when an inventory item reaches or falls to a specified count. An activity set to run indefinitely holds the queue there until you intervene. Inventory targets refer to your inventory count, including items you already had."],
+      ["Configure a loadout", "Name the setup and choose equipment for each slot directly in the wiki. Item icons, page links and required levels help you check your choices. Empty slots mean unequip, rather than keep equipment from a previous step. A two-handed weapon and shield cannot be selected together. The wiki stores this configuration with the queue, but does not verify item ownership or your skill levels."],
+      ["Recreate the setup in-game", "Before starting the game’s queue, equip the items you chose and save that setup in one of your four Equipment loadout slots. Select that saved loadout for the corresponding in-game queue step. The wiki configuration is a manual reference and never changes your character."],
       ["Login and resource queues are different", "Queued for login appears before you connect. The game keeps your queue ticket and checks again at intervals supplied by the server. Once inside, a resource queue means all usable spots at an activity are occupied. The developer’s launch notes confirm that resource queues are intentional. These are separate from the member activity queue described below."],
-      ["Queue a target", "The Adventurer’s Guild activity queue can run steps toward a target such as reaching a specified level. Each step displays its skill. Move to Top and Move to Bottom help reorder a sequence when one step needs to finish first."],
       ["Check whether a queue is running", "Look for the running-queue indicator near the upper-right corner or review the queue summary in Activity & Loot. Start with a short queue so you can verify each step has the supplies and requirements it needs."],
       ["Set a fallback", "Select a fallback activity that can run with your available supplies. The September patch notes say one-off actions such as buying a map skip fallback and the first dungeon chamber supports it."]
     ],
-    related: ["energy", "dungeons", "experience"],
+    related: ["activity-planner", "energy", "dungeons", "experience"],
     sources: [["September 2, September 21 and September 30 patch notes", patches], ["Official membership terms", official + "terms-of-service/"]]
+  },
+  {
+    id: "activity-planner",
+    title: "Activity Planner",
+    summary: "Plan material chains and estimate XP and time across activities. Save or share a plan for manual use in-game.",
+    sections: [
+      ["Plan materials, XP and time", "Choose activities by skill or item, set a target for each step and enter your starting inventory. Materials produced earlier in the plan carry forward to later steps. The totals show the additional supplies needed and the guaranteed products left over."],
+      ["Optional player profile", "Look up a public player profile to fill current skill XP and base equipped gear, or enter these values manually. Inventory counts must be entered manually. The lookup username is excluded from saved and shared plans."],
+      ["Understand the estimates", "Skilling estimates use base action durations and preparation time, excluding travel, resource queues, Double Ups, abilities and potions. Combat uses the Activity Comparison model and displays its limitations. Indefinite or unsupported steps leave partial totals. Random drops are not treated as guaranteed materials."],
+      ["Build a membership queue", "Use the separate Activity Queue guide when you want an ordered sequence with saved-loadout changes between activities. This Activity Planner focuses on requirements and estimates; players enter all activities manually in-game."]
+    ],
+    related: ["activity-queue", "experience", "equipment-bonuses", "energy"],
+    sources: [["Current official activities and recipes", official + "play/"]]
   },
   {
     id: "audience-favor",

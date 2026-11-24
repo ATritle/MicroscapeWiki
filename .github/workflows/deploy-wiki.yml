@@ -27,6 +27,8 @@ jobs:
       - run: pnpm check:seo
       - run: node scripts/check-xp-player.mjs
       - run: node scripts/check-sprite-animations.mjs
+      - run: node scripts/check-queue-planner.mjs
+      - run: node scripts/check-membership-queue.mjs
       - run: node scripts/check-world-map.mjs
       - run: node scripts/check-loadout-comparison.mjs
       - run: node scripts/check-loadout-effects.mjs

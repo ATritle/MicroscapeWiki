@@ -302,6 +302,42 @@ and GPC produce no tag or events. `node scripts/check-analytics.mjs` verifies
 route counting, navigation, redaction and these guards. The About page discloses
 analytics. Removing the import/call in `docs/app.js` disables this integration.
 
+## Activity Planner and BETA-Activity Queue
+
+The Activity Planner guide (`/guides/activity-planner/`) contains the original
+browser-only material and XP/time planner for up to 20 steps.
+It selects activities by skill and item, supports action/kill, level, inventory
+and indefinite targets, and carries guaranteed materials and XP forward in order.
+Base skilling estimates exclude Double Ups, active abilities, potions, travel and
+resource waits. Combat reuses the existing comparison model and its XP-rate
+limitations. Unmodeled or indefinite steps produce partial totals rather than a
+false full-plan estimate.
+
+Working drafts and up to 30 named plans stay in local storage. Shared plans use
+validated, versioned data in a URL fragment, including starting XP, base gear and
+inventory counts; the lookup username is not copied. Players enter all steps
+manually in-game. The planner never connects to the game's signed-in socket or
+sends character-control commands. Its existing storage keys remain unchanged.
+
+The separate Activity Queue guide (`/guides/activity-queue/`) models the Guild
+membership queue: activity plus stopping condition, or a custom equipment
+loadout change, in sequence. Its initial example is 100 Raw Shrimp → a configured
+bronze Melee loadout → 20 Cow kills. Equipment is selected per slot with icons,
+requirements and item links. Empty slots mean unequip. Weapon/shield conflicts
+use the existing Gear Comparison rules. Configurations are included in saves
+and validated `#queue=` share links. Earlier saved-slot references remain visible
+with a prompt to configure them, since their gear was never known. The player
+recreates and saves each setup in-game before selecting it in the game's queue.
+Old `#plan=` links on this guide offer a link to Activity Planner instead.
+
+`node scripts/check-queue-planner.mjs` checks material chains, sequential targets,
+combat, invalid imports, sharing and the step limit. `node scripts/check-membership-queue.mjs`
+checks mixed activity/loadout steps, stopping rules, saved slots and share validation.
+Refresh the committed data
+with `node scripts/build-queue-catalog.mjs PATH_TO_EXTRACTED_GAME_DATA_JSON` after
+updating the main activity catalog. The Activity Queue is published as a beta,
+linked last in Resources as **BETA-Activity Queue**, and remains under refinement.
+
 ## Future additions
 
 - **Optional Twitch sign-in — deferred at the community owner's request (November 22, 2026).** Revisit alongside saved player usernames, saved gear/ability/potion loadouts, and Bazaar watchlists that sync between devices. Keep wiki browsing and the existing public lookup/comparison tools available without signing in. No login implementation or new access permissions are authorized by this backlog entry.
