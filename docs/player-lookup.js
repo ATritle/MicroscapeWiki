@@ -1,4 +1,5 @@
 import {communityApiBase} from "./api-config.js?v=community-api-20261119";
+import {readPlayerRanks} from "./leaderboards.js?v=rankings-20261124";
 import {readActivityCatalog, renderActivityComparison} from "./activity-comparison.js?v=vendors-20261120";
 import {attachHoverPreview,previewMotion,sampleMotion,weaponMotionType} from "./sprite-animation.js?v=sprites-20261121b";
 import {renderLoadoutComparison} from "./loadout-comparison.js?v=hypothetical-20261121";
@@ -142,7 +143,7 @@ async function paintPlayer(canvas, equipment, data) {
 
 export function renderPlayerLookup({main, element:e, crumbs, footer, byId, entryUrl, renderSpriteFrame, initialName = "", comparisonOnly = false, loadoutOnly = false}) {
   const trainingPreferences = {prepSeconds:6, includeZero:false};
-  let controller, disposed = false, requestNumber = 0, currentName = "", lastSnapshot;
+  let controller, rankController, disposed = false, requestNumber = 0, currentName = "", lastSnapshot;
   let stopPlayerPreview;
   let disposeLoadout;
   let suggestionController, suggestionTimer, suggestionNumber = 0;
@@ -230,6 +231,7 @@ export function renderPlayerLookup({main, element:e, crumbs, footer, byId, entry
       : e("span", {class:className, "aria-hidden":"true"}, "◇");
   }
   function result(snapshot, data, catalog,loadoutData) {
+    rankController?.abort();
     stopPlayerPreview?.();stopPlayerPreview=null;
     disposeLoadout?.();disposeLoadout=null;
     const {player} = snapshot, stats = playerStats(player.exp);
@@ -248,6 +250,7 @@ export function renderPlayerLookup({main, element:e, crumbs, footer, byId, entry
     if (pet?.sprite) artStage.firstChild.append(e("span", {class:"player-pet", role:"img", "aria-label":pet.name}, renderSpriteFrame(pet.sprite)));
     const metric = (label, value) => e("div", {}, e("dt", {}, label), e("dd", {}, value));
     const health = liveStatusAvailable && player.hp !== null && player.maxHp > 0 ? Math.max(0, Math.min(100, player.hp / player.maxHp * 100)) : null;
+    const overallRank = e("a", {class:"player-overall-rank",href:"/leaderboards/?"+new URLSearchParams({player:player.id}),"aria-live":"polite",title:"Official global ranking by total skill levels"}, "Checking…");
     const hero = e("section", {class:"player-profile-hero", "aria-label":player.name + " profile"},
       artStage, e("div", {class:"player-profile-identity"},
         e("p", {class:"player-eyebrow"}, "ADVENTURER PROFILE"),
@@ -255,7 +258,7 @@ export function renderPlayerLookup({main, element:e, crumbs, footer, byId, entry
           ...(player.isMember ? [e("span", {class:"player-member-badge"}, "❖ Member")] : [])),
         e("dl", {class:"player-headline-stats"},
           metric("Combat level", String(stats.combatLevel)), metric("Total level", format.format(stats.totalLevel)),
-          metric("Total XP", format.format(stats.totalXp))),
+          metric("Total XP", format.format(stats.totalXp)), ...(!planning ? [metric("Overall rank", overallRank)] : [])),
         e("div", {class:"player-health"},
           e("div", {}, e("span", {}, "Hitpoints"), e("strong", {}, health === null ? "Not publicly available" : player.hp + " / " + player.maxHp)),
           ...(health === null ? [] : [e("span", {class:"player-health-track", role:"meter",
@@ -339,6 +342,14 @@ export function renderPlayerLookup({main, element:e, crumbs, footer, byId, entry
     results.replaceChildren(hero, training, ...(comparisonOnly ? [] : [where, e("div", {class:"player-detail-columns"}, skills, gear)]),
       ...(!comparisonOnly && Object.keys(bonuses).length ? [bonusPanel] : []), stamp,
       e("p", {class:"player-public-note"}, "Skills and equipment come from the public game profile. Live location, activity and hitpoints cannot be verified from this profile and are not shown."));
+    if (!planning) {
+      const request=new AbortController();rankController=request;
+      readPlayerRanks(player.id,request.signal).then(data=>{
+        if(disposed||rankController!==request||!overallRank.isConnected)return;
+        overallRank.textContent=data.ranks.all==null?"Not listed":"#"+format.format(data.ranks.all);
+        overallRank.title=data.ranks.all==null?"The game did not return an overall rank for this player.":"Official global ranking by total skill levels · Checked "+new Date(data.checkedAt).toLocaleTimeString([],{hour:"numeric",minute:"2-digit"});
+      }).catch(error=>{if(!disposed&&rankController===request&&error.name!=="AbortError"){overallRank.textContent="Unavailable";overallRank.title="Rankings could not be loaded. The public profile is still available.";}});
+    }
     skills.querySelector(".player-skills-grid").scrollTop = skillScrollTop;
     paintPlayer(canvas, player.equipment, data).then(({complete,dispose}) => {
       if(disposed||!canvas.isConnected){dispose();return;}
@@ -356,6 +367,7 @@ export function renderPlayerLookup({main, element:e, crumbs, footer, byId, entry
       return;
     }
     controller?.abort();
+    rankController?.abort();
     controller = new AbortController();
     const request = ++requestNumber;
     currentName = username;
@@ -423,6 +435,7 @@ export function renderPlayerLookup({main, element:e, crumbs, footer, byId, entry
     disposeLoadout?.();
     clearSuggestions();
     controller?.abort();
+    rankController?.abort();
     clearInterval(timer);
     document.removeEventListener("visibilitychange", resume);
   };

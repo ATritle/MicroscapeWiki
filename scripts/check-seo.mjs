@@ -51,6 +51,8 @@ assert.equal(publicUrl("#/browse/reference",byId),"/game-mechanics/");
 assert.equal(publicUrl("#/activity-comparison?name=User12345",byId),"/activity-comparison/?name=User12345");
 assert.equal(legacyRoute(new URL("https://microscapewiki.com/gear-comparison/"),byId,groups),"/gear-comparison");
 assert(paths.has("/gear-comparison/"));
+assert(paths.has("/leaderboards/"));
+assert.equal(legacyRoute(new URL("https://microscapewiki.com/leaderboards/?community=195104909&skill=fishing"),byId,groups),"/leaderboards?community=195104909&skill=fishing");
 assert.equal(legacyRoute(new URL("https://microscapewiki.com/#/entry/rubber-boots"),byId,groups),"/entry/rubber-boots");
 const sitemap = await fs.readFile(path.join(root,"sitemap.xml"),"utf8");
 assert.equal((sitemap.match(/<loc>/g)||[]).length,manifest.filter(page=>page.indexable).length);

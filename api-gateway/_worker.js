@@ -1,7 +1,9 @@
 // Neutral public gateway. The service binding keeps the relay's hostname and
 // Twitch credentials on Cloudflare; this project contains neither.
 import {marketHistoryResponse,HistoryError} from "./market-history.js";
-const paths = new Set(["/drops.json", "/drops-backup.json", "/mzdunk.json", "/player.json", "/player-search.json", "/bazaar.json", "/bazaar-history.json"]);
+import {rankingsResponse,RankingsError} from "./leaderboards.js";
+const rankingPaths = new Set(["/communities.json","/leaderboard.json","/player-ranks.json"]);
+const paths = new Set(["/drops.json", "/drops-backup.json", "/mzdunk.json", "/player.json", "/player-search.json", "/bazaar.json", "/bazaar-history.json", ...rankingPaths]);
 const origins = new Set(["https://microscapewiki.com", "https://www.microscapewiki.com"]);
 const itemIdPattern = /^[a-zA-Z0-9_-]{1,80}$/;
 const positive = value => Number.isSafeInteger(value) && value > 0;
@@ -82,8 +84,8 @@ export default {
     const origin = request.headers.get("Origin");
     if (origin && !origins.has(origin)) return new Response("Origin not allowed", {status:403});
     try {
-      if (["/bazaar.json","/bazaar-history.json"].includes(url.pathname)) {
-        const response = await (url.pathname==="/bazaar.json"?bazaarResponse(url, context):marketHistoryResponse(url,context,env));
+      if (["/bazaar.json","/bazaar-history.json"].includes(url.pathname)||rankingPaths.has(url.pathname)) {
+        const response = await (rankingPaths.has(url.pathname)?rankingsResponse(url,context):url.pathname==="/bazaar.json"?bazaarResponse(url, context):marketHistoryResponse(url,context,env));
         const result = new Response(response.body, response);
         result.headers.set("Access-Control-Allow-Origin", origin || "https://microscapewiki.com");
         result.headers.append("Vary", "Origin");
@@ -92,8 +94,8 @@ export default {
       if (!env.LIVE_DROPS?.fetch) throw Error("Relay not bound");
       return await env.LIVE_DROPS.fetch(request);
     } catch (error) {
-      return Response.json({error:error instanceof BazaarError||error instanceof HistoryError ? error.message : "The wiki API is temporarily unavailable. Please try again."}, {
-        status:error instanceof BazaarError||error instanceof HistoryError ? error.status : 503, headers:{"Cache-Control":"no-store", "Access-Control-Allow-Origin":origin || "https://microscapewiki.com", Vary:"Origin"}
+      return Response.json({error:error instanceof BazaarError||error instanceof HistoryError||error instanceof RankingsError ? error.message : "The wiki API is temporarily unavailable. Please try again."}, {
+        status:error instanceof BazaarError||error instanceof HistoryError||error instanceof RankingsError ? error.status : 503, headers:{"Cache-Control":"no-store", "Access-Control-Allow-Origin":origin || "https://microscapewiki.com", Vary:"Origin"}
       });
     }
   }

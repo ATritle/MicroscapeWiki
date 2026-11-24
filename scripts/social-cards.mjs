@@ -21,7 +21,7 @@ export async function createSocialCards({output,manifest,byId,groups}) {
       const category=entry?(groups[entry.category]?.title||"Guide"):parts[0]?.replaceAll("-"," ")||"Community Wiki";
       const image=entry&&artwork.artworks[artwork.entries[entry.id]];
       const titleLines=wrap(title,image?24:36,3);
-      const detail=entry?.summary||({"gear-comparison":"Compare current gear with a test loadout. Preview equipment, check requirements and estimate combat performance.","player-lookup":"Find a player’s public skill levels, XP and equipped gear.",locations:"Explore the interactive world map. Search items and activities, zoom, pan and open location guides."}[parts[0]]||"Explore Microscape guides, game data and community tools.");
+      const detail=entry?.summary||({"gear-comparison":"Compare current gear with a test loadout. Preview equipment, check requirements and estimate combat performance.","player-lookup":"Find a player’s public skill levels, XP and equipped gear.",leaderboards:"Official overall and skill rankings, globally or within any listed Microscape Twitch community.",locations:"Explore the interactive world map. Search items and activities, zoom, pan and open location guides."}[parts[0]]||"Explore Microscape guides, game data and community tools.");
       const details=wrap(detail,image?51:74,titleLines.length>=3?2:3);
       const facts=(entry?.facts||[]).filter(([label])=>!["In-game name","Continent","Region"].includes(label)).slice(0,2).map(([a,b])=>a+": "+b);
       const y=190+titleLines.length*66;

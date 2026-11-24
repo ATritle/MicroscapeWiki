@@ -252,6 +252,33 @@ arithmetic consistent with those static images; market prices and times change.
 
 Run `./scripts/register-drops-backup.ps1` in PowerShell 7 to register the optional **Microscape Wiki Live Drops Backup** task. Pass `-Replace` to update the existing task. It runs every 15 minutes while its user is signed in and the PC is awake, and publishes to `live-data` using the existing GitHub sign-in when the snapshot is at least 10 minutes old. Check `last-run.log` in the task’s state directory for the latest result. To stop the backup, disable the named task in Task Scheduler.
 
+## Leaderboards and player ranks
+
+`/leaderboards/` appears under Explore. `docs/leaderboards.js` provides a
+searchable selector for the game's full Twitch community directory, global or
+community scope, total-level ranking, and all 16 skills in game order. Each
+player links to Player Lookup. The profile adds an independent Overall rank
+request; ranking errors do not hide the profile, equipment or skills. Its rank
+link opens the leaderboard with that player selected and highlighted.
+
+The neutral API gateway reads the official public `communities`, `leaderboard`
+and `user-ranks` procedures through `api-gateway/leaderboards.js`. Public routes
+are `/communities.json`, `/leaderboard.json?community=all&skill=all`, and
+`/player-ranks.json?id=TWITCH_ID`. An optional `player=TWITCH_ID` on the board
+asks the game to include that player's row. The game requires a user context;
+the anonymous board uses the verified neutral value `0`, never an owner's ID.
+The game normally returns the leading 200 rows, adding the selected player
+when available; rank gaps and missing player ranks are preserved. Overall is
+the game's total-skill-level ranking, not a locally calculated XP ordering.
+
+Community lists cache for five minutes; boards and ranks cache for one minute.
+Filters and player context use separate cache keys. Queries are allowlisted,
+public fields are normalized, and failures are not cached as empty data. No
+cookies, credentials, sockets or character actions are used. The page polls
+every minute while visible and cancels pending work when navigating away.
+`node scripts/check-leaderboards.mjs` verifies these rules. The local preview
+serves these same endpoints using only public game reads.
+
 ## Site analytics
 
 `docs/analytics.js` connects the separate Microscape Wiki GA4 property using the

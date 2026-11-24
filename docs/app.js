@@ -1,13 +1,14 @@
 import {communityApiBase} from "./api-config.js?v=community-api-20261119";
 import {trackPageView} from "./analytics.js?v=ga4-20261123";
+import {renderLeaderboards} from "./leaderboards.js?v=rankings-20261124";
 import { guides } from "./guides.js?v=ga4-20261123";
 import {renderBazaar} from "./bazaar.js?v=market-sorting-20261122";
 import {renderBazaarWalkthrough} from "./bazaar-walkthrough.js?v=bazaar-visual-20261120";
 import { tutorials } from "./tutorials.js?v=release-20261119";
 import { buildPetEntries } from "./pets.js?v=release-20261119";
 import { itemIcons, itemIconGroups } from "./item-icons.js?v=release-20261119";
-import { renderPlayerLookup } from "./player-lookup.js?v=hypothetical-20261121";
-import {publicUrl, legacyRoute, pageMetadata, updateMetadata} from "./seo.js?v=effects-20261121";
+import { renderPlayerLookup } from "./player-lookup.js?v=rankings-20261124";
+import {publicUrl, legacyRoute, pageMetadata, updateMetadata} from "./seo.js?v=rankings-20261124";
 import {lookupXpPlayer, lookupXpSuggestions, xpPlayerProgress, xpSkills} from "./xp-player.js?v=hypothetical-20261121";
 import {spriteMotion,prepareSpriteFrame,stopSpritePreviews} from "./sprite-animation.js?v=sprites-20261121b";
 import {renderWorldMap} from "./world-map.js?v=map-food-search-20261121";
@@ -62,6 +63,7 @@ let disposePlayerLookup;
 let disposeBazaar;
 let disposeCalculator;
 let disposeWorldMap;
+let disposeLeaderboards;
 
 const entries = [...guides, ...tutorials];
 const byId = new Map(entries.map(entry => [entry.id, entry]));
@@ -148,12 +150,13 @@ function liveDropBadge() {
   );
 }
 
-function renderNav(category, currentId, home, liveDrops, playerLookup, activityComparison = false,gearComparison = false) {
+function renderNav(category, currentId, home, liveDrops, playerLookup, activityComparison = false,gearComparison = false,leaderboards = false) {
   const sections = [
     ["Explore", [
       ["Overview", "#/", "⌂", home],
       ["Live drops", liveDropsUrl, "◉", liveDrops],
       ["Player lookup", playerLookupUrl, "⌕", playerLookup],
+      ["Leaderboards", "#/leaderboards", "♜", leaderboards],
       ["Getting started", entryUrl("getting-started"), "↳", currentId === "getting-started"],
       ["All guides", categoryUrl("guides"), "▤", category === "guides" && !currentId],
       ["Tutorials", categoryUrl("tutorials"), groups.tutorials.icon, category === "tutorials"]
@@ -1019,6 +1022,7 @@ function render({focus = false} = {}) {
   const activityComparison = view === "activity-comparison";
   const gearComparison = view === "gear-comparison";
   const bazaar = view === "bazaar" || (view === "browse" && id === "bazaar");
+  const leaderboards = view === "leaderboards";
   disposePlayerLookup?.();
   disposePlayerLookup = null;
   disposeBazaar?.();
@@ -1027,16 +1031,19 @@ function render({focus = false} = {}) {
   disposeCalculator = null;
   disposeWorldMap?.();
   disposeWorldMap = null;
+  disposeLeaderboards?.();
+  disposeLeaderboards = null;
   renderDropResults = null;
   main.replaceChildren();
   menu.setAttribute("aria-expanded","false");
   const currentCategory = bazaar || entry?.id === "bazaar" ? "bazaar" : entry?.id === "pets" ? "pets" : entry?.category || category;
-  renderNav(currentCategory, entry?.id, home, liveDrops, playerLookup, activityComparison,gearComparison);
+  renderNav(currentCategory, entry?.id, home, liveDrops, playerLookup, activityComparison,gearComparison,leaderboards);
   searchInput.value = view === "search" ? query : "";
   const metadata = pageMetadata(route, byId, groups);
   updateMetadata(document, metadata);
   if (home) renderHome();
   else if (liveDrops) renderLiveDrops();
+  else if (leaderboards) disposeLeaderboards = renderLeaderboards({main,element,crumbs,footer,initialParams:params});
   else if (bazaar) disposeBazaar = renderBazaar({main, element, crumbs, footer, byId, guide:byId.get("bazaar"), entryLink,
     initialItem:new URLSearchParams(params).get("item") || ""});
   else if (playerLookup || activityComparison || gearComparison) disposePlayerLookup = renderPlayerLookup({

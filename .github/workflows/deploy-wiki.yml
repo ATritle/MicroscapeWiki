@@ -2,7 +2,7 @@ name: Build and deploy searchable wiki
 on:
   push:
     branches: [main]
-    paths: ['docs/**', 'api-gateway/**', 'workers/market-history*', 'scripts/build-seo.mjs', 'scripts/social-cards.mjs', 'scripts/check-seo.mjs', 'scripts/check-xp-player.mjs', 'scripts/check-sprite-animations.mjs', 'scripts/check-world-map.mjs', 'scripts/check-loadout-comparison.mjs', 'scripts/check-loadout-effects.mjs', 'scripts/check-market-trends.mjs', 'scripts/check-own-market-history.mjs', 'scripts/check-bazaar.mjs', 'package.json', 'pnpm-lock.yaml', 'pnpm-workspace.yaml', '.github/workflows/deploy-wiki.yml']
+    paths: ['docs/**', 'api-gateway/**', 'workers/market-history*', 'scripts/build-seo.mjs', 'scripts/social-cards.mjs', 'scripts/check-seo.mjs', 'scripts/check-xp-player.mjs', 'scripts/check-sprite-animations.mjs', 'scripts/check-world-map.mjs', 'scripts/check-loadout-comparison.mjs', 'scripts/check-loadout-effects.mjs', 'scripts/check-market-trends.mjs', 'scripts/check-own-market-history.mjs', 'scripts/check-bazaar.mjs', 'scripts/check-leaderboards.mjs', 'package.json', 'pnpm-lock.yaml', 'pnpm-workspace.yaml', '.github/workflows/deploy-wiki.yml']
   workflow_dispatch:
 permissions:
   contents: read
@@ -31,6 +31,7 @@ jobs:
       - run: node scripts/check-loadout-comparison.mjs
       - run: node scripts/check-loadout-effects.mjs
       - run: node scripts/check-bazaar.mjs
+      - run: node scripts/check-leaderboards.mjs
       - run: node scripts/check-market-trends.mjs
       - run: node scripts/check-own-market-history.mjs
       - uses: actions/configure-pages@v5

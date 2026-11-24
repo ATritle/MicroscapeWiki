@@ -36,7 +36,7 @@ globalThis.fetch = async input => {
 };
 const {render,byId,groups} = await import(pathToFileURL(path.join(docs,"app.js")).href);
 const routes = new Set(["/", ...Object.keys(groups).map(category=>"/"+categoryPath(category)+"/"),
-  ...[...byId.values()].map(entryPath), "/live-drops/","/player-lookup/","/activity-comparison/","/gear-comparison/","/bazaar/","/search/"]);
+  ...[...byId.values()].map(entryPath), "/live-drops/","/player-lookup/","/activity-comparison/","/gear-comparison/","/bazaar/","/leaderboards/","/search/"]);
 const manifest = [];
 for (const route of routes) {
   if (!/^\/(?:[a-zA-Z0-9%-]+\/)*$/.test(route)) throw Error("Unsafe route " + route);

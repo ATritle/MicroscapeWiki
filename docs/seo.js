@@ -28,7 +28,7 @@ export function legacyRoute(location, byId, groups) {
   const category = Object.keys(groups).find(id => categoryPath(id) === parts[0]);
   if (category && parts.length === 2 && byId.get(parts[1])?.category === category) return "/entry/" + parts[1] + location.search;
   if (category && parts.length === 1) return "/browse/" + category + location.search;
-  if (parts.length === 1 && ["live-drops","player-lookup","activity-comparison","gear-comparison","bazaar","search"].includes(parts[0])) return "/" + parts[0] + location.search;
+  if (parts.length === 1 && ["live-drops","player-lookup","activity-comparison","gear-comparison","bazaar","leaderboards","search"].includes(parts[0])) return "/" + parts[0] + location.search;
   return "/not-found";
 }
 export function pageMetadata(route, byId, groups) {
@@ -39,6 +39,7 @@ export function pageMetadata(route, byId, groups) {
   const tools = {
     "live-drops":["Live Twitch Drops", "Find active Microscape Audience Favor festivals, Dungeon Key drops and Twitch channels offering 1.3× Energy."],
     "player-lookup":["Player Lookup", "Look up a Microscape player’s public skills, stats and equipped gear."],
+    leaderboards:["Leaderboards", "Browse official Microscape player rankings by total level or any skill, globally or within a Twitch community."],
     "activity-comparison":["Activity Comparison", "Compare Microscape training activities using your player’s levels and gear, with estimated XP per hour, hit chances and requirements."],
     "gear-comparison":["Gear and Loadout Comparison", "Compare a Microscape player’s equipment, abilities and potions. Preview gear, check requirements and estimate stats and combat XP per hour."],
     bazaar:["Live Bazaar", "Search Microscape Bazaar buy and sell orders, prices and trading guides."],
