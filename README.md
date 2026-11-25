@@ -77,6 +77,15 @@ GitHub Pages uses **GitHub Actions** as its source. The `Build and deploy search
 
 ## Search indexing and rollback
 
+Activity Comparison shows **Estimated damage taken/hour** for combat choices.
+It estimates basic melee HP loss before healing from enemy hit chance, average
+damage roll and attack speed (two-second ticks), weighted by the modeled fraction
+of each fight/preparation cycle spent fighting. Between-fight delays are assumed
+damage-free; exact first-hit timing, defensive abilities, spells, dragon breath,
+poison, healing and survival downtime are excluded. Unsupported encounters show
+Not modeled. Run `node scripts/check-activity-comparison.mjs` for the rate,
+defense, timing, safe-spot and zero-damage cases.
+
 The Gear and Loadout Comparison at `/gear-comparison/` reuses Player Lookup's
 username suggestions and read-only profile endpoint. A loaded profile also links
 to it through **Compare loadouts**. The baseline remains immutable; only a local

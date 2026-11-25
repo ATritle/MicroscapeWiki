@@ -1,6 +1,6 @@
 import {communityApiBase} from "./api-config.js?v=community-api-20261119";
 import {readPlayerRanks} from "./leaderboards.js?v=ranked-communities-20261124";
-import {readActivityCatalog, renderActivityComparison} from "./activity-comparison.js?v=equipment-20261124";
+import {readActivityCatalog, renderActivityComparison} from "./activity-comparison.js?v=damage-taken-20261125";
 import {attachHoverPreview,previewMotion,sampleMotion,weaponMotionType} from "./sprite-animation.js?v=equipment-20261124";
 import {renderLoadoutComparison} from "./loadout-comparison.js?v=hypothetical-20261121";
 const apiUrl = ["localhost", "127.0.0.1"].includes(window.location.hostname)

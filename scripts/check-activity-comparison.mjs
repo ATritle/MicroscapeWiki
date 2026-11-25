@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import fs from "node:fs/promises";
-import {activitiesForSkill, validateActivityPair, compareSkilling, rankActivityRates} from "../docs/activity-comparison.js";
+import {activitiesForSkill, validateActivityPair, compareSkilling, rankActivityRates, estimateDamageTakenPerHour} from "../docs/activity-comparison.js";
 import {compareCombat, combatHitChance} from "../docs/combat-comparison.js";
 const catalog = JSON.parse(await fs.readFile(new URL("../docs/activity-catalog.json", import.meta.url), "utf8"));
 const near = (a, b) => assert(Math.abs(a - b) < 1e-8, `${a} != ${b}`);
@@ -52,4 +52,26 @@ assert.throws(() => compareCombat({}, {}, foes, {skill:"evilMagic"}), /Choose a 
 assert.throws(() => compareCombat({}, {}, foes, {attackSeconds:0}), /attack interval/);
 near(combatHitChance(1, 0, 50, "magic"), .54);
 assert(catalog.foes.gurgle.special && catalog.foes["king-onyx-dragon"].special && catalog.foes.morvane.special);
+// Known basic damage rolls and 2/3 combat uptime: 1.5 average hit × .75 chance
+// × 600 enemy attacks/hour × 2/3 = 450 HP/hour, before any healing.
+const incoming={enemyMaxHit:2,dodgeChance:.25,speed:3,swings:2,attackSeconds:6,cycleSeconds:18};
+near(estimateDamageTakenPerHour(incoming),450);
+near(estimateDamageTakenPerHour(incoming,{includeZero:true}),300);
+near(estimateDamageTakenPerHour({...incoming,cycleSeconds:12}),675);
+near(estimateDamageTakenPerHour({...incoming,swings:1,cycleSeconds:12}),337.5);
+near(estimateDamageTakenPerHour({...incoming,speed:6}),225);
+assert.equal(estimateDamageTakenPerHour({...incoming,enemyMaxHit:0}),0);
+assert.equal(estimateDamageTakenPerHour({...incoming,dodgeChance:1}),0);
+assert.equal(estimateDamageTakenPerHour({...incoming,safeSpot:true}),0);
+assert.equal(estimateDamageTakenPerHour({...incoming,special:true}),null);
+assert.equal(estimateDamageTakenPerHour({...incoming,speed:undefined}),null);
+assert.equal(estimateDamageTakenPerHour({...incoming,cycleSeconds:NaN}),null);
+near(estimateDamageTakenPerHour({...incoming,swings:Infinity,cycleSeconds:Infinity}),675);
+const incomingRows=compareCombat({attack:10,strength:6,defense:1},{},foes);
+assert.equal(estimateDamageTakenPerHour(incomingRows[0]),0,'Mouse strength yields no basic melee damage');
+assert(estimateDamageTakenPerHour(incomingRows[1])>0);
+const armored=compareCombat({attack:10,strength:6,defense:1},{defense:20},foes);
+assert(estimateDamageTakenPerHour(armored[1])<estimateDamageTakenPerHour(incomingRows[1]),'Defense gear must reduce the incoming estimate through dodge');
+assert(!Object.hasOwn(incomingRows[1],'incomingDamagePerHour'),'The estimate must not mutate the combat model or XP ranking');
+console.log("Passed: incoming melee damage, enemy speed, defense bonuses, fight/preparation uptime, zero rolls, zero-damage enemies, safe spots and unavailable encounters.");
 console.log("Passed: same-skill pairing, unique definitions across 16 skills, automatic combat XP, above-level planning results, trained-level gates, double-up timing, ranged/magic formulas, missing spell handling, and special-encounter exclusions.");

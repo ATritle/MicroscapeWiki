@@ -44,6 +44,22 @@ export function rankActivityRates(rows) {
     lead:other.xpPerHour > 0 ? (best.xpPerHour / other.xpPerHour - 1) * 100 : null};
 }
 
+// Continuous melee attack-rate estimate, averaged over the same fight/preparation
+// cycle as XP/hour. Exact first-swing timing and special attacks are not modeled.
+export function estimateDamageTakenPerHour(row, {includeZero=false}={}) {
+  if(row.special)return null;
+  if(row.safeSpot)return 0;
+  if(!Number.isFinite(row.enemyMaxHit)||row.enemyMaxHit<0||!Number.isFinite(row.dodgeChance)||row.dodgeChance<0||row.dodgeChance>1)return null;
+  if(row.enemyMaxHit===0||row.dodgeChance===1)return 0;
+  if(!Number.isFinite(row.speed)||row.speed<=0)return null;
+  const fightSeconds=row.swings*row.attackSeconds;
+  const combatShare=fightSeconds===Infinity&&row.cycleSeconds===Infinity?1:
+    Number.isFinite(fightSeconds)&&fightSeconds>=0&&Number.isFinite(row.cycleSeconds)&&row.cycleSeconds>0?Math.min(1,fightSeconds/row.cycleSeconds):null;
+  if(combatShare===null)return null;
+  const averageHit=includeZero?row.enemyMaxHit/2:(row.enemyMaxHit+1)/2;
+  return averageHit*(1-row.dodgeChance)*3600/(Math.max(1,row.speed)*2)*combatShare;
+}
+
 export function renderActivityComparison({e, player, levels, catalog, byId, entryUrl, renderSpriteFrame, preferences}) {
   const loadoutKey = player.name.toLowerCase() + ":" + (player.equipment.weapon || "unarmed");
   if (preferences.loadoutKey !== loadoutKey) delete preferences.attackSeconds;
@@ -193,7 +209,7 @@ export function renderActivityComparison({e, player, levels, catalog, byId, entr
           const reason = foes[i].special ? "Boss, scaling or persistent encounter: a basic solo rate is unavailable."
             : foes[i].safeSpot && !["ranged", "evilMagic"].includes(skill.id) ? "This safe spot needs Ranged or Evil Magic."
             : wrongWeapon ? skill.id === "ranged" ? "This player has no bow equipped for Ranged training." : "This player has a bow equipped; choose Ranged or use melee equipment." : null;
-          return {...row, name:activities[i].name, unsupported:!!reason, unsupportedReason:reason,
+          return {...row, incomingDamagePerHour:reason?null:estimateDamageTakenPerHour(row,config), name:activities[i].name, unsupported:!!reason, unsupportedReason:reason,
             levelMet:!spell || (levels.evilMagic || 1) >= spell.level,
             lockReason:spell && (levels.evilMagic || 1) < spell.level ? spell.name + " requires Evil Magic " + spell.level + "; the player is level " + (levels.evilMagic || 1) + ". Rates are theoretical." : null};
         });
@@ -202,6 +218,7 @@ export function renderActivityComparison({e, player, levels, catalog, byId, entr
           + " · " + fmt(rows[0].attackSeconds) + "s attacks · Assumed " + fmt(config.prepSeconds) + "s between fights · Gear: " + (weapon?.name || "Unarmed");
         assumptions.replaceChildren(e("summary", {}, "How this estimate works"), e("ul", {},
           e("li", {}, "Hit chance and maximum hits use public client formulas. Dodge is the client’s melee defense check; it does not describe every enemy spell or special attack. Enemy maximum hits below are melee hits."),
+          e("li", {}, "Damage taken/hour estimates basic melee damage before healing: enemy hit chance × average successful hit × attacks per hour × time spent fighting. Enemy speed is converted from two-second ticks. The selected uniform damage range applies to this estimate too. Time between fights is assumed damage-free; exact first-swing timing, spells, dragon breath, poison and other special damage are excluded. Defense gear affects dodge, but defensive abilities, potions, regeneration, eating and death downtime are not included."),
           e("li", {}, "Automatic base XP is modeled as 4 XP per damage. One-damage melee hits awarding 4 Attack XP were directly observed on November 20, 2026. The same baseline is assumed for Strength, Defense, Ranged and Evil Magic; those conversions have not been independently measured. Learned XP bonuses and spell-specific extra XP are excluded."),
           e("li", {}, "The model uses independent uniform damage rolls, one full attack interval per swing including the first, and the entered delay between full-health enemies. Misses deal zero; overkill earns no extra XP in this model. These server rules need an in-game check."),
           e("li", {}, "Only reported base levels and item bonuses are included. Learned abilities, potions, pets’ abilities, spell modifiers, prayers, extra attacks, eating, deaths, travel and banking are excluded. Ranged and magic require ammunition or runes that cannot be checked from a public profile."),
@@ -226,7 +243,9 @@ export function renderActivityComparison({e, player, levels, catalog, byId, entr
             metric("Your maximum hit", fmt(row.maxHit)), metric("Enemy max melee hit", fmt(row.enemyMaxHit)),
             metric("Estimated kill cycle", row.unsupported ? "Not modeled" : fmt(row.cycleSeconds) + "s"),
             metric("Estimated damage/hour", row.unsupported ? "Not modeled" : fmt(row.damagePerHour)),
+            metric("Estimated damage taken/hour", row.unsupported || !Number.isFinite(row.incomingDamagePerHour) ? "Not modeled" : fmt(row.incomingDamagePerHour) + " HP"),
             metric(row.levelMet === false ? "Theoretical XP/hour" : "Estimated XP/hour", row.unsupported ? "Not modeled" : fmt(row.xpPerHour))));
+          card.append(e("p", {class:"comparison-location"}, "Basic melee damage before healing; excludes spells, dragon breath and other special attacks."));
           if (row.unsupported) card.append(e("p", {class:"comparison-warning"}, row.unsupportedReason));
           if (row.lockReason) card.append(e("p", {class:"comparison-warning"}, row.lockReason));
         } else {
