@@ -597,6 +597,11 @@ a.player-gear-slot:hover { border-color: #568d76; background: #192e38; }
 .training-foe-heading > div > a { display: block; font-size: 20px; font-weight: 700; }
 .training-foe-heading > div > span { color: var(--muted); font-size: 14px; }
 .training-foe-card dl { margin: 0; }
+.activity-effects { margin: 18px 0; padding: 14px; border: 1px solid #3f6354; border-radius: 9px; background: #11251f; }
+.activity-effects > summary { color: var(--mint); font-weight: 700; }
+.activity-effects select { max-width: 100%; min-height: 40px; padding: 8px; border: 1px solid var(--line); border-radius: 7px; background: var(--bg); color: var(--text); font: inherit; }
+.comparison-effects-applied { font-size: 13px; color: var(--mint); line-height: 1.5; }
+.comparison-effect-notes { font-size: 13px; color: var(--muted); margin: 12px 0; }
 .queue-planner { margin: 28px 0 42px; padding: 22px; background: #101c2a; border: 1px solid #304958; border-radius: 14px; }
 .queue-planner [hidden] { display: none !important; }
 .queue-planner h2, .queue-planner h3, .queue-planner h4, .queue-planner p { margin-top: 0; }

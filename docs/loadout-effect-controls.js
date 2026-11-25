@@ -1,10 +1,10 @@
-import {abilityPower,potionBoost,temporaryBuffs,effectSupport} from "./loadout-effects.js?v=effects-20261121";
+import {abilityPower,potionBoost,temporaryBuffs,effectSupport} from "./loadout-effects.js?v=activity-effects-20261125";
 
-export function createEffectControls({e,key,getEquipment,levels,reference,catalog,link,onChange}){
-  const title=key==="current"?"Current":"Test",learned=new Set(),config=new Map(),overrides={};let spell=null;
+export function createEffectControls({e,key,getEquipment,levels,reference,catalog,link,onChange,title:heading,defaultPotionsActive=true}){
+  const title=heading||(key==="current"?"Current":"Test"),learned=new Set(),config=new Map(),overrides={};let spell=null;
   const label=id=>catalog.skills.find(s=>s.id===id)?.name||id;
   const root=e("div",{class:"loadout-effect-controls"}),abilityRows=e("div",{class:"loadout-effect-abilities"}),potionRows=e("div",{class:"loadout-effect-potions"});
-  const activePotions=e("input",{type:"checkbox",id:key+"-potions-active"});activePotions.checked=true;
+  const activePotions=e("input",{type:"checkbox",id:key+"-potions-active"});activePotions.checked=defaultPotionsActive;
   const potionsLabel=e("label",{class:"loadout-checkbox",for:key+"-potions-active"},activePotions,"Assume equipped potions stay active");
   const learnedSelect=e("select",{id:key+"-learned-ability"},e("option",{value:""},"Choose a learned ability…"),...reference.abilities.filter(a=>a.category!=="evilMagic").sort((a,b)=>a.name.localeCompare(b.name)).map(a=>e("option",{value:a.id},a.name)));
   const add=e("button",{type:"button",class:"button"},"Add learned ability");
@@ -48,7 +48,7 @@ export function createEffectControls({e,key,getEquipment,levels,reference,catalo
         e("small",{},isLearned?"Learned / slotted · verify your unlocked slots":catalog.items[a.onItem]?.name||a.onItem),power,
         e("p",{},a.summary),e("small",{class:"loadout-effect-support"},effectSupport(a)));
       if(a.type==="scaling"&&!isLearned){
-        const level=e("input",{type:"number",id:key+"-level-"+a.id,min:"1",max:String(a.permanentUnlockLevel),step:"any",value:String(state.level)});
+        const level=e("input",{type:"number",id:key+"-level-"+a.id,"aria-label":a.name+" ability level",min:"1",max:String(a.permanentUnlockLevel),step:"any",value:String(state.level)});
         level.addEventListener("input",()=>{state.level=level.value.trim()===""?NaN:Number(level.value);updatePower();onChange();});
         row.append(e("label",{for:key+"-level-"+a.id},"Ability level (1–"+a.permanentUnlockLevel+")",level));
       }
@@ -72,5 +72,5 @@ export function createEffectControls({e,key,getEquipment,levels,reference,catalo
   sync();
   return {node:root,sync,read,setSpell(next){spell=next;const a=reference.abilities.find(a=>a.id===spell?.id),max=Math.min(2,a?.investmentTier??2);for(const option of breaks.options)option.disabled=Number(option.value)>max;if(Number(breaks.value)>max)breaks.value=String(max);},
     copyFrom(other){const input=other.read();learned.clear();config.clear();for(const a of input.abilities){config.set(a.id,{enabled:a.enabled,level:a.level,uptime:a.uptime});if(a.learned)learned.add(a.id);}Object.keys(overrides).forEach(k=>delete overrides[k]);Object.assign(overrides,input.potionOverrides);activePotions.checked=input.potionsActive;quick.value=String(input.quickSeconds);focus.value=input.focusSeconds??"";maxHp.value=input.maxHp??"";breaks.value=String(input.spellBreaks);stack.value=input.xpStack;sync();},
-    reset(){learned.clear();config.clear();Object.keys(overrides).forEach(k=>delete overrides[k]);activePotions.checked=true;quick.value="2";focus.value="";maxHp.value="";breaks.value="0";stack.value="add";sync();}};
+    reset(){learned.clear();config.clear();Object.keys(overrides).forEach(k=>delete overrides[k]);activePotions.checked=defaultPotionsActive;quick.value="2";focus.value="";maxHp.value="";breaks.value="0";stack.value="add";sync();}};
 }

@@ -1,4 +1,6 @@
 import {compareCombat, equipmentBonuses} from "./combat-comparison.js?v=vendors-20261120";
+import {compareWithEffects} from "./loadout-effects.js?v=activity-effects-20261125";
+import {createEffectControls} from "./loadout-effect-controls.js?v=activity-effects-20261125";
 
 let catalogRequest;
 export function readActivityCatalog() {
@@ -60,7 +62,17 @@ export function estimateDamageTakenPerHour(row, {includeZero=false}={}) {
   return averageHit*(1-row.dodgeChance)*3600/(Math.max(1,row.speed)*2)*combatShare;
 }
 
-export function renderActivityComparison({e, player, levels, catalog, byId, entryUrl, renderSpriteFrame, preferences}) {
+export function compareActivityCombat({player,levels,catalog,foes,skill,spell,config,effectsReference,effectSettings}){
+  const base=compareCombat(levels,equipmentBonuses(player.equipment,catalog.items),foes,{...config,skill,spellMaxHit:spell?.maxHit});
+  return base.map((row,index)=>{
+    const baseIncomingDamagePerHour=estimateDamageTakenPerHour(row,config);
+    if(!effectsReference||!effectSettings||foes[index].special)return {...row,baseIncomingDamagePerHour,incomingDamagePerHour:baseIncomingDamagePerHour};
+    const modeled=compareWithEffects({equipment:player.equipment,levels,catalog,foe:foes[index],skill,spell,reference:effectsReference,settings:effectSettings,...config});
+    return {...modeled.row,xpSkill:skill,baseIncomingDamagePerHour,incomingDamagePerHour:modeled.row.incomingCycleDamagePerHour,effects:modeled.effects};
+  });
+}
+
+export function renderActivityComparison({e, player, levels, catalog, byId, entryUrl, renderSpriteFrame, preferences, effectsReference}) {
   const loadoutKey = player.name.toLowerCase() + ":" + (player.equipment.weapon || "unarmed");
   if (preferences.loadoutKey !== loadoutKey) delete preferences.attackSeconds;
   preferences.loadoutKey = loadoutKey;
@@ -87,7 +99,15 @@ export function renderActivityComparison({e, player, levels, catalog, byId, entr
   const calculate = e("button", {type:"submit", class:"button primary"}, "Calculate comparison");
   const controls = e("form", {class:"activity-comparison-form"}, selectors, settings, calculate);
   const assumptions = e("details", {class:"training-assumptions"}, e("summary", {}, "How this estimate works"));
-  panel.append(controls, output, assumptions);
+  let effectsControls;
+  const detected=(effectsReference?.abilities||[]).filter(a=>a.category!=="evilMagic"&&Object.values(player.equipment).includes(a.onItem));
+  const effectsSection=e("details",{class:"activity-effects loadout-abilities"},e("summary",{},"Equipment abilities & effects"));
+  if(effectsReference){
+    effectsControls=createEffectControls({e,key:"activity",title:"Activity",getEquipment:()=>player.equipment,levels,reference:effectsReference,catalog,link:wikiLink,onChange:update,defaultPotionsActive:false});
+    effectsSection.append(effectsControls.node);
+  }
+  const effectsNotice=e("p",{class:"comparison-requirements"},detected.length?"Detected from equipment: "+detected.map(a=>a.name).join(", ")+". Ability levels are not public; inputs initially assume level 1. Open Equipment abilities & effects to enter your actual levels and maximum HP.":"Equipment abilities, learned abilities and potion assumptions can be configured below; public profiles do not include ability levels.");
+  panel.append(controls,effectsNotice,...(effectsReference?[effectsSection]:[]),output,assumptions);
   let fields = {};
   const field = (id, title, value, help, min = 0) => {
     const input = e("input", {id, type:"number", min:String(min), max:"3600", step:"any", inputmode:"decimal", value:String(value)});
@@ -202,29 +222,34 @@ export function renderActivityComparison({e, player, levels, catalog, byId, entr
       if (skill.combat) {
         const spell = catalog.spells.find(s => s.id === config.spellId);
         const foes = activities.map(a => catalog.foes[a.mob]);
-        rows = compareCombat(levels, bonuses, foes, {...config, skill:skill.id, spellMaxHit:spell?.maxHit});
+        effectsControls?.setSpell(spell);
+        const effectSettings=effectsControls?.read();
+        rows = compareActivityCombat({player,levels,catalog,foes,skill:skill.id,spell,config,effectsReference,effectSettings});
         const weapon = catalog.items[player.equipment.weapon];
         const wrongWeapon = skill.id === "ranged" ? !weapon?.tags.includes("bow") : ["attack", "strength", "defense"].includes(skill.id) && weapon?.tags.includes("bow");
         rows = rows.map((row, i) => {
           const reason = foes[i].special ? "Boss, scaling or persistent encounter: a basic solo rate is unavailable."
             : foes[i].safeSpot && !["ranged", "evilMagic"].includes(skill.id) ? "This safe spot needs Ranged or Evil Magic."
-            : wrongWeapon ? skill.id === "ranged" ? "This player has no bow equipped for Ranged training." : "This player has a bow equipped; choose Ranged or use melee equipment." : null;
-          return {...row, incomingDamagePerHour:reason?null:estimateDamageTakenPerHour(row,config), name:activities[i].name, unsupported:!!reason, unsupportedReason:reason,
+            : wrongWeapon ? skill.id === "ranged" ? "This player has no bow equipped for Ranged training." : "This player has a bow equipped; choose Ranged or use melee equipment."
+            : row.unknownTiming ? "Enter the Focus cast interval in Equipment abilities & effects to calculate this rate." : null;
+          return {...row, incomingDamagePerHour:reason?null:row.incomingDamagePerHour, name:activities[i].name, unsupported:!!reason, unsupportedReason:reason,
             levelMet:!spell || (levels.evilMagic || 1) >= spell.level,
             lockReason:spell && (levels.evilMagic || 1) < spell.level ? spell.name + " requires Evil Magic " + spell.level + "; the player is level " + (levels.evilMagic || 1) + ". Rates are theoretical." : null};
         });
         intro = skill.name + " training · Attack " + (levels.attack || 1) + " · Strength " + (levels.strength || 1) + " · Defense " + (levels.defense || 1)
           + (skill.id === "ranged" ? " · Ranged " + (levels.ranged || 1) : skill.id === "evilMagic" ? " · Evil Magic " + (levels.evilMagic || 1) + " · " + spell.name : "")
           + " · " + fmt(rows[0].attackSeconds) + "s attacks · Assumed " + fmt(config.prepSeconds) + "s between fights · Gear: " + (weapon?.name || "Unarmed");
+        effectsSection.hidden=effectsNotice.hidden=false;
         assumptions.replaceChildren(e("summary", {}, "How this estimate works"), e("ul", {},
           e("li", {}, "Hit chance and maximum hits use public client formulas. Dodge is the client’s melee defense check; it does not describe every enemy spell or special attack. Enemy maximum hits below are melee hits."),
-          e("li", {}, "Damage taken/hour estimates basic melee damage before healing: enemy hit chance × average successful hit × attacks per hour × time spent fighting. Enemy speed is converted from two-second ticks. The selected uniform damage range applies to this estimate too. Time between fights is assumed damage-free; exact first-swing timing, spells, dragon breath, poison and other special damage are excluded. Defense gear affects dodge, but defensive abilities, potions, regeneration, eating and death downtime are not included."),
+          e("li", {}, "Damage taken/hour estimates basic melee damage before healing, averaged over fighting and preparation time. Selected defensive abilities change damage or avoidance separately from the displayed dodge chance. Stoneskin has a chance to remove 1 damage; Shield Wall can cap a hit at floor(30% of entered maximum HP). Missing maximum HP leaves Shield Wall’s incoming estimate unavailable when damage is possible. Enemy speed uses two-second ticks; exact first-swing timing, spells, dragon breath, poison, healing and death downtime are excluded."),
           e("li", {}, "Automatic base XP is modeled as 4 XP per damage. One-damage melee hits awarding 4 Attack XP were directly observed on November 20, 2026. The same baseline is assumed for Strength, Defense, Ranged and Evil Magic; those conversions have not been independently measured. Learned XP bonuses and spell-specific extra XP are excluded."),
           e("li", {}, "The model uses independent uniform damage rolls, one full attack interval per swing including the first, and the entered delay between full-health enemies. Misses deal zero; overkill earns no extra XP in this model. These server rules need an in-game check."),
-          e("li", {}, "Only reported base levels and item bonuses are included. Learned abilities, potions, pets’ abilities, spell modifiers, prayers, extra attacks, eating, deaths, travel and banking are excluded. Ranged and magic require ammunition or runes that cannot be checked from a public profile."),
+          e("li", {}, "Equipment abilities are detected automatically. Their levels default to an explicitly assumed level 1 because the public profile does not expose them. Enter actual levels, learned/slotted abilities, potion effects, spell upgrades and temporary-buff uptime in Equipment abilities & effects. Potions start off in this tool. Supported effects use the Gear Comparison model; omitted effects are listed below. Supplies, eating, deaths, travel, banking and group combat are excluded."),
           e("li", {}, "Bosses, scaling/persistent encounters, melee safe spots, and incompatible weapon styles are not ranked. Other enemies use a basic solo model; special phases and additional damage can change sustained results. Enemy level labels show combat level, not a required player level.")),
           e("a", {href:"./assets/game-data/combat-xp-2026-11-20.json", target:"_blank", rel:"noopener noreferrer"}, "Combat XP baseline observation"));
       } else {
+        effectsSection.hidden=effectsNotice.hidden=true;
         rows = compareSkilling(levels, bonuses, activities, {...config, prepSeconds:config.skillPrepSeconds})
           .map(row => ({...row, membershipMet:!row.requiresMembership || player.isMember}));
         intro = skill.name + " level " + (levels[skill.id] || 1) + " · Gear bonus " + (bonuses[skill.id] >= 0 ? "+" : "") + fmt(bonuses[skill.id] || 0)
@@ -243,9 +268,14 @@ export function renderActivityComparison({e, player, levels, catalog, byId, entr
             metric("Your maximum hit", fmt(row.maxHit)), metric("Enemy max melee hit", fmt(row.enemyMaxHit)),
             metric("Estimated kill cycle", row.unsupported ? "Not modeled" : fmt(row.cycleSeconds) + "s"),
             metric("Estimated damage/hour", row.unsupported ? "Not modeled" : fmt(row.damagePerHour)),
-            metric("Estimated damage taken/hour", row.unsupported || !Number.isFinite(row.incomingDamagePerHour) ? "Not modeled" : fmt(row.incomingDamagePerHour) + " HP"),
+            ...(detected.length?[metric("Damage taken/hour · gear stats only", row.unsupported || !Number.isFinite(row.baseIncomingDamagePerHour) ? "Not modeled" : fmt(row.baseIncomingDamagePerHour)+" HP")]:[]),
+            metric("Estimated damage taken/hour", row.needsMaxHp&&!row.unsupported?"Enter maximum HP":row.unsupported || !Number.isFinite(row.incomingDamagePerHour) ? "Not modeled" : fmt(row.incomingDamagePerHour) + " HP"),
             metric(row.levelMet === false ? "Theoretical XP/hour" : "Estimated XP/hour", row.unsupported ? "Not modeled" : fmt(row.xpPerHour))));
-          card.append(e("p", {class:"comparison-location"}, "Basic melee damage before healing; excludes spells, dragon breath and other special attacks."));
+          card.append(e("p", {class:"comparison-location"}, "Basic melee damage with selected effects, before healing; excludes spells, dragon breath and other special attacks."));
+          if(row.effects){
+            if(row.effects.applied.length)card.append(e("p",{class:"comparison-effects-applied"},"Applied: "+row.effects.applied.join(" · ")));
+            const notes=[...row.effects.omitted,...row.effects.notes];if(notes.length)card.append(e("details",{class:"comparison-effect-notes"},e("summary",{},"Effect assumptions and omissions"),e("ul",{},...notes.map(note=>e("li",{},note)))));
+          }
           if (row.unsupported) card.append(e("p", {class:"comparison-warning"}, row.unsupportedReason));
           if (row.lockReason) card.append(e("p", {class:"comparison-warning"}, row.lockReason));
         } else {

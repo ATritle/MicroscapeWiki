@@ -1,6 +1,6 @@
 import {communityApiBase} from "./api-config.js?v=community-api-20261119";
 import {readPlayerRanks} from "./leaderboards.js?v=ranked-communities-20261124";
-import {readActivityCatalog, renderActivityComparison} from "./activity-comparison.js?v=damage-taken-20261125";
+import {readActivityCatalog, renderActivityComparison} from "./activity-comparison.js?v=equipment-effects-20261125";
 import {attachHoverPreview,previewMotion,sampleMotion,weaponMotionType} from "./sprite-animation.js?v=equipment-20261124";
 import {renderLoadoutComparison} from "./loadout-comparison.js?v=hypothetical-20261121";
 const apiUrl = ["localhost", "127.0.0.1"].includes(window.location.hostname)
@@ -331,7 +331,7 @@ export function renderPlayerLookup({main, element:e, crumbs, footer, byId, entry
         return metric(bonusLabels[stat] || displayName(stat), value);
       }))
     );
-    const training = comparisonOnly ? renderActivityComparison({e, player, levels:stats.levels, catalog, byId, entryUrl, renderSpriteFrame, preferences:trainingPreferences})
+    const training = comparisonOnly ? renderActivityComparison({e, player, levels:stats.levels, catalog, byId, entryUrl, renderSpriteFrame, preferences:trainingPreferences,effectsReference:loadoutData})
       : e("div", {class:"player-comparison-link loadout-actions"}, e("a", {class:"button", href:"#/activity-comparison?" + new URLSearchParams({name:player.name})}, "Compare training activities"),e("a", {class:"button",href:"#/gear-comparison?"+new URLSearchParams({name:player.name})},"Compare loadouts"));
     results.replaceChildren(hero, training, ...(comparisonOnly ? [] : [where, e("div", {class:"player-detail-columns"}, skills, gear)]),
       ...(!comparisonOnly && Object.keys(bonuses).length ? [bonusPanel] : []), stamp,
@@ -376,7 +376,7 @@ export function renderPlayerLookup({main, element:e, crumbs, footer, byId, entry
       const cached=loadoutOnly&&!refresh?recentProfiles.get(username.toLowerCase()):null;
       const [response, data, catalog,loadoutData] = await Promise.all([
         cached&&Date.now()-cached.checkedAt<60_000?{ok:true,json:async()=>cached}:fetch(url, {cache:"no-store", credentials:"omit", signal:AbortSignal.any([controller.signal, AbortSignal.timeout(18_000)])}),
-        readReference(), planning ? readActivityCatalog() : null,loadoutOnly?readLoadoutReference():null
+        readReference(), planning ? readActivityCatalog() : null,planning?readLoadoutReference():null
       ]);
       let snapshot;
       try {snapshot = await response.json();}
