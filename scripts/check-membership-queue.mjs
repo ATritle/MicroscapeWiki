@@ -17,6 +17,11 @@ assert.equal(example.steps[2].activityId,'attack/fight-cow');
 assert.equal(example.steps[2].value,20);
 assert.deepEqual(decodeMembershipQueue(encodePlan(example),catalog),example);
 assert.deepEqual(example,snapshot,'Validation and sharing must leave the original queue unchanged');
+const alchemyQueue=cleanMembershipQueue({version:1,steps:[{type:'activity',activityId:'goodMagic/cast-low-level-alchemy',alchemyItemId:'bronzeDagger',goal:'items-lte',itemId:'bronzeDagger',value:0}]},catalog);
+assert.equal(alchemyQueue.steps[0].alchemyItemId,'bronzeDagger');
+assert.deepEqual(decodeMembershipQueue(encodePlan(alchemyQueue),catalog),alchemyQueue);
+assert.throws(()=>cleanMembershipQueue({version:1,steps:[{type:'activity',activityId:'goodMagic/cast-high-level-alchemy',goal:'actions',value:10}]},catalog),/Choose a valid item/);
+assert.throws(()=>cleanMembershipQueue({version:1,steps:[{type:'activity',activityId:'goodMagic/dark-ritual',goal:'level',value:2}]},catalog),/different skill/);
 const mixed={version:1,name:'A 💚 shared queue',steps:[
   {type:'loadout',name:'Fishing',equipment:{}},
   {type:'activity',activityId:'attack/fight-cow',goal:'items-gte',itemId:'rawShrimp',value:10},

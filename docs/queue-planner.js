@@ -1,4 +1,4 @@
-import {MAX_STEPS,MAX_ACTIONS,cleanPlan,newPlan,estimateQueue,encodePlan,decodePlan,queueLevel,queueXpThreshold} from './queue-model.js?v=queue-preview-20261124';
+import {MAX_STEPS,MAX_ACTIONS,cleanPlan,newPlan,estimateQueue,encodePlan,decodePlan,queueLevel,queueXpThreshold,alchemyItems,queueActivity} from './queue-model.js?v=good-magic-20261127';
 import {activitiesForSkill} from './activity-comparison.js?v=equipment-20261124';
 import {lookupXpPlayer,lookupXpSuggestions} from './xp-player.js?v=hypothetical-20261121';
 const draftKey='microscape-wiki-queue-draft-v1',savesKey='microscape-wiki-queue-saves-v1';
@@ -12,7 +12,7 @@ export function renderActivityPlanner({e,byId,entryUrl}){
   const loading=e('p',{role:'status'},'Loading the activity planner…');node.append(loading);
   let disposed=false,request,timer,suggestionRequest;
   if(globalThis.__WIKI_PRERENDER__){loading.textContent='Choose activities, estimate XP and time, and budget materials across your plan. The interactive planner loads in your browser.';return {node,dispose(){}};}
-  fetch(new URL('./queue-catalog.json?v=queue-preview-20261124',import.meta.url)).then(r=>{if(!r.ok)throw Error('The activity planner could not load. Please refresh to try again.');return r.json();}).then(catalog=>{
+  fetch(new URL('./queue-catalog.json?v=good-magic-20261127',import.meta.url)).then(r=>{if(!r.ok)throw Error('The activity planner could not load. Please refresh to try again.');return r.json();}).then(catalog=>{
     if(disposed)return;loading.remove();
     let plan=newPlan(catalog),undo=[],saved=[],selected,editing=null,limit=24,profileName='Manual starting stats';
     const status=e('p',{class:'queue-status',role:'status'}),error=e('p',{class:'queue-error',role:'alert'});error.hidden=true;
@@ -75,12 +75,14 @@ export function renderActivityPlanner({e,byId,entryUrl}){
     const search=e('input',{type:'search',placeholder:'Search an item or activity…','aria-label':'Find a queue item or activity'}),results=e('div',{class:'queue-item-grid'}),resultsCount=e('p',{class:'queue-help',role:'status'});
     const more=button('Show more items',()=>{limit+=24;drawPicker();}),selectedPanel=e('div',{class:'queue-selected'});
     const builder=e('section',{class:'queue-builder','aria-labelledby':'queue-step-heading'},e('h3',{id:'queue-step-heading'},'Add a step'),e('div',{class:'queue-filters'},e('label',{},'Skill',skillSelect),e('label',{},'Item or activity',search)),resultsCount,results,more,selectedPanel);
-    let goalInput,valueInput,itemInput,locationInput,spellInput;
+    let goalInput,valueInput,itemInput,locationInput,spellInput,alchemyInput;
     function drawPicker(){const query=search.value.trim().toLowerCase();const choices=activitiesForSkill(catalog,skillSelect.value).filter(a=>!query||[a.name,label(a),...(a.outputs||[]).map(i=>itemName(i.id))].join(' ').toLowerCase().includes(query));
       resultsCount.textContent=choices.length+' activities · in-game level order';results.replaceChildren(...choices.slice(0,limit).map(a=>{const b=button('',()=>{selected=a;editing=null;drawSelected();drawPicker();},{class:'queue-item'+(selected?.id===a.id?' selected':''),'aria-pressed':String(selected?.id===a.id)});b.append(icon(a.icon,36),e('span',{},e('strong',{},label(a)),e('small',{},a.name+' · Lv '+(a.mob?a.combatLevel:a.level))));return b;}));more.hidden=choices.length<=limit;
     }
-    function drawSelected(step){selectedPanel.replaceChildren();if(!selected)return;const a=selected,form=e('form',{}),isCombat=!!a.mob;
-      goalInput=e('select',{'aria-label':'Step stopping condition'},e('option',{value:'actions'},isCombat?'Defeat a number of enemies':'Complete a number of actions'),e('option',{value:'level'},'Reach a skill level'),
+    function drawSelected(step){selectedPanel.replaceChildren();if(!selected)return;const a=selected.alchemy&&step?.alchemyItemId?queueActivity(catalog,{activityId:selected.id,alchemyItemId:step.alchemyItemId}):selected,form=e('form',{}),isCombat=!!a.mob;
+      alchemyInput=e('select',{'aria-label':'Alchemy item'},e('option',{value:''},'Choose an item to convert…'),...alchemyItems(catalog).map(([id,item])=>e('option',{value:id},item.name)));alchemyInput.value=step?.alchemyItemId||'';
+      alchemyInput.addEventListener('change',()=>drawSelected({goal:goalInput.value,value:Number(valueInput.value),itemId:itemInput.value,location:locationInput.value,spellId:spellInput.value,alchemyItemId:alchemyInput.value}));
+      goalInput=e('select',{'aria-label':'Step stopping condition'},e('option',{value:'actions'},isCombat?'Defeat a number of enemies':'Complete a number of actions'),...(isCombat||a.exp>0?[e('option',{value:'level'},'Reach a skill level')]:[]),
         ...(!isCombat&&(a.outputs||[]).length?[e('option',{value:'items-gte'},'Have at least an item count')]:[]),...(!isCombat&&(a.inputs||[]).length?[e('option',{value:'items-lte'},'Use an item down to a count')]:[]),e('option',{value:'indefinite'},'Until I stop it manually'));
       goalInput.value=step?.goal||'actions';valueInput=e('input',{type:'number',min:1,max:MAX_ACTIONS,value:step?.value??10,'aria-label':'Step target value'});itemInput=e('select',{'aria-label':'Step target item'});
       locationInput=e('select',{'aria-label':'Step location'},...(a.locations?.length?a.locations.map(l=>e('option',{value:l.wikiId},l.name)):[e('option',{value:''},'See the activity’s location guide')]));locationInput.value=step?.location||a.locations?.[0]?.wikiId||'';
@@ -91,12 +93,17 @@ export function renderActivityPlanner({e,byId,entryUrl}){
         if(reset)valueInput.value=goalInput.value==='level'?Math.min(99,queueLevel(plan.xp[a.skill])+1):goalInput.value==='items-lte'?0:10;
       }goalInput.addEventListener('change',()=>goalFields(true));goalFields();
       form.append(e('div',{class:'queue-selected-title'},icon(a.icon,42),e('div',{},e('strong',{},label(a)),e('p',{class:'queue-help'},skillName(a.skill)+' · '+a.name+(isCombat?'':' · '+fmt(a.exp)+' XP/action · '+queueDuration(a.duration*2+8)+'/action')))),
+        ...(a.alchemy?[e('label',{},'Item to convert with '+a.name,alchemyInput)]:[]),
         e('div',{class:'queue-step-fields'},e('label',{},'Stop when…',goalInput),targetLabel,itemLabel,e('label',{},'Where to train',locationInput),spellLabel),
         e('p',{class:'queue-help'},isCombat?'Kills use the same base combat model as Activity Comparison. Boss estimates are unavailable.':
-          'Per action: '+((a.inputs||[]).map(i=>fmt(i.amount)+' × '+itemName(i.id)).join(' + ')||'No materials')+' → '+((a.outputs||[]).map(i=>fmt(i.amount)+' × '+itemName(i.id)).join(' + ')||'No guaranteed item output')));
-      const add=e('button',{type:'submit',class:'button primary'},editing===null?'Add to plan':'Save step changes');add.disabled=editing===null&&plan.steps.length>=MAX_STEPS;form.append(add);
+          'Per action: '+((a.inputs||[]).map(i=>fmt(i.amount)+' × '+itemName(i.id)).join(' + ')||'No materials')+' → '+((a.outputs||[]).map(i=>fmt(i.amount)+' × '+itemName(i.id)).join(' + ')||'No guaranteed item output')),
+        ...(Object.keys(a.otherExp||{}).length?[e('p',{class:'queue-help'},'Also grants '+Object.entries(a.otherExp).map(([id,n])=>fmt(n)+' '+skillName(id)+' XP').join(', ')+' per action.')]:[]),
+        ...(a.alchemy?[e('p',{class:'queue-help'},'Each cast consumes one selected item in addition to the runes. Coins are gross proceeds, before item and rune costs.')]:[]),
+        ...(a.singleExecution?[e('p',{class:'queue-warning'},'This activity stops after one cast in-game. Restart it manually for each additional action in the plan.')]:[]),
+        ...(a.requiresAbility?[e('p',{class:'queue-warning'},'Requires ability: '+a.requiresAbility+'. Random rewards are excluded from estimates.')]:[]));
+      const add=e('button',{type:'submit',class:'button primary'},editing===null?'Add to plan':'Save step changes');add.disabled=editing===null&&plan.steps.length>=MAX_STEPS||a.alchemy&&!alchemyInput.value;form.append(add);
       if(editing!==null)form.append(button('Cancel editing',()=>{editing=null;drawSelected();}));
-      form.addEventListener('submit',event=>{event.preventDefault();try{const s={activityId:a.id,goal:goalInput.value,value:Number(valueInput.value),itemId:itemInput.value,location:locationInput.value,spellId:spellInput.value};
+      form.addEventListener('submit',event=>{event.preventDefault();try{const s={activityId:a.id,goal:goalInput.value,value:Number(valueInput.value),itemId:itemInput.value,location:locationInput.value,spellId:spellInput.value,...(a.alchemy?{alchemyItemId:alchemyInput.value}:{})};
         const candidate={...plan,steps:editing===null?[...plan.steps,s]:plan.steps.map((old,i)=>i===editing?s:old)};cleanPlan(candidate,catalog);change(()=>{plan=candidate;});editing=null;drawSelected();}catch(err){fail(err.message);}});selectedPanel.append(form);
     }
     skillSelect.addEventListener('change',()=>{limit=24;selected=null;editing=null;drawPicker();drawSelected();});search.addEventListener('input',()=>{limit=24;drawPicker();});
@@ -107,7 +114,7 @@ export function renderActivityPlanner({e,byId,entryUrl}){
       change(()=>{plan.steps=['mining/mine-copper','mining/mine-tin','smithing/smelt-bronze','smithing/forge-bronze-dagger'].map(activityId=>({activityId,goal:'actions',value:10}));plan.name='Bronze daggers from ore';});name.value=plan.name;
     }));
     function targetText(s){if(s.goal==='indefinite')return 'Until stopped manually';if(s.goal==='level')return 'Reach '+skillName(activity(s.activityId).skill)+' '+s.value;if(s.goal==='items-gte')return 'Have at least '+fmt(s.value)+' × '+itemName(s.itemId);if(s.goal==='items-lte')return 'Use '+itemName(s.itemId)+' down to '+fmt(s.value);return fmt(s.value)+(activity(s.activityId).mob?' kills':' actions');}
-    function manualStep(s){const a=activity(s.activityId),where=a.locations?.find(l=>l.wikiId===s.location)?.name;return skillName(a.skill)+': '+a.name+(where?' at '+where:'')+' — '+targetText(s)+(a.skill==='evilMagic'?' · '+catalog.spells.find(p=>p.id===s.spellId)?.name:'');}
+    function manualStep(s){const a=activity(s.activityId),where=a.locations?.find(l=>l.wikiId===s.location)?.name;return skillName(a.skill)+': '+a.name+(a.alchemy?' · '+itemName(s.alchemyItemId):'')+(where?' at '+where:'')+' — '+targetText(s)+(a.skill==='evilMagic'?' · '+catalog.spells.find(p=>p.id===s.spellId)?.name:'');}
     function materialList(title,values,explanation){
       const section=e('section',{},e('h4',{},title));
       if(explanation)section.append(e('p',{class:'queue-help'},explanation));
@@ -123,7 +130,7 @@ export function renderActivityPlanner({e,byId,entryUrl}){
         const controls=e('div',{class:'queue-row-actions'},button('Edit',()=>{selected=a;editing=i;skillSelect.value=a.skill;search.value='';drawPicker();drawSelected(s);selectedPanel.scrollIntoView({block:'center',behavior:'smooth'});},{'aria-label':'Edit step '+(i+1)}),
           button('Top',()=>move(0),{'aria-label':'Move step '+(i+1)+' to top'}),button('Up',()=>move(i-1),{'aria-label':'Move step '+(i+1)+' up'}),button('Down',()=>move(i+1),{'aria-label':'Move step '+(i+1)+' down'}),button('Bottom',()=>move(plan.steps.length-1),{'aria-label':'Move step '+(i+1)+' to bottom'}),button('Remove',()=>change(()=>{plan.steps.splice(i,1);editing=null;}),{'aria-label':'Remove step '+(i+1)}));
         controls.children[1].disabled=controls.children[2].disabled=i===0;controls.children[3].disabled=controls.children[4].disabled=i===plan.steps.length-1;
-        return e('li',{},e('div',{class:'queue-row-main'},e('span',{class:'queue-step-number'},String(i+1).padStart(2,'0')),icon(a.icon,38),e('div',{class:'queue-row-copy'},e('strong',{},label(a)),e('span',{},skillName(a.skill)+' · '+targetText(s)),where?wikiLink(where.wikiId,where.name):e('span',{},'Location: see activity guide')),
+        return e('li',{},e('div',{class:'queue-row-main'},e('span',{class:'queue-step-number'},String(i+1).padStart(2,'0')),icon(a.icon,38),e('div',{class:'queue-row-copy'},e('strong',{},label(a)),...(a.alchemy?[wikiLink(catalog.items[s.alchemyItemId]?.wikiId,itemName(s.alchemyItemId))]:[]),e('span',{},skillName(a.skill)+' · '+targetText(s)),where?wikiLink(where.wikiId,where.name):e('span',{},'Location: see activity guide')),
           e('div',{class:'queue-row-metrics'},e('strong',{},r.unavailable?'Not estimated':fmt(r.xp)+' XP'),e('span',{},r.unavailable?'—':queueDuration(r.seconds)),e('span',{},r.unavailable?'':fmt(r.actions)+(a.mob?' kills':' actions')),e('span',{},'Lv '+r.startLevel+' → '+r.endLevel))),
           ...(r.unavailable?[e('p',{class:'queue-warning'},r.unavailable)]:[]),...(warnings.length?[e('details',{class:'queue-row-notes'},e('summary',{},warnings.length+' planning note'+(warnings.length===1?'':'s')),e('ul',{},...warnings.map(w=>e('li',{},w))))]:[]),controls);
       }));
@@ -140,7 +147,7 @@ export function renderActivityPlanner({e,byId,entryUrl}){
       e('li',{},'Enter activities manually in-game. For a setup reference that includes saved-loadout changes, use the separate Activity Queue builder. Running an automatic queue in-game requires Adventurer’s Guild membership.'),
       e('li',{},'Skilling uses the catalog’s base XP and action time plus 8 seconds of preparation per action. Guaranteed inputs and outputs are carried forward in order.'),
       e('li',{},'Combat uses starting XP and base gear, with estimated hit chances and level gains. Strength, Defense, Ranged and Evil Magic XP conversion remains unverified. Boss fights, food use and random loot are not simulated.'),
-      e('li',{},'One-off trades and variable alchemy targets are not included. Verify required equipment, abilities, membership, locations and supplies in-game.'),
+      e('li',{},'Alchemy consumes one chosen item plus runes per cast. Enchant Amulet 5 stops after a single cast in-game. Dark Ritual grants Evil Magic XP, requires Death’s Bargain, and has random rewards excluded from material totals. Other one-off trades are not included. Verify required equipment, abilities, membership, locations and supplies in-game.'),
       e('li',{},'Named plans and the working draft are stored in this browser. Share links include the plan and its starting XP, gear and inventory counts, but no username or account credentials.')));
     node.append(error,tools,savedBar,shareOutput,status,starting,builder,e('div',{class:'queue-workspace'},planPanel,summary),assumptions);
     drawStartingStats();drawPicker();renderPlan();

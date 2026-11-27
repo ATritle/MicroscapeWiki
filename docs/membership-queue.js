@@ -1,5 +1,5 @@
 import {activitiesForSkill} from './activity-comparison.js?v=equipment-20261124';
-import {cleanPlan,encodePlan,MAX_STEPS,MAX_ACTIONS} from './queue-model.js?v=queue-preview-20261124';
+import {cleanPlan,encodePlan,MAX_STEPS,MAX_ACTIONS,alchemyItems,queueActivity} from './queue-model.js?v=good-magic-20261127';
 import {loadoutSlots,slotAccepts,changeLoadout} from './loadout-comparison.js?v=queue-gear-20261124';
 const kinds=new Set(['actions','level','items-gte','items-lte','indefinite']);
 const draftKey='microscape-wiki-membership-queue-draft-v1',saveKey='microscape-wiki-membership-queue-saves-v1';
@@ -37,6 +37,7 @@ export function cleanMembershipQueue(input,catalog){
     }
     if(s?.type!=='activity'||!kinds.has(s.goal))throw Error('Step '+(i+1)+' has an invalid step type or stopping condition.');
     const base=cleanPlan({version:1,steps:[{...s,goal:'actions',value:1}]},catalog).steps[0];
+    if(s.goal==='level'&&!catalog.activities.find(a=>a.id===s.activityId)?.mob&&!(catalog.activities.find(a=>a.id===s.activityId)?.exp>0))throw Error('Choose an action or item target; this activity awards XP in a different skill.');
     const value=s.goal==='indefinite'?0:Number(s.value),minimum=s.goal==='items-lte'||s.goal==='indefinite'?0:1;
     if(!Number.isInteger(value)||value<minimum||value>(s.goal==='level'?99:MAX_ACTIONS))throw Error('Step '+(i+1)+' has an invalid stopping target.');
     if(s.goal.startsWith('items-')&&!Object.hasOwn(catalog.items,s.itemId))throw Error('Select the inventory item to watch for step '+(i+1)+'.');
@@ -63,7 +64,7 @@ export function renderMembershipQueue({e,byId,entryUrl}){
   const loading=e('p',{role:'status'},'Loading the queue builder…');node.append(loading);
   if(globalThis.__WIKI_PRERENDER__){loading.textContent='Example: fish for Shrimp until you hold 100 Raw Shrimp → equip a custom Melee loadout → train Attack on Cows for 20 kills.';return {node,dispose(){}};}
   let disposed=false,profileRequest,suggestionRequest,suggestionTimer;
-  fetch(new URL('./queue-catalog.json?v=queue-types-20261124',import.meta.url)).then(r=>{if(!r.ok)throw Error('The queue builder could not load. Refresh to try again.');return r.json();}).then(async c=>{
+  fetch(new URL('./queue-catalog.json?v=good-magic-20261127',import.meta.url)).then(r=>{if(!r.ok)throw Error('The queue builder could not load. Refresh to try again.');return r.json();}).then(async c=>{
     const {lookupXpPlayer,lookupXpSuggestions}=await import('./xp-player.js?v=hypothetical-20261121');
     if(disposed)return;loading.remove();let queue=exampleMembershipQueue(c),saved=[],undo=[],editing=null,mode='activity';
     let profileEquipment={},profileName='',confirmedItems=new Set(),loadoutEditor;
@@ -146,7 +147,7 @@ export function renderMembershipQueue({e,byId,entryUrl}){
     function setupText(){return [queue.name,'Enter manually in Microscape → Activity Queue (Guild membership required):',...queue.steps.map((s,i)=>{
       if(s.type==='loadout')return (i+1)+'. '+(s.legacySlot?'Earlier saved loadout '+s.legacySlot+' (“'+s.name+'”): edit this step to configure its equipment.':
         'Configure “'+s.name+'”: '+loadoutSlots.map(([slot,label])=>label+': '+(s.equipment[slot]?itemName(s.equipment[slot]):'Empty')).join('; ')+'. Save this setup in an in-game Equipment loadout and select it for this queue step. Continue to the next step.');
-      const a=activity(s.activityId),where=a.locations?.find(l=>l.wikiId===s.location)?.name;return (i+1)+'. '+skillName(a.skill)+' / '+a.name+(where?' at '+where:'')+'. Stop: '+stopText(s)+'.';
+      const a=activity(s.activityId),where=a.locations?.find(l=>l.wikiId===s.location)?.name;return (i+1)+'. '+skillName(a.skill)+' / '+a.name+(a.alchemy?' · '+itemName(s.alchemyItemId):'')+(where?' at '+where:'')+'. Stop: '+stopText(s)+'.';
     }),'Custom wiki loadouts must be recreated and saved in-game before selecting them in the game’s queue. Empty slots mean unequip. Availability uses equipped gear and manually confirmed items; item quantities and level requirements are not checked.'].join('\n');}
     function loadoutIssue(s){
       if(s.legacySlot)return 'Edit the earlier saved-loadout reference to configure its gear.';
@@ -189,24 +190,27 @@ export function renderMembershipQueue({e,byId,entryUrl}){
       }else{
         const skill=e('select',{'aria-label':'Queue activity skill'},...c.skills.map(s=>e('option',{value:s.id},s.name))),choice=e('select',{'aria-label':'Queue activity'}),where=e('select',{'aria-label':'Queue activity location'}),goal=e('select',{'aria-label':'Queue activity stopping condition'}),value=e('input',{type:'number',min:1,max:MAX_ACTIONS,value:step?.value??100,'aria-label':'Queue activity target'}),item=e('select',{'aria-label':'Queue inventory item'}),preview=e('div',{class:'membership-activity-preview'});
         skill.value=step?activity(step.activityId).skill:'fishing';
+        const alchemy=e('select',{'aria-label':'Queue alchemy item'},e('option',{value:''},'Choose an item to convert…'),...alchemyItems(c).map(([id,item])=>e('option',{value:id},item.name))),alchemyLabel=e('label',{},'Item to convert with alchemy',alchemy),specialNote=e('p',{class:'queue-help'});
+        alchemy.value=step?.alchemyItemId||'';
         const valueLabel=e('label',{},'Target',value),itemLabel=e('label',{},'Inventory item',item);
         function drawGoal(reset=false){
-          const a=activity(choice.value),kind=goal.value;valueLabel.hidden=kind==='indefinite';itemLabel.hidden=!kind.startsWith('items-');value.min=kind==='items-lte'?0:1;value.max=kind==='level'?99:MAX_ACTIONS;
+          const base=activity(choice.value),a=base.alchemy&&alchemy.value?queueActivity(c,{activityId:base.id,alchemyItemId:alchemy.value}):base,kind=goal.value;valueLabel.hidden=kind==='indefinite';itemLabel.hidden=!kind.startsWith('items-');value.min=kind==='items-lte'?0:1;value.max=kind==='level'?99:MAX_ACTIONS;
           const preferred=[...new Set([...(a.outputs||[]).map(i=>i.id),...(a.inputs||[]).map(i=>i.id),...(c.foes[a.mob]?.dropItems||[])])];
           const known=Object.keys(c.items).filter(id=>byId.has(c.items[id].wikiId)&&!['skin','hair','pet'].includes(c.items[id].slot));
           const ids=[...preferred,...known.filter(id=>!preferred.includes(id)).sort((a,b)=>itemName(a).localeCompare(itemName(b)))];
           item.replaceChildren(...ids.map(id=>e('option',{value:id},itemName(id))));item.value=step?.itemId&&ids.includes(step.itemId)?step.itemId:ids[0]||'';
           if(reset)value.value=kind==='level'?10:kind==='items-lte'?0:a.mob?20:100;
         }
-        function drawActivity(reset=false){const a=activity(choice.value),previous=goal.value;goal.replaceChildren(e('option',{value:'actions'},a.mob?'After a number of kills':'After a number of actions'),e('option',{value:'level'},'Until a skill level'),e('option',{value:'items-gte'},'Until inventory reaches a count'),e('option',{value:'items-lte'},'Until inventory falls to a count'),e('option',{value:'indefinite'},'Until stopped manually'));goal.value=step?.goal||previous||'actions';
+        function drawActivity(reset=false){const a=activity(choice.value),previous=goal.value;goal.replaceChildren(e('option',{value:'actions'},a.mob?'After a number of kills':'After a number of actions'),...(a.mob||a.exp>0?[e('option',{value:'level'},'Until a skill level')]:[]),e('option',{value:'items-gte'},'Until inventory reaches a count'),e('option',{value:'items-lte'},'Until inventory falls to a count'),e('option',{value:'indefinite'},'Until stopped manually'));goal.value=step?.goal||previous||'actions';if(!goal.value)goal.value='actions';
+          alchemyLabel.hidden=!a.alchemy;specialNote.textContent=a.singleExecution?'This activity stops after one cast in-game. Multiple casts must be restarted manually.':a.exp===0?'Requires Death’s Bargain. Awards Evil Magic XP, not Good Magic XP; random rewards are not guaranteed.':a.alchemy?'Each cast consumes the selected item plus runes. Choose the same item when entering this step in-game.':'';
           where.replaceChildren(...(a.locations?.length?a.locations.map(l=>e('option',{value:l.wikiId},l.name)):[e('option',{value:''},'Check the activity guide')]));where.value=step?.location||a.locations?.[0]?.wikiId||'';
           preview.replaceChildren(image(a.icon),e('div',{},e('strong',{},a.name),e('span',{},skillName(a.skill)+' · Lv '+(a.mob?a.combatLevel:a.level))));drawGoal(reset);
         }
         function drawChoices(reset=false){choice.replaceChildren(...activitiesForSkill(c,skill.value).map(a=>e('option',{value:a.id},a.name+' · Lv '+(a.mob?a.combatLevel:a.level))));if(step&&activity(step.activityId).skill===skill.value)choice.value=step.activityId;else if(skill.value==='fishing')choice.value='fishing/catch-shrimp';drawActivity(reset);}
-        skill.addEventListener('change',()=>{step=undefined;drawChoices(true);});choice.addEventListener('change',()=>{step=undefined;drawActivity(true);});goal.addEventListener('change',()=>drawGoal(true));drawChoices();
-        form.append(preview,e('div',{class:'queue-step-fields'},e('label',{},'Skill / training style',skill),e('label',{},'Activity',choice),e('label',{},'Location',where),e('label',{},'Stop when…',goal),valueLabel,itemLabel),
+        skill.addEventListener('change',()=>{step=undefined;drawChoices(true);});choice.addEventListener('change',()=>{step=undefined;drawActivity(true);});goal.addEventListener('change',()=>drawGoal(true));alchemy.addEventListener('change',()=>drawGoal());drawChoices();
+        form.append(preview,e('div',{class:'queue-step-fields'},e('label',{},'Skill / training style',skill),e('label',{},'Activity',choice),alchemyLabel,e('label',{},'Location',where),e('label',{},'Stop when…',goal),valueLabel,itemLabel),specialNote,
           e('p',{class:'queue-help'},'The stopping condition belongs to this activity only. Choose an inventory item whose count the activity changes. Any loadout change after it is a separate queue entry.'));
-        form.addEventListener('submit',event=>{event.preventDefault();commit({type:'activity',activityId:choice.value,location:where.value,goal:goal.value,value:Number(value.value),itemId:item.value});});
+        form.addEventListener('submit',event=>{event.preventDefault();commit({type:'activity',activityId:choice.value,location:where.value,goal:goal.value,value:Number(value.value),itemId:item.value,...(activity(choice.value).alchemy?{alchemyItemId:alchemy.value}:{})});});
       }
       form.append(submit);if(editing!==null)form.append(button('Cancel edit',()=>{editing=null;drawEditor();}));fields.append(form);
     }
@@ -217,7 +221,7 @@ export function renderMembershipQueue({e,byId,entryUrl}){
       list.replaceChildren(...queue.steps.map((s,i)=>{
         const blocked=waits;if(s.type==='activity'&&s.goal==='indefinite')waits=true;
         const a=s.type==='activity'?activity(s.activityId):null,isLoadout=s.type==='loadout',where=a?.locations?.find(l=>l.wikiId===s.location);
-        const text=isLoadout?'Change to “'+s.name+'”':skillName(a.skill)+' / '+a.name;
+        const text=isLoadout?'Change to “'+s.name+'”':skillName(a.skill)+' / '+a.name+(a.alchemy?' · '+itemName(s.alchemyItemId):'');
         const trigger=isLoadout?(s.legacySlot?'Earlier saved loadout '+s.legacySlot+' — edit to configure its gear':Object.keys(s.equipment).length+' equipped items · other slots empty'):stopText(s);
         const card=e('li',{class:isLoadout?'membership-step loadout-step':'membership-step activity-step'},
           e('div',{class:'membership-step-heading'},e('span',{class:'membership-step-number'},i+1),isLoadout?e('span',{class:'membership-loadout-icon','aria-hidden':'true'},'◇'):image(a.icon,40),

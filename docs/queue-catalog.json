@@ -11314,6 +11314,44 @@
       "requiredItems": []
     },
     {
+      "id": "goodMagic/cast-low-level-alchemy",
+      "skill": "goodMagic",
+      "name": "Low Alchemy",
+      "level": 1,
+      "duration": 11,
+      "exp": 12,
+      "sortLevel": 1,
+      "otherActivity": false,
+      "inputs": [
+        {
+          "id": "fireRune",
+          "amount": 2
+        },
+        {
+          "id": "natureRune",
+          "amount": 1
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/goodMagic-B2KXwfbV.png",
+      "entity": "Chillin' Spot",
+      "locations": [
+        {
+          "name": "Falcrest Bank",
+          "wikiId": "falcrest-bank"
+        },
+        {
+          "name": "O'Rock West",
+          "wikiId": "orock-west"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": false,
+      "alchemy": "low",
+      "outputs": [],
+      "requiredItems": []
+    },
+    {
       "id": "goodMagic/bones-to-bread",
       "skill": "goodMagic",
       "name": "Bones To Bread",
@@ -11764,6 +11802,44 @@
       "requiredItems": []
     },
     {
+      "id": "goodMagic/cast-high-level-alchemy",
+      "skill": "goodMagic",
+      "name": "High Alchemy",
+      "level": 55,
+      "duration": 13,
+      "exp": 180,
+      "sortLevel": 55,
+      "otherActivity": false,
+      "inputs": [
+        {
+          "id": "fireRune",
+          "amount": 4
+        },
+        {
+          "id": "natureRune",
+          "amount": 1
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/goodMagic-B2KXwfbV.png",
+      "entity": "Chillin' Spot",
+      "locations": [
+        {
+          "name": "Falcrest Bank",
+          "wikiId": "falcrest-bank"
+        },
+        {
+          "name": "O'Rock West",
+          "wikiId": "orock-west"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": false,
+      "alchemy": "high",
+      "outputs": [],
+      "requiredItems": []
+    },
+    {
       "id": "goodMagic/enchant-diamond-amulet",
       "skill": "goodMagic",
       "name": "Enchant Amulet 4",
@@ -11805,6 +11881,53 @@
       "outputs": [
         {
           "id": "amuletOfPower",
+          "amount": 1
+        }
+      ],
+      "requiredItems": []
+    },
+    {
+      "id": "goodMagic/enchant-dragonstone-amulet",
+      "skill": "goodMagic",
+      "name": "Enchant Amulet 5",
+      "level": 68,
+      "duration": 10801,
+      "exp": 293652,
+      "sortLevel": 68,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "airRune",
+          "amount": 15
+        },
+        {
+          "id": "cosmicRune",
+          "amount": 1
+        },
+        {
+          "id": "dragonstoneAmulet",
+          "amount": 1
+        }
+      ],
+      "icon": "./assets/amulets/amulet-of-progress.png",
+      "wikiId": "amulet-of-progress",
+      "entity": "Chillin' Spot",
+      "locations": [
+        {
+          "name": "Falcrest Bank",
+          "wikiId": "falcrest-bank"
+        },
+        {
+          "name": "O'Rock West",
+          "wikiId": "orock-west"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": true,
+      "outputs": [
+        {
+          "id": "amuletOfProgress",
           "amount": 1
         }
       ],
@@ -14266,6 +14389,54 @@
         }
       ],
       "requiredItems": []
+    },
+    {
+      "id": "goodMagic/dark-ritual",
+      "skill": "goodMagic",
+      "name": "Dark Ritual",
+      "level": 1,
+      "duration": 6,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "cutDiamond",
+          "amount": 1
+        },
+        {
+          "id": "cutEmerald",
+          "amount": 1
+        },
+        {
+          "id": "cutRuby",
+          "amount": 1
+        },
+        {
+          "id": "cutSapphire",
+          "amount": 1
+        },
+        {
+          "id": "deathRune",
+          "amount": 1
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/deathRune-4G0Y8gF-.png",
+      "entity": "Totem of Zem",
+      "locations": [
+        {
+          "name": "Lava Maze Entrance",
+          "wikiId": "lava-maze-entrance"
+        }
+      ],
+      "otherExp": {
+        "evilMagic": 1000
+      },
+      "requiresAbility": "Death's Bargain",
+      "requiresMembership": false,
+      "singleExecution": false,
+      "outputs": [],
+      "requiredItems": []
     }
   ],
   "foes": {
@@ -15375,7 +15546,8 @@
       "wikiId": "adamant-armor",
       "requirements": {
         "defense": 40
-      }
+      },
+      "value": 1500
     },
     "adamantArrows": {
       "name": "Adamant Arrows",
@@ -15388,7 +15560,8 @@
       ],
       "icon": "./assets/equipment/adamantArrows-CXXEmdwy.png",
       "wikiId": "adamant-arrows",
-      "requirements": {}
+      "requirements": {},
+      "value": 6
     },
     "adamantArrowtips": {
       "name": "Adamant Arrowtips",
@@ -15396,7 +15569,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/adamantArrowtips-B4idl5PE.png",
       "wikiId": "adamant-arrowtips",
-      "requirements": {}
+      "requirements": {},
+      "value": 5
     },
     "adamantDagger": {
       "name": "Adamant Dagger",
@@ -15411,7 +15585,8 @@
       "wikiId": "adamant-dagger",
       "requirements": {
         "attack": 40
-      }
+      },
+      "value": 300
     },
     "adamantMedHelm": {
       "name": "Adamant Med Helm",
@@ -15425,7 +15600,8 @@
       "wikiId": "adamant-med-helm",
       "requirements": {
         "defense": 40
-      }
+      },
+      "value": 300
     },
     "adamantScimitar": {
       "name": "Adamant Scimitar",
@@ -15440,7 +15616,8 @@
       "wikiId": "adamant-scimitar",
       "requirements": {
         "attack": 40
-      }
+      },
+      "value": 600
     },
     "adamantSqShield": {
       "name": "Adamant Sq Shield",
@@ -15454,7 +15631,8 @@
       "wikiId": "adamant-sq-shield",
       "requirements": {
         "defense": 40
-      }
+      },
+      "value": 600
     },
     "adamantiteBar": {
       "name": "Adamantite Bar",
@@ -15462,7 +15640,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/adamantiteBar-BdkdWbgW.png",
       "wikiId": "adamantite-bar",
-      "requirements": {}
+      "requirements": {},
+      "value": 100
     },
     "adamantiteOre": {
       "name": "Adamantite Ore",
@@ -15470,7 +15649,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/adamantiteOre-CtBRb8Pb.png",
       "wikiId": "adamantite-ore",
-      "requirements": {}
+      "requirements": {},
+      "value": 8
     },
     "airBattlestaff": {
       "name": "Air Battlestaff",
@@ -15488,7 +15668,8 @@
       "wikiId": "air-battlestaff",
       "requirements": {
         "evilMagic": 41
-      }
+      },
+      "value": 267
     },
     "airOrb": {
       "name": "Air Orb",
@@ -15496,7 +15677,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/airOrb-BqguhU8M.png",
       "wikiId": "air-orb",
-      "requirements": {}
+      "requirements": {},
+      "value": 66
     },
     "airRune": {
       "name": "Air Rune",
@@ -15504,7 +15686,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/airRune-DvRnD8uz.png",
       "wikiId": "air-rune",
-      "requirements": {}
+      "requirements": {},
+      "value": 1
     },
     "airStaff": {
       "name": "Air Staff",
@@ -15522,7 +15705,8 @@
       "wikiId": "air-staff",
       "requirements": {
         "evilMagic": 17
-      }
+      },
+      "value": 15
     },
     "amuletOfMagic": {
       "name": "Amulet of Magic",
@@ -15533,7 +15717,8 @@
       "tags": [],
       "icon": "./assets/amulets/amulet-of-magic.png",
       "wikiId": "amulet-of-magic",
-      "requirements": {}
+      "requirements": {},
+      "value": 71
     },
     "amuletOfPower": {
       "name": "Amulet of Power",
@@ -15549,7 +15734,8 @@
       "tags": [],
       "icon": "./assets/amulets/amulet-of-power.png",
       "wikiId": "amulet-of-power",
-      "requirements": {}
+      "requirements": {},
+      "value": 388
     },
     "amuletOfProgress": {
       "name": "Amulet of Progress",
@@ -15566,7 +15752,8 @@
       "tags": [],
       "icon": "./assets/amulets/amulet-of-progress.png",
       "wikiId": "amulet-of-progress",
-      "requirements": {}
+      "requirements": {},
+      "value": 900
     },
     "amuletOfProtection": {
       "name": "Amulet of Protection",
@@ -15577,7 +15764,8 @@
       "tags": [],
       "icon": "./assets/amulets/amulet-of-protection.png",
       "wikiId": "amulet-of-protection",
-      "requirements": {}
+      "requirements": {},
+      "value": 120
     },
     "amuletOfStrength": {
       "name": "Amulet of Strength",
@@ -15588,7 +15776,8 @@
       "tags": [],
       "icon": "./assets/amulets/amulet-of-strength.png",
       "wikiId": "amulet-of-strength",
-      "requirements": {}
+      "requirements": {},
+      "value": 217
     },
     "applePie": {
       "name": "Apple Pie",
@@ -15602,7 +15791,8 @@
       ],
       "icon": "./assets/equipment/applePie-CwUo85qp.png",
       "wikiId": "apple-pie",
-      "requirements": {}
+      "requirements": {},
+      "value": 19
     },
     "arrowShafts": {
       "name": "Arrow Shafts",
@@ -15621,7 +15811,8 @@
       ],
       "icon": "./assets/equipment/arrows-D5mdaUrg.png",
       "wikiId": "bronze-arrows",
-      "requirements": {}
+      "requirements": {},
+      "value": 1
     },
     "ashGloves": {
       "name": "Ash Gloves",
@@ -15633,7 +15824,8 @@
       "tags": [],
       "icon": "./assets/equipment/ashGloves-B84gh_MC.png",
       "wikiId": "ash-gloves",
-      "requirements": {}
+      "requirements": {},
+      "value": 57
     },
     "ashes": {
       "name": "Ashes",
@@ -15641,7 +15833,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/ashes-DagZt8ET.png",
       "wikiId": "ashes",
-      "requirements": {}
+      "requirements": {},
+      "value": 1
     },
     "attackPotion": {
       "name": "Attack Potion",
@@ -15650,7 +15843,8 @@
       "tags": [],
       "icon": "./assets/equipment/attackPotion-N-MeWDLj.png",
       "wikiId": "attack-potion",
-      "requirements": {}
+      "requirements": {},
+      "value": 21
     },
     "audienceFavor": {
       "name": "Audience Favor",
@@ -15668,7 +15862,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/ballOfWool-CFT2rAnG.png",
       "wikiId": "ball-of-wool",
-      "requirements": {}
+      "requirements": {},
+      "value": 3
     },
     "battlestaff": {
       "name": "Battlestaff",
@@ -15689,7 +15884,8 @@
       "requirements": {
         "attack": 10,
         "evilMagic": 10
-      }
+      },
+      "value": 196
     },
     "bazaarInvite": {
       "name": "Bazaar Invite",
@@ -15717,7 +15913,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/bigBones-Cepzx1YY.png",
       "wikiId": "big-bones",
-      "requirements": {}
+      "requirements": {},
+      "value": 2
     },
     "black2hSword": {
       "name": "Black 2h Sword",
@@ -15734,7 +15931,8 @@
       "wikiId": "black-2h-sword",
       "requirements": {
         "attack": 25
-      }
+      },
+      "value": 450
     },
     "blackArmor": {
       "name": "Black Armor",
@@ -15747,7 +15945,8 @@
       "wikiId": "black-armor",
       "requirements": {
         "defense": 25
-      }
+      },
+      "value": 600
     },
     "blackFullHelm": {
       "name": "Black Full Helm",
@@ -15760,7 +15959,8 @@
       "wikiId": "black-full-helm",
       "requirements": {
         "defense": 25
-      }
+      },
+      "value": 300
     },
     "blessedGreaves": {
       "name": "Blessed Greaves",
@@ -15774,7 +15974,8 @@
       "wikiId": "blessed-greaves",
       "requirements": {
         "piety": 5
-      }
+      },
+      "value": 40
     },
     "blinkBone": {
       "name": "Blink Bone",
@@ -15787,7 +15988,8 @@
       "tags": [],
       "icon": "./assets/equipment/blinkBone-BDHJictl.png",
       "wikiId": "blink-bone",
-      "requirements": {}
+      "requirements": {},
+      "value": 150
     },
     "bloodRune": {
       "name": "Blood Rune",
@@ -15795,7 +15997,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/bloodRune-CTnt_nOc.png",
       "wikiId": "blood-rune",
-      "requirements": {}
+      "requirements": {},
+      "value": 10
     },
     "bloodShard": {
       "name": "Blood Shard",
@@ -15806,7 +16009,8 @@
       "wikiId": "blood-shard",
       "requirements": {
         "evilMagic": 79
-      }
+      },
+      "value": 5000
     },
     "bloodiedCoin": {
       "name": "Bloodied Coin",
@@ -15822,7 +16026,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/blueFlame-CIcWwed6.png",
       "wikiId": "blue-flame",
-      "requirements": {}
+      "requirements": {},
+      "value": 20
     },
     "bluePartyHat": {
       "name": "Blue Party Hat",
@@ -15849,7 +16054,8 @@
       "wikiId": "bluegold-axe",
       "requirements": {
         "woodcutting": 30
-      }
+      },
+      "value": 500
     },
     "bones": {
       "name": "Bones",
@@ -15857,7 +16063,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/boneBuryingSpot-BlYOJnDj.png",
       "wikiId": "bones",
-      "requirements": {}
+      "requirements": {},
+      "value": 1
     },
     "bowString": {
       "name": "Bow String",
@@ -15865,7 +16072,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/bowString-C4Ah9EKw.png",
       "wikiId": "bow-string",
-      "requirements": {}
+      "requirements": {},
+      "value": 2
     },
     "bread": {
       "name": "Bread",
@@ -15876,7 +16084,8 @@
       "tags": [],
       "icon": "./assets/equipment/bread-DPyYWkuP.png",
       "wikiId": "bread",
-      "requirements": {}
+      "requirements": {},
+      "value": 4
     },
     "brimstone": {
       "name": "Brimstone",
@@ -15884,7 +16093,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/brimstone-Bot6BF-H.png",
       "wikiId": "brimstone",
-      "requirements": {}
+      "requirements": {},
+      "value": 20000
     },
     "brimstoneAxeHead": {
       "name": "Brimstone Axe Head",
@@ -15892,7 +16102,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/brimstoneAxeHead-CAFoVMs6.png",
       "wikiId": "brimstone-axe-head",
-      "requirements": {}
+      "requirements": {},
+      "value": 564000
     },
     "bronzeArmor": {
       "name": "Bronze Armor",
@@ -15905,7 +16116,8 @@
       "wikiId": "bronze-armor",
       "requirements": {
         "defense": 1
-      }
+      },
+      "value": 10
     },
     "bronzeArrowtips": {
       "name": "Bronze Arrowtips",
@@ -15921,7 +16133,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/bronzeBar-CCEGzSOD.png",
       "wikiId": "bronze-bar",
-      "requirements": {}
+      "requirements": {},
+      "value": 2
     },
     "bronzeDagger": {
       "name": "Bronze Dagger",
@@ -15936,7 +16149,8 @@
       "wikiId": "bronze-dagger",
       "requirements": {
         "attack": 1
-      }
+      },
+      "value": 2
     },
     "bronzeFullHelm": {
       "name": "Bronze Full Helm",
@@ -15949,7 +16163,8 @@
       "wikiId": "bronze-full-helm",
       "requirements": {
         "defense": 1
-      }
+      },
+      "value": 6
     },
     "bronzeMedHelm": {
       "name": "Bronze Med Helm",
@@ -15962,7 +16177,8 @@
       "wikiId": "bronze-med-helm",
       "requirements": {
         "defense": 1
-      }
+      },
+      "value": 2
     },
     "bronzeScimitar": {
       "name": "Bronze Scimitar",
@@ -15977,7 +16193,8 @@
       "wikiId": "bronze-scimitar",
       "requirements": {
         "attack": 1
-      }
+      },
+      "value": 4
     },
     "bronzeSqShield": {
       "name": "Bronze Sq Shield",
@@ -15990,7 +16207,8 @@
       "wikiId": "bronze-sq-shield",
       "requirements": {
         "defense": 1
-      }
+      },
+      "value": 4
     },
     "bucket": {
       "name": "Bucket",
@@ -15998,7 +16216,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/bucket-B28_wI5Z.png",
       "wikiId": "bucket",
-      "requirements": {}
+      "requirements": {},
+      "value": 1
     },
     "candyCane": {
       "name": "Candy Cane",
@@ -16009,7 +16228,8 @@
       "tags": [],
       "icon": "./assets/equipment/candyCane-7Z-TYzzq.png",
       "wikiId": "candy-cane",
-      "requirements": {}
+      "requirements": {},
+      "value": 20
     },
     "chaosRune": {
       "name": "Chaos Rune",
@@ -16017,7 +16237,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/chaosRune-DdphW-yO.png",
       "wikiId": "chaos-rune",
-      "requirements": {}
+      "requirements": {},
+      "value": 3
     },
     "chaosShard": {
       "name": "Chaos Shard",
@@ -16028,7 +16249,8 @@
       "wikiId": "chaos-shard",
       "requirements": {
         "evilMagic": 40
-      }
+      },
+      "value": 1250
     },
     "chefsHat": {
       "name": "Chef's Hat",
@@ -16040,7 +16262,8 @@
       "tags": [],
       "icon": "./assets/equipment/chefsHat-Cc6z3Wy1.png",
       "wikiId": "chefs-hat",
-      "requirements": {}
+      "requirements": {},
+      "value": 25
     },
     "chocolateDust": {
       "name": "Chocolate Dust",
@@ -16048,7 +16271,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/chocolateDust-DlT1O36n.png",
       "wikiId": "chocolate-dust",
-      "requirements": {}
+      "requirements": {},
+      "value": 2
     },
     "clay": {
       "name": "Clay",
@@ -16056,7 +16280,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/clay-DnHllx-w.png",
       "wikiId": "clay",
-      "requirements": {}
+      "requirements": {},
+      "value": 1
     },
     "clearedRubble": {
       "name": "Cleared Rubble",
@@ -16064,7 +16289,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/clearedRubble-BE7UuiX_.png",
       "wikiId": "cleared-rubble",
-      "requirements": {}
+      "requirements": {},
+      "value": 6
     },
     "clothesAdventurer": {
       "name": "Adventurer's Clothes",
@@ -16075,7 +16301,8 @@
       "tags": [],
       "icon": "./assets/equipment/clothesAdventurer-BgVlAhYw.png",
       "wikiId": "adventurers-clothes",
-      "requirements": {}
+      "requirements": {},
+      "value": 200
     },
     "clothesApron": {
       "name": "Apron",
@@ -16086,7 +16313,8 @@
       "tags": [],
       "icon": "./assets/equipment/clothesApron-DahXyts9.png",
       "wikiId": "apron",
-      "requirements": {}
+      "requirements": {},
+      "value": 50
     },
     "clothesDapper": {
       "name": "Dapper Outfit",
@@ -16097,7 +16325,8 @@
       "tags": [],
       "icon": "./assets/equipment/clothesDapper-Dng0gTMA.png",
       "wikiId": "dapper-outfit",
-      "requirements": {}
+      "requirements": {},
+      "value": 410
     },
     "clothesDesert": {
       "name": "Desert Robes",
@@ -16108,7 +16337,8 @@
       "tags": [],
       "icon": "./assets/equipment/clothesDesert-Cq4TecCK.png",
       "wikiId": "desert-robes",
-      "requirements": {}
+      "requirements": {},
+      "value": 200
     },
     "clothesJulian": {
       "name": "\"the Julian\"",
@@ -16119,7 +16349,8 @@
       "tags": [],
       "icon": "./assets/equipment/clothesJulian-GnwhFvr8.png",
       "wikiId": "the-julian",
-      "requirements": {}
+      "requirements": {},
+      "value": 940
     },
     "clothesRoyal": {
       "name": "Royal Attire",
@@ -16130,7 +16361,8 @@
       "tags": [],
       "icon": "./assets/equipment/clothesRoyal-DT00ECFT.png",
       "wikiId": "royal-attire",
-      "requirements": {}
+      "requirements": {},
+      "value": 3200
     },
     "clothesScout": {
       "name": "Scout Uniform",
@@ -16141,7 +16373,8 @@
       "tags": [],
       "icon": "./assets/equipment/clothesScout-atPk-Tpq.png",
       "wikiId": "scout-uniform",
-      "requirements": {}
+      "requirements": {},
+      "value": 50
     },
     "clothesSummer": {
       "name": "Summer Outfit",
@@ -16152,7 +16385,8 @@
       "tags": [],
       "icon": "./assets/equipment/clothesSummer-D8JPUY0_.png",
       "wikiId": "summer-outfit",
-      "requirements": {}
+      "requirements": {},
+      "value": 200
     },
     "coalOre": {
       "name": "Coal Ore",
@@ -16160,7 +16394,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/coalOre-Jey-nOX2.png",
       "wikiId": "coal-ore",
-      "requirements": {}
+      "requirements": {},
+      "value": 3
     },
     "coalTar": {
       "name": "Coal Tar",
@@ -16168,7 +16403,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/coalTar-D5rY8ejz.png",
       "wikiId": "coal-tar",
-      "requirements": {}
+      "requirements": {},
+      "value": 8
     },
     "cockatriceCarcass": {
       "name": "C. Carcass",
@@ -16176,7 +16412,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/cockatriceCarcass-rx5q3qk5.png",
       "wikiId": "c-carcass",
-      "requirements": {}
+      "requirements": {},
+      "value": 8
     },
     "coins": {
       "name": "Coins",
@@ -16206,7 +16443,8 @@
       "tags": [],
       "icon": "./assets/equipment/cookedChicken-DKYVN_3W.png",
       "wikiId": "items-chicken",
-      "requirements": {}
+      "requirements": {},
+      "value": 1
     },
     "cookedFrog": {
       "name": "Frog On A Stick",
@@ -16217,7 +16455,8 @@
       "tags": [],
       "icon": "./assets/equipment/cookedFrog-CnLMgoeR.png",
       "wikiId": "frog-on-a-stick",
-      "requirements": {}
+      "requirements": {},
+      "value": 1
     },
     "cookedLobster": {
       "name": "Lobster",
@@ -16228,7 +16467,8 @@
       "tags": [],
       "icon": "./assets/equipment/cookedLobster-OcY79W29.png",
       "wikiId": "lobster",
-      "requirements": {}
+      "requirements": {},
+      "value": 8
     },
     "cookedMantaRay": {
       "name": "Manta Ray",
@@ -16239,7 +16479,8 @@
       "tags": [],
       "icon": "./assets/equipment/cookedMantaRay-CAUNP9Gp.png",
       "wikiId": "manta-ray",
-      "requirements": {}
+      "requirements": {},
+      "value": 16
     },
     "cookedMeat": {
       "name": "Meat",
@@ -16250,7 +16491,8 @@
       "tags": [],
       "icon": "./assets/equipment/cookedMeat-C9KOsWSS.png",
       "wikiId": "meat",
-      "requirements": {}
+      "requirements": {},
+      "value": 1
     },
     "cookedPyreshell": {
       "name": "Braised Pyreshell",
@@ -16262,7 +16504,8 @@
       "tags": [],
       "icon": "./assets/equipment/cookedPyreshell-DFwM3Ojo.png",
       "wikiId": "braised-pyreshell",
-      "requirements": {}
+      "requirements": {},
+      "value": 12
     },
     "cookedSalmon": {
       "name": "Salmon",
@@ -16273,7 +16516,8 @@
       "tags": [],
       "icon": "./assets/equipment/cookedSalmon-DDHUyTPF.png",
       "wikiId": "salmon",
-      "requirements": {}
+      "requirements": {},
+      "value": 6
     },
     "cookedSardine": {
       "name": "Sardine",
@@ -16284,7 +16528,8 @@
       "tags": [],
       "icon": "./assets/equipment/cookedSardine-DSKPlBN5.png",
       "wikiId": "sardine",
-      "requirements": {}
+      "requirements": {},
+      "value": 2
     },
     "cookedShark": {
       "name": "Shark",
@@ -16295,7 +16540,8 @@
       "tags": [],
       "icon": "./assets/equipment/cookedShark-DmGiKXy2.png",
       "wikiId": "shark",
-      "requirements": {}
+      "requirements": {},
+      "value": 14
     },
     "cookedShrimp": {
       "name": "Shrimp",
@@ -16306,7 +16552,8 @@
       "tags": [],
       "icon": "./assets/equipment/cookedShrimp-CfKiLXDl.png",
       "wikiId": "shrimp",
-      "requirements": {}
+      "requirements": {},
+      "value": 1
     },
     "cookedSwordfish": {
       "name": "Swordfish",
@@ -16317,7 +16564,8 @@
       "tags": [],
       "icon": "./assets/equipment/cookedSwordfish-BofeZvV9.png",
       "wikiId": "swordfish",
-      "requirements": {}
+      "requirements": {},
+      "value": 10
     },
     "cookedTrout": {
       "name": "Trout",
@@ -16328,7 +16576,8 @@
       "tags": [],
       "icon": "./assets/equipment/cookedTrout-DxzoUuUk.png",
       "wikiId": "trout",
-      "requirements": {}
+      "requirements": {},
+      "value": 4
     },
     "cookingApple": {
       "name": "Cooking Apple",
@@ -16336,7 +16585,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/cookingApple-Bb27gUbX.png",
       "wikiId": "cooking-apple",
-      "requirements": {}
+      "requirements": {},
+      "value": 3
     },
     "cookingPotion": {
       "name": "Cooking Potion",
@@ -16345,7 +16595,8 @@
       "tags": [],
       "icon": "./assets/equipment/cookingPotion-DqXwhjeN.png",
       "wikiId": "cooking-potion",
-      "requirements": {}
+      "requirements": {},
+      "value": 39
     },
     "copperOre": {
       "name": "Copper Ore",
@@ -16353,7 +16604,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/copperOre-CoCuAu5d.png",
       "wikiId": "copper-ore",
-      "requirements": {}
+      "requirements": {},
+      "value": 1
     },
     "cosmicRune": {
       "name": "Cosmic Rune",
@@ -16361,7 +16613,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/cosmicRune-Wp4gAQeY.png",
       "wikiId": "cosmic-rune",
-      "requirements": {}
+      "requirements": {},
+      "value": 4
     },
     "cowHide": {
       "name": "Cow Hide",
@@ -16369,7 +16622,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/cowHide-D6umOuEF.png",
       "wikiId": "cow-hide",
-      "requirements": {}
+      "requirements": {},
+      "value": 1
     },
     "craftingPotion": {
       "name": "Crafting Potion",
@@ -16378,7 +16632,8 @@
       "tags": [],
       "icon": "./assets/equipment/craftingPotion-Cpc16MI3.png",
       "wikiId": "crafting-potion",
-      "requirements": {}
+      "requirements": {},
+      "value": 111
     },
     "cursedTalisman": {
       "name": "Cursed Talisman",
@@ -16391,7 +16646,8 @@
       "wikiId": "cursed-talisman",
       "requirements": {
         "evilMagic": 36
-      }
+      },
+      "value": 620
     },
     "cutDiamond": {
       "name": "Diamond",
@@ -16399,7 +16655,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/cutDiamond-CKSFyE1I.png",
       "wikiId": "diamond",
-      "requirements": {}
+      "requirements": {},
+      "value": 337
     },
     "cutDragonstone": {
       "name": "Dragonstone",
@@ -16407,7 +16664,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/cutDragonstone-R_NNipKY.png",
       "wikiId": "dragonstone",
-      "requirements": {}
+      "requirements": {},
+      "value": 762
     },
     "cutEmerald": {
       "name": "Emerald",
@@ -16415,7 +16673,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/cutEmerald-ClGUWSDM.png",
       "wikiId": "emerald",
-      "requirements": {}
+      "requirements": {},
+      "value": 91
     },
     "cutRuby": {
       "name": "Ruby",
@@ -16423,7 +16682,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/cutRuby-R23WGnMw.png",
       "wikiId": "ruby",
-      "requirements": {}
+      "requirements": {},
+      "value": 174
     },
     "cutSapphire": {
       "name": "Sapphire",
@@ -16431,7 +16691,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/cutSapphire-jmexEZ_J.png",
       "wikiId": "sapphire",
-      "requirements": {}
+      "requirements": {},
+      "value": 48
     },
     "darkWizardsRobe": {
       "name": "Dark Wizard's Robes",
@@ -16446,7 +16707,8 @@
       "wikiId": "dark-wizards-robes",
       "requirements": {
         "evilMagic": 51
-      }
+      },
+      "value": 300
     },
     "deathRune": {
       "name": "Death Rune",
@@ -16454,7 +16716,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/deathRune-4G0Y8gF-.png",
       "wikiId": "death-rune",
-      "requirements": {}
+      "requirements": {},
+      "value": 5
     },
     "deathShard": {
       "name": "Death Shard",
@@ -16465,7 +16728,8 @@
       "wikiId": "death-shard",
       "requirements": {
         "evilMagic": 64
-      }
+      },
+      "value": 2750
     },
     "defensePotion": {
       "name": "Defense Potion",
@@ -16474,7 +16738,8 @@
       "tags": [],
       "icon": "./assets/equipment/defensePotion-DkVrbUzO.png",
       "wikiId": "defense-potion",
-      "requirements": {}
+      "requirements": {},
+      "value": 21
     },
     "diamondAmulet": {
       "name": "Diamond Amulet",
@@ -16483,7 +16748,8 @@
       "tags": [],
       "icon": "./assets/amulets/diamond-amulet.png",
       "wikiId": "diamond-amulet",
-      "requirements": {}
+      "requirements": {},
+      "value": 351
     },
     "dimEvilAmulet": {
       "name": "Dim Evil Amulet",
@@ -16492,7 +16758,8 @@
       "tags": [],
       "icon": "./assets/amulets/dim-evil-amulet.png",
       "wikiId": "dim-evil-amulet",
-      "requirements": {}
+      "requirements": {},
+      "value": 14
     },
     "dimHolyAmulet": {
       "name": "Dim Holy Amulet",
@@ -16503,7 +16770,8 @@
       "tags": [],
       "icon": "./assets/amulets/dim-holy-amulet.png",
       "wikiId": "dim-holy-amulet",
-      "requirements": {}
+      "requirements": {},
+      "value": 14
     },
     "distilledAsh": {
       "name": "Distilled Ash",
@@ -16511,7 +16779,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/distilledAsh-w4VTkmrE.png",
       "wikiId": "distilled-ash",
-      "requirements": {}
+      "requirements": {},
+      "value": 800
     },
     "dough": {
       "name": "Dough",
@@ -16519,7 +16788,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/dough-BgHE6kiR.png",
       "wikiId": "dough",
-      "requirements": {}
+      "requirements": {},
+      "value": 2
     },
     "dragonBones": {
       "name": "Dragon Bones",
@@ -16527,7 +16797,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/dragonBones-D2GJe7A-.png",
       "wikiId": "dragon-bones",
-      "requirements": {}
+      "requirements": {},
+      "value": 10
     },
     "dragonHelm": {
       "name": "Dragon Helm",
@@ -16543,7 +16814,8 @@
       "wikiId": "dragon-helm",
       "requirements": {
         "defense": 60
-      }
+      },
+      "value": 25088
     },
     "dragonShield": {
       "name": "Dragon Shield",
@@ -16559,7 +16831,8 @@
       "wikiId": "dragon-shield",
       "requirements": {
         "defense": 60
-      }
+      },
+      "value": 35968
     },
     "dragonShieldLeft": {
       "name": "Dragon Shield (Left Half)",
@@ -16567,7 +16840,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/dragonShieldLeft-BRFA6uTA.png",
       "wikiId": "dragon-shield-left-half",
-      "requirements": {}
+      "requirements": {},
+      "value": 16128
     },
     "dragonShieldRight": {
       "name": "Dragon Shield (Right Half)",
@@ -16575,7 +16849,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/dragonShieldRight-CU6DxM6Z.png",
       "wikiId": "dragon-shield-right-half",
-      "requirements": {}
+      "requirements": {},
+      "value": 16128
     },
     "dragonSword": {
       "name": "Dragon Sword",
@@ -16592,7 +16867,8 @@
       "wikiId": "dragon-sword",
       "requirements": {
         "attack": 60
-      }
+      },
+      "value": 30080
     },
     "dragonsBreath": {
       "name": "Dragon's Breath",
@@ -16600,7 +16876,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/dragonsBreath-B9UZWnKs.png",
       "wikiId": "dragons-breath",
-      "requirements": {}
+      "requirements": {},
+      "value": 4000
     },
     "dragonstoneAmulet": {
       "name": "Dragonstone Amulet",
@@ -16609,7 +16886,8 @@
       "tags": [],
       "icon": "./assets/amulets/dragonstone-amulet.png",
       "wikiId": "dragonstone-amulet",
-      "requirements": {}
+      "requirements": {},
+      "value": 776
     },
     "dragontongue": {
       "name": "Dragontongue",
@@ -16617,7 +16895,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/dragontongue-Cl1zonXe.png",
       "wikiId": "dragontongue",
-      "requirements": {}
+      "requirements": {},
+      "value": 24
     },
     "drakestem": {
       "name": "Drakestem",
@@ -16625,7 +16904,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/drakestem-cgFkoXTS.png",
       "wikiId": "drakestem",
-      "requirements": {}
+      "requirements": {},
+      "value": 18
     },
     "dross": {
       "name": "Dross",
@@ -16633,7 +16913,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/dross-LZ4Fzout.png",
       "wikiId": "dross",
-      "requirements": {}
+      "requirements": {},
+      "value": 3
     },
     "dungeonKey": {
       "name": "Dungeon Key",
@@ -16649,7 +16930,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/dwellberries-IJnNQ8ED.png",
       "wikiId": "dwellberries",
-      "requirements": {}
+      "requirements": {},
+      "value": 6
     },
     "elmwort": {
       "name": "Elmwort",
@@ -16657,7 +16939,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/elmwort-QBpvW-Kw.png",
       "wikiId": "elmwort",
-      "requirements": {}
+      "requirements": {},
+      "value": 4
     },
     "elperHat": {
       "name": "Elper's Hat",
@@ -16668,7 +16951,8 @@
       "tags": [],
       "icon": "./assets/equipment/elperHat-BYd-qgn5.png",
       "wikiId": "elpers-hat",
-      "requirements": {}
+      "requirements": {},
+      "value": 35
     },
     "emberstone": {
       "name": "Emberstone",
@@ -16676,7 +16960,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/emberstone-rNVM_Ymb.png",
       "wikiId": "emberstone",
-      "requirements": {}
+      "requirements": {},
+      "value": 24000
     },
     "emeraldAmulet": {
       "name": "Emerald Amulet",
@@ -16685,7 +16970,8 @@
       "tags": [],
       "icon": "./assets/amulets/emerald-amulet.png",
       "wikiId": "emerald-amulet",
-      "requirements": {}
+      "requirements": {},
+      "value": 105
     },
     "everflameCore": {
       "name": "Everflame Core",
@@ -16693,7 +16979,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/everflameCore-CFV8kH5p.png",
       "wikiId": "everflame-core",
-      "requirements": {}
+      "requirements": {},
+      "value": 44000
     },
     "evilAmulet": {
       "name": "Evil Amulet",
@@ -16709,7 +16996,8 @@
       "wikiId": "evil-amulet",
       "requirements": {
         "piety": 43
-      }
+      },
+      "value": 26
     },
     "evilMagicPotion": {
       "name": "Evil Magic Potion",
@@ -16718,7 +17006,8 @@
       "tags": [],
       "icon": "./assets/equipment/evilMagicPotion-vVK7pWFj.png",
       "wikiId": "evil-magic-potion",
-      "requirements": {}
+      "requirements": {},
+      "value": 113
     },
     "explorersHat": {
       "name": "Explorer's Hat",
@@ -16729,7 +17018,8 @@
       "tags": [],
       "icon": "./assets/equipment/explorersHat-CpciqM65.png",
       "wikiId": "explorers-hat",
-      "requirements": {}
+      "requirements": {},
+      "value": 80
     },
     "eyeOfNewt": {
       "name": "Eye of Newt",
@@ -16737,7 +17027,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/eyeOfNewt-BEXra_wP.png",
       "wikiId": "eye-of-newt",
-      "requirements": {}
+      "requirements": {},
+      "value": 2
     },
     "falcrestFern": {
       "name": "Falcrest Fern",
@@ -16745,7 +17036,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/falcrestFern-Ch-eQr0h.png",
       "wikiId": "falcrest-fern",
-      "requirements": {}
+      "requirements": {},
+      "value": 10
     },
     "feather": {
       "name": "Feather",
@@ -16753,7 +17045,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/feather-TYs5GXE9.png",
       "wikiId": "feather",
-      "requirements": {}
+      "requirements": {},
+      "value": 1
     },
     "featheredCap": {
       "name": "Feathered Cap",
@@ -16764,7 +17057,8 @@
       "tags": [],
       "icon": "./assets/equipment/featheredCap-XrLwD2nf.png",
       "wikiId": "feathered-cap",
-      "requirements": {}
+      "requirements": {},
+      "value": 12
     },
     "featheredSeed": {
       "name": "Feathered Seed",
@@ -16772,7 +17066,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/featheredSeed-BEPlg149.png",
       "wikiId": "feathered-seed",
-      "requirements": {}
+      "requirements": {},
+      "value": 10
     },
     "fellroot": {
       "name": "Fellroot",
@@ -16780,7 +17075,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/fellroot-DI9BvdYk.png",
       "wikiId": "fellroot",
-      "requirements": {}
+      "requirements": {},
+      "value": 2
     },
     "fireBattlestaff": {
       "name": "Fire Battlestaff",
@@ -16798,7 +17094,8 @@
       "wikiId": "fire-battlestaff",
       "requirements": {
         "evilMagic": 59
-      }
+      },
+      "value": 268
     },
     "fireDwarfGloves": {
       "name": "Fire Dwarf Gloves",
@@ -16806,7 +17103,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/fireDwarfGloves-C6ot0769.png",
       "wikiId": "fire-dwarf-gloves",
-      "requirements": {}
+      "requirements": {},
+      "value": 60
     },
     "fireOrb": {
       "name": "Fire Orb",
@@ -16814,7 +17112,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/fireOrb-BrFsnJmH.png",
       "wikiId": "fire-orb",
-      "requirements": {}
+      "requirements": {},
+      "value": 66
     },
     "fireRune": {
       "name": "Fire Rune",
@@ -16822,7 +17121,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/fireRune-xhjkwRRH.png",
       "wikiId": "fire-rune",
-      "requirements": {}
+      "requirements": {},
+      "value": 1
     },
     "fireStaff": {
       "name": "Fire Staff",
@@ -16840,7 +17140,8 @@
       "wikiId": "fire-staff",
       "requirements": {
         "evilMagic": 35
-      }
+      },
+      "value": 18
     },
     "firemakingPotion": {
       "name": "Firemaking Potion",
@@ -16849,7 +17150,8 @@
       "tags": [],
       "icon": "./assets/equipment/firemakingPotion-BvOHiNDv.png",
       "wikiId": "firemaking-potion",
-      "requirements": {}
+      "requirements": {},
+      "value": 105
     },
     "fishingPotion": {
       "name": "Fishing Potion",
@@ -16858,7 +17160,8 @@
       "tags": [],
       "icon": "./assets/equipment/fishingPotion-a4WPEbql.png",
       "wikiId": "fishing-potion",
-      "requirements": {}
+      "requirements": {},
+      "value": 21
     },
     "fishingRod": {
       "name": "Fishing Rod",
@@ -16872,7 +17175,8 @@
       "tags": [],
       "icon": "./assets/equipment/fishingRod-BA_jcE_n.png",
       "wikiId": "fishing-rod",
-      "requirements": {}
+      "requirements": {},
+      "value": 12
     },
     "flax": {
       "name": "Flax",
@@ -16880,7 +17184,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/flax-Dyja31zz.png",
       "wikiId": "flax",
-      "requirements": {}
+      "requirements": {},
+      "value": 1
     },
     "fletchersCloak": {
       "name": "Fletcher's Cloak",
@@ -16891,7 +17196,8 @@
       "tags": [],
       "icon": "./assets/equipment/fletchersCloak-CnmEPgj8.png",
       "wikiId": "fletchers-cloak",
-      "requirements": {}
+      "requirements": {},
+      "value": 900
     },
     "fletchingPotion": {
       "name": "Fletching Potion",
@@ -16900,7 +17206,8 @@
       "tags": [],
       "icon": "./assets/equipment/fletchingPotion-BIwLXgaS.png",
       "wikiId": "fletching-potion",
-      "requirements": {}
+      "requirements": {},
+      "value": 83
     },
     "flourPot": {
       "name": "Flour Pot",
@@ -16908,7 +17215,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/flourPot-B1pATX0C.png",
       "wikiId": "flour-pot",
-      "requirements": {}
+      "requirements": {},
+      "value": 2
     },
     "foodScraps": {
       "name": "Food Scraps",
@@ -16955,7 +17263,8 @@
       "tags": [],
       "icon": "./assets/equipment/foxHat-CsT2xiOL.png",
       "wikiId": "fox-hat",
-      "requirements": {}
+      "requirements": {},
+      "value": 200
     },
     "frostcurl": {
       "name": "Frostcurl",
@@ -16963,7 +17272,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/frostcurl-DqsT1CE3.png",
       "wikiId": "frostcurl",
-      "requirements": {}
+      "requirements": {},
+      "value": 8
     },
     "frozenOrb": {
       "name": "Frozen Orb",
@@ -16971,7 +17281,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/frozenOrb-AVXOaNhg.png",
       "wikiId": "frozen-orb",
-      "requirements": {}
+      "requirements": {},
+      "value": 600
     },
     "fur": {
       "name": "Fur",
@@ -16979,7 +17290,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/fur-Bcj0AT7t.png",
       "wikiId": "fur",
-      "requirements": {}
+      "requirements": {},
+      "value": 4
     },
     "gardenersGloves": {
       "name": "Gardener's Gloves",
@@ -16991,7 +17303,8 @@
       "tags": [],
       "icon": "./assets/equipment/gardenersGloves-CcHJzLnB.png",
       "wikiId": "gardeners-gloves",
-      "requirements": {}
+      "requirements": {},
+      "value": 50
     },
     "giantPlume": {
       "name": "Giant Plume",
@@ -16999,7 +17312,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/giantPlume-01K7sdvD.png",
       "wikiId": "giant-plume",
-      "requirements": {}
+      "requirements": {},
+      "value": 8
     },
     "ginger": {
       "name": "Ginger",
@@ -17007,7 +17321,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/ginger-CbZNhEx0.png",
       "wikiId": "ginger",
-      "requirements": {}
+      "requirements": {},
+      "value": 1
     },
     "gloomroot": {
       "name": "Gloomroot",
@@ -17015,7 +17330,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/gloomroot-DP3Yrj_Y.png",
       "wikiId": "gloomroot",
-      "requirements": {}
+      "requirements": {},
+      "value": 4
     },
     "goldAmulet": {
       "name": "Gold Amulet",
@@ -17024,7 +17340,8 @@
       "tags": [],
       "icon": "./assets/amulets/gold-amulet.png",
       "wikiId": "gold-amulet",
-      "requirements": {}
+      "requirements": {},
+      "value": 14
     },
     "goldBar": {
       "name": "Gold Bar",
@@ -17032,7 +17349,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/goldBar-CZ2B5n_d.png",
       "wikiId": "gold-bar",
-      "requirements": {}
+      "requirements": {},
+      "value": 8
     },
     "goldOre": {
       "name": "Gold Ore",
@@ -17040,7 +17358,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/goldOre-DU7K7MUj.png",
       "wikiId": "gold-ore",
-      "requirements": {}
+      "requirements": {},
+      "value": 5
     },
     "goldenRod": {
       "name": "Golden Rod",
@@ -17056,7 +17375,8 @@
       "wikiId": "golden-rod",
       "requirements": {
         "fishing": 30
-      }
+      },
+      "value": 49
     },
     "goodMagicPotion": {
       "name": "Good Magic Potion",
@@ -17065,7 +17385,8 @@
       "tags": [],
       "icon": "./assets/equipment/goodMagicPotion-BxJWmAw6.png",
       "wikiId": "good-magic-potion",
-      "requirements": {}
+      "requirements": {},
+      "value": 79
     },
     "grain": {
       "name": "Grain",
@@ -17073,7 +17394,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/grain-BQ8eoUpf.png",
       "wikiId": "grain",
-      "requirements": {}
+      "requirements": {},
+      "value": 1
     },
     "greenPartyHat": {
       "name": "Green Party Hat",
@@ -17095,7 +17417,8 @@
       "tags": [],
       "icon": "./assets/equipment/hammer-CpeS4UmM.png",
       "wikiId": "bronze-hammer",
-      "requirements": {}
+      "requirements": {},
+      "value": 4
     },
     "havenfrond": {
       "name": "Havenfrond",
@@ -17103,7 +17426,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/havenfrond-B31sSRoy.png",
       "wikiId": "havenfrond",
-      "requirements": {}
+      "requirements": {},
+      "value": 6
     },
     "heartwoodBough": {
       "name": "Heartwood Bough",
@@ -17111,7 +17435,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/heartwoodBough-13_52Nyz.png",
       "wikiId": "heartwood-bough",
-      "requirements": {}
+      "requirements": {},
+      "value": 12000
     },
     "heartwoodHaft": {
       "name": "Heartwood Haft",
@@ -17119,7 +17444,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/heartwoodHaft-CxU33kzc.png",
       "wikiId": "heartwood-haft",
-      "requirements": {}
+      "requirements": {},
+      "value": 42000
     },
     "heatGloves": {
       "name": "Heat Gloves",
@@ -17131,7 +17457,8 @@
       "tags": [],
       "icon": "./assets/equipment/heatGloves-BiuwPLIz.png",
       "wikiId": "heat-gloves",
-      "requirements": {}
+      "requirements": {},
+      "value": 91
     },
     "hellforgedHammer": {
       "name": "Hellforged Hammer",
@@ -17144,7 +17471,8 @@
       "wikiId": "mithril-hammer",
       "requirements": {
         "smithing": 50
-      }
+      },
+      "value": 34
     },
     "herblawPotion": {
       "name": "Herblaw Potion",
@@ -17153,7 +17481,8 @@
       "tags": [],
       "icon": "./assets/equipment/herblawPotion-D9d9unhw.png",
       "wikiId": "herblaw-potion",
-      "requirements": {}
+      "requirements": {},
+      "value": 43
     },
     "holyAmulet": {
       "name": "Holy Amulet",
@@ -17167,7 +17496,8 @@
       "wikiId": "holy-amulet",
       "requirements": {
         "piety": 22
-      }
+      },
+      "value": 17
     },
     "impweed": {
       "name": "Impweed",
@@ -17175,7 +17505,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/impweed-BtYn2Nlz.png",
       "wikiId": "impweed",
-      "requirements": {}
+      "requirements": {},
+      "value": 2
     },
     "ironBar": {
       "name": "Iron Bar",
@@ -17183,7 +17514,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/ironBar-D-EFfR6e.png",
       "wikiId": "iron-bar",
-      "requirements": {}
+      "requirements": {},
+      "value": 4
     },
     "ironOre": {
       "name": "Iron Ore",
@@ -17191,7 +17523,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/ironOre-DKu_dY1B.png",
       "wikiId": "iron-ore",
-      "requirements": {}
+      "requirements": {},
+      "value": 2
     },
     "ironShears": {
       "name": "Iron Shears",
@@ -17200,7 +17533,8 @@
       "tags": [],
       "icon": "./assets/equipment/ironShears-kQV-P0BN.png",
       "wikiId": "iron-shears",
-      "requirements": {}
+      "requirements": {},
+      "value": 5
     },
     "ironbreakerPickaxe": {
       "name": "Ironbreaker Pickaxe",
@@ -17216,7 +17550,8 @@
       "wikiId": "iron-pickaxe",
       "requirements": {
         "mining": 30
-      }
+      },
+      "value": 14
     },
     "iskarnsGrip": {
       "name": "Iskarn's Grip",
@@ -17234,7 +17569,8 @@
       "wikiId": "iskarns-grip",
       "requirements": {
         "evilMagic": 67
-      }
+      },
+      "value": 34000
     },
     "jackoLantern": {
       "name": "Jack-o'-lantern",
@@ -17245,7 +17581,8 @@
       "tags": [],
       "icon": "./assets/equipment/jackoLantern-CAMTEvQ1.png",
       "wikiId": "jack-o-lantern",
-      "requirements": {}
+      "requirements": {},
+      "value": 20
     },
     "khopeshOfBa": {
       "name": "Khopesh of Ba",
@@ -17260,7 +17597,8 @@
       "wikiId": "khopesh-of-ba",
       "requirements": {
         "attack": 50
-      }
+      },
+      "value": 900
     },
     "knightveil": {
       "name": "Knightveil",
@@ -17268,7 +17606,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/knightveil-DSlPZ7rQ.png",
       "wikiId": "knightveil",
-      "requirements": {}
+      "requirements": {},
+      "value": 4
     },
     "ladle": {
       "name": "Ladle",
@@ -17279,7 +17618,8 @@
       "tags": [],
       "icon": "./assets/equipment/ladle-BB5-CLBw.png",
       "wikiId": "bronze-ladle",
-      "requirements": {}
+      "requirements": {},
+      "value": 4
     },
     "laserDagger": {
       "name": "Laser Dagger",
@@ -17306,7 +17646,8 @@
       "wikiId": "lava-rod",
       "requirements": {
         "fishing": 30
-      }
+      },
+      "value": 50
     },
     "lavabloom": {
       "name": "Lavabloom",
@@ -17314,7 +17655,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/lavabloom-DtG6tXX4.png",
       "wikiId": "lavabloom",
-      "requirements": {}
+      "requirements": {},
+      "value": 8
     },
     "lawRune": {
       "name": "Law Rune",
@@ -17322,7 +17664,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/lawRune-CygyiqmK.png",
       "wikiId": "law-rune",
-      "requirements": {}
+      "requirements": {},
+      "value": 9
     },
     "leather": {
       "name": "Leather",
@@ -17330,7 +17673,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/leather-DkFs0jL3.png",
       "wikiId": "leather",
-      "requirements": {}
+      "requirements": {},
+      "value": 4
     },
     "leatherArmor": {
       "name": "Leather Armor",
@@ -17343,7 +17687,8 @@
       "wikiId": "leather-armor",
       "requirements": {
         "defense": 1
-      }
+      },
+      "value": 9
     },
     "leatherBoots": {
       "name": "Leather Boots",
@@ -17356,7 +17701,8 @@
       "wikiId": "leather-boots",
       "requirements": {
         "defense": 1
-      }
+      },
+      "value": 5
     },
     "leatherGloves": {
       "name": "Leather Gloves",
@@ -17369,7 +17715,8 @@
       "wikiId": "leather-gloves",
       "requirements": {
         "defense": 1
-      }
+      },
+      "value": 5
     },
     "limpwurtRoot": {
       "name": "Limpwurt Root",
@@ -17377,7 +17724,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/limpwurtRoot-Ba_WL3Iu.png",
       "wikiId": "limpwurt-root",
-      "requirements": {}
+      "requirements": {},
+      "value": 6
     },
     "loggingAxe": {
       "name": "Logging Axe",
@@ -17391,7 +17739,8 @@
       "tags": [],
       "icon": "./assets/equipment/loggingAxe-kZXwEHLV.png",
       "wikiId": "bronze-axe",
-      "requirements": {}
+      "requirements": {},
+      "value": 8
     },
     "logs": {
       "name": "Logs",
@@ -17399,7 +17748,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/logs-DmE-oFjf.png",
       "wikiId": "logs",
-      "requirements": {}
+      "requirements": {},
+      "value": 1
     },
     "loot": {
       "name": "Loot",
@@ -17414,7 +17764,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/luckyPaw-CoNC7XfQ.png",
       "wikiId": "lucky-paw",
-      "requirements": {}
+      "requirements": {},
+      "value": 300
     },
     "luckyToken": {
       "name": "Lucky Token",
@@ -17439,7 +17790,8 @@
       "wikiId": "magic-bow",
       "requirements": {
         "ranged": 50
-      }
+      },
+      "value": 48
     },
     "magicBowU": {
       "name": "Magic Bow (u)",
@@ -17447,7 +17799,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/magicBowU-CX_dzEdC.png",
       "wikiId": "magic-bow-u",
-      "requirements": {}
+      "requirements": {},
+      "value": 30
     },
     "magicCarp": {
       "name": "Magic Carp",
@@ -17463,7 +17816,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/magicLogs-C4Jwitib.png",
       "wikiId": "magic-logs",
-      "requirements": {}
+      "requirements": {},
+      "value": 4
     },
     "magicStaff": {
       "name": "Magic Staff",
@@ -17481,7 +17835,8 @@
       "wikiId": "magic-staff",
       "requirements": {
         "evilMagic": 13
-      }
+      },
+      "value": 8
     },
     "magmaCore": {
       "name": "Magma Core",
@@ -17503,7 +17858,8 @@
       "wikiId": "magma-mirror",
       "requirements": {
         "defense": 35
-      }
+      },
+      "value": 400
     },
     "mapleBow": {
       "name": "Maple Bow",
@@ -17520,7 +17876,8 @@
       "wikiId": "maple-bow",
       "requirements": {
         "ranged": 30
-      }
+      },
+      "value": 21
     },
     "mapleBowU": {
       "name": "Maple Bow (u)",
@@ -17528,7 +17885,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/mapleBowU-D-KXTksi.png",
       "wikiId": "maple-bow-u",
-      "requirements": {}
+      "requirements": {},
+      "value": 13
     },
     "mapleLogs": {
       "name": "Maple Logs",
@@ -17536,7 +17894,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/mapleLogs-CTMoz4q1.png",
       "wikiId": "maple-logs",
-      "requirements": {}
+      "requirements": {},
+      "value": 2
     },
     "marshcap": {
       "name": "Marshcap",
@@ -17544,7 +17903,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/marshcap-COx-PRi3.png",
       "wikiId": "marshcap",
-      "requirements": {}
+      "requirements": {},
+      "value": 6
     },
     "meatPie": {
       "name": "Meat Pie",
@@ -17558,7 +17918,8 @@
       ],
       "icon": "./assets/equipment/meatPie-DeHqUJX4.png",
       "wikiId": "meat-pie",
-      "requirements": {}
+      "requirements": {},
+      "value": 13
     },
     "mindRune": {
       "name": "Mind Rune",
@@ -17566,7 +17927,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/mindRune-BF8MOLKj.png",
       "wikiId": "mind-rune",
-      "requirements": {}
+      "requirements": {},
+      "value": 2
     },
     "mindShard": {
       "name": "Mind Shard",
@@ -17577,7 +17939,8 @@
       "wikiId": "mind-shard",
       "requirements": {
         "evilMagic": 18
-      }
+      },
+      "value": 250
     },
     "miningPotion": {
       "name": "Mining Potion",
@@ -17586,7 +17949,8 @@
       "tags": [],
       "icon": "./assets/equipment/miningPotion-DzkbwiR9.png",
       "wikiId": "mining-potion",
-      "requirements": {}
+      "requirements": {},
+      "value": 43
     },
     "mithrilArmor": {
       "name": "Mithril Armor",
@@ -17599,7 +17963,8 @@
       "wikiId": "mithril-armor",
       "requirements": {
         "defense": 30
-      }
+      },
+      "value": 510
     },
     "mithrilArrows": {
       "name": "Mithril Arrows",
@@ -17612,7 +17977,8 @@
       ],
       "icon": "./assets/equipment/mithrilArrows-C_FVOvDL.png",
       "wikiId": "mithril-arrows",
-      "requirements": {}
+      "requirements": {},
+      "value": 4
     },
     "mithrilArrowtips": {
       "name": "Mithril Arrowtips",
@@ -17620,7 +17986,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/mithrilArrowtips-BjgCVu3v.png",
       "wikiId": "mithril-arrowtips",
-      "requirements": {}
+      "requirements": {},
+      "value": 3
     },
     "mithrilBar": {
       "name": "Mithril Bar",
@@ -17628,7 +17995,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/mithrilBar-D5UyITK2.png",
       "wikiId": "mithril-bar",
-      "requirements": {}
+      "requirements": {},
+      "value": 34
     },
     "mithrilDagger": {
       "name": "Mithril Dagger",
@@ -17643,7 +18011,8 @@
       "wikiId": "mithril-dagger",
       "requirements": {
         "attack": 30
-      }
+      },
+      "value": 102
     },
     "mithrilMedHelm": {
       "name": "Mithril Med Helm",
@@ -17656,7 +18025,8 @@
       "wikiId": "mithril-med-helm",
       "requirements": {
         "defense": 30
-      }
+      },
+      "value": 102
     },
     "mithrilOre": {
       "name": "Mithril Ore",
@@ -17664,7 +18034,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/mithrilOre-ztn3k-2h.png",
       "wikiId": "mithril-ore",
-      "requirements": {}
+      "requirements": {},
+      "value": 5
     },
     "mithrilScimitar": {
       "name": "Mithril Scimitar",
@@ -17679,7 +18050,8 @@
       "wikiId": "mithril-scimitar",
       "requirements": {
         "attack": 30
-      }
+      },
+      "value": 204
     },
     "mithrilSqShield": {
       "name": "Mithril Sq Shield",
@@ -17692,7 +18064,8 @@
       "wikiId": "mithril-sq-shield",
       "requirements": {
         "defense": 30
-      }
+      },
+      "value": 204
     },
     "moltenGlass": {
       "name": "Molten Glass",
@@ -17700,7 +18073,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/moltenGlass--H4dCgVG.png",
       "wikiId": "molten-glass",
-      "requirements": {}
+      "requirements": {},
+      "value": 4
     },
     "moltenOrb": {
       "name": "Molten Orb",
@@ -17708,7 +18082,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/moltenOrb-DSv-5j-t.png",
       "wikiId": "molten-orb",
-      "requirements": {}
+      "requirements": {},
+      "value": 600
     },
     "monkRobe": {
       "name": "Monk's Robe",
@@ -17722,7 +18097,8 @@
       "wikiId": "monks-robe",
       "requirements": {
         "piety": 5
-      }
+      },
+      "value": 120
     },
     "mothLantern": {
       "name": "Moth Lantern",
@@ -17734,7 +18110,8 @@
       "tags": [],
       "icon": "./assets/equipment/mothLantern-B1GSau1b.png",
       "wikiId": "moth-lantern",
-      "requirements": {}
+      "requirements": {},
+      "value": 30
     },
     "natureRune": {
       "name": "Nature Rune",
@@ -17742,7 +18119,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/natureRune-Byzc3ygw.png",
       "wikiId": "nature-rune",
-      "requirements": {}
+      "requirements": {},
+      "value": 8
     },
     "nervine": {
       "name": "Nervine",
@@ -17750,7 +18128,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/nervine-BODNIZiE.png",
       "wikiId": "nervine",
-      "requirements": {}
+      "requirements": {},
+      "value": 18
     },
     "oakBow": {
       "name": "Oak Bow",
@@ -17767,7 +18146,8 @@
       "wikiId": "oak-bow",
       "requirements": {
         "ranged": 10
-      }
+      },
+      "value": 12
     },
     "oakBowU": {
       "name": "Oak Bow (u)",
@@ -17775,7 +18155,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/oakBowU-_jqtqZqV.png",
       "wikiId": "oak-bow-u",
-      "requirements": {}
+      "requirements": {},
+      "value": 6
     },
     "oakLogs": {
       "name": "Oak Logs",
@@ -17783,7 +18164,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/oakLogs-DUt3m6AV.png",
       "wikiId": "oak-logs",
-      "requirements": {}
+      "requirements": {},
+      "value": 1
     },
     "oldRod": {
       "name": "Old Rod",
@@ -17797,7 +18179,8 @@
       "tags": [],
       "icon": "./assets/equipment/oldRod-BIdK30zO.png",
       "wikiId": "old-rod",
-      "requirements": {}
+      "requirements": {},
+      "value": 450
     },
     "onyxCape": {
       "name": "Onyx Cape",
@@ -17817,7 +18200,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/oracleSage-Bd6GazuI.png",
       "wikiId": "oracle-sage",
-      "requirements": {}
+      "requirements": {},
+      "value": 14
     },
     "petAmber": {
       "name": "Amber",
@@ -18575,7 +18959,8 @@
       "tags": [],
       "icon": "./assets/equipment/pickaxe-BqkPwGpj.png",
       "wikiId": "bronze-pickaxe",
-      "requirements": {}
+      "requirements": {},
+      "value": 12
     },
     "pieDish": {
       "name": "Pie Dish",
@@ -18583,7 +18968,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/pieDish-DAEx2w8l.png",
       "wikiId": "pie-dish",
-      "requirements": {}
+      "requirements": {},
+      "value": 2
     },
     "pietyPotion": {
       "name": "Piety Potion",
@@ -18592,7 +18978,8 @@
       "tags": [],
       "icon": "./assets/equipment/pietyPotion-C-EmwEWC.png",
       "wikiId": "piety-potion",
-      "requirements": {}
+      "requirements": {},
+      "value": 149
     },
     "pot": {
       "name": "Pot",
@@ -18600,7 +18987,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/pot-Dh2T4qYT.png",
       "wikiId": "pot",
-      "requirements": {}
+      "requirements": {},
+      "value": 1
     },
     "priestRobe": {
       "name": "Priest Robe",
@@ -18614,7 +19002,8 @@
       "wikiId": "priest-robe",
       "requirements": {
         "piety": 1
-      }
+      },
+      "value": 50
     },
     "progrite2hSword": {
       "name": "Progrite 2h Sword",
@@ -18633,7 +19022,8 @@
       "wikiId": "progrite-2h-sword",
       "requirements": {
         "attack": 50
-      }
+      },
+      "value": 10112
     },
     "progriteArmor": {
       "name": "Progrite Armor",
@@ -18650,7 +19040,8 @@
       "wikiId": "progrite-armor",
       "requirements": {
         "defense": 50
-      }
+      },
+      "value": 2880
     },
     "progriteArrows": {
       "name": "Progrite Arrows",
@@ -18663,7 +19054,8 @@
       ],
       "icon": "./assets/equipment/progriteArrows-ytXK4-Ah.png",
       "wikiId": "progrite-arrows",
-      "requirements": {}
+      "requirements": {},
+      "value": 8
     },
     "progriteArrowtips": {
       "name": "Progrite Arrowtips",
@@ -18671,7 +19063,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/progriteArrowtips-CC778UbE.png",
       "wikiId": "progrite-arrowtips",
-      "requirements": {}
+      "requirements": {},
+      "value": 7
     },
     "progriteBar": {
       "name": "Progrite Bar",
@@ -18679,7 +19072,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/progriteBar-Cp-efAgb.png",
       "wikiId": "progrite-bar",
-      "requirements": {}
+      "requirements": {},
+      "value": 192
     },
     "progriteDagger": {
       "name": "Progrite Dagger",
@@ -18696,7 +19090,8 @@
       "wikiId": "progrite-dagger",
       "requirements": {
         "attack": 50
-      }
+      },
+      "value": 576
     },
     "progriteFullHelm": {
       "name": "Progrite Full Helm",
@@ -18712,7 +19107,8 @@
       "wikiId": "progrite-full-helm",
       "requirements": {
         "defense": 50
-      }
+      },
+      "value": 128
     },
     "progriteMedHelm": {
       "name": "Progrite Med Helm",
@@ -18728,7 +19124,8 @@
       "wikiId": "progrite-med-helm",
       "requirements": {
         "defense": 50
-      }
+      },
+      "value": 576
     },
     "progriteOre": {
       "name": "Progrite Ore",
@@ -18736,7 +19133,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/progriteOre-D8-t5LB8.png",
       "wikiId": "progrite-ore",
-      "requirements": {}
+      "requirements": {},
+      "value": 16
     },
     "progriteScimitar": {
       "name": "Progrite Scimitar",
@@ -18753,7 +19151,8 @@
       "wikiId": "progrite-scimitar",
       "requirements": {
         "attack": 50
-      }
+      },
+      "value": 1152
     },
     "progriteSqShield": {
       "name": "Progrite Sq Shield",
@@ -18769,7 +19168,8 @@
       "wikiId": "progrite-sq-shield",
       "requirements": {
         "defense": 50
-      }
+      },
+      "value": 1152
     },
     "purplePartyHat": {
       "name": "Purple Party Hat",
@@ -18793,7 +19193,8 @@
       "wikiId": "pyreshell-shield",
       "requirements": {
         "defense": 40
-      }
+      },
+      "value": 200
     },
     "rangedPotion": {
       "name": "Ranged Potion",
@@ -18802,7 +19203,8 @@
       "tags": [],
       "icon": "./assets/equipment/rangedPotion-Bm9bpg9Y.png",
       "wikiId": "ranged-potion",
-      "requirements": {}
+      "requirements": {},
+      "value": 113
     },
     "rawChicken": {
       "name": "Raw Chicken",
@@ -18810,7 +19212,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/rawChicken-Bu0vMWGj.png",
       "wikiId": "raw-chicken",
-      "requirements": {}
+      "requirements": {},
+      "value": 1
     },
     "rawFrog": {
       "name": "Raw Frog",
@@ -18818,7 +19221,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/rawFrog-22DMSY3u.png",
       "wikiId": "raw-frog",
-      "requirements": {}
+      "requirements": {},
+      "value": 1
     },
     "rawLobster": {
       "name": "Raw Lobster",
@@ -18826,7 +19230,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/rawLobster-BiGy4bl1.png",
       "wikiId": "raw-lobster",
-      "requirements": {}
+      "requirements": {},
+      "value": 3
     },
     "rawMantaRay": {
       "name": "Raw Manta Ray",
@@ -18834,7 +19239,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/rawMantaRay-DYivbLt9.png",
       "wikiId": "raw-manta-ray",
-      "requirements": {}
+      "requirements": {},
+      "value": 4
     },
     "rawMeat": {
       "name": "Raw Meat",
@@ -18842,7 +19248,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/rawMeat-Bmah2izg.png",
       "wikiId": "raw-meat",
-      "requirements": {}
+      "requirements": {},
+      "value": 1
     },
     "rawPyreshell": {
       "name": "Raw Pyreshell",
@@ -18850,7 +19257,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/rawPyreshell-D_6CLXLW.png",
       "wikiId": "raw-pyreshell",
-      "requirements": {}
+      "requirements": {},
+      "value": 6
     },
     "rawSalmon": {
       "name": "Raw Salmon",
@@ -18858,7 +19266,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/rawSalmon-QaoA00I8.png",
       "wikiId": "raw-salmon",
-      "requirements": {}
+      "requirements": {},
+      "value": 3
     },
     "rawSardine": {
       "name": "Raw Sardine",
@@ -18866,7 +19275,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/rawSardine-BlvruRvr.png",
       "wikiId": "raw-sardine",
-      "requirements": {}
+      "requirements": {},
+      "value": 2
     },
     "rawShark": {
       "name": "Raw Shark",
@@ -18874,7 +19284,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/rawShark-am_igC3E.png",
       "wikiId": "raw-shark",
-      "requirements": {}
+      "requirements": {},
+      "value": 4
     },
     "rawShrimp": {
       "name": "Raw Shrimp",
@@ -18882,7 +19293,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/rawShrimp-CzYN5G7G.png",
       "wikiId": "raw-shrimp",
-      "requirements": {}
+      "requirements": {},
+      "value": 1
     },
     "rawSwordfish": {
       "name": "Raw Swordfish",
@@ -18890,7 +19302,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/rawSwordfish-oW6XfHmz.png",
       "wikiId": "raw-swordfish",
-      "requirements": {}
+      "requirements": {},
+      "value": 3
     },
     "rawTrout": {
       "name": "Raw Trout",
@@ -18898,7 +19311,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/rawTrout-BfivEG7z.png",
       "wikiId": "raw-trout",
-      "requirements": {}
+      "requirements": {},
+      "value": 3
     },
     "redPartyHat": {
       "name": "Red Party Hat",
@@ -18917,7 +19331,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/redberries-DjSFh1bl.png",
       "wikiId": "redberries",
-      "requirements": {}
+      "requirements": {},
+      "value": 1
     },
     "redberryPie": {
       "name": "Redberry Pie",
@@ -18931,7 +19346,8 @@
       ],
       "icon": "./assets/equipment/redberryPie-BIX28z1d.png",
       "wikiId": "redberry-pie",
-      "requirements": {}
+      "requirements": {},
+      "value": 9
     },
     "ringOfGluttony": {
       "name": "Ring Of Gluttony",
@@ -18948,7 +19364,8 @@
       "wikiId": "ring-of-gluttony",
       "requirements": {
         "cooking": 2
-      }
+      },
+      "value": 980
     },
     "rodentPelt": {
       "name": "Rodent Pelt",
@@ -18956,7 +19373,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/fur-Bcj0AT7t.png",
       "wikiId": "rodent-pelt",
-      "requirements": {}
+      "requirements": {},
+      "value": 1
     },
     "royalCape": {
       "name": "Royal Cape",
@@ -18967,7 +19385,8 @@
       "tags": [],
       "icon": "./assets/equipment/royalCape-Clm0rroX.png",
       "wikiId": "royal-cape",
-      "requirements": {}
+      "requirements": {},
+      "value": 35000
     },
     "rubberBoots": {
       "name": "Rubber Boots",
@@ -18978,7 +19397,8 @@
       "tags": [],
       "icon": "./assets/equipment/rubberBoots-BnL1ZF3d.png",
       "wikiId": "rubber-boots",
-      "requirements": {}
+      "requirements": {},
+      "value": 640
     },
     "rubyAmulet": {
       "name": "Ruby Amulet",
@@ -18987,7 +19407,8 @@
       "tags": [],
       "icon": "./assets/amulets/ruby-amulet.png",
       "wikiId": "ruby-amulet",
-      "requirements": {}
+      "requirements": {},
+      "value": 188
     },
     "rustyCoin": {
       "name": "Rusty Coin",
@@ -19015,7 +19436,8 @@
       "tags": [],
       "icon": "./assets/equipment/saltedMitts-DIraNmoR.png",
       "wikiId": "salted-mitts",
-      "requirements": {}
+      "requirements": {},
+      "value": 180
     },
     "sand": {
       "name": "Sand",
@@ -19023,7 +19445,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/sand-BsCmNMzO.png",
       "wikiId": "sand",
-      "requirements": {}
+      "requirements": {},
+      "value": 1
     },
     "sanglewoodStaff": {
       "name": "Sanglewood Staff",
@@ -19041,7 +19464,8 @@
       "wikiId": "sanglewood-staff",
       "requirements": {
         "evilMagic": 71
-      }
+      },
+      "value": 30080
     },
     "sanguineBoots": {
       "name": "Sanguine Boots",
@@ -19055,7 +19479,8 @@
       "wikiId": "sanguine-boots",
       "requirements": {
         "evilMagic": 28
-      }
+      },
+      "value": 12032
     },
     "santaHat": {
       "name": "Santa Hat",
@@ -19077,7 +19502,8 @@
       "tags": [],
       "icon": "./assets/amulets/sapphire-amulet.png",
       "wikiId": "sapphire-amulet",
-      "requirements": {}
+      "requirements": {},
+      "value": 62
     },
     "scarabCache": {
       "name": "Scarab Cache",
@@ -19086,7 +19512,8 @@
       "tags": [],
       "icon": "./assets/equipment/scarabCache-CGO6RzHu.png",
       "wikiId": "scarab-cache",
-      "requirements": {}
+      "requirements": {},
+      "value": 800
     },
     "scarabSatchel": {
       "name": "Scarab Satchel",
@@ -19095,7 +19522,8 @@
       "tags": [],
       "icon": "./assets/equipment/scarabSatchel-BeOiAWca.png",
       "wikiId": "scarab-satchel",
-      "requirements": {}
+      "requirements": {},
+      "value": 400
     },
     "scorchedCoin": {
       "name": "Scorched Coin",
@@ -19111,7 +19539,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/seaweed-DdFdGU3g.png",
       "wikiId": "seaweed",
-      "requirements": {}
+      "requirements": {},
+      "value": 1
     },
     "serpentQuiver": {
       "name": "Serpent Quiver",
@@ -19120,7 +19549,8 @@
       "tags": [],
       "icon": "./assets/equipment/serpentQuiver-CKMj5ZKV.png",
       "wikiId": "serpent-quiver",
-      "requirements": {}
+      "requirements": {},
+      "value": 300
     },
     "serpentleaf": {
       "name": "Serpentleaf",
@@ -19128,7 +19558,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/serpentleaf-lQy-Df57.png",
       "wikiId": "serpentleaf",
-      "requirements": {}
+      "requirements": {},
+      "value": 16
     },
     "shellOfKa": {
       "name": "Shell of Ka",
@@ -19141,7 +19572,8 @@
       "wikiId": "shell-of-ka",
       "requirements": {
         "defense": 45
-      }
+      },
+      "value": 600
     },
     "shortbow": {
       "name": "Bow",
@@ -19157,7 +19589,8 @@
       "wikiId": "bow",
       "requirements": {
         "ranged": 1
-      }
+      },
+      "value": 3
     },
     "shortbowU": {
       "name": "Bow (u)",
@@ -19165,7 +19598,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/shortbowU-OLqj62NZ.png",
       "wikiId": "bow-u",
-      "requirements": {}
+      "requirements": {},
+      "value": 1
     },
     "shovel": {
       "name": "Shovel",
@@ -19174,7 +19608,8 @@
       "tags": [],
       "icon": "./assets/equipment/shovel-BWxWRNdn.png",
       "wikiId": "steel-shovel",
-      "requirements": {}
+      "requirements": {},
+      "value": 9
     },
     "shovelHead": {
       "name": "Shovel Head",
@@ -19182,7 +19617,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/shovelHead-Dl7dZ0zf.png",
       "wikiId": "steel-shovel-head",
-      "requirements": {}
+      "requirements": {},
+      "value": 5
     },
     "sigilAl": {
       "name": "\"Al\" Sigil",
@@ -19190,7 +19626,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/sigilAl-C4jm85H1.png",
       "wikiId": "al-sigil",
-      "requirements": {}
+      "requirements": {},
+      "value": 2
     },
     "sigilDel": {
       "name": "\"Del\" Sigil",
@@ -19198,7 +19635,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/sigilDel-D2BSxzta.png",
       "wikiId": "del-sigil",
-      "requirements": {}
+      "requirements": {},
+      "value": 8
     },
     "sigilDi": {
       "name": "\"Di\" Sigil",
@@ -19206,7 +19644,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/sigilDi-BTaZKmx-.png",
       "wikiId": "di-sigil",
-      "requirements": {}
+      "requirements": {},
+      "value": 4
     },
     "sigilLa": {
       "name": "\"La\" Sigil",
@@ -19214,7 +19653,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/sigilLa-CsJe_cNW.png",
       "wikiId": "la-sigil",
-      "requirements": {}
+      "requirements": {},
+      "value": 2
     },
     "sigilMar": {
       "name": "\"Mar\" Sigil",
@@ -19222,7 +19662,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/sigilMar-CB2pbgZ2.png",
       "wikiId": "mar-sigil",
-      "requirements": {}
+      "requirements": {},
+      "value": 8
     },
     "sigilNer": {
       "name": "\"Ner\" Sigil",
@@ -19230,7 +19671,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/sigilNer-Cm_QAYLa.png",
       "wikiId": "ner-sigil",
-      "requirements": {}
+      "requirements": {},
+      "value": 8
     },
     "silverBar": {
       "name": "Silver Bar",
@@ -19238,7 +19680,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/silverBar-BFsaJYXc.png",
       "wikiId": "silver-bar",
-      "requirements": {}
+      "requirements": {},
+      "value": 8
     },
     "silverOre": {
       "name": "Silver Ore",
@@ -19246,7 +19689,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/silverOre-u3KxOYAU.png",
       "wikiId": "silver-ore",
-      "requirements": {}
+      "requirements": {},
+      "value": 4
     },
     "skullShield": {
       "name": "Skull Shield",
@@ -19261,7 +19705,8 @@
       "wikiId": "skull-shield",
       "requirements": {
         "evilMagic": 45
-      }
+      },
+      "value": 500
     },
     "slimeTorso": {
       "name": "Slime Torso",
@@ -19280,7 +19725,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/smallCoinPouch-CWCzbFTc.png",
       "wikiId": "small-coin-pouch",
-      "requirements": {}
+      "requirements": {},
+      "value": 10
     },
     "smithingPotion": {
       "name": "Smithing Potion",
@@ -19289,7 +19735,8 @@
       "tags": [],
       "icon": "./assets/equipment/smithingPotion-oHElUHzY.png",
       "wikiId": "smithing-potion",
-      "requirements": {}
+      "requirements": {},
+      "value": 117
     },
     "snailShell": {
       "name": "Snail Shell",
@@ -19297,7 +19744,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/snailShell-CMI9pfLE.png",
       "wikiId": "snail-shell",
-      "requirements": {}
+      "requirements": {},
+      "value": 4
     },
     "snakeEggs": {
       "name": "Snake Eggs",
@@ -19305,7 +19753,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/snakeEggs-B4hVPVi_.png",
       "wikiId": "snake-eggs",
-      "requirements": {}
+      "requirements": {},
+      "value": 6
     },
     "snakeskinScales": {
       "name": "Snakeskin Scales",
@@ -19313,7 +19762,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/snakeskinScales-CQvy5yoV.png",
       "wikiId": "snakeskin-scales",
-      "requirements": {}
+      "requirements": {},
+      "value": 4
     },
     "snapeGrass": {
       "name": "Snape Grass",
@@ -19321,7 +19771,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/snapeGrass-Bz6ZgSsf.png",
       "wikiId": "snape-grass",
-      "requirements": {}
+      "requirements": {},
+      "value": 2
     },
     "sodaAsh": {
       "name": "Soda Ash",
@@ -19329,7 +19780,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/sodaAsh-zh_VcMxg.png",
       "wikiId": "soda-ash",
-      "requirements": {}
+      "requirements": {},
+      "value": 2
     },
     "spiderSilk": {
       "name": "Spider Silk",
@@ -19337,7 +19789,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/spiderSilk-PSPvhlcZ.png",
       "wikiId": "spider-silk",
-      "requirements": {}
+      "requirements": {},
+      "value": 2
     },
     "spiritRune": {
       "name": "Spirit Rune",
@@ -19361,7 +19814,8 @@
       ],
       "icon": "./assets/equipment/staff-DviihIii.png",
       "wikiId": "staff",
-      "requirements": {}
+      "requirements": {},
+      "value": 2
     },
     "steelArmor": {
       "name": "Steel Armor",
@@ -19374,7 +19828,8 @@
       "wikiId": "steel-armor",
       "requirements": {
         "defense": 20
-      }
+      },
+      "value": 70
     },
     "steelArrows": {
       "name": "Steel Arrows",
@@ -19387,7 +19842,8 @@
       ],
       "icon": "./assets/equipment/steelArrows-CZDNQcux.png",
       "wikiId": "steel-arrows",
-      "requirements": {}
+      "requirements": {},
+      "value": 2
     },
     "steelArrowtips": {
       "name": "Steel Arrowtips",
@@ -19395,7 +19851,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/steelArrowtips-DtnSzoB9.png",
       "wikiId": "steel-arrowtips",
-      "requirements": {}
+      "requirements": {},
+      "value": 1
     },
     "steelBar": {
       "name": "Steel Bar",
@@ -19403,7 +19860,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/steelBar-Dy10PZTR.png",
       "wikiId": "steel-bar",
-      "requirements": {}
+      "requirements": {},
+      "value": 14
     },
     "steelDagger": {
       "name": "Steel Dagger",
@@ -19418,7 +19876,8 @@
       "wikiId": "steel-dagger",
       "requirements": {
         "attack": 20
-      }
+      },
+      "value": 14
     },
     "steelFullHelm": {
       "name": "Steel Full Helm",
@@ -19431,7 +19890,8 @@
       "wikiId": "steel-full-helm",
       "requirements": {
         "defense": 20
-      }
+      },
+      "value": 16
     },
     "steelMedHelm": {
       "name": "Steel Med Helm",
@@ -19444,7 +19904,8 @@
       "wikiId": "steel-med-helm",
       "requirements": {
         "defense": 20
-      }
+      },
+      "value": 14
     },
     "steelScimitar": {
       "name": "Steel Scimitar",
@@ -19459,7 +19920,8 @@
       "wikiId": "steel-scimitar",
       "requirements": {
         "attack": 20
-      }
+      },
+      "value": 28
     },
     "steelSqShield": {
       "name": "Steel Sq Shield",
@@ -19472,7 +19934,8 @@
       "wikiId": "steel-sq-shield",
       "requirements": {
         "defense": 20
-      }
+      },
+      "value": 28
     },
     "strengthPotion": {
       "name": "Strength Potion",
@@ -19481,7 +19944,8 @@
       "tags": [],
       "icon": "./assets/equipment/strengthPotion-DHe2ob1X.png",
       "wikiId": "strength-potion",
-      "requirements": {}
+      "requirements": {},
+      "value": 43
     },
     "superAttackPotion": {
       "name": "Super Attack Potion",
@@ -19490,7 +19954,8 @@
       "tags": [],
       "icon": "./assets/equipment/superAttackPotion-Dv-mgOA9.png",
       "wikiId": "super-attack-potion",
-      "requirements": {}
+      "requirements": {},
+      "value": 163
     },
     "superCookingPotion": {
       "name": "Super Cooking Potion",
@@ -19499,7 +19964,8 @@
       "tags": [],
       "icon": "./assets/equipment/superCookingPotion-CZIi7zn3.png",
       "wikiId": "super-cooking-potion",
-      "requirements": {}
+      "requirements": {},
+      "value": 237
     },
     "superCraftingPotion": {
       "name": "Super Crafting Potion",
@@ -19508,7 +19974,8 @@
       "tags": [],
       "icon": "./assets/equipment/superCraftingPotion-Bzh4sztw.png",
       "wikiId": "super-crafting-potion",
-      "requirements": {}
+      "requirements": {},
+      "value": 271
     },
     "superDefensePotion": {
       "name": "Super Defense Potion",
@@ -19517,7 +19984,8 @@
       "tags": [],
       "icon": "./assets/equipment/superDefensePotion-CLtZJVT7.png",
       "wikiId": "super-defense-potion",
-      "requirements": {}
+      "requirements": {},
+      "value": 155
     },
     "superEvilMagicPotion": {
       "name": "Super Evil Magic Potion",
@@ -19526,7 +19994,8 @@
       "tags": [],
       "icon": "./assets/equipment/superEvilMagicPotion-CBOr5TE2.png",
       "wikiId": "super-evil-magic-potion",
-      "requirements": {}
+      "requirements": {},
+      "value": 317
     },
     "superFiremakingPotion": {
       "name": "Super Firemaking Potion",
@@ -19535,7 +20004,8 @@
       "tags": [],
       "icon": "./assets/equipment/superFiremakingPotion-OyjnO5es.png",
       "wikiId": "super-firemaking-potion",
-      "requirements": {}
+      "requirements": {},
+      "value": 257
     },
     "superFishingPotion": {
       "name": "Super Fishing Potion",
@@ -19544,7 +20014,8 @@
       "tags": [],
       "icon": "./assets/equipment/superFishingPotion-DBvWmZ4x.png",
       "wikiId": "super-fishing-potion",
-      "requirements": {}
+      "requirements": {},
+      "value": 149
     },
     "superFletchingPotion": {
       "name": "Super Fletching Potion",
@@ -19553,7 +20024,8 @@
       "tags": [],
       "icon": "./assets/equipment/superFletchingPotion-DeOtW4X4.png",
       "wikiId": "super-fletching-potion",
-      "requirements": {}
+      "requirements": {},
+      "value": 243
     },
     "superGoodMagicPotion": {
       "name": "Super Good Magic Potion",
@@ -19562,7 +20034,8 @@
       "tags": [],
       "icon": "./assets/equipment/superGoodMagicPotion-XZ3Gl80G.png",
       "wikiId": "super-good-magic-potion",
-      "requirements": {}
+      "requirements": {},
+      "value": 273
     },
     "superHerblawPotion": {
       "name": "Super Herblaw Potion",
@@ -19571,7 +20044,8 @@
       "tags": [],
       "icon": "./assets/equipment/superHerblawPotion-D_qw-bWH.png",
       "wikiId": "super-herblaw-potion",
-      "requirements": {}
+      "requirements": {},
+      "value": 241
     },
     "superMiningPotion": {
       "name": "Super Mining Potion",
@@ -19580,7 +20054,8 @@
       "tags": [],
       "icon": "./assets/equipment/superMiningPotion-Fv4KmZRF.png",
       "wikiId": "super-mining-potion",
-      "requirements": {}
+      "requirements": {},
+      "value": 203
     },
     "superPietyPotion": {
       "name": "Super Piety Potion",
@@ -19589,7 +20064,8 @@
       "tags": [],
       "icon": "./assets/equipment/superPietyPotion-BNh2jZXJ.png",
       "wikiId": "super-piety-potion",
-      "requirements": {}
+      "requirements": {},
+      "value": 311
     },
     "superRangedPotion": {
       "name": "Super Ranged Potion",
@@ -19598,7 +20074,8 @@
       "tags": [],
       "icon": "./assets/equipment/superRangedPotion-C3YTglN2.png",
       "wikiId": "super-ranged-potion",
-      "requirements": {}
+      "requirements": {},
+      "value": 275
     },
     "superSmithingPotion": {
       "name": "Super Smithing Potion",
@@ -19607,7 +20084,8 @@
       "tags": [],
       "icon": "./assets/equipment/superSmithingPotion-V9dsR_V4.png",
       "wikiId": "super-smithing-potion",
-      "requirements": {}
+      "requirements": {},
+      "value": 321
     },
     "superStrengthPotion": {
       "name": "Super Strength Potion",
@@ -19616,7 +20094,8 @@
       "tags": [],
       "icon": "./assets/equipment/superStrengthPotion-BVzTwyNp.png",
       "wikiId": "super-strength-potion",
-      "requirements": {}
+      "requirements": {},
+      "value": 205
     },
     "superWoodcuttingPotion": {
       "name": "Super Woodcutting Potion",
@@ -19625,7 +20104,8 @@
       "tags": [],
       "icon": "./assets/equipment/superWoodcuttingPotion-B5W12JO_.png",
       "wikiId": "super-woodcutting-potion",
-      "requirements": {}
+      "requirements": {},
+      "value": 195
     },
     "telekineticGloves": {
       "name": "Telekinetic Gloves",
@@ -19637,7 +20117,8 @@
       "tags": [],
       "icon": "./assets/equipment/telekineticGloves-DGlcCUGF.png",
       "wikiId": "telekinetic-gloves",
-      "requirements": {}
+      "requirements": {},
+      "value": 250
     },
     "thread": {
       "name": "Thread",
@@ -19645,7 +20126,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/thread-rDUKcwRT.png",
       "wikiId": "thread",
-      "requirements": {}
+      "requirements": {},
+      "value": 2
     },
     "ticketToProgryn": {
       "name": "Ticket To Progryn",
@@ -19671,7 +20153,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/tinOre-jQ7IlfYp.png",
       "wikiId": "tin-ore",
-      "requirements": {}
+      "requirements": {},
+      "value": 1
     },
     "titaniumRing": {
       "name": "Titanium Ring",
@@ -19682,7 +20165,8 @@
       "tags": [],
       "icon": "./assets/rings/titanium-ring.png",
       "wikiId": "titanium-ring",
-      "requirements": {}
+      "requirements": {},
+      "value": 500
     },
     "torchOfPyrax": {
       "name": "Torch Of Pyrax",
@@ -19700,7 +20184,8 @@
       "wikiId": "torch-of-pyrax",
       "requirements": {
         "evilMagic": 74
-      }
+      },
+      "value": 34000
     },
     "trainingFishingRod": {
       "name": "Training Fishing Rod",
@@ -19712,7 +20197,8 @@
       "tags": [],
       "icon": "./assets/equipment/trainingFishingRod-B3KS4sC1.png",
       "wikiId": "training-fishing-rod",
-      "requirements": {}
+      "requirements": {},
+      "value": 1
     },
     "trainingPickaxe": {
       "name": "Training Pickaxe",
@@ -19725,7 +20211,8 @@
       "tags": [],
       "icon": "./assets/equipment/trainingPickaxe-COFKrNU1.png",
       "wikiId": "training-pickaxe",
-      "requirements": {}
+      "requirements": {},
+      "value": 1
     },
     "trainingSword": {
       "name": "Training Sword",
@@ -19744,7 +20231,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/pieShell-BBwGQHOJ.png",
       "wikiId": "uncooked-apple-pie",
-      "requirements": {}
+      "requirements": {},
+      "value": 13
     },
     "uncookedMeatPie": {
       "name": "Uncooked Meat Pie",
@@ -19752,7 +20240,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/pieShell-BBwGQHOJ.png",
       "wikiId": "uncooked-meat-pie",
-      "requirements": {}
+      "requirements": {},
+      "value": 9
     },
     "uncookedRedberryPie": {
       "name": "Uncooked Redberry Pie",
@@ -19760,7 +20249,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/pieShell-BBwGQHOJ.png",
       "wikiId": "uncooked-redberry-pie",
-      "requirements": {}
+      "requirements": {},
+      "value": 7
     },
     "uncutDiamond": {
       "name": "Uncut Diamond",
@@ -19768,7 +20258,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/uncutDiamond-AAO35P-d.png",
       "wikiId": "uncut-diamond",
-      "requirements": {}
+      "requirements": {},
+      "value": 320
     },
     "uncutDragonstone": {
       "name": "Uncut Dragonstone",
@@ -19776,7 +20267,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/uncutDragonstone-YlZ0KtY0.png",
       "wikiId": "uncut-dragonstone",
-      "requirements": {}
+      "requirements": {},
+      "value": 740
     },
     "uncutEmerald": {
       "name": "Uncut Emerald",
@@ -19784,7 +20276,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/uncutEmerald-C8CfyKNH.png",
       "wikiId": "uncut-emerald",
-      "requirements": {}
+      "requirements": {},
+      "value": 80
     },
     "uncutRuby": {
       "name": "Uncut Ruby",
@@ -19792,7 +20285,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/uncutRuby-OGE1PLga.png",
       "wikiId": "uncut-ruby",
-      "requirements": {}
+      "requirements": {},
+      "value": 160
     },
     "uncutSapphire": {
       "name": "Uncut Sapphire",
@@ -19800,7 +20294,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/uncutSapphire-ChFPmWub.png",
       "wikiId": "uncut-sapphire",
-      "requirements": {}
+      "requirements": {},
+      "value": 40
     },
     "unfiredPieDish": {
       "name": "Unfired Pie Dish",
@@ -19808,7 +20303,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/unfiredPieDish-BZsyf1px.png",
       "wikiId": "unfired-pie-dish",
-      "requirements": {}
+      "requirements": {},
+      "value": 3
     },
     "unfiredPot": {
       "name": "Unfired Pot",
@@ -19816,7 +20312,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/unfiredPot-DqUu7xzn.png",
       "wikiId": "unfired-pot",
-      "requirements": {}
+      "requirements": {},
+      "value": 3
     },
     "unpoweredOrb": {
       "name": "Unpowered Orb",
@@ -19824,7 +20321,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/unpoweredOrb-DnXEqzjX.png",
       "wikiId": "unpowered-orb",
-      "requirements": {}
+      "requirements": {},
+      "value": 12
     },
     "venomSac": {
       "name": "Venom Sac",
@@ -19832,7 +20330,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/venomSac-CZSbRoZv.png",
       "wikiId": "venom-sac",
-      "requirements": {}
+      "requirements": {},
+      "value": 4
     },
     "vial": {
       "name": "Vial",
@@ -19840,7 +20339,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/vial-7L-AF17H.png",
       "wikiId": "vial",
-      "requirements": {}
+      "requirements": {},
+      "value": 1
     },
     "vialOfPoison": {
       "name": "Vial of Poison",
@@ -19848,7 +20348,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/vialOfPoison-CohV6uO_.png",
       "wikiId": "vial-of-poison",
-      "requirements": {}
+      "requirements": {},
+      "value": 51
     },
     "vialOfWater": {
       "name": "Vial of Water",
@@ -19856,7 +20357,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/vialOfWater-BVgpOYZv.png",
       "wikiId": "vial-of-water",
-      "requirements": {}
+      "requirements": {},
+      "value": 1
     },
     "vulcanus": {
       "name": "Vulcanus",
@@ -19881,7 +20383,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/waterBucket-Bi1IuLzq.png",
       "wikiId": "water-bucket",
-      "requirements": {}
+      "requirements": {},
+      "value": 1
     },
     "weddingBand": {
       "name": "Wedding Band",
@@ -19890,7 +20393,8 @@
       "tags": [],
       "icon": "./assets/rings/wedding-band.png",
       "wikiId": "wedding-band",
-      "requirements": {}
+      "requirements": {},
+      "value": 1800
     },
     "whitePartyHat": {
       "name": "White Party Hat",
@@ -19909,7 +20413,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/wickedwort-3oYvoRjW.png",
       "wikiId": "wickedwort",
-      "requirements": {}
+      "requirements": {},
+      "value": 16
     },
     "willowBow": {
       "name": "Willow Bow",
@@ -19926,7 +20431,8 @@
       "wikiId": "willow-bow",
       "requirements": {
         "ranged": 20
-      }
+      },
+      "value": 17
     },
     "willowBowU": {
       "name": "Willow Bow (u)",
@@ -19934,7 +20440,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/willowBowU-kPZ0JbXB.png",
       "wikiId": "willow-bow-u",
-      "requirements": {}
+      "requirements": {},
+      "value": 11
     },
     "willowLogs": {
       "name": "Willow Logs",
@@ -19942,7 +20449,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/willowLogs-C-GiuOwk.png",
       "wikiId": "willow-logs",
-      "requirements": {}
+      "requirements": {},
+      "value": 2
     },
     "wizardsHatBlue": {
       "name": "Wizard's Hat",
@@ -19956,7 +20464,8 @@
       "wikiId": "wizards-hat",
       "requirements": {
         "evilMagic": 1
-      }
+      },
+      "value": 14
     },
     "wizardsHatDark": {
       "name": "Dark Wizard's Hat",
@@ -19970,7 +20479,8 @@
       "wikiId": "dark-wizards-hat",
       "requirements": {
         "evilMagic": 36
-      }
+      },
+      "value": 140
     },
     "wizardsRobe": {
       "name": "Wizard's Robes",
@@ -19985,7 +20495,8 @@
       "wikiId": "wizards-robes",
       "requirements": {
         "evilMagic": 10
-      }
+      },
+      "value": 20
     },
     "woodcuttingPotion": {
       "name": "Woodcutting Potion",
@@ -19994,7 +20505,8 @@
       "tags": [],
       "icon": "./assets/equipment/woodcuttingPotion-CoZx7Rwa.png",
       "wikiId": "woodcutting-potion",
-      "requirements": {}
+      "requirements": {},
+      "value": 23
     },
     "wool": {
       "name": "Wool",
@@ -20002,7 +20514,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/wool-Bqj1UVLp.png",
       "wikiId": "wool",
-      "requirements": {}
+      "requirements": {},
+      "value": 2
     },
     "yellowPartyHat": {
       "name": "Yellow Party Hat",
@@ -20030,7 +20543,8 @@
       "wikiId": "yew-bow",
       "requirements": {
         "ranged": 40
-      }
+      },
+      "value": 38
     },
     "yewBowU": {
       "name": "Yew Bow (u)",
@@ -20038,7 +20552,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/yewBowU-CKVsARE2.png",
       "wikiId": "yew-bow-u",
-      "requirements": {}
+      "requirements": {},
+      "value": 17
     },
     "yewLogs": {
       "name": "Yew Logs",
@@ -20046,7 +20561,8 @@
       "tags": [],
       "icon": "https://microscape.cc/play/assets/yewLogs-iZc0Ar8T.png",
       "wikiId": "yew-logs",
-      "requirements": {}
+      "requirements": {},
+      "value": 3
     },
     "boldBrown": {
       "name": "Brown \"Bold\" Hair",

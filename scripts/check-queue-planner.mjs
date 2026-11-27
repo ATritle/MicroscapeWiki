@@ -36,7 +36,22 @@ assert.throws(()=>cleanPlan({...p,steps:[step('mining/mine-copper',100,'level')]
 assert.throws(()=>cleanPlan({...p,steps:[step('mining/mine-copper',10,'items-gte',{itemId:'__proto__'})]},c),/Choose an item/);
 const bad=JSON.parse(JSON.stringify({...p,inventory:{'not-an-item':30},equipment:{'bad-slot':'bronzeDagger'}}));
 assert.deepEqual(cleanPlan(bad,c).inventory,{});assert.deepEqual(cleanPlan(bad,c).equipment,{});
-for(const a of c.activities){assert(!a.singleExecution);if(!a.mob)for(const output of a.outputs)assert(output.amount>=1&&c.items[output.id]&&!output.id.startsWith('pet'));}
+for(const a of c.activities){assert(!a.singleExecution||a.skill==='goodMagic');if(!a.mob)for(const output of a.outputs)assert(output.amount>=1&&c.items[output.id]&&!output.id.startsWith('pet'));}
+const activityCatalog=JSON.parse(await fs.readFile(new URL('../docs/activity-catalog.json',import.meta.url),'utf8'));
+assert.deepEqual(c.activities.filter(a=>a.skill==='goodMagic').map(a=>a.id).sort(),[...activityCatalog.activities.filter(a=>a.skill==='goodMagic').map(a=>a.id),'goodMagic/dark-ritual'].sort(),'Every Good Magic activity, including both alchemy tiers, one-cast enchanting and the ritual, must be listed');
+p=newPlan(c);p.steps=[step('goodMagic/cast-low-level-alchemy',100,'actions',{alchemyItemId:'bronzeDagger'})];
+const alchemyBaseline=structuredClone(c);r=estimateQueue(p,c);
+assert.equal(r.totalXp,1200);assert.equal(r.seconds,3000);assert.equal(r.starting.bronzeDagger,100);assert.equal(r.consumed.fireRune,200);assert.equal(r.consumed.natureRune,100);assert.equal(r.stock.coins,300);
+assert.deepEqual(decodePlan(encodePlan(cleanPlan(p,c)),c),cleanPlan(p,c),'Selected alchemy items must survive saves and shares');
+p.steps=[step('goodMagic/cast-high-level-alchemy',10,'actions',{alchemyItemId:'bronzeDagger'})];r=estimateQueue(p,c);assert.equal(r.totalXp,1800);assert.equal(r.seconds,340);assert.equal(r.stock.coins,40);assert.equal(r.consumed.fireRune,40);assert(r.rows[0].notes.some(n=>/hypothetical/.test(n)));
+p.steps=[step('goodMagic/cast-low-level-alchemy',3,'items-gte',{alchemyItemId:'bronzeDagger',itemId:'coins'})];r=estimateQueue(p,c);assert.equal(r.rows[0].actions,1);assert.equal(r.stock.coins,3);
+p.inventory={bronzeDagger:10};p.steps=[step('goodMagic/cast-low-level-alchemy',0,'items-lte',{alchemyItemId:'bronzeDagger',itemId:'bronzeDagger'})];r=estimateQueue(p,c);assert.equal(r.rows[0].actions,10);assert(!r.starting.bronzeDagger);
+p=newPlan(c);p.steps=[step('smithing/forge-bronze-dagger',10),step('goodMagic/cast-low-level-alchemy',10,'actions',{alchemyItemId:'bronzeDagger'})];r=estimateQueue(p,c);assert.equal(r.stock.bronzeDagger,0);assert(!r.starting.bronzeDagger);
+p=newPlan(c);p.steps=[step('goodMagic/cast-low-level-alchemy',1,'actions',{alchemyItemId:'fireRune'})];r=estimateQueue(p,c);assert.equal(r.consumed.fireRune,3);assert.deepEqual(c,alchemyBaseline,'Alchemy must not mutate catalog recipes when the selected item is also a required rune');
+for(const alchemyItemId of [undefined,'coins','petAmber','not-an-item','__proto__'])assert.throws(()=>cleanPlan({...p,steps:[step('goodMagic/cast-low-level-alchemy',1,'actions',{alchemyItemId})]},c),/Choose a valid item/);
+p=newPlan(c);p.steps=[step('goodMagic/dark-ritual',10)];r=estimateQueue(p,c);assert.equal(r.totalXp,10000);assert.equal(r.xp.evilMagic,10000);assert.equal(r.xp.goodMagic,0);assert.equal(r.seconds,200);assert.equal(r.consumed.deathRune,10);assert(!r.stock.bloodShard);assert(r.rows[0].notes.some(n=>/Death.*Bargain/.test(n)));
+assert.throws(()=>cleanPlan({...p,steps:[step('goodMagic/dark-ritual',2,'level')]},c),/does not award/);
+p.steps=[step('goodMagic/enchant-dragonstone-amulet',1)];r=estimateQueue(p,c);assert.equal(r.totalXp,293652);assert.equal(r.consumed.dragonstoneAmulet,1);assert.equal(r.stock.amuletOfProgress,1);assert(r.rows[0].notes.some(n=>/one cast/.test(n)));
 const source=await fs.readFile(new URL('../docs/queue-planner.js',import.meta.url),'utf8');
 assert(!/input:game|new WebSocket|socket\.emit|\/server\/ws|dispatchEvent/.test(source),'The planner must not control the game');
 console.log('Passed: material chains and inventory shortfalls, sequential level goals, item targets, zero-work goals, combat estimates, unmodeled/indefinite steps, immutable inputs, Unicode sharing, invalid imports, 20-step limit and no game-control code.');

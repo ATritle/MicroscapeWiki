@@ -328,6 +328,15 @@ resource waits. Combat reuses the existing comparison model and its XP-rate
 limitations. Unmodeled or indefinite steps produce partial totals rather than a
 false full-plan estimate.
 
+Good Magic includes Low/High Alchemy with a selected conversion item. The planner
+consumes that item plus runes and calculates the client's gross coin proceeds
+(base value plus the larger of 10% floored/1 coin for Low, or 50% floored/2 coins
+for High). Saves, share links and item-count goals retain the chosen item. It also
+includes Enchant Amulet 5 with a manual restart note, and Dark Ritual with its
+Death's Bargain requirement, Evil Magic XP and no guaranteed random shard output.
+The shared BETA-Activity Queue also records alchemy's chosen item. This remains
+wiki-only planning; no actions are sent to the game.
+
 Working drafts and up to 30 named plans stay in local storage. Shared plans use
 validated, versioned data in a URL fragment, including starting XP, base gear and
 inventory counts; the lookup username is not copied. Players enter all steps

@@ -1,8 +1,8 @@
 import {communityApiBase} from "./api-config.js?v=community-api-20261119";
 import {trackPageView} from "./analytics.js?v=ga4-20261123";
 import {renderLeaderboards} from "./leaderboards.js?v=ranked-communities-20261124";
-import {renderActivityPlanner} from "./queue-planner.js?v=queue-types-20261124";
-import {renderMembershipQueue} from "./membership-queue.js?v=queue-player-20261124";
+import {renderActivityPlanner} from "./queue-planner.js?v=good-magic-20261127";
+import {renderMembershipQueue} from "./membership-queue.js?v=good-magic-20261127";
 import { guides } from "./guides.js?v=queue-player-20261124";
 import {renderBazaar} from "./bazaar.js?v=market-sorting-20261122";
 import {renderBazaarWalkthrough} from "./bazaar-walkthrough.js?v=bazaar-visual-20261120";
