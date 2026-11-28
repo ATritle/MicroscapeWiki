@@ -3553,8 +3553,8 @@
           "amount": 1
         }
       ],
-      "icon": "https://microscape.cc/play/assets/bucket-B28_wI5Z.png",
-      "wikiId": "bucket",
+      "icon": "https://microscape.cc/play/assets/dough-BgHE6kiR.png",
+      "wikiId": "dough",
       "entity": "Cooking Table",
       "locations": [
         {
@@ -6576,8 +6576,8 @@
           "amount": 1
         }
       ],
-      "icon": "https://microscape.cc/play/assets/bucket-B28_wI5Z.png",
-      "wikiId": "bucket",
+      "icon": "https://microscape.cc/play/assets/unfiredPot-DqUu7xzn.png",
+      "wikiId": "unfired-pot",
       "entity": "Pottery Wheel",
       "locations": [
         {
@@ -6768,8 +6768,8 @@
           "amount": 1
         }
       ],
-      "icon": "https://microscape.cc/play/assets/bucket-B28_wI5Z.png",
-      "wikiId": "bucket",
+      "icon": "https://microscape.cc/play/assets/unfiredPieDish-BZsyf1px.png",
+      "wikiId": "unfired-pie-dish",
       "entity": "Pottery Wheel",
       "locations": [
         {

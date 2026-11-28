@@ -1,4 +1,4 @@
-import {MAX_STEPS,MAX_ACTIONS,cleanPlan,newPlan,estimateQueue,encodePlan,decodePlan,queueLevel,queueXpThreshold,alchemyItems,queueActivity} from './queue-model.js?v=good-magic-20261127';
+import {MAX_STEPS,MAX_ACTIONS,cleanPlan,newPlan,estimateQueue,encodePlan,decodePlan,queueLevel,queueXpThreshold,alchemyItems,queueActivity,activityXpText,activityPlanningNotes} from './queue-model.js?v=all-activities-20261127';
 import {activitiesForSkill} from './activity-comparison.js?v=equipment-20261124';
 import {lookupXpPlayer,lookupXpSuggestions} from './xp-player.js?v=hypothetical-20261121';
 const draftKey='microscape-wiki-queue-draft-v1',savesKey='microscape-wiki-queue-saves-v1';
@@ -12,7 +12,7 @@ export function renderActivityPlanner({e,byId,entryUrl}){
   const loading=e('p',{role:'status'},'Loading the activity planner…');node.append(loading);
   let disposed=false,request,timer,suggestionRequest;
   if(globalThis.__WIKI_PRERENDER__){loading.textContent='Choose activities, estimate XP and time, and budget materials across your plan. The interactive planner loads in your browser.';return {node,dispose(){}};}
-  fetch(new URL('./queue-catalog.json?v=good-magic-20261127',import.meta.url)).then(r=>{if(!r.ok)throw Error('The activity planner could not load. Please refresh to try again.');return r.json();}).then(catalog=>{
+  fetch(new URL('./queue-catalog.json?v=planner-icons-20261128',import.meta.url)).then(r=>{if(!r.ok)throw Error('The activity planner could not load. Please refresh to try again.');return r.json();}).then(catalog=>{
     if(disposed)return;loading.remove();
     let plan=newPlan(catalog),undo=[],saved=[],selected,editing=null,limit=24,profileName='Manual starting stats';
     const status=e('p',{class:'queue-status',role:'status'}),error=e('p',{class:'queue-error',role:'alert'});error.hidden=true;
@@ -45,7 +45,7 @@ export function renderActivityPlanner({e,byId,entryUrl}){
       button('Copy checklist',()=>{const result=estimateQueue(plan,catalog);copy([plan.name,'Enter these steps manually in Microscape:',...result.rows.map((r,i)=>(i+1)+'. '+manualStep(r.step)),
         (result.partial?'Known totals':'Estimated totals')+': '+fmt(result.totalXp)+' XP · '+queueDuration(result.seconds),
         'Additional materials: '+(Object.entries(result.starting).map(([id,n])=>fmt(n)+' × '+itemName(id)).join(', ')||'None for the estimated recipe steps.'),
-        'Base estimates exclude Double Ups, abilities, potions, travel and resource queues.'].join('\n'),'Manual checklist copied.');}),
+        'Base estimates exclude Double Ups, abilities, potions, movement between activities and resource queues.'].join('\n'),'Manual checklist copied.');}),
       button('New plan',()=>{change(()=>{plan=newPlan(catalog);editing=null;});name.value=plan.name;resetProfileLabel('Manual starting stats');drawStartingStats();})));
     const savedBar=e('div',{class:'queue-saved-bar'},e('label',{},'Saved on this device',savedSelect),button('Load plan',()=>{if(savedSelect.value==='')return;change(()=>{plan=cleanPlan(saved[Number(savedSelect.value)].plan,catalog);editing=null;});name.value=plan.name;resetProfileLabel('Saved starting stats');drawStartingStats();}),
       button('Delete saved copy',()=>{if(savedSelect.value==='')return;const i=Number(savedSelect.value);saved.splice(i,1);try{localStorage.setItem(savesKey,JSON.stringify(saved));drawSaves();status.textContent='Saved copy removed. The open plan is still available.';}catch{fail('Could not update saved plans.');}}));drawSaves();
@@ -76,30 +76,32 @@ export function renderActivityPlanner({e,byId,entryUrl}){
     const more=button('Show more items',()=>{limit+=24;drawPicker();}),selectedPanel=e('div',{class:'queue-selected'});
     const builder=e('section',{class:'queue-builder','aria-labelledby':'queue-step-heading'},e('h3',{id:'queue-step-heading'},'Add a step'),e('div',{class:'queue-filters'},e('label',{},'Skill',skillSelect),e('label',{},'Item or activity',search)),resultsCount,results,more,selectedPanel);
     let goalInput,valueInput,itemInput,locationInput,spellInput,alchemyInput;
-    function drawPicker(){const query=search.value.trim().toLowerCase();const choices=activitiesForSkill(catalog,skillSelect.value).filter(a=>!query||[a.name,label(a),...(a.outputs||[]).map(i=>itemName(i.id))].join(' ').toLowerCase().includes(query));
-      resultsCount.textContent=choices.length+' activities · in-game level order';results.replaceChildren(...choices.slice(0,limit).map(a=>{const b=button('',()=>{selected=a;editing=null;drawSelected();drawPicker();},{class:'queue-item'+(selected?.id===a.id?' selected':''),'aria-pressed':String(selected?.id===a.id)});b.append(icon(a.icon,36),e('span',{},e('strong',{},label(a)),e('small',{},a.name+' · Lv '+(a.mob?a.combatLevel:a.level))));return b;}));more.hidden=choices.length<=limit;
+    function drawPicker(){const query=search.value.trim().toLowerCase();const choices=activitiesForSkill(catalog,skillSelect.value).filter(a=>!query||[a.name,label(a),a.entity,a.travelsTo?.name,...[...(a.outputs||[]),...(a.inputs||[]),...(a.randomOutputs||[])].map(i=>itemName(i.id))].join(' ').toLowerCase().includes(query));
+      resultsCount.textContent=choices.length+' activities · in-game level order';results.replaceChildren(...choices.slice(0,limit).map(a=>{const b=button('',()=>{selected=a;editing=null;drawSelected();drawPicker();},{class:'queue-item'+(selected?.id===a.id?' selected':''),'aria-pressed':String(selected?.id===a.id)});b.append(icon(a.icon,36),e('span',{},e('strong',{},label(a)),e('small',{},a.name+' · Lv '+(a.mob?a.combatLevel:a.level)),...(!a.mob?[e('small',{},activityXpText(a,catalog)+(a.travelsTo?' · Travel':a.randomOutputs?.length?' · Random rewards':a.singleExecution?' · Single action':''))]:[])));return b;}));more.hidden=choices.length<=limit;
     }
     function drawSelected(step){selectedPanel.replaceChildren();if(!selected)return;const a=selected.alchemy&&step?.alchemyItemId?queueActivity(catalog,{activityId:selected.id,alchemyItemId:step.alchemyItemId}):selected,form=e('form',{}),isCombat=!!a.mob;
       alchemyInput=e('select',{'aria-label':'Alchemy item'},e('option',{value:''},'Choose an item to convert…'),...alchemyItems(catalog).map(([id,item])=>e('option',{value:id},item.name)));alchemyInput.value=step?.alchemyItemId||'';
       alchemyInput.addEventListener('change',()=>drawSelected({goal:goalInput.value,value:Number(valueInput.value),itemId:itemInput.value,location:locationInput.value,spellId:spellInput.value,alchemyItemId:alchemyInput.value}));
-      goalInput=e('select',{'aria-label':'Step stopping condition'},e('option',{value:'actions'},isCombat?'Defeat a number of enemies':'Complete a number of actions'),...(isCombat||a.exp>0?[e('option',{value:'level'},'Reach a skill level')]:[]),
-        ...(!isCombat&&(a.outputs||[]).length?[e('option',{value:'items-gte'},'Have at least an item count')]:[]),...(!isCombat&&(a.inputs||[]).length?[e('option',{value:'items-lte'},'Use an item down to a count')]:[]),e('option',{value:'indefinite'},'Until I stop it manually'));
-      goalInput.value=step?.goal||'actions';valueInput=e('input',{type:'number',min:1,max:MAX_ACTIONS,value:step?.value??10,'aria-label':'Step target value'});itemInput=e('select',{'aria-label':'Step target item'});
+      goalInput=e('select',{'aria-label':'Step stopping condition'},e('option',{value:'actions'},a.travelsTo?'One trip':isCombat?'Defeat a number of enemies':'Complete a number of actions'),...(!a.travelsTo?[
+        ...(isCombat||a.exp>0?[e('option',{value:'level'},'Reach a skill level')]:[]),
+        ...(!isCombat&&(a.outputs||[]).length?[e('option',{value:'items-gte'},'Have at least an item count')]:[]),...(!isCombat&&(a.inputs||[]).length?[e('option',{value:'items-lte'},'Use an item down to a count')]:[]),e('option',{value:'indefinite'},'Until I stop it manually')]:[]));
+      goalInput.value=step?.goal||'actions';valueInput=e('input',{type:'number',min:1,max:a.travelsTo?1:MAX_ACTIONS,value:step?.value??(a.singleExecution?1:10),'aria-label':'Step target value',...(a.travelsTo?{readonly:''}:{})});itemInput=e('select',{'aria-label':'Step target item'});
       locationInput=e('select',{'aria-label':'Step location'},...(a.locations?.length?a.locations.map(l=>e('option',{value:l.wikiId},l.name)):[e('option',{value:''},'See the activity’s location guide')]));locationInput.value=step?.location||a.locations?.[0]?.wikiId||'';
       spellInput=e('select',{'aria-label':'Queue spell'},...catalog.spells.map(s=>e('option',{value:s.id},s.name+' · Lv '+s.level)));spellInput.value=step?.spellId||catalog.spells[0].id;
       const targetLabel=e('label',{},'Target',valueInput),itemLabel=e('label',{},'Item count to watch',itemInput),spellLabel=e('label',{},'Spell',spellInput);spellLabel.hidden=a.skill!=='evilMagic';
-      function goalFields(reset=false){targetLabel.hidden=goalInput.value==='indefinite';itemLabel.hidden=!goalInput.value.startsWith('items-');valueInput.min=goalInput.value==='items-lte'?0:1;valueInput.max=goalInput.value==='level'?99:MAX_ACTIONS;
+      function goalFields(reset=false){targetLabel.hidden=goalInput.value==='indefinite';itemLabel.hidden=!goalInput.value.startsWith('items-');valueInput.min=goalInput.value==='items-lte'?0:1;valueInput.max=a.travelsTo?1:goalInput.value==='level'?99:MAX_ACTIONS;
         const items=goalInput.value==='items-lte'?a.inputs||[]:a.outputs||[];itemInput.replaceChildren(...items.map(i=>e('option',{value:i.id},itemName(i.id))));itemInput.value=items.some(i=>i.id===step?.itemId)?step.itemId:items[0]?.id||'';
-        if(reset)valueInput.value=goalInput.value==='level'?Math.min(99,queueLevel(plan.xp[a.skill])+1):goalInput.value==='items-lte'?0:10;
+        if(reset)valueInput.value=goalInput.value==='level'?Math.min(99,queueLevel(plan.xp[a.skill])+1):goalInput.value==='items-lte'?0:a.singleExecution?1:10;
       }goalInput.addEventListener('change',()=>goalFields(true));goalFields();
-      form.append(e('div',{class:'queue-selected-title'},icon(a.icon,42),e('div',{},e('strong',{},label(a)),e('p',{class:'queue-help'},skillName(a.skill)+' · '+a.name+(isCombat?'':' · '+fmt(a.exp)+' XP/action · '+queueDuration(a.duration*2+8)+'/action')))),
+      form.append(e('div',{class:'queue-selected-title'},icon(a.icon,42),e('div',{},e('strong',{},label(a)),e('p',{class:'queue-help'},skillName(a.skill)+' · '+a.name+(isCombat?'':' · '+activityXpText(a,catalog)+'/action · '+queueDuration(a.duration*2+8)+'/action')))),
         ...(a.alchemy?[e('label',{},'Item to convert with '+a.name,alchemyInput)]:[]),
         e('div',{class:'queue-step-fields'},e('label',{},'Stop when…',goalInput),targetLabel,itemLabel,e('label',{},'Where to train',locationInput),spellLabel),
         e('p',{class:'queue-help'},isCombat?'Kills use the same base combat model as Activity Comparison. Boss estimates are unavailable.':
           'Per action: '+((a.inputs||[]).map(i=>fmt(i.amount)+' × '+itemName(i.id)).join(' + ')||'No materials')+' → '+((a.outputs||[]).map(i=>fmt(i.amount)+' × '+itemName(i.id)).join(' + ')||'No guaranteed item output')),
         ...(Object.keys(a.otherExp||{}).length?[e('p',{class:'queue-help'},'Also grants '+Object.entries(a.otherExp).map(([id,n])=>fmt(n)+' '+skillName(id)+' XP').join(', ')+' per action.')]:[]),
         ...(a.alchemy?[e('p',{class:'queue-help'},'Each cast consumes one selected item in addition to the runes. Coins are gross proceeds, before item and rune costs.')]:[]),
-        ...(a.singleExecution?[e('p',{class:'queue-warning'},'This activity stops after one cast in-game. Restart it manually for each additional action in the plan.')]:[]),
+        ...activityPlanningNotes(a,catalog).map(note=>e('p',{class:'queue-warning'},note)),
+        ...(a.requiresMembership?[e('p',{class:'queue-warning'},'This activity requires membership. Membership is not checked.')]:[]),
         ...(a.requiresAbility?[e('p',{class:'queue-warning'},'Requires ability: '+a.requiresAbility+'. Random rewards are excluded from estimates.')]:[]));
       const add=e('button',{type:'submit',class:'button primary'},editing===null?'Add to plan':'Save step changes');add.disabled=editing===null&&plan.steps.length>=MAX_STEPS||a.alchemy&&!alchemyInput.value;form.append(add);
       if(editing!==null)form.append(button('Cancel editing',()=>{editing=null;drawSelected();}));
@@ -135,7 +137,7 @@ export function renderActivityPlanner({e,byId,entryUrl}){
           ...(r.unavailable?[e('p',{class:'queue-warning'},r.unavailable)]:[]),...(warnings.length?[e('details',{class:'queue-row-notes'},e('summary',{},warnings.length+' planning note'+(warnings.length===1?'':'s')),e('ul',{},...warnings.map(w=>e('li',{},w))))]:[]),controls);
       }));
       summary.replaceChildren(e('h3',{},result.partial?'Known plan totals':'Estimated plan totals'),e('dl',{class:'queue-total-metrics'},e('div',{},e('dt',{},'XP gained'),e('dd',{},fmt(result.totalXp))),e('div',{},e('dt',{},'Active time'),e('dd',{},queueDuration(result.seconds)))),
-        e('p',{class:'queue-help'},'Base rates. Travel, resource queues, Double Ups, potions and active abilities are excluded. Earlier steps update the projected XP and inventory for later steps.'),
+        e('p',{class:'queue-help'},'Base rates. Movement between activities, resource queues, Double Ups, potions and active abilities are excluded. Explicit boat-trip steps include their base action time. Earlier steps update projected XP and inventory for later steps.'),
         ...result.warnings.map(w=>e('p',{class:'queue-warning'},w)),materialList('Additional supplies needed',result.starting,'After your entered inventory and materials produced by earlier steps. Missing supplies are assumed available when that step needs them.'),
         materialList('Projected items left',result.stock,'Guaranteed products only. Random loot and rare catches are excluded.'),
         ...(Object.keys(result.supplyEstimates).length?[materialList('Estimated combat shots / casts',result.supplyEstimates,'Estimated ammunition uses or rune costs before conservation. Not guaranteed consumption.')]:[]),
@@ -147,7 +149,8 @@ export function renderActivityPlanner({e,byId,entryUrl}){
       e('li',{},'Enter activities manually in-game. For a setup reference that includes saved-loadout changes, use the separate Activity Queue builder. Running an automatic queue in-game requires Adventurer’s Guild membership.'),
       e('li',{},'Skilling uses the catalog’s base XP and action time plus 8 seconds of preparation per action. Guaranteed inputs and outputs are carried forward in order.'),
       e('li',{},'Combat uses starting XP and base gear, with estimated hit chances and level gains. Strength, Defense, Ranged and Evil Magic XP conversion remains unverified. Boss fights, food use and random loot are not simulated.'),
-      e('li',{},'Alchemy consumes one chosen item plus runes per cast. Enchant Amulet 5 stops after a single cast in-game. Dark Ritual grants Evil Magic XP, requires Death’s Bargain, and has random rewards excluded from material totals. Other one-off trades are not included. Verify required equipment, abilities, membership, locations and supplies in-game.'),
+      e('li',{},'All active activities in the current catalog are available, including zero-XP utility tasks, trades, chests and travel. Random rewards do not count toward guaranteed inventory or item targets. Single-action activities stop in-game; repeat only if permitted. Unlocks, ownership limits and other prerequisites are not verified.'),
+      e('li',{},'Alchemy consumes one chosen item plus runes per cast. Dark Ritual awards Evil Magic XP. Travel steps model one boat trip each; movement between other activities is excluded. Verify equipment, abilities, membership, locations and supplies in-game.'),
       e('li',{},'Named plans and the working draft are stored in this browser. Share links include the plan and its starting XP, gear and inventory counts, but no username or account credentials.')));
     node.append(error,tools,savedBar,shareOutput,status,starting,builder,e('div',{class:'queue-workspace'},planPanel,summary),assumptions);
     drawStartingStats();drawPicker();renderPlan();

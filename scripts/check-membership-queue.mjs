@@ -21,7 +21,10 @@ const alchemyQueue=cleanMembershipQueue({version:1,steps:[{type:'activity',activ
 assert.equal(alchemyQueue.steps[0].alchemyItemId,'bronzeDagger');
 assert.deepEqual(decodeMembershipQueue(encodePlan(alchemyQueue),catalog),alchemyQueue);
 assert.throws(()=>cleanMembershipQueue({version:1,steps:[{type:'activity',activityId:'goodMagic/cast-high-level-alchemy',goal:'actions',value:10}]},catalog),/Choose a valid item/);
-assert.throws(()=>cleanMembershipQueue({version:1,steps:[{type:'activity',activityId:'goodMagic/dark-ritual',goal:'level',value:2}]},catalog),/different skill/);
+assert.throws(()=>cleanMembershipQueue({version:1,steps:[{type:'activity',activityId:'goodMagic/dark-ritual',goal:'level',value:2}]},catalog),/listed skill/);
+assert.throws(()=>cleanMembershipQueue({version:1,steps:[{type:'activity',activityId:'cooking/gather-water',goal:'level',value:2}]},catalog),/listed skill/);
+assert.throws(()=>cleanMembershipQueue({version:1,steps:[{type:'activity',activityId:'fishing/sail-to-progryn',goal:'actions',value:2}]},catalog),/Travel steps/);
+assert.throws(()=>cleanMembershipQueue({version:1,steps:[{type:'activity',activityId:'piety/jesters-chest-small',goal:'items-gte',itemId:'foolsHat',value:1}]},catalog),/Random rewards/);
 const mixed={version:1,name:'A 💚 shared queue',steps:[
   {type:'loadout',name:'Fishing',equipment:{}},
   {type:'activity',activityId:'attack/fight-cow',goal:'items-gte',itemId:'rawShrimp',value:10},

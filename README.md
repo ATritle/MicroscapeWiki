@@ -337,6 +337,17 @@ Death's Bargain requirement, Evil Magic XP and no guaranteed random shard output
 The shared BETA-Activity Queue also records alchemy's chosen item. This remains
 wiki-only planning; no actions are sent to the game.
 
+The November 27 all-skill audit added 93 more definitions: five advanced XP
+recipes and 88 zero-XP actions. The planner now includes all 546 active activities
+in the checked client, across 16 skills. The catalog builder reads each skill's
+full definitions and records independent expected counts for coverage checks.
+Zero-XP tasks and secondary skill XP are explicit on activity tiles and editors.
+Random rewards are shown with their chances but excluded from guaranteed products
+and item-count goals. Single-action recipes and exchanges default to one action,
+with restart and unlock/ownership-limit notes. Boat travel uses one trip per step;
+return journeys are separate and general movement between steps is not modeled.
+The shared Activity Queue preserves these same labels and restrictions.
+
 Working drafts and up to 30 named plans stay in local storage. Shared plans use
 validated, versioned data in a URL fragment, including starting XP, base gear and
 inventory counts; the lookup username is not copied. Players enter all steps

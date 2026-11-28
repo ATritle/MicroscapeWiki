@@ -1,5 +1,6 @@
 import fs from "node:fs/promises";
 import {createHash} from "node:crypto";
+import {activityProductIcons} from './activity-product-icons.mjs';
 const [dataFile, clientFile, sourceFile] = process.argv.slice(2);
 if (!sourceFile) throw Error("Pass the extracted public game JSON, client JS, and source metadata JSON.");
 const game = JSON.parse(await fs.readFile(dataFile, "utf8"));
@@ -53,7 +54,7 @@ for (const skill of skills) {
     if (activity.softDeleted || activity.deprecated || !Number.isFinite(activity.exp) || activity.exp <= 0 || !Number.isFinite(activity.duration)) continue;
     const inputs = Object.entries(finite(activity.inventoryChanges)).filter(([, amount]) => amount < 0).map(([id, amount]) => ({id, amount:-amount}));
     const outputs = Object.entries(finite(activity.inventoryChanges)).filter(([id, amount]) => amount >= 1 && !id.startsWith("pet")).sort((a, b) => b[1] - a[1]);
-    const iconId = activity.icon || (activity.useInputAsIcon ? inputs[0]?.id : outputs[0]?.[0]);
+    const iconId = activityProductIcons[activity.id] || activity.icon || (activity.useInputAsIcon ? inputs[0]?.id : outputs[0]?.[0]);
     activities.push({id:skill.id + "/" + activity.id, skill:skill.id, name:title(activity.name),
       level:activity.level || 1, duration:activity.duration, exp:activity.exp,
       sortLevel:activity.level || 0, otherActivity:!!(activity.notInGuidebook || activity.isOthered || outsideMainland(activity.entity)),

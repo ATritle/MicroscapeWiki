@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
-import {newPlan,cleanPlan,estimateQueue,queueLevel,queueXpThreshold,encodePlan,decodePlan} from '../docs/queue-model.js';
+import {newPlan,cleanPlan,estimateQueue,queueLevel,queueXpThreshold,encodePlan,decodePlan,activityXpText} from '../docs/queue-model.js';
 const c=JSON.parse(await fs.readFile(new URL('../docs/queue-catalog.json',import.meta.url),'utf8'));
 const step=(activityId,value=10,goal='actions',extra={})=>({activityId,goal,value,...extra});
 let p=newPlan(c);
@@ -36,7 +36,10 @@ assert.throws(()=>cleanPlan({...p,steps:[step('mining/mine-copper',100,'level')]
 assert.throws(()=>cleanPlan({...p,steps:[step('mining/mine-copper',10,'items-gte',{itemId:'__proto__'})]},c),/Choose an item/);
 const bad=JSON.parse(JSON.stringify({...p,inventory:{'not-an-item':30},equipment:{'bad-slot':'bronzeDagger'}}));
 assert.deepEqual(cleanPlan(bad,c).inventory,{});assert.deepEqual(cleanPlan(bad,c).equipment,{});
-for(const a of c.activities){assert(!a.singleExecution||a.skill==='goodMagic');if(!a.mob)for(const output of a.outputs)assert(output.amount>=1&&c.items[output.id]&&!output.id.startsWith('pet'));}
+assert.equal(c.activities.length,c.coverage.total);assert.equal(new Set(c.activities.map(a=>a.id)).size,c.activities.length);
+for(const [skill,count]of Object.entries(c.coverage.expectedBySkill))assert.equal(c.activities.filter(a=>a.skill===skill).length,count,'Complete source coverage for '+skill);
+for(const a of c.activities){if(!a.mob){for(const output of a.outputs)assert(output.amount>=1&&c.items[output.id]&&c.items[output.id].slot!=='pet');for(const output of a.randomOutputs||[])assert(output.chance>0&&output.chance<1&&!a.outputs.some(i=>i.id===output.id));}}
+for(const a of c.activities.filter(a=>!a.mob)){const plan=newPlan(c);plan.steps=[step(a.id,1,'actions',a.alchemy?{alchemyItemId:'bronzeDagger'}:{})];const estimated=estimateQueue(plan,c);assert(!estimated.partial&&Number.isFinite(estimated.totalXp)&&Number.isFinite(estimated.seconds),'Every noncombat action must have a finite base action estimate: '+a.id);}
 const activityCatalog=JSON.parse(await fs.readFile(new URL('../docs/activity-catalog.json',import.meta.url),'utf8'));
 assert.deepEqual(c.activities.filter(a=>a.skill==='goodMagic').map(a=>a.id).sort(),[...activityCatalog.activities.filter(a=>a.skill==='goodMagic').map(a=>a.id),'goodMagic/dark-ritual'].sort(),'Every Good Magic activity, including both alchemy tiers, one-cast enchanting and the ritual, must be listed');
 p=newPlan(c);p.steps=[step('goodMagic/cast-low-level-alchemy',100,'actions',{alchemyItemId:'bronzeDagger'})];
@@ -51,7 +54,22 @@ p=newPlan(c);p.steps=[step('goodMagic/cast-low-level-alchemy',1,'actions',{alche
 for(const alchemyItemId of [undefined,'coins','petAmber','not-an-item','__proto__'])assert.throws(()=>cleanPlan({...p,steps:[step('goodMagic/cast-low-level-alchemy',1,'actions',{alchemyItemId})]},c),/Choose a valid item/);
 p=newPlan(c);p.steps=[step('goodMagic/dark-ritual',10)];r=estimateQueue(p,c);assert.equal(r.totalXp,10000);assert.equal(r.xp.evilMagic,10000);assert.equal(r.xp.goodMagic,0);assert.equal(r.seconds,200);assert.equal(r.consumed.deathRune,10);assert(!r.stock.bloodShard);assert(r.rows[0].notes.some(n=>/Death.*Bargain/.test(n)));
 assert.throws(()=>cleanPlan({...p,steps:[step('goodMagic/dark-ritual',2,'level')]},c),/does not award/);
-p.steps=[step('goodMagic/enchant-dragonstone-amulet',1)];r=estimateQueue(p,c);assert.equal(r.totalXp,293652);assert.equal(r.consumed.dragonstoneAmulet,1);assert.equal(r.stock.amuletOfProgress,1);assert(r.rows[0].notes.some(n=>/one cast/.test(n)));
+p.steps=[step('goodMagic/enchant-dragonstone-amulet',1)];r=estimateQueue(p,c);assert.equal(r.totalXp,293652);assert.equal(r.consumed.dragonstoneAmulet,1);assert.equal(r.stock.amuletOfProgress,1);assert(r.rows[0].notes.some(n=>/Single action/.test(n)));
+for(const [id,xp]of [['crafting/craft-dragonstone-amulet',1006113],['crafting/craft-emberstone',450000],['crafting/craft-heartwood-haft',900000],['firemaking/kindle-everflame-core',900000],['smithing/forge-brimstone-axe-head',900000]]){
+  p=newPlan(c);p.steps=[step(id,1)];r=estimateQueue(p,c);assert.equal(r.totalXp,xp);assert(r.rows[0].notes.some(n=>/Single action/.test(n)));
+}
+p=newPlan(c);p.steps=[step('herblaw/fill-vials',2),step('herblaw/mix-attack-potion',1)];
+// Use the actual first potion recipe ID rather than assume a display-name slug.
+const potion=c.activities.find(a=>a.skill==='herblaw'&&a.outputs.some(i=>i.id==='attackPotion'));assert(potion);p.steps[1]=step(potion.id,1);r=estimateQueue(p,c);assert.equal(r.consumed.vial,20);assert.equal(r.starting.vialOfWater,undefined);assert.equal(r.stock.vialOfWater,19);assert.equal(r.stock.attackPotion,1);assert.equal(r.rows[0].xp,0);
+p=newPlan(c);p.steps=[step('cooking/gather-water-10',2)];r=estimateQueue(p,c);assert.equal(r.totalXp,0);assert.equal(r.stock.waterBucket,20);assert.equal(r.consumed.bucket,20);assert.equal(r.seconds,28);assert.equal(activityXpText(r.rows[0].activity,c),'0 XP');
+assert.throws(()=>cleanPlan({...p,steps:[step('cooking/gather-water',2,'level')]},c),/does not award/);
+p.steps=[step('crafting/tan-leather',10)];r=estimateQueue(p,c);assert.equal(r.stock.leather,10);assert.equal(r.consumed.coins,30);assert.equal(r.consumed.cowHide,10);assert.equal(r.totalXp,0);
+p.steps=[step('piety/jesters-chest-small',10)];r=estimateQueue(p,c);assert.equal(r.consumed.luckyToken,100);assert(!r.stock.foolsHat);assert(r.rows[0].notes.some(n=>/Random rewards/.test(n)));assert.throws(()=>cleanPlan({...p,steps:[step('piety/jesters-chest-small',1,'items-gte',{itemId:'foolsHat'})]},c),/Choose an item/);
+p.steps=[step('piety/chest-al-di',2)];r=estimateQueue(p,c);assert.equal(r.stock.coins,100);assert.equal(r.stock.ironOre,16);assert(!r.stock.leatherBoots);assert.equal(r.consumed.sigilAl,2);
+p.steps=[step('fishing/sail-to-progryn',1),step('fishing/sail-to-tutabay-atoll',1)];r=estimateQueue(p,c);assert.equal(r.totalXp,0);assert.equal(r.seconds,36);assert.equal(r.consumed.ticketToProgryn,1);assert(r.rows[0].notes.some(n=>/Travel to Fencewell Bridge/.test(n)));assert.deepEqual(decodePlan(encodePlan(cleanPlan(p,c)),c),cleanPlan(p,c));
+assert.throws(()=>cleanPlan({...p,steps:[step('fishing/sail-to-progryn',10)]},c),/Travel steps/);assert.throws(()=>cleanPlan({...p,steps:[step('fishing/sail-to-progryn',0,'indefinite')]},c),/Travel steps/);
+p.steps=[step('piety/exchange-audience-favor-for-pet-map-otter',1)];r=estimateQueue(p,c);assert.equal(r.consumed.audienceFavor,15);assert.equal(r.stock.petMapOtter,1);assert.equal(r.totalXp,0);assert(r.rows[0].notes.some(n=>/membership/.test(n)));
+console.log('Passed: full per-skill coverage, five advanced XP recipes, zero-XP material chains, random reward exclusions, explicit travel steps, membership exchanges and share validation.');
 const source=await fs.readFile(new URL('../docs/queue-planner.js',import.meta.url),'utf8');
 assert(!/input:game|new WebSocket|socket\.emit|\/server\/ws|dispatchEvent/.test(source),'The planner must not control the game');
 console.log('Passed: material chains and inventory shortfalls, sequential level goals, item targets, zero-work goals, combat estimates, unmodeled/indefinite steps, immutable inputs, Unicode sharing, invalid imports, 20-step limit and no game-control code.');

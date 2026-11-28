@@ -8,6 +8,21 @@ for(let n=1;n<99;n++){points+=Math.floor(n+300*2**(n/7));thresholds[n+1]=Math.fl
 export const queueXpThreshold=n=>thresholds[n];
 export function queueLevel(xp){let n=1;while(n<99&&thresholds[n+1]<=xp)n++;return n;}
 const amount=(n,max=1e12)=>Number.isFinite(n)&&n>=0&&n<=max;
+export function activityXpText(a,catalog){
+  if(a.mob)return 'Combat XP estimate';
+  const skill=id=>catalog.skills.find(s=>s.id===id)?.name||id;
+  const parts=[...(a.exp>0?[a.exp.toLocaleString('en')+' '+skill(a.skill)+' XP']:[]),...Object.entries(a.otherExp||{}).filter(([,n])=>n>0).map(([id,n])=>n.toLocaleString('en')+' '+skill(id)+' XP')];
+  return parts.length?parts.join(' + '):'0 XP';
+}
+export function activityPlanningNotes(a,catalog){
+  const notes=[],item=id=>catalog.items[id]?.name||id;
+  if(a.singleExecution&&!a.travelsTo)notes.push('Single action: the game stops after completion. Restart manually for another action, only if the game permits it. One-time unlocks, ownership limits and other prerequisites are not verified.');
+  if(!a.mob&&!(a.exp>0))notes.push(Object.values(a.otherExp||{}).some(n=>n>0)?'No '+(catalog.skills.find(s=>s.id===a.skill)?.name||a.skill)+' XP. '+activityXpText(a,catalog)+' per action is included in total XP.':'0 XP: this utility, exchange or travel activity does not train a skill.');
+  if(a.randomOutputs?.length)notes.push('Random rewards are excluded from guaranteed materials and item-count targets: '+a.randomOutputs.map(i=>item(i.id)+' ('+(i.chance*100).toLocaleString('en',{maximumFractionDigits:4})+'%)').join(', ')+'. Use an action-count target to budget attempts.');
+  if(a.travelsTo)notes.push('Travel to '+a.travelsTo.name+'. Plan one boat trip per step and select the return trip separately. Only this activity’s base time is included; travel between other activities is not tracked.');
+  if(a.requiredItems?.length)notes.push('Required item: '+a.requiredItems.map(item).join(', ')+'. Availability is not verified.');
+  return [...notes,...(a.disclaimer||[])];
+}
 export const alchemyItems=catalog=>Object.entries(catalog.items).filter(([,item])=>Number.isFinite(item.value)&&item.value>0).sort((a,b)=>a[1].name.localeCompare(b[1].name));
 export function queueActivity(catalog,step){
   const a=catalog.activities.find(a=>a.id===step.activityId);if(!a?.alchemy)return a;
@@ -27,6 +42,7 @@ export function cleanPlan(input,catalog){
     if(s.goal==='level'&&!a.mob&&!(a.exp>0))throw Error('This activity does not award '+a.skill+' XP. Choose an action or item target.');
     const value=s.goal==='indefinite'?0:Number(s.value);
     if(!Number.isInteger(value)||value<(s.goal==='items-lte'||s.goal==='indefinite'?0:1)||value>(s.goal==='level'?99:MAX_ACTIONS))throw Error('Step '+(i+1)+' has an invalid target.');
+    if(a.travelsTo&&(s.goal!=='actions'||value!==1))throw Error('Travel steps must be one action. Plan the return trip separately.');
     const itemId=typeof s.itemId==='string'?s.itemId:'';
     if(s.goal.startsWith('items-')&&(!catalog.items[itemId]||a.mob||![...(a.inputs||[]),...(a.outputs||[])].some(x=>x.id===itemId)))throw Error('Choose an item consumed or produced by step '+(i+1)+'.');
     const spellId=catalog.spells.some(x=>x.id===s.spellId)?s.spellId:catalog.spells[0]?.id;
@@ -63,9 +79,8 @@ export function estimateQueue(input,catalog){
     if(!a.mob&&before[a.skill]<a.level)notes.push('Requires '+catalog.skills.find(s=>s.id===a.skill).name+' '+a.level+'; projected level is '+before[a.skill]+'. Estimate is hypothetical.');
     if(a.requiresMembership)notes.push('This activity requires membership.');
     if(a.requiresAbility)notes.push('Requires ability: '+a.requiresAbility+'. Ability unlocks are not checked.');
-    if(a.singleExecution)notes.push('The game stops after one cast. Multiple actions in this plan require restarting the activity manually.');
+    notes.push(...activityPlanningNotes(a,catalog));
     if(a.alchemy)notes.push('One selected item is consumed per cast, plus runes. Coin output is gross proceeds, not profit; rune and item prices are not deducted.');
-    if(a.exp===0)notes.push('This activity awards no '+catalog.skills.find(s=>s.id===a.skill).name+' XP. Other skill XP is included in the total; random outputs are excluded.');
     let perXp=a.exp,combat=null;
     if(a.mob){
       const foe=catalog.foes[a.mob],weapon=catalog.items[plan.equipment.weapon],spell=catalog.spells.find(s=>s.id===step.spellId);

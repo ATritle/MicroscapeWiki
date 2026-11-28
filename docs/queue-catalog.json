@@ -5105,7 +5105,7 @@
       "locations": [
         {
           "name": "O'Rock Graveyard",
-          "wikiId": "orock-graveyard"
+          "wikiId": "the-graveyard"
         }
       ],
       "otherExp": {},
@@ -5140,7 +5140,7 @@
       "locations": [
         {
           "name": "O'Rock Graveyard",
-          "wikiId": "orock-graveyard"
+          "wikiId": "the-graveyard"
         }
       ],
       "otherExp": {},
@@ -5175,7 +5175,7 @@
       "locations": [
         {
           "name": "O'Rock Graveyard",
-          "wikiId": "orock-graveyard"
+          "wikiId": "the-graveyard"
         }
       ],
       "otherExp": {},
@@ -5191,6 +5191,2610 @@
           "amount": 7
         }
       ],
+      "requiredItems": []
+    },
+    {
+      "id": "piety/capture-blue-flame-piety",
+      "skill": "piety",
+      "name": "Capture blue flame",
+      "level": 10,
+      "duration": 21,
+      "exp": 0,
+      "sortLevel": 10,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "bigBones",
+          "amount": 32
+        },
+        {
+          "id": "bones",
+          "amount": 256
+        },
+        {
+          "id": "silverBar",
+          "amount": 128
+        },
+        {
+          "id": "vial",
+          "amount": 1
+        }
+      ],
+      "outputs": [
+        {
+          "id": "blueFlame",
+          "amount": 1
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/blueFlame-CIcWwed6.png",
+      "wikiId": "blue-flame",
+      "entity": "Blue Flame",
+      "locations": [
+        {
+          "name": "Merric's Magic Shop",
+          "wikiId": "magic-shop"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": false,
+      "requiredItems": []
+    },
+    {
+      "id": "piety/craft-vial-of-poison",
+      "skill": "piety",
+      "name": "Brew vial of poison",
+      "level": 1,
+      "duration": 4,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "natureRune",
+          "amount": 1
+        },
+        {
+          "id": "venomSac",
+          "amount": 1
+        },
+        {
+          "id": "vial",
+          "amount": 1
+        }
+      ],
+      "outputs": [
+        {
+          "id": "vialOfPoison",
+          "amount": 1
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/vialOfPoison-CohV6uO_.png",
+      "wikiId": "vial-of-poison",
+      "entity": "Sirocco",
+      "locations": [
+        {
+          "name": "Elshand Temple Ruins",
+          "wikiId": "elshand-temple-ruins"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": false,
+      "requiredItems": []
+    },
+    {
+      "id": "piety/craft-blessed-greaves",
+      "skill": "piety",
+      "name": "Craft Blessed Greaves",
+      "level": 10,
+      "duration": 3,
+      "exp": 0,
+      "sortLevel": 10,
+      "otherActivity": false,
+      "inputs": [
+        {
+          "id": "leatherBoots",
+          "amount": 1
+        },
+        {
+          "id": "silverBar",
+          "amount": 1
+        },
+        {
+          "id": "spiritRune",
+          "amount": 1000
+        },
+        {
+          "id": "steelBar",
+          "amount": 2
+        }
+      ],
+      "outputs": [
+        {
+          "id": "blessedGreaves",
+          "amount": 1
+        }
+      ],
+      "icon": "./assets/equipment/blessedGreaves-nedSgLWn.png",
+      "wikiId": "blessed-greaves",
+      "entity": "Brother Alep",
+      "locations": [
+        {
+          "name": "Falcrest Reach Temple",
+          "wikiId": "falcrest-reach-temple"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": false,
+      "requiredItems": []
+    },
+    {
+      "id": "piety/convert-audience-favor",
+      "skill": "piety",
+      "name": "A prayer for time",
+      "level": 1,
+      "duration": 2,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "audienceFavor",
+          "amount": 3
+        }
+      ],
+      "outputs": [
+        {
+          "id": "timeCrystal",
+          "amount": 1
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/timeCrystal-kZHfm28a.png",
+      "wikiId": "item-time-crystal",
+      "entity": "Brother Alep",
+      "locations": [
+        {
+          "name": "Falcrest Reach Temple",
+          "wikiId": "falcrest-reach-temple"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": true,
+      "requiredItems": []
+    },
+    {
+      "id": "piety/convert-audience-favor-bazaar",
+      "skill": "piety",
+      "name": "A prayer for commerce",
+      "level": 1,
+      "duration": 2,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "audienceFavor",
+          "amount": 15
+        }
+      ],
+      "outputs": [
+        {
+          "id": "bazaarPermit",
+          "amount": 1
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/bazaarPermit-4uvDvy49.png",
+      "wikiId": "bazaar-permit",
+      "entity": "Brother Alep",
+      "locations": [
+        {
+          "name": "Falcrest Reach Temple",
+          "wikiId": "falcrest-reach-temple"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": true,
+      "requiredItems": []
+    },
+    {
+      "id": "piety/convert-time-crystal-to-audience-favor",
+      "skill": "piety",
+      "name": "Time for a favor",
+      "level": 1,
+      "duration": 9,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "timeCrystal",
+          "amount": 1
+        }
+      ],
+      "outputs": [
+        {
+          "id": "audienceFavor",
+          "amount": 1
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/audienceFavor-C_Me6aqE.png",
+      "wikiId": "item-audience-favor",
+      "entity": "Brother Pela",
+      "locations": [
+        {
+          "name": "Falcrest Reach Temple",
+          "wikiId": "falcrest-reach-temple"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": true,
+      "requiredItems": []
+    },
+    {
+      "id": "piety/exchange-audience-favor-for-pet-map-bog",
+      "skill": "piety",
+      "name": "Mork's swamp map",
+      "level": 1,
+      "duration": 7,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "audienceFavor",
+          "amount": 20
+        }
+      ],
+      "outputs": [
+        {
+          "id": "petMapBog",
+          "amount": 1
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/map-2-Bks46m83.png",
+      "wikiId": "pet-map-bog",
+      "entity": "Mork",
+      "locations": [
+        {
+          "name": "Fellroot Swamp Hut",
+          "wikiId": "fellroot-swamp-hut"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": true,
+      "requiredItems": [],
+      "disclaimer": [
+        "Please be aware that this item does not directly grant a pet.",
+        "Rather, it unlocks the ability to find a specific pet when playing Microscape.",
+        "This pet is twice as rare as normal pets!"
+      ]
+    },
+    {
+      "id": "piety/exchange-audience-favor-for-pet-map-otter",
+      "skill": "piety",
+      "name": "Otis's riverbank map",
+      "level": 1,
+      "duration": 7,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "audienceFavor",
+          "amount": 15
+        }
+      ],
+      "outputs": [
+        {
+          "id": "petMapOtter",
+          "amount": 1
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/map-2-Bks46m83.png",
+      "wikiId": "pet-map-otter",
+      "entity": "Otis",
+      "locations": [
+        {
+          "name": "Fellroot Swamp Hut",
+          "wikiId": "fellroot-swamp-hut"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": true,
+      "singleExecution": true,
+      "requiredItems": [],
+      "disclaimer": [
+        "Please be aware that this item does not directly grant a pet.",
+        "Rather, it unlocks the ability to find a specific pet when playing Microscape.",
+        "Otis's pets are even rarer than normal pets!"
+      ]
+    },
+    {
+      "id": "piety/exchange-audience-favor-for-pet-map-clement",
+      "skill": "piety",
+      "name": "Otis's monastery map",
+      "level": 1,
+      "duration": 7,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "audienceFavor",
+          "amount": 15
+        }
+      ],
+      "outputs": [
+        {
+          "id": "petMapClement",
+          "amount": 1
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/map-2-Bks46m83.png",
+      "wikiId": "pet-map-clement",
+      "entity": "Otis",
+      "locations": [
+        {
+          "name": "Fellroot Swamp Hut",
+          "wikiId": "fellroot-swamp-hut"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": true,
+      "singleExecution": true,
+      "requiredItems": [],
+      "disclaimer": [
+        "Please be aware that this item does not directly grant a pet.",
+        "Rather, it unlocks the ability to find a specific pet when playing Microscape.",
+        "Otis's pets are even rarer than normal pets!"
+      ]
+    },
+    {
+      "id": "piety/exchange-audience-favor-for-pet-map-stump",
+      "skill": "piety",
+      "name": "Otis's timber grove map",
+      "level": 1,
+      "duration": 7,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "audienceFavor",
+          "amount": 15
+        }
+      ],
+      "outputs": [
+        {
+          "id": "petMapStump",
+          "amount": 1
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/map-2-Bks46m83.png",
+      "wikiId": "pet-map-stump",
+      "entity": "Otis",
+      "locations": [
+        {
+          "name": "Fellroot Swamp Hut",
+          "wikiId": "fellroot-swamp-hut"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": true,
+      "singleExecution": true,
+      "requiredItems": [],
+      "disclaimer": [
+        "Please be aware that this item does not directly grant a pet.",
+        "Rather, it unlocks the ability to find a specific pet when playing Microscape.",
+        "Otis's pets are even rarer than normal pets!"
+      ]
+    },
+    {
+      "id": "piety/exchange-audience-favor-for-pet-map-cinder",
+      "skill": "piety",
+      "name": "Otis's fireside map",
+      "level": 1,
+      "duration": 7,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "audienceFavor",
+          "amount": 15
+        }
+      ],
+      "outputs": [
+        {
+          "id": "petMapCinder",
+          "amount": 1
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/map-2-Bks46m83.png",
+      "wikiId": "pet-map-cinder",
+      "entity": "Otis",
+      "locations": [
+        {
+          "name": "Fellroot Swamp Hut",
+          "wikiId": "fellroot-swamp-hut"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": true,
+      "singleExecution": true,
+      "requiredItems": [],
+      "disclaimer": [
+        "Please be aware that this item does not directly grant a pet.",
+        "Rather, it unlocks the ability to find a specific pet when playing Microscape.",
+        "Otis's pets are even rarer than normal pets!"
+      ]
+    },
+    {
+      "id": "piety/exchange-audience-favor-for-pet-map-biscuit",
+      "skill": "piety",
+      "name": "Otis's kitchen map",
+      "level": 1,
+      "duration": 7,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "audienceFavor",
+          "amount": 15
+        }
+      ],
+      "outputs": [
+        {
+          "id": "petMapBiscuit",
+          "amount": 1
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/map-2-Bks46m83.png",
+      "wikiId": "pet-map-biscuit",
+      "entity": "Otis",
+      "locations": [
+        {
+          "name": "Fellroot Swamp Hut",
+          "wikiId": "fellroot-swamp-hut"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": true,
+      "singleExecution": true,
+      "requiredItems": [],
+      "disclaimer": [
+        "Please be aware that this item does not directly grant a pet.",
+        "Rather, it unlocks the ability to find a specific pet when playing Microscape.",
+        "Otis's pets are even rarer than normal pets!"
+      ]
+    },
+    {
+      "id": "piety/exchange-audience-favor-for-pet-map-pebble",
+      "skill": "piety",
+      "name": "Otis's quarry map",
+      "level": 1,
+      "duration": 7,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "audienceFavor",
+          "amount": 15
+        }
+      ],
+      "outputs": [
+        {
+          "id": "petMapPebble",
+          "amount": 1
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/map-2-Bks46m83.png",
+      "wikiId": "pet-map-pebble",
+      "entity": "Otis",
+      "locations": [
+        {
+          "name": "Fellroot Swamp Hut",
+          "wikiId": "fellroot-swamp-hut"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": true,
+      "singleExecution": true,
+      "requiredItems": [],
+      "disclaimer": [
+        "Please be aware that this item does not directly grant a pet.",
+        "Rather, it unlocks the ability to find a specific pet when playing Microscape.",
+        "Otis's pets are even rarer than normal pets!"
+      ]
+    },
+    {
+      "id": "piety/exchange-audience-favor-for-pet-map-smudge",
+      "skill": "piety",
+      "name": "Otis's smithy map",
+      "level": 1,
+      "duration": 7,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "audienceFavor",
+          "amount": 15
+        }
+      ],
+      "outputs": [
+        {
+          "id": "petMapSmudge",
+          "amount": 1
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/map-2-Bks46m83.png",
+      "wikiId": "pet-map-smudge",
+      "entity": "Otis",
+      "locations": [
+        {
+          "name": "Fellroot Swamp Hut",
+          "wikiId": "fellroot-swamp-hut"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": true,
+      "singleExecution": true,
+      "requiredItems": [],
+      "disclaimer": [
+        "Please be aware that this item does not directly grant a pet.",
+        "Rather, it unlocks the ability to find a specific pet when playing Microscape.",
+        "Otis's pets are even rarer than normal pets!"
+      ]
+    },
+    {
+      "id": "piety/exchange-audience-favor-for-pet-map-stitch",
+      "skill": "piety",
+      "name": "Otis's workbench map",
+      "level": 1,
+      "duration": 7,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "audienceFavor",
+          "amount": 15
+        }
+      ],
+      "outputs": [
+        {
+          "id": "petMapStitch",
+          "amount": 1
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/map-2-Bks46m83.png",
+      "wikiId": "pet-map-stitch",
+      "entity": "Otis",
+      "locations": [
+        {
+          "name": "Fellroot Swamp Hut",
+          "wikiId": "fellroot-swamp-hut"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": true,
+      "singleExecution": true,
+      "requiredItems": [],
+      "disclaimer": [
+        "Please be aware that this item does not directly grant a pet.",
+        "Rather, it unlocks the ability to find a specific pet when playing Microscape.",
+        "Otis's pets are even rarer than normal pets!"
+      ]
+    },
+    {
+      "id": "piety/exchange-audience-favor-for-pet-map-merlin",
+      "skill": "piety",
+      "name": "Otis's spellbound map",
+      "level": 1,
+      "duration": 7,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "audienceFavor",
+          "amount": 15
+        }
+      ],
+      "outputs": [
+        {
+          "id": "petMapMerlin",
+          "amount": 1
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/map-2-Bks46m83.png",
+      "wikiId": "pet-map-merlin",
+      "entity": "Otis",
+      "locations": [
+        {
+          "name": "Fellroot Swamp Hut",
+          "wikiId": "fellroot-swamp-hut"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": true,
+      "singleExecution": true,
+      "requiredItems": [],
+      "disclaimer": [
+        "Please be aware that this item does not directly grant a pet.",
+        "Rather, it unlocks the ability to find a specific pet when playing Microscape.",
+        "Otis's pets are even rarer than normal pets!"
+      ]
+    },
+    {
+      "id": "piety/exchange-audience-favor-for-pet-map-quill",
+      "skill": "piety",
+      "name": "Otis's bowyer map",
+      "level": 1,
+      "duration": 7,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "audienceFavor",
+          "amount": 15
+        }
+      ],
+      "outputs": [
+        {
+          "id": "petMapQuill",
+          "amount": 1
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/map-2-Bks46m83.png",
+      "wikiId": "pet-map-quill",
+      "entity": "Otis",
+      "locations": [
+        {
+          "name": "Fellroot Swamp Hut",
+          "wikiId": "fellroot-swamp-hut"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": true,
+      "singleExecution": true,
+      "requiredItems": [],
+      "disclaimer": [
+        "Please be aware that this item does not directly grant a pet.",
+        "Rather, it unlocks the ability to find a specific pet when playing Microscape.",
+        "Otis's pets are even rarer than normal pets!"
+      ]
+    },
+    {
+      "id": "piety/exchange-audience-favor-for-pet-map-sage",
+      "skill": "piety",
+      "name": "Otis's herb garden map",
+      "level": 1,
+      "duration": 7,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "audienceFavor",
+          "amount": 15
+        }
+      ],
+      "outputs": [
+        {
+          "id": "petMapSage",
+          "amount": 1
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/map-2-Bks46m83.png",
+      "wikiId": "pet-map-sage",
+      "entity": "Otis",
+      "locations": [
+        {
+          "name": "Fellroot Swamp Hut",
+          "wikiId": "fellroot-swamp-hut"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": true,
+      "singleExecution": true,
+      "requiredItems": [],
+      "disclaimer": [
+        "Please be aware that this item does not directly grant a pet.",
+        "Rather, it unlocks the ability to find a specific pet when playing Microscape.",
+        "Otis's pets are even rarer than normal pets!"
+      ]
+    },
+    {
+      "id": "piety/exchange-audience-favor-for-pet-map-golem-core",
+      "skill": "piety",
+      "name": "Mork's mine map",
+      "level": 1,
+      "duration": 7,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "audienceFavor",
+          "amount": 20
+        }
+      ],
+      "outputs": [
+        {
+          "id": "petMapGolemCore",
+          "amount": 1
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/map-2-Bks46m83.png",
+      "wikiId": "pet-map-golem-core",
+      "entity": "Mork",
+      "locations": [
+        {
+          "name": "Fellroot Swamp Hut",
+          "wikiId": "fellroot-swamp-hut"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": true,
+      "requiredItems": [],
+      "disclaimer": [
+        "Please be aware that this item does not directly grant a pet.",
+        "Rather, it unlocks the ability to find a specific pet when playing Microscape.",
+        "This pet is twice as rare as normal pets!"
+      ]
+    },
+    {
+      "id": "piety/exchange-audience-favor-for-pet-map-tinderling",
+      "skill": "piety",
+      "name": "Mork's campfire map",
+      "level": 1,
+      "duration": 7,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "audienceFavor",
+          "amount": 20
+        }
+      ],
+      "outputs": [
+        {
+          "id": "petMapTinderling",
+          "amount": 1
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/map-2-Bks46m83.png",
+      "wikiId": "pet-map-tinderling",
+      "entity": "Mork",
+      "locations": [
+        {
+          "name": "Fellroot Swamp Hut",
+          "wikiId": "fellroot-swamp-hut"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": true,
+      "requiredItems": [],
+      "disclaimer": [
+        "Please be aware that this item does not directly grant a pet.",
+        "Rather, it unlocks the ability to find a specific pet when playing Microscape.",
+        "This pet is twice as rare as normal pets!"
+      ]
+    },
+    {
+      "id": "piety/exchange-audience-favor-for-pet-map-pickle",
+      "skill": "piety",
+      "name": "Mork's cuisine map",
+      "level": 1,
+      "duration": 7,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "audienceFavor",
+          "amount": 20
+        }
+      ],
+      "outputs": [
+        {
+          "id": "petMapPickles",
+          "amount": 1
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/map-2-Bks46m83.png",
+      "wikiId": "pet-map-pickles",
+      "entity": "Mork",
+      "locations": [
+        {
+          "name": "Fellroot Swamp Hut",
+          "wikiId": "fellroot-swamp-hut"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": true,
+      "requiredItems": [],
+      "disclaimer": [
+        "Please be aware that this item does not directly grant a pet.",
+        "Rather, it unlocks the ability to find a specific pet when playing Microscape.",
+        "This pet is twice as rare as normal pets!"
+      ]
+    },
+    {
+      "id": "piety/exchange-audience-favor-for-pet-map-scoops",
+      "skill": "piety",
+      "name": "Mork's workshop map",
+      "level": 1,
+      "duration": 7,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "audienceFavor",
+          "amount": 20
+        }
+      ],
+      "outputs": [
+        {
+          "id": "petMapScoop",
+          "amount": 1
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/map-2-Bks46m83.png",
+      "wikiId": "pet-map-scoop",
+      "entity": "Mork",
+      "locations": [
+        {
+          "name": "Fellroot Swamp Hut",
+          "wikiId": "fellroot-swamp-hut"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": true,
+      "requiredItems": [],
+      "disclaimer": [
+        "Please be aware that this item does not directly grant a pet.",
+        "Rather, it unlocks the ability to find a specific pet when playing Microscape.",
+        "This pet is twice as rare as normal pets!"
+      ]
+    },
+    {
+      "id": "piety/exchange-audience-favor-for-pet-map-riddle",
+      "skill": "piety",
+      "name": "Mork's arcane map",
+      "level": 1,
+      "duration": 7,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "audienceFavor",
+          "amount": 20
+        }
+      ],
+      "outputs": [
+        {
+          "id": "petMapRiddle",
+          "amount": 1
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/map-2-Bks46m83.png",
+      "wikiId": "pet-map-riddle",
+      "entity": "Mork",
+      "locations": [
+        {
+          "name": "Fellroot Swamp Hut",
+          "wikiId": "fellroot-swamp-hut"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": true,
+      "requiredItems": [],
+      "disclaimer": [
+        "Please be aware that this item does not directly grant a pet.",
+        "Rather, it unlocks the ability to find a specific pet when playing Microscape.",
+        "This pet is twice as rare as normal pets!"
+      ]
+    },
+    {
+      "id": "piety/exchange-audience-favor-for-pet-map-fibs",
+      "skill": "piety",
+      "name": "Mork's fletching spots map",
+      "level": 1,
+      "duration": 7,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "audienceFavor",
+          "amount": 20
+        }
+      ],
+      "outputs": [
+        {
+          "id": "petMapFibs",
+          "amount": 1
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/map-2-Bks46m83.png",
+      "wikiId": "pet-map-fibs",
+      "entity": "Mork",
+      "locations": [
+        {
+          "name": "Fellroot Swamp Hut",
+          "wikiId": "fellroot-swamp-hut"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": true,
+      "requiredItems": [],
+      "disclaimer": [
+        "Please be aware that this item does not directly grant a pet.",
+        "Rather, it unlocks the ability to find a specific pet when playing Microscape.",
+        "This pet is twice as rare as normal pets!"
+      ]
+    },
+    {
+      "id": "piety/exchange-audience-favor-for-pet-map-winkle",
+      "skill": "piety",
+      "name": "Mork's forest clearing map",
+      "level": 1,
+      "duration": 7,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "audienceFavor",
+          "amount": 20
+        }
+      ],
+      "outputs": [
+        {
+          "id": "petMapWinkle",
+          "amount": 1
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/map-2-Bks46m83.png",
+      "wikiId": "pet-map-winkle",
+      "entity": "Mork",
+      "locations": [
+        {
+          "name": "Fellroot Swamp Hut",
+          "wikiId": "fellroot-swamp-hut"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": true,
+      "requiredItems": [],
+      "disclaimer": [
+        "Please be aware that this item does not directly grant a pet.",
+        "Rather, it unlocks the ability to find a specific pet when playing Microscape.",
+        "This pet is twice as rare as normal pets!"
+      ]
+    },
+    {
+      "id": "piety/exchange-audience-favor-for-pet-map-hubble",
+      "skill": "piety",
+      "name": "Mork's druidic grove map",
+      "level": 1,
+      "duration": 7,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "audienceFavor",
+          "amount": 20
+        }
+      ],
+      "outputs": [
+        {
+          "id": "petMapHubble",
+          "amount": 1
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/map-2-Bks46m83.png",
+      "wikiId": "pet-map-hubble",
+      "entity": "Mork",
+      "locations": [
+        {
+          "name": "Fellroot Swamp Hut",
+          "wikiId": "fellroot-swamp-hut"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": true,
+      "requiredItems": [],
+      "disclaimer": [
+        "Please be aware that this item does not directly grant a pet.",
+        "Rather, it unlocks the ability to find a specific pet when playing Microscape.",
+        "This pet is twice as rare as normal pets!"
+      ]
+    },
+    {
+      "id": "piety/exchange-audience-favor-for-pet-map-peace-moth",
+      "skill": "piety",
+      "name": "Mork's holy grounds map",
+      "level": 1,
+      "duration": 7,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "audienceFavor",
+          "amount": 20
+        }
+      ],
+      "outputs": [
+        {
+          "id": "petMapPeaceMoth",
+          "amount": 1
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/map-2-Bks46m83.png",
+      "wikiId": "pet-map-peace-moth",
+      "entity": "Mork",
+      "locations": [
+        {
+          "name": "Fellroot Swamp Hut",
+          "wikiId": "fellroot-swamp-hut"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": true,
+      "requiredItems": [],
+      "disclaimer": [
+        "Please be aware that this item does not directly grant a pet.",
+        "Rather, it unlocks the ability to find a specific pet when playing Microscape.",
+        "This pet is twice as rare as normal pets!"
+      ]
+    },
+    {
+      "id": "piety/exchange-audience-favor-for-pet-map-hilda",
+      "skill": "piety",
+      "name": "Mork's forge map",
+      "level": 1,
+      "duration": 7,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "audienceFavor",
+          "amount": 20
+        }
+      ],
+      "outputs": [
+        {
+          "id": "petMapHilda",
+          "amount": 1
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/map-2-Bks46m83.png",
+      "wikiId": "pet-map-hilda",
+      "entity": "Mork",
+      "locations": [
+        {
+          "name": "Fellroot Swamp Hut",
+          "wikiId": "fellroot-swamp-hut"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": true,
+      "requiredItems": [],
+      "disclaimer": [
+        "Please be aware that this item does not directly grant a pet.",
+        "Rather, it unlocks the ability to find a specific pet when playing Microscape.",
+        "This pet is twice as rare as normal pets!"
+      ]
+    },
+    {
+      "id": "piety/exchange-audience-favor-for-pet-map-scales",
+      "skill": "piety",
+      "name": "Mork's danger dragon map",
+      "level": 1,
+      "duration": 7,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "audienceFavor",
+          "amount": 10
+        }
+      ],
+      "outputs": [
+        {
+          "id": "petMapScales",
+          "amount": 1
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/map-2-Bks46m83.png",
+      "wikiId": "pet-map-scales",
+      "entity": "Mork",
+      "locations": [
+        {
+          "name": "Fellroot Swamp Hut",
+          "wikiId": "fellroot-swamp-hut"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": true,
+      "requiredItems": [],
+      "disclaimer": [
+        "Please be aware that this item does not directly grant a pet.",
+        "Rather, it unlocks the ability to find a specific pet when playing Microscape.",
+        "Pets are extremely rare."
+      ]
+    },
+    {
+      "id": "piety/exchange-audience-favor-for-pet-map-beatrix",
+      "skill": "piety",
+      "name": "Mork's danger meadows map",
+      "level": 1,
+      "duration": 7,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "audienceFavor",
+          "amount": 10
+        }
+      ],
+      "outputs": [
+        {
+          "id": "petMapBeatrix",
+          "amount": 1
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/map-2-Bks46m83.png",
+      "wikiId": "pet-map-beatrix",
+      "entity": "Mork",
+      "locations": [
+        {
+          "name": "Fellroot Swamp Hut",
+          "wikiId": "fellroot-swamp-hut"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": true,
+      "requiredItems": [],
+      "disclaimer": [
+        "Please be aware that this item does not directly grant a pet.",
+        "Rather, it unlocks the ability to find a specific pet when playing Microscape.",
+        "Pets are extremely rare."
+      ]
+    },
+    {
+      "id": "piety/exchange-audience-favor-for-pet-map-murk",
+      "skill": "piety",
+      "name": "Mork's riverbank map",
+      "level": 1,
+      "duration": 7,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "audienceFavor",
+          "amount": 10
+        }
+      ],
+      "outputs": [
+        {
+          "id": "petMapMurk",
+          "amount": 1
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/map-2-Bks46m83.png",
+      "wikiId": "pet-map-murk",
+      "entity": "Mork",
+      "locations": [
+        {
+          "name": "Fellroot Swamp Hut",
+          "wikiId": "fellroot-swamp-hut"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": true,
+      "requiredItems": [],
+      "disclaimer": [
+        "Please be aware that this item does not directly grant a pet.",
+        "Rather, it unlocks the ability to find a specific pet when playing Microscape.",
+        "Pets are extremely rare."
+      ]
+    },
+    {
+      "id": "piety/exchange-audience-favor-for-pet-map-mossy",
+      "skill": "piety",
+      "name": "Mork's old tunnel map",
+      "level": 1,
+      "duration": 7,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "audienceFavor",
+          "amount": 10
+        }
+      ],
+      "outputs": [
+        {
+          "id": "petMapMossy",
+          "amount": 1
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/map-2-Bks46m83.png",
+      "wikiId": "pet-map-mossy",
+      "entity": "Mork",
+      "locations": [
+        {
+          "name": "Fellroot Swamp Hut",
+          "wikiId": "fellroot-swamp-hut"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": true,
+      "requiredItems": [],
+      "disclaimer": [
+        "Please be aware that this item does not directly grant a pet.",
+        "Rather, it unlocks the ability to find a specific pet when playing Microscape.",
+        "Pets are extremely rare."
+      ]
+    },
+    {
+      "id": "piety/exchange-audience-favor-for-pet-map-ember",
+      "skill": "piety",
+      "name": "Mork's firepit map",
+      "level": 1,
+      "duration": 7,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "audienceFavor",
+          "amount": 10
+        }
+      ],
+      "outputs": [
+        {
+          "id": "petMapEmber",
+          "amount": 1
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/map-2-Bks46m83.png",
+      "wikiId": "pet-map-ember",
+      "entity": "Mork",
+      "locations": [
+        {
+          "name": "Fellroot Swamp Hut",
+          "wikiId": "fellroot-swamp-hut"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": true,
+      "requiredItems": [],
+      "disclaimer": [
+        "Please be aware that this item does not directly grant a pet.",
+        "Rather, it unlocks the ability to find a specific pet when playing Microscape.",
+        "Pets are extremely rare."
+      ]
+    },
+    {
+      "id": "piety/exchange-audience-favor-for-pet-map-crumpet",
+      "skill": "piety",
+      "name": "Mork's kitchen map",
+      "level": 1,
+      "duration": 7,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "audienceFavor",
+          "amount": 10
+        }
+      ],
+      "outputs": [
+        {
+          "id": "petMapCrumpet",
+          "amount": 1
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/map-2-Bks46m83.png",
+      "wikiId": "pet-map-crumpet",
+      "entity": "Mork",
+      "locations": [
+        {
+          "name": "Fellroot Swamp Hut",
+          "wikiId": "fellroot-swamp-hut"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": true,
+      "requiredItems": [],
+      "disclaimer": [
+        "Please be aware that this item does not directly grant a pet.",
+        "Rather, it unlocks the ability to find a specific pet when playing Microscape.",
+        "Pets are extremely rare."
+      ]
+    },
+    {
+      "id": "piety/exchange-audience-favor-for-pet-map-sandy",
+      "skill": "piety",
+      "name": "Mork's workbench map",
+      "level": 1,
+      "duration": 7,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "audienceFavor",
+          "amount": 10
+        }
+      ],
+      "outputs": [
+        {
+          "id": "petMapSandy",
+          "amount": 1
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/map-2-Bks46m83.png",
+      "wikiId": "pet-map-sandy",
+      "entity": "Mork",
+      "locations": [
+        {
+          "name": "Fellroot Swamp Hut",
+          "wikiId": "fellroot-swamp-hut"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": true,
+      "requiredItems": [],
+      "disclaimer": [
+        "Please be aware that this item does not directly grant a pet.",
+        "Rather, it unlocks the ability to find a specific pet when playing Microscape.",
+        "Pets are extremely rare."
+      ]
+    },
+    {
+      "id": "piety/exchange-audience-favor-for-pet-map-scribble",
+      "skill": "piety",
+      "name": "Mork's spellbook map",
+      "level": 1,
+      "duration": 7,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "audienceFavor",
+          "amount": 10
+        }
+      ],
+      "outputs": [
+        {
+          "id": "petMapScribble",
+          "amount": 1
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/map-2-Bks46m83.png",
+      "wikiId": "pet-map-scribble",
+      "entity": "Mork",
+      "locations": [
+        {
+          "name": "Fellroot Swamp Hut",
+          "wikiId": "fellroot-swamp-hut"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": true,
+      "requiredItems": [],
+      "disclaimer": [
+        "Please be aware that this item does not directly grant a pet.",
+        "Rather, it unlocks the ability to find a specific pet when playing Microscape.",
+        "Pets are extremely rare."
+      ]
+    },
+    {
+      "id": "piety/exchange-audience-favor-for-pet-map-chia",
+      "skill": "piety",
+      "name": "Mork's treetop map",
+      "level": 1,
+      "duration": 7,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "audienceFavor",
+          "amount": 10
+        }
+      ],
+      "outputs": [
+        {
+          "id": "petMapChia",
+          "amount": 1
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/map-2-Bks46m83.png",
+      "wikiId": "pet-map-chia",
+      "entity": "Mork",
+      "locations": [
+        {
+          "name": "Fellroot Swamp Hut",
+          "wikiId": "fellroot-swamp-hut"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": true,
+      "requiredItems": [],
+      "disclaimer": [
+        "Please be aware that this item does not directly grant a pet.",
+        "Rather, it unlocks the ability to find a specific pet when playing Microscape.",
+        "Pets are extremely rare."
+      ]
+    },
+    {
+      "id": "piety/exchange-audience-favor-for-pet-map-amber",
+      "skill": "piety",
+      "name": "Mork's grove map",
+      "level": 1,
+      "duration": 7,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "audienceFavor",
+          "amount": 10
+        }
+      ],
+      "outputs": [
+        {
+          "id": "petMapAmber",
+          "amount": 1
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/map-2-Bks46m83.png",
+      "wikiId": "pet-map-amber",
+      "entity": "Mork",
+      "locations": [
+        {
+          "name": "Fellroot Swamp Hut",
+          "wikiId": "fellroot-swamp-hut"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": true,
+      "requiredItems": [],
+      "disclaimer": [
+        "Please be aware that this item does not directly grant a pet.",
+        "Rather, it unlocks the ability to find a specific pet when playing Microscape.",
+        "Pets are extremely rare."
+      ]
+    },
+    {
+      "id": "piety/exchange-audience-favor-for-pet-map-mercy",
+      "skill": "piety",
+      "name": "Mork's graveyard map",
+      "level": 1,
+      "duration": 7,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "audienceFavor",
+          "amount": 10
+        }
+      ],
+      "outputs": [
+        {
+          "id": "petMapMercy",
+          "amount": 1
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/map-2-Bks46m83.png",
+      "wikiId": "pet-map-mercy",
+      "entity": "Mork",
+      "locations": [
+        {
+          "name": "Fellroot Swamp Hut",
+          "wikiId": "fellroot-swamp-hut"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": true,
+      "requiredItems": [],
+      "disclaimer": [
+        "Please be aware that this item does not directly grant a pet.",
+        "Rather, it unlocks the ability to find a specific pet when playing Microscape.",
+        "Pets are extremely rare."
+      ]
+    },
+    {
+      "id": "piety/exchange-audience-favor-for-pet-map-gloop",
+      "skill": "piety",
+      "name": "Mork's mossy altar map",
+      "level": 1,
+      "duration": 7,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "audienceFavor",
+          "amount": 10
+        }
+      ],
+      "outputs": [
+        {
+          "id": "petMapGloop",
+          "amount": 1
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/map-2-Bks46m83.png",
+      "wikiId": "pet-map-gloop",
+      "entity": "Mork",
+      "locations": [
+        {
+          "name": "Fellroot Swamp Hut",
+          "wikiId": "fellroot-swamp-hut"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": true,
+      "requiredItems": [],
+      "disclaimer": [
+        "Please be aware that this item does not directly grant a pet.",
+        "Rather, it unlocks the ability to find a specific pet when playing Microscape.",
+        "Pets are extremely rare."
+      ]
+    },
+    {
+      "id": "piety/exchange-audience-favor-for-pet-map-greta",
+      "skill": "piety",
+      "name": "Mork's anvil map",
+      "level": 1,
+      "duration": 7,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "audienceFavor",
+          "amount": 10
+        }
+      ],
+      "outputs": [
+        {
+          "id": "petMapGreta",
+          "amount": 1
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/map-2-Bks46m83.png",
+      "wikiId": "pet-map-greta",
+      "entity": "Mork",
+      "locations": [
+        {
+          "name": "Fellroot Swamp Hut",
+          "wikiId": "fellroot-swamp-hut"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": true,
+      "requiredItems": [],
+      "disclaimer": [
+        "Please be aware that this item does not directly grant a pet.",
+        "Rather, it unlocks the ability to find a specific pet when playing Microscape.",
+        "Pets are extremely rare."
+      ]
+    },
+    {
+      "id": "piety/chest-al-di",
+      "skill": "piety",
+      "name": "\"Al Di\"",
+      "level": 1,
+      "duration": 6,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "sigilAl",
+          "amount": 1
+        },
+        {
+          "id": "sigilDi",
+          "amount": 1
+        }
+      ],
+      "outputs": [
+        {
+          "id": "coalOre",
+          "amount": 10
+        },
+        {
+          "id": "coins",
+          "amount": 50
+        },
+        {
+          "id": "ironOre",
+          "amount": 8
+        }
+      ],
+      "randomOutputs": [
+        {
+          "id": "bigBones",
+          "chance": 0.125
+        },
+        {
+          "id": "leatherBoots",
+          "chance": 0.2
+        },
+        {
+          "id": "leatherGloves",
+          "chance": 0.2
+        },
+        {
+          "id": "mithrilMedHelm",
+          "chance": 0.0078125
+        },
+        {
+          "id": "uncutSapphire",
+          "chance": 0.16666666666666666
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/piety-6bGQpSC5.png",
+      "entity": "Temple Chest",
+      "locations": [
+        {
+          "name": "Elshand Temple B3",
+          "wikiId": "elshand-temple-b3"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": false,
+      "requiredItems": []
+    },
+    {
+      "id": "piety/chest-al-la-del",
+      "skill": "piety",
+      "name": "\"Al La Del\"",
+      "level": 1,
+      "duration": 6,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "sigilAl",
+          "amount": 1
+        },
+        {
+          "id": "sigilDel",
+          "amount": 1
+        },
+        {
+          "id": "sigilLa",
+          "amount": 1
+        }
+      ],
+      "outputs": [
+        {
+          "id": "coins",
+          "amount": 180
+        },
+        {
+          "id": "mithrilOre",
+          "amount": 14
+        },
+        {
+          "id": "natureRune",
+          "amount": 14
+        }
+      ],
+      "randomOutputs": [
+        {
+          "id": "goldAmulet",
+          "chance": 0.0625
+        },
+        {
+          "id": "leatherArmor",
+          "chance": 0.2
+        },
+        {
+          "id": "oakBow",
+          "chance": 0.16666666666666666
+        },
+        {
+          "id": "scarabSatchel",
+          "chance": 0.03125
+        },
+        {
+          "id": "uncutEmerald",
+          "chance": 0.16666666666666666
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/piety-6bGQpSC5.png",
+      "entity": "Temple Chest",
+      "locations": [
+        {
+          "name": "Elshand Temple B3",
+          "wikiId": "elshand-temple-b3"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": false,
+      "requiredItems": []
+    },
+    {
+      "id": "piety/chest-di-la-mar-del",
+      "skill": "piety",
+      "name": "\"Di La Mar Del\"",
+      "level": 1,
+      "duration": 6,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "sigilDel",
+          "amount": 1
+        },
+        {
+          "id": "sigilDi",
+          "amount": 1
+        },
+        {
+          "id": "sigilLa",
+          "amount": 1
+        },
+        {
+          "id": "sigilMar",
+          "amount": 1
+        }
+      ],
+      "outputs": [
+        {
+          "id": "coins",
+          "amount": 680
+        },
+        {
+          "id": "goldOre",
+          "amount": 40
+        },
+        {
+          "id": "yewLogs",
+          "amount": 40
+        }
+      ],
+      "randomOutputs": [
+        {
+          "id": "bluegoldAxe",
+          "chance": 0.07142857142857142
+        },
+        {
+          "id": "saltedMitts",
+          "chance": 0.07142857142857142
+        },
+        {
+          "id": "sapphireAmulet",
+          "chance": 0.16666666666666666
+        },
+        {
+          "id": "uncutRuby",
+          "chance": 0.125
+        },
+        {
+          "id": "willowBow",
+          "chance": 0.2
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/piety-6bGQpSC5.png",
+      "entity": "Temple Chest",
+      "locations": [
+        {
+          "name": "Elshand Temple B3",
+          "wikiId": "elshand-temple-b3"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": false,
+      "requiredItems": []
+    },
+    {
+      "id": "piety/chest-mar-del-del",
+      "skill": "piety",
+      "name": "\"Mar Del Del\"",
+      "level": 1,
+      "duration": 6,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "sigilDel",
+          "amount": 2
+        },
+        {
+          "id": "sigilMar",
+          "amount": 1
+        }
+      ],
+      "outputs": [
+        {
+          "id": "adamantiteOre",
+          "amount": 3
+        },
+        {
+          "id": "coins",
+          "amount": 560
+        },
+        {
+          "id": "lawRune",
+          "amount": 35
+        }
+      ],
+      "randomOutputs": [
+        {
+          "id": "battlestaff",
+          "chance": 0.16666666666666666
+        },
+        {
+          "id": "emeraldAmulet",
+          "chance": 0.16666666666666666
+        },
+        {
+          "id": "mapleBow",
+          "chance": 0.2
+        },
+        {
+          "id": "shellOfKa",
+          "chance": 0.0625
+        },
+        {
+          "id": "uncutDiamond",
+          "chance": 0.1
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/piety-6bGQpSC5.png",
+      "entity": "Temple Chest",
+      "locations": [
+        {
+          "name": "Elshand Temple B3",
+          "wikiId": "elshand-temple-b3"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": false,
+      "requiredItems": []
+    },
+    {
+      "id": "piety/chest-mar-ner",
+      "skill": "piety",
+      "name": "\"Mar Ner\"",
+      "level": 1,
+      "duration": 6,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "sigilMar",
+          "amount": 1
+        },
+        {
+          "id": "sigilNer",
+          "amount": 1
+        }
+      ],
+      "outputs": [
+        {
+          "id": "coins",
+          "amount": 2860
+        },
+        {
+          "id": "deathRune",
+          "amount": 60
+        },
+        {
+          "id": "progriteBar",
+          "amount": 1
+        }
+      ],
+      "randomOutputs": [
+        {
+          "id": "fireBattlestaff",
+          "chance": 0.1
+        },
+        {
+          "id": "goldenRod",
+          "chance": 0.16666666666666666
+        },
+        {
+          "id": "khopeshOfBa",
+          "chance": 0.0625
+        },
+        {
+          "id": "rubyAmulet",
+          "chance": 0.16666666666666666
+        },
+        {
+          "id": "scarabCache",
+          "chance": 0.05
+        },
+        {
+          "id": "yewBow",
+          "chance": 0.2
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/piety-6bGQpSC5.png",
+      "entity": "Temple Chest",
+      "locations": [
+        {
+          "name": "Elshand Temple B3",
+          "wikiId": "elshand-temple-b3"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": false,
+      "requiredItems": []
+    },
+    {
+      "id": "piety/jesters-chest-trade-tokens",
+      "skill": "piety",
+      "name": "Fool Me Once",
+      "level": 1,
+      "duration": 2,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "audienceFavor",
+          "amount": 3
+        }
+      ],
+      "outputs": [
+        {
+          "id": "luckyToken",
+          "amount": 10
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/luckyToken-BpbpLD1S.png",
+      "wikiId": "lucky-token",
+      "entity": "Jester's Chest",
+      "locations": [
+        {
+          "name": "Jester's Room",
+          "wikiId": "jesters-room"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": true,
+      "requiredItems": []
+    },
+    {
+      "id": "piety/jesters-chest-small",
+      "skill": "piety",
+      "name": "Test Your Luck",
+      "level": 1,
+      "duration": 2,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "luckyToken",
+          "amount": 10
+        }
+      ],
+      "outputs": [],
+      "randomOutputs": [
+        {
+          "id": "foolsHat",
+          "chance": 0.125
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/luckyToken-BpbpLD1S.png",
+      "wikiId": "lucky-token",
+      "entity": "Jester's Chest",
+      "locations": [
+        {
+          "name": "Jester's Room",
+          "wikiId": "jesters-room"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": false,
+      "requiredItems": []
+    },
+    {
+      "id": "piety/jesters-chest-medium",
+      "skill": "piety",
+      "name": "Push Your Luck",
+      "level": 1,
+      "duration": 2,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "luckyToken",
+          "amount": 50
+        }
+      ],
+      "outputs": [],
+      "randomOutputs": [
+        {
+          "id": "foolsHat",
+          "chance": 0.5
+        },
+        {
+          "id": "foolsHatUnusual",
+          "chance": 0.1
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/luckyToken-BpbpLD1S.png",
+      "wikiId": "lucky-token",
+      "entity": "Jester's Chest",
+      "locations": [
+        {
+          "name": "Jester's Room",
+          "wikiId": "jesters-room"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": false,
+      "requiredItems": []
+    },
+    {
+      "id": "piety/jesters-chest-large",
+      "skill": "piety",
+      "name": "Who's The Fool?",
+      "level": 1,
+      "duration": 2,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "luckyToken",
+          "amount": 200
+        }
+      ],
+      "outputs": [],
+      "randomOutputs": [
+        {
+          "id": "foolsHat",
+          "chance": 0.5
+        },
+        {
+          "id": "foolsHatUnusual",
+          "chance": 0.5
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/luckyToken-BpbpLD1S.png",
+      "wikiId": "lucky-token",
+      "entity": "Jester's Chest",
+      "locations": [
+        {
+          "name": "Jester's Room",
+          "wikiId": "jesters-room"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": false,
+      "requiredItems": []
+    },
+    {
+      "id": "piety/scorched-chest-cut-dragonstone",
+      "skill": "piety",
+      "name": "Search for gems",
+      "level": 1,
+      "duration": 2,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "scorchedCoin",
+          "amount": 64
+        }
+      ],
+      "outputs": [
+        {
+          "id": "cutDragonstone",
+          "amount": 1
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/cutDragonstone-R_NNipKY.png",
+      "wikiId": "dragonstone",
+      "entity": "Scorched Chest",
+      "locations": [
+        {
+          "name": "The Lair",
+          "wikiId": "dread-mount-onyx-lair"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": true,
+      "requiredItems": []
+    },
+    {
+      "id": "piety/scorched-chest-progrite-2h-sword",
+      "skill": "piety",
+      "name": "Search for large weapons",
+      "level": 1,
+      "duration": 2,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "scorchedCoin",
+          "amount": 128
+        }
+      ],
+      "outputs": [
+        {
+          "id": "progrite2hSword",
+          "amount": 1
+        }
+      ],
+      "icon": "./assets/equipment/progrite2hSword-aJJR8UoQ.png",
+      "wikiId": "progrite-2h-sword",
+      "entity": "Scorched Chest",
+      "locations": [
+        {
+          "name": "The Lair",
+          "wikiId": "dread-mount-onyx-lair"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": true,
+      "requiredItems": []
+    },
+    {
+      "id": "piety/scorched-chest-dragon-helm",
+      "skill": "piety",
+      "name": "Search for armor",
+      "level": 1,
+      "duration": 2,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "scorchedCoin",
+          "amount": 256
+        }
+      ],
+      "outputs": [
+        {
+          "id": "dragonHelm",
+          "amount": 1
+        }
+      ],
+      "icon": "./assets/equipment/dragonHelm-Dz-zdlqj.png",
+      "wikiId": "dragon-helm",
+      "entity": "Scorched Chest",
+      "locations": [
+        {
+          "name": "The Lair",
+          "wikiId": "dread-mount-onyx-lair"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": true,
+      "requiredItems": []
+    },
+    {
+      "id": "piety/scorched-chest-dragon-sword",
+      "skill": "piety",
+      "name": "Search for swords",
+      "level": 1,
+      "duration": 2,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "scorchedCoin",
+          "amount": 256
+        }
+      ],
+      "outputs": [
+        {
+          "id": "dragonSword",
+          "amount": 1
+        }
+      ],
+      "icon": "./assets/equipment/dragonSword-q1XYRJ4-.png",
+      "wikiId": "dragon-sword",
+      "entity": "Scorched Chest",
+      "locations": [
+        {
+          "name": "The Lair",
+          "wikiId": "dread-mount-onyx-lair"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": true,
+      "requiredItems": []
+    },
+    {
+      "id": "piety/scorched-chest-dragon-shield-left-half",
+      "skill": "piety",
+      "name": "Search for relics",
+      "level": 1,
+      "duration": 2,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "scorchedCoin",
+          "amount": 2048
+        }
+      ],
+      "outputs": [
+        {
+          "id": "dragonShieldLeft",
+          "amount": 1
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/dragonShieldLeft-BRFA6uTA.png",
+      "wikiId": "dragon-shield-left-half",
+      "entity": "Scorched Chest",
+      "locations": [
+        {
+          "name": "The Lair",
+          "wikiId": "dread-mount-onyx-lair"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": true,
+      "requiredItems": []
+    },
+    {
+      "id": "piety/bloodied-chest-dark-wizards-hat",
+      "skill": "piety",
+      "name": "Search for hats",
+      "level": 1,
+      "duration": 2,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "bloodiedCoin",
+          "amount": 32
+        }
+      ],
+      "outputs": [
+        {
+          "id": "wizardsHatDark",
+          "amount": 1
+        }
+      ],
+      "icon": "./assets/equipment/wizardsHatDark-D5hHLZPo.png",
+      "wikiId": "dark-wizards-hat",
+      "entity": "Bloodied Chest",
+      "locations": [
+        {
+          "name": "Havendell Lair",
+          "wikiId": "havendell-lair"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": true,
+      "requiredItems": []
+    },
+    {
+      "id": "piety/bloodied-chest-dark-wizards-robe",
+      "skill": "piety",
+      "name": "Search for robes",
+      "level": 1,
+      "duration": 2,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "bloodiedCoin",
+          "amount": 32
+        }
+      ],
+      "outputs": [
+        {
+          "id": "darkWizardsRobe",
+          "amount": 1
+        }
+      ],
+      "icon": "./assets/equipment/darkWizardsRobe-CU-5I5Le.png",
+      "wikiId": "dark-wizards-robes",
+      "entity": "Bloodied Chest",
+      "locations": [
+        {
+          "name": "Havendell Lair",
+          "wikiId": "havendell-lair"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": true,
+      "requiredItems": []
+    },
+    {
+      "id": "piety/bloodied-chest-sanguine-boots",
+      "skill": "piety",
+      "name": "Search for boots",
+      "level": 1,
+      "duration": 2,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "bloodiedCoin",
+          "amount": 64
+        }
+      ],
+      "outputs": [
+        {
+          "id": "sanguineBoots",
+          "amount": 1
+        }
+      ],
+      "icon": "./assets/equipment/sanguineBoots-B8-5R8Dw.png",
+      "wikiId": "sanguine-boots",
+      "entity": "Bloodied Chest",
+      "locations": [
+        {
+          "name": "Havendell Lair",
+          "wikiId": "havendell-lair"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": true,
+      "requiredItems": []
+    },
+    {
+      "id": "piety/bloodied-chest-cursed-talisman",
+      "skill": "piety",
+      "name": "Search for trinkets",
+      "level": 1,
+      "duration": 2,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "bloodiedCoin",
+          "amount": 64
+        }
+      ],
+      "outputs": [
+        {
+          "id": "cursedTalisman",
+          "amount": 1
+        }
+      ],
+      "icon": "./assets/equipment/cursedTalisman-BI1BHUka.png",
+      "wikiId": "cursed-talisman",
+      "entity": "Bloodied Chest",
+      "locations": [
+        {
+          "name": "Havendell Lair",
+          "wikiId": "havendell-lair"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": true,
+      "requiredItems": []
+    },
+    {
+      "id": "piety/bloodied-chest-skull-shield",
+      "skill": "piety",
+      "name": "Search for shields",
+      "level": 1,
+      "duration": 2,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "bloodiedCoin",
+          "amount": 128
+        }
+      ],
+      "outputs": [
+        {
+          "id": "skullShield",
+          "amount": 1
+        }
+      ],
+      "icon": "./assets/equipment/skullShield-TYCw0J4S.png",
+      "wikiId": "skull-shield",
+      "entity": "Bloodied Chest",
+      "locations": [
+        {
+          "name": "Havendell Lair",
+          "wikiId": "havendell-lair"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": true,
+      "requiredItems": []
+    },
+    {
+      "id": "piety/rusty-chest-rubber-boots",
+      "skill": "piety",
+      "name": "Search for boots",
+      "level": 1,
+      "duration": 2,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "rustyCoin",
+          "amount": 16
+        }
+      ],
+      "outputs": [
+        {
+          "id": "rubberBoots",
+          "amount": 1
+        }
+      ],
+      "icon": "./assets/equipment/rubberBoots-BnL1ZF3d.png",
+      "wikiId": "rubber-boots",
+      "entity": "Rusty Chest",
+      "locations": [
+        {
+          "name": "The Sump",
+          "wikiId": "the-sump"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": true,
+      "requiredItems": []
+    },
+    {
+      "id": "piety/rusty-chest-fletchers-cloak",
+      "skill": "piety",
+      "name": "Search for cloaks",
+      "level": 1,
+      "duration": 2,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "rustyCoin",
+          "amount": 128
+        }
+      ],
+      "outputs": [
+        {
+          "id": "fletchersCloak",
+          "amount": 1
+        }
+      ],
+      "icon": "./assets/equipment/fletchersCloak-CnmEPgj8.png",
+      "wikiId": "fletchers-cloak",
+      "entity": "Rusty Chest",
+      "locations": [
+        {
+          "name": "The Sump",
+          "wikiId": "the-sump"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": true,
+      "requiredItems": []
+    },
+    {
+      "id": "piety/rusty-chest-wedding-band",
+      "skill": "piety",
+      "name": "Search for rings",
+      "level": 1,
+      "duration": 2,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "rustyCoin",
+          "amount": 256
+        }
+      ],
+      "outputs": [
+        {
+          "id": "weddingBand",
+          "amount": 1
+        }
+      ],
+      "icon": "./assets/rings/wedding-band.png",
+      "wikiId": "wedding-band",
+      "entity": "Rusty Chest",
+      "locations": [
+        {
+          "name": "The Sump",
+          "wikiId": "the-sump"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": true,
       "requiredItems": []
     },
     {
@@ -5281,7 +7885,7 @@
       "locations": [
         {
           "name": "Drymor Village",
-          "wikiId": "drymor-village"
+          "wikiId": "drymor-village-seashore"
         },
         {
           "name": "Fellroot Swamp Hut",
@@ -5345,7 +7949,7 @@
       "locations": [
         {
           "name": "O'Rock Castle Yard",
-          "wikiId": "orock-castle-yard"
+          "wikiId": "rock-castle-yard"
         },
         {
           "name": "Wicked Monastery",
@@ -5422,7 +8026,7 @@
         },
         {
           "name": "Drymor Village",
-          "wikiId": "drymor-village"
+          "wikiId": "drymor-village-seashore"
         },
         {
           "name": "Fellroot Swamp",
@@ -5485,7 +8089,7 @@
         },
         {
           "name": "Drymor Village",
-          "wikiId": "drymor-village"
+          "wikiId": "drymor-village-seashore"
         },
         {
           "name": "Fellroot Swamp",
@@ -5548,7 +8152,7 @@
         },
         {
           "name": "Drymor Village",
-          "wikiId": "drymor-village"
+          "wikiId": "drymor-village-seashore"
         },
         {
           "name": "Fellroot Swamp",
@@ -5611,7 +8215,7 @@
         },
         {
           "name": "Drymor Village",
-          "wikiId": "drymor-village"
+          "wikiId": "drymor-village-seashore"
         },
         {
           "name": "Fellroot Swamp",
@@ -5674,7 +8278,7 @@
         },
         {
           "name": "Drymor Village",
-          "wikiId": "drymor-village"
+          "wikiId": "drymor-village-seashore"
         },
         {
           "name": "Fellroot Swamp",
@@ -5737,7 +8341,7 @@
         },
         {
           "name": "Drymor Village",
-          "wikiId": "drymor-village"
+          "wikiId": "drymor-village-seashore"
         },
         {
           "name": "Fellroot Swamp",
@@ -5773,6 +8377,53 @@
           "amount": 1
         }
       ],
+      "requiredItems": []
+    },
+    {
+      "id": "firemaking/capture-blue-flame-firemaking",
+      "skill": "firemaking",
+      "name": "Capture blue flame",
+      "level": 30,
+      "duration": 21,
+      "exp": 0,
+      "sortLevel": 30,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "ashes",
+          "amount": 128
+        },
+        {
+          "id": "coalOre",
+          "amount": 256
+        },
+        {
+          "id": "magicLogs",
+          "amount": 64
+        },
+        {
+          "id": "vial",
+          "amount": 1
+        }
+      ],
+      "outputs": [
+        {
+          "id": "blueFlame",
+          "amount": 1
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/blueFlame-CIcWwed6.png",
+      "wikiId": "blue-flame",
+      "entity": "Blue Flame",
+      "locations": [
+        {
+          "name": "Merric's Magic Shop",
+          "wikiId": "magic-shop"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": false,
       "requiredItems": []
     },
     {
@@ -5827,6 +8478,49 @@
       "requiredItems": []
     },
     {
+      "id": "firemaking/kindle-everflame-core",
+      "skill": "firemaking",
+      "name": "Everflame Core",
+      "level": 85,
+      "duration": 10801,
+      "exp": 900000,
+      "sortLevel": 85,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "distilledAsh",
+          "amount": 1000
+        },
+        {
+          "id": "dragonsBreath",
+          "amount": 1
+        },
+        {
+          "id": "fireOrb",
+          "amount": 5000
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/everflameCore-CFV8kH5p.png",
+      "wikiId": "everflame-core",
+      "entity": "Cinderforge",
+      "locations": [
+        {
+          "name": "The Emberpit",
+          "wikiId": "the-emberpit"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": true,
+      "outputs": [
+        {
+          "id": "everflameCore",
+          "amount": 1
+        }
+      ],
+      "requiredItems": []
+    },
+    {
       "id": "fishing/catch-frogs",
       "skill": "fishing",
       "name": "Catch Frogs",
@@ -5860,6 +8554,12 @@
         {
           "id": "rawFrog",
           "amount": 1
+        }
+      ],
+      "randomOutputs": [
+        {
+          "id": "eyeOfNewt",
+          "chance": 0.03125
         }
       ],
       "requiredItems": []
@@ -5923,7 +8623,7 @@
       "locations": [
         {
           "name": "Drymor Village",
-          "wikiId": "drymor-village"
+          "wikiId": "drymor-village-seashore"
         }
       ],
       "otherExp": {},
@@ -5933,6 +8633,12 @@
         {
           "id": "rawSardine",
           "amount": 1
+        }
+      ],
+      "randomOutputs": [
+        {
+          "id": "seaweed",
+          "chance": 0.0625
         }
       ],
       "requiredItems": []
@@ -5974,6 +8680,12 @@
           "amount": 1
         }
       ],
+      "randomOutputs": [
+        {
+          "id": "snapeGrass",
+          "chance": 0.0078125
+        }
+      ],
       "requiredItems": []
     },
     {
@@ -6013,6 +8725,12 @@
           "amount": 1
         }
       ],
+      "randomOutputs": [
+        {
+          "id": "snapeGrass",
+          "chance": 0.0078125
+        }
+      ],
       "requiredItems": []
     },
     {
@@ -6041,6 +8759,12 @@
         {
           "id": "rawLobster",
           "amount": 1
+        }
+      ],
+      "randomOutputs": [
+        {
+          "id": "seaweed",
+          "chance": 0.03125
         }
       ],
       "requiredItems": []
@@ -6103,6 +8827,16 @@
       "requiresMembership": false,
       "singleExecution": false,
       "outputs": [],
+      "randomOutputs": [
+        {
+          "id": "pyreshellShield",
+          "chance": 0.000244140625
+        },
+        {
+          "id": "rawPyreshell",
+          "chance": 0.25
+        }
+      ],
       "requiredItems": []
     },
     {
@@ -6121,7 +8855,7 @@
       "locations": [
         {
           "name": "Drakestone Isle",
-          "wikiId": "drakestone-isle"
+          "wikiId": "drakestone-isle-mine"
         }
       ],
       "otherExp": {},
@@ -6163,7 +8897,171 @@
           "amount": 1
         }
       ],
+      "randomOutputs": [
+        {
+          "id": "seaweed",
+          "chance": 0.03125
+        }
+      ],
       "requiredItems": []
+    },
+    {
+      "id": "fishing/trade-dagger-for-ticket",
+      "skill": "fishing",
+      "name": "A Dagger for Thomas",
+      "level": 1,
+      "duration": 2,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "bronzeDagger",
+          "amount": 1
+        }
+      ],
+      "outputs": [
+        {
+          "id": "ticketToProgryn",
+          "amount": 1
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/fishing-CBsONSG6.png",
+      "entity": "Thomas",
+      "locations": [
+        {
+          "name": "Tutabay Atoll",
+          "wikiId": "tutabay-atoll"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": true,
+      "requiredItems": []
+    },
+    {
+      "id": "fishing/trade-pelt-for-ticket",
+      "skill": "fishing",
+      "name": "Pelts for Passage",
+      "level": 1,
+      "duration": 2,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "rodentPelt",
+          "amount": 1
+        }
+      ],
+      "outputs": [
+        {
+          "id": "ticketToProgryn",
+          "amount": 1
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/fishing-CBsONSG6.png",
+      "entity": "Thomas",
+      "locations": [
+        {
+          "name": "Tutabay Atoll",
+          "wikiId": "tutabay-atoll"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": true,
+      "requiredItems": []
+    },
+    {
+      "id": "fishing/search-abandoned-hut",
+      "skill": "fishing",
+      "name": "Search the abandoned hut",
+      "level": 1,
+      "duration": 60,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [],
+      "outputs": [
+        {
+          "id": "ticketToProgryn",
+          "amount": 1
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/fishing-CBsONSG6.png",
+      "entity": "Abandoned Hut",
+      "locations": [
+        {
+          "name": "Tutabay Atoll",
+          "wikiId": "tutabay-atoll"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": true,
+      "requiredItems": []
+    },
+    {
+      "id": "fishing/sail-to-progryn",
+      "skill": "fishing",
+      "name": "Sail to Progryn",
+      "level": 1,
+      "duration": 5,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "ticketToProgryn",
+          "amount": 1
+        }
+      ],
+      "outputs": [],
+      "icon": "https://microscape.cc/play/assets/fishing-CBsONSG6.png",
+      "entity": "Boat",
+      "locations": [
+        {
+          "name": "Tutabay Atoll",
+          "wikiId": "tutabay-atoll"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": true,
+      "requiredItems": [],
+      "travelsTo": {
+        "name": "Fencewell Bridge",
+        "wikiId": "fencewell-bridge"
+      }
+    },
+    {
+      "id": "fishing/sail-to-tutabay-atoll",
+      "skill": "fishing",
+      "name": "Sail to Tutabay Atoll",
+      "level": 1,
+      "duration": 5,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [],
+      "outputs": [],
+      "icon": "https://microscape.cc/play/assets/fishing-CBsONSG6.png",
+      "entity": "Boat",
+      "locations": [
+        {
+          "name": "Fencewell Bridge",
+          "wikiId": "fencewell-bridge"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": true,
+      "requiredItems": [],
+      "travelsTo": {
+        "name": "Tutabay Atoll",
+        "wikiId": "tutabay-atoll"
+      }
     },
     {
       "id": "cooking/gather-wheat",
@@ -6265,6 +9163,84 @@
       "requiredItems": []
     },
     {
+      "id": "cooking/gather-water",
+      "skill": "cooking",
+      "name": "Fill bucket",
+      "level": 1,
+      "duration": 2,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": false,
+      "inputs": [
+        {
+          "id": "bucket",
+          "amount": 1
+        }
+      ],
+      "outputs": [
+        {
+          "id": "waterBucket",
+          "amount": 1
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/waterBucket-Bi1IuLzq.png",
+      "wikiId": "water-bucket",
+      "entity": "Water Source",
+      "locations": [
+        {
+          "name": "Al-Sahra",
+          "wikiId": "al-sahra"
+        },
+        {
+          "name": "Manor Kitchen",
+          "wikiId": "manor-kitchen"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": false,
+      "requiredItems": []
+    },
+    {
+      "id": "cooking/gather-water-10",
+      "skill": "cooking",
+      "name": "Fill 10 buckets",
+      "level": 1,
+      "duration": 3,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": false,
+      "inputs": [
+        {
+          "id": "bucket",
+          "amount": 10
+        }
+      ],
+      "outputs": [
+        {
+          "id": "waterBucket",
+          "amount": 10
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/waterBucket-Bi1IuLzq.png",
+      "wikiId": "water-bucket",
+      "entity": "Water Source",
+      "locations": [
+        {
+          "name": "Al-Sahra",
+          "wikiId": "al-sahra"
+        },
+        {
+          "name": "Manor Kitchen",
+          "wikiId": "manor-kitchen"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": false,
+      "requiredItems": []
+    },
+    {
       "id": "cooking/process-bread-dough",
       "skill": "cooking",
       "name": "Knead Dough",
@@ -6283,8 +9259,8 @@
           "amount": 1
         }
       ],
-      "icon": "https://microscape.cc/play/assets/bucket-B28_wI5Z.png",
-      "wikiId": "bucket",
+      "icon": "https://microscape.cc/play/assets/dough-BgHE6kiR.png",
+      "wikiId": "dough",
       "entity": "Cooking Table",
       "locations": [
         {
@@ -6340,7 +9316,7 @@
         },
         {
           "name": "Drymor Village",
-          "wikiId": "drymor-village"
+          "wikiId": "drymor-village-seashore"
         },
         {
           "name": "Fellroot Swamp",
@@ -6403,7 +9379,7 @@
         },
         {
           "name": "Drymor Village",
-          "wikiId": "drymor-village"
+          "wikiId": "drymor-village-seashore"
         },
         {
           "name": "Fellroot Swamp",
@@ -6470,7 +9446,7 @@
         },
         {
           "name": "Drymor Village",
-          "wikiId": "drymor-village"
+          "wikiId": "drymor-village-seashore"
         },
         {
           "name": "Fellroot Swamp",
@@ -6533,7 +9509,7 @@
         },
         {
           "name": "Drymor Village",
-          "wikiId": "drymor-village"
+          "wikiId": "drymor-village-seashore"
         },
         {
           "name": "Fellroot Swamp",
@@ -6596,7 +9572,7 @@
         },
         {
           "name": "Drymor Village",
-          "wikiId": "drymor-village"
+          "wikiId": "drymor-village-seashore"
         },
         {
           "name": "Fellroot Swamp",
@@ -6659,7 +9635,7 @@
         },
         {
           "name": "Drymor Village",
-          "wikiId": "drymor-village"
+          "wikiId": "drymor-village-seashore"
         },
         {
           "name": "Fellroot Swamp",
@@ -6769,7 +9745,7 @@
         },
         {
           "name": "Drymor Village",
-          "wikiId": "drymor-village"
+          "wikiId": "drymor-village-seashore"
         },
         {
           "name": "Fellroot Swamp",
@@ -6832,7 +9808,7 @@
         },
         {
           "name": "Drymor Village",
-          "wikiId": "drymor-village"
+          "wikiId": "drymor-village-seashore"
         },
         {
           "name": "Fellroot Swamp",
@@ -6942,7 +9918,7 @@
         },
         {
           "name": "Drymor Village",
-          "wikiId": "drymor-village"
+          "wikiId": "drymor-village-seashore"
         },
         {
           "name": "Fellroot Swamp",
@@ -7005,7 +9981,7 @@
         },
         {
           "name": "Drymor Village",
-          "wikiId": "drymor-village"
+          "wikiId": "drymor-village-seashore"
         },
         {
           "name": "Fellroot Swamp",
@@ -7115,7 +10091,7 @@
         },
         {
           "name": "Drymor Village",
-          "wikiId": "drymor-village"
+          "wikiId": "drymor-village-seashore"
         },
         {
           "name": "Fellroot Swamp",
@@ -7178,7 +10154,7 @@
         },
         {
           "name": "Drymor Village",
-          "wikiId": "drymor-village"
+          "wikiId": "drymor-village-seashore"
         },
         {
           "name": "Fellroot Swamp",
@@ -7241,7 +10217,7 @@
         },
         {
           "name": "Drymor Village",
-          "wikiId": "drymor-village"
+          "wikiId": "drymor-village-seashore"
         },
         {
           "name": "Fellroot Swamp",
@@ -7308,7 +10284,7 @@
         },
         {
           "name": "Drymor Village",
-          "wikiId": "drymor-village"
+          "wikiId": "drymor-village-seashore"
         },
         {
           "name": "Fellroot Swamp",
@@ -7371,7 +10347,7 @@
         },
         {
           "name": "Drymor Village",
-          "wikiId": "drymor-village"
+          "wikiId": "drymor-village-seashore"
         },
         {
           "name": "Fellroot Swamp",
@@ -7434,7 +10410,7 @@
         },
         {
           "name": "Drymor Village",
-          "wikiId": "drymor-village"
+          "wikiId": "drymor-village-seashore"
         },
         {
           "name": "Fellroot Swamp",
@@ -7488,7 +10464,7 @@
       "locations": [
         {
           "name": "O'Rock East Mine",
-          "wikiId": "orock-east-mine"
+          "wikiId": "east-rock-mine"
         },
         {
           "name": "Fellroot Swamp",
@@ -7508,6 +10484,50 @@
           "amount": 1
         }
       ],
+      "randomOutputs": [
+        {
+          "id": "uncutEmerald",
+          "chance": 0.0016666666666666668
+        },
+        {
+          "id": "uncutSapphire",
+          "chance": 0.002
+        }
+      ],
+      "requiredItems": []
+    },
+    {
+      "id": "mining/trade-copper-for-tin",
+      "skill": "mining",
+      "name": "Tin from the Mainland",
+      "level": 1,
+      "duration": 3,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "copperOre",
+          "amount": 3
+        }
+      ],
+      "outputs": [
+        {
+          "id": "tinOre",
+          "amount": 1
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/mining-BnLKnPzq.png",
+      "entity": "Lucille",
+      "locations": [
+        {
+          "name": "Tutabay Atoll",
+          "wikiId": "tutabay-atoll"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": true,
       "requiredItems": []
     },
     {
@@ -7526,7 +10546,7 @@
       "locations": [
         {
           "name": "O'Rock East Mine",
-          "wikiId": "orock-east-mine"
+          "wikiId": "east-rock-mine"
         },
         {
           "name": "Fellroot Swamp",
@@ -7540,6 +10560,16 @@
         {
           "id": "tinOre",
           "amount": 1
+        }
+      ],
+      "randomOutputs": [
+        {
+          "id": "uncutEmerald",
+          "chance": 0.0016666666666666668
+        },
+        {
+          "id": "uncutSapphire",
+          "chance": 0.002
         }
       ],
       "requiredItems": []
@@ -7564,7 +10594,7 @@
         },
         {
           "name": "Old Dwarven Tunnels",
-          "wikiId": "old-dwarven-tunnels"
+          "wikiId": "dwarven-tunnels"
         }
       ],
       "otherExp": {},
@@ -7574,6 +10604,16 @@
         {
           "id": "ironOre",
           "amount": 1
+        }
+      ],
+      "randomOutputs": [
+        {
+          "id": "uncutEmerald",
+          "chance": 0.0016666666666666668
+        },
+        {
+          "id": "uncutSapphire",
+          "chance": 0.002
         }
       ],
       "requiredItems": []
@@ -7624,7 +10664,7 @@
       "locations": [
         {
           "name": "Dwarven Mine",
-          "wikiId": "dwarven-mine"
+          "wikiId": "dwarven-guild-mine"
         }
       ],
       "otherExp": {},
@@ -7636,6 +10676,50 @@
           "amount": 1
         }
       ],
+      "randomOutputs": [
+        {
+          "id": "uncutEmerald",
+          "chance": 0.0016666666666666668
+        },
+        {
+          "id": "uncutRuby",
+          "chance": 0.00125
+        },
+        {
+          "id": "uncutSapphire",
+          "chance": 0.002
+        }
+      ],
+      "requiredItems": []
+    },
+    {
+      "id": "mining/clear-rubble",
+      "skill": "mining",
+      "name": "Clear Rubble",
+      "level": 30,
+      "duration": 297,
+      "exp": 0,
+      "sortLevel": 30,
+      "otherActivity": true,
+      "inputs": [],
+      "outputs": [
+        {
+          "id": "clearedRubble",
+          "amount": 1
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/clearedRubble-BE7UuiX_.png",
+      "wikiId": "cleared-rubble",
+      "entity": "Collapsed Passage",
+      "locations": [
+        {
+          "name": "Elshand Temple B3",
+          "wikiId": "elshand-temple-b3"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": false,
       "requiredItems": []
     },
     {
@@ -7654,7 +10738,7 @@
       "locations": [
         {
           "name": "Dwarven Mine",
-          "wikiId": "dwarven-mine"
+          "wikiId": "dwarven-guild-mine"
         }
       ],
       "otherExp": {},
@@ -7684,7 +10768,7 @@
       "locations": [
         {
           "name": "Drakestone Isle",
-          "wikiId": "drakestone-isle"
+          "wikiId": "drakestone-isle-mine"
         },
         {
           "name": "Ice Cavern",
@@ -7698,6 +10782,16 @@
         {
           "id": "mithrilOre",
           "amount": 1
+        }
+      ],
+      "randomOutputs": [
+        {
+          "id": "uncutDiamond",
+          "chance": 0.001
+        },
+        {
+          "id": "uncutRuby",
+          "chance": 0.00125
         }
       ],
       "requiredItems": []
@@ -7718,11 +10812,11 @@
       "locations": [
         {
           "name": "Drakestone Isle",
-          "wikiId": "drakestone-isle"
+          "wikiId": "drakestone-isle-mine"
         },
         {
           "name": "Old Dwarven Tunnels",
-          "wikiId": "old-dwarven-tunnels"
+          "wikiId": "dwarven-tunnels"
         }
       ],
       "otherExp": {},
@@ -7732,6 +10826,16 @@
         {
           "id": "adamantiteOre",
           "amount": 1
+        }
+      ],
+      "randomOutputs": [
+        {
+          "id": "uncutDiamond",
+          "chance": 0.001
+        },
+        {
+          "id": "uncutRuby",
+          "chance": 0.00125
         }
       ],
       "requiredItems": []
@@ -7768,6 +10872,16 @@
           "amount": 1
         }
       ],
+      "randomOutputs": [
+        {
+          "id": "uncutDiamond",
+          "chance": 0.001
+        },
+        {
+          "id": "uncutRuby",
+          "chance": 0.00125
+        }
+      ],
       "requiredItems": []
     },
     {
@@ -7799,7 +10913,7 @@
         },
         {
           "name": "Dwarven Mine",
-          "wikiId": "dwarven-mine"
+          "wikiId": "dwarven-guild-mine"
         },
         {
           "name": "Fencewell Bridge",
@@ -7846,7 +10960,7 @@
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         },
         {
           "name": "Tutabay Atoll",
@@ -7889,7 +11003,7 @@
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         },
         {
           "name": "Tutabay Atoll",
@@ -7932,7 +11046,7 @@
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         },
         {
           "name": "Tutabay Atoll",
@@ -7975,7 +11089,7 @@
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         },
         {
           "name": "Tutabay Atoll",
@@ -8018,7 +11132,7 @@
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         },
         {
           "name": "Tutabay Atoll",
@@ -8061,7 +11175,7 @@
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         },
         {
           "name": "Tutabay Atoll",
@@ -8104,7 +11218,7 @@
         },
         {
           "name": "Dwarven Mine",
-          "wikiId": "dwarven-mine"
+          "wikiId": "dwarven-guild-mine"
         },
         {
           "name": "Fencewell Bridge",
@@ -8122,6 +11236,12 @@
         {
           "id": "ironBar",
           "amount": 1
+        }
+      ],
+      "randomOutputs": [
+        {
+          "id": "coalTar",
+          "chance": 0.00390625
         }
       ],
       "requiredItems": []
@@ -8151,7 +11271,7 @@
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         },
         {
           "name": "Tutabay Atoll",
@@ -8194,7 +11314,7 @@
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         },
         {
           "name": "Tutabay Atoll",
@@ -8237,7 +11357,7 @@
         },
         {
           "name": "Dwarven Mine",
-          "wikiId": "dwarven-mine"
+          "wikiId": "dwarven-guild-mine"
         },
         {
           "name": "Fencewell Bridge",
@@ -8255,6 +11375,12 @@
         {
           "id": "silverBar",
           "amount": 1
+        }
+      ],
+      "randomOutputs": [
+        {
+          "id": "lavabloom",
+          "chance": 0.015625
         }
       ],
       "requiredItems": []
@@ -8284,7 +11410,7 @@
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         },
         {
           "name": "Tutabay Atoll",
@@ -8327,7 +11453,7 @@
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         },
         {
           "name": "Tutabay Atoll",
@@ -8374,7 +11500,7 @@
         },
         {
           "name": "Dwarven Mine",
-          "wikiId": "dwarven-mine"
+          "wikiId": "dwarven-guild-mine"
         },
         {
           "name": "Fencewell Bridge",
@@ -8392,6 +11518,12 @@
         {
           "id": "steelBar",
           "amount": 1
+        }
+      ],
+      "randomOutputs": [
+        {
+          "id": "coalTar",
+          "chance": 0.015625
         }
       ],
       "requiredItems": []
@@ -8421,7 +11553,7 @@
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         },
         {
           "name": "Tutabay Atoll",
@@ -8464,7 +11596,7 @@
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         },
         {
           "name": "Tutabay Atoll",
@@ -8507,7 +11639,7 @@
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         },
         {
           "name": "Tutabay Atoll",
@@ -8550,7 +11682,7 @@
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         },
         {
           "name": "Tutabay Atoll",
@@ -8593,7 +11725,7 @@
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         },
         {
           "name": "Tutabay Atoll",
@@ -8636,7 +11768,7 @@
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         },
         {
           "name": "Tutabay Atoll",
@@ -8679,7 +11811,7 @@
         },
         {
           "name": "Dwarven Mine",
-          "wikiId": "dwarven-mine"
+          "wikiId": "dwarven-guild-mine"
         },
         {
           "name": "Fencewell Bridge",
@@ -8697,6 +11829,12 @@
         {
           "id": "goldBar",
           "amount": 1
+        }
+      ],
+      "randomOutputs": [
+        {
+          "id": "lavabloom",
+          "chance": 0.015625
         }
       ],
       "requiredItems": []
@@ -8730,7 +11868,7 @@
         },
         {
           "name": "Dwarven Mine",
-          "wikiId": "dwarven-mine"
+          "wikiId": "dwarven-guild-mine"
         },
         {
           "name": "Fencewell Bridge",
@@ -8748,6 +11886,12 @@
         {
           "id": "mithrilBar",
           "amount": 1
+        }
+      ],
+      "randomOutputs": [
+        {
+          "id": "coalTar",
+          "chance": 0.015625
         }
       ],
       "requiredItems": []
@@ -8777,7 +11921,7 @@
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         },
         {
           "name": "Tutabay Atoll",
@@ -8820,7 +11964,7 @@
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         },
         {
           "name": "Tutabay Atoll",
@@ -8863,7 +12007,7 @@
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         },
         {
           "name": "Tutabay Atoll",
@@ -8906,7 +12050,7 @@
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         },
         {
           "name": "Tutabay Atoll",
@@ -8949,7 +12093,7 @@
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         },
         {
           "name": "Tutabay Atoll",
@@ -8992,7 +12136,7 @@
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         },
         {
           "name": "Tutabay Atoll",
@@ -9039,7 +12183,7 @@
         },
         {
           "name": "Dwarven Mine",
-          "wikiId": "dwarven-mine"
+          "wikiId": "dwarven-guild-mine"
         },
         {
           "name": "Fencewell Bridge",
@@ -9057,6 +12201,12 @@
         {
           "id": "adamantiteBar",
           "amount": 1
+        }
+      ],
+      "randomOutputs": [
+        {
+          "id": "coalTar",
+          "chance": 0.03125
         }
       ],
       "requiredItems": []
@@ -9086,7 +12236,7 @@
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         },
         {
           "name": "Tutabay Atoll",
@@ -9129,7 +12279,7 @@
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         },
         {
           "name": "Tutabay Atoll",
@@ -9172,7 +12322,7 @@
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         },
         {
           "name": "Tutabay Atoll",
@@ -9215,7 +12365,7 @@
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         },
         {
           "name": "Tutabay Atoll",
@@ -9258,7 +12408,7 @@
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         },
         {
           "name": "Tutabay Atoll",
@@ -9301,7 +12451,7 @@
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         },
         {
           "name": "Tutabay Atoll",
@@ -9348,7 +12498,7 @@
         },
         {
           "name": "Dwarven Mine",
-          "wikiId": "dwarven-mine"
+          "wikiId": "dwarven-guild-mine"
         },
         {
           "name": "Fencewell Bridge",
@@ -9366,6 +12516,12 @@
         {
           "id": "progriteBar",
           "amount": 1
+        }
+      ],
+      "randomOutputs": [
+        {
+          "id": "coalTar",
+          "chance": 0.046875
         }
       ],
       "requiredItems": []
@@ -9395,7 +12551,7 @@
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         },
         {
           "name": "Tutabay Atoll",
@@ -9438,7 +12594,7 @@
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         },
         {
           "name": "Tutabay Atoll",
@@ -9481,7 +12637,7 @@
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         },
         {
           "name": "Tutabay Atoll",
@@ -9524,7 +12680,7 @@
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         },
         {
           "name": "Tutabay Atoll",
@@ -9567,7 +12723,7 @@
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         },
         {
           "name": "Tutabay Atoll",
@@ -9610,7 +12766,7 @@
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         },
         {
           "name": "Tutabay Atoll",
@@ -9626,6 +12782,143 @@
           "amount": 1
         }
       ],
+      "requiredItems": []
+    },
+    {
+      "id": "smithing/forge-brimstone-axe-head",
+      "skill": "smithing",
+      "name": "Brimstone Axe Head",
+      "level": 86,
+      "duration": 10801,
+      "exp": 900000,
+      "sortLevel": 86,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "brimstone",
+          "amount": 1
+        },
+        {
+          "id": "goldBar",
+          "amount": 10000
+        },
+        {
+          "id": "progriteBar",
+          "amount": 2000
+        },
+        {
+          "id": "silverBar",
+          "amount": 10000
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/brimstoneAxeHead-CAFoVMs6.png",
+      "wikiId": "brimstone-axe-head",
+      "entity": "Cinderforge",
+      "locations": [
+        {
+          "name": "The Emberpit",
+          "wikiId": "the-emberpit"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": true,
+      "outputs": [
+        {
+          "id": "brimstoneAxeHead",
+          "amount": 1
+        }
+      ],
+      "requiredItems": []
+    },
+    {
+      "id": "smithing/forge-vulcanus",
+      "skill": "smithing",
+      "name": "Vulcanus",
+      "level": 1,
+      "duration": 58,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": false,
+      "inputs": [
+        {
+          "id": "brimstoneAxeHead",
+          "amount": 1
+        },
+        {
+          "id": "everflameCore",
+          "amount": 1
+        },
+        {
+          "id": "heartwoodHaft",
+          "amount": 1
+        },
+        {
+          "id": "magmaCore",
+          "amount": 3
+        }
+      ],
+      "outputs": [
+        {
+          "id": "vulcanus",
+          "amount": 1
+        }
+      ],
+      "icon": "./assets/equipment/vulcanus-D50uKXbX.png",
+      "wikiId": "vulcanus",
+      "entity": "Cinderforge",
+      "locations": [
+        {
+          "name": "The Emberpit",
+          "wikiId": "the-emberpit"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": true,
+      "requiredItems": []
+    },
+    {
+      "id": "smithing/reforge-dragon-shield",
+      "skill": "smithing",
+      "name": "Dragon shield",
+      "level": 75,
+      "duration": 61,
+      "exp": 0,
+      "sortLevel": 75,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "ballOfWool",
+          "amount": 1
+        },
+        {
+          "id": "dragonShieldLeft",
+          "amount": 1
+        },
+        {
+          "id": "dragonShieldRight",
+          "amount": 1
+        }
+      ],
+      "outputs": [
+        {
+          "id": "dragonShield",
+          "amount": 1
+        }
+      ],
+      "icon": "./assets/equipment/dragonShield-BrZoBVvb.png",
+      "wikiId": "dragon-shield",
+      "entity": "Cinderforge",
+      "locations": [
+        {
+          "name": "The Emberpit",
+          "wikiId": "the-emberpit"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": true,
       "requiredItems": []
     },
     {
@@ -9749,6 +13042,45 @@
       "requiredItems": []
     },
     {
+      "id": "crafting/tan-leather",
+      "skill": "crafting",
+      "name": "Tan leather",
+      "level": 1,
+      "duration": 2,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": false,
+      "inputs": [
+        {
+          "id": "coins",
+          "amount": 3
+        },
+        {
+          "id": "cowHide",
+          "amount": 1
+        }
+      ],
+      "outputs": [
+        {
+          "id": "leather",
+          "amount": 1
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/leather-DkFs0jL3.png",
+      "wikiId": "leather",
+      "entity": "Hide Tanner",
+      "locations": [
+        {
+          "name": "Al-Sahra",
+          "wikiId": "al-sahra"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": false,
+      "requiredItems": []
+    },
+    {
       "id": "crafting/spin-wool",
       "skill": "crafting",
       "name": "Spin Wool",
@@ -9806,8 +13138,8 @@
           "amount": 1
         }
       ],
-      "icon": "https://microscape.cc/play/assets/bucket-B28_wI5Z.png",
-      "wikiId": "bucket",
+      "icon": "https://microscape.cc/play/assets/unfiredPot-DqUu7xzn.png",
+      "wikiId": "unfired-pot",
       "entity": "Pottery Wheel",
       "locations": [
         {
@@ -9913,6 +13245,213 @@
       "requiredItems": []
     },
     {
+      "id": "crafting/craft-ash-gloves",
+      "skill": "crafting",
+      "name": "Order ash gloves",
+      "level": 1,
+      "duration": 2,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "ashes",
+          "amount": 20
+        },
+        {
+          "id": "coins",
+          "amount": 30
+        },
+        {
+          "id": "leatherGloves",
+          "amount": 1
+        }
+      ],
+      "outputs": [
+        {
+          "id": "ashGloves",
+          "amount": 1
+        }
+      ],
+      "icon": "./assets/equipment/ashGloves-B84gh_MC.png",
+      "wikiId": "ash-gloves",
+      "entity": "Azar's Glovecraft",
+      "locations": [
+        {
+          "name": "Al-Sahra",
+          "wikiId": "al-sahra"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": false,
+      "requiredItems": []
+    },
+    {
+      "id": "crafting/craft-serpent-quiver",
+      "skill": "crafting",
+      "name": "Order serpent quiver",
+      "level": 1,
+      "duration": 2,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "coins",
+          "amount": 50
+        },
+        {
+          "id": "snakeskinScales",
+          "amount": 30
+        },
+        {
+          "id": "thread",
+          "amount": 1
+        }
+      ],
+      "outputs": [
+        {
+          "id": "serpentQuiver",
+          "amount": 1
+        }
+      ],
+      "icon": "./assets/equipment/serpentQuiver-CKMj5ZKV.png",
+      "wikiId": "serpent-quiver",
+      "entity": "Azar's Glovecraft",
+      "locations": [
+        {
+          "name": "Al-Sahra",
+          "wikiId": "al-sahra"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": false,
+      "requiredItems": []
+    },
+    {
+      "id": "crafting/split-plume",
+      "skill": "crafting",
+      "name": "Split plume",
+      "level": 1,
+      "duration": 2,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "giantPlume",
+          "amount": 1
+        }
+      ],
+      "outputs": [
+        {
+          "id": "feather",
+          "amount": 25
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/feather-TYs5GXE9.png",
+      "wikiId": "feather",
+      "entity": "Azar's Glovecraft",
+      "locations": [
+        {
+          "name": "Al-Sahra",
+          "wikiId": "al-sahra"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": false,
+      "requiredItems": []
+    },
+    {
+      "id": "crafting/split-plume-10",
+      "skill": "crafting",
+      "name": "Split plume (x10)",
+      "level": 1,
+      "duration": 2,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "giantPlume",
+          "amount": 10
+        }
+      ],
+      "outputs": [
+        {
+          "id": "feather",
+          "amount": 250
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/feather-TYs5GXE9.png",
+      "wikiId": "feather",
+      "entity": "Azar's Glovecraft",
+      "locations": [
+        {
+          "name": "Al-Sahra",
+          "wikiId": "al-sahra"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": false,
+      "requiredItems": []
+    },
+    {
+      "id": "crafting/adapt-heat-gloves",
+      "skill": "crafting",
+      "name": "Adapt dwarven gloves",
+      "level": 1,
+      "duration": 2,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "airRune",
+          "amount": 10
+        },
+        {
+          "id": "coins",
+          "amount": 20
+        },
+        {
+          "id": "fireDwarfGloves",
+          "amount": 1
+        },
+        {
+          "id": "waterBucket",
+          "amount": 1
+        }
+      ],
+      "outputs": [
+        {
+          "id": "bucket",
+          "amount": 1
+        },
+        {
+          "id": "heatGloves",
+          "amount": 1
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/bucket-B28_wI5Z.png",
+      "wikiId": "bucket",
+      "entity": "Thorgrim",
+      "locations": [
+        {
+          "name": "Old Dwarven Tunnels",
+          "wikiId": "dwarven-tunnels"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": false,
+      "requiredItems": []
+    },
+    {
       "id": "crafting/make-soda-ash",
       "skill": "crafting",
       "name": "Burn Seaweed",
@@ -9937,7 +13476,7 @@
         },
         {
           "name": "Drymor Village",
-          "wikiId": "drymor-village"
+          "wikiId": "drymor-village-seashore"
         },
         {
           "name": "Fellroot Swamp",
@@ -10037,8 +13576,8 @@
           "amount": 1
         }
       ],
-      "icon": "https://microscape.cc/play/assets/bucket-B28_wI5Z.png",
-      "wikiId": "bucket",
+      "icon": "https://microscape.cc/play/assets/unfiredPieDish-BZsyf1px.png",
+      "wikiId": "unfired-pie-dish",
       "entity": "Pottery Wheel",
       "locations": [
         {
@@ -10211,7 +13750,7 @@
         },
         {
           "name": "Dwarven Mine",
-          "wikiId": "dwarven-mine"
+          "wikiId": "dwarven-guild-mine"
         },
         {
           "name": "Fencewell Bridge",
@@ -10430,7 +13969,7 @@
         },
         {
           "name": "Dwarven Mine",
-          "wikiId": "dwarven-mine"
+          "wikiId": "dwarven-guild-mine"
         },
         {
           "name": "Fencewell Bridge",
@@ -10481,7 +14020,7 @@
         },
         {
           "name": "Dwarven Mine",
-          "wikiId": "dwarven-mine"
+          "wikiId": "dwarven-guild-mine"
         },
         {
           "name": "Fencewell Bridge",
@@ -10501,6 +14040,154 @@
           "amount": 1
         }
       ],
+      "requiredItems": []
+    },
+    {
+      "id": "crafting/bless-holy-amulet",
+      "skill": "crafting",
+      "name": "Bless holy amulet",
+      "level": 18,
+      "duration": 3,
+      "exp": 0,
+      "sortLevel": 18,
+      "otherActivity": false,
+      "inputs": [
+        {
+          "id": "coins",
+          "amount": 20
+        },
+        {
+          "id": "dimHolyAmulet",
+          "amount": 1
+        }
+      ],
+      "outputs": [
+        {
+          "id": "holyAmulet",
+          "amount": 1
+        }
+      ],
+      "icon": "./assets/amulets/holy-amulet.png",
+      "wikiId": "holy-amulet",
+      "entity": "Brother Alep",
+      "locations": [
+        {
+          "name": "Falcrest Reach Temple",
+          "wikiId": "falcrest-reach-temple"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": false,
+      "requiredItems": []
+    },
+    {
+      "id": "crafting/curse-evil-amulet",
+      "skill": "crafting",
+      "name": "Curse evil amulet",
+      "level": 18,
+      "duration": 3,
+      "exp": 0,
+      "sortLevel": 18,
+      "otherActivity": false,
+      "inputs": [
+        {
+          "id": "coins",
+          "amount": 10
+        },
+        {
+          "id": "dimEvilAmulet",
+          "amount": 1
+        }
+      ],
+      "outputs": [
+        {
+          "id": "evilAmulet",
+          "amount": 1
+        }
+      ],
+      "icon": "./assets/amulets/evil-amulet.png",
+      "wikiId": "evil-amulet",
+      "entity": "Totem of Zem",
+      "locations": [
+        {
+          "name": "Lava Maze Entrance",
+          "wikiId": "lava-maze-entrance"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": false,
+      "requiredItems": []
+    },
+    {
+      "id": "crafting/buy-dragon-shield-right",
+      "skill": "crafting",
+      "name": "Financial troubles",
+      "level": 1,
+      "duration": 4,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "coins",
+          "amount": 7300000
+        }
+      ],
+      "outputs": [
+        {
+          "id": "dragonShieldRight",
+          "amount": 1
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/dragonShieldRight-CU6DxM6Z.png",
+      "wikiId": "dragon-shield-right-half",
+      "entity": "Sir Bratley",
+      "locations": [
+        {
+          "name": "Falcrest Castle Parlor Room",
+          "wikiId": "falcrest-reach-castle-parlor"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": true,
+      "requiredItems": []
+    },
+    {
+      "id": "crafting/buy-consolation-hat",
+      "skill": "crafting",
+      "name": "Missed the party?",
+      "level": 1,
+      "duration": 4,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "coins",
+          "amount": 100
+        }
+      ],
+      "outputs": [
+        {
+          "id": "consolationHat",
+          "amount": 1
+        }
+      ],
+      "icon": "./assets/equipment/consolationHat-CUclKhuc.png",
+      "wikiId": "consolation-hat",
+      "entity": "Sir Bratley",
+      "locations": [
+        {
+          "name": "Falcrest Castle Parlor Room",
+          "wikiId": "falcrest-reach-castle-parlor"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": true,
       "requiredItems": []
     },
     {
@@ -10622,7 +14309,7 @@
         },
         {
           "name": "Dwarven Mine",
-          "wikiId": "dwarven-mine"
+          "wikiId": "dwarven-guild-mine"
         },
         {
           "name": "Fencewell Bridge",
@@ -10767,7 +14454,7 @@
         },
         {
           "name": "Dwarven Mine",
-          "wikiId": "dwarven-mine"
+          "wikiId": "dwarven-guild-mine"
         },
         {
           "name": "Fencewell Bridge",
@@ -11021,7 +14708,7 @@
         },
         {
           "name": "Dwarven Mine",
-          "wikiId": "dwarven-mine"
+          "wikiId": "dwarven-guild-mine"
         },
         {
           "name": "Fencewell Bridge",
@@ -11291,7 +14978,7 @@
         },
         {
           "name": "Dwarven Mine",
-          "wikiId": "dwarven-mine"
+          "wikiId": "dwarven-guild-mine"
         },
         {
           "name": "Fencewell Bridge",
@@ -11308,6 +14995,178 @@
       "outputs": [
         {
           "id": "diamondAmulet",
+          "amount": 1
+        }
+      ],
+      "requiredItems": []
+    },
+    {
+      "id": "crafting/craft-dragonstone-amulet",
+      "skill": "crafting",
+      "name": "Dragonstone Amulet",
+      "level": 80,
+      "duration": 10801,
+      "exp": 1006113,
+      "sortLevel": 80,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "ballOfWool",
+          "amount": 1
+        },
+        {
+          "id": "cutDragonstone",
+          "amount": 1
+        },
+        {
+          "id": "goldBar",
+          "amount": 1
+        }
+      ],
+      "icon": "./assets/amulets/dragonstone-amulet.png",
+      "wikiId": "dragonstone-amulet",
+      "entity": "Smelter",
+      "locations": [
+        {
+          "name": "Al-Sahra",
+          "wikiId": "al-sahra"
+        },
+        {
+          "name": "Dwarven Mine",
+          "wikiId": "dwarven-guild-mine"
+        },
+        {
+          "name": "Fencewell Bridge",
+          "wikiId": "fencewell-bridge"
+        },
+        {
+          "name": "Tutabay Atoll",
+          "wikiId": "tutabay-atoll"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": true,
+      "outputs": [
+        {
+          "id": "dragonstoneAmulet",
+          "amount": 1
+        }
+      ],
+      "requiredItems": []
+    },
+    {
+      "id": "crafting/trade-fox-hat",
+      "skill": "crafting",
+      "name": "Trade for fox hat",
+      "level": 1,
+      "duration": 2,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "luckyPaw",
+          "amount": 1
+        }
+      ],
+      "outputs": [
+        {
+          "id": "foxHat",
+          "amount": 1
+        }
+      ],
+      "icon": "./assets/equipment/foxHat-CsT2xiOL.png",
+      "wikiId": "fox-hat",
+      "entity": "Hadley",
+      "locations": [
+        {
+          "name": "Manor Kitchen",
+          "wikiId": "manor-kitchen"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": false,
+      "requiredItems": []
+    },
+    {
+      "id": "crafting/craft-emberstone",
+      "skill": "crafting",
+      "name": "Emberstone",
+      "level": 82,
+      "duration": 5401,
+      "exp": 450000,
+      "sortLevel": 82,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "hellforgedHammer",
+          "amount": 1
+        },
+        {
+          "id": "uncutRuby",
+          "amount": 5000
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/emberstone-rNVM_Ymb.png",
+      "wikiId": "emberstone",
+      "entity": "Cinderforge",
+      "locations": [
+        {
+          "name": "The Emberpit",
+          "wikiId": "the-emberpit"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": true,
+      "outputs": [
+        {
+          "id": "emberstone",
+          "amount": 1
+        }
+      ],
+      "requiredItems": []
+    },
+    {
+      "id": "crafting/craft-heartwood-haft",
+      "skill": "crafting",
+      "name": "Heartwood Haft",
+      "level": 84,
+      "duration": 10801,
+      "exp": 900000,
+      "sortLevel": 84,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "emberstone",
+          "amount": 1
+        },
+        {
+          "id": "heartwoodBough",
+          "amount": 1
+        },
+        {
+          "id": "steelBar",
+          "amount": 25000
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/heartwoodHaft-CxU33kzc.png",
+      "wikiId": "heartwood-haft",
+      "entity": "Cinderforge",
+      "locations": [
+        {
+          "name": "The Emberpit",
+          "wikiId": "the-emberpit"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": true,
+      "outputs": [
+        {
+          "id": "heartwoodHaft",
           "amount": 1
         }
       ],
@@ -11337,19 +15196,19 @@
       "locations": [
         {
           "name": "Falcrest Bank",
-          "wikiId": "falcrest-bank"
+          "wikiId": "falcrest-reach-bank"
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         }
       ],
       "otherExp": {},
       "requiresMembership": false,
       "singleExecution": false,
-      "alchemy": "low",
       "outputs": [],
-      "requiredItems": []
+      "requiredItems": [],
+      "alchemy": "low"
     },
     {
       "id": "goodMagic/bones-to-bread",
@@ -11372,11 +15231,11 @@
       "locations": [
         {
           "name": "Falcrest Bank",
-          "wikiId": "falcrest-bank"
+          "wikiId": "falcrest-reach-bank"
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         }
       ],
       "otherExp": {},
@@ -11419,11 +15278,11 @@
       "locations": [
         {
           "name": "Falcrest Bank",
-          "wikiId": "falcrest-bank"
+          "wikiId": "falcrest-reach-bank"
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         }
       ],
       "otherExp": {},
@@ -11466,11 +15325,11 @@
       "locations": [
         {
           "name": "Falcrest Bank",
-          "wikiId": "falcrest-bank"
+          "wikiId": "falcrest-reach-bank"
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         }
       ],
       "otherExp": {},
@@ -11595,11 +15454,11 @@
       "locations": [
         {
           "name": "Falcrest Bank",
-          "wikiId": "falcrest-bank"
+          "wikiId": "falcrest-reach-bank"
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         }
       ],
       "otherExp": {
@@ -11648,11 +15507,11 @@
       "locations": [
         {
           "name": "Falcrest Bank",
-          "wikiId": "falcrest-bank"
+          "wikiId": "falcrest-reach-bank"
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         }
       ],
       "otherExp": {
@@ -11701,11 +15560,11 @@
       "locations": [
         {
           "name": "Falcrest Bank",
-          "wikiId": "falcrest-bank"
+          "wikiId": "falcrest-reach-bank"
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         }
       ],
       "otherExp": {
@@ -11783,11 +15642,11 @@
       "locations": [
         {
           "name": "Falcrest Bank",
-          "wikiId": "falcrest-bank"
+          "wikiId": "falcrest-reach-bank"
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         }
       ],
       "otherExp": {},
@@ -11825,19 +15684,19 @@
       "locations": [
         {
           "name": "Falcrest Bank",
-          "wikiId": "falcrest-bank"
+          "wikiId": "falcrest-reach-bank"
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         }
       ],
       "otherExp": {},
       "requiresMembership": false,
       "singleExecution": false,
-      "alchemy": "high",
       "outputs": [],
-      "requiredItems": []
+      "requiredItems": [],
+      "alchemy": "high"
     },
     {
       "id": "goodMagic/enchant-diamond-amulet",
@@ -11868,11 +15727,11 @@
       "locations": [
         {
           "name": "Falcrest Bank",
-          "wikiId": "falcrest-bank"
+          "wikiId": "falcrest-reach-bank"
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         }
       ],
       "otherExp": {},
@@ -11915,11 +15774,11 @@
       "locations": [
         {
           "name": "Falcrest Bank",
-          "wikiId": "falcrest-bank"
+          "wikiId": "falcrest-reach-bank"
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         }
       ],
       "otherExp": {},
@@ -12020,6 +15879,73 @@
       "requiredItems": []
     },
     {
+      "id": "goodMagic/dark-ritual",
+      "skill": "goodMagic",
+      "name": "Dark Ritual",
+      "level": 1,
+      "duration": 6,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": true,
+      "inputs": [
+        {
+          "id": "cutDiamond",
+          "amount": 1
+        },
+        {
+          "id": "cutEmerald",
+          "amount": 1
+        },
+        {
+          "id": "cutRuby",
+          "amount": 1
+        },
+        {
+          "id": "cutSapphire",
+          "amount": 1
+        },
+        {
+          "id": "deathRune",
+          "amount": 1
+        }
+      ],
+      "outputs": [],
+      "randomOutputs": [
+        {
+          "id": "bloodShard",
+          "chance": 0.05
+        },
+        {
+          "id": "chaosShard",
+          "chance": 0.05
+        },
+        {
+          "id": "deathShard",
+          "chance": 0.05
+        },
+        {
+          "id": "mindShard",
+          "chance": 0.05
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/deathRune-4G0Y8gF-.png",
+      "wikiId": "death-rune",
+      "entity": "Totem of Zem",
+      "locations": [
+        {
+          "name": "Lava Maze Entrance",
+          "wikiId": "lava-maze-entrance"
+        }
+      ],
+      "otherExp": {
+        "evilMagic": 1000
+      },
+      "requiresAbility": "Death's Bargain",
+      "requiresMembership": false,
+      "singleExecution": false,
+      "requiredItems": []
+    },
+    {
       "id": "fletching/make-arrow-shafts",
       "skill": "fletching",
       "name": "Arrow Shafts",
@@ -12040,11 +15966,11 @@
       "locations": [
         {
           "name": "Falcrest Bank",
-          "wikiId": "falcrest-bank"
+          "wikiId": "falcrest-reach-bank"
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         }
       ],
       "otherExp": {},
@@ -12079,11 +16005,11 @@
       "locations": [
         {
           "name": "Falcrest Bank",
-          "wikiId": "falcrest-bank"
+          "wikiId": "falcrest-reach-bank"
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         }
       ],
       "otherExp": {},
@@ -12118,11 +16044,11 @@
       "locations": [
         {
           "name": "Falcrest Bank",
-          "wikiId": "falcrest-bank"
+          "wikiId": "falcrest-reach-bank"
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         }
       ],
       "otherExp": {},
@@ -12157,11 +16083,11 @@
       "locations": [
         {
           "name": "Falcrest Bank",
-          "wikiId": "falcrest-bank"
+          "wikiId": "falcrest-reach-bank"
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         }
       ],
       "otherExp": {},
@@ -12196,11 +16122,11 @@
       "locations": [
         {
           "name": "Falcrest Bank",
-          "wikiId": "falcrest-bank"
+          "wikiId": "falcrest-reach-bank"
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         }
       ],
       "otherExp": {},
@@ -12235,11 +16161,11 @@
       "locations": [
         {
           "name": "Falcrest Bank",
-          "wikiId": "falcrest-bank"
+          "wikiId": "falcrest-reach-bank"
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         }
       ],
       "otherExp": {},
@@ -12282,11 +16208,11 @@
       "locations": [
         {
           "name": "Falcrest Bank",
-          "wikiId": "falcrest-bank"
+          "wikiId": "falcrest-reach-bank"
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         }
       ],
       "otherExp": {},
@@ -12329,11 +16255,11 @@
       "locations": [
         {
           "name": "Falcrest Bank",
-          "wikiId": "falcrest-bank"
+          "wikiId": "falcrest-reach-bank"
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         }
       ],
       "otherExp": {},
@@ -12376,11 +16302,11 @@
       "locations": [
         {
           "name": "Falcrest Bank",
-          "wikiId": "falcrest-bank"
+          "wikiId": "falcrest-reach-bank"
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         }
       ],
       "otherExp": {},
@@ -12423,11 +16349,11 @@
       "locations": [
         {
           "name": "Falcrest Bank",
-          "wikiId": "falcrest-bank"
+          "wikiId": "falcrest-reach-bank"
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         }
       ],
       "otherExp": {},
@@ -12470,11 +16396,11 @@
       "locations": [
         {
           "name": "Falcrest Bank",
-          "wikiId": "falcrest-bank"
+          "wikiId": "falcrest-reach-bank"
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         }
       ],
       "otherExp": {},
@@ -12509,11 +16435,11 @@
       "locations": [
         {
           "name": "Falcrest Bank",
-          "wikiId": "falcrest-bank"
+          "wikiId": "falcrest-reach-bank"
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         }
       ],
       "otherExp": {},
@@ -12552,11 +16478,11 @@
       "locations": [
         {
           "name": "Falcrest Bank",
-          "wikiId": "falcrest-bank"
+          "wikiId": "falcrest-reach-bank"
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         }
       ],
       "otherExp": {},
@@ -12591,11 +16517,11 @@
       "locations": [
         {
           "name": "Falcrest Bank",
-          "wikiId": "falcrest-bank"
+          "wikiId": "falcrest-reach-bank"
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         }
       ],
       "otherExp": {},
@@ -12634,11 +16560,11 @@
       "locations": [
         {
           "name": "Falcrest Bank",
-          "wikiId": "falcrest-bank"
+          "wikiId": "falcrest-reach-bank"
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         }
       ],
       "otherExp": {},
@@ -12673,11 +16599,11 @@
       "locations": [
         {
           "name": "Falcrest Bank",
-          "wikiId": "falcrest-bank"
+          "wikiId": "falcrest-reach-bank"
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         }
       ],
       "otherExp": {},
@@ -12716,11 +16642,11 @@
       "locations": [
         {
           "name": "Falcrest Bank",
-          "wikiId": "falcrest-bank"
+          "wikiId": "falcrest-reach-bank"
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         }
       ],
       "otherExp": {},
@@ -12755,11 +16681,11 @@
       "locations": [
         {
           "name": "Falcrest Bank",
-          "wikiId": "falcrest-bank"
+          "wikiId": "falcrest-reach-bank"
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         }
       ],
       "otherExp": {},
@@ -12798,11 +16724,11 @@
       "locations": [
         {
           "name": "Falcrest Bank",
-          "wikiId": "falcrest-bank"
+          "wikiId": "falcrest-reach-bank"
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         }
       ],
       "otherExp": {},
@@ -12837,11 +16763,11 @@
       "locations": [
         {
           "name": "Falcrest Bank",
-          "wikiId": "falcrest-bank"
+          "wikiId": "falcrest-reach-bank"
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         }
       ],
       "otherExp": {},
@@ -12880,11 +16806,11 @@
       "locations": [
         {
           "name": "Falcrest Bank",
-          "wikiId": "falcrest-bank"
+          "wikiId": "falcrest-reach-bank"
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         }
       ],
       "otherExp": {},
@@ -12919,11 +16845,11 @@
       "locations": [
         {
           "name": "Falcrest Bank",
-          "wikiId": "falcrest-bank"
+          "wikiId": "falcrest-reach-bank"
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         }
       ],
       "otherExp": {},
@@ -12962,11 +16888,11 @@
       "locations": [
         {
           "name": "Falcrest Bank",
-          "wikiId": "falcrest-bank"
+          "wikiId": "falcrest-reach-bank"
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         }
       ],
       "otherExp": {},
@@ -13013,11 +16939,11 @@
       "locations": [
         {
           "name": "Falcrest Bank",
-          "wikiId": "falcrest-bank"
+          "wikiId": "falcrest-reach-bank"
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         }
       ],
       "otherExp": {},
@@ -13060,11 +16986,11 @@
       "locations": [
         {
           "name": "Falcrest Bank",
-          "wikiId": "falcrest-bank"
+          "wikiId": "falcrest-reach-bank"
         },
         {
           "name": "O'Rock West",
-          "wikiId": "orock-west"
+          "wikiId": "rock-west"
         }
       ],
       "otherExp": {},
@@ -13076,6 +17002,84 @@
           "amount": 1
         }
       ],
+      "requiredItems": []
+    },
+    {
+      "id": "herblaw/fill-vial",
+      "skill": "herblaw",
+      "name": "Fill vial",
+      "level": 1,
+      "duration": 2,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": false,
+      "inputs": [
+        {
+          "id": "vial",
+          "amount": 1
+        }
+      ],
+      "outputs": [
+        {
+          "id": "vialOfWater",
+          "amount": 1
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/vialOfWater-BVgpOYZv.png",
+      "wikiId": "vial-of-water",
+      "entity": "Water Source",
+      "locations": [
+        {
+          "name": "Al-Sahra",
+          "wikiId": "al-sahra"
+        },
+        {
+          "name": "Manor Kitchen",
+          "wikiId": "manor-kitchen"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": false,
+      "requiredItems": []
+    },
+    {
+      "id": "herblaw/fill-vials",
+      "skill": "herblaw",
+      "name": "Fill 10 vials",
+      "level": 1,
+      "duration": 3,
+      "exp": 0,
+      "sortLevel": 1,
+      "otherActivity": false,
+      "inputs": [
+        {
+          "id": "vial",
+          "amount": 10
+        }
+      ],
+      "outputs": [
+        {
+          "id": "vialOfWater",
+          "amount": 10
+        }
+      ],
+      "icon": "https://microscape.cc/play/assets/vialOfWater-BVgpOYZv.png",
+      "wikiId": "vial-of-water",
+      "entity": "Water Source",
+      "locations": [
+        {
+          "name": "Al-Sahra",
+          "wikiId": "al-sahra"
+        },
+        {
+          "name": "Manor Kitchen",
+          "wikiId": "manor-kitchen"
+        }
+      ],
+      "otherExp": {},
+      "requiresMembership": false,
+      "singleExecution": false,
       "requiredItems": []
     },
     {
@@ -14388,54 +18392,6 @@
           "amount": 1
         }
       ],
-      "requiredItems": []
-    },
-    {
-      "id": "goodMagic/dark-ritual",
-      "skill": "goodMagic",
-      "name": "Dark Ritual",
-      "level": 1,
-      "duration": 6,
-      "exp": 0,
-      "sortLevel": 1,
-      "otherActivity": true,
-      "inputs": [
-        {
-          "id": "cutDiamond",
-          "amount": 1
-        },
-        {
-          "id": "cutEmerald",
-          "amount": 1
-        },
-        {
-          "id": "cutRuby",
-          "amount": 1
-        },
-        {
-          "id": "cutSapphire",
-          "amount": 1
-        },
-        {
-          "id": "deathRune",
-          "amount": 1
-        }
-      ],
-      "icon": "https://microscape.cc/play/assets/deathRune-4G0Y8gF-.png",
-      "entity": "Totem of Zem",
-      "locations": [
-        {
-          "name": "Lava Maze Entrance",
-          "wikiId": "lava-maze-entrance"
-        }
-      ],
-      "otherExp": {
-        "evilMagic": 1000
-      },
-      "requiresAbility": "Death's Bargain",
-      "requiresMembership": false,
-      "singleExecution": false,
-      "outputs": [],
       "requiredItems": []
     }
   ],
@@ -20861,5 +24817,26 @@
       "wikiId": "the-johnny",
       "requirements": {}
     }
+  },
+  "coverage": {
+    "expectedBySkill": {
+      "attack": 48,
+      "strength": 48,
+      "defense": 48,
+      "evilMagic": 48,
+      "ranged": 48,
+      "piety": 66,
+      "woodcutting": 6,
+      "firemaking": 9,
+      "fishing": 15,
+      "cooking": 25,
+      "mining": 11,
+      "smithing": 45,
+      "crafting": 53,
+      "goodMagic": 17,
+      "fletching": 25,
+      "herblaw": 34
+    },
+    "total": 546
   }
 }

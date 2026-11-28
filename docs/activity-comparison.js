@@ -4,7 +4,7 @@ import {createEffectControls} from "./loadout-effect-controls.js?v=activity-effe
 
 let catalogRequest;
 export function readActivityCatalog() {
-  catalogRequest ||= fetch(new URL("./activity-catalog.json?v=equipment-20261124", import.meta.url)).then(async response => {
+  catalogRequest ||= fetch(new URL("./activity-catalog.json?v=planner-icons-20261128", import.meta.url)).then(async response => {
     if (!response.ok) throw Error("The activity catalog could not load. Please try again.");
     const data = await response.json();
     if (data.schemaVersion !== 1 || !Array.isArray(data.activities)) throw Error("The activity catalog is incomplete.");
